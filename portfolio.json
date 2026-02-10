@@ -1,0 +1,44 @@
+{
+  "portfolio": [
+    {
+      "symbol": "AMZN",
+      "shares": 15,
+      "avg_cost": 227.61
+    },
+    {
+      "symbol": "CRWD",
+      "shares": 5,
+      "avg_cost": 399.02
+    },
+    {
+      "symbol": "MSFT",
+      "shares": 5,
+      "avg_cost": 474.70
+    },
+    {
+      "symbol": "NFLX",
+      "shares": 30,
+      "avg_cost": 92.00
+    },
+    {
+      "symbol": "NVDA",
+      "shares": 30,
+      "avg_cost": 184.73
+    },
+    {
+      "symbol": "QQQ",
+      "shares": 1,
+      "avg_cost": 623.25
+    },
+    {
+      "symbol": "VOO",
+      "shares": 2,
+      "avg_cost": 635.22
+    },
+    {
+      "symbol": "ZS",
+      "shares": 15,
+      "avg_cost": 172.85
+    }
+  ]
+}
