@@ -1,0 +1,29 @@
+{
+  "portfolio": [
+    {
+      "symbol": "AAPL",
+      "shares": 100,
+      "avg_cost": 185.50
+    },
+    {
+      "symbol": "NVDA",
+      "shares": 50,
+      "avg_cost": 480.00
+    },
+    {
+      "symbol": "MSFT",
+      "shares": 30,
+      "avg_cost": 370.00
+    },
+    {
+      "symbol": "TSLA",
+      "shares": 20,
+      "avg_cost": 245.00
+    },
+    {
+      "symbol": "GOOGL",
+      "shares": 40,
+      "avg_cost": 140.00
+    }
+  ]
+}
