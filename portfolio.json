@@ -12,7 +12,7 @@
     },
     {
       "symbol": "MSFT",
-      "shares": 5,
+      "shares": 6,
       "avg_cost": 474.70
     },
     {
@@ -32,8 +32,8 @@
     },
     {
       "symbol": "VOO",
-      "shares": 4,
-      "avg_cost": 635.22
+      "shares": 6,
+      "avg_cost": 634.58
     },
     {
       "symbol": "ZS",
