@@ -4,7 +4,7 @@
       "symbol": "00919",
       "name": "群益台灣精選高息",
       "shares": 7000,
-      "avg_cost": 24.00,
+      "avg_cost": 24.33,
       "category": "高股息ETF",
       "note": "核心持股，年配11%"
     },
@@ -12,7 +12,7 @@
       "symbol": "00878",
       "name": "國泰永續高股息",
       "shares": 3000,
-      "avg_cost": 23.50,
+      "avg_cost": 23.92,
       "category": "高股息ETF",
       "note": "分散高股息來源"
     },
@@ -20,7 +20,7 @@
       "symbol": "00679B",
       "name": "元大美債20年",
       "shares": 3000,
-      "avg_cost": 30.00,
+      "avg_cost": 27.91,
       "category": "美債避險",
       "note": "股災時的保險，反向上漲"
     },
@@ -28,7 +28,7 @@
       "symbol": "3231",
       "name": "緯創",
       "shares": 1000,
-      "avg_cost": 132.00,
+      "avg_cost": 130.50,
       "category": "成長個股",
       "note": "參與AI成長，但只用1/4資金"
     }
