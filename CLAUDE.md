@@ -81,8 +81,9 @@ symbol,name,shares,avg_cost
 - 每份報告必須包含：國際情勢背景、個股分析、操作建議、風險提示
 
 ### Git 操作
-- **每次操作前先 `git pull`** — 防止多個 session 覆蓋彼此的修改
-- 每次對檔案進行新增或修改後，必須自動 commit 並 push 回遠端分支，不需要額外詢問使用者確認
+- **固定分支：`claude/stock-analysis-skill-J09An`** — 所有 session 統一使用此分支，**絕對不要另開新分支**
+- **每次操作前先 `git checkout claude/stock-analysis-skill-J09An && git pull origin claude/stock-analysis-skill-J09An`**
+- 每次對檔案進行新增或修改後，必須自動 commit 並 push 到 `claude/stock-analysis-skill-J09An`，不需要額外詢問使用者確認
 - Commit message 應清楚說明變動內容（交易紀錄 / 分析報告 / 持股更新）
 - push 完成後立即清除 remote URL 中的 token
 
