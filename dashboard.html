@@ -196,7 +196,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.40;
-const usCash = 2610;
+const usCash = 2402.75;
 
 const twPortfolio = [
   { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.33, category:"高股息ETF", color:"#f59e0b" },
@@ -210,10 +210,9 @@ const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.05, color:"#10b981" },
   { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:209.18, color:"#f59e0b" },
   { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:393.00, color:"#3b82f6" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:6, avgCost:633.92, currentPrice:628.00, color:"#6366f1" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:632.44, currentPrice:628.00, color:"#6366f1" },
   { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:149.01, color:"#ec4899" },
   { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:78.04, color:"#ef4444" },
-  { symbol:"CRWD", name:"CrowdStrike", shares:3, avgCost:398.62, currentPrice:350.25, color:"#f97316" },
   { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:607.87, color:"#8b5cf6" },
 ];
 
@@ -245,6 +244,8 @@ const allTx = [
   { date:"2026-02-13", market:"US", symbol:"VOO", action:"buy", shares:1, price:626.35, amount:626.35, note:"加碼" },
   { date:"2026-02-13", market:"US", symbol:"MSFT", action:"buy", shares:1, price:402.84, amount:402.84, note:"逢低攤平" },
   { date:"2026-02-18", market:"US", symbol:"MSFT", action:"buy", shares:4, price:397.39, amount:1589.56, note:"大幅加碼" },
+  { date:"2026-02-25", market:"US", symbol:"CRWD", action:"sell", shares:3, price:350.25, amount:1050.75, note:"清倉 -$145" },
+  { date:"2026-02-25", market:"US", symbol:"VOO", action:"buy", shares:2, price:628.00, amount:1256.00, note:"CRWD轉入指數" },
   { date:"2026-02-24", market:"TW", symbol:"00919", action:"buy", shares:7000, price:24.33, amount:170310, note:"建倉" },
   { date:"2026-02-24", market:"TW", symbol:"00878", action:"buy", shares:3000, price:23.92, amount:71760, note:"建倉" },
   { date:"2026-02-24", market:"TW", symbol:"00679B", action:"buy", shares:3000, price:27.91, amount:83730, note:"建倉" },
@@ -266,6 +267,7 @@ const adjustmentLog = [
   { date:"2026-02-24", type:"setup", title:"建立台股投資組合", detail:"70% ETF + 30% 個股。00919 7張、00878 3張、00679B 3張、緯創 1張、現金 NT$40K" },
   { date:"2026-02-25", type:"review", title:"全面檢視台美股組合", detail:"分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
   { date:"2026-02-25", type:"review", title:"晚間更新：NVDA/ZS 財報前分析", detail:"更新最新價格。NVDA 今晚財報、ZS 2/26 財報、00878 2/26 除息 0.42 元。建議等財報後再決定 ZS/CRWD 去留" },
+  { date:"2026-02-25", type:"trade", title:"清倉 CRWD → 加碼 VOO", detail:"CRWD -3股(-$145.11 清倉)、VOO +2股 @ $628.00。資金從個股轉入指數" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -298,7 +300,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = -403.56;
+const usRealizedPnl = -548.67;
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
@@ -340,7 +342,7 @@ document.getElementById('usSummary').innerHTML = `
   <div class="summary-card c-blue"><div class="label">持股市值</div><div class="value">$${fmt(usStockMarket,2)}</div><div class="sub">${usData.length} 檔持股</div></div>
   <div class="summary-card c-blue"><div class="label">剩餘現金</div><div class="value">$${fmt(usCash,2)}</div><div class="sub">佔 ${(usCash/usTotal*100).toFixed(1)}%</div></div>
   <div class="summary-card ${usPnl>=0?'c-green':'c-red'}"><div class="label">未實現損益</div><div class="value ${pc(usPnl)}">$${fmt(usPnl,2)}</div><div class="sub ${pc(usPnl)}">${fmtPct(usPnl/usTotalCost*100)}</div></div>
-  <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'}"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="sub">UBER / CRWD / NFLX</div></div>`;
+  <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'}"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="sub">UBER / CRWD(清倉) / NFLX</div></div>`;
 
 // ===== PORTFOLIO TABLES =====
 function renderTable(data,tbody,cur,total){

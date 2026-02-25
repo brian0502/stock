@@ -1,14 +1,13 @@
 {
   "portfolio": [
     { "symbol": "AMZN", "name": "Amazon", "shares": 15, "avg_cost": 227.42 },
-    { "symbol": "CRWD", "name": "CrowdStrike", "shares": 3, "avg_cost": 398.62 },
     { "symbol": "MSFT", "name": "Microsoft", "shares": 10, "avg_cost": 436.49 },
     { "symbol": "NFLX", "name": "Netflix", "shares": 15, "avg_cost": 91.90 },
     { "symbol": "NVDA", "name": "NVIDIA", "shares": 30, "avg_cost": 184.60 },
     { "symbol": "QQQ", "name": "Invesco QQQ", "shares": 1, "avg_cost": 622.25 },
-    { "symbol": "VOO", "name": "Vanguard S&P 500", "shares": 6, "avg_cost": 633.92 },
+    { "symbol": "VOO", "name": "Vanguard S&P 500", "shares": 8, "avg_cost": 632.44 },
     { "symbol": "ZS", "name": "Zscaler", "shares": 15, "avg_cost": 172.65 }
   ],
-  "total_realized_pnl": -403.56,
+  "total_realized_pnl": -548.67,
   "last_updated": "2026-02-25"
 }

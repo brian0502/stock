@@ -26,7 +26,9 @@
     { "id": "US024", "date": "2026-02-13", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 1, "price": 628.21, "amount": 628.21, "fee": 1.00, "note": "加碼" },
     { "id": "US025", "date": "2026-02-13", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 1, "price": 626.35, "amount": 626.35, "fee": 1.00, "note": "加碼" },
     { "id": "US026", "date": "2026-02-13", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 1, "price": 402.84, "amount": 402.84, "fee": 1.00, "note": "加碼，逢低攤平" },
-    { "id": "US027", "date": "2026-02-18", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 4, "price": 397.39, "amount": 1589.56, "fee": 1.00, "note": "大幅加碼，看好長期價值" }
+    { "id": "US027", "date": "2026-02-18", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 4, "price": 397.39, "amount": 1589.56, "fee": 1.00, "note": "大幅加碼，看好長期價值" },
+    { "id": "US028", "date": "2026-02-25", "symbol": "CRWD", "name": "CrowdStrike", "action": "sell", "shares": 3, "price": 350.25, "amount": 1050.75, "fee": 1.00, "realized_pnl": -145.11, "note": "清倉，資金轉入 VOO" },
+    { "id": "US029", "date": "2026-02-25", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 2, "price": 628.00, "amount": 1256.00, "fee": 1.00, "note": "加碼，CRWD 資金轉入指數" }
   ],
   "tw_transactions": [
     { "id": "TW001", "date": "2026-02-24", "symbol": "00919", "name": "群益台灣精選高息", "action": "buy", "shares": 7000, "price": 24.33, "amount": 170310, "fee": 0, "note": "建倉 - 核心持股" },
@@ -46,6 +48,18 @@
       "realized_pnl": -160.18,
       "holding_days": 43,
       "note": "清倉止損，資金轉入 CRWD/NVDA/ZS"
+    },
+    {
+      "symbol": "CRWD",
+      "name": "CrowdStrike",
+      "buy_date": "2026-02-04",
+      "sell_date": "2026-02-25",
+      "shares": 3,
+      "avg_cost": 398.62,
+      "sell_price": 350.25,
+      "realized_pnl": -145.11,
+      "holding_days": 21,
+      "note": "清倉，資金轉入 VOO 指數"
     }
   ],
   "adjustment_log": [
@@ -62,7 +76,8 @@
     { "date": "2026-02-18", "type": "trade", "description": "大幅加碼 MSFT", "details": "MSFT +4股 @ $397.39" },
     { "date": "2026-02-24", "type": "initial_setup", "description": "建立台股投資組合", "details": "70% ETF + 30% 個股配置，總投入 NT$500,500" },
     { "date": "2026-02-25", "type": "review", "description": "全面檢視台美股組合", "details": "分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
-    { "date": "2026-02-25", "type": "review", "description": "晚間更新：NVDA/ZS 財報前分析", "details": "更新最新價格。NVDA $197.05(+6.7%)、ZS 2/26財報、00878 2/26除息$0.42。匯率更新 31.40" }
+    { "date": "2026-02-25", "type": "review", "description": "晚間更新：NVDA/ZS 財報前分析", "details": "更新最新價格。NVDA $197.05(+6.7%)、ZS 2/26財報、00878 2/26除息$0.42。匯率更新 31.40" },
+    { "date": "2026-02-25", "type": "trade", "description": "清倉 CRWD → 加碼 VOO", "details": "CRWD -3股(-$145.11 清倉)、VOO +2股 @ $628.00。資金從個股轉入指數" }
   ],
   "last_updated": "2026-02-25"
 }
