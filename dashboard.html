@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投資組合 Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2236;
+    --border: #1e2d4a;
+    --text: #e2e8f0;
+    --text-dim: #64748b;
+    --green: #10b981;
+    --green-bg: rgba(16, 185, 129, 0.1);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.1);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59, 130, 246, 0.1);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245, 158, 11, 0.1);
+    --purple: #8b5cf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+  }
+
+  .last-updated {
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .summary-card.total::before { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+  .summary-card.tw::before { background: var(--amber); }
+  .summary-card.us::before { background: var(--blue); }
+  .summary-card.pnl-pos::before { background: var(--green); }
+  .summary-card.pnl-neg::before { background: var(--red); }
+
+  .summary-card .label {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .summary-card .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .summary-card .sub {
+    font-size: 13px;
+    margin-top: 4px;
+    color: var(--text-dim);
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title .badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .badge-tw { background: var(--amber-bg); color: var(--amber); }
+  .badge-us { background: var(--blue-bg); color: var(--blue); }
+
+  .table-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .symbol-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .symbol-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .symbol-name { font-weight: 500; }
+  .symbol-code { font-size: 12px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+  .positive { color: var(--green); }
+  .negative { color: var(--red); }
+
+  .pnl-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+
+  .pnl-badge.positive { background: var(--green-bg); }
+  .pnl-badge.negative { background: var(--red-bg); }
+
+  .bar-container {
+    width: 80px;
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 24px;
+    padding-left: 24px;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+  }
+
+  .dot-setup { background: var(--blue); }
+  .dot-review { background: var(--amber); }
+  .dot-trade { background: var(--green); }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-detail {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .tag-buy { background: var(--green-bg); color: var(--green); }
+  .tag-sell { background: var(--red-bg); color: var(--red); }
+  .tag-hold { background: var(--blue-bg); color: var(--blue); }
+
+  .tx-table td { font-size: 13px; padding: 10px 16px; }
+  .tx-table th { padding: 10px 16px; }
+
+  .allocation-chart {
+    display: flex;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 12px 0 8px;
+  }
+
+  .alloc-segment {
+    transition: width 0.6s ease;
+    position: relative;
+  }
+
+  .alloc-segment:hover { opacity: 0.8; }
+
+  .alloc-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .alloc-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .alloc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    body { padding: 16px; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    header h1 { font-size: 22px; }
+  }
+
+  .footer-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📊 投資組合 Dashboard</h1>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-02-25</span></div>
+</header>
+
+<!-- Summary Cards -->
+<div class="summary-grid" id="summaryCards"></div>
+
+<!-- TW Portfolio -->
+<div class="section-title">台股持股 <span class="badge badge-tw">TWSE</span></div>
+
+<div class="table-container" style="margin-bottom:12px">
+  <div style="padding:16px 16px 4px">
+    <div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">資產配置</div>
+    <div class="allocation-chart" id="twAllocChart"></div>
+    <div class="alloc-legend" id="twAllocLegend"></div>
+  </div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>標的</th>
+        <th>持股</th>
+        <th style="text-align:right">均價</th>
+        <th style="text-align:right">現價</th>
+        <th style="text-align:right">市值</th>
+        <th style="text-align:right">損益</th>
+        <th>佔比</th>
+      </tr>
+    </thead>
+    <tbody id="twTableBody"></tbody>
+  </table>
+</div>
+
+<!-- US Portfolio -->
+<div class="section-title">美股持股 <span class="badge badge-us">US</span></div>
+
+<div class="table-container" style="margin-bottom:12px">
+  <div style="padding:16px 16px 4px">
+    <div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">資產配置</div>
+    <div class="allocation-chart" id="usAllocChart"></div>
+    <div class="alloc-legend" id="usAllocLegend"></div>
+  </div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>標的</th>
+        <th>持股</th>
+        <th style="text-align:right">均價</th>
+        <th style="text-align:right">現價</th>
+        <th style="text-align:right">市值</th>
+        <th style="text-align:right">損益</th>
+        <th>佔比</th>
+      </tr>
+    </thead>
+    <tbody id="usTableBody"></tbody>
+  </table>
+</div>
+
+<!-- Transaction History -->
+<div class="section-title" style="margin-top:40px">📋 交易紀錄</div>
+
+<div class="two-col">
+  <div>
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--amber)">台股交易</div>
+    <div class="table-container">
+      <table class="tx-table">
+        <thead><tr><th>日期</th><th>標的</th><th>動作</th><th style="text-align:right">股數</th><th style="text-align:right">價格</th><th style="text-align:right">金額</th></tr></thead>
+        <tbody id="twTxBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--blue)">美股交易</div>
+    <div class="table-container">
+      <table class="tx-table">
+        <thead><tr><th>日期</th><th>標的</th><th>動作</th><th style="text-align:right">股數</th><th style="text-align:right">價格</th><th style="text-align:right">金額</th></tr></thead>
+        <tbody id="usTxBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Adjustment Timeline -->
+<div class="section-title" style="margin-top:40px">🔄 組合調整紀錄</div>
+<div class="table-container" style="padding:24px">
+  <div class="timeline" id="timeline"></div>
+</div>
+
+<div class="footer-note">
+  ⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。
+</div>
+
+<script>
+// ============ DATA ============
+const twPortfolio = [
+  { symbol: "00919", name: "群益台灣精選高息", shares: 7000, avgCost: 24.33, currentPrice: 24.22, category: "高股息ETF", color: "#f59e0b" },
+  { symbol: "00878", name: "國泰永續高股息", shares: 3000, avgCost: 23.92, currentPrice: 23.74, category: "高股息ETF", color: "#fb923c" },
+  { symbol: "00679B", name: "元大美債20年", shares: 3000, avgCost: 27.91, currentPrice: 27.93, category: "美債ETF", color: "#3b82f6" },
+  { symbol: "3231", name: "緯創", shares: 1000, avgCost: 130.50, currentPrice: 142.00, category: "成長個股", color: "#8b5cf6" },
+];
+const twCash = 40000;
+
+const usPortfolio = [
+  { symbol: "NVDA", name: "NVIDIA", shares: 30, avgCost: 184.73, currentPrice: 192.82, color: "#10b981" },
+  { symbol: "AMZN", name: "Amazon", shares: 15, avgCost: 227.61, currentPrice: 208.60, color: "#f59e0b" },
+  { symbol: "NFLX", name: "Netflix", shares: 30, avgCost: 92.00, currentPrice: 77.59, color: "#ef4444" },
+  { symbol: "MSFT", name: "Microsoft", shares: 5, avgCost: 474.70, currentPrice: 387.11, color: "#3b82f6" },
+  { symbol: "VOO", name: "Vanguard S&P 500", shares: 4, avgCost: 635.22, currentPrice: 631.00, color: "#6366f1" },
+  { symbol: "ZS", name: "Zscaler", shares: 15, avgCost: 172.85, currentPrice: 143.28, color: "#ec4899" },
+  { symbol: "CRWD", name: "CrowdStrike", shares: 3, avgCost: 405.54, currentPrice: 350.25, color: "#f97316" },
+  { symbol: "QQQ", name: "Invesco QQQ", shares: 1, avgCost: 623.25, currentPrice: 608.80, color: "#8b5cf6" },
+];
+
+const twTransactions = [
+  { date: "2026-02-24", symbol: "00919", action: "buy", shares: 7000, price: 24.33, amount: 170310 },
+  { date: "2026-02-24", symbol: "00878", action: "buy", shares: 3000, price: 23.92, amount: 71760 },
+  { date: "2026-02-24", symbol: "00679B", action: "buy", shares: 3000, price: 27.91, amount: 83730 },
+  { date: "2026-02-24", symbol: "3231", action: "buy", shares: 1000, price: 130.50, amount: 130500 },
+];
+
+const usTransactions = [
+  { date: "2025-01-01", symbol: "AMZN", action: "buy", shares: 15, price: 227.61, amount: 3414.15 },
+  { date: "2025-01-01", symbol: "CRWD", action: "buy", shares: 3, price: 405.54, amount: 1216.62 },
+  { date: "2025-01-01", symbol: "MSFT", action: "buy", shares: 5, price: 474.70, amount: 2373.50 },
+  { date: "2025-01-01", symbol: "NFLX", action: "buy", shares: 30, price: 92.00, amount: 2760.00 },
+  { date: "2025-01-01", symbol: "NVDA", action: "buy", shares: 30, price: 184.73, amount: 5541.90 },
+  { date: "2025-01-01", symbol: "QQQ", action: "buy", shares: 1, price: 623.25, amount: 623.25 },
+  { date: "2025-01-01", symbol: "VOO", action: "buy", shares: 4, price: 635.22, amount: 2540.88 },
+  { date: "2025-01-01", symbol: "ZS", action: "buy", shares: 15, price: 172.85, amount: 2592.75 },
+];
+
+const adjustmentLog = [
+  { date: "2026-02-24", type: "setup", title: "建立台股投資組合", detail: "70% ETF + 30% 個股配置。00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000。總投入 NT$500,500" },
+  { date: "2026-02-25", type: "review", title: "全面檢視台股與美股組合", detail: "分析：關稅違憲判決（短期利多）、美伊衝突風險（最大黑天鵝）、OpenAI 下調算力支出。建議台股不動，美股考慮 CRWD+ZS 轉 VOO。設定緯創停利 160 / 停損 120" },
+];
+
+// ============ HELPERS ============
+const fmt = (n, d=0) => n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d});
+const fmtPct = (n) => (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+const pnlClass = (n) => n >= 0 ? 'positive' : 'negative';
+
+// ============ COMPUTE ============
+function computePortfolio(portfolio) {
+  return portfolio.map(p => {
+    const cost = p.shares * p.avgCost;
+    const market = p.shares * p.currentPrice;
+    const pnl = market - cost;
+    const pnlPct = (pnl / cost) * 100;
+    return { ...p, cost, market, pnl, pnlPct };
+  });
+}
+
+const twData = computePortfolio(twPortfolio);
+const usData = computePortfolio(usPortfolio);
+
+const twTotalCost = twData.reduce((s,p) => s+p.cost, 0);
+const twTotalMarket = twData.reduce((s,p) => s+p.market, 0) + twCash;
+const twTotalPnl = twTotalMarket - twTotalCost - twCash;
+
+const usTotalCost = usData.reduce((s,p) => s+p.cost, 0);
+const usTotalMarket = usData.reduce((s,p) => s+p.market, 0);
+const usTotalPnl = usTotalMarket - usTotalCost;
+
+// ============ SUMMARY CARDS ============
+document.getElementById('summaryCards').innerHTML = `
+  <div class="summary-card total">
+    <div class="label">總資產</div>
+    <div class="value">NT$${fmt(twTotalMarket)}</div>
+    <div class="sub">+ US$${fmt(usTotalMarket, 2)}</div>
+  </div>
+  <div class="summary-card tw">
+    <div class="label">台股市值</div>
+    <div class="value">NT$${fmt(twTotalMarket)}</div>
+    <div class="sub">含現金 NT$${fmt(twCash)}</div>
+  </div>
+  <div class="summary-card us">
+    <div class="label">美股市值</div>
+    <div class="value">US$${fmt(usTotalMarket, 2)}</div>
+    <div class="sub">${usData.length} 檔持股</div>
+  </div>
+  <div class="summary-card ${twTotalPnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">
+    <div class="label">台股損益</div>
+    <div class="value ${pnlClass(twTotalPnl)}">NT$${fmt(twTotalPnl)}</div>
+    <div class="sub ${pnlClass(twTotalPnl)}">${fmtPct(twTotalPnl / twTotalCost * 100)}</div>
+  </div>
+  <div class="summary-card ${usTotalPnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">
+    <div class="label">美股損益</div>
+    <div class="value ${pnlClass(usTotalPnl)}">US$${fmt(usTotalPnl, 2)}</div>
+    <div class="sub ${pnlClass(usTotalPnl)}">${fmtPct(usTotalPnl / usTotalCost * 100)}</div>
+  </div>
+`;
+
+// ============ PORTFOLIO TABLE ============
+function renderTable(data, tbody, currency, totalMarket) {
+  tbody.innerHTML = data.map(p => {
+    const pct = (p.market / totalMarket * 100);
+    return `<tr>
+      <td><div class="symbol-cell">
+        <div class="symbol-icon" style="background:${p.color}">${p.symbol.slice(0,2)}</div>
+        <div><div class="symbol-name">${p.name}</div><div class="symbol-code">${p.symbol}</div></div>
+      </div></td>
+      <td class="mono">${fmt(p.shares)}</td>
+      <td class="mono" style="text-align:right">${currency}${fmt(p.avgCost, 2)}</td>
+      <td class="mono" style="text-align:right">${currency}${fmt(p.currentPrice, 2)}</td>
+      <td class="mono" style="text-align:right">${currency}${fmt(p.market)}</td>
+      <td style="text-align:right">
+        <span class="pnl-badge ${pnlClass(p.pnl)}">${fmtPct(p.pnlPct)}</span>
+        <div style="font-size:11px;color:var(--text-dim);margin-top:2px" class="mono">${p.pnl >= 0 ? '+' : ''}${currency}${fmt(p.pnl)}</div>
+      </td>
+      <td>
+        <div style="font-size:12px;margin-bottom:4px" class="mono">${pct.toFixed(1)}%</div>
+        <div class="bar-container"><div class="bar-fill" style="width:${pct}%;background:${p.color}"></div></div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+renderTable(twData, document.getElementById('twTableBody'), 'NT$', twTotalMarket);
+renderTable(usData, document.getElementById('usTableBody'), '$', usTotalMarket);
+
+// ============ ALLOCATION CHART ============
+function renderAlloc(data, chartId, legendId, totalMarket, currency) {
+  const chart = document.getElementById(chartId);
+  const legend = document.getElementById(legendId);
+  chart.innerHTML = data.map(p => {
+    const pct = (p.market / totalMarket * 100);
+    return `<div class="alloc-segment" style="width:${pct}%;background:${p.color}" title="${p.symbol}: ${pct.toFixed(1)}%"></div>`;
+  }).join('');
+  legend.innerHTML = data.map(p => {
+    const pct = (p.market / totalMarket * 100);
+    return `<div class="alloc-legend-item"><div class="alloc-dot" style="background:${p.color}"></div>${p.symbol} ${pct.toFixed(1)}%</div>`;
+  }).join('');
+}
+
+renderAlloc(twData, 'twAllocChart', 'twAllocLegend', twTotalMarket, 'NT$');
+renderAlloc(usData, 'usAllocChart', 'usAllocLegend', usTotalMarket, '$');
+
+// ============ TRANSACTION TABLES ============
+function renderTx(txs, tbodyId, currency) {
+  document.getElementById(tbodyId).innerHTML = txs.map(t => `<tr>
+    <td class="mono">${t.date}</td>
+    <td><strong>${t.symbol}</strong></td>
+    <td><span class="tag tag-${t.action}">${t.action === 'buy' ? '買入' : '賣出'}</span></td>
+    <td class="mono" style="text-align:right">${fmt(t.shares)}</td>
+    <td class="mono" style="text-align:right">${currency}${fmt(t.price, 2)}</td>
+    <td class="mono" style="text-align:right">${currency}${fmt(t.amount)}</td>
+  </tr>`).join('');
+}
+
+renderTx(twTransactions, 'twTxBody', 'NT$');
+renderTx(usTransactions, 'usTxBody', '$');
+
+// ============ TIMELINE ============
+const dotClass = { setup: 'dot-setup', review: 'dot-review', trade: 'dot-trade' };
+document.getElementById('timeline').innerHTML = adjustmentLog.map(a => `
+  <div class="timeline-item">
+    <div class="timeline-dot ${dotClass[a.type] || 'dot-review'}"></div>
+    <div class="timeline-date">${a.date}</div>
+    <div class="timeline-title">${a.title}</div>
+    <div class="timeline-detail">${a.detail}</div>
+  </div>
+`).join('');
+</script>
+</body>
+</html>

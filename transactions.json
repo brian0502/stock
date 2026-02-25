@@ -1,0 +1,155 @@
+{
+  "tw_transactions": [
+    {
+      "id": "TW001",
+      "date": "2026-02-24",
+      "symbol": "00919",
+      "name": "群益台灣精選高息",
+      "action": "buy",
+      "shares": 7000,
+      "price": 24.33,
+      "amount": 170310,
+      "note": "建倉 - 核心持股，年配11%"
+    },
+    {
+      "id": "TW002",
+      "date": "2026-02-24",
+      "symbol": "00878",
+      "name": "國泰永續高股息",
+      "action": "buy",
+      "shares": 3000,
+      "price": 23.92,
+      "amount": 71760,
+      "note": "建倉 - 分散高股息來源"
+    },
+    {
+      "id": "TW003",
+      "date": "2026-02-24",
+      "symbol": "00679B",
+      "name": "元大美債20年",
+      "action": "buy",
+      "shares": 3000,
+      "price": 27.91,
+      "amount": 83730,
+      "note": "建倉 - 股災時的保險，反向上漲"
+    },
+    {
+      "id": "TW004",
+      "date": "2026-02-24",
+      "symbol": "3231",
+      "name": "緯創",
+      "action": "buy",
+      "shares": 1000,
+      "price": 130.50,
+      "amount": 130500,
+      "note": "建倉 - 參與AI成長，但只用1/4資金"
+    }
+  ],
+  "us_transactions": [
+    {
+      "id": "US001",
+      "date": "2025-01-01",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "action": "buy",
+      "shares": 15,
+      "price": 227.61,
+      "amount": 3414.15,
+      "note": "建倉"
+    },
+    {
+      "id": "US002",
+      "date": "2025-01-01",
+      "symbol": "CRWD",
+      "name": "CrowdStrike",
+      "action": "buy",
+      "shares": 3,
+      "price": 405.54,
+      "amount": 1216.62,
+      "note": "建倉"
+    },
+    {
+      "id": "US003",
+      "date": "2025-01-01",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "action": "buy",
+      "shares": 5,
+      "price": 474.70,
+      "amount": 2373.50,
+      "note": "建倉"
+    },
+    {
+      "id": "US004",
+      "date": "2025-01-01",
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "action": "buy",
+      "shares": 30,
+      "price": 92.00,
+      "amount": 2760.00,
+      "note": "建倉"
+    },
+    {
+      "id": "US005",
+      "date": "2025-01-01",
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "action": "buy",
+      "shares": 30,
+      "price": 184.73,
+      "amount": 5541.90,
+      "note": "建倉"
+    },
+    {
+      "id": "US006",
+      "date": "2025-01-01",
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "action": "buy",
+      "shares": 1,
+      "price": 623.25,
+      "amount": 623.25,
+      "note": "建倉"
+    },
+    {
+      "id": "US007",
+      "date": "2025-01-01",
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500",
+      "action": "buy",
+      "shares": 4,
+      "price": 635.22,
+      "amount": 2540.88,
+      "note": "建倉"
+    },
+    {
+      "id": "US008",
+      "date": "2025-01-01",
+      "symbol": "ZS",
+      "name": "Zscaler",
+      "action": "buy",
+      "shares": 15,
+      "price": 172.85,
+      "amount": 2592.75,
+      "note": "建倉"
+    }
+  ],
+  "adjustment_log": [
+    {
+      "date": "2026-02-24",
+      "type": "initial_setup",
+      "description": "建立台股投資組合：70% ETF + 30% 個股配置",
+      "details": "00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000",
+      "total_invested": "NT$500,500"
+    },
+    {
+      "date": "2026-02-25",
+      "type": "review",
+      "description": "全面檢視台股與美股組合，考量國際情勢",
+      "details": "分析關稅違憲判決、美伊衝突風險、OpenAI下調算力支出等因素。建議：台股維持不動，美股考慮將CRWD+ZS轉入VOO",
+      "action_taken": "尚未執行調整"
+    }
+  ],
+  "last_updated": "2026-02-25"
+}
