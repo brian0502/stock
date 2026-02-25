@@ -1,0 +1,30 @@
+name: Auto merge Claude session branches
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+      - '!claude/stock-analysis-skill-J09An'
+
+jobs:
+  merge-to-default:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/stock-analysis-skill-J09An
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge session branch
+        run: |
+          git fetch origin ${{ github.ref_name }}
+          git merge origin/${{ github.ref_name }} --no-edit -m "Auto-merge ${{ github.ref_name }} into default branch"
+          git push origin claude/stock-analysis-skill-J09An
