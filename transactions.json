@@ -61,7 +61,8 @@
     { "date": "2026-02-13", "type": "trade", "description": "減倉 NFLX、加碼 VOO/MSFT", "details": "NFLX -15股(-$261.24)、VOO +2、MSFT +1" },
     { "date": "2026-02-18", "type": "trade", "description": "大幅加碼 MSFT", "details": "MSFT +4股 @ $397.39" },
     { "date": "2026-02-24", "type": "initial_setup", "description": "建立台股投資組合", "details": "70% ETF + 30% 個股配置，總投入 NT$500,500" },
-    { "date": "2026-02-25", "type": "review", "description": "全面檢視台美股組合", "details": "分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" }
+    { "date": "2026-02-25", "type": "review", "description": "全面檢視台美股組合", "details": "分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
+    { "date": "2026-02-25", "type": "review", "description": "晚間更新：NVDA/ZS 財報前分析", "details": "更新最新價格。NVDA $197.05(+6.7%)、ZS 2/26財報、00878 2/26除息$0.42。匯率更新 31.40" }
   ],
   "last_updated": "2026-02-25"
 }

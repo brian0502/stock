@@ -120,7 +120,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-02-25</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-02-25 晚間</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -195,26 +195,26 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 32.5;
+const USDTWD = 31.40;
 const usCash = 2610;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.22, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.74, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.93, category:"美債ETF", color:"#3b82f6" },
-  { symbol:"3231", name:"緯創", shares:1000, avgCost:130.50, currentPrice:142.00, category:"成長個股", color:"#8b5cf6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.33, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:24.00, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.84, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"3231", name:"緯創", shares:1000, avgCost:130.50, currentPrice:130.50, category:"成長個股", color:"#8b5cf6" },
 ];
 const twCash = 40000;
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:192.82, color:"#10b981" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:208.60, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:387.11, color:"#3b82f6" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:6, avgCost:633.92, currentPrice:631.00, color:"#6366f1" },
-  { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:143.28, color:"#ec4899" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:77.59, color:"#ef4444" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.05, color:"#10b981" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:209.18, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:393.00, color:"#3b82f6" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:6, avgCost:633.92, currentPrice:628.00, color:"#6366f1" },
+  { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:149.01, color:"#ec4899" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:78.04, color:"#ef4444" },
   { symbol:"CRWD", name:"CrowdStrike", shares:3, avgCost:398.62, currentPrice:350.25, color:"#f97316" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:608.80, color:"#8b5cf6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:607.87, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -265,11 +265,12 @@ const adjustmentLog = [
   { date:"2026-02-18", type:"trade", title:"大幅加碼 MSFT", detail:"MSFT +4股 @ $397.39，均價降至 $436.49" },
   { date:"2026-02-24", type:"setup", title:"建立台股投資組合", detail:"70% ETF + 30% 個股。00919 7張、00878 3張、00679B 3張、緯創 1張、現金 NT$40K" },
   { date:"2026-02-25", type:"review", title:"全面檢視台美股組合", detail:"分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
+  { date:"2026-02-25", type:"review", title:"晚間更新：NVDA/ZS 財報前分析", detail:"更新最新價格。NVDA 今晚財報、ZS 2/26 財報、00878 2/26 除息 0.42 元。建議等財報後再決定 ZS/CRWD 去留" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
-  { date:"2026-02-25", type:"綜合分析", tb:"badge-us", title:"台美股投資組合綜合分析報告", summary:"關稅違憲、美伊衝突、OpenAI 下調。建議 CRWD+ZS 轉 VOO", file:"reports/2026-02-25.md" },
+  { date:"2026-02-25", type:"綜合分析", tb:"badge-us", title:"台美股綜合分析（晚間更新）", summary:"NVDA今晚財報、ZS明日財報、00878明日除息。更新最新價格與操作建議", file:"reports/2026-02-25.md" },
   { date:"2026-02-25", type:"台股分析", tb:"badge-tw", title:"台股持股分析報告", summary:"00679B 為地緣風險保險，緯創設停利160/停損120", file:"reports/tw-2026-02-25.md" },
   { date:"2026-02-18", type:"交易", tb:"badge-us", title:"MSFT 大幅加碼", summary:"MSFT +4股 @ $397.39，累計 10 股", file:null },
   { date:"2026-02-13", type:"交易", tb:"badge-us", title:"減倉 NFLX、加碼 VOO/MSFT", summary:"NFLX -15股(-$261.24)、VOO +2、MSFT +1", file:null },
