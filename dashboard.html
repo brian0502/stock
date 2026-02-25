@@ -6,758 +6,427 @@
 <title>投資組合 Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0e17;
-    --surface: #111827;
-    --surface2: #1a2236;
-    --border: #1e2d4a;
-    --text: #e2e8f0;
-    --text-dim: #64748b;
-    --green: #10b981;
-    --green-bg: rgba(16, 185, 129, 0.1);
-    --red: #ef4444;
-    --red-bg: rgba(239, 68, 68, 0.1);
-    --blue: #3b82f6;
-    --blue-bg: rgba(59, 130, 246, 0.1);
-    --amber: #f59e0b;
-    --amber-bg: rgba(245, 158, 11, 0.1);
-    --purple: #8b5cf6;
-  }
+:root {
+  --bg: #0a0e17; --surface: #111827; --surface2: #1a2236; --border: #1e2d4a;
+  --text: #e2e8f0; --text-dim: #64748b;
+  --green: #10b981; --green-bg: rgba(16,185,129,.1);
+  --red: #ef4444; --red-bg: rgba(239,68,68,.1);
+  --blue: #3b82f6; --blue-bg: rgba(59,130,246,.1);
+  --amber: #f59e0b; --amber-bg: rgba(245,158,11,.1);
+  --purple: #8b5cf6; --purple-bg: rgba(139,92,246,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:24px}
+.mono{font-family:'JetBrains Mono',monospace}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+header h1{font-size:28px;font-weight:700;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+.last-updated{color:var(--text-dim);font-size:13px}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* Hero - Total */
+.hero{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(139,92,246,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px 32px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.hero-left .hero-label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.hero-left .hero-value{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700}
+.hero-right{display:flex;gap:32px}
+.hero-stat .hs-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.hero-stat .hs-value{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700}
 
-  body {
-    font-family: 'Noto Sans TC', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 24px;
-  }
+/* Section divider */
+.market-section{margin-bottom:36px}
+.market-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.market-header h2{font-size:20px;font-weight:700}
+.market-header .mh-badge{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600}
+.mh-tw{background:var(--amber-bg);color:var(--amber)}
+.mh-us{background:var(--blue-bg);color:var(--blue)}
 
-  .mono { font-family: 'JetBrains Mono', monospace; }
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+.summary-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;position:relative;overflow:hidden}
+.summary-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.summary-card.c-amber::before{background:var(--amber)}
+.summary-card.c-blue::before{background:var(--blue)}
+.summary-card.c-green::before{background:var(--green)}
+.summary-card.c-red::before{background:var(--red)}
+.summary-card.c-purple::before{background:linear-gradient(90deg,#3b82f6,#8b5cf6)}
+.summary-card .label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.summary-card .value{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700}
+.summary-card .sub{font-size:12px;margin-top:3px;color:var(--text-dim)}
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
+.section-title{font-size:18px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.badge{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+.badge-tw{background:var(--amber-bg);color:var(--amber)}
+.badge-us{background:var(--blue-bg);color:var(--blue)}
 
-  header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-  }
+.table-container{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:12px 14px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);background:var(--surface2);border-bottom:1px solid var(--border);font-weight:500}
+td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
 
-  .last-updated {
-    color: var(--text-dim);
-    font-size: 13px;
-  }
+.symbol-cell{display:flex;align-items:center;gap:10px}
+.symbol-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#fff}
+.symbol-name{font-weight:500;font-size:13px}
+.symbol-code{font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace}
+.positive{color:var(--green)}.negative{color:var(--red)}
+.pnl-badge{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:600}
+.pnl-badge.positive{background:var(--green-bg)}.pnl-badge.negative{background:var(--red-bg)}
+.bar-container{width:70px;height:5px;background:var(--surface2);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px}
 
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 32px;
-  }
+.alloc-chart{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:10px 0 6px}
+.alloc-segment{position:relative}
+.alloc-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text-dim)}
+.alloc-legend-item{display:flex;align-items:center;gap:5px}
+.alloc-dot{width:7px;height:7px;border-radius:2px}
 
-  .summary-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
+/* Transaction controls */
+.tx-controls{display:flex;gap:10px;padding:14px;align-items:center;flex-wrap:wrap}
+.tx-search{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text);font-size:13px;font-family:'Noto Sans TC',sans-serif;outline:none;width:200px}
+.tx-search:focus{border-color:var(--blue)}
+.tx-search::placeholder{color:var(--text-dim)}
+.tx-filter-btn{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:7px 14px;color:var(--text-dim);font-size:12px;cursor:pointer;transition:all .15s}
+.tx-filter-btn:hover,.tx-filter-btn.active{border-color:var(--blue);color:var(--blue);background:var(--blue-bg)}
+.tx-page-info{color:var(--text-dim);font-size:12px;margin-left:auto;font-family:'JetBrains Mono',monospace}
+.tx-page-btn{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--text);font-size:12px;cursor:pointer}
+.tx-page-btn:hover{border-color:var(--blue)}
+.tx-page-btn:disabled{opacity:.3;cursor:default}
+.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-weight:600}
+.tag-buy{background:var(--green-bg);color:var(--green)}
+.tag-sell{background:var(--red-bg);color:var(--red)}
 
-  .summary-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-  }
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;padding-bottom:22px;padding-left:24px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{position:absolute;left:-24px;top:4px;width:16px;height:16px;border-radius:50%;border:3px solid var(--bg)}
+.dot-setup{background:var(--blue)}.dot-review{background:var(--amber)}.dot-trade{background:var(--green)}
+.timeline-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);margin-bottom:3px}
+.timeline-title{font-weight:700;font-size:14px;margin-bottom:4px}
+.timeline-detail{font-size:12px;color:var(--text-dim);line-height:1.5}
 
-  .summary-card.total::before { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
-  .summary-card.tw::before { background: var(--amber); }
-  .summary-card.us::before { background: var(--blue); }
-  .summary-card.pnl-pos::before { background: var(--green); }
-  .summary-card.pnl-neg::before { background: var(--red); }
+.footer-note{text-align:center;color:var(--text-dim);font-size:11px;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
 
-  .summary-card .label {
-    font-size: 12px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .summary-card .value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .summary-card .sub {
-    font-size: 13px;
-    margin-top: 4px;
-    color: var(--text-dim);
-  }
-
-  .section-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-title .badge {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-
-  .badge-tw { background: var(--amber-bg); color: var(--amber); }
-  .badge-us { background: var(--blue-bg); color: var(--blue); }
-
-  .table-container {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 32px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  th {
-    text-align: left;
-    padding: 14px 16px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-dim);
-    background: var(--surface2);
-    border-bottom: 1px solid var(--border);
-    font-weight: 500;
-  }
-
-  td {
-    padding: 14px 16px;
-    font-size: 14px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-  }
-
-  tr:last-child td { border-bottom: none; }
-
-  tr:hover td { background: rgba(255,255,255,0.02); }
-
-  .symbol-cell {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .symbol-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    color: white;
-  }
-
-  .symbol-name { font-weight: 500; }
-  .symbol-code { font-size: 12px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
-
-  .positive { color: var(--green); }
-  .negative { color: var(--red); }
-
-  .pnl-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
-  }
-
-  .pnl-badge.positive { background: var(--green-bg); }
-  .pnl-badge.negative { background: var(--red-bg); }
-
-  .bar-container {
-    width: 80px;
-    height: 6px;
-    background: var(--surface2);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width 0.6s ease;
-  }
-
-  .timeline {
-    position: relative;
-    padding-left: 28px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border);
-  }
-
-  .timeline-item {
-    position: relative;
-    padding-bottom: 24px;
-    padding-left: 24px;
-  }
-
-  .timeline-item:last-child { padding-bottom: 0; }
-
-  .timeline-dot {
-    position: absolute;
-    left: -24px;
-    top: 4px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 3px solid var(--bg);
-  }
-
-  .dot-setup { background: var(--blue); }
-  .dot-review { background: var(--amber); }
-  .dot-trade { background: var(--green); }
-
-  .timeline-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-bottom: 4px;
-  }
-
-  .timeline-title {
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 6px;
-  }
-
-  .timeline-detail {
-    font-size: 13px;
-    color: var(--text-dim);
-    line-height: 1.6;
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-right: 4px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .tag-buy { background: var(--green-bg); color: var(--green); }
-  .tag-sell { background: var(--red-bg); color: var(--red); }
-  .tag-hold { background: var(--blue-bg); color: var(--blue); }
-
-  .tx-table td { font-size: 13px; padding: 10px 16px; }
-  .tx-table th { padding: 10px 16px; }
-
-  .allocation-chart {
-    display: flex;
-    height: 12px;
-    border-radius: 6px;
-    overflow: hidden;
-    margin: 12px 0 8px;
-  }
-
-  .alloc-segment {
-    transition: width 0.6s ease;
-    position: relative;
-  }
-
-  .alloc-segment:hover { opacity: 0.8; }
-
-  .alloc-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 12px;
-    color: var(--text-dim);
-  }
-
-  .alloc-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .alloc-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-  }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  @media (max-width: 900px) {
-    .two-col { grid-template-columns: 1fr; }
-    body { padding: 16px; }
-    .summary-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 600px) {
-    .summary-grid { grid-template-columns: 1fr; }
-    header { flex-direction: column; align-items: flex-start; gap: 8px; }
-    header h1 { font-size: 22px; }
-  }
-
-  .footer-note {
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 12px;
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
+@media(max-width:768px){
+  body{padding:14px}
+  .hero{padding:20px;flex-direction:column;align-items:flex-start}
+  .hero-left .hero-value{font-size:28px}
+  .hero-right{flex-wrap:wrap;gap:16px}
+  .summary-grid{grid-template-columns:repeat(2,1fr)}
+  .tx-controls{flex-direction:column;align-items:stretch}
+  .tx-search{width:100%}
+  .tx-page-info{margin-left:0}
+}
 </style>
 </head>
 <body>
-
 <header>
   <h1>📊 投資組合 Dashboard</h1>
   <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-02-25</span></div>
 </header>
 
-<!-- Summary Cards -->
-<div class="summary-grid" id="summaryCards"></div>
+<!-- Hero Total -->
+<div class="hero" id="heroSection"></div>
 
-<!-- TW Portfolio -->
-<div class="section-title">台股持股 <span class="badge badge-tw">TWSE</span></div>
-
-<div class="table-container" style="margin-bottom:12px">
-  <div style="padding:16px 16px 4px">
-    <div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">資產配置</div>
-    <div class="allocation-chart" id="twAllocChart"></div>
-    <div class="alloc-legend" id="twAllocLegend"></div>
+<!-- TW Section -->
+<div class="market-section">
+  <div class="market-header"><h2>🇹🇼 台股</h2><span class="mh-badge mh-tw">TWSE</span></div>
+  <div class="summary-grid" id="twSummary"></div>
+  <div class="table-container" style="margin-bottom:10px">
+    <div style="padding:14px 14px 4px">
+      <div style="font-size:11px;color:var(--text-dim)">資產配置</div>
+      <div class="alloc-chart" id="twAllocChart"></div>
+      <div class="alloc-legend" id="twAllocLegend"></div>
+    </div>
+  </div>
+  <div class="table-container">
+    <table><thead><tr><th>標的</th><th>持股</th><th style="text-align:right">均價</th><th style="text-align:right">現價</th><th style="text-align:right">市值</th><th style="text-align:right">損益</th><th>佔比</th></tr></thead>
+    <tbody id="twTableBody"></tbody></table>
   </div>
 </div>
 
-<div class="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th>標的</th>
-        <th>持股</th>
-        <th style="text-align:right">均價</th>
-        <th style="text-align:right">現價</th>
-        <th style="text-align:right">市值</th>
-        <th style="text-align:right">損益</th>
-        <th>佔比</th>
-      </tr>
-    </thead>
-    <tbody id="twTableBody"></tbody>
-  </table>
-</div>
-
-<!-- US Portfolio -->
-<div class="section-title">美股持股 <span class="badge badge-us">US</span></div>
-
-<div class="table-container" style="margin-bottom:12px">
-  <div style="padding:16px 16px 4px">
-    <div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">資產配置</div>
-    <div class="allocation-chart" id="usAllocChart"></div>
-    <div class="alloc-legend" id="usAllocLegend"></div>
+<!-- US Section -->
+<div class="market-section">
+  <div class="market-header"><h2>🇺🇸 美股</h2><span class="mh-badge mh-us">US</span></div>
+  <div class="summary-grid" id="usSummary"></div>
+  <div class="table-container" style="margin-bottom:10px">
+    <div style="padding:14px 14px 4px">
+      <div style="font-size:11px;color:var(--text-dim)">資產配置</div>
+      <div class="alloc-chart" id="usAllocChart"></div>
+      <div class="alloc-legend" id="usAllocLegend"></div>
+    </div>
   </div>
-</div>
-
-<div class="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th>標的</th>
-        <th>持股</th>
-        <th style="text-align:right">均價</th>
-        <th style="text-align:right">現價</th>
-        <th style="text-align:right">市值</th>
-        <th style="text-align:right">損益</th>
-        <th>佔比</th>
-      </tr>
-    </thead>
-    <tbody id="usTableBody"></tbody>
-  </table>
+  <div class="table-container">
+    <table><thead><tr><th>標的</th><th>持股</th><th style="text-align:right">均價</th><th style="text-align:right">現價</th><th style="text-align:right">市值</th><th style="text-align:right">損益</th><th>佔比</th></tr></thead>
+    <tbody id="usTableBody"></tbody></table>
+  </div>
 </div>
 
 <!-- Transaction History -->
-<div class="section-title" style="margin-top:40px">📋 交易紀錄</div>
-
-<div class="two-col">
-  <div>
-    <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--amber)">台股交易</div>
-    <div class="table-container">
-      <table class="tx-table">
-        <thead><tr><th>日期</th><th>標的</th><th>動作</th><th style="text-align:right">股數</th><th style="text-align:right">價格</th><th style="text-align:right">金額</th></tr></thead>
-        <tbody id="twTxBody"></tbody>
-      </table>
-    </div>
-  </div>
-  <div>
-    <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--blue)">美股交易</div>
-    <div class="table-container">
-      <table class="tx-table">
-        <thead><tr><th>日期</th><th>標的</th><th>動作</th><th style="text-align:right">股數</th><th style="text-align:right">價格</th><th style="text-align:right">金額</th></tr></thead>
-        <tbody id="usTxBody"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- Adjustment Timeline -->
-<div class="section-title" style="margin-top:40px">🔄 組合調整紀錄</div>
-<div class="table-container" style="padding:24px">
-  <div class="timeline" id="timeline"></div>
-</div>
-
-<!-- Analysis Reports -->
-<div class="section-title" style="margin-top:40px">📄 分析報告</div>
+<div class="section-title" style="margin-top:8px">📋 交易紀錄</div>
 <div class="table-container">
+  <div class="tx-controls">
+    <input type="text" class="tx-search" id="txSearch" placeholder="搜尋標的代號 (e.g. NVDA)">
+    <button class="tx-filter-btn active" data-filter="all" onclick="setTxFilter('all',this)">全部</button>
+    <button class="tx-filter-btn" data-filter="buy" onclick="setTxFilter('buy',this)">買入</button>
+    <button class="tx-filter-btn" data-filter="sell" onclick="setTxFilter('sell',this)">賣出</button>
+    <button class="tx-filter-btn" data-filter="us" onclick="setTxFilter('us',this)">美股</button>
+    <button class="tx-filter-btn" data-filter="tw" onclick="setTxFilter('tw',this)">台股</button>
+    <span class="tx-page-info" id="txPageInfo"></span>
+    <button class="tx-page-btn" id="txPrev" onclick="txChangePage(-1)">← 上一頁</button>
+    <button class="tx-page-btn" id="txNext" onclick="txChangePage(1)">下一頁 →</button>
+  </div>
   <table>
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th>類型</th>
-        <th>報告標題</th>
-        <th>重點摘要</th>
-        <th>連結</th>
-      </tr>
-    </thead>
-    <tbody id="reportsBody"></tbody>
+    <thead><tr><th>日期</th><th>市場</th><th>標的</th><th>動作</th><th style="text-align:right">股數</th><th style="text-align:right">價格</th><th style="text-align:right">金額</th><th>備註</th></tr></thead>
+    <tbody id="txBody"></tbody>
   </table>
 </div>
 
-<div class="footer-note">
-  ⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。
+<!-- Adjustment Timeline -->
+<div class="section-title" style="margin-top:8px">🔄 組合調整紀錄</div>
+<div class="table-container" style="padding:20px"><div class="timeline" id="timeline"></div></div>
+
+<!-- Reports -->
+<div class="section-title" style="margin-top:8px">📄 分析報告</div>
+<div class="table-container">
+  <table><thead><tr><th>日期</th><th>類型</th><th>報告標題</th><th>重點摘要</th><th>連結</th></tr></thead>
+  <tbody id="reportsBody"></tbody></table>
 </div>
 
+<div class="footer-note">⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。</div>
+
 <script>
-// ============ DATA ============
+// ===== DATA =====
+const USDTWD = 32.5;
+const usCash = 2610;
+
 const twPortfolio = [
-  { symbol: "00919", name: "群益台灣精選高息", shares: 7000, avgCost: 24.33, currentPrice: 24.22, category: "高股息ETF", color: "#f59e0b" },
-  { symbol: "00878", name: "國泰永續高股息", shares: 3000, avgCost: 23.92, currentPrice: 23.74, category: "高股息ETF", color: "#fb923c" },
-  { symbol: "00679B", name: "元大美債20年", shares: 3000, avgCost: 27.91, currentPrice: 27.93, category: "美債ETF", color: "#3b82f6" },
-  { symbol: "3231", name: "緯創", shares: 1000, avgCost: 130.50, currentPrice: 142.00, category: "成長個股", color: "#8b5cf6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.22, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.74, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.93, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"3231", name:"緯創", shares:1000, avgCost:130.50, currentPrice:142.00, category:"成長個股", color:"#8b5cf6" },
 ];
 const twCash = 40000;
 
 const usPortfolio = [
-  { symbol: "NVDA", name: "NVIDIA", shares: 30, avgCost: 184.60, currentPrice: 192.82, color: "#10b981" },
-  { symbol: "AMZN", name: "Amazon", shares: 15, avgCost: 227.42, currentPrice: 208.60, color: "#f59e0b" },
-  { symbol: "MSFT", name: "Microsoft", shares: 10, avgCost: 436.49, currentPrice: 387.11, color: "#3b82f6" },
-  { symbol: "VOO", name: "Vanguard S&P 500", shares: 6, avgCost: 633.92, currentPrice: 631.00, color: "#6366f1" },
-  { symbol: "ZS", name: "Zscaler", shares: 15, avgCost: 172.65, currentPrice: 143.28, color: "#ec4899" },
-  { symbol: "NFLX", name: "Netflix", shares: 15, avgCost: 91.90, currentPrice: 77.59, color: "#ef4444" },
-  { symbol: "CRWD", name: "CrowdStrike", shares: 3, avgCost: 398.62, currentPrice: 350.25, color: "#f97316" },
-  { symbol: "QQQ", name: "Invesco QQQ", shares: 1, avgCost: 622.25, currentPrice: 608.80, color: "#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:192.82, color:"#10b981" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:208.60, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:387.11, color:"#3b82f6" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:6, avgCost:633.92, currentPrice:631.00, color:"#6366f1" },
+  { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:143.28, color:"#ec4899" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:77.59, color:"#ef4444" },
+  { symbol:"CRWD", name:"CrowdStrike", shares:3, avgCost:398.62, currentPrice:350.25, color:"#f97316" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:608.80, color:"#8b5cf6" },
 ];
 
-const twTransactions = [
-  { date: "2026-02-24", symbol: "00919", action: "buy", shares: 7000, price: 24.33, amount: 170310 },
-  { date: "2026-02-24", symbol: "00878", action: "buy", shares: 3000, price: 23.92, amount: 71760 },
-  { date: "2026-02-24", symbol: "00679B", action: "buy", shares: 3000, price: 27.91, amount: 83730 },
-  { date: "2026-02-24", symbol: "3231", action: "buy", shares: 1000, price: 130.50, amount: 130500 },
-];
-
-const usTransactions = [
-  { date: "2025-12-23", symbol: "NVDA", action: "buy", shares: 10, price: 183.53, amount: 1835.30 },
-  { date: "2025-12-23", symbol: "NFLX", action: "buy", shares: 10, price: 93.62, amount: 936.20 },
-  { date: "2025-12-23", symbol: "UBER", action: "buy", shares: 20, price: 81.50, amount: 1630.00 },
-  { date: "2025-12-23", symbol: "NFLX", action: "buy", shares: 10, price: 93.73, amount: 937.30 },
-  { date: "2026-01-06", symbol: "VOO", action: "buy", shares: 2, price: 634.72, amount: 1269.44 },
-  { date: "2026-01-06", symbol: "NVDA", action: "buy", shares: 10, price: 191.19, amount: 1911.90 },
-  { date: "2026-01-06", symbol: "QQQ", action: "buy", shares: 1, price: 622.25, amount: 622.25 },
-  { date: "2026-01-13", symbol: "MSFT", action: "buy", shares: 5, price: 474.50, amount: 2372.50 },
-  { date: "2026-01-16", symbol: "NFLX", action: "buy", shares: 10, price: 88.35, amount: 883.50 },
-  { date: "2026-01-27", symbol: "AMZN", action: "buy", shares: 5, price: 238.74, amount: 1193.70 },
-  { date: "2026-01-27", symbol: "AMZN", action: "buy", shares: 5, price: 238.47, amount: 1192.35 },
-  { date: "2026-02-04", symbol: "UBER", action: "sell", shares: 20, price: 73.59, amount: 1471.83 },
-  { date: "2026-02-04", symbol: "CRWD", action: "buy", shares: 1, price: 417.38, amount: 417.38 },
-  { date: "2026-02-04", symbol: "NVDA", action: "buy", shares: 5, price: 177.53, amount: 887.65 },
-  { date: "2026-02-04", symbol: "ZS", action: "buy", shares: 1, price: 184.89, amount: 184.89 },
-  { date: "2026-02-06", symbol: "ZS", action: "buy", shares: 10, price: 170.85, amount: 1708.50 },
-  { date: "2026-02-06", symbol: "CRWD", action: "buy", shares: 4, price: 393.93, amount: 1575.72 },
-  { date: "2026-02-06", symbol: "NVDA", action: "buy", shares: 5, price: 180.60, amount: 903.00 },
-  { date: "2026-02-09", symbol: "AMZN", action: "buy", shares: 5, price: 205.03, amount: 1025.15 },
-  { date: "2026-02-11", symbol: "ZS", action: "buy", shares: 4, price: 174.09, amount: 696.36 },
-  { date: "2026-02-11", symbol: "CRWD", action: "sell", shares: 2, price: 415.83, amount: 831.66 },
-  { date: "2026-02-11", symbol: "VOO", action: "buy", shares: 2, price: 639.75, amount: 1279.50 },
-  { date: "2026-02-13", symbol: "NFLX", action: "sell", shares: 15, price: 76.41, amount: 1146.16 },
-  { date: "2026-02-13", symbol: "VOO", action: "buy", shares: 1, price: 628.21, amount: 628.21 },
-  { date: "2026-02-13", symbol: "VOO", action: "buy", shares: 1, price: 626.35, amount: 626.35 },
-  { date: "2026-02-13", symbol: "MSFT", action: "buy", shares: 1, price: 402.84, amount: 402.84 },
-  { date: "2026-02-18", symbol: "MSFT", action: "buy", shares: 4, price: 397.39, amount: 1589.56 },
-];
+const allTx = [
+  { date:"2025-12-23", market:"US", symbol:"NVDA", action:"buy", shares:10, price:183.53, amount:1835.30, note:"建倉" },
+  { date:"2025-12-23", market:"US", symbol:"NFLX", action:"buy", shares:10, price:93.62, amount:936.20, note:"建倉" },
+  { date:"2025-12-23", market:"US", symbol:"UBER", action:"buy", shares:20, price:81.50, amount:1630.00, note:"建倉" },
+  { date:"2025-12-23", market:"US", symbol:"NFLX", action:"buy", shares:10, price:93.73, amount:937.30, note:"加碼" },
+  { date:"2026-01-06", market:"US", symbol:"VOO", action:"buy", shares:2, price:634.72, amount:1269.44, note:"建倉" },
+  { date:"2026-01-06", market:"US", symbol:"NVDA", action:"buy", shares:10, price:191.19, amount:1911.90, note:"加碼" },
+  { date:"2026-01-06", market:"US", symbol:"QQQ", action:"buy", shares:1, price:622.25, amount:622.25, note:"建倉" },
+  { date:"2026-01-13", market:"US", symbol:"MSFT", action:"buy", shares:5, price:474.50, amount:2372.50, note:"建倉" },
+  { date:"2026-01-16", market:"US", symbol:"NFLX", action:"buy", shares:10, price:88.35, amount:883.50, note:"逢低攤平" },
+  { date:"2026-01-27", market:"US", symbol:"AMZN", action:"buy", shares:5, price:238.74, amount:1193.70, note:"建倉" },
+  { date:"2026-01-27", market:"US", symbol:"AMZN", action:"buy", shares:5, price:238.47, amount:1192.35, note:"加碼" },
+  { date:"2026-02-04", market:"US", symbol:"UBER", action:"sell", shares:20, price:73.59, amount:1471.83, note:"清倉止損 -$160" },
+  { date:"2026-02-04", market:"US", symbol:"CRWD", action:"buy", shares:1, price:417.38, amount:417.38, note:"建倉" },
+  { date:"2026-02-04", market:"US", symbol:"NVDA", action:"buy", shares:5, price:177.53, amount:887.65, note:"逢低攤平" },
+  { date:"2026-02-04", market:"US", symbol:"ZS", action:"buy", shares:1, price:184.89, amount:184.89, note:"建倉" },
+  { date:"2026-02-06", market:"US", symbol:"ZS", action:"buy", shares:10, price:170.85, amount:1708.50, note:"加碼" },
+  { date:"2026-02-06", market:"US", symbol:"CRWD", action:"buy", shares:4, price:393.93, amount:1575.72, note:"加碼" },
+  { date:"2026-02-06", market:"US", symbol:"NVDA", action:"buy", shares:5, price:180.60, amount:903.00, note:"加碼" },
+  { date:"2026-02-09", market:"US", symbol:"AMZN", action:"buy", shares:5, price:205.03, amount:1025.15, note:"逢低攤平" },
+  { date:"2026-02-11", market:"US", symbol:"ZS", action:"buy", shares:4, price:174.09, amount:696.36, note:"加碼" },
+  { date:"2026-02-11", market:"US", symbol:"CRWD", action:"sell", shares:2, price:415.83, amount:831.66, note:"減倉 +$17.86" },
+  { date:"2026-02-11", market:"US", symbol:"VOO", action:"buy", shares:2, price:639.75, amount:1279.50, note:"增加指數配置" },
+  { date:"2026-02-13", market:"US", symbol:"NFLX", action:"sell", shares:15, price:76.41, amount:1146.16, note:"減倉止損 -$261" },
+  { date:"2026-02-13", market:"US", symbol:"VOO", action:"buy", shares:1, price:628.21, amount:628.21, note:"加碼" },
+  { date:"2026-02-13", market:"US", symbol:"VOO", action:"buy", shares:1, price:626.35, amount:626.35, note:"加碼" },
+  { date:"2026-02-13", market:"US", symbol:"MSFT", action:"buy", shares:1, price:402.84, amount:402.84, note:"逢低攤平" },
+  { date:"2026-02-18", market:"US", symbol:"MSFT", action:"buy", shares:4, price:397.39, amount:1589.56, note:"大幅加碼" },
+  { date:"2026-02-24", market:"TW", symbol:"00919", action:"buy", shares:7000, price:24.33, amount:170310, note:"建倉" },
+  { date:"2026-02-24", market:"TW", symbol:"00878", action:"buy", shares:3000, price:23.92, amount:71760, note:"建倉" },
+  { date:"2026-02-24", market:"TW", symbol:"00679B", action:"buy", shares:3000, price:27.91, amount:83730, note:"建倉" },
+  { date:"2026-02-24", market:"TW", symbol:"3231", action:"buy", shares:1000, price:130.50, amount:130500, note:"建倉" },
+].reverse(); // newest first
 
 const adjustmentLog = [
-  { date: "2025-12-23", type: "setup", title: "美股建倉：NVDA、NFLX、UBER", detail: "首批買入 NVDA 10股、NFLX 20股、UBER 20股，總投入約 $5,339" },
-  { date: "2026-01-06", type: "trade", title: "加碼 NVDA、建倉 VOO/QQQ", detail: "NVDA +10股、VOO +2股、QQQ +1股，擴大 AI 與指數配置" },
-  { date: "2026-01-13", type: "trade", title: "建倉 MSFT", detail: "MSFT +5股 @ $474.50，佈局企業軟體" },
-  { date: "2026-01-16", type: "trade", title: "加碼 NFLX", detail: "NFLX +10股 @ $88.35，逢低攤平" },
-  { date: "2026-01-27", type: "trade", title: "建倉 AMZN", detail: "AMZN 分兩筆共 +10股 @ ~$238.60，佈局雲端電商" },
-  { date: "2026-02-04", type: "trade", title: "清倉 UBER → 轉入 CRWD/ZS/NVDA", detail: "UBER -20股止損(-$160.18)，資金轉入 CRWD +1、ZS +1、NVDA +5" },
-  { date: "2026-02-06", type: "trade", title: "大幅加碼 ZS/CRWD/NVDA", detail: "ZS +10股、CRWD +4股、NVDA +5股，加強 AI 與網安配置" },
-  { date: "2026-02-09", type: "trade", title: "加碼 AMZN", detail: "AMZN +5股 @ $205.03，逢低攤平，均價降至 $227.42" },
-  { date: "2026-02-11", type: "trade", title: "調整：減 CRWD、加 ZS/VOO", detail: "CRWD -2股(+$17.86)、ZS +4股、VOO +2股。降低單一網安集中度" },
-  { date: "2026-02-13", type: "trade", title: "減倉 NFLX、加碼 VOO/MSFT", detail: "NFLX -15股(-$261.24)、VOO +2股、MSFT +1股。減少虧損部位" },
-  { date: "2026-02-18", type: "trade", title: "大幅加碼 MSFT", detail: "MSFT +4股 @ $397.39，看好長期價值，均價降至 $436.49" },
-  { date: "2026-02-24", type: "setup", title: "建立台股投資組合", detail: "70% ETF + 30% 個股。00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000" },
-  { date: "2026-02-25", type: "review", title: "全面檢視台美股組合", detail: "分析關稅違憲、美伊衝突風險、OpenAI下調算力支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
-];
-
-// ============ HELPERS ============
-const fmt = (n, d=0) => n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d});
-const fmtPct = (n) => (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
-const pnlClass = (n) => n >= 0 ? 'positive' : 'negative';
-
-// ============ COMPUTE ============
-function computePortfolio(portfolio) {
-  return portfolio.map(p => {
-    const cost = p.shares * p.avgCost;
-    const market = p.shares * p.currentPrice;
-    const pnl = market - cost;
-    const pnlPct = (pnl / cost) * 100;
-    return { ...p, cost, market, pnl, pnlPct };
-  });
-}
-
-const twData = computePortfolio(twPortfolio);
-const usData = computePortfolio(usPortfolio);
-
-const twTotalCost = twData.reduce((s,p) => s+p.cost, 0);
-const twTotalMarket = twData.reduce((s,p) => s+p.market, 0) + twCash;
-const twTotalPnl = twTotalMarket - twTotalCost - twCash;
-
-const usTotalCost = usData.reduce((s,p) => s+p.cost, 0);
-const usTotalMarket = usData.reduce((s,p) => s+p.market, 0);
-const usTotalPnl = usTotalMarket - usTotalCost;
-
-// ============ SUMMARY CARDS ============
-document.getElementById('summaryCards').innerHTML = `
-  <div class="summary-card total">
-    <div class="label">總資產</div>
-    <div class="value">NT$${fmt(twTotalMarket)}</div>
-    <div class="sub">+ US$${fmt(usTotalMarket, 2)}</div>
-  </div>
-  <div class="summary-card tw">
-    <div class="label">台股市值</div>
-    <div class="value">NT$${fmt(twTotalMarket)}</div>
-    <div class="sub">含現金 NT$${fmt(twCash)}</div>
-  </div>
-  <div class="summary-card us">
-    <div class="label">美股市值</div>
-    <div class="value">US$${fmt(usTotalMarket, 2)}</div>
-    <div class="sub">${usData.length} 檔持股</div>
-  </div>
-  <div class="summary-card ${twTotalPnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">
-    <div class="label">台股損益</div>
-    <div class="value ${pnlClass(twTotalPnl)}">NT$${fmt(twTotalPnl)}</div>
-    <div class="sub ${pnlClass(twTotalPnl)}">${fmtPct(twTotalPnl / twTotalCost * 100)}</div>
-  </div>
-  <div class="summary-card ${usTotalPnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">
-    <div class="label">美股未實現損益</div>
-    <div class="value ${pnlClass(usTotalPnl)}">US$${fmt(usTotalPnl, 2)}</div>
-    <div class="sub ${pnlClass(usTotalPnl)}">${fmtPct(usTotalPnl / usTotalCost * 100)}</div>
-  </div>
-  <div class="summary-card pnl-neg">
-    <div class="label">美股已實現損益</div>
-    <div class="value negative">US$${fmt(-403.56, 2)}</div>
-    <div class="sub">UBER -$160.18 / CRWD +$17.86 / NFLX -$261.24</div>
-  </div>
-`;
-
-// ============ PORTFOLIO TABLE ============
-function renderTable(data, tbody, currency, totalMarket) {
-  tbody.innerHTML = data.map(p => {
-    const pct = (p.market / totalMarket * 100);
-    return `<tr>
-      <td><div class="symbol-cell">
-        <div class="symbol-icon" style="background:${p.color}">${p.symbol.slice(0,2)}</div>
-        <div><div class="symbol-name">${p.name}</div><div class="symbol-code">${p.symbol}</div></div>
-      </div></td>
-      <td class="mono">${fmt(p.shares)}</td>
-      <td class="mono" style="text-align:right">${currency}${fmt(p.avgCost, 2)}</td>
-      <td class="mono" style="text-align:right">${currency}${fmt(p.currentPrice, 2)}</td>
-      <td class="mono" style="text-align:right">${currency}${fmt(p.market)}</td>
-      <td style="text-align:right">
-        <span class="pnl-badge ${pnlClass(p.pnl)}">${fmtPct(p.pnlPct)}</span>
-        <div style="font-size:11px;color:var(--text-dim);margin-top:2px" class="mono">${p.pnl >= 0 ? '+' : ''}${currency}${fmt(p.pnl)}</div>
-      </td>
-      <td>
-        <div style="font-size:12px;margin-bottom:4px" class="mono">${pct.toFixed(1)}%</div>
-        <div class="bar-container"><div class="bar-fill" style="width:${pct}%;background:${p.color}"></div></div>
-      </td>
-    </tr>`;
-  }).join('');
-}
-
-renderTable(twData, document.getElementById('twTableBody'), 'NT$', twTotalMarket);
-renderTable(usData, document.getElementById('usTableBody'), '$', usTotalMarket);
-
-// ============ ALLOCATION CHART ============
-function renderAlloc(data, chartId, legendId, totalMarket, currency) {
-  const chart = document.getElementById(chartId);
-  const legend = document.getElementById(legendId);
-  chart.innerHTML = data.map(p => {
-    const pct = (p.market / totalMarket * 100);
-    return `<div class="alloc-segment" style="width:${pct}%;background:${p.color}" title="${p.symbol}: ${pct.toFixed(1)}%"></div>`;
-  }).join('');
-  legend.innerHTML = data.map(p => {
-    const pct = (p.market / totalMarket * 100);
-    return `<div class="alloc-legend-item"><div class="alloc-dot" style="background:${p.color}"></div>${p.symbol} ${pct.toFixed(1)}%</div>`;
-  }).join('');
-}
-
-renderAlloc(twData, 'twAllocChart', 'twAllocLegend', twTotalMarket, 'NT$');
-renderAlloc(usData, 'usAllocChart', 'usAllocLegend', usTotalMarket, '$');
-
-// ============ TRANSACTION TABLES ============
-function renderTx(txs, tbodyId, currency) {
-  document.getElementById(tbodyId).innerHTML = txs.map(t => `<tr>
-    <td class="mono">${t.date}</td>
-    <td><strong>${t.symbol}</strong></td>
-    <td><span class="tag tag-${t.action}">${t.action === 'buy' ? '買入' : '賣出'}</span></td>
-    <td class="mono" style="text-align:right">${fmt(t.shares)}</td>
-    <td class="mono" style="text-align:right">${currency}${fmt(t.price, 2)}</td>
-    <td class="mono" style="text-align:right">${currency}${fmt(t.amount)}</td>
-  </tr>`).join('');
-}
-
-renderTx(twTransactions, 'twTxBody', 'NT$');
-renderTx(usTransactions, 'usTxBody', '$');
-
-// ============ TIMELINE ============
-const dotClass = { setup: 'dot-setup', review: 'dot-review', trade: 'dot-trade' };
-document.getElementById('timeline').innerHTML = adjustmentLog.map(a => `
-  <div class="timeline-item">
-    <div class="timeline-dot ${dotClass[a.type] || 'dot-review'}"></div>
-    <div class="timeline-date">${a.date}</div>
-    <div class="timeline-title">${a.title}</div>
-    <div class="timeline-detail">${a.detail}</div>
-  </div>
-`).join('');
-
-// ============ REPORTS ============
-const reports = [
-  {
-    date: "2026-02-25",
-    type: "綜合分析",
-    typeBadge: "badge-us",
-    title: "台美股投資組合綜合分析報告",
-    summary: "關稅違憲判決、美伊衝突風險、OpenAI 下調算力支出。建議 CRWD+ZS 轉 VOO，緯創設停利 160/停損 120",
-    file: "reports/2026-02-25.md"
-  },
-  {
-    date: "2026-02-25",
-    type: "台股分析",
-    typeBadge: "badge-tw",
-    title: "台股持股分析報告",
-    summary: "台股組合穩健，00679B 為地緣風險保險，緯創佔比偏高需設紀律",
-    file: "reports/tw-2026-02-25.md"
-  },
-  {
-    date: "2026-02-18",
-    type: "交易",
-    typeBadge: "badge-us",
-    title: "MSFT 大幅加碼",
-    summary: "MSFT +4股 @ $397.39，累計 10 股，均價降至 $436.49",
-    file: null
-  },
-  {
-    date: "2026-02-13",
-    type: "交易+分析",
-    typeBadge: "badge-us",
-    title: "減倉 NFLX、加碼 VOO/MSFT",
-    summary: "NFLX -15股(-$261.24)、VOO +2、MSFT +1。總損益 -5.73%",
-    file: null
-  },
-  {
-    date: "2026-02-11",
-    type: "交易",
-    typeBadge: "badge-us",
-    title: "調整：減 CRWD、加 ZS/VOO",
-    summary: "CRWD -2股(+$17.86)、ZS +4、VOO +2。降低網安單一集中度",
-    file: null
-  },
-  {
-    date: "2026-02-10",
-    type: "美股分析",
-    typeBadge: "badge-us",
-    title: "美股持股分析報告",
-    summary: "8檔持股逐一分析。建議加碼 VOO/MSFT/AMZN，觀望 CRWD/ZS/NVDA 等待財報",
-    file: "reports/2026-02-10.md"
-  },
-  {
-    date: "2026-02-10",
-    type: "台股分析",
-    typeBadge: "badge-tw",
-    title: "台股持股分析報告",
-    summary: "初始台股組合建立記錄與分析",
-    file: "reports/tw-2026-02-10.md"
-  },
-  {
-    date: "2026-02-04",
-    type: "交易",
-    typeBadge: "badge-us",
-    title: "清倉 UBER → 建倉 CRWD/ZS",
-    summary: "UBER -20股(-$160.18)，資金轉入 CRWD +1、ZS +1、NVDA +5",
-    file: null
-  },
-  {
-    date: "2025-12-23",
-    type: "建倉",
-    typeBadge: "badge-us",
-    title: "美股首次建倉",
-    summary: "NVDA 10股、NFLX 20股、UBER 20股，開始投資旅程",
-    file: null
-  },
+  { date:"2025-12-23", type:"setup", title:"美股建倉：NVDA、NFLX、UBER", detail:"首批買入 NVDA 10股、NFLX 20股、UBER 20股，總投入約 $5,339" },
+  { date:"2026-01-06", type:"trade", title:"加碼 NVDA、建倉 VOO/QQQ", detail:"NVDA +10股、VOO +2股、QQQ +1股" },
+  { date:"2026-01-13", type:"trade", title:"建倉 MSFT", detail:"MSFT +5股 @ $474.50" },
+  { date:"2026-01-16", type:"trade", title:"加碼 NFLX", detail:"NFLX +10股 @ $88.35，逢低攤平" },
+  { date:"2026-01-27", type:"trade", title:"建倉 AMZN", detail:"AMZN 分兩筆共 +10股 @ ~$238.60" },
+  { date:"2026-02-04", type:"trade", title:"清倉 UBER → 轉入 CRWD/ZS/NVDA", detail:"UBER -20股(-$160.18)，CRWD +1、ZS +1、NVDA +5" },
+  { date:"2026-02-06", type:"trade", title:"大幅加碼 ZS/CRWD/NVDA", detail:"ZS +10、CRWD +4、NVDA +5" },
+  { date:"2026-02-09", type:"trade", title:"加碼 AMZN", detail:"AMZN +5股 @ $205.03" },
+  { date:"2026-02-11", type:"trade", title:"調整：減 CRWD、加 ZS/VOO", detail:"CRWD -2股(+$17.86)、ZS +4、VOO +2" },
+  { date:"2026-02-13", type:"trade", title:"減倉 NFLX、加碼 VOO/MSFT", detail:"NFLX -15股(-$261.24)、VOO +2、MSFT +1" },
+  { date:"2026-02-18", type:"trade", title:"大幅加碼 MSFT", detail:"MSFT +4股 @ $397.39，均價降至 $436.49" },
+  { date:"2026-02-24", type:"setup", title:"建立台股投資組合", detail:"70% ETF + 30% 個股。00919 7張、00878 3張、00679B 3張、緯創 1張、現金 NT$40K" },
+  { date:"2026-02-25", type:"review", title:"全面檢視台美股組合", detail:"分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
+const reports = [
+  { date:"2026-02-25", type:"綜合分析", tb:"badge-us", title:"台美股投資組合綜合分析報告", summary:"關稅違憲、美伊衝突、OpenAI 下調。建議 CRWD+ZS 轉 VOO", file:"reports/2026-02-25.md" },
+  { date:"2026-02-25", type:"台股分析", tb:"badge-tw", title:"台股持股分析報告", summary:"00679B 為地緣風險保險，緯創設停利160/停損120", file:"reports/tw-2026-02-25.md" },
+  { date:"2026-02-18", type:"交易", tb:"badge-us", title:"MSFT 大幅加碼", summary:"MSFT +4股 @ $397.39，累計 10 股", file:null },
+  { date:"2026-02-13", type:"交易", tb:"badge-us", title:"減倉 NFLX、加碼 VOO/MSFT", summary:"NFLX -15股(-$261.24)、VOO +2、MSFT +1", file:null },
+  { date:"2026-02-11", type:"交易", tb:"badge-us", title:"減 CRWD、加 ZS/VOO", summary:"CRWD -2股(+$17.86)、ZS +4、VOO +2", file:null },
+  { date:"2026-02-10", type:"美股分析", tb:"badge-us", title:"美股持股分析報告", summary:"8檔持股逐一分析。建議加碼 VOO/MSFT/AMZN", file:"reports/2026-02-10.md" },
+  { date:"2026-02-10", type:"台股分析", tb:"badge-tw", title:"台股持股分析報告", summary:"初始台股組合建立記錄與分析", file:"reports/tw-2026-02-10.md" },
+  { date:"2026-02-04", type:"交易", tb:"badge-us", title:"清倉 UBER → 建倉 CRWD/ZS", summary:"UBER -20股(-$160.18)，轉入 CRWD/ZS/NVDA", file:null },
+  { date:"2025-12-23", type:"建倉", tb:"badge-us", title:"美股首次建倉", summary:"NVDA 10股、NFLX 20股、UBER 20股", file:null },
+];
 
-document.getElementById('reportsBody').innerHTML = reports.map(r => `<tr>
+// ===== HELPERS =====
+const fmt = (n,d=0) => n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtPct = n => (n>=0?'+':'')+n.toFixed(1)+'%';
+const pc = n => n>=0?'positive':'negative';
+
+function compute(arr){ return arr.map(p=>{ const c=p.shares*p.avgCost, m=p.shares*p.currentPrice, pnl=m-c; return {...p,cost:c,market:m,pnl,pnlPct:(pnl/c)*100}; }); }
+
+const twData = compute(twPortfolio), usData = compute(usPortfolio);
+const twStockMarket = twData.reduce((s,p)=>s+p.market,0);
+const twTotal = twStockMarket + twCash;
+const twTotalCost = twData.reduce((s,p)=>s+p.cost,0);
+const twPnl = twStockMarket - twTotalCost;
+
+const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
+const usTotal = usStockMarket + usCash;
+const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
+const usPnl = usStockMarket - usTotalCost;
+const usRealizedPnl = -403.56;
+
+// grand total in TWD
+const grandMarket = twTotal + usTotal * USDTWD;
+const grandPnl = twPnl + (usPnl + usRealizedPnl) * USDTWD;
+
+// ===== HERO =====
+document.getElementById('heroSection').innerHTML = `
+  <div class="hero-left">
+    <div class="hero-label">總資產（含現金）</div>
+    <div class="hero-value">NT$${fmt(grandMarket)}</div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hs-label">總損益（含已實現）</div>
+      <div class="hs-value ${pc(grandPnl)}">NT$${fmt(grandPnl)}</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-label">台股市值</div>
+      <div class="hs-value">NT$${fmt(twTotal)}</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-label">美股市值</div>
+      <div class="hs-value">US$${fmt(usTotal,2)}</div>
+    </div>
+  </div>`;
+
+// ===== TW SUMMARY =====
+document.getElementById('twSummary').innerHTML = `
+  <div class="summary-card c-amber"><div class="label">持股市值</div><div class="value">NT$${fmt(twStockMarket)}</div><div class="sub">${twData.length} 檔持股</div></div>
+  <div class="summary-card c-amber"><div class="label">備用現金</div><div class="value">NT$${fmt(twCash)}</div><div class="sub">佔 ${(twCash/twTotal*100).toFixed(1)}%</div></div>
+  <div class="summary-card ${twPnl>=0?'c-green':'c-red'}"><div class="label">未實現損益</div><div class="value ${pc(twPnl)}">NT$${fmt(twPnl)}</div><div class="sub ${pc(twPnl)}">${fmtPct(twPnl/twTotalCost*100)}</div></div>`;
+
+// ===== US SUMMARY =====
+document.getElementById('usSummary').innerHTML = `
+  <div class="summary-card c-blue"><div class="label">持股市值</div><div class="value">$${fmt(usStockMarket,2)}</div><div class="sub">${usData.length} 檔持股</div></div>
+  <div class="summary-card c-blue"><div class="label">剩餘現金</div><div class="value">$${fmt(usCash,2)}</div><div class="sub">佔 ${(usCash/usTotal*100).toFixed(1)}%</div></div>
+  <div class="summary-card ${usPnl>=0?'c-green':'c-red'}"><div class="label">未實現損益</div><div class="value ${pc(usPnl)}">$${fmt(usPnl,2)}</div><div class="sub ${pc(usPnl)}">${fmtPct(usPnl/usTotalCost*100)}</div></div>
+  <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'}"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="sub">UBER / CRWD / NFLX</div></div>`;
+
+// ===== PORTFOLIO TABLES =====
+function renderTable(data,tbody,cur,total){
+  tbody.innerHTML = data.map(p=>{const pct=p.market/total*100;return `<tr>
+    <td><div class="symbol-cell"><div class="symbol-icon" style="background:${p.color}">${p.symbol.slice(0,2)}</div><div><div class="symbol-name">${p.name}</div><div class="symbol-code">${p.symbol}</div></div></div></td>
+    <td class="mono">${fmt(p.shares)}</td>
+    <td class="mono" style="text-align:right">${cur}${fmt(p.avgCost,2)}</td>
+    <td class="mono" style="text-align:right">${cur}${fmt(p.currentPrice,2)}</td>
+    <td class="mono" style="text-align:right">${cur}${fmt(p.market)}</td>
+    <td style="text-align:right"><span class="pnl-badge ${pc(p.pnl)}">${fmtPct(p.pnlPct)}</span><div style="font-size:10px;color:var(--text-dim);margin-top:1px" class="mono">${p.pnl>=0?'+':''}${cur}${fmt(p.pnl)}</div></td>
+    <td><div style="font-size:11px;margin-bottom:3px" class="mono">${pct.toFixed(1)}%</div><div class="bar-container"><div class="bar-fill" style="width:${pct}%;background:${p.color}"></div></div></td>
+  </tr>`;}).join('');
+}
+renderTable(twData,document.getElementById('twTableBody'),'NT$',twTotal);
+renderTable(usData,document.getElementById('usTableBody'),'$',usTotal);
+
+// ===== ALLOC CHARTS =====
+function renderAlloc(data,cId,lId,total){
+  document.getElementById(cId).innerHTML = data.map(p=>`<div class="alloc-segment" style="width:${p.market/total*100}%;background:${p.color}"></div>`).join('');
+  document.getElementById(lId).innerHTML = data.map(p=>`<div class="alloc-legend-item"><div class="alloc-dot" style="background:${p.color}"></div>${p.symbol} ${(p.market/total*100).toFixed(1)}%</div>`).join('');
+}
+renderAlloc(twData,'twAllocChart','twAllocLegend',twTotal);
+renderAlloc(usData,'usAllocChart','usAllocLegend',usTotal);
+
+// ===== TRANSACTIONS (paginated + search) =====
+let txFilter = 'all', txSearchStr = '', txPage = 0;
+const TX_PER_PAGE = 10;
+
+function getFilteredTx(){
+  return allTx.filter(t=>{
+    if(txFilter==='buy' && t.action!=='buy') return false;
+    if(txFilter==='sell' && t.action!=='sell') return false;
+    if(txFilter==='us' && t.market!=='US') return false;
+    if(txFilter==='tw' && t.market!=='TW') return false;
+    if(txSearchStr && !t.symbol.toLowerCase().includes(txSearchStr.toLowerCase())) return false;
+    return true;
+  });
+}
+
+function renderTx(){
+  const filtered = getFilteredTx();
+  const totalPages = Math.max(1,Math.ceil(filtered.length/TX_PER_PAGE));
+  if(txPage >= totalPages) txPage = totalPages-1;
+  if(txPage < 0) txPage = 0;
+  const start = txPage*TX_PER_PAGE;
+  const page = filtered.slice(start,start+TX_PER_PAGE);
+  const cur = t => t.market==='TW'?'NT$':'$';
+
+  document.getElementById('txBody').innerHTML = page.length ? page.map(t=>`<tr>
+    <td class="mono">${t.date}</td>
+    <td><span class="badge ${t.market==='TW'?'badge-tw':'badge-us'}">${t.market==='TW'?'台股':'美股'}</span></td>
+    <td><strong>${t.symbol}</strong></td>
+    <td><span class="tag tag-${t.action}">${t.action==='buy'?'買入':'賣出'}</span></td>
+    <td class="mono" style="text-align:right">${fmt(t.shares)}</td>
+    <td class="mono" style="text-align:right">${cur(t)}${fmt(t.price,2)}</td>
+    <td class="mono" style="text-align:right">${cur(t)}${fmt(t.amount,2)}</td>
+    <td style="font-size:12px;color:var(--text-dim)">${t.note||''}</td>
+  </tr>`).join('') : '<tr><td colspan="8" style="text-align:center;color:var(--text-dim);padding:24px">沒有符合條件的交易紀錄</td></tr>';
+
+  document.getElementById('txPageInfo').textContent = `${filtered.length} 筆 · 第 ${txPage+1}/${totalPages} 頁`;
+  document.getElementById('txPrev').disabled = txPage===0;
+  document.getElementById('txNext').disabled = txPage>=totalPages-1;
+}
+
+function setTxFilter(f,btn){
+  txFilter=f; txPage=0;
+  document.querySelectorAll('.tx-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTx();
+}
+function txChangePage(d){ txPage+=d; renderTx(); }
+
+document.getElementById('txSearch').addEventListener('input',e=>{
+  txSearchStr=e.target.value.trim(); txPage=0; renderTx();
+});
+renderTx();
+
+// ===== TIMELINE =====
+const dotCls={setup:'dot-setup',review:'dot-review',trade:'dot-trade'};
+document.getElementById('timeline').innerHTML = adjustmentLog.slice().reverse().map(a=>`
+  <div class="timeline-item"><div class="timeline-dot ${dotCls[a.type]||'dot-review'}"></div>
+  <div class="timeline-date">${a.date}</div><div class="timeline-title">${a.title}</div>
+  <div class="timeline-detail">${a.detail}</div></div>`).join('');
+
+// ===== REPORTS =====
+document.getElementById('reportsBody').innerHTML = reports.map(r=>`<tr>
   <td class="mono">${r.date}</td>
-  <td><span class="badge ${r.typeBadge}">${r.type}</span></td>
+  <td><span class="badge ${r.tb}">${r.type}</span></td>
   <td style="font-weight:500">${r.title}</td>
-  <td style="font-size:13px;color:var(--text-dim);max-width:360px">${r.summary}</td>
-  <td>${r.file ? `<a href="${REPO_BASE}${r.file}" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;font-size:13px">📎 查看</a>` : '<span style="color:var(--text-dim);font-size:12px">—</span>'}</td>
+  <td style="font-size:12px;color:var(--text-dim);max-width:320px">${r.summary}</td>
+  <td>${r.file?`<a href="${REPO_BASE}${r.file}" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;font-size:12px">📎 查看</a>`:'<span style="color:var(--text-dim);font-size:11px">—</span>'}</td>
 </tr>`).join('');
 </script>
 </body>
