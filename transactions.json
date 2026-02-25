@@ -1,155 +1,67 @@
 {
-  "tw_transactions": [
-    {
-      "id": "TW001",
-      "date": "2026-02-24",
-      "symbol": "00919",
-      "name": "群益台灣精選高息",
-      "action": "buy",
-      "shares": 7000,
-      "price": 24.33,
-      "amount": 170310,
-      "note": "建倉 - 核心持股，年配11%"
-    },
-    {
-      "id": "TW002",
-      "date": "2026-02-24",
-      "symbol": "00878",
-      "name": "國泰永續高股息",
-      "action": "buy",
-      "shares": 3000,
-      "price": 23.92,
-      "amount": 71760,
-      "note": "建倉 - 分散高股息來源"
-    },
-    {
-      "id": "TW003",
-      "date": "2026-02-24",
-      "symbol": "00679B",
-      "name": "元大美債20年",
-      "action": "buy",
-      "shares": 3000,
-      "price": 27.91,
-      "amount": 83730,
-      "note": "建倉 - 股災時的保險，反向上漲"
-    },
-    {
-      "id": "TW004",
-      "date": "2026-02-24",
-      "symbol": "3231",
-      "name": "緯創",
-      "action": "buy",
-      "shares": 1000,
-      "price": 130.50,
-      "amount": 130500,
-      "note": "建倉 - 參與AI成長，但只用1/4資金"
-    }
-  ],
   "us_transactions": [
+    { "id": "US001", "date": "2025-12-23", "symbol": "NVDA", "name": "NVIDIA", "action": "buy", "shares": 10, "price": 183.53, "amount": 1835.30, "fee": 1.00, "note": "建倉" },
+    { "id": "US002", "date": "2025-12-23", "symbol": "NFLX", "name": "Netflix", "action": "buy", "shares": 10, "price": 93.62, "amount": 936.20, "fee": 1.00, "note": "建倉" },
+    { "id": "US003", "date": "2025-12-23", "symbol": "UBER", "name": "Uber", "action": "buy", "shares": 20, "price": 81.50, "amount": 1630.00, "fee": 1.00, "note": "建倉" },
+    { "id": "US004", "date": "2025-12-23", "symbol": "NFLX", "name": "Netflix", "action": "buy", "shares": 10, "price": 93.73, "amount": 937.30, "fee": 1.00, "note": "加碼" },
+    { "id": "US005", "date": "2026-01-06", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 2, "price": 634.72, "amount": 1269.44, "fee": 1.00, "note": "建倉" },
+    { "id": "US006", "date": "2026-01-06", "symbol": "NVDA", "name": "NVIDIA", "action": "buy", "shares": 10, "price": 191.19, "amount": 1911.90, "fee": 1.00, "note": "加碼" },
+    { "id": "US007", "date": "2026-01-06", "symbol": "QQQ", "name": "Invesco QQQ", "action": "buy", "shares": 1, "price": 622.25, "amount": 622.25, "fee": 1.00, "note": "建倉" },
+    { "id": "US008", "date": "2026-01-13", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 5, "price": 474.50, "amount": 2372.50, "fee": 1.00, "note": "建倉" },
+    { "id": "US009", "date": "2026-01-16", "symbol": "NFLX", "name": "Netflix", "action": "buy", "shares": 10, "price": 88.35, "amount": 883.50, "fee": 1.00, "note": "加碼，逢低攤平" },
+    { "id": "US010", "date": "2026-01-27", "symbol": "AMZN", "name": "Amazon", "action": "buy", "shares": 5, "price": 238.74, "amount": 1193.70, "fee": 1.00, "note": "建倉" },
+    { "id": "US011", "date": "2026-01-27", "symbol": "AMZN", "name": "Amazon", "action": "buy", "shares": 5, "price": 238.47, "amount": 1192.35, "fee": 1.00, "note": "加碼" },
+    { "id": "US012", "date": "2026-02-04", "symbol": "UBER", "name": "Uber", "action": "sell", "shares": 20, "price": 73.59, "amount": 1471.83, "fee": 1.00, "realized_pnl": -160.18, "note": "清倉止損" },
+    { "id": "US013", "date": "2026-02-04", "symbol": "CRWD", "name": "CrowdStrike", "action": "buy", "shares": 1, "price": 417.38, "amount": 417.38, "fee": 1.00, "note": "建倉" },
+    { "id": "US014", "date": "2026-02-04", "symbol": "NVDA", "name": "NVIDIA", "action": "buy", "shares": 5, "price": 177.53, "amount": 887.65, "fee": 1.00, "note": "加碼，逢低攤平" },
+    { "id": "US015", "date": "2026-02-04", "symbol": "ZS", "name": "Zscaler", "action": "buy", "shares": 1, "price": 184.89, "amount": 184.89, "fee": 1.00, "note": "建倉" },
+    { "id": "US016", "date": "2026-02-06", "symbol": "ZS", "name": "Zscaler", "action": "buy", "shares": 10, "price": 170.85, "amount": 1708.50, "fee": 1.00, "note": "加碼" },
+    { "id": "US017", "date": "2026-02-06", "symbol": "CRWD", "name": "CrowdStrike", "action": "buy", "shares": 4, "price": 393.93, "amount": 1575.72, "fee": 1.00, "note": "加碼" },
+    { "id": "US018", "date": "2026-02-06", "symbol": "NVDA", "name": "NVIDIA", "action": "buy", "shares": 5, "price": 180.60, "amount": 903.00, "fee": 1.00, "note": "加碼" },
+    { "id": "US019", "date": "2026-02-09", "symbol": "AMZN", "name": "Amazon", "action": "buy", "shares": 5, "price": 205.03, "amount": 1025.15, "fee": 1.00, "note": "加碼，逢低攤平" },
+    { "id": "US020", "date": "2026-02-11", "symbol": "ZS", "name": "Zscaler", "action": "buy", "shares": 4, "price": 174.09, "amount": 696.36, "fee": 1.00, "note": "加碼" },
+    { "id": "US021", "date": "2026-02-11", "symbol": "CRWD", "name": "CrowdStrike", "action": "sell", "shares": 2, "price": 415.83, "amount": 831.66, "fee": 1.00, "realized_pnl": 17.86, "note": "減倉，降低網安集中度" },
+    { "id": "US022", "date": "2026-02-11", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 2, "price": 639.75, "amount": 1279.50, "fee": 1.00, "note": "加碼，增加指數配置" },
+    { "id": "US023", "date": "2026-02-13", "symbol": "NFLX", "name": "Netflix", "action": "sell", "shares": 15, "price": 76.41, "amount": 1146.16, "fee": 1.00, "realized_pnl": -261.24, "note": "減倉止損" },
+    { "id": "US024", "date": "2026-02-13", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 1, "price": 628.21, "amount": 628.21, "fee": 1.00, "note": "加碼" },
+    { "id": "US025", "date": "2026-02-13", "symbol": "VOO", "name": "Vanguard S&P 500", "action": "buy", "shares": 1, "price": 626.35, "amount": 626.35, "fee": 1.00, "note": "加碼" },
+    { "id": "US026", "date": "2026-02-13", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 1, "price": 402.84, "amount": 402.84, "fee": 1.00, "note": "加碼，逢低攤平" },
+    { "id": "US027", "date": "2026-02-18", "symbol": "MSFT", "name": "Microsoft", "action": "buy", "shares": 4, "price": 397.39, "amount": 1589.56, "fee": 1.00, "note": "大幅加碼，看好長期價值" }
+  ],
+  "tw_transactions": [
+    { "id": "TW001", "date": "2026-02-24", "symbol": "00919", "name": "群益台灣精選高息", "action": "buy", "shares": 7000, "price": 24.33, "amount": 170310, "fee": 0, "note": "建倉 - 核心持股" },
+    { "id": "TW002", "date": "2026-02-24", "symbol": "00878", "name": "國泰永續高股息", "action": "buy", "shares": 3000, "price": 23.92, "amount": 71760, "fee": 0, "note": "建倉 - 分散高股息來源" },
+    { "id": "TW003", "date": "2026-02-24", "symbol": "00679B", "name": "元大美債20年", "action": "buy", "shares": 3000, "price": 27.91, "amount": 83730, "fee": 0, "note": "建倉 - 避險配置" },
+    { "id": "TW004", "date": "2026-02-24", "symbol": "3231", "name": "緯創", "action": "buy", "shares": 1000, "price": 130.50, "amount": 130500, "fee": 0, "note": "建倉 - 參與AI成長" }
+  ],
+  "closed_positions": [
     {
-      "id": "US001",
-      "date": "2025-01-01",
-      "symbol": "AMZN",
-      "name": "Amazon",
-      "action": "buy",
-      "shares": 15,
-      "price": 227.61,
-      "amount": 3414.15,
-      "note": "建倉"
-    },
-    {
-      "id": "US002",
-      "date": "2025-01-01",
-      "symbol": "CRWD",
-      "name": "CrowdStrike",
-      "action": "buy",
-      "shares": 3,
-      "price": 405.54,
-      "amount": 1216.62,
-      "note": "建倉"
-    },
-    {
-      "id": "US003",
-      "date": "2025-01-01",
-      "symbol": "MSFT",
-      "name": "Microsoft",
-      "action": "buy",
-      "shares": 5,
-      "price": 474.70,
-      "amount": 2373.50,
-      "note": "建倉"
-    },
-    {
-      "id": "US004",
-      "date": "2025-01-01",
-      "symbol": "NFLX",
-      "name": "Netflix",
-      "action": "buy",
-      "shares": 30,
-      "price": 92.00,
-      "amount": 2760.00,
-      "note": "建倉"
-    },
-    {
-      "id": "US005",
-      "date": "2025-01-01",
-      "symbol": "NVDA",
-      "name": "NVIDIA",
-      "action": "buy",
-      "shares": 30,
-      "price": 184.73,
-      "amount": 5541.90,
-      "note": "建倉"
-    },
-    {
-      "id": "US006",
-      "date": "2025-01-01",
-      "symbol": "QQQ",
-      "name": "Invesco QQQ",
-      "action": "buy",
-      "shares": 1,
-      "price": 623.25,
-      "amount": 623.25,
-      "note": "建倉"
-    },
-    {
-      "id": "US007",
-      "date": "2025-01-01",
-      "symbol": "VOO",
-      "name": "Vanguard S&P 500",
-      "action": "buy",
-      "shares": 4,
-      "price": 635.22,
-      "amount": 2540.88,
-      "note": "建倉"
-    },
-    {
-      "id": "US008",
-      "date": "2025-01-01",
-      "symbol": "ZS",
-      "name": "Zscaler",
-      "action": "buy",
-      "shares": 15,
-      "price": 172.85,
-      "amount": 2592.75,
-      "note": "建倉"
+      "symbol": "UBER",
+      "name": "Uber",
+      "buy_date": "2025-12-23",
+      "sell_date": "2026-02-04",
+      "shares": 20,
+      "avg_cost": 81.50,
+      "sell_price": 73.59,
+      "realized_pnl": -160.18,
+      "holding_days": 43,
+      "note": "清倉止損，資金轉入 CRWD/NVDA/ZS"
     }
   ],
   "adjustment_log": [
-    {
-      "date": "2026-02-24",
-      "type": "initial_setup",
-      "description": "建立台股投資組合：70% ETF + 30% 個股配置",
-      "details": "00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000",
-      "total_invested": "NT$500,500"
-    },
-    {
-      "date": "2026-02-25",
-      "type": "review",
-      "description": "全面檢視台股與美股組合，考量國際情勢",
-      "details": "分析關稅違憲判決、美伊衝突風險、OpenAI下調算力支出等因素。建議：台股維持不動，美股考慮將CRWD+ZS轉入VOO",
-      "action_taken": "尚未執行調整"
-    }
+    { "date": "2025-12-23", "type": "initial_setup", "description": "美股建倉：NVDA、NFLX、UBER", "details": "首批買入 NVDA 10股、NFLX 20股、UBER 20股" },
+    { "date": "2026-01-06", "type": "trade", "description": "加碼 NVDA、建倉 VOO/QQQ", "details": "NVDA +10股、VOO +2股、QQQ +1股" },
+    { "date": "2026-01-13", "type": "trade", "description": "建倉 MSFT", "details": "MSFT +5股 @ $474.50" },
+    { "date": "2026-01-16", "type": "trade", "description": "加碼 NFLX", "details": "NFLX +10股 @ $88.35，逢低攤平" },
+    { "date": "2026-01-27", "type": "trade", "description": "建倉 AMZN", "details": "AMZN +10股（分兩筆）" },
+    { "date": "2026-02-04", "type": "trade", "description": "清倉 UBER → 轉入 CRWD/ZS/NVDA", "details": "UBER -20股(-$160.18)，CRWD +1、ZS +1、NVDA +5" },
+    { "date": "2026-02-06", "type": "trade", "description": "大幅加碼 ZS/CRWD/NVDA", "details": "ZS +10、CRWD +4、NVDA +5" },
+    { "date": "2026-02-09", "type": "trade", "description": "加碼 AMZN", "details": "AMZN +5股 @ $205.03" },
+    { "date": "2026-02-11", "type": "trade", "description": "調整：減 CRWD、加 ZS/VOO", "details": "CRWD -2股(+$17.86)、ZS +4、VOO +2" },
+    { "date": "2026-02-13", "type": "trade", "description": "減倉 NFLX、加碼 VOO/MSFT", "details": "NFLX -15股(-$261.24)、VOO +2、MSFT +1" },
+    { "date": "2026-02-18", "type": "trade", "description": "大幅加碼 MSFT", "details": "MSFT +4股 @ $397.39" },
+    { "date": "2026-02-24", "type": "initial_setup", "description": "建立台股投資組合", "details": "70% ETF + 30% 個股配置，總投入 NT$500,500" },
+    { "date": "2026-02-25", "type": "review", "description": "全面檢視台美股組合", "details": "分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" }
   ],
   "last_updated": "2026-02-25"
 }

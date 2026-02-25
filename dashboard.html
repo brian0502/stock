@@ -479,14 +479,14 @@ const twPortfolio = [
 const twCash = 40000;
 
 const usPortfolio = [
-  { symbol: "NVDA", name: "NVIDIA", shares: 30, avgCost: 184.73, currentPrice: 192.82, color: "#10b981" },
-  { symbol: "AMZN", name: "Amazon", shares: 15, avgCost: 227.61, currentPrice: 208.60, color: "#f59e0b" },
-  { symbol: "NFLX", name: "Netflix", shares: 30, avgCost: 92.00, currentPrice: 77.59, color: "#ef4444" },
-  { symbol: "MSFT", name: "Microsoft", shares: 5, avgCost: 474.70, currentPrice: 387.11, color: "#3b82f6" },
-  { symbol: "VOO", name: "Vanguard S&P 500", shares: 4, avgCost: 635.22, currentPrice: 631.00, color: "#6366f1" },
-  { symbol: "ZS", name: "Zscaler", shares: 15, avgCost: 172.85, currentPrice: 143.28, color: "#ec4899" },
-  { symbol: "CRWD", name: "CrowdStrike", shares: 3, avgCost: 405.54, currentPrice: 350.25, color: "#f97316" },
-  { symbol: "QQQ", name: "Invesco QQQ", shares: 1, avgCost: 623.25, currentPrice: 608.80, color: "#8b5cf6" },
+  { symbol: "NVDA", name: "NVIDIA", shares: 30, avgCost: 184.60, currentPrice: 192.82, color: "#10b981" },
+  { symbol: "AMZN", name: "Amazon", shares: 15, avgCost: 227.42, currentPrice: 208.60, color: "#f59e0b" },
+  { symbol: "MSFT", name: "Microsoft", shares: 10, avgCost: 436.49, currentPrice: 387.11, color: "#3b82f6" },
+  { symbol: "VOO", name: "Vanguard S&P 500", shares: 6, avgCost: 633.92, currentPrice: 631.00, color: "#6366f1" },
+  { symbol: "ZS", name: "Zscaler", shares: 15, avgCost: 172.65, currentPrice: 143.28, color: "#ec4899" },
+  { symbol: "NFLX", name: "Netflix", shares: 15, avgCost: 91.90, currentPrice: 77.59, color: "#ef4444" },
+  { symbol: "CRWD", name: "CrowdStrike", shares: 3, avgCost: 398.62, currentPrice: 350.25, color: "#f97316" },
+  { symbol: "QQQ", name: "Invesco QQQ", shares: 1, avgCost: 622.25, currentPrice: 608.80, color: "#8b5cf6" },
 ];
 
 const twTransactions = [
@@ -497,19 +497,49 @@ const twTransactions = [
 ];
 
 const usTransactions = [
-  { date: "2025-01-01", symbol: "AMZN", action: "buy", shares: 15, price: 227.61, amount: 3414.15 },
-  { date: "2025-01-01", symbol: "CRWD", action: "buy", shares: 3, price: 405.54, amount: 1216.62 },
-  { date: "2025-01-01", symbol: "MSFT", action: "buy", shares: 5, price: 474.70, amount: 2373.50 },
-  { date: "2025-01-01", symbol: "NFLX", action: "buy", shares: 30, price: 92.00, amount: 2760.00 },
-  { date: "2025-01-01", symbol: "NVDA", action: "buy", shares: 30, price: 184.73, amount: 5541.90 },
-  { date: "2025-01-01", symbol: "QQQ", action: "buy", shares: 1, price: 623.25, amount: 623.25 },
-  { date: "2025-01-01", symbol: "VOO", action: "buy", shares: 4, price: 635.22, amount: 2540.88 },
-  { date: "2025-01-01", symbol: "ZS", action: "buy", shares: 15, price: 172.85, amount: 2592.75 },
+  { date: "2025-12-23", symbol: "NVDA", action: "buy", shares: 10, price: 183.53, amount: 1835.30 },
+  { date: "2025-12-23", symbol: "NFLX", action: "buy", shares: 10, price: 93.62, amount: 936.20 },
+  { date: "2025-12-23", symbol: "UBER", action: "buy", shares: 20, price: 81.50, amount: 1630.00 },
+  { date: "2025-12-23", symbol: "NFLX", action: "buy", shares: 10, price: 93.73, amount: 937.30 },
+  { date: "2026-01-06", symbol: "VOO", action: "buy", shares: 2, price: 634.72, amount: 1269.44 },
+  { date: "2026-01-06", symbol: "NVDA", action: "buy", shares: 10, price: 191.19, amount: 1911.90 },
+  { date: "2026-01-06", symbol: "QQQ", action: "buy", shares: 1, price: 622.25, amount: 622.25 },
+  { date: "2026-01-13", symbol: "MSFT", action: "buy", shares: 5, price: 474.50, amount: 2372.50 },
+  { date: "2026-01-16", symbol: "NFLX", action: "buy", shares: 10, price: 88.35, amount: 883.50 },
+  { date: "2026-01-27", symbol: "AMZN", action: "buy", shares: 5, price: 238.74, amount: 1193.70 },
+  { date: "2026-01-27", symbol: "AMZN", action: "buy", shares: 5, price: 238.47, amount: 1192.35 },
+  { date: "2026-02-04", symbol: "UBER", action: "sell", shares: 20, price: 73.59, amount: 1471.83 },
+  { date: "2026-02-04", symbol: "CRWD", action: "buy", shares: 1, price: 417.38, amount: 417.38 },
+  { date: "2026-02-04", symbol: "NVDA", action: "buy", shares: 5, price: 177.53, amount: 887.65 },
+  { date: "2026-02-04", symbol: "ZS", action: "buy", shares: 1, price: 184.89, amount: 184.89 },
+  { date: "2026-02-06", symbol: "ZS", action: "buy", shares: 10, price: 170.85, amount: 1708.50 },
+  { date: "2026-02-06", symbol: "CRWD", action: "buy", shares: 4, price: 393.93, amount: 1575.72 },
+  { date: "2026-02-06", symbol: "NVDA", action: "buy", shares: 5, price: 180.60, amount: 903.00 },
+  { date: "2026-02-09", symbol: "AMZN", action: "buy", shares: 5, price: 205.03, amount: 1025.15 },
+  { date: "2026-02-11", symbol: "ZS", action: "buy", shares: 4, price: 174.09, amount: 696.36 },
+  { date: "2026-02-11", symbol: "CRWD", action: "sell", shares: 2, price: 415.83, amount: 831.66 },
+  { date: "2026-02-11", symbol: "VOO", action: "buy", shares: 2, price: 639.75, amount: 1279.50 },
+  { date: "2026-02-13", symbol: "NFLX", action: "sell", shares: 15, price: 76.41, amount: 1146.16 },
+  { date: "2026-02-13", symbol: "VOO", action: "buy", shares: 1, price: 628.21, amount: 628.21 },
+  { date: "2026-02-13", symbol: "VOO", action: "buy", shares: 1, price: 626.35, amount: 626.35 },
+  { date: "2026-02-13", symbol: "MSFT", action: "buy", shares: 1, price: 402.84, amount: 402.84 },
+  { date: "2026-02-18", symbol: "MSFT", action: "buy", shares: 4, price: 397.39, amount: 1589.56 },
 ];
 
 const adjustmentLog = [
-  { date: "2026-02-24", type: "setup", title: "建立台股投資組合", detail: "70% ETF + 30% 個股配置。00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000。總投入 NT$500,500" },
-  { date: "2026-02-25", type: "review", title: "全面檢視台股與美股組合", detail: "分析：關稅違憲判決（短期利多）、美伊衝突風險（最大黑天鵝）、OpenAI 下調算力支出。建議台股不動，美股考慮 CRWD+ZS 轉 VOO。設定緯創停利 160 / 停損 120" },
+  { date: "2025-12-23", type: "setup", title: "美股建倉：NVDA、NFLX、UBER", detail: "首批買入 NVDA 10股、NFLX 20股、UBER 20股，總投入約 $5,339" },
+  { date: "2026-01-06", type: "trade", title: "加碼 NVDA、建倉 VOO/QQQ", detail: "NVDA +10股、VOO +2股、QQQ +1股，擴大 AI 與指數配置" },
+  { date: "2026-01-13", type: "trade", title: "建倉 MSFT", detail: "MSFT +5股 @ $474.50，佈局企業軟體" },
+  { date: "2026-01-16", type: "trade", title: "加碼 NFLX", detail: "NFLX +10股 @ $88.35，逢低攤平" },
+  { date: "2026-01-27", type: "trade", title: "建倉 AMZN", detail: "AMZN 分兩筆共 +10股 @ ~$238.60，佈局雲端電商" },
+  { date: "2026-02-04", type: "trade", title: "清倉 UBER → 轉入 CRWD/ZS/NVDA", detail: "UBER -20股止損(-$160.18)，資金轉入 CRWD +1、ZS +1、NVDA +5" },
+  { date: "2026-02-06", type: "trade", title: "大幅加碼 ZS/CRWD/NVDA", detail: "ZS +10股、CRWD +4股、NVDA +5股，加強 AI 與網安配置" },
+  { date: "2026-02-09", type: "trade", title: "加碼 AMZN", detail: "AMZN +5股 @ $205.03，逢低攤平，均價降至 $227.42" },
+  { date: "2026-02-11", type: "trade", title: "調整：減 CRWD、加 ZS/VOO", detail: "CRWD -2股(+$17.86)、ZS +4股、VOO +2股。降低單一網安集中度" },
+  { date: "2026-02-13", type: "trade", title: "減倉 NFLX、加碼 VOO/MSFT", detail: "NFLX -15股(-$261.24)、VOO +2股、MSFT +1股。減少虧損部位" },
+  { date: "2026-02-18", type: "trade", title: "大幅加碼 MSFT", detail: "MSFT +4股 @ $397.39，看好長期價值，均價降至 $436.49" },
+  { date: "2026-02-24", type: "setup", title: "建立台股投資組合", detail: "70% ETF + 30% 個股。00919 7張、00878 3張、00679B 3張、緯創 1張、備用現金 NT$40,000" },
+  { date: "2026-02-25", type: "review", title: "全面檢視台美股組合", detail: "分析關稅違憲、美伊衝突風險、OpenAI下調算力支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
 ];
 
 // ============ HELPERS ============
@@ -562,9 +592,14 @@ document.getElementById('summaryCards').innerHTML = `
     <div class="sub ${pnlClass(twTotalPnl)}">${fmtPct(twTotalPnl / twTotalCost * 100)}</div>
   </div>
   <div class="summary-card ${usTotalPnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">
-    <div class="label">美股損益</div>
+    <div class="label">美股未實現損益</div>
     <div class="value ${pnlClass(usTotalPnl)}">US$${fmt(usTotalPnl, 2)}</div>
     <div class="sub ${pnlClass(usTotalPnl)}">${fmtPct(usTotalPnl / usTotalCost * 100)}</div>
+  </div>
+  <div class="summary-card pnl-neg">
+    <div class="label">美股已實現損益</div>
+    <div class="value negative">US$${fmt(-403.56, 2)}</div>
+    <div class="sub">UBER -$160.18 / CRWD +$17.86 / NFLX -$261.24</div>
   </div>
 `;
 
@@ -658,6 +693,30 @@ const reports = [
     file: "reports/tw-2026-02-25.md"
   },
   {
+    date: "2026-02-18",
+    type: "交易",
+    typeBadge: "badge-us",
+    title: "MSFT 大幅加碼",
+    summary: "MSFT +4股 @ $397.39，累計 10 股，均價降至 $436.49",
+    file: null
+  },
+  {
+    date: "2026-02-13",
+    type: "交易+分析",
+    typeBadge: "badge-us",
+    title: "減倉 NFLX、加碼 VOO/MSFT",
+    summary: "NFLX -15股(-$261.24)、VOO +2、MSFT +1。總損益 -5.73%",
+    file: null
+  },
+  {
+    date: "2026-02-11",
+    type: "交易",
+    typeBadge: "badge-us",
+    title: "調整：減 CRWD、加 ZS/VOO",
+    summary: "CRWD -2股(+$17.86)、ZS +4、VOO +2。降低網安單一集中度",
+    file: null
+  },
+  {
     date: "2026-02-10",
     type: "美股分析",
     typeBadge: "badge-us",
@@ -673,6 +732,22 @@ const reports = [
     summary: "初始台股組合建立記錄與分析",
     file: "reports/tw-2026-02-10.md"
   },
+  {
+    date: "2026-02-04",
+    type: "交易",
+    typeBadge: "badge-us",
+    title: "清倉 UBER → 建倉 CRWD/ZS",
+    summary: "UBER -20股(-$160.18)，資金轉入 CRWD +1、ZS +1、NVDA +5",
+    file: null
+  },
+  {
+    date: "2025-12-23",
+    type: "建倉",
+    typeBadge: "badge-us",
+    title: "美股首次建倉",
+    summary: "NVDA 10股、NFLX 20股、UBER 20股，開始投資旅程",
+    file: null
+  },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -682,7 +757,7 @@ document.getElementById('reportsBody').innerHTML = reports.map(r => `<tr>
   <td><span class="badge ${r.typeBadge}">${r.type}</span></td>
   <td style="font-weight:500">${r.title}</td>
   <td style="font-size:13px;color:var(--text-dim);max-width:360px">${r.summary}</td>
-  <td><a href="${REPO_BASE}${r.file}" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;font-size:13px">📎 查看</a></td>
+  <td>${r.file ? `<a href="${REPO_BASE}${r.file}" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;font-size:13px">📎 查看</a>` : '<span style="color:var(--text-dim);font-size:12px">—</span>'}</td>
 </tr>`).join('');
 </script>
 </body>
