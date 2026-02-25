@@ -4,8 +4,10 @@
 
 ## Skills
 
-- `/stock-analysis` - 分析美股持股，提供投資建議
-- `/tw-stock-analysis` - 分析台股持股，提供投資建議
+- `/stock-analysis` - 分析美股與台股持股，提供投資建議（主要 Skill，涵蓋所有操作流程）
+- Skill 檔案位置：`.claude/skills/stock-analysis.md`
+
+**每次操作前請先閱讀 Skill 檔案，確保遵循完整流程。**
 
 ## 持股檔案格式
 
@@ -79,8 +81,15 @@ symbol,name,shares,avg_cost
 - 每份報告必須包含：國際情勢背景、個股分析、操作建議、風險提示
 
 ### Git 操作
+- **每次操作前先 `git pull`** — 防止多個 session 覆蓋彼此的修改
 - 每次對檔案進行新增或修改後，必須自動 commit 並 push 回遠端分支，不需要額外詢問使用者確認
 - Commit message 應清楚說明變動內容（交易紀錄 / 分析報告 / 持股更新）
+- push 完成後立即清除 remote URL 中的 token
+
+### 衝突處理
+- 如果發現 portfolio.json 數據與 transactions.json 不一致 → 以 transactions.json 重新計算
+- 如果用戶提供券商截圖 → 以券商數據為最終真實來源
+- **永遠不要直接手改 portfolio.json**，它是從 transactions.json 衍生出來的
 
 ### 檔案結構
 ```
