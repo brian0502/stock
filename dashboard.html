@@ -195,7 +195,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.40;
+const USDTWD = 31.43;
 const usCash = 2402.75;
 
 const twPortfolio = [
@@ -207,13 +207,13 @@ const twPortfolio = [
 const twCash = 40000;
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.05, color:"#10b981" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:209.18, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:393.00, color:"#3b82f6" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:632.44, currentPrice:628.00, color:"#6366f1" },
-  { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:149.01, color:"#ec4899" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:78.04, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:607.87, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:187.59, color:"#10b981" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:208.00, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:401.61, color:"#3b82f6" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:632.44, currentPrice:637.53, color:"#6366f1" },
+  { symbol:"ZS", name:"Zscaler", shares:15, avgCost:172.65, currentPrice:155.70, color:"#ec4899" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:83.00, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:614.03, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -268,10 +268,12 @@ const adjustmentLog = [
   { date:"2026-02-25", type:"review", title:"全面檢視台美股組合", detail:"分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
   { date:"2026-02-25", type:"review", title:"晚間更新：NVDA/ZS 財報前分析", detail:"更新最新價格。NVDA 今晚財報、ZS 2/26 財報、00878 2/26 除息 0.42 元。建議等財報後再決定 ZS/CRWD 去留" },
   { date:"2026-02-25", type:"trade", title:"清倉 CRWD → 加碼 VOO", detail:"CRWD -3股(-$145.11 清倉)、VOO +2股 @ $628.00。資金從個股轉入指數" },
+  { date:"2026-02-26", type:"review", title:"美股組合分析：NVDA財報後+ZS財報前", detail:"NVDA Q4全面超預期(EPS $1.62, 營收$681億, 指引$780億)但股價跌5%。ZS今晚財報決定去留。VOO轉正。美伊日內瓦第三輪談判中" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-02-26", type:"美股分析", tb:"badge-us", title:"美股組合分析 — NVDA財報後+ZS財報前", summary:"NVDA財報全面超預期但股價跌5%。ZS今晚財報是最大變數。美伊日內瓦談判進行中。VOO轉正", file:"reports/2026-02-26.md" },
   { date:"2026-02-26", type:"台股分析", tb:"badge-tw", title:"台股持股分析 — NVIDIA財報利多", summary:"NVIDIA Q4全面超預期，緯創135持有等GTC行情。00878今日除息0.42元", file:"reports/tw-2026-02-26.md" },
   { date:"2026-02-25", type:"綜合分析", tb:"badge-us", title:"台美股綜合分析（晚間更新）", summary:"NVDA今晚財報、ZS明日財報、00878明日除息。更新最新價格與操作建議", file:"reports/2026-02-25.md" },
   { date:"2026-02-25", type:"台股分析", tb:"badge-tw", title:"台股持股分析報告", summary:"00679B 為地緣風險保險，緯創設停利160/停損120", file:"reports/tw-2026-02-25.md" },
