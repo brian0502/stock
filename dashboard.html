@@ -272,10 +272,12 @@ const adjustmentLog = [
   { date:"2026-02-26", type:"review", title:"美股組合分析：NVDA財報後+ZS財報前", detail:"NVDA Q4全面超預期(EPS $1.62, 營收$681億, 指引$780億)但股價跌5%。ZS今晚財報決定去留。VOO轉正。美伊日內瓦第三輪談判中" },
   { date:"2026-02-27", type:"trade", title:"清倉 ZS → 加碼 VOO", detail:"ZS -15股 @ $144.38(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報超預期但利多出盡，資金轉入指數。VOO 累計 11 股" },
   { date:"2026-02-27", type:"review", title:"美股組合分析+下週策略", detail:"NFLX暴漲13%退出WBD競標(+$28億終止費)。NVDA跌至$178跌破均價。PCE偏熱降息後延(6月59%)。下週3/4關稅+3/6就業報告為關鍵" },
+  { date:"2026-02-28", type:"review", title:"🚨 緊急：以色列+美國空襲伊朗", detail:"以色列對伊朗發動預防性空襲，美國確認參與。德黑蘭多處爆炸。以色列48小時緊急狀態。預估美股週一跌2-4%、油價漲10-15%。建議：不恐慌拋售，持有觀察48-72小時" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-02-28", type:"緊急分析", tb:"badge-us", title:"🚨 以色列+美國空襲伊朗 — 緊急組合分析", summary:"以美聯合空襲伊朗，德黑蘭多處爆炸。預估美股跌2-4%、油價漲10-15%。00679B避險生效。建議不恐慌拋售，觀察48-72小時", file:"reports/2026-02-28.md" },
   { date:"2026-02-27", type:"美股分析", tb:"badge-us", title:"美股組合分析 — NFLX暴漲+下週策略", summary:"NFLX退出WBD競標暴漲13%轉虧為盈。NVDA跌破均價。PCE偏熱降息後延。下週3/4關稅+3/6就業報告", file:"reports/2026-02-27.md" },
   { date:"2026-02-27", type:"交易", tb:"badge-us", title:"清倉 ZS、加碼 VOO", summary:"ZS -15股(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報利多出盡，資金轉入指數", file:null },
   { date:"2026-02-26", type:"美股分析", tb:"badge-us", title:"美股組合分析 — NVDA財報後+ZS財報前", summary:"NVDA財報全面超預期但股價跌5%。ZS今晚財報是最大變數。美伊日內瓦談判進行中。VOO轉正", file:"reports/2026-02-26.md" },
