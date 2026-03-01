@@ -92,7 +92,8 @@
     { "date": "2026-02-25", "type": "review", "description": "全面檢視台美股組合", "details": "分析關稅違憲、美伊衝突、OpenAI下調支出。建議 CRWD+ZS 轉 VOO、緯創設停利160/停損120" },
     { "date": "2026-02-25", "type": "review", "description": "晚間更新：NVDA/ZS 財報前分析", "details": "更新最新價格。NVDA $197.05(+6.7%)、ZS 2/26財報、00878 2/26除息$0.42。匯率更新 31.40" },
     { "date": "2026-02-25", "type": "trade", "description": "清倉 CRWD → 加碼 VOO", "details": "CRWD -3股(-$145.11 清倉)、VOO +2股 @ $628.00。資金從個股轉入指數" },
-    { "date": "2026-02-27", "type": "trade", "description": "清倉 ZS → 加碼 VOO", "details": "ZS -15股 @ $144.38(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報超預期但利多出盡，資金轉入指數" }
+    { "date": "2026-02-27", "type": "trade", "description": "清倉 ZS → 加碼 VOO", "details": "ZS -15股 @ $144.38(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報超預期但利多出盡，資金轉入指數" },
+    { "date": "2026-03-01", "type": "review", "description": "伊朗局勢更新：哈梅內伊確認身亡", "details": "哈梅內伊確認身亡，伊朗報復攻擊以色列/美基地/杜拜，霍爾木茲海峽暫關。結論：週一不需主動調整，美股全持有，緯創守$120停損，00679B避險生效" }
   ],
-  "last_updated": "2026-02-27"
+  "last_updated": "2026-03-01"
 }

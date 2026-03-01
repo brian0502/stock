@@ -120,7 +120,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-02-25 晚間</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-03-01 晚間</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -208,7 +208,7 @@ const twCash = 40000;
 
 const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:178.28, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:635.28, currentPrice:627.94, color:"#6366f1" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:627.94, color:"#6366f1" },
   { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:208.76, color:"#f59e0b" },
   { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:393.26, color:"#3b82f6" },
   { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.47, color:"#ef4444" },
@@ -273,10 +273,12 @@ const adjustmentLog = [
   { date:"2026-02-27", type:"trade", title:"清倉 ZS → 加碼 VOO", detail:"ZS -15股 @ $144.38(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報超預期但利多出盡，資金轉入指數。VOO 累計 11 股" },
   { date:"2026-02-27", type:"review", title:"美股組合分析+下週策略", detail:"NFLX暴漲13%退出WBD競標(+$28億終止費)。NVDA跌至$178跌破均價。PCE偏熱降息後延(6月59%)。下週3/4關稅+3/6就業報告為關鍵" },
   { date:"2026-02-28", type:"review", title:"🚨 緊急：以色列+美國空襲伊朗", detail:"以色列對伊朗發動預防性空襲，美國確認參與。德黑蘭多處爆炸。以色列48小時緊急狀態。預估美股週一跌2-4%、油價漲10-15%。建議：不恐慌拋售，持有觀察48-72小時" },
+  { date:"2026-03-01", type:"review", title:"伊朗局勢更新：哈梅內伊確認身亡，週一調整建議", detail:"哈梅內伊確認身亡，伊朗報復攻擊以色列/美基地/杜拜。霍爾木茲海峽暫時關閉。結論：週一不需主動調整，美股全數持有，緯創嚴守$120停損。00679B避險生效" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-01", type:"綜合分析", tb:"badge-us", title:"伊朗局勢更新 — 哈梅內伊確認身亡，週一調整建議", summary:"哈梅內伊確認身亡，伊朗報復攻擊多國。霍爾木茲海峽暫關。結論：週一不需主動調整，美股全持有，緯創守$120停損，00679B避險生效", file:"reports/2026-03-01.md" },
   { date:"2026-02-28", type:"緊急分析", tb:"badge-us", title:"🚨 以色列+美國空襲伊朗 — 緊急組合分析", summary:"以美聯合空襲伊朗，德黑蘭多處爆炸。預估美股跌2-4%、油價漲10-15%。00679B避險生效。建議不恐慌拋售，觀察48-72小時", file:"reports/2026-02-28.md" },
   { date:"2026-02-27", type:"美股分析", tb:"badge-us", title:"美股組合分析 — NFLX暴漲+下週策略", summary:"NFLX退出WBD競標暴漲13%轉虧為盈。NVDA跌破均價。PCE偏熱降息後延。下週3/4關稅+3/6就業報告", file:"reports/2026-02-27.md" },
   { date:"2026-02-27", type:"交易", tb:"badge-us", title:"清倉 ZS、加碼 VOO", summary:"ZS -15股(-$424.05 清倉)、VOO +3股 @ $630.15。Q2財報利多出盡，資金轉入指數", file:null },
@@ -310,7 +312,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = -972.72;
+const usRealizedPnl = -972.72; // UBER(-160.18) + CRWD(+17.86) + NFLX(-261.24) + CRWD(-145.11) + ZS(-424.05)
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
