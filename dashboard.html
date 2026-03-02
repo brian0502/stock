@@ -195,24 +195,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.43;
+const USDTWD = 31.50;
 const usCash = 2676.00;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.10, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.30, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:28.30, category:"美債ETF", color:"#3b82f6" },
-  { symbol:"3231", name:"緯創", shares:1000, avgCost:130.50, currentPrice:132.00, category:"成長個股", color:"#8b5cf6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:24.33, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.38, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.87, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"3231", name:"緯創", shares:1000, avgCost:130.50, currentPrice:142.00, category:"成長個股", color:"#8b5cf6" },
 ];
 const twCash = 40000;
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:182.94, color:"#10b981" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:180.44, color:"#10b981" },
   { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:629.63, color:"#6366f1" },
   { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:205.00, color:"#f59e0b" },
   { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:398.40, color:"#3b82f6" },
   { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:96.24, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:605.00, color:"#8b5cf6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:607.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -275,11 +275,12 @@ const adjustmentLog = [
   { date:"2026-02-28", type:"review", title:"🚨 緊急：以色列+美國空襲伊朗", detail:"以色列對伊朗發動預防性空襲，美國確認參與。德黑蘭多處爆炸。以色列48小時緊急狀態。預估美股週一跌2-4%、油價漲10-15%。建議：不恐慌拋售，持有觀察48-72小時" },
   { date:"2026-03-01", type:"review", title:"伊朗局勢更新：哈梅內伊確認身亡，週一調整建議", detail:"哈梅內伊確認身亡，伊朗報復攻擊以色列/美基地/杜拜。霍爾木茲海峽暫時關閉。結論：週一不需主動調整，美股全數持有，緯創嚴守$120停損。00679B避險生效" },
   { date:"2026-03-02", type:"review", title:"伊朗危機首個交易日盤中分析", detail:"市場遠優於預期：S&P -0.5%(預估-2~3%)。NVDA從$174反彈至$183(+3.2%)。MSFT +1.4%至$398。油價+8.4%至$72.63。霍爾木茲海峽有效封閉。結論：組合不需調整，等GTC 3/16催化劑" },
+  { date:"2026-03-02", type:"review", title:"台美股綜合收盤分析", detail:"S&P V型反轉收正+0.1%。台股-0.90%。NVDA收$180.44(+2%)、緯創反彈至$142(+4.4%)。油價$72(+7.4%)。霍爾木茲有效封閉。關稅IEEPA違憲→新S122 10-15%。GTC 3/16+FOMC 3/17+CPI 3/11為下週關鍵。組合不調整" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
-  { date:"2026-03-02", type:"美股分析", tb:"badge-us", title:"美股組合分析 — 伊朗危機首個交易日（盤中更新）", summary:"市場遠優於預期：S&P -0.5%(預估-2~3%)、NVDA V型反轉+3.2%至$183。組合不需調整，GTC 3/16催化劑在即。持續觀察霍爾木茲海峽", file:"reports/2026-03-02.md" },
+  { date:"2026-03-02", type:"綜合分析", tb:"badge-us", title:"台美股綜合分析 — 伊朗危機首日收盤（V型反轉）", summary:"S&P V型反轉收正+0.1%。台股-0.90%。NVDA $180(+2%), 緯創$142(+4.4%)。油價$72(+7.4%)。IEEPA關稅違憲→新S122。GTC 3/16+FOMC 3/17為下週關鍵。組合不調整", file:"reports/2026-03-02.md" },
   { date:"2026-03-01", type:"綜合分析", tb:"badge-us", title:"伊朗局勢更新 — 哈梅內伊確認身亡，週一調整建議", summary:"哈梅內伊確認身亡，伊朗報復攻擊多國。霍爾木茲海峽暫關。結論：週一不需主動調整，美股全持有，緯創守$120停損，00679B避險生效", file:"reports/2026-03-01.md" },
   { date:"2026-02-28", type:"緊急分析", tb:"badge-us", title:"🚨 以色列+美國空襲伊朗 — 緊急組合分析", summary:"以美聯合空襲伊朗，德黑蘭多處爆炸。預估美股跌2-4%、油價漲10-15%。00679B避險生效。建議不恐慌拋售，觀察48-72小時", file:"reports/2026-02-28.md" },
   { date:"2026-02-27", type:"美股分析", tb:"badge-us", title:"美股組合分析 — NFLX暴漲+下週策略", summary:"NFLX退出WBD競標暴漲13%轉虧為盈。NVDA跌破均價。PCE偏熱降息後延。下週3/4關稅+3/6就業報告", file:"reports/2026-02-27.md" },
