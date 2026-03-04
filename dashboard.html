@@ -142,20 +142,46 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .cal-tag-div{background:rgba(251,146,60,.15);color:#fb923c}
 .cal-tag-event{background:rgba(139,92,246,.15);color:#a78bfa}
 
-/* Expandable realized PnL */
+/* Realized PnL Modal */
 .realized-card{cursor:pointer;transition:all .15s}
-.realized-card:hover{border-color:rgba(255,255,255,.1)}
-.realized-toggle{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text-dim);margin-top:5px}
-.realized-toggle svg{transition:transform .2s}
-.realized-card.open .realized-toggle svg{transform:rotate(180deg)}
-.realized-detail{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.realized-card.open .realized-detail{max-height:400px}
-.realized-list{margin-top:10px;border-top:1px solid var(--border);padding-top:8px}
-.realized-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03)}
-.realized-row:last-child{border-bottom:none}
-.realized-sym{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:11px}
-.realized-amt{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
-.realized-note{font-size:10px;color:var(--text-dim)}
+.realized-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-1px)}
+.realized-hint{font-size:11px;color:var(--text-dim);margin-top:5px;display:flex;align-items:center;gap:4px}
+
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;width:100%;max-width:640px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.5);animation:modalIn .2s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px 16px;border-bottom:1px solid var(--border)}
+.modal-head h3{font-size:17px;font-weight:700}
+.modal-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s}
+.modal-close:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
+.modal-body{padding:16px 24px 24px;overflow-y:auto;flex:1}
+.modal-total{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--surface2);border-radius:10px;margin-bottom:16px}
+.modal-total-label{font-size:12px;color:var(--text-dim)}
+.modal-total-value{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700}
+
+.stock-group{margin-bottom:18px}
+.stock-group:last-child{margin-bottom:0}
+.sg-header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px 8px 0 0;border:1px solid var(--border);border-bottom:none}
+.sg-symbol{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px}
+.sg-name{font-size:12px;color:var(--text-dim);margin-left:8px;font-weight:400}
+.sg-pnl{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700}
+.sg-trades{border:1px solid var(--border);border-radius:0 0 8px 8px;overflow:hidden}
+.sg-trade{display:grid;grid-template-columns:72px 46px 1fr auto auto;align-items:center;gap:8px;padding:9px 12px;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03)}
+.sg-trade:last-child{border-bottom:none}
+.sg-trade:hover{background:rgba(255,255,255,.015)}
+.sg-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim)}
+.sg-action{font-size:10px;padding:2px 7px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-weight:600;text-align:center}
+.sg-action.buy{background:var(--green-bg);color:var(--green)}
+.sg-action.sell{background:var(--red-bg);color:var(--red)}
+.sg-desc{font-size:12px;color:var(--text)}
+.sg-amount{font-family:'JetBrains Mono',monospace;font-size:12px;text-align:right;color:var(--text-dim)}
+
+@media(max-width:640px){
+  .modal{max-width:100%;max-height:90vh;border-radius:12px}
+  .sg-trade{grid-template-columns:60px 40px 1fr auto;font-size:11px}
+  .sg-amount{display:none}
+}
 </style>
 </head>
 <body>
@@ -236,6 +262,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <div class="table-container">
   <table><thead><tr><th>日期</th><th>類型</th><th>報告標題</th><th>重點摘要</th><th>連結</th></tr></thead>
   <tbody id="reportsBody"></tbody></table>
+</div>
+
+<!-- Realized PnL Modal -->
+<div class="modal-overlay" id="realizedModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle"></h3><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
 </div>
 
 <div class="footer-note">⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。</div>
@@ -370,13 +404,34 @@ const calendarEvents = [
 ];
 
 const twRealizedDetail = [
-  { symbol:"3231", name:"緯創", pnl:-2500, date:"2026-03-04", note:"停損清倉 1,000股 @128" },
+  { symbol:"3231", name:"緯創", pnl:-2500, trades:[
+    { date:"2026-02-24", action:"buy", desc:"建倉 1,000股 @ NT$130.50", amount:130500 },
+    { date:"2026-03-04", action:"sell", desc:"停損清倉 1,000股 @ NT$128.00", amount:128000 },
+  ]},
 ];
 const usRealizedDetail = [
-  { symbol:"UBER", name:"Uber", pnl:-160.18, date:"2026-02-04", note:"清倉 20股 @$73.59" },
-  { symbol:"CRWD", name:"CrowdStrike", pnl:-127.25, date:"多筆", note:"減倉+清倉 共5股" },
-  { symbol:"NFLX", name:"Netflix", pnl:-261.24, date:"2026-02-13", note:"減倉 15股 @$76.41" },
-  { symbol:"ZS", name:"Zscaler", pnl:-424.05, date:"2026-02-27", note:"清倉 15股 @$144.38" },
+  { symbol:"UBER", name:"Uber", pnl:-160.18, trades:[
+    { date:"2025-12-23", action:"buy", desc:"建倉 20股 @ $81.50", amount:1630.00 },
+    { date:"2026-02-04", action:"sell", desc:"清倉 20股 @ $73.59", amount:1471.83 },
+  ]},
+  { symbol:"CRWD", name:"CrowdStrike", pnl:-127.25, trades:[
+    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $417.38", amount:417.38 },
+    { date:"2026-02-06", action:"buy", desc:"加碼 4股 @ $393.93", amount:1575.72 },
+    { date:"2026-02-11", action:"sell", desc:"減倉 2股 @ $415.83", amount:831.66 },
+    { date:"2026-02-25", action:"sell", desc:"清倉 3股 @ $350.25", amount:1050.75 },
+  ]},
+  { symbol:"NFLX", name:"Netflix", pnl:-261.24, trades:[
+    { date:"2025-12-23", action:"buy", desc:"建倉 10股 @ $93.62", amount:936.20 },
+    { date:"2025-12-23", action:"buy", desc:"加碼 10股 @ $93.73", amount:937.30 },
+    { date:"2026-01-16", action:"buy", desc:"逢低攤平 10股 @ $88.35", amount:883.50 },
+    { date:"2026-02-13", action:"sell", desc:"減倉 15股 @ $76.41（仍持有15股）", amount:1146.16 },
+  ]},
+  { symbol:"ZS", name:"Zscaler", pnl:-424.05, trades:[
+    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $184.89", amount:184.89 },
+    { date:"2026-02-06", action:"buy", desc:"加碼 10股 @ $170.85", amount:1708.50 },
+    { date:"2026-02-11", action:"buy", desc:"加碼 4股 @ $174.09", amount:696.36 },
+    { date:"2026-02-27", action:"sell", desc:"清倉 15股 @ $144.38", amount:2165.70 },
+  ]},
 ];
 
 function compute(arr){ return arr.map(p=>{ const c=p.shares*p.avgCost, m=p.shares*p.currentPrice, pnl=m-c; return {...p,cost:c,market:m,pnl,pnlPct:(pnl/c)*100}; }); }
@@ -445,22 +500,18 @@ function renderCalendar(){
 renderCalendar();
 
 // ===== TW SUMMARY =====
-const twRealizedHtml = twRealizedDetail.map(r=>`<div class="realized-row"><div><span class="realized-sym">${r.symbol}</span> <span style="color:var(--text-dim);font-size:11px">${r.name}</span></div><div class="realized-amt ${pc(r.pnl)}">${r.pnl>=0?'+':''}NT$${fmt(r.pnl)}</div></div><div style="font-size:10px;color:var(--text-dim);padding-bottom:4px">${r.date} · ${r.note}</div>`).join('');
-
 document.getElementById('twSummary').innerHTML = `
   <div class="summary-card c-amber"><div class="label">持股市值</div><div class="value">NT$${fmt(twStockMarket)}</div><div class="sub">${twData.length} 檔持股</div></div>
   <div class="summary-card c-amber"><div class="label">備用現金</div><div class="value">NT$${fmt(twCash)}</div><div class="sub">佔 ${(twCash/twTotal*100).toFixed(1)}%</div></div>
   <div class="summary-card ${twPnl>=0?'c-green':'c-red'}"><div class="label">未實現損益</div><div class="value ${pc(twPnl)}">NT$${fmt(twPnl)}</div><div class="sub ${pc(twPnl)}">${fmtPct(twPnl/twTotalCost*100)}</div></div>
-  <div class="summary-card ${twRealizedPnl>=0?'c-green':'c-red'} realized-card" onclick="this.classList.toggle('open')"><div class="label">已實現損益</div><div class="value ${pc(twRealizedPnl)}">NT$${fmt(twRealizedPnl)}</div><div class="realized-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2 4l4 4 4-4"/></svg> 點擊展開明細</div><div class="realized-detail"><div class="realized-list">${twRealizedHtml}</div></div></div>`;
+  <div class="summary-card ${twRealizedPnl>=0?'c-green':'c-red'} realized-card" onclick="openModal('tw')"><div class="label">已實現損益</div><div class="value ${pc(twRealizedPnl)}">NT$${fmt(twRealizedPnl)}</div><div class="realized-hint"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 8.5h4"/></svg>${twRealizedDetail.length} 檔 · 點擊查看明細</div></div>`;
 
 // ===== US SUMMARY =====
-const usRealizedHtml = usRealizedDetail.map(r=>`<div class="realized-row"><div><span class="realized-sym">${r.symbol}</span> <span style="color:var(--text-dim);font-size:11px">${r.name}</span></div><div class="realized-amt ${pc(r.pnl)}">${r.pnl>=0?'+':'-'}$${fmt(Math.abs(r.pnl),2)}</div></div><div style="font-size:10px;color:var(--text-dim);padding-bottom:4px">${r.date} · ${r.note}</div>`).join('');
-
 document.getElementById('usSummary').innerHTML = `
   <div class="summary-card c-blue"><div class="label">持股市值</div><div class="value">$${fmt(usStockMarket,2)}</div><div class="sub">${usData.length} 檔持股</div></div>
   <div class="summary-card c-blue"><div class="label">剩餘現金</div><div class="value">$${fmt(usCash,2)}</div><div class="sub">佔 ${(usCash/usTotal*100).toFixed(1)}%</div></div>
   <div class="summary-card ${usPnl>=0?'c-green':'c-red'}"><div class="label">未實現損益</div><div class="value ${pc(usPnl)}">$${fmt(usPnl,2)}</div><div class="sub ${pc(usPnl)}">${fmtPct(usPnl/usTotalCost*100)}</div></div>
-  <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'} realized-card" onclick="this.classList.toggle('open')"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="realized-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2 4l4 4 4-4"/></svg> 點擊展開明細 · ${usRealizedDetail.length} 筆</div><div class="realized-detail"><div class="realized-list">${usRealizedHtml}</div></div></div>`;
+  <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'} realized-card" onclick="openModal('us')"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="realized-hint"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 8.5h4"/></svg>${usRealizedDetail.length} 檔 · 點擊查看明細</div></div>`;
 
 // ===== PORTFOLIO TABLES =====
 function renderTable(data,tbody,cur,total){
@@ -553,6 +604,52 @@ document.getElementById('reportsBody').innerHTML = reports.map(r=>`<tr>
   <td style="font-size:12px;color:var(--text-dim);max-width:320px">${r.summary}</td>
   <td>${r.file?`<a href="${REPO_BASE}${r.file}" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;font-size:12px">📎 查看</a>`:'<span style="color:var(--text-dim);font-size:11px">—</span>'}</td>
 </tr>`).join('');
+
+// ===== REALIZED PNL MODAL =====
+function openModal(market){
+  const isUS = market === 'us';
+  const data = isUS ? usRealizedDetail : twRealizedDetail;
+  const cur = isUS ? '$' : 'NT$';
+  const totalPnl = isUS ? usRealizedPnl : twRealizedPnl;
+  const title = isUS ? '🇺🇸 美股已實現損益明細' : '🇹🇼 台股已實現損益明細';
+  const d = isUS ? 2 : 0;
+
+  document.getElementById('modalTitle').textContent = title;
+
+  const totalHtml = `<div class="modal-total">
+    <div class="modal-total-label">合計已實現損益（${data.length} 檔）</div>
+    <div class="modal-total-value ${pc(totalPnl)}">${totalPnl>=0?'+':''}${cur}${fmt(totalPnl,d)}</div>
+  </div>`;
+
+  const groupsHtml = data.map(stock => {
+    const tradesHtml = stock.trades.map(t =>
+      `<div class="sg-trade">
+        <div class="sg-date">${t.date}</div>
+        <div class="sg-action ${t.action}">${t.action==='buy'?'買入':'賣出'}</div>
+        <div class="sg-desc">${t.desc}</div>
+        <div class="sg-amount">${cur}${fmt(t.amount,d)}</div>
+      </div>`
+    ).join('');
+
+    return `<div class="stock-group">
+      <div class="sg-header">
+        <div><span class="sg-symbol">${stock.symbol}</span><span class="sg-name">${stock.name}</span></div>
+        <div class="sg-pnl ${pc(stock.pnl)}">${stock.pnl>=0?'+':''}${cur}${fmt(stock.pnl,d)}</div>
+      </div>
+      <div class="sg-trades">${tradesHtml}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('modalBody').innerHTML = totalHtml + groupsHtml;
+  document.getElementById('realizedModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('realizedModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
 </script>
 </body>
 </html>
