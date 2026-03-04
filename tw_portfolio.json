@@ -6,7 +6,7 @@
       "shares": 7000,
       "avg_cost": 24.33,
       "category": "高股息ETF",
-      "note": "核心持股，年配11%"
+      "note": "核心持股，年配11%，3/17除息0.78元"
     },
     {
       "symbol": "00878",
@@ -14,7 +14,7 @@
       "shares": 3000,
       "avg_cost": 23.92,
       "category": "高股息ETF",
-      "note": "分散高股息來源"
+      "note": "分散高股息來源，3/23配息入帳NT$1,260"
     },
     {
       "symbol": "00679B",
@@ -22,20 +22,24 @@
       "shares": 3000,
       "avg_cost": 27.91,
       "category": "美債避險",
-      "note": "股災時的保險，反向上漲"
-    },
+      "note": "地緣政治避險部位"
+    }
+  ],
+  "sold": [
     {
       "symbol": "3231",
       "name": "緯創",
       "shares": 1000,
       "avg_cost": 130.50,
-      "category": "成長個股",
-      "note": "參與AI成長，但只用1/4資金"
+      "sell_price": 128.00,
+      "sell_date": "2026-03-04",
+      "realized_pnl": -2500,
+      "reason": "美伊衝突升級，停損紀律出場"
     }
   ],
-  "cash_reserve": 40000,
-  "total_invested": 460500,
-  "total_value": 500500,
-  "strategy": "70% ETF + 30% 個股",
-  "last_updated": "2026-02-24"
+  "cash_reserve": 168000,
+  "total_invested": 325800,
+  "total_realized_pnl_tw": -2500,
+  "strategy": "100% 防禦型ETF + 現金，等局勢明朗再部署",
+  "last_updated": "2026-03-04"
 }
