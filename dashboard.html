@@ -276,23 +276,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.50;
+const USDTWD = 31.85;
 const usCash = 2676.00;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.50, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.30, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.90, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.00, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.50, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:28.00, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 168000; // 原40K + 緯創清倉回收128K
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:180.00, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:627.00, color:"#6366f1" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:176.00, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:611.00, color:"#6366f1" },
   { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:209.00, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:404.00, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:98.00, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:610.00, color:"#8b5cf6" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:405.00, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:97.00, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:590.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -361,10 +361,12 @@ const adjustmentLog = [
   { date:"2026-03-04", type:"trade", title:"🔴 清倉緯創(3231) @ NT$128", detail:"美伊衝突第5天，台股盤中再跌1,000+點至33,183。緯創觸及$125停損區域，128元執行停損出場。實現損益 -NT$2,500(-1.9%)。回收NT$128K，現金部位提升至NT$168K(35%)。台股組合轉為100%防禦型ETF" },
   { date:"2026-03-04", type:"review", title:"台股組合全面防禦化分析", detail:"清倉緯創後，剩餘00919/00878/00679B三檔ETF均不需調整。00919 3/17除息0.78元(NT$5,460)、00878 3/23配息入帳NT$1,260。現金NT$168K等3/11 CPI→3/16 GTC→3/17 FOMC後再決定重新進場" },
   { date:"2026-03-04", type:"review", title:"台美股綜合分析：美股反彈+台股暴跌", detail:"美股期貨反彈(S&P +0.4%, Nasdaq +0.6%)，MSFT +1.35%、AMZN +0.16%。川普下令DFC保險+美軍護航油輪通過霍爾木茲。油輪Pola成功突破封鎖。Brent ~$82。台股暴跌1,495點(-4.35%)史上第三大。AVGO今晚財報(AI營收翻倍預期)。NFLX今日Morgan Stanley TMT。GTC倒數12天。美股不調整，台股觀察緯創$125" },
+  { date:"2026-03-09", type:"review", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴", detail:"伊朗戰爭第9天，Brent衝破$100(盤中$119)。史上最大石油供應中斷。台股-1,489點(-4.43%)史上第四大，韓國KOSPI觸發熔斷(-7.72%)，日經-6.45%。非農-92K(自疫情以來最差)。NVDA出口管制新利空。但GTC倒數7天+G7今日開會討論戰略儲備。VIX 31。結論：全部持有不動，等3/11 CPI→3/16 GTC→3/17 FOMC" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-09", type:"綜合分析", tb:"badge-us", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴下的組合分析", summary:"伊朗戰爭第9天，Brent衝破$100。台股-1,489(-4.43%)史上第四大，韓國熔斷。非農-92K。NVDA出口管制。GTC倒數7天。G7討論釋放戰略儲備。全部持有不動", file:"reports/2026-03-09.md" },
   { date:"2026-03-04", type:"綜合分析", tb:"badge-us", title:"台美股綜合分析 — 美股反彈+台股暴跌+護航油輪", summary:"美股期貨反彈(S&P +0.4%)。川普下令護航油輪通過霍爾木茲。MSFT/AMZN反彈。台股暴跌1,495點(-4.35%)史上第三大。AVGO今晚財報。GTC倒數12天。美股不調整", file:"reports/2026-03-04.md" },
   { date:"2026-03-04", type:"交易", tb:"badge-tw", title:"🔴 清倉緯創(3231) @ NT$128 — 停損出場", summary:"美伊衝突第5天，台股盤中再跌1,000+點。緯創128元停損出場，實現損益-NT$2,500(-1.9%)。現金部位提升至NT$168K(35%)。台股組合轉為100%防禦型ETF", file:null },
   { date:"2026-03-04", type:"台股分析", tb:"badge-tw", title:"台股組合全面防禦化分析", summary:"清倉緯創後全面分析。00919/00878/00679B均不需調整。00919 3/17除息NT$5,460。現金NT$168K等3/11 CPI→3/16 GTC→3/17 FOMC", file:"reports/tw-2026-03-04.md" },
@@ -394,15 +396,14 @@ const pc = n => n>=0?'positive':'negative';
 
 // ===== CALENDAR DATA =====
 const calendarEvents = [
-  { date:"2026-03-04", title:"美伊衝突走向", desc:"第5天・川普下令護航油輪", stars:5, tag:"geo" },
-  { date:"2026-03-04", title:"Broadcom (AVGO) Q1 財報", desc:"盤後公布・AI營收預估翻倍至$8.2B", stars:5, tag:"event" },
-  { date:"2026-03-04", title:"NFLX CFO @ Morgan Stanley TMT", desc:"1:50PM PT Q&A・WBD競標議題", stars:4, tag:"event" },
-  { date:"2026-03-05", title:"美伊衝突走向", desc:"觀察是否進入情境C全面戰爭", stars:5, tag:"geo" },
-  { date:"2026-03-06", title:"美國非農就業報告", desc:"影響Fed降息預期", stars:4, tag:"macro" },
-  { date:"2026-03-11", title:"CPI 通膨報告", desc:"油價推升通膨？影響3/17 FOMC", stars:5, tag:"macro" },
-  { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"AI晶片路線圖・Blackwell Ultra", stars:5, tag:"event" },
+  { date:"2026-03-09", title:"G7 財長緊急會議", desc:"討論聯合釋放戰略石油儲備", stars:5, tag:"macro" },
+  { date:"2026-03-09", title:"亞股血洗", desc:"韓國熔斷-7.72%・日經-6.45%・台股-4.43%", stars:5, tag:"geo" },
+  { date:"2026-03-11", title:"CPI 通膨報告", desc:"2月數據・油價尚未完全反映", stars:5, tag:"macro" },
+  { date:"2026-03-11", title:"Oracle (ORCL) 財報", desc:"雲端業務指標", stars:3, tag:"event" },
+  { date:"2026-03-14", title:"PCE 報告", desc:"Fed偏好通膨指標", stars:4, tag:"macro" },
+  { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"Vera Rubin・Feynman・HBM4・LPU", stars:5, tag:"event" },
   { date:"2026-03-17", title:"00919 除息 0.78元", desc:"7,000股・預計領 NT$5,460", stars:4, tag:"div" },
-  { date:"2026-03-17", title:"Fed FOMC 利率決議", desc:"搭配3/11 CPI解讀", stars:5, tag:"macro" },
+  { date:"2026-03-17", title:"Fed FOMC 利率決議", desc:"97.3%機率不降息・3/11 CPI解讀", stars:5, tag:"macro" },
   { date:"2026-03-23", title:"00878 配息入帳", desc:"3,000股・NT$1,260入帳", stars:3, tag:"div" },
   { date:"2026-04-14", title:"00919 配息入帳", desc:"7,000股・NT$5,460入帳", stars:3, tag:"div" },
 ];
