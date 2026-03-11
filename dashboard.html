@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-03-04 盤中</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-03-11 盤中</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -276,23 +276,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.85;
+const USDTWD = 31.75;
 const usCash = 2676.00;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.00, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.50, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:28.00, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.78, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.00, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.50, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 168000; // 原40K + 緯創清倉回收128K
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:176.00, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:611.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:209.00, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:405.00, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:97.00, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:590.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:185.00, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:623.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.00, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:409.00, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:99.00, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:609.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -362,10 +362,12 @@ const adjustmentLog = [
   { date:"2026-03-04", type:"review", title:"台股組合全面防禦化分析", detail:"清倉緯創後，剩餘00919/00878/00679B三檔ETF均不需調整。00919 3/17除息0.78元(NT$5,460)、00878 3/23配息入帳NT$1,260。現金NT$168K等3/11 CPI→3/16 GTC→3/17 FOMC後再決定重新進場" },
   { date:"2026-03-04", type:"review", title:"台美股綜合分析：美股反彈+台股暴跌", detail:"美股期貨反彈(S&P +0.4%, Nasdaq +0.6%)，MSFT +1.35%、AMZN +0.16%。川普下令DFC保險+美軍護航油輪通過霍爾木茲。油輪Pola成功突破封鎖。Brent ~$82。台股暴跌1,495點(-4.35%)史上第三大。AVGO今晚財報(AI營收翻倍預期)。NFLX今日Morgan Stanley TMT。GTC倒數12天。美股不調整，台股觀察緯創$125" },
   { date:"2026-03-09", type:"review", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴", detail:"伊朗戰爭第9天，Brent衝破$100(盤中$119)。史上最大石油供應中斷。台股-1,489點(-4.43%)史上第四大，韓國KOSPI觸發熔斷(-7.72%)，日經-6.45%。非農-92K(自疫情以來最差)。NVDA出口管制新利空。但GTC倒數7天+G7今日開會討論戰略儲備。VIX 31。結論：全部持有不動，等3/11 CPI→3/16 GTC→3/17 FOMC" },
+  { date:"2026-03-11", type:"review", title:"✅ CPI符合預期+IEA史上最大儲備釋放提案+台股反彈4.1%", detail:"2月CPI +0.3%/+2.4%完全符合預期，消除通膨失控擔憂。IEA提議史上最大規模戰略石油儲備釋放，油價從$105回落至$89-95。台股強勁反彈+1,342點(+4.1%)收34,114。NVDA回到$185(均價附近！)。VIX從31降至25。S&P 6,783持平。GTC倒數5天+00919除息倒數6天。結論：全部持有不動，等GTC+FOMC超級事件窗口" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-11", type:"綜合分析", tb:"badge-us", title:"✅ CPI符合預期+IEA儲備釋放+台股反彈4.1% — 局勢轉好", summary:"2月CPI +2.4%符合預期。IEA提議史上最大儲備釋放，油價回落至$89-95。台股反彈+4.1%。NVDA回到$185均價附近。VIX從31降至25。GTC倒數5天+00919除息倒數6天。全部持有不動", file:"reports/2026-03-11.md" },
   { date:"2026-03-09", type:"綜合分析", tb:"badge-us", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴下的組合分析", summary:"伊朗戰爭第9天，Brent衝破$100。台股-1,489(-4.43%)史上第四大，韓國熔斷。非農-92K。NVDA出口管制。GTC倒數7天。G7討論釋放戰略儲備。全部持有不動", file:"reports/2026-03-09.md" },
   { date:"2026-03-04", type:"綜合分析", tb:"badge-us", title:"台美股綜合分析 — 美股反彈+台股暴跌+護航油輪", summary:"美股期貨反彈(S&P +0.4%)。川普下令護航油輪通過霍爾木茲。MSFT/AMZN反彈。台股暴跌1,495點(-4.35%)史上第三大。AVGO今晚財報。GTC倒數12天。美股不調整", file:"reports/2026-03-04.md" },
   { date:"2026-03-04", type:"交易", tb:"badge-tw", title:"🔴 清倉緯創(3231) @ NT$128 — 停損出場", summary:"美伊衝突第5天，台股盤中再跌1,000+點。緯創128元停損出場，實現損益-NT$2,500(-1.9%)。現金部位提升至NT$168K(35%)。台股組合轉為100%防禦型ETF", file:null },
@@ -484,7 +486,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-03-04';
+const TODAY = '2026-03-11';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 function renderCalendar(){
   document.getElementById('calGrid').innerHTML = calendarEvents.map(ev => {
