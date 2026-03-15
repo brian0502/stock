@@ -280,18 +280,18 @@ const USDTWD = 31.80;
 const usCash = 2676.00;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.10, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:21.35, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.85, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.65, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.30, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.34, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 168000; // 原40K + 緯創清倉回收128K
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:184.00, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:610.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:210.00, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:403.00, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.00, color:"#ef4444" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:180.25, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:609.09, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.12, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:408.96, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:99.02, color:"#ef4444" },
   { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:599.00, color:"#8b5cf6" },
 ];
 
@@ -369,6 +369,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-15", type:"綜合分析", tb:"badge-us", title:"超級事件前夕：GTC明天+FOMC後天+00919除息+川普拒絕停火", summary:"戰爭第15天，川普拒絕伊朗停火提議。3/13收盤NVDA$180.25、VOO$609、AMZN$213、MSFT$409、NFLX$99(+7.7%)。GTC明天開幕。FOMC 3/17-18(95%維持)。00919 3/17除息0.78元領NT$5,460。結論：全部持有不動，不在超級事件窗口前調整", file:"reports/2026-03-15.md" },
   { date:"2026-03-13", type:"綜合分析", tb:"badge-us", title:"GTC倒數3天+三大指數創2026新低+連三週跌", summary:"3/12三大指數創2026收盤新低。S&P連三週跌(一年首次)。NFLX暴跌至$94(比估$99差)。3/13市場企穩(S&P -0.1%)。油價持平WTI$95/Brent$100。消費者信心55.5弱。GTC 3天倒數：Vera Rubin+Feynman+矽光子。00919明天最後買進日。全部持有不動", file:"reports/2026-03-13.md" },
   { date:"2026-03-12", type:"綜合分析", tb:"badge-us", title:"⚠️ IEA 4億桶釋放失效+新領導人強硬+金融壓力浮現", summary:"IEA史上最大4億桶釋放失效，油價回漲$100+。新領導人表態「一滴油都不給」。3船遭攻。Morgan Stanley限贖回。S&P -1.52%創2026新低。NVDA $183.18、NFLX暴跌至$94.20。全部持有不動", file:"reports/2026-03-12.md" },
   { date:"2026-03-11", type:"綜合分析", tb:"badge-us", title:"✅ CPI符合預期+IEA儲備釋放+台股反彈4.1% — 局勢轉好", summary:"2月CPI +2.4%符合預期。IEA提議史上最大儲備釋放，油價回落至$89-95。台股反彈+4.1%。NVDA回到$185均價附近。VIX從31降至25。GTC倒數5天+00919除息倒數6天。全部持有不動", file:"reports/2026-03-11.md" },
@@ -410,6 +411,7 @@ const calendarEvents = [
   { date:"2026-03-12", title:"新領導人首次表態", desc:"穆吉塔巴・哈梅內伊：「一滴油都不讓通過」", stars:5, tag:"geo" },
   { date:"2026-03-13", title:"三大指數創2026新低", desc:"S&P 6,672・Nasdaq 22,312・道瓊 46,678・連三週跌", stars:5, tag:"macro" },
   { date:"2026-03-14", title:"PCE 報告", desc:"Fed偏好通膨指標", stars:4, tag:"macro" },
+  { date:"2026-03-15", title:"川普拒絕伊朗停火", desc:"稱「條件不夠好」，伊斯法罕等多處遭空襲", stars:5, tag:"geo" },
   { date:"2026-03-14", title:"00919 除息最後買進日", desc:"明天前買入才能參與 3/17 除息", stars:4, tag:"div" },
   { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"Vera Rubin・Feynman・HBM4・LPU", stars:5, tag:"event" },
   { date:"2026-03-17", title:"00919 除息 0.78元", desc:"7,000股・預計領 NT$5,460", stars:4, tag:"div" },
