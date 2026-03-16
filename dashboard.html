@@ -276,7 +276,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.80;
+const USDTWD = 32.08;
 const usCash = 2676.00;
 
 const twPortfolio = [
@@ -287,12 +287,12 @@ const twPortfolio = [
 const twCash = 168000; // 原40K + 緯創清倉回收128K
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:180.25, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:609.09, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.12, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:408.96, color:"#3b82f6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:181.67, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:617.18, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.49, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:409.41, color:"#3b82f6" },
   { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:99.02, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:599.00, color:"#8b5cf6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:593.72, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -364,11 +364,13 @@ const adjustmentLog = [
   { date:"2026-03-09", type:"review", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴", detail:"伊朗戰爭第9天，Brent衝破$100(盤中$119)。史上最大石油供應中斷。台股-1,489點(-4.43%)史上第四大，韓國KOSPI觸發熔斷(-7.72%)，日經-6.45%。非農-92K(自疫情以來最差)。NVDA出口管制新利空。但GTC倒數7天+G7今日開會討論戰略儲備。VIX 31。結論：全部持有不動，等3/11 CPI→3/16 GTC→3/17 FOMC" },
   { date:"2026-03-11", type:"review", title:"✅ CPI符合預期+IEA史上最大儲備釋放提案+台股反彈4.1%", detail:"2月CPI +0.3%/+2.4%完全符合預期，消除通膨失控擔憂。IEA提議史上最大規模戰略石油儲備釋放，油價從$105回落至$89-95。台股強勁反彈+1,342點(+4.1%)收34,114。NVDA回到$185(均價附近！)。VIX從31降至25。S&P 6,783持平。GTC倒數5天+00919除息倒數6天。結論：全部持有不動，等GTC+FOMC超級事件窗口" },
   { date:"2026-03-12", type:"review", title:"⚠️ IEA 4億桶儲備釋放失效+新領導人強硬+3船遭攻", detail:"IEA釋放史上最大4億桶石油儲備→油價照漲回$100+。伊朗新最高領導人穆吉塔巴·哈梅內伊首次表態：「一滴油都不讓通過」。波灣再有3艘船遭攻擊。Morgan Stanley限制私人信貸基金贖回(金融壓力新風險)。S&P -1.52%收6,672(2026新低)、道瓊-739點、Nasdaq -1.78%。NVDA收$183.18。NFLX暴跌至$94.20(比估計$99差很多)。全部三大指數創2026收盤新低" },
+  { date:"2026-03-16", type:"review", title:"GTC開幕日+油價回落+S&P反彈+FOMC前夕", detail:"戰爭第17天。GTC正式開幕！Vera Rubin(R100)效能3.3-5x Blackwell，推理成本降10x。油價WTI跌至$94.93(-3.83%)回到兩位數。S&P反彈+1.06%至6,702脫離新低。科技股領漲(Intel+6.3%、Micron+6.2%)。10Y殖利率-5.7bps至4.228%。NVDA$181.67(盤中高$186)、VOO$617(+1.3%)、NFLX$99。FOMC明天決議(95%維持)。00919明天除息0.78元領NT$5,460。USD/TWD 32.08。結論：全部持有，等FOMC結果再決定部署" },
   { date:"2026-03-13", type:"review", title:"GTC倒數3天+00919除息最後買進日明天+連三週跌", detail:"S&P連三週下跌(一年首次)。三大指數3/12創2026年新低。今日市場微幅企穩(S&P -0.1%、道瓊+58)。油價WTI $95/Brent $100持平。消費者信心55.5偏弱。NVDA~$184微彈(GTC觀望)。台股33,400(-0.54%)。明天3/14是00919除息最後買進日。GTC 3/16 Vera Rubin+Feynman+矽光子+30,000人190國。結論：全部持有，3天後GTC決戰" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-16", type:"綜合分析", tb:"badge-us", title:"GTC開幕日+油價回落+科技股領漲+FOMC前夕", summary:"GTC開幕！Vera Rubin效能3.3-5x Blackwell。油價跌至$95(-3.8%)。S&P反彈+1.06%至6,702。NVDA $181.67、VOO $617(+1.3%)、NFLX $99(+7.7%)。FOMC 3/18(95%維持)。00919明天除息NT$5,460。結論：全部持有，等FOMC結果", file:"reports/2026-03-16.md" },
   { date:"2026-03-15", type:"綜合分析", tb:"badge-us", title:"超級事件前夕：GTC明天+FOMC後天+00919除息+川普拒絕停火", summary:"戰爭第15天，川普拒絕伊朗停火提議。3/13收盤NVDA$180.25、VOO$609、AMZN$213、MSFT$409、NFLX$99(+7.7%)。GTC明天開幕。FOMC 3/17-18(95%維持)。00919 3/17除息0.78元領NT$5,460。結論：全部持有不動，不在超級事件窗口前調整", file:"reports/2026-03-15.md" },
   { date:"2026-03-13", type:"綜合分析", tb:"badge-us", title:"GTC倒數3天+三大指數創2026新低+連三週跌", summary:"3/12三大指數創2026收盤新低。S&P連三週跌(一年首次)。NFLX暴跌至$94(比估$99差)。3/13市場企穩(S&P -0.1%)。油價持平WTI$95/Brent$100。消費者信心55.5弱。GTC 3天倒數：Vera Rubin+Feynman+矽光子。00919明天最後買進日。全部持有不動", file:"reports/2026-03-13.md" },
   { date:"2026-03-12", type:"綜合分析", tb:"badge-us", title:"⚠️ IEA 4億桶釋放失效+新領導人強硬+金融壓力浮現", summary:"IEA史上最大4億桶釋放失效，油價回漲$100+。新領導人表態「一滴油都不給」。3船遭攻。Morgan Stanley限贖回。S&P -1.52%創2026新低。NVDA $183.18、NFLX暴跌至$94.20。全部持有不動", file:"reports/2026-03-12.md" },
