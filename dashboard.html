@@ -280,19 +280,19 @@ const USDTWD = 32.08;
 const usCash = 2676.00;
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.14, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.42, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.93, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:23.91, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.62, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.50, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 168000; // 原40K + 緯創清倉回收128K
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:183.22, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:615.69, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.12, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:408.96, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.22, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:595.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:183.00, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:613.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:210.50, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:401.00, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:94.36, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:592.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -364,6 +364,7 @@ const adjustmentLog = [
   { date:"2026-03-09", type:"review", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴", detail:"伊朗戰爭第9天，Brent衝破$100(盤中$119)。史上最大石油供應中斷。台股-1,489點(-4.43%)史上第四大，韓國KOSPI觸發熔斷(-7.72%)，日經-6.45%。非農-92K(自疫情以來最差)。NVDA出口管制新利空。但GTC倒數7天+G7今日開會討論戰略儲備。VIX 31。結論：全部持有不動，等3/11 CPI→3/16 GTC→3/17 FOMC" },
   { date:"2026-03-11", type:"review", title:"✅ CPI符合預期+IEA史上最大儲備釋放提案+台股反彈4.1%", detail:"2月CPI +0.3%/+2.4%完全符合預期，消除通膨失控擔憂。IEA提議史上最大規模戰略石油儲備釋放，油價從$105回落至$89-95。台股強勁反彈+1,342點(+4.1%)收34,114。NVDA回到$185(均價附近！)。VIX從31降至25。S&P 6,783持平。GTC倒數5天+00919除息倒數6天。結論：全部持有不動，等GTC+FOMC超級事件窗口" },
   { date:"2026-03-12", type:"review", title:"⚠️ IEA 4億桶儲備釋放失效+新領導人強硬+3船遭攻", detail:"IEA釋放史上最大4億桶石油儲備→油價照漲回$100+。伊朗新最高領導人穆吉塔巴·哈梅內伊首次表態：「一滴油都不讓通過」。波灣再有3艘船遭攻擊。Morgan Stanley限制私人信貸基金贖回(金融壓力新風險)。S&P -1.52%收6,672(2026新低)、道瓊-739點、Nasdaq -1.78%。NVDA收$183.18。NFLX暴跌至$94.20(比估計$99差很多)。全部三大指數創2026收盤新低" },
+  { date:"2026-03-18", type:"review", title:"FOMC決議日+PPI過熱+油價$108+NVDA中國H200核准", detail:"戰爭第19天。FOMC今天2:00PM ET決議(99%維持3.50-3.75%)。2月PPI +0.7% MoM(一年最大)，Core PPI +3.9% YoY停滯性通膨擔憂。Brent飆至$108.46(+4.87%)伊朗警告波灣設施為合法目標。NVDA獲中國H200晶片銷售核准(Reuters)。台股大漲+1.51%至34,348。00919除息隔天填息$0.77(填息率98.7%！)至$23.91。S&P盤中-0.3~0.7%承壓。VIX 23.21。Micron今晚財報。結論：全部持有不動，等FOMC結果再決定" },
   { date:"2026-03-17", type:"review", title:"GTC Day2+FOMC Day1+00919除息：$1兆訂單+Groq整合", detail:"戰爭第18天。GTC Day2：Jensen公布$1兆Blackwell+Vera Rubin訂單展望(vs去年$5000億翻倍)。Vera Rubin 10x每瓦效能、3.3-5x推理。Groq 3 LPU整合35x tokens/watt(意外驚喜)。Kyber架構原型2027出貨。NVDA$183.22(距均價僅$1.38！盤中觸$188)。S&P 6,715(+0.25%連兩日漲)。道瓊+471(+1%)。Nasdaq 22,410(+0.4%)。油價回升WTI$95.58/Brent$103。10Y 4.206%持續降。00919今日除息0.78元(NT$5,460確定入袋)。00679B $27.93轉正！FOMC今天開始，明天決議+點陣圖+Powell記者會。結論：全部持有不動，等明天FOMC" },
   { date:"2026-03-16", type:"review", title:"GTC開幕日+油價回落+S&P反彈+FOMC前夕", detail:"戰爭第17天。GTC正式開幕！Vera Rubin(R100)效能3.3-5x Blackwell，推理成本降10x。油價WTI跌至$94.93(-3.83%)回到兩位數。S&P反彈+1.06%至6,702脫離新低。科技股領漲(Intel+6.3%、Micron+6.2%)。10Y殖利率-5.7bps至4.228%。NVDA$181.67(盤中高$186)、VOO$617(+1.3%)、NFLX$99。FOMC明天決議(95%維持)。00919明天除息0.78元領NT$5,460。USD/TWD 32.08。結論：全部持有，等FOMC結果再決定部署" },
   { date:"2026-03-13", type:"review", title:"GTC倒數3天+00919除息最後買進日明天+連三週跌", detail:"S&P連三週下跌(一年首次)。三大指數3/12創2026年新低。今日市場微幅企穩(S&P -0.1%、道瓊+58)。油價WTI $95/Brent $100持平。消費者信心55.5偏弱。NVDA~$184微彈(GTC觀望)。台股33,400(-0.54%)。明天3/14是00919除息最後買進日。GTC 3/16 Vera Rubin+Feynman+矽光子+30,000人190國。結論：全部持有，3天後GTC決戰" },
@@ -371,6 +372,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-18", type:"綜合分析", tb:"badge-us", title:"FOMC決議日+PPI過熱+油價$108+NVDA中國H200核准", summary:"FOMC今天2:00PM決議(99%維持)。PPI+0.7%過熱。Brent$108.46(+4.87%)伊朗警告波灣為合法目標。NVDA中國H200核准。台股+1.51%至34,348。00919填息98.7%至$23.91。美股盤中承壓S&P-0.3~0.7%。結論：全部持有不動，等FOMC結果", file:"reports/2026-03-18.md" },
   { date:"2026-03-17", type:"綜合分析", tb:"badge-us", title:"GTC Day2+FOMC Day1+00919除息日：$1兆訂單展望超預期", summary:"GTC Day2！Jensen公布$1兆Blackwell+Vera Rubin訂單展望(翻倍)。Vera Rubin 10x每瓦效能。Groq整合35x tokens/watt。NVDA$183.22(-0.7%接近均價)、VOO$615、NFLX$95。00919今日除息0.78元(NT$5,460入袋)。00679B轉正$27.93。FOMC明天決議。結論：全部持有不動，等明天FOMC", file:"reports/2026-03-17.md" },
   { date:"2026-03-16", type:"綜合分析", tb:"badge-us", title:"GTC開幕日+油價回落+科技股領漲+FOMC前夕", summary:"GTC開幕！Vera Rubin效能3.3-5x Blackwell。油價跌至$95(-3.8%)。S&P反彈+1.06%至6,702。NVDA $181.67、VOO $617(+1.3%)、NFLX $99(+7.7%)。FOMC 3/18(95%維持)。00919明天除息NT$5,460。結論：全部持有，等FOMC結果", file:"reports/2026-03-16.md" },
   { date:"2026-03-15", type:"綜合分析", tb:"badge-us", title:"超級事件前夕：GTC明天+FOMC後天+00919除息+川普拒絕停火", summary:"戰爭第15天，川普拒絕伊朗停火提議。3/13收盤NVDA$180.25、VOO$609、AMZN$213、MSFT$409、NFLX$99(+7.7%)。GTC明天開幕。FOMC 3/17-18(95%維持)。00919 3/17除息0.78元領NT$5,460。結論：全部持有不動，不在超級事件窗口前調整", file:"reports/2026-03-15.md" },
@@ -419,7 +421,9 @@ const calendarEvents = [
   { date:"2026-03-14", title:"00919 除息最後買進日", desc:"明天前買入才能參與 3/17 除息", stars:4, tag:"div" },
   { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"Vera Rubin・Feynman・HBM4・LPU", stars:5, tag:"event" },
   { date:"2026-03-17", title:"00919 除息 0.78元", desc:"7,000股・預計領 NT$5,460", stars:4, tag:"div" },
-  { date:"2026-03-17", title:"Fed FOMC 利率決議", desc:"97.3%機率不降息・3/11 CPI解讀", stars:5, tag:"macro" },
+  { date:"2026-03-18", title:"FOMC 利率決議 + 點陣圖", desc:"99%維持3.50-3.75%・PPI過熱+0.7%・Powell 2:30PM記者會", stars:5, tag:"macro" },
+  { date:"2026-03-18", title:"NVDA 中國H200核准", desc:"中國批准NVIDIA H200晶片銷售（Reuters報導）", stars:4, tag:"event" },
+  { date:"2026-03-18", title:"Micron (MU) 財報", desc:"盤後財報・記憶體/AI需求風向球", stars:4, tag:"event" },
   { date:"2026-03-23", title:"00878 配息入帳", desc:"3,000股・NT$1,260入帳", stars:3, tag:"div" },
   { date:"2026-04-14", title:"00919 配息入帳", desc:"7,000股・NT$5,460入帳", stars:3, tag:"div" },
 ];
