@@ -276,23 +276,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 32.03;
+const USDTWD = 32.05;
 const usCash = 2676.00;
 
 const twPortfolio = [
   { symbol:"00919", name:"群益台灣精選高息", shares:7000, avgCost:24.33, currentPrice:22.97, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.47, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.49, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.08, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.05, category:"美債ETF", color:"#3b82f6" },
 ];
-const twCash = 168000; // 原40K + 緯創清倉回收128K
+const twCash = 169260; // 原168K + 00878配息NT$1,260入帳(3/23)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:172.76, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:597.94, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:204.89, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:380.58, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:91.82, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:579.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:175.50, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:592.12, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:205.37, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:386.79, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:92.42, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:582.06, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -364,6 +364,7 @@ const adjustmentLog = [
   { date:"2026-03-09", type:"review", title:"⚠️ 油價破百+亞股血洗+非農衰退 — 三重風暴", detail:"伊朗戰爭第9天，Brent衝破$100(盤中$119)。史上最大石油供應中斷。台股-1,489點(-4.43%)史上第四大，韓國KOSPI觸發熔斷(-7.72%)，日經-6.45%。非農-92K(自疫情以來最差)。NVDA出口管制新利空。但GTC倒數7天+G7今日開會討論戰略儲備。VIX 31。結論：全部持有不動，等3/11 CPI→3/16 GTC→3/17 FOMC" },
   { date:"2026-03-11", type:"review", title:"✅ CPI符合預期+IEA史上最大儲備釋放提案+台股反彈4.1%", detail:"2月CPI +0.3%/+2.4%完全符合預期，消除通膨失控擔憂。IEA提議史上最大規模戰略石油儲備釋放，油價從$105回落至$89-95。台股強勁反彈+1,342點(+4.1%)收34,114。NVDA回到$185(均價附近！)。VIX從31降至25。S&P 6,783持平。GTC倒數5天+00919除息倒數6天。結論：全部持有不動，等GTC+FOMC超級事件窗口" },
   { date:"2026-03-12", type:"review", title:"⚠️ IEA 4億桶儲備釋放失效+新領導人強硬+3船遭攻", detail:"IEA釋放史上最大4億桶石油儲備→油價照漲回$100+。伊朗新最高領導人穆吉塔巴·哈梅內伊首次表態：「一滴油都不讓通過」。波灣再有3艘船遭攻擊。Morgan Stanley限制私人信貸基金贖回(金融壓力新風險)。S&P -1.52%收6,672(2026新低)、道瓊-739點、Nasdaq -1.78%。NVDA收$183.18。NFLX暴跌至$94.20(比估計$99差很多)。全部三大指數創2026收盤新低" },
+  { date:"2026-03-23", type:"review", title:"✅ Trump延後最後通牒！油價暴跌7%+美股期貨大漲", detail:"戰爭第24天出現重大轉折！Trump宣稱與伊朗「productive talks」，暫停攻擊伊朗發電廠5天。油價從$112暴跌至$104-105(-7%+)。美股期貨大幅反彈。但伊朗否認談判。亞股已大跌(韓-6.5%、日-3.5%、港-4%)。NVDA~$175.50(反彈)、MSFT~$386.79(停損壓力緩解距$370→4.5%)、NFLX $92.42(轉正！)。00878配息NT$1,260今日入帳。台股現金升至NT$169,260。Goldman Sachs上調油價Brent均$110。IEA稱比1970s更糟。結論：全部持有不動，關注3/28五天暫停期到期。若確認停火→積極加碼；若再度升級→執行停損紀律" },
   { date:"2026-03-22", type:"review", title:"⚠️ Trump 48hr最後通牒+戰爭Day23+台指期夜盤-2.45%", detail:"戰爭第23天進入第四週。Trump威脅48小時內摧毀伊朗發電廠(截止~週一3/24)。伊朗攻擊Diego Garcia+以色列Dimona。Brent $112.19戰爭新高。S&P 6,506(-1.51%)、Nasdaq 21,648(-2.01%)。NVDA $172.76(-6.4%距停損$165僅4.5%)、MSFT $380.58(-12.8%距停損$370僅2.8%！)、NFLX $91.82(正報酬消失)、VOO $597.94(-5.4%)。台股33,544(-0.43%)但夜盤暴跌至32,737(-2.45%)暗示週一跳空-800點。00878週一配息NT$1,260入帳。台灣LNG僅剩8天儲備。總損益-NT$95,517。結論：MSFT破$370減持50%、NVDA破$165減持33%、台股ETF全持有。若外交突破油價暴跌則全面加碼" },
   { date:"2026-03-19", type:"review", title:"FOMC鷹派落地+Brent$112+S&P跌破200MA — 全部持有", detail:"戰爭第20天。FOMC維持3.50-3.75%，點陣圖僅1次降息，Powell警告油價通膨。Brent$112(+4%)伊朗攻擊卡達沙烏地。S&P跌破200日均線(2023.5以來首次)。VIX 26.78(+7%)。NVDA$180.40(-2.3%)、MSFT$390.50(-10.5%)、NFLX$94.70(+3.0%唯一正)。台股逆勢+1.38%至34,304。00919$23.00填息中、00878$22.54。匯率31.90。總損益-NT$74,707。結論：全部持有不動，VIX>25賣出往往最差" },
   { date:"2026-03-18", type:"review", title:"FOMC決議日+PPI過熱+油價$108+NVDA中國H200核准", detail:"戰爭第19天。FOMC今天2:00PM ET決議(99%維持3.50-3.75%)。2月PPI +0.7% MoM(一年最大)，Core PPI +3.9% YoY停滯性通膨擔憂。Brent飆至$108.46(+4.87%)伊朗警告波灣設施為合法目標。NVDA獲中國H200晶片銷售核准(Reuters)。台股大漲+1.51%至34,348。00919除息隔天填息$0.77(填息率98.7%！)至$23.91。S&P盤中-0.3~0.7%承壓。VIX 23.21。Micron今晚財報。結論：全部持有不動，等FOMC結果再決定" },
@@ -374,6 +375,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-03-23", type:"綜合分析", tb:"badge-us", title:"✅ Trump延後最後通牒！油價暴跌7%+美股期貨大漲+NFLX轉正", summary:"戰爭Day24重大轉折！Trump宣稱productive talks暫停攻擊5天。油價$112→$104(-7%)。MSFT停損壓力緩解(距$370→4.5%)。NFLX$92.42轉正。00878配息NT$1,260入帳。結論：全部持有不動，關注3/28五天暫停期到期", file:"reports/2026-03-23.md" },
   { date:"2026-03-22", type:"綜合分析", tb:"badge-us", title:"⚠️ Trump 48hr最後通牒+MSFT距停損2.8%+台指期夜盤暴跌", summary:"戰爭Day23。Trump威脅摧毀伊朗發電廠(截止週一)。Brent$112.19戰爭新高。NVDA$172.76(-6.4%距停損4.5%)、MSFT$380.58(-12.8%距停損2.8%)。台指期夜盤-2.45%暗示跳空-800點。00878週一配息NT$1,260。總損益-NT$95,517。結論：MSFT破$370減50%、NVDA破$165減33%、台股ETF全持有", file:"reports/2026-03-22.md" },
   { date:"2026-03-19", type:"綜合分析", tb:"badge-us", title:"FOMC鷹派落地+Brent$112+S&P跌破200MA — 全部持有", summary:"FOMC維持3.50-3.75%，點陣圖僅1次降息，Powell警告油價通膨。Brent$112(+4%)。S&P跌破200日均線。VIX 26.78。NVDA$180.40(-2.3%)、MSFT$390.50(-10.5%)、NFLX$94.70(+3.0%唯一正)。台股+1.38%。總損益-NT$74,707。結論：全部持有不動", file:"reports/2026-03-19.md" },
   { date:"2026-03-18", type:"綜合分析", tb:"badge-us", title:"FOMC決議日+PPI過熱+油價$108+NVDA中國H200核准", summary:"FOMC今天2:00PM決議(99%維持)。PPI+0.7%過熱。Brent$108.46(+4.87%)伊朗警告波灣為合法目標。NVDA中國H200核准。台股+1.51%至34,348。00919填息98.7%至$23.91。美股盤中承壓S&P-0.3~0.7%。結論：全部持有不動，等FOMC結果", file:"reports/2026-03-18.md" },
@@ -435,7 +437,9 @@ const calendarEvents = [
   { date:"2026-03-22", title:"伊朗攻擊Diego Garcia", desc:"兩枚中程飛彈射向美英印度洋基地・射程超出預期", stars:5, tag:"geo" },
   { date:"2026-03-22", title:"台指期夜盤暴跌-2.45%", desc:"收32,737・暗示週一跳空下跌800+點", stars:5, tag:"macro" },
   { date:"2026-03-23", title:"00878 配息入帳", desc:"3,000股・NT$1,260入帳", stars:3, tag:"div" },
-  { date:"2026-03-24", title:"Trump最後通牒到期！", desc:"若伊朗未開放海峽→攻擊發電廠？二元結果決定方向", stars:5, tag:"geo" },
+  { date:"2026-03-23", title:"✅ Trump延後最後通牒", desc:"宣稱productive talks，暫停攻擊伊朗發電廠5天。油價暴跌7%至$104-105", stars:5, tag:"geo" },
+  { date:"2026-03-23", title:"亞股重挫", desc:"韓國-6.5%、日本-3.5%、香港-4%（在Trump消息前已大跌）", stars:5, tag:"macro" },
+  { date:"2026-03-28", title:"Trump 5天暫停期到期！", desc:"若未達成協議→可能恢復攻擊伊朗能源基礎設施", stars:5, tag:"geo" },
   { date:"2026-04-14", title:"00919 配息入帳", desc:"7,000股・NT$5,460入帳", stars:3, tag:"div" },
 ];
 
