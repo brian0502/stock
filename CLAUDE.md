@@ -87,6 +87,46 @@ symbol,name,shares,avg_cost
 - Commit message 應清楚說明變動內容（交易紀錄 / 分析報告 / 持股更新）
 - push 完成後立即清除 remote URL 中的 token
 
+### 策略一致性（跨 Session 最重要的規則）
+
+**每次新 session 開始分析前，必須先讀取 `current_strategy.md`，了解上一次的策略基準。**
+
+#### 核心原則
+1. **延續性優先**：每次分析建議必須以 `current_strategy.md` 中記錄的策略為基準，不得無故偏離
+2. **可以調整，但必須說明原因**：如果因為重大因素（市場環境劇變、基本面惡化、觸發停損/停利等）需要調整策略，必須在報告中明確列出：
+   - 「與前次策略的差異」
+   - 「調整原因（發生了什麼重大變化）」
+   - 「新策略內容」
+3. **調整後必須同步更新 `current_strategy.md`**：確保下一次 session 能夠參照最新策略
+4. **不允許靜默改變**：如果建議與前次不同卻沒有說明原因，視為錯誤
+
+#### 什麼情況可以觸發策略調整
+- 持股觸及停損或停利價位
+- 重大地緣政治事件（戰爭升級/停火、制裁等）
+- 央行政策重大轉向（突然升息/降息）
+- 個股基本面惡化（財報大幅不及預期、重大醜聞等）
+- 市場結構性變化（VIX 持續 > 35、系統性風險事件等）
+
+#### 每次分析報告必須包含的新區塊
+```markdown
+## 策略對照（Strategy Alignment Check）
+
+### 前次策略基準（來自 current_strategy.md）
+- [列出前次各標的的策略]
+
+### 本次建議
+- [列出本次各標的的建議]
+
+### 是否有差異？
+- ✅ 一致 / ⚠️ 有調整
+
+### 調整原因（如有）
+- [具體說明發生了什麼導致需要調整]
+```
+
+#### 檔案位置
+- `current_strategy.md` — 當前生效的策略文件（每次調整後更新）
+
 ### 衝突處理
 - 如果發現 portfolio.json 數據與 transactions.json 不一致 → 以 transactions.json 重新計算
 - 如果用戶提供券商截圖 → 以券商數據為最終真實來源
@@ -94,9 +134,10 @@ symbol,name,shares,avg_cost
 
 ### 檔案結構
 ```
-portfolio.json      ← 美股當前持股（由交易紀錄計算）
-tw_portfolio.json   ← 台股當前持股
-transactions.json   ← 所有歷史交易紀錄（唯一真實來源）
-dashboard.html      ← 投資組合儀表板
-reports/            ← 分析報告
+portfolio.json        ← 美股當前持股（由交易紀錄計算）
+tw_portfolio.json     ← 台股當前持股
+transactions.json     ← 所有歷史交易紀錄（唯一真實來源）
+current_strategy.md   ← 當前生效的投資策略（每次 session 必讀、調整後必更新）
+dashboard.html        ← 投資組合儀表板
+reports/              ← 分析報告
 ```
