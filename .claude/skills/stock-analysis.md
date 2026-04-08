@@ -180,3 +180,62 @@ https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/report
 - `/tw-stock-analysis` 或「分析台股」「看一下台股」
 - 「我買了 XXX」「我賣了 XXX」→ 觸發交易紀錄流程
 - 「更新 Dashboard」→ 查最新股價並更新
+
+---
+
+## ⚠️ Dashboard 更新強制清單（每次分析完必查）
+
+**每次分析或交易後，必須逐項確認以下 6 項全部更新：**
+
+| # | 變數/位置 | 說明 | 常見漏更錯誤 |
+|---|-----------|------|------------|
+| 1 | `currentPrice` | 每個持股的即時現價 | 用舊價計算市值 |
+| 2 | `TODAY = 'YYYY-MM-DD'` | 今天的日期（影響行事曆過去/未來標記）| 長期卡在舊日期，導致行事曆全錯 |
+| 3 | `USDTWD` | 即時 USD/TWD 匯率（查 xe.com 或 investing.com）| 匯率卡在舊值，總資產換算錯誤 |
+| 4 | `twCash` / `usCash` | 實際可動用現金（以券商截圖為準）| 現金沒有隨買賣更新 |
+| 5 | `reports` 陣列 | 新分析報告加入陣列**最頂端** | 忘記把新報告加入 dashboard |
+| 6 | `last-updated` 日期文字（頁頭）| 更新時間戳記 | 頁頭日期沒更新 |
+
+**如有新交易（買入/賣出），額外更新：**
+- `allTx` 陣列（新交易加在**最前面**）
+- `shares` 和 `avgCost`（持股數量和均價）
+
+---
+
+## ⚠️ 每次分析完必做的收尾動作（強制 3 步驟）
+
+分析完成後，**必須依序完成以下三步驟才算結束**：
+
+### Step 1：同時更新三個檔案
+```
+reports/YYYY-MM-DD.md    ← 新分析報告
+dashboard.html           ← 套用上方清單所有更新
+current_strategy.md      ← 更新日期、現價快照、新策略變更紀錄
+```
+
+### Step 2：Push 到 Git
+```bash
+git add reports/YYYY-MM-DD.md dashboard.html current_strategy.md
+git commit -m "分析報告 YYYY-MM-DD：{摘要}"
+git push origin claude/stock-analysis-skill-J09An
+git remote set-url origin https://github.com/brian0502/stock.git  # 立即清除 token
+```
+
+### Step 3：直接在對話中提供 dashboard.html（必做）
+Push 完成後，**立即複製並提供給用戶，讓用戶不需要去 git 下載**：
+```bash
+cp /home/claude/stock/dashboard.html /mnt/user-data/outputs/dashboard.html
+```
+然後呼叫 `present_files` 工具提供檔案。
+
+**這三步缺一不可，否則本次分析視為未完成。**
+
+---
+
+## 已知容易忘記的錯誤（歷史教訓）
+
+1. **TODAY 卡住**：每次都要更新 `TODAY = '今天日期'`，否則行事曆所有事件顯示錯誤
+2. **USDTWD 不更新**：匯率影響總資產換算，每次分析都要查即時匯率更新
+3. **現金沒更新**：買賣後 twCash/usCash 要同步調整，並以券商截圖為最終依據
+4. **dashboard 沒提供給用戶**：分析完要呼叫 present_files，不能只 push git 就算了
+5. **市值**：市值是動態計算（shares × currentPrice），只要 currentPrice 正確市值就會正確，不需要硬寫
