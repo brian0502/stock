@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-08 更新（4/7收盤+盤後）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-08 晚間更新（MSFT加碼7股）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -277,7 +277,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 2716.53;
+const usCash = 66.31; // 2026-04-08 買入MSFT 7股後剩餘
 
 const twPortfolio = [
   { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:22.98, category:"高股息ETF", color:"#f59e0b" },
@@ -287,15 +287,16 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:178.10, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:605.67, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:213.77, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:10, avgCost:436.49, currentPrice:372.29, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:98.82, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:575.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:181.79, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:620.15, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:221.28, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:378.46, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:99.15, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:605.70, color:"#8b5cf6" },
 ];
 
 const allTx = [
+  { date:"2026-04-08", market:"US", symbol:"MSFT", action:"buy", shares:7, price:378.60, amount:2650.20, note:"停火後加碼7股，均價從$436.49攤低至$412.65" },
   { date:"2026-04-08", market:"TW", symbol:"00919", action:"buy", shares:2000, price:23.10, amount:46200, note:"停火後加碼 2 張，均價攤低至 $24.03" },
   { date:"2026-03-04", market:"TW", symbol:"3231", action:"sell", shares:1000, price:128.00, amount:128000, note:"停損清倉 -NT$2,500" },
   { date:"2025-12-23", market:"US", symbol:"NVDA", action:"buy", shares:10, price:183.53, amount:1835.30, note:"建倉" },
@@ -377,6 +378,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-08", type:"交易", tb:"badge-us", title:"✅ MSFT 加碼 7 股 @ $378.60｜均價從 $436.49 攤低至 $412.65｜現金剩 $66.31", summary:"停火後美股跳漲，執行 MSFT 加碼計劃。買入 7 股 @ $378.60，持倉從 10 股增至 17 股，均價從 $436.49 攤低至 $412.65（改善 5.5%）。現金 $2,716.53 → $66.31。當日各標的收盤：AMZN $221.28(+7.51)、MSFT $378.46(+6.17)、NFLX $99.15(+0.33)、NVDA $181.79(+3.69)、QQQ $605.70(+17.11)、VOO $620.15(+14.11)。下一驗證點：4/16 NFLX 財報、4/23 AMZN 財報、4/28 MSFT 財報（Azure 增速是否維持 35%+）", file:"reports/2026-04-08.md" },
   { date:"2026-04-08", type:"綜合分析", tb:"badge-tw", title:"🎉 戰爭第40天：美伊兩週停火達成！霍爾木茲重開+油價暴跌16%至$94+S&P期貨+2.5%+00919加碼至9張+現金歸零", summary:"停火達成！Trump在截止前90分鐘宣布暫停攻擊兩週，條件是伊朗立即重開霍爾木茲。伊朗外長確認接受，兩週內安全通行由伊朗武裝力量協調。WTI從$117暴跌16%至$94，Brent跌至$91.70（六年來最大單日跌幅）。S&P 500期貨+2.5%，道瓊+1,000點，Nasdaq+3%。日經+4%，韓股+6%。台股行動：停火確認後執行00919加碼2張至共9張，均價從$24.33攤低至$24.03。台股現金NT$168K全部部署歸零。00679B警示從黃色升回綠色（油價大跌→通膨壓力降→降息預期回升）。後續觀察：4/11 CPI、4/14 Islamabad談判、4/16 NFLX財報、4/28 MSFT財報", file:"reports/2026-04-07.md" },
   { date:"2026-04-07", type:"綜合分析", tb:"badge-us", title:"戰爭第39天：Trump期限今夜8pm ET+伊朗拒臨時停火要永久停戰+巴基斯坦兩段式方案+S&P +0.32%+NFLX $98.66新高", summary:"停火談判最後12小時：巴基斯坦提「伊斯蘭馬巴德協議」兩段式方案（立即停火→15-20天永久協議），伊朗拒絕臨時停火堅持永久停戰，Trump稱伊朗提案「重要但不夠好」並確認期限今晚8pm ET。美股4/6收盤：S&P 500 +0.32%（6,604），VIX 24.5，Brent $110，WTI $112。持倉：NVDA $177.39(-3.9%)、AMZN $209.77(-7.8%)、MSFT ~$375(-14.1%)、NFLX $98.66(+7.4%✅)、VOO ~$617(-2.3%)，總損益從-$2,440改善至-$1,193(-51%)。所有買進理由完整。台股現金NT$168K等今晚期限結果：停火達成→進第一批00919；再延期且無進展→繼續等；談判破裂→保留現金", file:"reports/2026-04-07.md" },
   { date:"2026-04-06", type:"綜合分析", tb:"badge-us", title:"戰爭第38天：非農+178K遠超預期+MSFT $100億日本AI投資+NFLX $98.66近期新高+Trump期限今夜8pm ET+台股現金分兩批啟動", summary:"三大事件同步到位：①非農+178K（預期+57K），衰退擔憂解除，Fed全年不升息確立。②MSFT宣布$100億日本AI投資（2026-2029），4/28財報前Azure論點強化。③Trump伊朗期限今日8pm ET到期，Fox News訪問稱「明天有很好的機會」。美股：NVDA $177.39(-3.9%)、AMZN $209.77(-7.8%)、MSFT ~$375(-14.1%)、NFLX $98.66(+7.4% ✅ 近期新高)、VOO ~$617(-2.3%)。美股未實現損益從最低-$2,440改善至-$1,200。台股現金NT$168K重啟分兩批：今日TAIEX 33,000以上進00919 1-2張，明早等Trump結果動用剩餘NT$118K", file:"reports/2026-04-06.md" },
