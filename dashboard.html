@@ -276,7 +276,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ===== DATA =====
-const USDTWD = 31.97;
+const USDTWD = 31.90;
 const usCash = 2676.00;
 
 const twPortfolio = [
@@ -296,6 +296,7 @@ const usPortfolio = [
 ];
 
 const allTx = [
+  { date:"2026-04-08", market:"TW", symbol:"00919", action:"buy", shares:2000, price:23.10, amount:46200, note:"停火後加碼 2 張，均價攤低至 $24.03" },
   { date:"2026-03-04", market:"TW", symbol:"3231", action:"sell", shares:1000, price:128.00, amount:128000, note:"停損清倉 -NT$2,500" },
   { date:"2025-12-23", market:"US", symbol:"NVDA", action:"buy", shares:10, price:183.53, amount:1835.30, note:"建倉" },
   { date:"2025-12-23", market:"US", symbol:"NFLX", action:"buy", shares:10, price:93.62, amount:936.20, note:"建倉" },
@@ -530,7 +531,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-03-22';
+const TODAY = '2026-04-08';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 function renderCalendar(){
   document.getElementById('calGrid').innerHTML = calendarEvents.map(ev => {
