@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-08 晚間更新（MSFT加碼7股）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-09 更新（停火反彈+完整分析）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -280,8 +280,8 @@ const USDTWD = 31.90;
 const usCash = 66.31; // 2026-04-08 買入MSFT 7股後剩餘
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:22.98, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.86, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:22.99, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:22.90, category:"高股息ETF", color:"#fb923c" },
   { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.42, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
@@ -378,6 +378,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-09", type:"綜合分析", tb:"badge-us", title:"停火反彈D2：台股+4.09%至34,590｜美股全面回升｜全組合持有不動｜4/14談判+4/16 NFLX財報是下週關鍵", summary:"停火達成後第一個完整交易日。台股大漲1,360點(+4.09%)至34,590，成交量3,951億。美股4/8收盤全面上漲：AMZN +7.51、MSFT +6.17、NVDA +3.69、VOO +14.11、QQQ +17.11。持倉狀況：NFLX +7.9%唯一獲利；NVDA -1.5%、VOO -1.8%已接近回本；MSFT -8.3%（加碼後從-14.7%改善）；AMZN -2.7%。台股：00919 $22.99(+1.64%)、00878 $22.90(+2.69%)、00679B $27.42(+0.40%)。全部買進理由成立，無任何需要調整的持倉。下週三大事：4/11 CPI、4/14 伊斯蘭馬巴德談判、4/16 NFLX財報", file:"reports/2026-04-09.md" },
   { date:"2026-04-08", type:"交易", tb:"badge-us", title:"✅ MSFT 加碼 7 股 @ $378.60｜均價從 $436.49 攤低至 $412.65｜現金剩 $66.31", summary:"停火後美股跳漲，執行 MSFT 加碼計劃。買入 7 股 @ $378.60，持倉從 10 股增至 17 股，均價從 $436.49 攤低至 $412.65（改善 5.5%）。現金 $2,716.53 → $66.31。當日各標的收盤：AMZN $221.28(+7.51)、MSFT $378.46(+6.17)、NFLX $99.15(+0.33)、NVDA $181.79(+3.69)、QQQ $605.70(+17.11)、VOO $620.15(+14.11)。下一驗證點：4/16 NFLX 財報、4/23 AMZN 財報、4/28 MSFT 財報（Azure 增速是否維持 35%+）", file:"reports/2026-04-08.md" },
   { date:"2026-04-08", type:"綜合分析", tb:"badge-tw", title:"🎉 戰爭第40天：美伊兩週停火達成！霍爾木茲重開+油價暴跌16%至$94+S&P期貨+2.5%+00919加碼至9張+現金歸零", summary:"停火達成！Trump在截止前90分鐘宣布暫停攻擊兩週，條件是伊朗立即重開霍爾木茲。伊朗外長確認接受，兩週內安全通行由伊朗武裝力量協調。WTI從$117暴跌16%至$94，Brent跌至$91.70（六年來最大單日跌幅）。S&P 500期貨+2.5%，道瓊+1,000點，Nasdaq+3%。日經+4%，韓股+6%。台股行動：停火確認後執行00919加碼2張至共9張，均價從$24.33攤低至$24.03。台股現金NT$168K全部部署歸零。00679B警示從黃色升回綠色（油價大跌→通膨壓力降→降息預期回升）。後續觀察：4/11 CPI、4/14 Islamabad談判、4/16 NFLX財報、4/28 MSFT財報", file:"reports/2026-04-07.md" },
   { date:"2026-04-07", type:"綜合分析", tb:"badge-us", title:"戰爭第39天：Trump期限今夜8pm ET+伊朗拒臨時停火要永久停戰+巴基斯坦兩段式方案+S&P +0.32%+NFLX $98.66新高", summary:"停火談判最後12小時：巴基斯坦提「伊斯蘭馬巴德協議」兩段式方案（立即停火→15-20天永久協議），伊朗拒絕臨時停火堅持永久停戰，Trump稱伊朗提案「重要但不夠好」並確認期限今晚8pm ET。美股4/6收盤：S&P 500 +0.32%（6,604），VIX 24.5，Brent $110，WTI $112。持倉：NVDA $177.39(-3.9%)、AMZN $209.77(-7.8%)、MSFT ~$375(-14.1%)、NFLX $98.66(+7.4%✅)、VOO ~$617(-2.3%)，總損益從-$2,440改善至-$1,193(-51%)。所有買進理由完整。台股現金NT$168K等今晚期限結果：停火達成→進第一批00919；再延期且無進展→繼續等；談判破裂→保留現金", file:"reports/2026-04-07.md" },
@@ -533,7 +534,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-08';
+const TODAY = '2026-04-09';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 function renderCalendar(){
   document.getElementById('calGrid').innerHTML = calendarEvents.map(ev => {
