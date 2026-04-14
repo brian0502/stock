@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-13 更新（談判破局，封鎖霍爾木茲）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-14 更新（S&P抹去戰爭跌幅，MSFT+3.2%）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -280,19 +280,19 @@ const USDTWD = 31.90;
 const usCash = 66.31; // 2026-04-08 買入MSFT 7股後剩餘
 
 const twPortfolio = [
-  { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:22.81, category:"高股息ETF", color:"#f59e0b" },
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.29, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.20, category:"美債ETF", color:"#3b82f6" },
+  { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:22.93, category:"高股息ETF", color:"#f59e0b" },
+  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:23.24, category:"高股息ETF", color:"#fb923c" },
+  { symbol:"00679B", name:"元大美債20年", shares:3000, avgCost:27.91, currentPrice:27.10, category:"美債ETF", color:"#3b82f6" },
 ];
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:192.00, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:621.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:238.38, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:370.87, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:103.03, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:610.68, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:188.95, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:626.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:238.83, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:382.65, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:103.21, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:615.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -378,6 +378,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-14", type:"綜合分析", tb:"badge-us", title:"🚀 S&P抹去伊朗戰爭全部跌幅！4/13大漲+1.02%收6886✅ MSFT今日+3.2%=$382反彈✅｜伊朗主動打電話要談判｜NFLX財報明天❗｜三情境未來走向分析", summary:"重大突破：S&P 500 4/13收6,886（+1.02%），抹去伊朗戰爭開始以來全部跌幅，Nasdaq +1.23%。觸發因素：①伊朗主動聯繫重啟談判意願；②34艘船通過霍爾木茲（封鎖最多）；③WTI回落至$99；④市場學會與戰爭共存，Yardeni年底目標7,700。今日（4/14）：MSFT $382.65(+3.2%，帳面損益從-9.9%改善至-7.3%)✅、NVDA $188.95(+2.3%)✅、AMZN $238.83(+5.0%)✅、NFLX $103.21(+12.1%⭐)。台股：00878 $23.24(+1%)✅、00919 $22.93微漲。未來走向：基準情境(60%)財報季強勁+伊朗延長停火，S&P 7,200-7,500；樂觀(25%)和平協議降息回來；悲觀(15%)4/22後衝突重啟。明天4/15 NFLX財報是最近期最重要事件！", file:"reports/2026-04-14.md" },
   { date:"2026-04-13", type:"綜合分析", tb:"badge-us", title:"⚠️ 談判破局+霍爾木茲封鎖！油價+8%→$104｜美股開低回穩S&P平盤Nasdaq微漲✅｜NVDA+4%AMZN+4.8%仍正報酬｜全組持有｜4/16 NFLX財報倒數3天", summary:"4/12 Islamabad 21小時談判破局，Vance返美，Trump宣布封鎖霍爾木茲，WTI跳漲至$104.4(+8.1%)。台股：00919 $22.81(-0.52%)、00878 $23.29(+0.26%)、00679B $27.20（油價壓力）。美股今日開低後回穩，S&P接近平盤、Nasdaq微漲0.2%，市場顯示仍賭最終和解。持倉現況：NFLX $103.03(+12.1%⭐)、NVDA $192(+4.0%✅)、AMZN $238.38(+4.8%✅)、MSFT $370.87(-10.1%)。全部買進理由未消失：00679B出場條件（Fed升息/CPI>4%連3月）未觸發；科技股AI論點與伊朗無關。本週最重要：4/16 NFLX財報（倒數3天）、4/22停火期滿（最大地緣節點）、4/28 MSFT財報", file:"reports/2026-04-13.md" },
   { date:"2026-04-12", type:"綜合分析", tb:"badge-us", title:"🕊️ 週日分析：Islamabad談判進行中！NVDA+AMZN已轉正✅ NFLX+12.3%✅ 上週S&P+3.6%最佳週｜全組合持有｜4/16 NFLX財報倒數4天", summary:"今日（4/12週日）：美伊直接面對面談判在伊斯蘭馬巴德進行中，JD Vance率隊，3艘超級油輪已通過霍爾木茲（停火後首批）。上週美股創11月最佳週：S&P +3.6%（收6,816）、Nasdaq +4.7%。最新持倉（4/11收盤）：NVDA $188.37（+2.0%✅已轉正）、AMZN $233.65（+2.8%✅已轉正）、NFLX $103.21（+12.3%⭐）、VOO $625.02（-1.1%接近回本）、MSFT $371.70（-9.9%等4/28財報）。台股：00919 $22.93、00878 $23.02、00679B $27.38。Morgan Stanley上調NFLX目標至$115。全部買進理由完整，無需任何調整。本週最重要：4/16 NFLX財報、4/28 MSFT財報", file:"reports/2026-04-12.md" },
   { date:"2026-04-10", type:"綜合分析", tb:"badge-us", title:"📊 3月CPI公布：Headline +2.8%✅遠優預期 vs Core +3.1%⚠️略高｜台股小跌｜全組合持有不動｜短期干擾非結構性改變", summary:"3月CPI結果好壞參半：Headline年增2.8%（預期3.3-3.4%，大幅優於預期✅），能源衝擊遠小於擔憂；但核心CPI年增3.1%（預期2.7%，略高⚠️），服務業通膨有黏性。市場反應：6月降息概率從55%降至35%，科技股小幅承壓。台股今日回落：00919 $22.50(-2.18%)、00878 $22.30(-2.25%)、00679B $27.38(-0.47%)。美股：NVDA $178.10、MSFT $372.29(均價$412.65，-9.8%)、NFLX $98.82(+7.5%唯一獲利)。關鍵判斷：核心CPI 3.1%距失控閾值(4%+)仍遠，Fed不會升息，只是降息延後。這是短期干擾非結構性改變，全部買進理由成立，無需調整。下週最重要：4/14伊斯蘭馬巴德談判、4/16 NFLX財報、4/26 PCE、4/28 MSFT財報", file:"reports/2026-04-10.md" },
@@ -537,7 +538,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-13';
+const TODAY = '2026-04-14';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 function renderCalendar(){
   document.getElementById('calGrid').innerHTML = calendarEvents.map(ev => {
