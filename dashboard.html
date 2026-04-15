@@ -560,59 +560,58 @@ document.getElementById('heroSection').innerHTML = `
 // ===== CALENDAR =====
 const TODAY = '2026-04-15';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
+// ===== CALENDAR (month tabs) =====
+const CAL_MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const CAL_TAG_LABEL = {geo:'地緣',macro:'總經',earn:'財報',div:'配息',event:'事件'};
+let calActiveMonth = '';
+
 function renderCalendar(){
-  // Sort descending: future first, then past (newest past first)
-  const sorted = [...calendarEvents].sort((a,b) => b.date.localeCompare(a.date));
-  const future = sorted.filter(ev => ev.date >= TODAY);
-  const past   = sorted.filter(ev => ev.date <  TODAY);
+  // Build month list: future months first (asc), then past months (desc)
+  const months = [...new Set(calendarEvents.map(ev => ev.date.slice(0,7)))];
+  const futureMonths = months.filter(m => m >= TODAY.slice(0,7)).sort();
+  const pastMonths   = months.filter(m => m <  TODAY.slice(0,7)).sort().reverse();
+  const orderedMonths = [...futureMonths, ...pastMonths];
 
-  const MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  const tagLabel = {geo:'地緣',macro:'總經',earn:'財報',div:'配息',event:'事件'};
-
-  function buildGroup(events, isPastGroup){
-    let html = '', lastMonthKey = '';
-    events.forEach(ev => {
-      const d = new Date(ev.date + 'T00:00:00');
-      const monthKey = ev.date.slice(0,7);
-      const mon = MONTH_NAMES[d.getMonth()+1];
-      const year = d.getFullYear();
-      const day = d.getDate().toString();
-      const dow = DOW_MAP[d.getDay()];
-      const isPast = ev.date < TODAY;
-      const isToday = ev.date === TODAY;
-      const stars = Array.from({length:5},(_,i)=>`<div class="cal-star ${i<ev.stars?'on':'off'}"></div>`).join('');
-      if(monthKey !== lastMonthKey){
-        lastMonthKey = monthKey;
-        const badge = isPastGroup ? '<span style="font-size:10px;opacity:.5;margin-left:6px">已發生</span>' : '<span style="font-size:10px;color:#34d399;margin-left:6px">▶ 即將</span>';
-        html += `<div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text-dim);text-transform:uppercase;padding:14px 4px 6px;border-bottom:1px solid var(--border);margin-bottom:6px">${year}年 ${mon}${badge}</div>`;
-      }
-      html += `<div class="cal-item${isPast?' cal-past':''}${isToday?' cal-today':''}">
-        <div class="cal-date-col"><div class="cal-month">${mon}</div><div class="cal-day">${day}</div><div class="cal-dow">週${dow}</div></div>
-        <div class="cal-info"><div class="cal-title"><span class="cal-tag cal-tag-${ev.tag}">${tagLabel[ev.tag]||''}</span>${ev.title}</div><div class="cal-desc">${ev.desc}</div><div class="cal-stars">${stars}</div></div>
-      </div>`;
-    });
-    return html;
+  // Default to first month (most upcoming)
+  if(!calActiveMonth || !orderedMonths.includes(calActiveMonth)){
+    calActiveMonth = orderedMonths[0] || '';
   }
 
-  let html = '';
-  if(future.length) html += buildGroup(future, false);
-  if(past.length){
-    if(future.length) html += `<div style="height:16px"></div>`;
-    html += buildGroup(past, true);
-  }
-  document.getElementById('calGrid').innerHTML = html;
-  const upcoming = calendarEvents.filter(ev => ev.date >= TODAY).length;
-  const badge = document.getElementById('calCountBadge');
-  if(badge) badge.textContent = upcoming > 0 ? upcoming + ' 個即將事件' : '無即將事件';
+  // Render tab buttons
+  const tabsEl = document.getElementById('calTabs');
+  tabsEl.innerHTML = orderedMonths.map(m => {
+    const [y,mo] = m.split('-');
+    const label = y + '年' + CAL_MONTH_NAMES[parseInt(mo)];
+    const isFuture = m >= TODAY.slice(0,7);
+    const dot = isFuture ? '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#34d399;margin-right:4px;vertical-align:middle"></span>' : '';
+    return `<button class="tx-filter-btn${m===calActiveMonth?' active':''}" onclick="setCalMonth('${m}',this)">${dot}${label}</button>`;
+  }).join('');
+
+  // Render events for active month
+  const evs = calendarEvents
+    .filter(ev => ev.date.slice(0,7) === calActiveMonth)
+    .sort((a,b) => b.date.localeCompare(a.date));
+
+  document.getElementById('calGrid').innerHTML = evs.map(ev => {
+    const d = new Date(ev.date + 'T00:00:00');
+    const mon = CAL_MONTH_NAMES[d.getMonth()+1];
+    const day = d.getDate().toString();
+    const dow = DOW_MAP[d.getDay()];
+    const isPast = ev.date < TODAY;
+    const isToday = ev.date === TODAY;
+    const stars = Array.from({length:5},(_,i)=>`<div class="cal-star ${i<ev.stars?'on':'off'}"></div>`).join('');
+    return `<div class="cal-item${isPast?' cal-past':''}${isToday?' cal-today':''}">
+      <div class="cal-date-col"><div class="cal-month">${mon}</div><div class="cal-day">${day}</div><div class="cal-dow">週${dow}</div></div>
+      <div class="cal-info"><div class="cal-title"><span class="cal-tag cal-tag-${ev.tag}">${CAL_TAG_LABEL[ev.tag]||''}</span>${ev.title}</div><div class="cal-desc">${ev.desc}</div><div class="cal-stars">${stars}</div></div>
+    </div>`;
+  }).join('') || '<div style="padding:20px;color:var(--text-dim);font-size:13px">本月無事件</div>';
 }
-renderCalendar();
 
-function toggleCal(){
-  const body = document.getElementById('calBody');
-  const chevron = document.getElementById('calChevron');
-  const isOpen = body.style.display !== 'none';
-  body.style.display = isOpen ? 'none' : 'block';
-  chevron.textContent = isOpen ? '▼' : '▲';
+function setCalMonth(month, btn){
+  calActiveMonth = month;
+  document.querySelectorAll('#calTabs .tx-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCalendar();
 }
 
 // ===== TW SUMMARY =====
