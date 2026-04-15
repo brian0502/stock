@@ -195,8 +195,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <!-- Calendar -->
 <div class="cal-section">
-  <div class="section-title" style="margin-bottom:12px">📅 重大行事曆</div>
-  <div class="cal-grid" id="calGrid"></div>
+  <div class="section-title" style="margin-bottom:0;cursor:pointer;user-select:none" onclick="toggleCal()" id="calToggleHeader">
+    <span>📅 重大行事曆</span>
+    <span style="font-size:13px;color:var(--text-dim);margin-left:auto;font-weight:400;display:flex;align-items:center;gap:6px">
+      <span id="calCountBadge" style="font-size:11px;background:rgba(255,255,255,.08);padding:2px 8px;border-radius:20px"></span>
+      <span id="calChevron">▼</span>
+    </span>
+  </div>
+  <div id="calBody" style="display:none;margin-top:12px">
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
 </div>
 
 <!-- TW Section -->
@@ -593,8 +601,19 @@ function renderCalendar(){
     html += buildGroup(past, true);
   }
   document.getElementById('calGrid').innerHTML = html;
+  const upcoming = calendarEvents.filter(ev => ev.date >= TODAY).length;
+  const badge = document.getElementById('calCountBadge');
+  if(badge) badge.textContent = upcoming > 0 ? upcoming + ' 個即將事件' : '無即將事件';
 }
 renderCalendar();
+
+function toggleCal(){
+  const body = document.getElementById('calBody');
+  const chevron = document.getElementById('calChevron');
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  chevron.textContent = isOpen ? '▼' : '▲';
+}
 
 // ===== TW SUMMARY =====
 document.getElementById('twSummary').innerHTML = `
