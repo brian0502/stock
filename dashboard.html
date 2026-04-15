@@ -435,32 +435,43 @@ const pc = n => n>=0?'positive':'negative';
 
 // ===== CALENDAR DATA =====
 const calendarEvents = [
-  { date:"2026-03-09", title:"G7 財長緊急會議", desc:"討論聯合釋放戰略石油儲備", stars:5, tag:"macro" },
-  { date:"2026-03-09", title:"亞股血洗", desc:"韓國熔斷-7.72%・日經-6.45%・台股-4.43%", stars:5, tag:"geo" },
-  { date:"2026-03-11", title:"CPI 通膨報告", desc:"2月數據・油價尚未完全反映", stars:5, tag:"macro" },
-  { date:"2026-03-11", title:"Oracle (ORCL) 財報", desc:"雲端業務指標", stars:3, tag:"event" },
-  { date:"2026-03-12", title:"IEA 4億桶釋放失效", desc:"史上最大儲備釋放無法阻止油價・Brent回漲$100+", stars:5, tag:"geo" },
-  { date:"2026-03-12", title:"新領導人首次表態", desc:"穆吉塔巴・哈梅內伊：「一滴油都不讓通過」", stars:5, tag:"geo" },
-  { date:"2026-03-13", title:"三大指數創2026新低", desc:"S&P 6,672・Nasdaq 22,312・道瓊 46,678・連三週跌", stars:5, tag:"macro" },
-  { date:"2026-03-14", title:"PCE 報告", desc:"Fed偏好通膨指標", stars:4, tag:"macro" },
-  { date:"2026-03-15", title:"川普拒絕伊朗停火", desc:"稱「條件不夠好」，伊斯法罕等多處遭空襲", stars:5, tag:"geo" },
-  { date:"2026-03-14", title:"00919 除息最後買進日", desc:"明天前買入才能參與 3/17 除息", stars:4, tag:"div" },
-  { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"Vera Rubin・Feynman・HBM4・LPU", stars:5, tag:"event" },
-  { date:"2026-03-17", title:"00919 除息 0.78元", desc:"7,000股・預計領 NT$5,460", stars:4, tag:"div" },
-  { date:"2026-03-18", title:"FOMC 利率決議 + 點陣圖", desc:"99%維持3.50-3.75%・PPI過熱+0.7%・Powell 2:30PM記者會", stars:5, tag:"macro" },
-  { date:"2026-03-18", title:"NVDA 中國H200核准", desc:"中國批准NVIDIA H200晶片銷售（Reuters報導）", stars:4, tag:"event" },
-  { date:"2026-03-18", title:"Micron (MU) 財報", desc:"盤後財報・記憶體/AI需求風向球", stars:4, tag:"event" },
-  { date:"2026-03-19", title:"FOMC鷹派落地：僅1次降息", desc:"維持3.50-3.75%・Powell警告油價通膨・Dow昨日-768點", stars:5, tag:"macro" },
+  // ── 未來事件 ──
+  { date:"2026-04-16", title:"🔴 NFLX Q1 財報（今晚）", desc:"收盤後公布・預期EPS $0.76・廣告收入是否翻倍至$30億是關鍵・GS目標$120", stars:5, tag:"earn" },
+  { date:"2026-04-22", title:"⚠️ 美伊兩週停火期滿", desc:"停火到期，若無協議或延長→風險事件・油價和股市均受影響", stars:5, tag:"geo" },
+  { date:"2026-04-23", title:"AMZN Q1 財報", desc:"AWS增速（目前24%）・CapEx壓力・消費需求・電商毛利", stars:4, tag:"earn" },
+  { date:"2026-04-26", title:"3月 PCE 報告", desc:"Fed偏好通膨指標（上次2月PCE核心3%符合預期）・降息路徑關鍵", stars:4, tag:"macro" },
+  { date:"2026-04-28", title:"🔴 MSFT Q1 財報", desc:"Azure增速（目前39%）・RPO $625B・OpenAI對Amazon合作是否影響論點", stars:5, tag:"earn" },
+  { date:"2026-05-01", title:"FOMC 利率決議", desc:"市場預期維持3.50-3.75%・若PCE降溫可能暗示6月降息", stars:5, tag:"macro" },
+  { date:"2026-05-20", title:"NVDA Q1 FY2027 財報", desc:"預期EPS $1.76（+8.6%）・Blackwell出貨量・數據中心收入", stars:5, tag:"earn" },
+  { date:"2026-06-01", title:"00919 配息（預估）", desc:"季配約 $0.78/股・9張預計 NT$7,020入帳", stars:4, tag:"div" },
+  { date:"2026-06-01", title:"00878 配息（預估）", desc:"季配約 $0.42/股・3張預計 NT$1,260入帳", stars:3, tag:"div" },
+  { date:"2026-06-17", title:"FOMC 利率決議", desc:"若通膨繼續降溫・降息概率升高・長債ETF受惠（00679B）", stars:4, tag:"macro" },
+  // ── 4月已發生 ──
+  { date:"2026-04-15", title:"PPI 遠優預期", desc:"March PPI月增+0.5%（預期+1.1%）・核心PPI+0.1%（預期+0.5%）・降息路徑重開", stars:5, tag:"macro" },
+  { date:"2026-04-14", title:"JPMorgan Q1 財報強勁", desc:"獲利+13%至$165億・Dimon：美國消費者仍健康・但警告地緣政治風險", stars:4, tag:"earn" },
+  { date:"2026-04-14", title:"Nasdaq 10連漲", desc:"Nasdaq 100 +1.8%・2021年以來最長連勝・S&P +1.2%逼近1月高點", stars:5, tag:"macro" },
+  { date:"2026-04-14", title:"00919 配息入帳", desc:"7,000股・NT$5,460入帳", stars:3, tag:"div" },
+  { date:"2026-04-13", title:"✅ S&P抹去伊朗戰爭全部跌幅", desc:"收6,886（+1.02%）・伊朗主動聯繫重啟談判・34艘船通過霍爾木茲", stars:5, tag:"macro" },
+  { date:"2026-04-12", title:"❌ Islamabad談判破局", desc:"21小時後Vance宣告無協議・伊朗拒絕放棄核武承諾・Trump宣布封鎖霍爾木茲", stars:5, tag:"geo" },
+  { date:"2026-04-11", title:"Islamabad美伊直接談判", desc:"Vance率隊・Ghalibaf率伊方70人代表團・史上首次高層直接對話", stars:5, tag:"geo" },
+  { date:"2026-04-10", title:"3月CPI：Headline+2.8%優預期", desc:"Headline YoY+2.8%（預期3.4%，✅遠優）・Core+3.1%（預期2.7%，⚠️略高）", stars:5, tag:"macro" },
+  { date:"2026-04-08", title:"✅ 美伊兩週停火達成", desc:"Trump宣布暫停攻擊・霍爾木茲重開・油價單日暴跌16%・S&P+2.51%", stars:5, tag:"geo" },
+  // ── 3月 ──
+  { date:"2026-03-28", title:"Trump 5天暫停期到期", desc:"若未達成協議→可能恢復攻擊伊朗能源基礎設施", stars:5, tag:"geo" },
+  { date:"2026-03-23", title:"✅ Trump延後最後通牒", desc:"暫停攻擊伊朗發電廠5天。油價暴跌7%至$104-105", stars:5, tag:"geo" },
+  { date:"2026-03-23", title:"00878 配息入帳", desc:"3,000股・NT$1,260入帳", stars:3, tag:"div" },
+  { date:"2026-03-22", title:"Trump 48hr最後通牒", desc:"威脅摧毀伊朗發電廠若不開放霍爾木茲・截止~週一3/24", stars:5, tag:"geo" },
   { date:"2026-03-19", title:"S&P跌破200日均線", desc:"2023年5月以來首次・VIX 26.78(+7%)", stars:5, tag:"macro" },
   { date:"2026-03-19", title:"Brent原油$112", desc:"伊朗攻擊卡達沙烏地能源設施・17%LNG產能被毀", stars:5, tag:"geo" },
-  { date:"2026-03-22", title:"Trump 48hr最後通牒", desc:"威脅摧毀伊朗發電廠若不開放霍爾木茲・截止~週一3/24", stars:5, tag:"geo" },
-  { date:"2026-03-22", title:"伊朗攻擊Diego Garcia", desc:"兩枚中程飛彈射向美英印度洋基地・射程超出預期", stars:5, tag:"geo" },
-  { date:"2026-03-22", title:"台指期夜盤暴跌-2.45%", desc:"收32,737・暗示週一跳空下跌800+點", stars:5, tag:"macro" },
-  { date:"2026-03-23", title:"00878 配息入帳", desc:"3,000股・NT$1,260入帳", stars:3, tag:"div" },
-  { date:"2026-03-23", title:"✅ Trump延後最後通牒", desc:"宣稱productive talks，暫停攻擊伊朗發電廠5天。油價暴跌7%至$104-105", stars:5, tag:"geo" },
-  { date:"2026-03-23", title:"亞股重挫", desc:"韓國-6.5%、日本-3.5%、香港-4%（在Trump消息前已大跌）", stars:5, tag:"macro" },
-  { date:"2026-03-28", title:"Trump 5天暫停期到期！", desc:"若未達成協議→可能恢復攻擊伊朗能源基礎設施", stars:5, tag:"geo" },
-  { date:"2026-04-14", title:"00919 配息入帳", desc:"7,000股・NT$5,460入帳", stars:3, tag:"div" },
+  { date:"2026-03-18", title:"FOMC：維持利率+僅1次降息", desc:"維持3.50-3.75%・Powell警告油價通膨・Dow-768點", stars:5, tag:"macro" },
+  { date:"2026-03-18", title:"Micron (MU) 財報", desc:"盤後財報・記憶體/AI需求風向球", stars:4, tag:"earn" },
+  { date:"2026-03-17", title:"00919 除息 0.78元", desc:"7,000股・NT$5,460入帳", stars:4, tag:"div" },
+  { date:"2026-03-16", title:"NVIDIA GTC 大會", desc:"Vera Rubin・Feynman・HBM4・LPU", stars:5, tag:"event" },
+  { date:"2026-03-14", title:"PCE 報告（2月）", desc:"核心PCE 3.0%符合預期・Fed觀望不動", stars:4, tag:"macro" },
+  { date:"2026-03-13", title:"三大指數創2026新低", desc:"S&P 6,672・Nasdaq 22,312・道瓊 46,678", stars:5, tag:"macro" },
+  { date:"2026-03-12", title:"新伊朗領導人首次表態", desc:"穆吉塔巴・哈梅內伊：「一滴油都不讓通過」", stars:5, tag:"geo" },
+  { date:"2026-03-11", title:"3月CPI（2月數據）", desc:"Headline+2.4%・Core+2.5%・油價尚未完全反映", stars:4, tag:"macro" },
+  { date:"2026-03-09", title:"亞股血洗", desc:"韓國熔斷-7.72%・日經-6.45%・台股-4.43%", stars:5, tag:"geo" },
 ];
 
 const twRealizedDetail = [
@@ -542,20 +553,47 @@ document.getElementById('heroSection').innerHTML = `
 const TODAY = '2026-04-15';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 function renderCalendar(){
-  document.getElementById('calGrid').innerHTML = calendarEvents.map(ev => {
-    const d = new Date(ev.date + 'T00:00:00');
-    const mon = (d.getMonth()+1).toString();
-    const day = d.getDate().toString();
-    const dow = DOW_MAP[d.getDay()];
-    const isPast = ev.date < TODAY;
-    const isToday = ev.date === TODAY;
-    const tagLabel = {geo:'地緣',macro:'總經',earn:'財報',div:'配息',event:'事件'}[ev.tag]||'';
-    const stars = Array.from({length:5},(_,i)=>`<div class="cal-star ${i<ev.stars?'on':'off'}"></div>`).join('');
-    return `<div class="cal-item${isPast?' cal-past':''}${isToday?' cal-today':''}">
-      <div class="cal-date-col"><div class="cal-month">${mon}月</div><div class="cal-day">${day}</div><div class="cal-dow">週${dow}</div></div>
-      <div class="cal-info"><div class="cal-title"><span class="cal-tag cal-tag-${ev.tag}">${tagLabel}</span>${ev.title}</div><div class="cal-desc">${ev.desc}</div><div class="cal-stars">${stars}</div></div>
-    </div>`;
-  }).join('');
+function renderCalendar(){
+  // Sort descending: future first, then past (newest past first)
+  const sorted = [...calendarEvents].sort((a,b) => b.date.localeCompare(a.date));
+  const future = sorted.filter(ev => ev.date >= TODAY);
+  const past   = sorted.filter(ev => ev.date <  TODAY);
+
+  const MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  const tagLabel = {geo:'地緣',macro:'總經',earn:'財報',div:'配息',event:'事件'};
+
+  function buildGroup(events, isPastGroup){
+    let html = '', lastMonthKey = '';
+    events.forEach(ev => {
+      const d = new Date(ev.date + 'T00:00:00');
+      const monthKey = ev.date.slice(0,7);
+      const mon = MONTH_NAMES[d.getMonth()+1];
+      const year = d.getFullYear();
+      const day = d.getDate().toString();
+      const dow = DOW_MAP[d.getDay()];
+      const isPast = ev.date < TODAY;
+      const isToday = ev.date === TODAY;
+      const stars = Array.from({length:5},(_,i)=>`<div class="cal-star ${i<ev.stars?'on':'off'}"></div>`).join('');
+      if(monthKey !== lastMonthKey){
+        lastMonthKey = monthKey;
+        const badge = isPastGroup ? '<span style="font-size:10px;opacity:.5;margin-left:6px">已發生</span>' : '<span style="font-size:10px;color:#34d399;margin-left:6px">▶ 即將</span>';
+        html += `<div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text-dim);text-transform:uppercase;padding:14px 4px 6px;border-bottom:1px solid var(--border);margin-bottom:6px">${year}年 ${mon}${badge}</div>`;
+      }
+      html += `<div class="cal-item${isPast?' cal-past':''}${isToday?' cal-today':''}">
+        <div class="cal-date-col"><div class="cal-month">${mon}</div><div class="cal-day">${day}</div><div class="cal-dow">週${dow}</div></div>
+        <div class="cal-info"><div class="cal-title"><span class="cal-tag cal-tag-${ev.tag}">${tagLabel[ev.tag]||''}</span>${ev.title}</div><div class="cal-desc">${ev.desc}</div><div class="cal-stars">${stars}</div></div>
+      </div>`;
+    });
+    return html;
+  }
+
+  let html = '';
+  if(future.length) html += buildGroup(future, false);
+  if(past.length){
+    if(future.length) html += `<div style="height:16px"></div>`;
+    html += buildGroup(past, true);
+  }
+  document.getElementById('calGrid').innerHTML = html;
 }
 renderCalendar();
 
