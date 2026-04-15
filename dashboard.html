@@ -196,10 +196,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <!-- Calendar -->
 <div class="cal-section">
   <div class="section-title" style="margin-bottom:12px">📅 重大行事曆</div>
-  <div class="table-container">
-    <div class="tx-controls" id="calTabs" style="flex-wrap:wrap"></div>
-    <div class="cal-grid" id="calGrid" style="padding:14px"></div>
-  </div>
+  <div id="calTabs" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px"></div>
+  <div class="cal-grid" id="calGrid"></div>
 </div>
 
 <!-- TW Section -->
@@ -561,15 +559,13 @@ const CAL_TAG_LABEL = {geo:'地緣',macro:'總經',earn:'財報',div:'配息',ev
 let calActiveMonth = '';
 
 function renderCalendar(){
-  // Build month list: future months first (asc), then past months (desc)
-  const months = [...new Set(calendarEvents.map(ev => ev.date.slice(0,7)))];
-  const futureMonths = months.filter(m => m >= TODAY.slice(0,7)).sort();
-  const pastMonths   = months.filter(m => m <  TODAY.slice(0,7)).sort().reverse();
-  const orderedMonths = [...futureMonths, ...pastMonths];
+  // Build month list: chronological order (oldest left → newest right)
+  const orderedMonths = [...new Set(calendarEvents.map(ev => ev.date.slice(0,7)))].sort();
 
-  // Default to first month (most upcoming)
+  // Default to current month, or closest upcoming month
   if(!calActiveMonth || !orderedMonths.includes(calActiveMonth)){
-    calActiveMonth = orderedMonths[0] || '';
+    const cur = TODAY.slice(0,7);
+    calActiveMonth = orderedMonths.find(m => m >= cur) || orderedMonths[orderedMonths.length-1] || '';
   }
 
   // Render tab buttons
@@ -578,8 +574,12 @@ function renderCalendar(){
     const [y,mo] = m.split('-');
     const label = y + '年' + CAL_MONTH_NAMES[parseInt(mo)];
     const isFuture = m >= TODAY.slice(0,7);
-    const dot = isFuture ? '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#34d399;margin-right:4px;vertical-align:middle"></span>' : '';
-    return `<button class="tx-filter-btn${m===calActiveMonth?' active':''}" onclick="setCalMonth('${m}',this)">${dot}${label}</button>`;
+    const isActive = m === calActiveMonth;
+    const dot = isFuture ? '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#34d399;margin-right:5px;vertical-align:middle"></span>' : '';
+    const style = isActive
+      ? 'background:var(--blue-bg);border:1px solid var(--blue);color:var(--blue)'
+      : 'background:var(--surface2);border:1px solid var(--border);color:var(--text-dim)';
+    return `<button style="${style};border-radius:8px;padding:7px 14px;font-size:12px;cursor:pointer;transition:all .15s" onclick="setCalMonth('${m}')">${dot}${label}</button>`;
   }).join('');
 
   // Render events for active month
@@ -602,10 +602,8 @@ function renderCalendar(){
   }).join('') || '<div style="padding:20px;color:var(--text-dim);font-size:13px">本月無事件</div>';
 }
 
-function setCalMonth(month, btn){
+function setCalMonth(month){
   calActiveMonth = month;
-  document.querySelectorAll('#calTabs .tx-filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
   renderCalendar();
 }
 renderCalendar();
