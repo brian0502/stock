@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-16 更新（S&P期貨突破7000歷史新高！NFLX今晚財報）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-16 更新（S&P 7023新高ATH！Nasdaq 11連漲！MSFT+4%｜NFLX今晚財報）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:195.88, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:638.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:248.00, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:394.40, color:"#3b82f6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.84, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:643.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:249.24, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:410.18, color:"#3b82f6" },
   { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:106.47, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:633.00, color:"#8b5cf6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:641.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,7 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
-  { date:"2026-04-16", type:"綜合分析", tb:"badge-us", title:"🏔️ S&P期貨首破7000歷史高點！VIX 18 油價$90｜台股連5漲｜NFLX今晚財報❗", summary:"今日最大亮點：S&P 500期貨7,005.25，首次突破1月28日歷史高點7,002！VIX 18.36（-3.97%），油價WTI $90.68，伊朗第二輪談判即將啟動，4/22停火到期前關鍵一週。台股（4/16）：00919 $22.92(-4.6%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%，油價$90是降息利多)。美股（4/15收盤）：NFLX $106.47(+15.9%⭐今晚財報！)、AMZN $248(+9.0%✅)、NVDA $195.88(+6.1%✅)、MSFT $394.40(-4.4%持續回升)、VOO $638(+1.0%✅)、QQQ $633(+1.7%✅)。9檔全部持有，NFLX財報是今日最關鍵事件。", file:"reports/2026-04-16.md" },
+  { date:"2026-04-16", type:"綜合分析", tb:"badge-us", title:"🚀 S&P 7022.95 新歷史高點！Nasdaq 11連漲 24016！MSFT大漲+4%→$410｜NFLX今晚財報❗", summary:"今日最大亮點：S&P 500昨日（4/15）收7,022.95創歷史新高！Nasdaq 24,016（11連漲）。最大贏家是MSFT +4%至~$410，距均價$412.65只差0.6%！NVDA ~$198（+7.3%✅），AMZN ~$249（+9.5%✅），NFLX $106.47（+15.9%⭐今晚財報4:45PM ET）。台股（4/16）：00919 $22.92(-4.6%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%)。MSFT是今日最大驚喜，若今晚NFLX財報超預期，整體組合將全面轉正！4/22停火到期是最大尾部風險。，首次突破1月28日歷史高點7,002！VIX 18.36（-3.97%），油價WTI $90.68，伊朗第二輪談判即將啟動，4/22停火到期前關鍵一週。台股（4/16）：00919 $22.92(-4.6%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%，油價$90是降息利多)。美股（4/15收盤）：NFLX $106.47(+15.9%⭐今晚財報！)、AMZN $248(+9.0%✅)、NVDA $195.88(+6.1%✅)、MSFT $394.40(-4.4%持續回升)、VOO $638(+1.0%✅)、QQQ $633(+1.7%✅)。9檔全部持有，NFLX財報是今日最關鍵事件。", file:"reports/2026-04-16.md" },
   { date:"2026-04-15", type:"綜合分析", tb:"badge-us", title:"🚀 S&P距歷史高點<1%！Nasdaq 10連漲✅ NVDA+6.1% AMZN+9.0% VOO轉正✅｜油價$91大跌｜今晚NFLX財報❗", summary:"今日最大亮點：S&P 500收6,967，距歷史高點7,002僅剩<1%！Nasdaq 10連漲（23,639）創2021年以來最長連勝。WTI油價從$117跌至$91（-22%），通膨壓力大幅紓解。Trump說伊朗戰爭『very close to over』第二輪談判即將啟動。持倉現況（4/15）：NVDA $195.88(+6.1%✅)、AMZN $247.87(+9.0%✅)、NFLX $103.21(+12.3%⭐今晚財報！)、MSFT $394.40(-4.4%持續回升)、VOO $636(+0.7%✅正報酬)、QQQ $630(+1.2%✅正報酬)。台股：00919 $22.97(-4.4%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%但油價大跌是利多)。全部9個標的買進理由完整，今晚NFLX財報是近期最重要個股催化劑", file:"reports/2026-04-15.md" },
   { date:"2026-04-15", type:"綜合分析", tb:"badge-us", title:"🎉 PPI大幅降溫！核心PPI+0.1%（預期+0.5%）✅ 油價回落$95.61✅ S&P 6908創新高✅ MSFT$390(-5.4%持續回升)｜VIX 18.2恐慌消退｜NFLX財報明日❗", summary:"今日兩大超級利多：①3月PPI月增+0.5%（預期+1.1%），核心PPI+0.1%（預期+0.5%），遠低於預期，降息路徑重開；②油價WTI回落至$95.61（-3.5%，較$104高點大跌）。JPMorgan Q1獲利+13%大幅優預期。市場：S&P 6,908（+0.33%），Nasdaq +0.86%，VIX 18.20（恐慌幾乎消退）。持倉：NFLX $103.21(+12.3%⭐，明日財報！)、NVDA $189.01(+2.4%✅)、AMZN $238.83(+5.0%✅)、MSFT $390.38(-5.4%，從-9.9%大幅回升✅)、VOO $628(-0.6%接近回本)。台股：00919 $22.93、00878 $23.24、00679B油價回落論點改善✅。全部買進理由完整，明日NFLX財報是最重要事件！", file:"reports/2026-04-15.md" },
   { date:"2026-04-14", type:"綜合分析", tb:"badge-us", title:"🚀 S&P抹去伊朗戰爭全部跌幅！4/13大漲+1.02%收6886✅ MSFT今日+3.2%=$382反彈✅｜伊朗主動打電話要談判｜NFLX財報明天❗｜三情境未來走向分析", summary:"重大突破：S&P 500 4/13收6,886（+1.02%），抹去伊朗戰爭開始以來全部跌幅，Nasdaq +1.23%。觸發因素：①伊朗主動聯繫重啟談判意願；②34艘船通過霍爾木茲（封鎖最多）；③WTI回落至$99；④市場學會與戰爭共存，Yardeni年底目標7,700。今日（4/14）：MSFT $382.65(+3.2%，帳面損益從-9.9%改善至-7.3%)✅、NVDA $188.95(+2.3%)✅、AMZN $238.83(+5.0%)✅、NFLX $103.21(+12.1%⭐)。台股：00878 $23.24(+1%)✅、00919 $22.93微漲。未來走向：基準情境(60%)財報季強勁+伊朗延長停火，S&P 7,200-7,500；樂觀(25%)和平協議降息回來；悲觀(15%)4/22後衝突重啟。明天4/15 NFLX財報是最近期最重要事件！", file:"reports/2026-04-14.md" },
