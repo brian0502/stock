@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-16 盤中（S&P 7023 ATH！Nasdaq 11連漲！台股連8漲+14%！NFLX今晚財報）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-17 更新（NFLX財報大超預期但Q2指引失望→盤後-9%｜S&P Nasdaq再創歷史新高）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.84, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:643.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:249.24, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:410.18, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:107.55, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:641.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:200.00, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:645.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:251.00, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:412.00, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:98.36, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:644.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,6 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-17", type:"財報分析", tb:"badge-us", title:"⚠️ NFLX財報大超預期EPS $1.23（+62%）但Q2指引失望→盤後-9% $98｜論點完整持有！S&P Nasdaq再創歷史新高", summary:"NFLX Q1 2026財報：EPS $1.23（預期$0.76，+62%超越），營收$12.25B（+16%YoY），廣告收入仍在軌道翻倍至$30億，全年指引不變$50.7-51.7B。BUT Q2指引：EPS $0.78（預期$0.84）、營收$12.57B（預期$12.63B）雙雙低於預期；加上創辦人Reed Hastings宣布不競選董事→盤後跌9%至$98.36。重要解讀：①EPS超預期主要來自$2.8B Warner Bros終止費（一次性），實際運營EPS~$0.76；②Q2內容成本前置是年初就知道的既定安排；③廣告業務仍在軌道；④論點未消失。現價$98.36，成本$91.90，仍有+7%獲利。繼續持有，等Q2驗證廣告數據。大盤：S&P和Nasdaq今日再創歷史新高，以色列-黎巴嫩10天停火，美伊延長停火在談，4/22最大風險可能延後。", file:"reports/2026-04-17.md" },
   { date:"2026-04-16", type:"綜合分析", tb:"badge-us", title:"🚀 S&P 7023 ATH！Nasdaq 11連漲！台股連8漲+14%！MSFT+4%→$410 幾乎回本｜NFLX今晚財報❗", summary:"S&P 500昨日（4/15）收7,022.95創歷史新高！Nasdaq 24,016（11連漲創記錄）。MSFT昨日大漲+4%至~$410，距均價$412.65僅剩-0.6%，幾乎全面回本！台股今日連8漲（累計+14%），00878首次超車00919成為較高價格。美股持倉：NFLX今日盤中$107.55(+17%⭐今晚財報4:45PM ET)、AMZN ~$249(+9.5%✅)、NVDA ~$198(+7.3%✅)、MSFT ~$410(-0.6%幾乎回本)、VOO ~$643(+1.8%✅)、QQQ ~$641(+3.0%✅)。台股：00919 $22.92(-4.6%)、00878 ~$23.2(-3%)、00679B $27.26(-2.3%)。全部9檔持有，今晚NFLX財報是本月最重要個股催化劑，4/22停火到期是最大尾部風險。，首次突破1月28日歷史高點7,002！VIX 18.36（-3.97%），油價WTI $90.68，伊朗第二輪談判即將啟動，4/22停火到期前關鍵一週。台股（4/16）：00919 $22.92(-4.6%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%，油價$90是降息利多)。美股（4/15收盤）：NFLX $106.47(+15.9%⭐今晚財報！)、AMZN $248(+9.0%✅)、NVDA $195.88(+6.1%✅)、MSFT $394.40(-4.4%持續回升)、VOO $638(+1.0%✅)、QQQ $633(+1.7%✅)。9檔全部持有，NFLX財報是今日最關鍵事件。", file:"reports/2026-04-16.md" },
   { date:"2026-04-15", type:"綜合分析", tb:"badge-us", title:"🚀 S&P距歷史高點<1%！Nasdaq 10連漲✅ NVDA+6.1% AMZN+9.0% VOO轉正✅｜油價$91大跌｜今晚NFLX財報❗", summary:"今日最大亮點：S&P 500收6,967，距歷史高點7,002僅剩<1%！Nasdaq 10連漲（23,639）創2021年以來最長連勝。WTI油價從$117跌至$91（-22%），通膨壓力大幅紓解。Trump說伊朗戰爭『very close to over』第二輪談判即將啟動。持倉現況（4/15）：NVDA $195.88(+6.1%✅)、AMZN $247.87(+9.0%✅)、NFLX $103.21(+12.3%⭐今晚財報！)、MSFT $394.40(-4.4%持續回升)、VOO $636(+0.7%✅正報酬)、QQQ $630(+1.2%✅正報酬)。台股：00919 $22.97(-4.4%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%但油價大跌是利多)。全部9個標的買進理由完整，今晚NFLX財報是近期最重要個股催化劑", file:"reports/2026-04-15.md" },
   { date:"2026-04-15", type:"綜合分析", tb:"badge-us", title:"🎉 PPI大幅降溫！核心PPI+0.1%（預期+0.5%）✅ 油價回落$95.61✅ S&P 6908創新高✅ MSFT$390(-5.4%持續回升)｜VIX 18.2恐慌消退｜NFLX財報明日❗", summary:"今日兩大超級利多：①3月PPI月增+0.5%（預期+1.1%），核心PPI+0.1%（預期+0.5%），遠低於預期，降息路徑重開；②油價WTI回落至$95.61（-3.5%，較$104高點大跌）。JPMorgan Q1獲利+13%大幅優預期。市場：S&P 6,908（+0.33%），Nasdaq +0.86%，VIX 18.20（恐慌幾乎消退）。持倉：NFLX $103.21(+12.3%⭐，明日財報！)、NVDA $189.01(+2.4%✅)、AMZN $238.83(+5.0%✅)、MSFT $390.38(-5.4%，從-9.9%大幅回升✅)、VOO $628(-0.6%接近回本)。台股：00919 $22.93、00878 $23.24、00679B油價回落論點改善✅。全部買進理由完整，明日NFLX財報是最重要事件！", file:"reports/2026-04-15.md" },
@@ -553,7 +554,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-16';
+const TODAY = '2026-04-17';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 // ===== CALENDAR (month tabs) =====
 const CAL_MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
