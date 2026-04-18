@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-17 更新（MSFT爆漲+2.5%至$431！3日+10%最強反彈｜Nasdaq 12連漲！台股連8漲+14%）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-18 週末檢視（本週S&P +4.5% Nasdaq +6.8%歷史新高｜MSFT週漲13%！NFLX財報後-9.7%｜台股連8漲）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:200.78, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:648.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:254.23, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:430.90, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:98.19, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:654.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:199.88, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:655.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:255.00, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:422.79, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:97.31, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:663.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,6 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-18", type:"週末檢視", tb:"badge-us", title:"📊 週末盤後總結：本週美股創歷史新高！S&P +4.5% Nasdaq +6.8%｜9檔持倉全檢視｜維持持有", summary:"週六美股休市，檢視本週重大進展：①S&P 500週五收7,125創新高（週漲4.5%），Nasdaq收24,468（週漲6.8%），為2025年4月以來最佳單週表現；②霍姆茲海峽完全開放，油價週五跌11%至$83；③以色列-黎巴嫩10天停火生效，美伊永久停火談判進行中（Trump：「很快宣布」）。美股持倉收盤：MSFT $422.79（週漲13%！本週最強）、NVDA $199.88（觸52週高$212）、AMZN ~$255（+12%✅）、NFLX $97.31（財報後-9.7%，帳面+5.9%）、VOO ~$655（+3.7%✅）、QQQ ~$663（+6.6%✅）。台股三檔維持：00919 $22.92、00878 $23.39、00679B $27.26。結論：9檔中7檔正報酬，2檔台股微虧但配息論點完整。**4/22 停火到期 & 4/23 AMZN財報 & 4/29 MSFT財報** 三大事件在即，繼續持有。", file:"reports/2026-04-18.md" },
   { date:"2026-04-17", type:"財報分析", tb:"badge-us", title:"🚀 MSFT爆漲+2.5%至$431！3日+10%最強反彈→翻正+4.4%！全組合8/9獲利｜NFLX論點完整持有$98.19", summary:"🚀 MSFT爆發反彈！3日累積漲10%（2020年以來最強），今日+2.5%至$430.90，均價$412.65→帳面+4.4%獲利✅ 從-9.9%低點到+4.4%全面翻轉！完整持倉損益：NFLX $98.19(+6.8%論點完整)、AMZN $254.23(+11.8%✅)、NVDA $200.78(+8.8%✅)、MSFT $430.90(+4.4%✅翻身)、VOO $648(+2.6%✅)、QQQ $654(+5.1%✅)。9檔中8檔正報酬！唯一小虧：00919(-4.6%)、00878(-2.2%)、00679B(-2.3%)。Nasdaq 12連漲（July 2009以來最長）。NFLX財報：EPS $1.23含$2.8B終止費實際運營~$0.76符合預期，Q2指引低是內容成本前置(早知道)，論點完整。大盤：S&P Nasdaq再創歷史高點，以色列-黎巴嫩停火，美伊延長談判進行中，4/22最大風險可能延後。**9檔持倉全數不動，等4/28 MSFT財報。**", file:"reports/2026-04-17.md" },
   { date:"2026-04-16", type:"綜合分析", tb:"badge-us", title:"🚀 S&P 7023 ATH！Nasdaq 11連漲！台股連8漲+14%！MSFT+4%→$410 幾乎回本｜NFLX今晚財報❗", summary:"S&P 500昨日（4/15）收7,022.95創歷史新高！Nasdaq 24,016（11連漲創記錄）。MSFT昨日大漲+4%至~$410，距均價$412.65僅剩-0.6%，幾乎全面回本！台股今日連8漲（累計+14%），00878首次超車00919成為較高價格。美股持倉：NFLX今日盤中$107.55(+17%⭐今晚財報4:45PM ET)、AMZN ~$249(+9.5%✅)、NVDA ~$198(+7.3%✅)、MSFT ~$410(-0.6%幾乎回本)、VOO ~$643(+1.8%✅)、QQQ ~$641(+3.0%✅)。台股：00919 $22.92(-4.6%)、00878 ~$23.2(-3%)、00679B $27.26(-2.3%)。全部9檔持有，今晚NFLX財報是本月最重要個股催化劑，4/22停火到期是最大尾部風險。，首次突破1月28日歷史高點7,002！VIX 18.36（-3.97%），油價WTI $90.68，伊朗第二輪談判即將啟動，4/22停火到期前關鍵一週。台股（4/16）：00919 $22.92(-4.6%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%，油價$90是降息利多)。美股（4/15收盤）：NFLX $106.47(+15.9%⭐今晚財報！)、AMZN $248(+9.0%✅)、NVDA $195.88(+6.1%✅)、MSFT $394.40(-4.4%持續回升)、VOO $638(+1.0%✅)、QQQ $633(+1.7%✅)。9檔全部持有，NFLX財報是今日最關鍵事件。", file:"reports/2026-04-16.md" },
   { date:"2026-04-15", type:"綜合分析", tb:"badge-us", title:"🚀 S&P距歷史高點<1%！Nasdaq 10連漲✅ NVDA+6.1% AMZN+9.0% VOO轉正✅｜油價$91大跌｜今晚NFLX財報❗", summary:"今日最大亮點：S&P 500收6,967，距歷史高點7,002僅剩<1%！Nasdaq 10連漲（23,639）創2021年以來最長連勝。WTI油價從$117跌至$91（-22%），通膨壓力大幅紓解。Trump說伊朗戰爭『very close to over』第二輪談判即將啟動。持倉現況（4/15）：NVDA $195.88(+6.1%✅)、AMZN $247.87(+9.0%✅)、NFLX $103.21(+12.3%⭐今晚財報！)、MSFT $394.40(-4.4%持續回升)、VOO $636(+0.7%✅正報酬)、QQQ $630(+1.2%✅正報酬)。台股：00919 $22.97(-4.4%)、00878 $23.39(-2.2%)、00679B $27.26(-2.3%但油價大跌是利多)。全部9個標的買進理由完整，今晚NFLX財報是近期最重要個股催化劑", file:"reports/2026-04-15.md" },
@@ -554,7 +555,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-17';
+const TODAY = '2026-04-18';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 // ===== CALENDAR (month tabs) =====
 const CAL_MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
