@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:197.50, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:652.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:246.38, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:420.00, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:94.17, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:656.00, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:198.89, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:651.05, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:245.74, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:421.00, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.12, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:655.30, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,6 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-21", type:"總經預判", tb:"badge-us", title:"🔍 總經+情勢預判分析：4/22停火到期+4/23 AMZN財報雙壓｜軟體族群逆勢強+11檔持倉不變", summary:"**4/20 美股盤後實況**：S&P 500 -0.2%至7113、Nasdaq -0.3%至24395、Dow近平、Russell 2000 +0.5%。關鍵分歧：軟體族群IGV +1.43%逆勢強（MSFT護盤），顯示機構從能源/航空轉進國內型科技股。油價WTI +6%至$89、Brent +5%至$95。**總經判斷**：①Fed 3月會議維持3.5-3.75%，點陣圖仍示意年內1次降息；4/28-29 FOMC前夕+PCE 4/26公布是雙重利空窗；②Core PCE仍3.0%黏著，油價回升將延後降息；③Mag 7相對S&P創年內新低，Goldman指科技估值溢價已大幅壓縮到接近大盤水準，反而出現估值吸引力。**地緣政治**：4/22停火到期前伊朗代表團今抵伊斯蘭馬巴德，Trump暗示「炸彈再起」是談判籌碼。**本週事件時間軸**：4/21(二)伊談判 → 4/22(三)停火到期 → 4/23(四)AMZN財報 → 4/26(六)PCE → 4/28-29(二三)FOMC+MSFT財報四重疊！**持倉動作判斷**：全數持有不變。① 軟體股強勢=MSFT/NFLX/QQQ站穩；② AMZN跌至$245財報前合理；③ NVDA $198仍保+7.7%獲利；④ 台股三檔可能因大盤續強獲得相對支撐。**條件式風險對沖**：若4/22停火真的破局油價破$100+油價延長兩週→考慮賣00679B(論點正被侵蝕)釋出~$250現金備用。其他持倉論點全數完整。", file:"reports/2026-04-21.md" },
   { date:"2026-04-20", type:"開盤前分析", tb:"badge-us", title:"⚠️ 美股下跌Nasdaq -1% BUT 台股創新高+412點分歧｜NFLX跌至$94條件未觸發｜9檔持倉不動", summary:"**今日實況：美台走勢分歧**。🇺🇸美股盤中下跌（Nasdaq -1%、S&P -0.38%、Dow -0.09%），VIX +11%至19.4，WTI油價+5.7%至$87。美伊局勢升級：USS Spruance扣押伊朗船TOUSKA，Trump威脅「不再當好人」將打擊伊朗能源設施；Iran state media卻否認美方談判聲明。🇹🇼台股逆勢飆漲412點收37216（史上最高收盤），台積電漲至$2050，權值股F4聯袂發威，台達電$1980新高。**持倉影響**：NFLX跌至$94.17（-3.2%），條件式計畫（$102+賣5股換MSFT）未觸發，自動暫緩。AMZN跌至$246(-3.4%)、MSFT守$420、NVDA $197.50。全體仍正報酬：MSFT +1.8%、NVDA +7.0%、AMZN +8.3%、NFLX +2.5%、VOO +3.2%、QQQ +5.4%。台股3檔受惠於大盤，00919/00878若有反彈可減輕帳損。**結論：9檔全數持有，條件式計畫自動暫緩**。等4/23 AMZN財報與4/29 MSFT財報作為公司層面驗證。地緣政治雜訊不需調整持倉。", file:"reports/2026-04-20.md" },
   { date:"2026-04-18", type:"週末檢視", tb:"badge-us", title:"📊 週末盤後總結：本週美股創歷史新高！S&P +4.5% Nasdaq +6.8%｜9檔持倉全檢視｜維持持有", summary:"週六美股休市，檢視本週重大進展：①S&P 500週五收7,125創新高（週漲4.5%），Nasdaq收24,468（週漲6.8%），為2025年4月以來最佳單週表現；②霍姆茲海峽完全開放，油價週五跌11%至$83；③以色列-黎巴嫩10天停火生效，美伊永久停火談判進行中（Trump：「很快宣布」）。美股持倉收盤：MSFT $422.79（週漲13%！本週最強）、NVDA $199.88（觸52週高$212）、AMZN ~$255（+12%✅）、NFLX $97.31（財報後-9.7%，帳面+5.9%）、VOO ~$655（+3.7%✅）、QQQ ~$663（+6.6%✅）。台股三檔維持：00919 $22.92、00878 $23.39、00679B $27.26。結論：9檔中7檔正報酬，2檔台股微虧但配息論點完整。**4/22 停火到期 & 4/23 AMZN財報 & 4/29 MSFT財報** 三大事件在即，繼續持有。", file:"reports/2026-04-18.md" },
   { date:"2026-04-17", type:"財報分析", tb:"badge-us", title:"🚀 MSFT爆漲+2.5%至$431！3日+10%最強反彈→翻正+4.4%！全組合8/9獲利｜NFLX論點完整持有$98.19", summary:"🚀 MSFT爆發反彈！3日累積漲10%（2020年以來最強），今日+2.5%至$430.90，均價$412.65→帳面+4.4%獲利✅ 從-9.9%低點到+4.4%全面翻轉！完整持倉損益：NFLX $98.19(+6.8%論點完整)、AMZN $254.23(+11.8%✅)、NVDA $200.78(+8.8%✅)、MSFT $430.90(+4.4%✅翻身)、VOO $648(+2.6%✅)、QQQ $654(+5.1%✅)。9檔中8檔正報酬！唯一小虧：00919(-4.6%)、00878(-2.2%)、00679B(-2.3%)。Nasdaq 12連漲（July 2009以來最長）。NFLX財報：EPS $1.23含$2.8B終止費實際運營~$0.76符合預期，Q2指引低是內容成本前置(早知道)，論點完整。大盤：S&P Nasdaq再創歷史高點，以色列-黎巴嫩停火，美伊延長談判進行中，4/22最大風險可能延後。**9檔持倉全數不動，等4/28 MSFT財報。**", file:"reports/2026-04-17.md" },
@@ -556,7 +557,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-20';
+const TODAY = '2026-04-21';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 // ===== CALENDAR (month tabs) =====
 const CAL_MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
