@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:200.30, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:650.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:250.15, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:420.55, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.50, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:655.50, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:201.20, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:653.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:251.70, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:425.69, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.75, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:659.00, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,7 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
-  { date:"2026-04-22", type:"盤中分析", tb:"badge-us", title:"🔥 AMZN盤前+2.7%！宣布再投Anthropic $50億明日財報｜停火今到期Trump威脅｜Warsh聽證偏鷹｜9檔持有", summary:"**4/21收盤→盤後→4/22盤前重大進展**：①**4/21收盤下跌**：S&P -0.63%、Nasdaq -0.59%（擔心停火破局）；②**盤後Trump宣布延長停火**（直至伊朗提交提案），期指 +0.4% 反彈；③**AMZN盤前+2.7%**宣布再投Anthropic $5B（可累計至$20B），強化AWS雲端AI競爭地位——明日財報前的最強利多！②**Kevin Warsh參議院聽證**暗示偏鷹派『通膨是選擇』『新通膨框架』——市場一度由綠轉紅；③**停火今日(4/22)到期**，Trump：『準備好轟炸』，但同時表示『會達成很棒協議』；伊朗未派JD Vance到伊斯蘭馬巴德但表示仍願談判；④**Citigroup警告**若Hormuz持續阻塞一個月油價將飆至$110。**4/21美股實況**：道瓊+0.7% UnitedHealth+9%帶動、S&P -0.2%、Nasdaq -0.3%（蘋果Tim Cook將交棒Ternus跌2%+）。**持倉損益**（4/22盤前）：AMZN $257(+13%⭐)、MSFT $424(+2.8%✅)、NVDA $199.5(+8.1%✅)、NFLX $96.5(+5%)、VOO +3.4%✅、QQQ +5.7%✅，**美股6檔全數正報酬**。台股4/21續強台積電$2060+1.73%。**判斷**：AMZN Anthropic消息直接強化AMZN買進論點（AWS加速+AI合作），今明兩日波動將放大但論點完整。**9檔持有不動**，等明日AMZN財報驗證。**條件式計畫**：若今晚停火破局油價破$100 → 啟動賣00679B備用計畫。", file:"reports/2026-04-22.md" },
+  { date:"2026-04-22", type:"盤中分析", tb:"badge-us", title:"🔄 4/22盤中｜AMZN財報正確日期是4/29非4/23！4/29變FOMC+MSFT+AMZN三重事件日｜MSFT $425.69 反彈｜9檔持有", summary:"**重大修正！AMZN財報日期是4/29，非4/23**——官方公告確認Q1財報為 Wednesday April 29 盤後（5:30 PM ET）。這意味著**4/29 變三重事件日**：FOMC 決議 + MSFT 財報 + AMZN 財報。**4/22 盤中實況**：MSFT $425.69(+1.2%從昨收$420.55)、AMZN $251.70震盪(盤前+2.7%後收斂)、NVDA ~$201、NFLX ~$95.75。盤中區間：MSFT $417.24-$427.18、AMZN $249.10-$256.10，波動放大但價格守穩。**持倉損益**：AMZN $251.70(+10.7%⭐)、MSFT $425.69(+3.2%✅)、NVDA $201.20(+9.0%✅)、NFLX $95.75(+4.2%)、VOO $653(+3.4%✅)、QQQ $659(+5.9%✅)。美股6檔全數正報酬。**總經狀態**：①停火延長中，油價WTI $84-87回落；②Warsh聽證偏鷹「通膨是選擇」但CME FedWatch仍顯示4/29 FOMC 95%維持3.50-3.75%；③BofA/KeyBanc雙雙上調AMZN目標($298/$325)，預期AWS增速從Q4 24%加速至28-30%；④S&P 500 fwd PE ~21接近年初高點，財報門檻變高。**行事曆修正**：移除4/23 AMZN錯誤事件，新增4/29三重事件日。**操作：9檔全數持有**。AMZN帳面+10.7%已是安全墊，財報延後一週反而給更多時間觀察停火+PCE數據。核心不變：沒有任何標的觸發出場條件，BofA雙重上調強化AMZN論點。**本週重點**：今晚停火實質狀態→4/26 PCE→下週三(4/29)三重事件日。", file:"reports/2026-04-22.md" },
   { date:"2026-04-21", type:"總經預判", tb:"badge-us", title:"✅ 美伊和談重啟！股市反彈｜MSFT+1.7% AMZN+1.7% NVDA回$201｜9檔全數正報酬", summary:"**4/21 盤中實況**：美伊和談重啟利多激勵股市反彈。Trump：「我們會達成很棒的協議」。油價回落（WTI -$2），MSFT +1.65%至$424.95創波段新高、AMZN +1.67%至$252.42財報前靠穩、NVDA 回到$201.77、NFLX $96.00。UnitedHealth大超預期帶動醫療類股。**9檔全數正報酬**：MSFT +3.0%✅、NVDA +9.3%✅、AMZN +11.0%✅、NFLX +4.5%、VOO +3.7%✅、QQQ +6.1%✅。**總經判斷**：①昨日Nasdaq 13連漲終止但僅跌0.26%，技術上健康休息；②CNBC: 「the war with Iran is now in the rearview mirror」——市場開始將戰爭視為背景雜訊；③BofA警告估值接近滿倉（S&P 500 fwd PE ~21接近年初高點），財報門檻變高。**本週關鍵**：4/22停火到期(今日談判進展決定)→4/23 AMZN財報→4/26 PCE→4/28-29 FOMC+MSFT財報四重疊。**操作**：全數持有。軟體股逆勢強勢 + AMZN 財報前靠穩 + 和談進展都是支撐組合的訊號。暫無任何標的觸發出場條件。**條件式風險對沖仍有效**：若4/22晚間破局油價再破$100，啟動賣00679B備用計畫。", file:"reports/2026-04-21.md" },
   { date:"2026-04-20", type:"開盤前分析", tb:"badge-us", title:"⚠️ 美股下跌Nasdaq -1% BUT 台股創新高+412點分歧｜NFLX跌至$94條件未觸發｜9檔持倉不動", summary:"**今日實況：美台走勢分歧**。🇺🇸美股盤中下跌（Nasdaq -1%、S&P -0.38%、Dow -0.09%），VIX +11%至19.4，WTI油價+5.7%至$87。美伊局勢升級：USS Spruance扣押伊朗船TOUSKA，Trump威脅「不再當好人」將打擊伊朗能源設施；Iran state media卻否認美方談判聲明。🇹🇼台股逆勢飆漲412點收37216（史上最高收盤），台積電漲至$2050，權值股F4聯袂發威，台達電$1980新高。**持倉影響**：NFLX跌至$94.17（-3.2%），條件式計畫（$102+賣5股換MSFT）未觸發，自動暫緩。AMZN跌至$246(-3.4%)、MSFT守$420、NVDA $197.50。全體仍正報酬：MSFT +1.8%、NVDA +7.0%、AMZN +8.3%、NFLX +2.5%、VOO +3.2%、QQQ +5.4%。台股3檔受惠於大盤，00919/00878若有反彈可減輕帳損。**結論：9檔全數持有，條件式計畫自動暫緩**。等4/23 AMZN財報與4/29 MSFT財報作為公司層面驗證。地緣政治雜訊不需調整持倉。", file:"reports/2026-04-20.md" },
   { date:"2026-04-18", type:"週末檢視", tb:"badge-us", title:"📊 週末盤後總結：本週美股創歷史新高！S&P +4.5% Nasdaq +6.8%｜9檔持倉全檢視｜維持持有", summary:"週六美股休市，檢視本週重大進展：①S&P 500週五收7,125創新高（週漲4.5%），Nasdaq收24,468（週漲6.8%），為2025年4月以來最佳單週表現；②霍姆茲海峽完全開放，油價週五跌11%至$83；③以色列-黎巴嫩10天停火生效，美伊永久停火談判進行中（Trump：「很快宣布」）。美股持倉收盤：MSFT $422.79（週漲13%！本週最強）、NVDA $199.88（觸52週高$212）、AMZN ~$255（+12%✅）、NFLX $97.31（財報後-9.7%，帳面+5.9%）、VOO ~$655（+3.7%✅）、QQQ ~$663（+6.6%✅）。台股三檔維持：00919 $22.92、00878 $23.39、00679B $27.26。結論：9檔中7檔正報酬，2檔台股微虧但配息論點完整。**4/22 停火到期 & 4/23 AMZN財報 & 4/29 MSFT財報** 三大事件在即，繼續持有。", file:"reports/2026-04-18.md" },
@@ -446,10 +446,9 @@ const calendarEvents = [
   // ── 未來事件 ──
   { date:"2026-04-16", title:"🔴 NFLX Q1 財報（今晚）", desc:"收盤後公布・預期EPS $0.76・廣告收入是否翻倍至$30億是關鍵・GS目標$120", stars:5, tag:"earn" },
   { date:"2026-04-22", title:"⚠️ 美伊兩週停火期滿", desc:"停火到期，若無協議或延長→風險事件・油價和股市均受影響", stars:5, tag:"geo" },
-  { date:"2026-04-23", title:"AMZN Q1 財報", desc:"AWS增速（目前24%）・CapEx壓力・消費需求・電商毛利", stars:4, tag:"earn" },
   { date:"2026-04-26", title:"3月 PCE 報告", desc:"Fed偏好通膨指標（上次2月PCE核心3%符合預期）・降息路徑關鍵", stars:4, tag:"macro" },
-  { date:"2026-04-28", title:"🔴 MSFT Q1 財報", desc:"Azure增速（目前39%）・RPO $625B・OpenAI對Amazon合作是否影響論點", stars:5, tag:"earn" },
-  { date:"2026-05-01", title:"FOMC 利率決議", desc:"市場預期維持3.50-3.75%・若PCE降溫可能暗示6月降息", stars:5, tag:"macro" },
+  { date:"2026-04-28", title:"🔴 MSFT Q1 財報（盤後）", desc:"Azure增速（目前39%）・RPO $625B・OpenAI對Amazon合作是否影響論點", stars:5, tag:"earn" },
+  { date:"2026-04-29", title:"🔴🔴 FOMC + AMZN 財報雙重事件", desc:"FOMC 3:30PM ET利率決議（95%維持3.50-3.75%）+ AMZN 盤後財報（AWS增速目標28-30% vs Q4 24%）・Anthropic $5B加碼後首次財報", stars:5, tag:"earn" },
   { date:"2026-05-20", title:"NVDA Q1 FY2027 財報", desc:"預期EPS $1.76（+8.6%）・Blackwell出貨量・數據中心收入", stars:5, tag:"earn" },
   { date:"2026-06-01", title:"00919 配息（預估）", desc:"季配約 $0.78/股・9張預計 NT$7,020入帳", stars:4, tag:"div" },
   { date:"2026-06-01", title:"00878 配息（預估）", desc:"季配約 $0.42/股・3張預計 NT$1,260入帳", stars:3, tag:"div" },
