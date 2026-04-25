@@ -288,12 +288,12 @@ const twPortfolio = [
 const twCash = 0; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:199.38, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:651.75, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:255.54, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:416.45, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.82, color:"#ef4444" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:654.14, color:"#8b5cf6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.60, currentPrice:208.27, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:656.90, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:264.41, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:425.24, color:"#3b82f6" },
+  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:96.00, color:"#ef4444" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:664.80, color:"#8b5cf6" },
 ];
 
 const allTx = [
@@ -379,7 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
-  { date:"2026-04-24", type:"開盤前分析", tb:"badge-us", title:"📊 4/24盤中：Nasdaq+0.68%開盤反彈！⚠️但WTI突破$106油價一週+26%｜NVDA+1.4%受Intel帶動｜Trump延長以黎停火3週｜4/29五巨頭財報週", summary:"**4/23盤後重大消息**：①**Intel Q1財報大爆發**：EPS $0.29 vs共識$0.01（超預期2800%！），營收$13.67B超預期$13.43B，Q2指引EPS $0.20 vs共識$0.08。盤後飆漲+15%至$77。CEO Lip-Bu Tan：18A和14A進展超前預期。Tesla選Intel 14A製造AI晶片。②SAP財報超預期+7.5%盤後。③**4/24期指**：S&P +0.10%至7150、**Nasdaq +0.60%**、Dow -0.17%、VIX 18.96(-1.81%)。WTI $96.61(+0.79%)持續高位。**對你持倉影響**：**NVDA直接受惠**——Intel大爆發驗證半導體AI需求強勁（SOX已17連漲），NVDA $199.65可能今日反彈。MSFT $416.03暫時不受影響（軟體≠半導體）。AMZN $255.09維持穩定。**4/23確認收盤價**：MSFT $416.03(+0.8%✅)、AMZN $255.09(+12.2%⭐)、NVDA $199.65(+8.2%✅)、NFLX ~$95.82(+4.3%)。**美股現金$66.31**。**操作**：9檔全數持有。Intel利多為半導體板塊注入新動能，NVDA作為AI晶片龍頭直接受惠。MSFT雖昨日跌3.9%但裁員7%是成本優化利多。4/29三重事件日（FOMC+MSFT+AMZN財報）倒數5天，持續觀察不動手。", file:"reports/2026-04-24.md" },
+  { date:"2026-04-24", type:"開盤前分析", tb:"badge-us", title:"🚀🚀 4/24超級大日！S&P Nasdaq雙創新高｜NVDA $208創ATH重返$5兆+4.3%｜AMZN +3.5%至$264｜MSFT反彈+2.1%至$425｜油回落Brent<$100", summary:"**4/24週五收盤——超級大日！**🇺🇸S&P 500創新高7,164(+0.79%)、Nasdaq創新高24,837(+1.63%)！**確認收盤價**：**NVDA $208.27(+4.32%✅)**創歷史新高重返$5兆市值、**AMZN $264.41(+3.47%✅)**、**MSFT $425.24(+2.11%✅)**從昨日-3.9%強力反彈、Intel $82.55(+23.33%)、AMD $347.77(+13.85%)。SOX半導體指數**第18日連漲**——史上最長。**美股帳面獲利暴增至$1,859**：NVDA +$710(+12.8%⭐)、AMZN +$555(+16.3%⭐⭐)、MSFT +$214(+3.1%✅)、NFLX +$61(+4.5%)、VOO +$276(+4.0%)、QQQ +$43(+6.8%)。**重大利多**：①DOJ撤銷對Fed主席Powell的刑事調查→Warsh提名確認機率上升；②Trump派Witkoff+Kushner本週末赴巴基斯坦和談；③**油價回落**Brent跌破$100、WTI回$95；④Meta簽約使用AWS Graviton晶片→AMZN生態系強化；⑤Michigan消費者信心49.8創歷史新低但市場無視。**操作：9檔全數持有**。這是4月以來最好的一天。NVDA創新高驗證AI晶片需求、AMZN +16.3%安全墊厚實、MSFT強力反彈安全墊恢復。4/29三重事件日倒數4天。", file:"reports/2026-04-24.md" },
   { date:"2026-04-23", type:"開盤前分析", tb:"badge-us", title:"🔴 MSFT -3.9%跌至$416！軟體崩跌IGV -5%但AMZN $255逆勢守穩｜台股大怒神震盪1757點｜NFLX宣布$250億回購｜MSFT裁7%", summary:"**4/23 收盤確認資料**。🇺🇸美股：S&P 7,108.40(-0.41%)、Nasdaq 24,438.50(-0.89%)、Dow 49,310.32(-0.36%)。確認價格：**MSFT $416.03(-3.9%✅)**、**AMZN $255.09(-0.1%✅逆勢守穩！)**、**NVDA $199.65(-1.4%✅)**、NFLX平盤(+0.02%)。**MSFT重大新聞**：①跌3.9%受IGV軟體崩跌拖累（ServiceNow -18%、IBM -8%）；②宣布**史上首次自願退休計畫**裁減最多7%美國員工——這是成本優化利多！③Piper Sandler說現在是介入機會；④均價$412.65→現$416.03，帳面仍+0.8%但安全墊大幅縮小。**AMZN意外強勢**：在軟體崩跌日僅跌0.1%至$255.09，帳面+12.2%⭐安全墊充足。**NFLX利多**：宣布$250億股票回購計畫（退出Warner Bros競標後轉向股東回報）。**NVDA**：盤中+1.67%與Oklo/Los Alamos合作核能AI，但收盤-1.4%跟隨大盤。SOX半導體指數17連漲。🇹🇼台股：加權指數37,714.15(-164.32,-0.43%)出現大怒神行情，盤中震盪1,757點！成交量1.4兆創天量。國家隊賣超8檔高股息ETF：00919被砍13,174張最多、00878被砍7,061張。**油價**：Brent逼近$104(3日+13%)、WTI $95。Trump下令射擊霍姆茲海峽佈雷船。**操作**：9檔持有。MSFT跌至$416但4/29財報才是驗證。裁員7%反而是成本優化利多。AMZN逆勢守穩驗證雲端+零售雙引擎防禦力。4/29三重事件日倒數5天。", file:"reports/2026-04-23.md" },
   { date:"2026-04-22", type:"盤中分析", tb:"badge-us", title:"🚀 4/22雙邊大噴發！🇺🇸S&P +0.85%反彈｜🇹🇼台股首破38K創ATH收37878｜MSFT+AMZN財報都在4/29 三重事件日｜9檔全部正報酬", summary:"**4/22 雙邊大勝利日！** 🇺🇸美股全面反彈：S&P +0.85%至7123、Nasdaq +1.29%至24573、Dow +0.70%。油價WTI +3.75%至$93（伊朗情勢+庫存）。🇹🇼台股創歷史新高：**加權指數+273.36點至37,878.47**，盤中衝破38000大關至38096.88，台積電$2050、聯發科+205元、鴻海+10元。**4/22 持倉收盤**：MSFT $424.95(+3.0%✅)、NVDA $201.14(+8.9%✅)、AMZN $251.70(+10.7%⭐)、NFLX $95.80(+4.2%)、VOO $654.50(+3.6%✅)、QQQ $660(+6.1%✅)。台股：00919 ~$23.25(-3.2%)、00878 ~$23.65(-1.1%)、00679B ~$27.15(-2.7%油價壓力)。**美股6檔全數正報酬，台股3檔皆靠近回本**。**行事曆重大修正**：MSFT與AMZN財報確認同一天——**都是4/29週三盤後**！加上FOMC 3:30PM ET，4/29是組合最關鍵的三重事件日。**總經狀態**：VIX 19.39（-0.56%）穩定、Fed CME FedWatch 95%機率4/29維持利率、4/26週六PCE數據公布（共識Core 3.0%）。**操作**：9檔全數持有。台股創新高驗證大盤動能強勁支撐ETF，美股反彈擴大所有持倉安全墊。**核心準備**：4/29三重事件是本年度最關鍵一天，盤中絕不做任何決策，等4/30消化後再評估。**4/22 台股里程碑**：首破38000點、外資轉買。", file:"reports/2026-04-22.md" },
   { date:"2026-04-21", type:"總經預判", tb:"badge-us", title:"✅ 美伊和談重啟！股市反彈｜MSFT+1.7% AMZN+1.7% NVDA回$201｜9檔全數正報酬", summary:"**4/21 盤中實況**：美伊和談重啟利多激勵股市反彈。Trump：「我們會達成很棒的協議」。油價回落（WTI -$2），MSFT +1.65%至$424.95創波段新高、AMZN +1.67%至$252.42財報前靠穩、NVDA 回到$201.77、NFLX $96.00。UnitedHealth大超預期帶動醫療類股。**9檔全數正報酬**：MSFT +3.0%✅、NVDA +9.3%✅、AMZN +11.0%✅、NFLX +4.5%、VOO +3.7%✅、QQQ +6.1%✅。**總經判斷**：①昨日Nasdaq 13連漲終止但僅跌0.26%，技術上健康休息；②CNBC: 「the war with Iran is now in the rearview mirror」——市場開始將戰爭視為背景雜訊；③BofA警告估值接近滿倉（S&P 500 fwd PE ~21接近年初高點），財報門檻變高。**本週關鍵**：4/22停火到期(今日談判進展決定)→4/23 AMZN財報→4/26 PCE→4/28-29 FOMC+MSFT財報四重疊。**操作**：全數持有。軟體股逆勢強勢 + AMZN 財報前靠穩 + 和談進展都是支撐組合的訊號。暫無任何標的觸發出場條件。**條件式風險對沖仍有效**：若4/22晚間破局油價再破$100，啟動賣00679B備用計畫。", file:"reports/2026-04-21.md" },
@@ -558,7 +558,7 @@ document.getElementById('heroSection').innerHTML = `
   </div>`;
 
 // ===== CALENDAR =====
-const TODAY = '2026-04-24';
+const TODAY = '2026-04-25';
 const DOW_MAP = ['日','一','二','三','四','五','六'];
 // ===== CALENDAR (month tabs) =====
 const CAL_MONTH_NAMES = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
