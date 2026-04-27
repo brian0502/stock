@@ -296,7 +296,7 @@ const usPortfolio = [
 ];
 
 const allTx = [
-  { date:"2026-04-27", market:"TW", symbol:"00679B", action:"sell", shares:3000, price:26.89, fee:69, tax:81, note:"論點消失（油價Brent>$100延後降息），認列虧損NT$3,210" },
+  { date:"2026-04-27", market:"TW", symbol:"00679B", action:"sell", shares:3000, price:26.89, amount:80520, note:"論點消失（油價Brent>$100延後降息）認虧NT$3,210（-3.8%）｜淨額NT$80,520（已扣手續費NT$69+證交稅NT$81）" },
   { date:"2026-03-04", market:"TW", symbol:"3231", action:"sell", shares:1000, price:128.00, amount:128000, note:"停損清倉 -NT$2,500" },
   { date:"2025-12-23", market:"US", symbol:"NVDA", action:"buy", shares:10, price:183.53, amount:1835.30, note:"建倉" },
   { date:"2025-12-23", market:"US", symbol:"NFLX", action:"buy", shares:10, price:93.62, amount:936.20, note:"建倉" },
@@ -489,6 +489,10 @@ const twRealizedDetail = [
     { date:"2026-02-24", action:"buy", desc:"建倉 1,000股 @ NT$130.50", amount:130500 },
     { date:"2026-03-04", action:"sell", desc:"停損清倉 1,000股 @ NT$128.00", amount:128000 },
   ]},
+  { symbol:"00679B", name:"元大美債20年", pnl:-3210, trades:[
+    { date:"2026-02-24", action:"buy", desc:"建倉 3,000股 @ NT$27.91", amount:83730 },
+    { date:"2026-04-27", action:"sell", desc:"論點消失出場 3,000股 @ NT$26.89（淨額NT$80,520，含手續費NT$69+證交稅NT$81）", amount:80520 },
+  ]},
 ];
 const usRealizedDetail = [
   { symbol:"UBER", name:"Uber", pnl:-160.18, trades:[
@@ -522,7 +526,7 @@ const twStockMarket = twData.reduce((s,p)=>s+p.market,0);
 const twTotal = twStockMarket + twCash;
 const twTotalCost = twData.reduce((s,p)=>s+p.cost,0);
 const twPnl = twStockMarket - twTotalCost;
-const twRealizedPnl = -2500; // 緯創清倉(-2500)
+const twRealizedPnl = -5710; // 緯創(-2500) + 00679B(-3210)
 
 const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
