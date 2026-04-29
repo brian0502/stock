@@ -187,7 +187,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-20 盤中（美股全面回檔 Nasdaq -1%｜台股卻創新高+412點！台積電$2050｜NFLX跌至$94未觸發條件）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-04-29 盤中（NFLX已清倉@$91.98打平出場｜⚠️OpenAI營收不及預期重擊AI鏈｜費半-3.58%結束18連漲｜美股5檔持有：NVDA AMZN MSFT VOO QQQ｜美股現金$1446）</span></div>
 </header>
 
 <!-- Hero Total -->
@@ -278,7 +278,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 66.31; // 2026-04-08 買入MSFT 7股後剩餘
+const usCash = 1445.97; // 4/29 NFLX清倉@$91.98釋出$1379.66 + 原$66.31
 
 const twPortfolio = [
   { symbol:"00919", name:"群益台灣精選高息", shares:9000, avgCost:24.03, currentPrice:23.85, category:"高股息ETF", color:"#f59e0b" },
@@ -291,11 +291,11 @@ const usPortfolio = [
   { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:631.81, currentPrice:653.00, color:"#6366f1" },
   { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.42, currentPrice:262.00, color:"#f59e0b" },
   { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.65, currentPrice:420.00, color:"#3b82f6" },
-  { symbol:"NFLX", name:"Netflix", shares:15, avgCost:91.90, currentPrice:95.50, color:"#ef4444" },
   { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:622.25, currentPrice:658.50, color:"#8b5cf6" },
 ];
 
 const allTx = [
+  { date:"2026-04-29", market:"US", symbol:"NFLX", action:"sell", shares:15, price:91.98, amount:1379.66, note:"清倉出場（自主決策）｜實得$1,379.66｜認列+$1.16（+0.08%打平），釋出彈藥等更好機會" },
   { date:"2026-04-27", market:"TW", symbol:"00679B", action:"sell", shares:3000, price:26.89, amount:80520, note:"論點消失（油價Brent>$100延後降息）認虧NT$3,210（-3.8%）｜淨額NT$80,520（已扣手續費NT$69+證交稅NT$81）" },
   { date:"2026-03-04", market:"TW", symbol:"3231", action:"sell", shares:1000, price:128.00, amount:128000, note:"停損清倉 -NT$2,500" },
   { date:"2025-12-23", market:"US", symbol:"NVDA", action:"buy", shares:10, price:183.53, amount:1835.30, note:"建倉" },
@@ -379,6 +379,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-04-29", type:"執行", tb:"badge-us", title:"✅ NFLX 已全部出清@$91.98｜15股釋出$1,379.66｜認列+$1.16打平出場｜美股組合精簡為5檔", summary:"**執行確認**：NFLX 15股全部出清@$91.98，賣出毛額$1,379.70、扣SEC+FINRA費$0.04、實得**$1,379.66**。原始成本$1,378.50，**認列+$1.16（+0.08%打平）**。**累計NFLX損益**：含2/13減倉15股@$76.41(-$261.24)+今日15股@$91.98(+$1.16)，**NFLX總認列虧損-$260.08**。**美股組合精簡**：從6檔→5檔（NVDA、AMZN、MSFT、VOO、QQQ）。**美股現金**：$66.31→**$1,445.97**（+$1,379.66）。**剩餘5檔表現**（4/28收盤）：NVDA $203(+10.0%)、AMZN $262(+15.2%⭐)、MSFT $420(+1.8%)、VOO $653(+3.4%)、QQQ $658.5(+5.8%)，**美股帳面+$1,465**。**決策脈絡**：昨日(4/28)分析建議持有，但用戶今日(4/29)自主決定全清。判斷依據可能為：①Q2指引較弱+Hastings 6月離開董事會缺乏短期催化劑；②Morningstar fair value $86顯示偏貴7%；③7/16才下次財報期間無催化；④釋出$1,380現金等更好機會（4/29 OpenAI利空後可能出現的買點）。**Claude註記**：尊重用戶決策。NFLX出場違反「論點未消失不賣」紀律但鎖定本金釋出彈藥也有合理性。**現金位置變化**：美股$1,446、台股NT$80,520，總彈藥充足等財報週後機會。**下一步觀察**：①今晚22:00 FOMC+5巨頭財報結果；②若劇本C延續（市場恐慌）→ NVDA/AMZN若回測買進區可考慮加碼；③Intel 18A 90%良率訊息（股癌EP657）需驗證。", file:null },
   { date:"2026-04-29", type:"重大事件分析", tb:"badge-us", title:"⚠️ OpenAI營收不及預期重擊AI鏈！費半-3.58%結束18連漲｜NVDA -2.5% MSFT -1.2%｜台股摔回39158 -0.92%台積電$2180｜劇本C啟動", summary:"**🔴 重大警訊：劇本C已啟動！**這是你4/27設定的觀察清單中最差劇本。**事件時序**：①4/27美股創新高S&P 7174 ATH、Nasdaq 24887 ATH、NVDA衝$210 ATH；②4/28盤前WSJ獨家：OpenAI錯過關鍵2025年營收與用戶目標，CFO Sarah Friar警告壓不住算力支出，1B週活躍用戶目標未達(ChatGPT流量市占從86.7%崩落到64.5%，Gemini從5.7%升到21.5%)；③4/28美股全面下殺：費半SOX -3.58%結束18連漲、Nasdaq -0.9%至24663.80、S&P -0.49%至7138.80、NVDA成Mag7最弱、Oracle -5.5%、AMD -4%、Broadcom -4%；④週一盤後MSFT再跌--宣布失去OpenAI獨家權利+營收分潤協議將終止；⑤4/29台股早盤摔回39,158（-362.86點，-0.92%），盤中最低39,009.5（-512點），台積電$2,180（-35元，-1.58%）。**對你美股組合衝擊**：NVDA $203(+10%✅)、MSFT $420(+1.8%安全墊大幅壓縮)、AMZN $262(+15.2%⭐)、NFLX $95.5(+3.9%)、VOO $653(+3.4%)、QQQ $658.5(+5.8%)。**美股總帳面從+$1,859縮水至+$1,519**（單日蒸發$340）。**OpenAI事件結構性意義**：①OpenAI對NVDA $300億+/AMD 6GW/Broadcom 10GW的合約若違約，AI capex故事將被重新評估；②但有反論——Anthropic崛起填補空缺(Anthropic Mythos AI被認為太強大不能釋出)，NVDA真實終端需求並未消失，只是OpenAI這個單一客戶的故事改變；③AMZN投資Anthropic $5B反而是大幸運。**4/29晚間FOMC+5巨頭財報倒數4小時**：MSFT Azure（39%）、AMZN AWS（24%→市場期望28-30%），財報結果決定OpenAI事件是否擴大為AI泡沫破裂。**操作判斷**：①依照4/27訂下的紀律「劇本C觸發=啟動分批進場」——但要等財報結果，不要在恐慌賣壓中追跌；②NT$80,520現金位置反而成為優勢，目前無需動用；③美股8檔絕對不賣（單一客戶風險不等於MSFT或NVDA出場條件）；④台股00878 00919持有，等台積電跌到$2,150以下再評估加碼。**核心紀律提醒**：你早就為這一天做好準備。劇本C不是新鮮事，是預期內的風險——這就是你保留現金、不全壓的價值。", file:"reports/2026-04-29.md" },
   { date:"2026-04-27", type:"待議事項", tb:"badge-tw", title:"📌 ETF換股台積電決策已記錄（暫緩）｜30分鐘內4種策略想法是FOMO訊號｜數據顯示複合策略勝出｜後續觸發再討論", summary:"**決策狀態**：先記錄、後續再討論。**核心想法**：①ETF只是等配息→想做資本利得；②台積電後市更好；③激進獲利導向接受-20%回檔。**完整數字分析結論**：方案A（保留ETF+現金買台積35股）在所有6種情境都贏方案B（賣ETF全壓台積162股）。基準情境A多賺NT$12,994、回檔情境A多賺NT$47,720、大跌情境A多賺NT$62,218。配息威力（年NT$33,222殖利率9%）+風險緩衝>全壓單一報酬。**台積電估值警訊**：當前PE 27倍接近歷史最高，8家法人中6家目標價低於現價$2,265（中位數$2,135）。**FOMO警覺**：30分鐘內4種策略想法（清空買台積→等回檔→等連假→全壓）違反原本紀律。**觸發重啟討論條件**：①台積電跌至$2,150以下；②ETF論點動搖（00878跌破均價或配息率下調）；③4/29劇本C觸發；④5/14台積電月營收後。**核心紀律**：不為動而動。激進的本質是擇時而非擇股。等好的進場價比挑好的股票更重要。記錄詳見 reports/2026-04-27-pending-discussion.md。", file:"reports/2026-04-27-pending-discussion.md" },
   { date:"2026-04-27", type:"觀察計畫", tb:"badge-tw", title:"📅 觀察期計畫：先看4/29結果再決定！激進策略需要好的進場價｜5天紀律觀察清單｜不為動而動是最大紀律", summary:"**決策確認**：經激進策略討論後，最理性的決定——**先觀察4/29結果再決定**。資訊優勢比衝動行動值錢得多。**為什麼觀察期重要**：4/29是2026最關鍵單日，FOMC+MSFT+AMZN+GOOGL+META+QCOM 5巨頭財報結果會深刻影響台股4/30後1-2週走勢。在此之前任何主動操作都是賭博而非分析。**5天觀察清單**：①MSFT Azure增速<30%連2季=賣訊號；②AMZN AWS增速<22%連2季=警戒；③FOMC鷹派→台積電ADR跌→台股加碼時機；④TSM ADR跌至$400以下對應2330約$2,150；⑤Brent重回$100以下通膨壓力降低。**三種劇本**：🟢A超預期+鴿派(25%)→台積電可能漲到$2,400不追高；🟡B符合預期+中性(50%)→繼續觀察等5/14月營收；🔴C不及預期+鷹派(25%)→台積電跌至$2,100-2,150啟動分批進場。**台股當前持倉**：00878 3張(+5.3%)、00919 9張(-0.3%)、大魯閣1股、現金NT$80,520。**美股當前持倉**：6檔全數正報酬+$1,859 (4/24收盤)。**激進策略候選名單**(觀察期已備妥)：聚焦5-6檔版：0050+台積電+鴻海+聯發科+奇鋐+世芯-KY。每檔停損-8%紀律。**接下來5天日程**：4/28觀察→4/29 FOMC+財報只看不交易→4/30評估劇本→5/1勞動節休市整理→5/2才考慮動作。**核心紀律**：不為動而動。激進的本質是『擇時』而非『擇股』，等好的進場價比挑好的股票更重要。", file:"reports/2026-04-27-observation-plan.md" },
@@ -508,11 +509,12 @@ const usRealizedDetail = [
     { date:"2026-02-11", action:"sell", desc:"減倉 2股 @ $415.83", amount:831.66 },
     { date:"2026-02-25", action:"sell", desc:"清倉 3股 @ $350.25", amount:1050.75 },
   ]},
-  { symbol:"NFLX", name:"Netflix", pnl:-261.24, trades:[
+  { symbol:"NFLX", name:"Netflix", pnl:-260.08, trades:[
     { date:"2025-12-23", action:"buy", desc:"建倉 10股 @ $93.62", amount:936.20 },
     { date:"2025-12-23", action:"buy", desc:"加碼 10股 @ $93.73", amount:937.30 },
     { date:"2026-01-16", action:"buy", desc:"逢低攤平 10股 @ $88.35", amount:883.50 },
     { date:"2026-02-13", action:"sell", desc:"減倉 15股 @ $76.41（仍持有15股）", amount:1146.16 },
+    { date:"2026-04-29", action:"sell", desc:"全部出清 15股 @ $91.98（淨$1,379.66 認列+$1.16）", amount:1379.66 },
   ]},
   { symbol:"ZS", name:"Zscaler", pnl:-424.05, trades:[
     { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $184.89", amount:184.89 },
@@ -535,7 +537,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = -972.72; // UBER(-160.18) + CRWD(+17.86) + NFLX(-261.24) + CRWD(-145.11) + ZS(-424.05)
+const usRealizedPnl = -971.56; // UBER(-160.18) + CRWD(-127.25) + NFLX(-260.08：-261.24+1.16) + ZS(-424.05)
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
