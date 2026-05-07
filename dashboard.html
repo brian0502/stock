@@ -182,13 +182,44 @@ tr:hover td{background:rgba(255,255,255,.02)}
   .sg-trade{grid-template-columns:60px 40px 1fr auto;font-size:11px}
   .sg-amount{display:none}
 }
+/* Discipline Alert Banner */
+.disc-alert{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border:1px solid #334155;border-radius:14px;padding:18px;margin-bottom:12px}
+.disc-alert-header{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.5px}
+.disc-alert-header .pulse{width:8px;height:8px;border-radius:50%;background:#fbbf24;box-shadow:0 0 8px #fbbf24;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.disc-item{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px;border-left:3px solid var(--accent,#64748b)}
+.disc-item.tier-1{border-left-color:#fbbf24}
+.disc-item.tier-2{border-left-color:#f97316}
+.disc-item.tier-3{border-left-color:#ef4444}
+.disc-item.tier-stop{border-left-color:#ef4444;background:#1f1416}
+.disc-item.tier-warn{border-left-color:#fbbf24}
+.disc-item.tier-observe{border-left-color:#f97316}
+.disc-item.tier-profit{border-left-color:#10b981}
+.disc-row1{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.disc-symbol{font-family:'JetBrains Mono',monospace;font-weight:700;color:#f1f5f9;font-size:14px}
+.disc-tag{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.3px}
+.disc-tag.profit{background:#064e3b;color:#6ee7b7}
+.disc-tag.warn{background:#78350f;color:#fbbf24}
+.disc-tag.observe{background:#7c2d12;color:#fdba74}
+.disc-tag.exit{background:#7f1d1d;color:#fca5a5}
+.disc-row2{font-size:12px;color:#94a3b8;line-height:1.5}
+.disc-action{font-family:'JetBrains Mono',monospace;color:#f1f5f9;font-weight:600}
+.disc-distance{display:inline-block;padding:1px 6px;border-radius:3px;font-size:11px;font-weight:600;margin-left:6px}
+.disc-distance.urgent{background:#7f1d1d;color:#fca5a5}
+.disc-distance.close{background:#78350f;color:#fbbf24}
+.disc-distance.normal{background:#1e293b;color:#94a3b8}
+.disc-empty{color:#64748b;text-align:center;padding:20px;font-size:13px}
 </style>
 </head>
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-04 美股盤前+台股收盤（⚠️油價飆漲WTI週漲12%！NVDA盤前-2.4%至$198.12｜台股+1108點衝4萬台積電$2205追高｜美股帳面從+$1622縮至+$1153｜紀律檢查全持倉仍健康｜EP658預期5月回檔開始驗證）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-07 紀律規則 v2 升級｜⭐ 新增頂部紀律監控警報區｜美股6檔停利停損自動計算金額/股數｜AMZN距停利+3.4%/INTC距停利+8.5%</span></div>
 </header>
+
+<!-- Discipline Alert Banner (停利停損監控) -->
+<div id="disciplineAlerts" style="margin:0 16px 16px"></div>
 
 <!-- Hero Total -->
 <div class="hero" id="heroSection"></div>
@@ -562,6 +593,217 @@ const usRealizedPnl = -971.56; // UBER(-160.18) + CRWD(-127.25) + NFLX(-260.08�
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
 const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
+
+// ===== DISCIPLINE ALERTS (停利停損監控) =====
+// 規則 v2 (2026-05-07 基於估值升級)
+const disciplineRules = {
+  'NVDA': {
+    profits: [
+      { tier:1, pct:30, price:240, shares:8, basis:'共識$270的89%' },
+      { tier:2, pct:50, price:277, shares:10, basis:'接近共識$270' },
+      { tier:3, pct:75, price:323, shares:6, basis:'Bull case PE重評' }
+    ],
+    stops: [
+      { tier:'warn', pct:-10, price:166, basis:'bull flag失守' },
+      { tier:'observe', pct:-22, price:144, basis:'PE急降' },
+      { tier:'exit', pct:-35, price:120, basis:'接近52w low $110' }
+    ],
+    isSpec:false
+  },
+  'AMZN': {
+    profits: [
+      { tier:1, pct:25, price:284.27, shares:4, basis:'共識$306的93%' },
+      { tier:2, pct:40, price:318.39, shares:5, basis:'略超共識$306' },
+      { tier:3, pct:60, price:363.87, shares:3, basis:'接近最高$370' }
+    ],
+    stops: [
+      { tier:'warn', pct:-15, price:193.31, basis:'4月ATH區' },
+      { tier:'observe', pct:-22, price:177.39, basis:'共識最低$175' },
+      { tier:'exit', pct:-30, price:159.19, basis:'低於共識最低' }
+    ],
+    isSpec:false
+  },
+  'MSFT': {
+    profits: [
+      { tier:1, pct:25, price:515.81, shares:4, basis:'DCF base case' },
+      { tier:2, pct:40, price:577.71, shares:5, basis:'接近共識$569' },
+      { tier:3, pct:65, price:680.87, shares:4, basis:'Bull case Goldman/UBS' }
+    ],
+    stops: [
+      { tier:'warn', pct:-10, price:371, basis:'接近3月低$370' },
+      { tier:'observe', pct:-20, price:330, basis:'PE Floor 18×' },
+      { tier:'exit', pct:-30, price:289, basis:'保守停損' }
+    ],
+    isSpec:false
+  },
+  'VOO': {
+    profits: [
+      { tier:1, pct:30, price:821.35, shares:3, basis:'S&P 500中期' },
+      { tier:2, pct:50, price:947.71, shares:3, basis:'寬版' },
+      { tier:3, pct:80, price:1137, shares:3, basis:'寬版' }
+    ],
+    stops: [
+      { tier:'warn', pct:-15, price:537.04, basis:'ETF寬版' },
+      { tier:'observe', pct:-22, price:492.81, basis:'ETF寬版' },
+      { tier:'exit', pct:-30, price:442.27, basis:'ETF寬版' }
+    ],
+    isSpec:false
+  },
+  'QQQ': {
+    profits: [
+      { tier:1, pct:50, price:933.38, shares:1, basis:'單股整批+50%' }
+    ],
+    stops: [
+      { tier:'warn', pct:-15, price:528.91, basis:'ETF寬版' },
+      { tier:'observe', pct:-22, price:485.36, basis:'ETF寬版' },
+      { tier:'exit', pct:-30, price:435.57, basis:'ETF寬版' }
+    ],
+    isSpec:false
+  },
+  'INTC': {
+    profits: [
+      { tier:1, pct:25, price:117.19, shares:2, basis:'Mizuho/HSBC中位' },
+      { tier:2, pct:50, price:140.62, shares:2, basis:'Bull case ATH突破' },
+      { tier:3, pct:100, price:187.50, shares:1, basis:'Apple+18A全成功' }
+    ],
+    stops: [
+      { tier:'warn', pct:-8, price:86.25, basis:'投機緊版警戒' },
+      { tier:'observe', pct:-12, price:82.50, basis:'接近突破點$80' },
+      { tier:'exit', pct:-15, price:79.69, basis:'突破點失守' }
+    ],
+    isSpec:true
+  }
+};
+
+function renderDisciplineAlerts() {
+  const items = [];
+  
+  usPortfolio.forEach(p => {
+    const rule = disciplineRules[p.symbol];
+    if (!rule) return;
+    const cur = p.currentPrice;
+    const pnlPct = ((cur - p.avgCost) / p.avgCost * 100);
+    
+    // 檢查停利點（找最接近的）
+    let nextProfit = null;
+    let nextProfitDist = Infinity;
+    rule.profits.forEach(pr => {
+      const dist = (pr.price - cur) / cur * 100;
+      if (dist >= -2 && dist < nextProfitDist) {  // 容許 -2% 已觸發
+        nextProfit = pr;
+        nextProfitDist = dist;
+      }
+    });
+    
+    if (nextProfit && nextProfitDist <= 15) {  // 只顯示距離 15% 內
+      const sellAmount = nextProfit.price * nextProfit.shares;
+      const sellAmountTWD = sellAmount * USDTWD;
+      const profit = (nextProfit.price - p.avgCost) * nextProfit.shares;
+      
+      let distClass = 'normal';
+      let distLabel = '';
+      if (nextProfitDist <= 0) { distClass = 'urgent'; distLabel = '🔴 已觸發！'; }
+      else if (nextProfitDist <= 5) { distClass = 'urgent'; distLabel = '⚡ 緊迫'; }
+      else if (nextProfitDist <= 10) { distClass = 'close'; distLabel = '接近'; }
+      else { distLabel = '監控中'; }
+      
+      items.push({
+        sortKey: nextProfitDist,
+        type:'profit',
+        symbol: p.symbol,
+        html: `<div class="disc-item tier-${nextProfit.tier}">
+          <div class="disc-row1">
+            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag profit">第${['','一','二','三'][nextProfit.tier]}停利 +${nextProfit.pct}%</span></div>
+            <span class="disc-distance ${distClass}">${distLabel} ${nextProfitDist >= 0 ? '+' : ''}${nextProfitDist.toFixed(1)}%</span>
+          </div>
+          <div class="disc-row2">
+            <span class="disc-action">賣 ${nextProfit.shares} 股 @ $${nextProfit.price}</span>
+            <br>釋出 $${fmt(sellAmount,0)} (NT$${fmt(sellAmountTWD,0)}) · 鎖獲利 +$${fmt(profit,0)} · 現價 $${cur}
+          </div>
+        </div>`
+      });
+    }
+    
+    // 檢查獲利保護回吐線（曾達+20%後跌回+5%內）
+    if (pnlPct >= 20) {
+      // 達+20%監控啟動
+      const protectPrice = p.avgCost * 1.05;
+      items.push({
+        sortKey: 100 - pnlPct,
+        type:'protect',
+        symbol: p.symbol,
+        html: `<div class="disc-item tier-2">
+          <div class="disc-row1">
+            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag observe">獲利保護監控</span></div>
+            <span class="disc-distance close">+${pnlPct.toFixed(1)}%</span>
+          </div>
+          <div class="disc-row2">
+            已達 +20% 觸發監控｜若回落至 $${protectPrice.toFixed(2)} (+5%) 內 → 強制減倉 30%
+          </div>
+        </div>`
+      });
+    }
+    
+    // 檢查停損點（找最接近的）
+    let nearestStop = null;
+    let nearestStopDist = -Infinity;
+    rule.stops.forEach(s => {
+      const dist = (cur - s.price) / cur * 100;  // 距離為正表示尚未觸發
+      if (dist >= -3 && dist > nearestStopDist) {
+        // 找「離現價最近」（dist 最小但仍 >0）
+      }
+      if (dist <= 25 && dist > 0 && (nearestStop === null || dist < ((cur - nearestStop.price)/cur*100))) {
+        nearestStop = s;
+      }
+    });
+    
+    if (nearestStop) {
+      const stopDist = (cur - nearestStop.price) / cur * 100;
+      if (stopDist <= 15) {  // 只顯示距離 15% 內
+        const tierName = nearestStop.tier === 'warn' ? '警戒線' : nearestStop.tier === 'observe' ? '觀察線' : '出場線';
+        const tierClass = nearestStop.tier;
+        let distClass = 'normal';
+        let distLabel = '';
+        if (stopDist <= 0) { distClass = 'urgent'; distLabel = '🔴 已觸發'; }
+        else if (stopDist <= 5) { distClass = 'urgent'; distLabel = '⚠️ 緊迫'; }
+        else if (stopDist <= 10) { distClass = 'close'; distLabel = '接近'; }
+        else { distLabel = '緩衝中'; }
+        
+        items.push({
+          sortKey: stopDist + 50,
+          type:'stop',
+          symbol: p.symbol,
+          html: `<div class="disc-item tier-${tierClass}">
+            <div class="disc-row1">
+              <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag ${tierClass}">${tierName} ${nearestStop.pct}%</span></div>
+              <span class="disc-distance ${distClass}">${distLabel} -${stopDist.toFixed(1)}%</span>
+            </div>
+            <div class="disc-row2">
+              觸發價 $${nearestStop.price}｜現價 $${cur}｜${nearestStop.basis}
+            </div>
+          </div>`
+        });
+      }
+    }
+  });
+  
+  // 排序：停利優先（已觸發或最接近的在前）
+  items.sort((a,b) => a.sortKey - b.sortKey);
+  
+  const html = `<div class="disc-alert">
+    <div class="disc-alert-header">
+      <span class="pulse"></span>
+      🛡️ 紀律監控警報區（v2 規則）
+      <span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">${items.length} 個監控項目</span>
+    </div>
+    ${items.length > 0 
+      ? `<div class="disc-grid">${items.map(i => i.html).join('')}</div>`
+      : `<div class="disc-empty">所有持倉皆遠離停利停損門檻（>15%）｜無需動作</div>`}
+  </div>`;
+  
+  document.getElementById('disciplineAlerts').innerHTML = html;
+}
+renderDisciplineAlerts();
 
 // ===== HERO =====
 document.getElementById('heroSection').innerHTML = `
