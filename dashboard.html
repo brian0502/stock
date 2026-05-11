@@ -215,7 +215,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-10 週末（🚀NVDA 5/8 創ATH $217.80！收$215.20+1.75%｜📻EP660上線「漲勢不會持續多久」｜INTC YTD +200% Wall St稱「AI換手期」｜AMZN $271.50 +19.4%距停利+4.7%｜美股帳面+$1,966 + 已實現+$46.87）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 v3 Trailing Stop 啟用（⭐美股6檔全部套用ATH-based動態警戒｜⚠️INTC觸發Trailing警戒\\$114.08觀察期Day 1｜其他5檔健康｜每週一到五台北22:00前更新收盤價）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -413,6 +413,7 @@ const adjustmentLog = [
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-05-12", type:"⭐ v3 Trailing 啟用", tb:"badge-us", title:"⭐ v3 紀律升級：Trailing Stop 動態警戒啟用！美股6檔全部套用｜⚠️ INTC \\$114 已跌破 Trailing 警戒 \\$114.08 觀察期 Day 1｜其他5檔健康｜每週一到五台北22:00前更新收盤價", summary:"**🎯 v3 規則正式上線（用戶選 A+B+C）**：①**選項 A：ATH 起算點 = 從進場日起算**（對應真實獲利）；②**選項 B：觸發詞 = 「評估 Trailing」+ 價格**；③**選項 C：INTC 保持投機緊版** -8/-12/-15%。**📊 v3 規則設計（美股 6 檔全套用）**：①NVDA 核心 -12/-15/-22%；②AMZN 核心 -12/-15/-22%；③MSFT 核心 -12/-15/-22%；④VOO ETF -10/-14/-18%；⑤QQQ ETF -10/-14/-18%；⑥INTC 投機緊版 -8/-12/-15%。雙重保護：警戒線 = MAX(Trailing 警戒, v2 靜態警戒)取較嚴格者。**📊 初始 ATH 追蹤（5/11 數據）**：①NVDA ATH \\$222.29 (5/11)；②AMZN ATH \\$275 (5/8)；③MSFT ATH \\$424.60 (5/4)；④VOO ATH \\$660 (5/8)；⑤QQQ ATH \\$664.02 (5/4)；⑥INTC ATH \\$124 (5/9)。**📊 採用警戒 vs 距 5/11 收盤**：①NVDA \\$195.62 (距 +11.87% ✅)；②AMZN \\$242.00 (距 +10.59% ✅)；③MSFT \\$373.65 (距 +10.00% ✅)；④VOO \\$594.00 (距 +8.76% ✅)；⑤QQQ \\$597.62 (距 +9.50% ✅)；⑥**INTC \\$114.08 (距 -0.07% 🔴 已跌破！)**。**⚠️ INTC 觀察期 Day 1 啟動**：①5/11 收 \\$114 < Trailing 警戒 \\$114.08；②啟動「連續 5 日觀察」紀律；③若 5/12-5/16 連 5 日收 \\$114.08 下方 → 賣 1 股 (30%)；④若反彈站回 \\$114.08 上方 → 觀察期重置；⑤剩餘 INTC 部位仍 +21.60% 帳面獲利，已實現 +\\$46.87 鎖定。**📋 你的固定工作流程（每週一到五）**：①台灣時間 22:00 前傳給 Claude；②訊息範例：「評估 Trailing」+6 檔收盤價貼一行；③Claude 自動執行：(a)更新各標的 ATH 若創高、(b)重算 Trailing 警戒/觀察/出場、(c)與 v2 靜態取嚴格者、(d)判斷觸發狀態+觀察期天數、(e)更新 dashboard、(f)推送 GitHub、(g)給結論。**🎯 v3 與既有紀律整合**：①三層停利 (+30/50/75%) 保留不變；②三層停損 (-10/-22/-35%) 與 Trailing 取嚴格者；③獲利保護回吐線 (+20% 回 +5%) 與 Trailing 互補；④連續 5 日觀察紀律也適用 Trailing；⑤A+D 資金循環策略保留。**💎 v3 的核心改進**：①動態警戒隨 ATH 自動上移（鎖定獲利保護）；②只升不降原則（股價跌時 Trailing 不下調）；③避免「賺到 +20% 又回吐到 +10%」；④客觀計算（ATH × 係數），不是情緒決策；⑤Dashboard 自動運算，無需手動。**🚨 NVDA 案例展示**：①靜態警戒 v2: \\$166；②Trailing 警戒 (ATH \\$222.29 × 0.88): \\$195.62；③**採用 \\$195.62**（拉緊 \\$29.62）；④若 NVDA 從 \\$222 跌到 \\$200，距警戒 \\$195.62 還 +2.2%；⑤再跌一點就觸發保護紀律。**📋 INTC 案例（已啟動觀察）**：①ATH \\$124；②Trailing 警戒 \\$114.08；③5/11 收 \\$114 = 跌破 -0.07%；④觀察期 Day 1 啟動；⑤紀律告訴你「等 5 日連續觀察」不是單日恐慌；⑥若 5/12 反彈站回 \\$114.08 上方 → 觀察期重置歸零；⑦若 5/12-5/16 連 5 日收 \\$114 下方 → 才執行減倉 1 股。**🎯 ❓今晚是否需要動作？答案：仍只設限價單 + 觀察 INTC**：①🔴 **INTC \\$140.62 賣 2 股 GTC**（v2 第二停利）；②🔴 **AMZN \\$284.27 賣 4 股 GTC**（距 +5.0%）；③**INTC 觀察期 Day 1（不動作，等 5 日確認）**；④週四（5/14）開始陸續更新收盤價測試流程。**❌ 不該做**：①不要因 INTC -0.07% 跌破恐慌賣（紀律是 5 日觀察）；②不要追高 NVDA \\$222 ATH；③不要全清任何標的；④不要在 INTC 反彈時馬上重置觀察（要連續 5 日收回上方）。**🚨 接下來的觀察點**：①週四（5/14 美東收盤後）傳給 Claude 美股 6 檔收盤；②Dashboard 警報區會自動顯示 Trailing 觸發狀態；③觀察 INTC 5/12-5/16 走勢；④5/20 NVDA 財報前 Trailing 紀律保護你；⑤股癌 EP661 預計 5/12 上線會整合進下次分析。**💎 一句話總結**：「v3 Trailing 是『動態保護+靜態紀律』的最佳平衡」——你維持 v2 所有靜態紀律不變，只新增 Trailing 動態元素（取嚴格者）。每週一到五台北 22:00 前 30 秒對話完成所有計算。INTC 觀察期 Day 1 是 v3 紀律的第一次實戰測試。", file:null },
   { date:"2026-05-12", type:"🚀 NVDA 創 ATH + 紀律重大訊號", tb:"badge-us", title:"🚀 NVDA 觸 \\$222.29 創新 ATH！+20.25% 首次觸發獲利保護監控！INTC \\$114 +21.60% 也在 +20% 監控｜AMZN \\$270.65 +19% 距停利+5%｜美股總獲利 +\\$2,170｜5/20 NVDA 財報倒數 8 天", summary:"**🚀 5/11 美股盤中重大訊號**：①**NVDA 觸 \\$222.29 創新 ATH！盤中 \\$221.98**（前 ATH \\$217.80 5/8）；②你的 NVDA 30 股損益 **+20.25%（\\$+1,121）**！；③**首次觸發 +20% 獲利保護監控門檻！**（門檻 \\$221.52）；④若回落到 +5%（\\$193.83）內 → 強制減倉 30%（賣 9 股）；⑤距第一停利 \\$240 還 +8.1%；⑥距 ATH 高點 \\$222.29 只剩 +0.1%。**🚀 INTC 也在 +20% 監控區！**：①現價 ~\\$114（從 5/9 高點 \\$124 回吐 -8.1%）；②損益 +21.60%（\\$+61）；③第一停利已執行（5/8 \\$117.19 × 2 股 = +\\$46.87）；④剩 3 股距第二停利 \\$140.62 還 +23.4%；⑤獲利保護回吐線啟動：若回 +5%（\\$98.44）內強制減倉 30%（賣 1 股）。**📊 5/11 美股組合即時狀態**：①**NVDA \\$221.98 (+20.25% \\$+1,121) 🚀 ATH 觸發 +20% 監控！**；②AMZN \\$270.65 (+19.01% \\$+648) ⚡ 距停利 +5.0%；③MSFT \\$415.17 (+0.61% \\$+43) 持平；④VOO \\$651.05 (+3.05% \\$+212)；⑤QQQ \\$660.39 (+6.13% \\$+38)；⑥INTC 3股 \\$114 (+21.60% \\$+61)；⑦**美股帳面 +\\$2,123** + 已實現 +\\$46.87 = **總計 +\\$2,170**。**🇮🇷 5/11 盤中環境**：①S&P -0.12%、Dow 平、Nasdaq -0.34%、Russell +0.76%；②Iran 外交部稱 Tehran 提案『慷慨且合法』、要求解除封鎖、釋放凍結資產、Hormuz 海峽可能開放；③油價 WTI \\$97.89（+2.59%）短線拉回；④Dollar General -5.8% 弱 guidance；⑤Moderna +7.5% 疫苗利多；⑥INTC 一度 +5.7% 後回吐。**🛡️ 紀律監控警報區（4 個觸發！）**：①🔴 **NVDA +20% 監控啟動！**（首次！需密切觀察）；②🚨 AMZN 第一停利 \\$284.27（距 +5.0% 緊迫，但從 +4.3% 微退）；③🔴 INTC +20% 監控（從 +32% 高點回吐）；④INTC 第二停利 \\$140.62（距 +23.4%）；⑤NVDA 第一停利 \\$240（距 +8.1% 接近！）；⑥MSFT 警戒 \\$371（距 -10.6% 緩衝中）。**🚀 NVDA 重大里程碑**：①5/8 創 ATH \\$217.80 → 5/11 創新 ATH \\$222.29；②首次觸發你的 +20% 監控紀律；③連續創高的 momentum 對 5/20 財報極為有利；④共識營收 \\$78.8B（+78.6% YoY）EPS \\$1.77（+118.5%）；⑤分析師目標中位 \\$270.73（+25.80% 上漲空間）；⑥Suzanne Nora Johnson 加入董事會（7/13 生效）；⑦Coinbase 與 NVDA AI 雲合作；⑧$40B AI ecosystem 投資。**📻 EP659 補充重點（從筆記推導）**：①「**今天如 4/23 是降槓位置，開高走低基本應減碼**」——對應 5/11 NVDA 早盤 \\$222.29 後回吐到 \\$221.98 的訊號；②**「一軍：CPU、ASIC 們；後面觀望被錯殺的軟體股 PLTR/NET/CRWD」**；③CPU 概念股+發哥（聯發科）「超乎預期的噴」；④發哥「進入資金對決戰場 → 不敢加碼」；⑤被動元件還缺一個契機；⑥**「等到出現長黑 K 再來減碼比較克服人性」**——對應你紀律「連續 5 日收在線下」。**🎯 ❓今晚是否需要動作？答案：是！INTC 第二停利限價單+觀察 NVDA**：①🔴 **INTC \\$140.62 賣 2 股 GTC**（v2 第二停利，距 +23.4%）；②🔴 **AMZN \\$284.27 賣 4 股 GTC**（距 +5.0%）；③**NVDA 觸發 +20% 監控啟動觀察**：若回落到 +5%（\\$193.83）內 → 強制減倉 30%（賣 9 股）；④觀察是否衝 \\$240（第一停利）。**❌ 不該做**：①不要全清 NVDA（紀律分階段，5/20 財報前持有）；②不要恐慌賣 INTC -8.1% 從高點（投機正常波動）；③不要恐慌賣 MSFT（仍 +0.61% 翻正）；④不要在 NVDA 達 ATH 區加碼（追高違反紀律）；⑤不要在 INTC \\$114 加碼（已部分了結紀律）。**🚨 NVDA 重要技術觀察**：①日內波動極大（\\$213.21 - \\$222.29 = 4.3% 區間）；②波動率上升暗示「資金對決戰場」（EP659）；③5/20 財報前可能繼續波動；④你的紀律告訴你『連續 5 日收在線下』才減倉，不是單日波動；⑤目前 5 日均線約 \\$215 仍上行。**📊 EP660 警告 vs 5/11 實況對照**：①「漲勢不會持續多久」⏳ NVDA 仍續強但波動加大；②「大殺出現時減碼」✅ 你已執行 INTC；③「拒評抄底」✅ 你不進場散熱；④「成本驅動恐慌性拉貨」⏳ Intel turnaround 持續；⑤股癌 EP661 預計 5/12 上線（可能今晚或明天）。**💎 紀律驗證連 12 次 + 1 次實質執行**：①4/29-5/11 共 12 次方向性驗證；②5/8 INTC +25% 鎖獲利 \\$46.87；③**5/11 NVDA +20% 監控啟動——紀律分階段紀律進入第二階段**；④累計獲利 +\\$2,170 創新高；⑤紀律繼續發揮作用。**🎯 一句話總結**：「NVDA 創新 ATH +20% 是紀律進入新階段的訊號」——獲利保護回吐線首次啟動！INTC \\$140.62 第二停利限價單+AMZN \\$284.27 第一停利限價單就是今晚的具體執行。NVDA 5/20 財報前最好的策略是『持有+觀察』，不主動加碼也不主動減碼。", file:null },
   { date:"2026-05-11", type:"🔥 INTC 暴衝 + 油價回升", tb:"badge-us", title:"🔥 INTC +13.79% 暴衝！WSJ：Apple-Intel 達初步代工協議！\\$124 距第二停利 \\$140.62 只剩 +13.4%｜NVDA \\$215.16 ATH 區｜MSFT 翻弱 \\$415｜油價回升 \\$97.89｜美股總獲利 +\\$2,026", summary:"**🚨 5/9 美股重大訊號**：①**WSJ 獨家報導：Intel 與 Apple 達初步代工協議**（從 4/29 早期討論 → 5/9 初步協議，進展神速！）；②INTC **單日 +13.79%！** 累計 YTD +500% 接近歷史天價；③Q1 營收 +7% YoY 連 6 季 beat 自家指引；④Data center & AI segment Q1 +22%；⑤Forward PE > 100 偏貴但 turnaround 故事仍強勁。**🚀 INTC 紀律觸發狀態（投機部位驚人成長）**：①現價 $124（+32.27% 從 $93.75）；②帳面 +$91（3 股剩餘）+ 已實現 +$46.87 = 累計 INTC 獲利 +$137.87；③**已超過原第一停利 $117.19 +5.8%**（已執行）；④**距第二停利 $140.62 還 +13.4%** ⚡；⑤距第三停利 $187.50 還 +51.2%；⑥停損 $84.38 還 -32% 緩衝（極寬鬆）。**📊 5/9 美股組合確認**：①**NVDA $215.16 (+16.55% \\$+917)**📈 ATH 區（5/8 高 $217.80）；②**AMZN $272.66 (+19.89% \\$+679) ⚡**距第一停利 \\$284.27 只剩 +4.3%！；③**MSFT $415.17 (+0.61% \\$+43)**翻弱從 $420 跌 -1.3%；④VOO $651.05 (+3.05% \\$+212)；⑤QQQ $660.39 (+6.13% \\$+38)；⑥**INTC $124 (+32.27% \\$+91)** 🔥；⑦**美股帳面 +\\$1,979** + 已實現 +\\$46.87 = **總計 +\\$2,026**。**🇮🇷 5/11 週一盤前重要訊號**：①**Iran 戰況新訊息推升油價**：WTI +2.59% 至 \\$97.89、Brent +2.63% 至 \\$104；②Dow 期貨下跌；③**5/7 油價跌至 \\$94 後反彈**，地緣緊張未完全解除；④但 NVDA 與 Microsoft 持續推升 Nebius 等 AI 雲端題材；⑤Moderna +7.5% Hantavirus 疫苗題材。**🛡️ 紀律監控警報區（dashboard 頂部）**：①🚨 **AMZN 第一停利 \\$284.27（距 +4.3% 緊迫）**→ 賣 4 股鎖 \\$227；②AMZN 獲利保護回吐線（+19.89% 接近 +20% 監控門檻）；③**INTC 第二停利 \\$140.62（距 +13.4% 接近！）**→ 賣 2 股鎖 \\$94；④NVDA 距第一停利 \\$240（+11.5%）；⑤MSFT 警戒 \\$371（距 -10.6% 緩衝）；⑥**NVDA 距 +20% 監控 +3.4%**（若衝 $222 觸發監控）。**🎯 INTC 第二停利建議**：①Apple 代工協議達成 → turnaround 故事大幅強化；②建議**現在就設 INTC \\$140.62 賣 2 股 GTC**（v2 規則）；③觸發後剩 1 股繼續享受 +100% 終局（$187.50）；④若 Apple 代工成真，可能直接衝 ATH \\$108.70 後新天價；⑤股癌 EP660 警告「漲勢不會持續多久」+ 已部分 Locked profit 是合理對應。**🎯 ❓今晚是否需要動作？答案：是！設 INTC 第二停利限價單**：①🔴 **INTC \\$140.62 賣 2 股 GTC**（新增！v2 規則第二停利）；②🔴 **AMZN \\$284.27 賣 4 股 GTC**（持續，距觸發 +4.3%）；③兩筆都設好系統自動執行紀律；④若 INTC 後續觸發第二停利再設 \\$187.50 賣 1 股第三停利。**❌ 不該做**：①不要追高 NVDA \\$215 ATH（5/20 財報前）；②不要全清 INTC（紀律分階段+留終局空間）；③不要恐慌賣 MSFT（仍 +0.61% 翻正）；④不要追高 INTC \\$124（你已持有，已賺 +32%）。**📻 EP660 警告驗證進度**：①「漲勢不會持續多久」⏳ 5/9 部分驗證：MSFT 翻弱、Dow -1.3%；②「大殺出現時減碼」✅ 你已執行 INTC 部分停利；③「拒評抄底散熱」✅ 你不進場；④「成本驅動恐慌性拉貨」⏳ Intel turnaround 持續驗證中；⑤股癌 EP661 預計今晚或明天上線（5/12）。**🚨 接下來監控**：①🚨 **AMZN 是否衝 \\$284.27**（最有可能下個觸發）；②🚨 INTC 是否續強衝 \\$140.62 第二停利；③NVDA 是否衝 \\$222 啟動 +20% 監控；④油價是否續升回 \\$100+（地緣風險）；⑤**5/14 台積電月營收公布**（已先揭 +17.5%）；⑥**5/15 Powell 卸任、Warsh 接任**；⑦**5/20 NVDA Q1 FY27 財報倒數 9 天**。**💎 紀律驗證連 11 次 + 1 次實質執行**：①4/29-5/9 共 11 次方向性驗證；②**5/8 第 1 次實質執行：INTC +25% 鎖獲利 \\$46.87**；③**5/9 INTC 暴衝 +13.79%——驗證留 3 股繼續享受趨勢的正確性**！；④5/8 賣 2 股後若全清就錯失 \\$30 × 3 股 = \\$90 額外獲利；⑤分階段紀律價值明確展現。**🎯 一句話總結**：「Apple-Intel 代工協議是 turnaround 故事的里程碑」——你的 INTC 投機部位從 +25% 鎖獲利 → +32% 持續成長，**完美驗證『分階段+留終局』紀律**。今晚最該做的事：設 INTC \\$140.62 第二停利限價單。", file:null },
   { date:"2026-05-10", type:"📊 週末雙市分析", tb:"badge-us", title:"🚀 NVDA 5/8 創 ATH \\$217.80！收\\$215.20+1.75%｜📻 EP660 上線「漲勢不會持續多久」+高位減碼紀律｜Wall St 稱「AI 換手期」Intel YTD +200%｜美股總獲利+\\$2,055 紀律完美執行", summary:"**🚀 5/8 美股收盤（NVDA 創新 ATH！）**：①**NVDA $215.20（+1.75%）盤中觸 \\$217.80 創歷史新高**！突破前 ATH \\$216.83；②Russell 2000 (-0.5%)、Nasdaq (+0.21%)、S&P (+0.1%)、Dow (-0.3%)；③市值 NVDA \\$5.23 兆；④4 月就業報告超預期推升科技；⑤但 Wall Street 觀察到「AI 換手期」——資金從 NVDA 流向 Intel/AMD/Micron。**🎯 你的美股組合 5/8 收盤完整**：①**NVDA \\$215.20（+16.58% \\$+918）🚀 ATH 區**；②AMZN \\$271.50（+19.38% \\$+661）⚡ 接近停利；③MSFT \\$420.50（+1.90% \\$+133）；④VOO \\$651.05（+3.05% \\$+212）；⑤QQQ \\$660.39（+6.13% \\$+38）；⑥INTC 3股 \\$109（+16.27% \\$+46）；⑦**美股帳面 +\\$2,008** + 已實現 INTC +\\$46.87 = **總計 +\\$2,055** ⭐⭐⭐。**📻 EP660 上線（5/7）— 重要警告！**：①**核心訊號：「四月漲勢非常暴力，五月漲勢不會持續多久」**——強烈暗示 5 月回檔；②**「大殺出現時減碼」**——即便故事不嚴重，部位壓太大仍會減碼；③**「拒評散熱抄底」**——「4 萬多點位階萬一買了跌回 3 萬點傷重」；④**「成本驅動恐慌性拉貨，非終端需求復甦」**——警惕消費性電子+成熟製程；⑤NVDA 本體不受 SiFive 利空影響但「未來這類事件越來越多」；⑥**對你的啟示**：你 5/8 INTC 第一停利 +25% 完全符合 EP660 心法。**🔄 Wall Street「AI 換手期」分析**：①CNBC 5/8：「資金從 NVDA 換手到 Intel/AMD/Micron」；②YTD 漲幅：**Intel +200%、AMD +112.6%、Micron +750%（!）**；③NVDA YTD 僅 +15%（雖然絕對市值\\$5.23T）；④**啟示**：你的 INTC 投機部位（+16.27%）正好在這波換手中受惠；⑤剩 3 股繼續享受趨勢。**🛡️ 紀律監控警報區（dashboard 頂部更新）**：①🚨 **AMZN 第一停利 \\$284.27**（距 +4.7% 緊迫）→ 賣 4 股鎖 \\$227；②AMZN 獲利保護回吐線（+19.38% 在 +20% 監控門檻附近）；③INTC 第二停利 \\$140.62（距 +29.0%）；④NVDA 第一停利 \\$240（**距 +11.5%** 接近！）；⑤MSFT 警戒 \\$371（-11.8% 緩衝）。**🎯 NVDA 創 ATH 後的紀律重點**：①距第一停利 \\$240 還 +11.5%；②**距獲利保護回吐線觸發門檻 +20% 還 +3.4%**——若衝 \\$222 觸發監控；③5/20 Q1 FY27 財報倒數 10 天；④共識營收 \\$78.8B EPS \\$1.77；⑤分析師目標價中位 $270 (+25.8%)；⑥**接下來 10 天 NVDA 是焦點**。**🇹🇼 台股 5/9 觀察**：①美股 NVDA ATH + 4 月就業強 → 台股 5/9 開盤期望偏多；②台積電 4 月營收 +17.5% 已公布；③聯發科 \\$3,155 漲停連 2 後可能整理；④你訂下 \\$2,150 進場條件仍未觸發（台積電 5/5 收 \\$2,250）；⑤紀律不追高持續。**🎯 ❓今晚是否需要動作？答案：仍只設限價單 + 等待**：①🔴 **AMZN \\$284.27 賣 4 股 GTC**（距觸發 +4.7%）；②**INTC 第一停利已執行**（5/8 完成 +25%）；③**INTC \\$105 買回限價單**（A+D 策略，距現價 -3.7%）——用戶決策待定；④**等 5/20 NVDA 財報**才是下個重大事件；⑤等股癌 EP661（5/12-5/13 上線）。**❌ 不該做**：①不要追高 NVDA \\$215 ATH（5/20 財報前）；②不要恐慌賣任何標的；③不要全清 AMZN（紀律分階段）；④不要加碼 INTC（已是投機部位限額且已部分了結）；⑤不要追入 IC 設計漲停族群。**📋 EP660 「5 月回檔」預期 vs 5/8 實際**：①「漲勢不會持續多久」——5/8 美股 +1.75%、台股 ATH 創高，**目前未驗證**；②但 EP660 同時說「越往上越要警惕」；③你的紀律完全對應：不追高 NVDA、AMZN 限價單就位、INTC 部分了結；④若 5 月真回檔，你會是準備最好的人。**💎 紀律驗證連 11 次 + 1 次實質執行**：①4/29-5/8 共 10 次方向性驗證；②5/8 第 1 次實質執行 INTC +25%；③**5/10 第 11 次：NVDA 創 ATH 你沒追高，繼續持有 30 股**；④**累計實際 +\\$46.87 + 帳面 +\\$2,008 = 總獲利 +\\$2,055**；⑤紀律繼續發揮作用。**🎯 一句話總結**：「NVDA 創 ATH + EP660 警告 = 紀律是唯一可靠的工具」——AMZN $284.27 限價單就是這週的具體紀律執行，其他全部不動等下個事件（5/20 NVDA 財報）。", file:null },
@@ -608,7 +609,21 @@ const grandMarket = twTotal + usTotal * USDTWD;
 const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 
 // ===== DISCIPLINE ALERTS (停利停損監控) =====
-// 規則 v2 (2026-05-07 基於估值升級)
+// 規則 v3 (2026-05-12 加入 Trailing Stop 動態警戒)
+// ATH 追蹤從進場日起算（用戶選項A）
+const athTracker = {
+  'NVDA': { ath: 222.29, ath_date: '2026-05-11', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'AMZN': { ath: 275.00, ath_date: '2026-05-08', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 424.60, ath_date: '2026-05-04', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'VOO':  { ath: 660.00, ath_date: '2026-05-08', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'QQQ':  { ath: 664.02, ath_date: '2026-05-04', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'INTC': { ath: 124.00, ath_date: '2026-05-09', mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
+};
+// Trailing 觀察天數計數（連續收在警戒線下天數）
+const trailingObserveDays = {
+  'INTC': 1  // 5/11 收 $114 跌破 $114.08，Day 1
+};
+
 const disciplineRules = {
   'NVDA': {
     profits: [
@@ -756,46 +771,83 @@ function renderDisciplineAlerts() {
       });
     }
     
-    // 檢查停損點（找最接近的）
+    // 檢查停損點（v3 Trailing 整合：取 Trailing 與靜態的較嚴格者）
+    const ath = athTracker[p.symbol];
+    let effectiveStops = rule.stops;
+    let usingTrailing = {warn: false, observe: false, exit: false};
+    
+    if (ath) {
+      const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
+      const tObserve = +(ath.ath * ath.mult_observe).toFixed(2);
+      const tExit = +(ath.ath * ath.mult_exit).toFixed(2);
+      
+      effectiveStops = rule.stops.map(s => {
+        if (s.tier === 'warn' && tWarn > s.price) {
+          usingTrailing.warn = true;
+          return {...s, price: tWarn, basis: `Trailing 警戒 (ATH $${ath.ath} × ${(ath.mult_warn*100).toFixed(0)}%)`};
+        }
+        if (s.tier === 'observe' && tObserve > s.price) {
+          usingTrailing.observe = true;
+          return {...s, price: tObserve, basis: `Trailing 觀察 (ATH × ${(ath.mult_observe*100).toFixed(0)}%)`};
+        }
+        if (s.tier === 'exit' && tExit > s.price) {
+          usingTrailing.exit = true;
+          return {...s, price: tExit, basis: `Trailing 出場 (ATH × ${(ath.mult_exit*100).toFixed(0)}%)`};
+        }
+        return s;
+      });
+    }
+    
     let nearestStop = null;
-    let nearestStopDist = -Infinity;
-    rule.stops.forEach(s => {
-      const dist = (cur - s.price) / cur * 100;  // 距離為正表示尚未觸發
-      if (dist >= -3 && dist > nearestStopDist) {
-        // 找「離現價最近」（dist 最小但仍 >0）
-      }
-      if (dist <= 25 && dist > 0 && (nearestStop === null || dist < ((cur - nearestStop.price)/cur*100))) {
+    effectiveStops.forEach(s => {
+      const dist = (cur - s.price) / cur * 100;
+      // 顯示觸發 (dist 接近 0 或負) 或接近觸發 (dist <= 15)
+      if (dist <= 15 && (nearestStop === null || Math.abs(dist) < Math.abs((cur - nearestStop.price)/cur*100))) {
         nearestStop = s;
       }
     });
     
     if (nearestStop) {
       const stopDist = (cur - nearestStop.price) / cur * 100;
-      if (stopDist <= 15) {  // 只顯示距離 15% 內
-        const tierName = nearestStop.tier === 'warn' ? '警戒線' : nearestStop.tier === 'observe' ? '觀察線' : '出場線';
-        const tierClass = nearestStop.tier;
-        let distClass = 'normal';
-        let distLabel = '';
-        if (stopDist <= 0) { distClass = 'urgent'; distLabel = '🔴 已觸發'; }
-        else if (stopDist <= 5) { distClass = 'urgent'; distLabel = '⚠️ 緊迫'; }
-        else if (stopDist <= 10) { distClass = 'close'; distLabel = '接近'; }
-        else { distLabel = '緩衝中'; }
-        
-        items.push({
-          sortKey: stopDist + 50,
-          type:'stop',
-          symbol: p.symbol,
-          html: `<div class="disc-item tier-${tierClass}">
-            <div class="disc-row1">
-              <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag ${tierClass}">${tierName} ${nearestStop.pct}%</span></div>
-              <span class="disc-distance ${distClass}">${distLabel} -${stopDist.toFixed(1)}%</span>
-            </div>
-            <div class="disc-row2">
-              觸發價 $${nearestStop.price}｜現價 $${cur}｜${nearestStop.basis}
-            </div>
-          </div>`
-        });
+      const tierName = nearestStop.tier === 'warn' ? '警戒線' : nearestStop.tier === 'observe' ? '觀察線' : '出場線';
+      const tierClass = nearestStop.tier;
+      const isTrailing = (nearestStop.tier === 'warn' && usingTrailing.warn) || 
+                         (nearestStop.tier === 'observe' && usingTrailing.observe) || 
+                         (nearestStop.tier === 'exit' && usingTrailing.exit);
+      let distClass = 'normal';
+      let distLabel = '';
+      let observeDayInfo = '';
+      
+      if (stopDist <= 0) { 
+        distClass = 'urgent'; 
+        distLabel = '🔴 已觸發'; 
+        // 顯示觀察天數
+        if (trailingObserveDays[p.symbol]) {
+          observeDayInfo = `｜觀察期 Day ${trailingObserveDays[p.symbol]}/5`;
+        } else {
+          observeDayInfo = '｜觀察期 Day 1/5';
+        }
       }
+      else if (stopDist <= 3) { distClass = 'urgent'; distLabel = '⚠️ 緊迫'; }
+      else if (stopDist <= 10) { distClass = 'close'; distLabel = '接近'; }
+      else { distLabel = '緩衝中'; }
+      
+      const trailingBadge = isTrailing ? '<span style="font-size:10px;background:#1e3a8a;color:#93c5fd;padding:1px 5px;border-radius:3px;margin-left:4px">📈 Trailing</span>' : '';
+      
+      items.push({
+        sortKey: stopDist < 0 ? -100 + stopDist : stopDist + 50,
+        type:'stop',
+        symbol: p.symbol,
+        html: `<div class="disc-item tier-${tierClass}">
+          <div class="disc-row1">
+            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag ${tierClass}">${tierName}</span>${trailingBadge}</div>
+            <span class="disc-distance ${distClass}">${distLabel} ${stopDist >= 0 ? '-' : '+'}${Math.abs(stopDist).toFixed(2)}%${observeDayInfo}</span>
+          </div>
+          <div class="disc-row2">
+            觸發價 $${nearestStop.price}｜現價 $${cur}｜${nearestStop.basis}
+          </div>
+        </div>`
+        });
     }
   });
   
