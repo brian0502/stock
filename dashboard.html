@@ -238,7 +238,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 Dashboard 簡化升級（⭐警報區移除整合到單一防守表｜新增「下一停利+距停利」欄位｜含損益/警戒/觀察/出場/距警戒｜美股6檔一目了然）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 v4 留終局股升級（⭐留股比例 20%→30%！NVDA留6→9股｜AMZN留3→4股｜MSFT留4→5股｜VOO留2→3股｜INTC/QQQ不變｜大漲時多享受趨勢）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -652,9 +652,9 @@ const trailingObserveDays = {
 const disciplineRules = {
   'NVDA': {
     profits: [
-      { tier:1, pct:30, price:240, shares:8, basis:'共識$270的89%' },
-      { tier:2, pct:50, price:277, shares:10, basis:'接近共識$270' },
-      { tier:3, pct:75, price:323, shares:6, basis:'Bull case PE重評' }
+      { tier:1, pct:30, price:240, shares:7, basis:'共識$270的89%｜v4留終局升級' },
+      { tier:2, pct:50, price:277, shares:8, basis:'接近共識$270' },
+      { tier:3, pct:75, price:323, shares:6, basis:'Bull case PE重評｜留9股長期' }
     ],
     stops: [
       { tier:'warn', pct:-10, price:166, basis:'bull flag失守' },
@@ -666,8 +666,8 @@ const disciplineRules = {
   'AMZN': {
     profits: [
       { tier:1, pct:25, price:284.27, shares:4, basis:'共識$306的93%' },
-      { tier:2, pct:40, price:318.39, shares:5, basis:'略超共識$306' },
-      { tier:3, pct:60, price:363.87, shares:3, basis:'接近最高$370' }
+      { tier:2, pct:40, price:318.39, shares:4, basis:'略超共識$306｜v4留終局升級' },
+      { tier:3, pct:60, price:363.87, shares:3, basis:'接近最高$370｜留4股長期' }
     ],
     stops: [
       { tier:'warn', pct:-15, price:193.31, basis:'4月ATH區' },
@@ -680,7 +680,7 @@ const disciplineRules = {
     profits: [
       { tier:1, pct:25, price:515.81, shares:4, basis:'DCF base case' },
       { tier:2, pct:40, price:577.71, shares:5, basis:'接近共識$569' },
-      { tier:3, pct:65, price:680.87, shares:4, basis:'Bull case Goldman/UBS' }
+      { tier:3, pct:65, price:680.87, shares:3, basis:'Bull case Goldman/UBS｜留5股長期' }
     ],
     stops: [
       { tier:'warn', pct:-10, price:371, basis:'接近3月低$370' },
@@ -693,7 +693,7 @@ const disciplineRules = {
     profits: [
       { tier:1, pct:30, price:821.35, shares:3, basis:'S&P 500中期' },
       { tier:2, pct:50, price:947.71, shares:3, basis:'寬版' },
-      { tier:3, pct:80, price:1137, shares:3, basis:'寬版' }
+      { tier:3, pct:80, price:1137, shares:2, basis:'寬版｜留3股長期'  }
     ],
     stops: [
       { tier:'warn', pct:-15, price:537.04, basis:'ETF寬版' },
