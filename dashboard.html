@@ -238,12 +238,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 v3 Trailing Stop 啟用（⭐美股6檔全部套用ATH-based動態警戒｜⚠️INTC觸發Trailing警戒\\$114.08觀察期Day 1｜其他5檔健康｜每週一到五台北22:00前更新收盤價）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 Dashboard 簡化升級（⭐警報區移除整合到單一防守表｜新增「下一停利+距停利」欄位｜含損益/警戒/觀察/出場/距警戒｜美股6檔一目了然）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
-<div id="disciplineAlerts" style="margin:0 16px 16px"></div>
-
 <!-- Defense Price Table (防守價格摘要) -->
 <div id="defenseTable" style="margin:0 16px 16px"></div>
 
@@ -729,172 +727,7 @@ const disciplineRules = {
   }
 };
 
-function renderDisciplineAlerts() {
-  const items = [];
-  
-  usPortfolio.forEach(p => {
-    const rule = disciplineRules[p.symbol];
-    if (!rule) return;
-    const cur = p.currentPrice;
-    const pnlPct = ((cur - p.avgCost) / p.avgCost * 100);
-    
-    // 檢查停利點（找最接近的）
-    let nextProfit = null;
-    let nextProfitDist = Infinity;
-    rule.profits.forEach(pr => {
-      const dist = (pr.price - cur) / cur * 100;
-      if (dist >= -2 && dist < nextProfitDist) {  // 容許 -2% 已觸發
-        nextProfit = pr;
-        nextProfitDist = dist;
-      }
-    });
-    
-    if (nextProfit && nextProfitDist <= 15) {  // 只顯示距離 15% 內
-      const sellAmount = nextProfit.price * nextProfit.shares;
-      const sellAmountTWD = sellAmount * USDTWD;
-      const profit = (nextProfit.price - p.avgCost) * nextProfit.shares;
-      
-      let distClass = 'normal';
-      let distLabel = '';
-      if (nextProfitDist <= 0) { distClass = 'urgent'; distLabel = '🔴 已觸發！'; }
-      else if (nextProfitDist <= 5) { distClass = 'urgent'; distLabel = '⚡ 緊迫'; }
-      else if (nextProfitDist <= 10) { distClass = 'close'; distLabel = '接近'; }
-      else { distLabel = '監控中'; }
-      
-      items.push({
-        sortKey: nextProfitDist,
-        type:'profit',
-        symbol: p.symbol,
-        html: `<div class="disc-item tier-${nextProfit.tier}">
-          <div class="disc-row1">
-            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag profit">第${['','一','二','三'][nextProfit.tier]}停利 +${nextProfit.pct}%</span></div>
-            <span class="disc-distance ${distClass}">${distLabel} ${nextProfitDist >= 0 ? '+' : ''}${nextProfitDist.toFixed(1)}%</span>
-          </div>
-          <div class="disc-row2">
-            <span class="disc-action">賣 ${nextProfit.shares} 股 @ $${nextProfit.price}</span>
-            <br>釋出 $${fmt(sellAmount,0)} (NT$${fmt(sellAmountTWD,0)}) · 鎖獲利 +$${fmt(profit,0)} · 現價 $${cur}
-          </div>
-        </div>`
-      });
-    }
-    
-    // 檢查獲利保護回吐線（曾達+20%後跌回+5%內）
-    if (pnlPct >= 20) {
-      // 達+20%監控啟動
-      const protectPrice = p.avgCost * 1.05;
-      items.push({
-        sortKey: 100 - pnlPct,
-        type:'protect',
-        symbol: p.symbol,
-        html: `<div class="disc-item tier-2">
-          <div class="disc-row1">
-            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag observe">獲利保護監控</span></div>
-            <span class="disc-distance close">+${pnlPct.toFixed(1)}%</span>
-          </div>
-          <div class="disc-row2">
-            已達 +20% 觸發監控｜若回落至 $${protectPrice.toFixed(2)} (+5%) 內 → 強制減倉 30%
-          </div>
-        </div>`
-      });
-    }
-    
-    // 檢查停損點（v3 Trailing 整合：取 Trailing 與靜態的較嚴格者）
-    const ath = athTracker[p.symbol];
-    let effectiveStops = rule.stops;
-    let usingTrailing = {warn: false, observe: false, exit: false};
-    
-    if (ath) {
-      const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
-      const tObserve = +(ath.ath * ath.mult_observe).toFixed(2);
-      const tExit = +(ath.ath * ath.mult_exit).toFixed(2);
-      
-      effectiveStops = rule.stops.map(s => {
-        if (s.tier === 'warn' && tWarn > s.price) {
-          usingTrailing.warn = true;
-          return {...s, price: tWarn, basis: `Trailing 警戒 (ATH $${ath.ath} × ${(ath.mult_warn*100).toFixed(0)}%)`};
-        }
-        if (s.tier === 'observe' && tObserve > s.price) {
-          usingTrailing.observe = true;
-          return {...s, price: tObserve, basis: `Trailing 觀察 (ATH × ${(ath.mult_observe*100).toFixed(0)}%)`};
-        }
-        if (s.tier === 'exit' && tExit > s.price) {
-          usingTrailing.exit = true;
-          return {...s, price: tExit, basis: `Trailing 出場 (ATH × ${(ath.mult_exit*100).toFixed(0)}%)`};
-        }
-        return s;
-      });
-    }
-    
-    let nearestStop = null;
-    effectiveStops.forEach(s => {
-      const dist = (cur - s.price) / cur * 100;
-      // 顯示觸發 (dist 接近 0 或負) 或接近觸發 (dist <= 15)
-      if (dist <= 15 && (nearestStop === null || Math.abs(dist) < Math.abs((cur - nearestStop.price)/cur*100))) {
-        nearestStop = s;
-      }
-    });
-    
-    if (nearestStop) {
-      const stopDist = (cur - nearestStop.price) / cur * 100;
-      const tierName = nearestStop.tier === 'warn' ? '警戒線' : nearestStop.tier === 'observe' ? '觀察線' : '出場線';
-      const tierClass = nearestStop.tier;
-      const isTrailing = (nearestStop.tier === 'warn' && usingTrailing.warn) || 
-                         (nearestStop.tier === 'observe' && usingTrailing.observe) || 
-                         (nearestStop.tier === 'exit' && usingTrailing.exit);
-      let distClass = 'normal';
-      let distLabel = '';
-      let observeDayInfo = '';
-      
-      if (stopDist <= 0) { 
-        distClass = 'urgent'; 
-        distLabel = '🔴 已觸發'; 
-        // 顯示觀察天數
-        if (trailingObserveDays[p.symbol]) {
-          observeDayInfo = `｜觀察期 Day ${trailingObserveDays[p.symbol]}/5`;
-        } else {
-          observeDayInfo = '｜觀察期 Day 1/5';
-        }
-      }
-      else if (stopDist <= 3) { distClass = 'urgent'; distLabel = '⚠️ 緊迫'; }
-      else if (stopDist <= 10) { distClass = 'close'; distLabel = '接近'; }
-      else { distLabel = '緩衝中'; }
-      
-      const trailingBadge = isTrailing ? '<span style="font-size:10px;background:#1e3a8a;color:#93c5fd;padding:1px 5px;border-radius:3px;margin-left:4px">📈 Trailing</span>' : '';
-      
-      items.push({
-        sortKey: stopDist < 0 ? -100 + stopDist : stopDist + 50,
-        type:'stop',
-        symbol: p.symbol,
-        html: `<div class="disc-item tier-${tierClass}">
-          <div class="disc-row1">
-            <div><span class="disc-symbol">${p.symbol}</span> <span class="disc-tag ${tierClass}">${tierName}</span>${trailingBadge}</div>
-            <span class="disc-distance ${distClass}">${distLabel} ${stopDist >= 0 ? '-' : '+'}${Math.abs(stopDist).toFixed(2)}%${observeDayInfo}</span>
-          </div>
-          <div class="disc-row2">
-            觸發價 $${nearestStop.price}｜現價 $${cur}｜${nearestStop.basis}
-          </div>
-        </div>`
-        });
-    }
-  });
-  
-  // 排序：停利優先（已觸發或最接近的在前）
-  items.sort((a,b) => a.sortKey - b.sortKey);
-  
-  const html = `<div class="disc-alert">
-    <div class="disc-alert-header">
-      <span class="pulse"></span>
-      🛡️ 紀律監控警報區（v2 規則）
-      <span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">${items.length} 個監控項目</span>
-    </div>
-    ${items.length > 0 
-      ? `<div class="disc-grid">${items.map(i => i.html).join('')}</div>`
-      : `<div class="disc-empty">所有持倉皆遠離停利停損門檻（>15%）｜無需動作</div>`}
-  </div>`;
-  
-  document.getElementById('disciplineAlerts').innerHTML = html;
-}
-renderDisciplineAlerts();
+
 
 // ===== DEFENSE PRICE TABLE (防守價格摘要表) =====
 function renderDefenseTable() {
@@ -908,6 +741,8 @@ function renderDefenseTable() {
     if (!p || !rule || !ath) return;
     
     const cur = p.currentPrice;
+    const avg = p.avgCost;
+    const pnlPct = ((cur - avg) / avg * 100);
     
     // 計算 Trailing 三線
     const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
@@ -937,9 +772,36 @@ function renderDefenseTable() {
     const warnSrc = tWarn > sWarn ? 'T' : 'S';
     const srcBadge = warnSrc === 'T' ? '<span class="def-symbol-badge">📈T</span>' : '<span class="def-symbol-badge">S</span>';
     
+    // 找下一個停利點（最接近且尚未達到的）
+    let nextProfit = null;
+    rule.profits.forEach(pr => {
+      if (cur < pr.price && (nextProfit === null || pr.price < nextProfit.price)) {
+        nextProfit = pr;
+      }
+    });
+    
+    let profitCell = '<td style="color:#64748b;font-size:11px">已達頂</td>';
+    let profitDistCell = '<td style="color:#64748b">—</td>';
+    if (nextProfit) {
+      const distProfit = ((nextProfit.price - cur) / cur * 100);
+      let pColor = '#94a3b8';
+      let pIcon = '';
+      if (distProfit < 3) { pColor = '#10b981'; pIcon = '🎯'; }
+      else if (distProfit < 7) { pColor = '#fbbf24'; pIcon = '⚡'; }
+      profitCell = `<td style="color:#cbd5e1;font-size:12px">$${nextProfit.price}<span style="font-size:10px;color:#64748b;margin-left:4px">(${nextProfit.shares}股)</span></td>`;
+      profitDistCell = `<td style="color:${pColor};font-weight:600">${pIcon} +${distProfit.toFixed(2)}%</td>`;
+    }
+    
+    // 損益%顏色
+    const pnlColor = pnlPct >= 0 ? '#10b981' : '#ef4444';
+    const pnlSign = pnlPct >= 0 ? '+' : '';
+    
     rows.push(`<tr>
       <td>${sym}${srcBadge}</td>
       <td class="def-cur">$${cur.toFixed(2)}</td>
+      <td style="color:${pnlColor};font-weight:600">${pnlSign}${pnlPct.toFixed(2)}%</td>
+      ${profitCell}
+      ${profitDistCell}
       <td class="def-warn">$${useWarn.toFixed(2)}</td>
       <td class="def-obs">$${useObs.toFixed(2)}</td>
       <td class="def-exit">$${useExit.toFixed(2)}</td>
@@ -950,14 +812,18 @@ function renderDefenseTable() {
   const html = `<div class="def-card">
     <div class="def-header">
       <span class="pulse"></span>
-      🛡️ 防守價格摘要（v3 Trailing 動態警戒）
-      <span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">T=Trailing / S=靜態 v2</span>
+      🛡️ 紀律監控總表（v3 Trailing 動態警戒）
+      <span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">📈T=Trailing / S=靜態 v2</span>
     </div>
+    <div style="overflow-x:auto">
     <table class="def-table">
       <thead>
         <tr>
           <th>標的</th>
           <th>現價</th>
+          <th>損益</th>
+          <th>下一停利</th>
+          <th>距停利</th>
           <th>警戒</th>
           <th>觀察</th>
           <th>出場</th>
@@ -966,6 +832,7 @@ function renderDefenseTable() {
       </thead>
       <tbody>${rows.join('')}</tbody>
     </table>
+    </div>
   </div>`;
   
   document.getElementById('defenseTable').innerHTML = html;
