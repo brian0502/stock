@@ -238,7 +238,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 台股重組執行（🎯 進場 009816 6張@\$14.16（30%）｜剩 NT\$209,739 等回檔｜限價單 -5%/$13.45 5張 / -10%/$12.74 5張 / -15%/$12.04 4張｜策略 C 修正版分批｜符合 EP660 「謹慎進場」精神）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 台股重新評估（⚠️ 撤回 009816 進場決策｜重新做完整個股 + ETF 比較研究｜現金 NT\$294,772 等待選定標的）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -337,9 +337,8 @@ const usCash = 1211.54; // 5/8 INTC第一停利賣2股@$117.19釋出$234.37 ($97
 
 const twPortfolio = [
   { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:24.90, category:"高股息ETF", color:"#fb923c" },
-  { symbol:"009816", name:"凱基台灣TOP50（不配息）", shares:6000, avgCost:14.16, currentPrice:14.16, category:"市值型ETF", color:"#06b6d4" },
 ];
-const twCash = 209739; // 2026-05-12 進場 009816 6張@$14.16 花 NT$85,033 ($294,772-$85,033)
+const twCash = 294772; // 2026-05-12 清倉 00919 9張@$23.85 釋出 NT$214,252 ($80,520+$214,252)
 
 const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:219.44, color:"#10b981" },
@@ -351,7 +350,6 @@ const usPortfolio = [
 ];
 
 const allTx = [
-  { date:"2026-05-12", market:"TW", symbol:"009816", action:"buy", shares:6000, price:14.16, amount:85033, note:"⭐ 策略 C 修正版分批｜立即進場 6 張（30%）試水溫｜剩 NT$209,739 等回檔｜限價單 -5%/-10%/-15% 三層 GTC" },
   { date:"2026-05-12", market:"TW", symbol:"00919", action:"sell", shares:9000, price:23.85, amount:214252, note:"🎯 清倉全部 9 張｜實得 NT$214,252｜認列 -NT$2,018 (-0.93%)｜釋出資金等指數型 ETF 進場（避免高股息稅務）" },
   { date:"2026-05-08", market:"US", symbol:"INTC", action:"sell", shares:2, price:117.19, amount:234.37, note:"🎯 第一停利觸發（v2 規則 +25%）｜實得$234.37｜認列+$46.87(+25.00%)鎖獲利｜剩餘3股｜A+D策略待設買回限價單$105 GTC" },
   { date:"2026-04-29", market:"US", symbol:"INTC", action:"buy", shares:5, price:93.75, amount:468.80, note:"投機部位｜賭18A良率90%（股癌EP657訊號未驗證）｜停損$84.38(-10%)｜停利階梯$112.50/$126.56/$140.62｜風險報酬1:3.2" },
