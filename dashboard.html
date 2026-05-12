@@ -229,6 +229,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .def-dist-close{color:#fbbf24;font-weight:600}
 .def-dist-urgent{color:#ef4444;font-weight:600}
 .def-symbol-badge{font-size:9px;padding:1px 5px;border-radius:3px;background:#1e293b;color:#94a3b8;margin-left:6px;font-weight:400}
+/* Observe Period Alert */
+.obs-alert{border-radius:14px;padding:18px;margin-bottom:12px;border:2px solid}
+.obs-day1{background:linear-gradient(135deg,#1e293b 0%,#3a2e1e 100%);border-color:#f59e0b}
+.obs-day2{background:linear-gradient(135deg,#1e293b 0%,#4a2818 100%);border-color:#fb923c}
+.obs-day3{background:linear-gradient(135deg,#2e1818 0%,#5a2020 100%);border-color:#ef4444}
+.obs-day4{background:linear-gradient(135deg,#2e1010 0%,#6a1818 100%);border-color:#dc2626}
+.obs-day5{background:linear-gradient(135deg,#3a0000 0%,#7a1010 100%);border-color:#b91c1c;animation:pulse-red 1.5s infinite}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.7)}50%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
+.obs-header{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.obs-day-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;letter-spacing:0.5px}
+.obs-day-1{background:#f59e0b;color:#1e293b}
+.obs-day-2{background:#fb923c;color:#1e293b}
+.obs-day-3{background:#ef4444;color:#fff}
+.obs-day-4{background:#dc2626;color:#fff}
+.obs-day-5{background:#b91c1c;color:#fff}
+.obs-detail{font-size:13px;color:#cbd5e1;line-height:1.6}
+.obs-action{margin-top:10px;padding:10px 14px;background:rgba(0,0,0,0.3);border-radius:8px;font-size:13px;color:#fef3c7;font-weight:600}
 @media(max-width:640px){
   .def-table{font-size:11px}
   .def-table th,.def-table td{padding:6px 8px}
@@ -238,12 +255,15 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 台股重新評估（⚠️ 撤回 009816 進場決策｜重新做完整個股 + ETF 比較研究｜現金 NT\$294,772 等待選定標的）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 警戒觸發即時通知機制（⭐新增觀察期警報區 Day 1-5 視覺化｜PRE-WARN 黃色預警 + Day 5 大紅色動畫｜保留 5 日紀律 + 確保不錯過觸發時機｜當前全 6 檔健康）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
 <!-- Defense Price Table (防守價格摘要) -->
 <div id="defenseTable" style="margin:0 16px 16px"></div>
+
+<!-- Observe Period Alert (觀察期警報) -->
+<div id="observeAlert" style="margin:0 16px 16px"></div>
 
 <!-- Hero Total -->
 <div class="hero" id="heroSection"></div>
@@ -841,6 +861,105 @@ function renderDefenseTable() {
   document.getElementById('defenseTable').innerHTML = html;
 }
 renderDefenseTable();
+
+// ===== OBSERVE PERIOD ALERT (觀察期警報) =====
+function renderObserveAlert() {
+  const alerts = [];
+  
+  // 標的順序
+  const symbolOrder = ['NVDA', 'AMZN', 'MSFT', 'VOO', 'QQQ', 'INTC'];
+  
+  symbolOrder.forEach(sym => {
+    const p = usPortfolio.find(x => x.symbol === sym);
+    const rule = disciplineRules[sym];
+    const ath = athTracker[sym];
+    if (!p || !rule || !ath) return;
+    
+    const cur = p.currentPrice;
+    const days = trailingObserveDays[sym] || 0;
+    
+    // 計算採用警戒線
+    const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
+    const sWarn = rule.stops.find(s => s.tier === 'warn').price;
+    const useWarn = Math.max(tWarn, sWarn);
+    
+    const distWarn = ((cur - useWarn) / cur * 100);
+    
+    // 計算減倉股數（30%）
+    const reduceShares = Math.max(1, Math.round(p.shares * 0.30));
+    
+    // 接近警戒（3-5% 緩衝）= 黃色預警
+    if (days === 0 && distWarn > 0 && distWarn <= 5) {
+      alerts.push({
+        priority: 100 - distWarn,
+        sym: sym, level: 'warn',
+        html: `<div class="obs-alert obs-day1">
+          <div class="obs-header">
+            <span style="font-size:18px">🟡</span>
+            <span>${sym} 接近 Trailing 警戒</span>
+            <span class="obs-day-badge obs-day-1">PRE-WARN</span>
+          </div>
+          <div class="obs-detail">
+            現價 <strong style="color:#fbbf24">$${cur.toFixed(2)}</strong> 距警戒 <strong>$${useWarn.toFixed(2)}</strong> 還 +${distWarn.toFixed(2)}%
+          </div>
+          <div class="obs-action">⚡ 持續觀察｜尚未觸發，無動作需要</div>
+        </div>`
+      });
+    }
+    
+    // 已觸發警戒：Day 1-5
+    if (days > 0) {
+      const isFinal = days >= 5;
+      const dayClass = isFinal ? 'obs-day5' : `obs-day${Math.min(days, 4)}`;
+      const badgeClass = `obs-day-${Math.min(days, 5)}`;
+      const icon = isFinal ? '🚨' : (days >= 3 ? '🔴' : (days >= 2 ? '🟠' : '⚠️'));
+      
+      let action = '';
+      if (isFinal) {
+        action = `🚨 <strong>今天執行：賣 ${reduceShares} 股（30%）！</strong> 連續 5 日收在警戒線下方，紀律確認觸發。`;
+      } else if (days === 4) {
+        action = `🔴 <strong>Day 4 / 5 — 明天若仍收線下將執行減倉 ${reduceShares} 股</strong>`;
+      } else if (days === 3) {
+        action = `⚠️ Day 3 / 5 — 還需連續 2 日確認，請於明後天追蹤`;
+      } else if (days === 2) {
+        action = `📊 Day 2 / 5 — 觀察期持續中，反彈站回 $${useWarn.toFixed(2)} 即重置`;
+      } else {
+        action = `📊 Day 1 / 5 — 觀察期啟動，明天若反彈站回 $${useWarn.toFixed(2)} 即重置歸零`;
+      }
+      
+      alerts.push({
+        priority: -days * 10,
+        sym: sym, level: 'observe',
+        html: `<div class="obs-alert ${dayClass}">
+          <div class="obs-header">
+            <span style="font-size:18px">${icon}</span>
+            <span>${sym} Trailing 警戒觀察期</span>
+            <span class="obs-day-badge ${badgeClass}">DAY ${days} / 5</span>
+          </div>
+          <div class="obs-detail">
+            現價 <strong style="color:#fca5a5">$${cur.toFixed(2)}</strong> 跌破警戒 <strong>$${useWarn.toFixed(2)}</strong>（${Math.abs(distWarn).toFixed(2)}% 下方）
+          </div>
+          <div class="obs-action">${action}</div>
+        </div>`
+      });
+    }
+  });
+  
+  // 排序：觀察期 Day 高的在前
+  alerts.sort((a, b) => a.priority - b.priority);
+  
+  let html = '';
+  if (alerts.length === 0) {
+    html = `<div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid #1e3a2e;border-radius:14px;padding:14px;text-align:center;color:#64748b;font-size:13px">
+      ✅ 所有標的距警戒線緩衝 >5%，無觀察期觸發
+    </div>`;
+  } else {
+    html = alerts.map(a => a.html).join('');
+  }
+  
+  document.getElementById('observeAlert').innerHTML = html;
+}
+renderObserveAlert();
 
 // ===== HERO =====
 document.getElementById('heroSection').innerHTML = `
