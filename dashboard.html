@@ -238,7 +238,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 v4 留終局股升級（⭐留股比例 20%→30%！NVDA留6→9股｜AMZN留3→4股｜MSFT留4→5股｜VOO留2→3股｜INTC/QQQ不變｜大漲時多享受趨勢）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-11 美股收盤評估（🚀INTC \$129.44 創新 ATH！+38.07% \$+107｜其他 5 檔距 ATH -0.1~-2.8% 微回｜AMZN 距停利 +5.68% ⚡｜美股帳面 +\$2,357 + 已實現 +\$46.87 = 總 +\$2,404）</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -342,12 +342,12 @@ const twPortfolio = [
 const twCash = 80520; // 2026-04-08 資金全部部署，現金歸零
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:221.03, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:680.75, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:271.02, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:410.76, color:"#3b82f6" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:714.22, color:"#8b5cf6" },
-  { symbol:"INTC", name:"Intel（投機部位）", shares:3, avgCost:93.75, currentPrice:127.09, color:"#0071c5" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:219.44, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:679.52, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:268.99, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:412.66, color:"#3b82f6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:713.29, color:"#8b5cf6" },
+  { symbol:"INTC", name:"Intel（投機部位）", shares:3, avgCost:93.75, currentPrice:129.44, color:"#0071c5" },
 ];
 
 const allTx = [
@@ -642,7 +642,7 @@ const athTracker = {
   'MSFT': { ath: 424.60, ath_date: '2026-05-04', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
   'VOO':  { ath: 680.75, ath_date: '2026-05-12', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
   'QQQ':  { ath: 714.22, ath_date: '2026-05-12', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'INTC': { ath: 127.09, ath_date: '2026-05-12', mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
+  'INTC': { ath: 129.44, ath_date: '2026-05-11', mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
 };
 // Trailing 觀察天數計數（連續收在警戒線下天數）
 const trailingObserveDays = {
