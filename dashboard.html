@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 警戒觸發即時通知機制（⭐新增觀察期警報區 Day 1-5 視覺化｜PRE-WARN 黃色預警 + Day 5 大紅色動畫｜保留 5 日紀律 + 確保不錯過觸發時機｜當前全 6 檔健康）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 v3.1 上線 + INTC 急殺觸發！(⭐v3.1 急殺破口啟用｜🚨INTC -10.85% \$115.40 急殺警報！單日從\$129.44暴跌觸發保護機制｜CPI 3.8%+美伊「life support」+KeyBanc降評三重利空｜建議立即減倉 1 股鎖獲利)</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -361,12 +361,12 @@ const twPortfolio = [
 const twCash = 294772; // 2026-05-12 清倉 00919 9張@$23.85 釋出 NT$214,252 ($80,520+$214,252)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:219.44, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:679.52, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:268.99, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:412.66, color:"#3b82f6" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:713.29, color:"#8b5cf6" },
-  { symbol:"INTC", name:"Intel（投機部位）", shares:3, avgCost:93.75, currentPrice:129.44, color:"#0071c5" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:218.50, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:675.00, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:265.50, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:408.66, color:"#3b82f6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:706.00, color:"#8b5cf6" },
+  { symbol:"INTC", name:"Intel（投機部位）", shares:3, avgCost:93.75, currentPrice:115.40, color:"#0071c5" },
 ];
 
 const allTx = [
@@ -660,12 +660,12 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // 規則 v3 (2026-05-12 加入 Trailing Stop 動態警戒)
 // ATH 追蹤從進場日起算（用戶選項A）
 const athTracker = {
-  'NVDA': { ath: 222.29, ath_date: '2026-05-11', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'AMZN': { ath: 275.00, ath_date: '2026-05-08', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 424.60, ath_date: '2026-05-04', mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'VOO':  { ath: 680.75, ath_date: '2026-05-12', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'QQQ':  { ath: 714.22, ath_date: '2026-05-12', mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'INTC': { ath: 129.44, ath_date: '2026-05-11', mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
+  'NVDA': { ath: 222.29, ath_date: '2026-05-11', prev_close: 221.98, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 268.99, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 424.60, ath_date: '2026-05-04', prev_close: 412.66, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'VOO':  { ath: 680.75, ath_date: '2026-05-12', prev_close: 679.52, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'QQQ':  { ath: 714.22, ath_date: '2026-05-12', prev_close: 713.29, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 129.44, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
 };
 // Trailing 觀察天數計數（連續收在警戒線下天數）
 const trailingObserveDays = {
@@ -862,11 +862,9 @@ function renderDefenseTable() {
 }
 renderDefenseTable();
 
-// ===== OBSERVE PERIOD ALERT (觀察期警報) =====
+// ===== OBSERVE PERIOD ALERT v3.1 (觀察期警報 + 急殺破口) =====
 function renderObserveAlert() {
   const alerts = [];
-  
-  // 標的順序
   const symbolOrder = ['NVDA', 'AMZN', 'MSFT', 'VOO', 'QQQ', 'INTC'];
   
   symbolOrder.forEach(sym => {
@@ -877,22 +875,68 @@ function renderObserveAlert() {
     
     const cur = p.currentPrice;
     const days = trailingObserveDays[sym] || 0;
+    const prevClose = ath.prev_close || cur;
     
-    // 計算採用警戒線
+    // 計算採用警戒/觀察線
     const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
+    const tObs = +(ath.ath * ath.mult_observe).toFixed(2);
     const sWarn = rule.stops.find(s => s.tier === 'warn').price;
+    const sObs = rule.stops.find(s => s.tier === 'observe').price;
     const useWarn = Math.max(tWarn, sWarn);
+    const useObs = Math.max(tObs, sObs);
     
     const distWarn = ((cur - useWarn) / cur * 100);
+    const distObs = ((cur - useObs) / cur * 100);
     
-    // 計算減倉股數（30%）
+    // v3.1 急殺檢測
+    const dailyDrop = ((prevClose - cur) / prevClose * 100);
+    const isCrash = dailyDrop > 5;
+    const brokeObs = cur < useObs;
+    
     const reduceShares = Math.max(1, Math.round(p.shares * 0.30));
     
-    // 接近警戒（3-5% 緩衝）= 黃色預警
+    // 🚨 v3.1 緊急破口 1：急殺 >5%
+    if (isCrash && distWarn < 5) {
+      alerts.push({
+        priority: -1000,
+        html: `<div class="obs-alert obs-day5">
+          <div class="obs-header">
+            <span style="font-size:18px">🚨</span>
+            <span>${sym} 急殺保護觸發！</span>
+            <span class="obs-day-badge obs-day-5">v3.1 CRASH</span>
+          </div>
+          <div class="obs-detail">
+            單日跌幅 <strong style="color:#fca5a5">-${dailyDrop.toFixed(2)}%</strong>（從 $${prevClose.toFixed(2)} → $${cur.toFixed(2)}）
+          </div>
+          <div class="obs-action">🚨 <strong>立即執行：賣 ${reduceShares} 股（30%）！</strong> 急殺 >5%，不等 5 日紀律。</div>
+        </div>`
+      });
+      return;
+    }
+    
+    // 🚨 v3.1 緊急破口 2：跌破觀察線
+    if (brokeObs) {
+      alerts.push({
+        priority: -800,
+        html: `<div class="obs-alert obs-day5">
+          <div class="obs-header">
+            <span style="font-size:18px">🚨</span>
+            <span>${sym} 觀察線跌破！</span>
+            <span class="obs-day-badge obs-day-5">v3.1 OBS-BREAK</span>
+          </div>
+          <div class="obs-detail">
+            現價 <strong style="color:#fca5a5">$${cur.toFixed(2)}</strong> 跌破觀察線 <strong>$${useObs.toFixed(2)}</strong>（${Math.abs(distObs).toFixed(2)}% 下方）
+          </div>
+          <div class="obs-action">🚨 <strong>立即執行：賣 ${reduceShares} 股（30%）！</strong> 跌破第二層觀察線，趨勢確認，不等 5 日。</div>
+        </div>`
+      });
+      return;
+    }
+    
+    // 接近警戒（3-5%）= PRE-WARN
     if (days === 0 && distWarn > 0 && distWarn <= 5) {
       alerts.push({
         priority: 100 - distWarn,
-        sym: sym, level: 'warn',
         html: `<div class="obs-alert obs-day1">
           <div class="obs-header">
             <span style="font-size:18px">🟡</span>
@@ -916,20 +960,19 @@ function renderObserveAlert() {
       
       let action = '';
       if (isFinal) {
-        action = `🚨 <strong>今天執行：賣 ${reduceShares} 股（30%）！</strong> 連續 5 日收在警戒線下方，紀律確認觸發。`;
+        action = `🚨 <strong>今天執行：賣 ${reduceShares} 股（30%）！</strong> 連續 5 日收在警戒線下方。`;
       } else if (days === 4) {
         action = `🔴 <strong>Day 4 / 5 — 明天若仍收線下將執行減倉 ${reduceShares} 股</strong>`;
       } else if (days === 3) {
-        action = `⚠️ Day 3 / 5 — 還需連續 2 日確認，請於明後天追蹤`;
+        action = `⚠️ Day 3 / 5 — 還需連續 2 日確認`;
       } else if (days === 2) {
         action = `📊 Day 2 / 5 — 觀察期持續中，反彈站回 $${useWarn.toFixed(2)} 即重置`;
       } else {
-        action = `📊 Day 1 / 5 — 觀察期啟動，明天若反彈站回 $${useWarn.toFixed(2)} 即重置歸零`;
+        action = `📊 Day 1 / 5 — 觀察期啟動，明天若反彈站回 $${useWarn.toFixed(2)} 即重置`;
       }
       
       alerts.push({
         priority: -days * 10,
-        sym: sym, level: 'observe',
         html: `<div class="obs-alert ${dayClass}">
           <div class="obs-header">
             <span style="font-size:18px">${icon}</span>
@@ -945,13 +988,12 @@ function renderObserveAlert() {
     }
   });
   
-  // 排序：觀察期 Day 高的在前
   alerts.sort((a, b) => a.priority - b.priority);
   
   let html = '';
   if (alerts.length === 0) {
     html = `<div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid #1e3a2e;border-radius:14px;padding:14px;text-align:center;color:#64748b;font-size:13px">
-      ✅ 所有標的距警戒線緩衝 >5%，無觀察期觸發
+      ✅ 所有標的健康｜v3.1 雙重保護啟用（5 日觀察 + 急殺 >5% 破口 + 觀察線跌破破口）
     </div>`;
   } else {
     html = alerts.map(a => a.html).join('');
