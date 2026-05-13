@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 ⭐ 00878 全清執行！3 張 @ \$27.7 認列 +NT\$11,186 (+15.59%)｜台股現金 NT\$294K→NT\$377K｜台股已實現損益首次轉正 +NT\$3,458｜全部台股 ETF 出清等新標的進場</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-14 美股 5/13 收盤評估｜⭐ INTC \$120.61 反彈 +4.51% 站回警戒線觀察期重置 Day 0｜🚀 川普訪中黃仁勳隨行 NVDA 利多｜美股組合 +\$2,267｜全 6 檔距警戒緩衝充足 +1.26%~+11.40%｜紀律無需動作</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -360,12 +360,12 @@ const twPortfolio = [
 const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:218.50, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:675.00, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:265.50, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:408.66, color:"#3b82f6" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:706.00, color:"#8b5cf6" },
-  { symbol:"INTC", name:"Intel（投機部位）", shares:2, avgCost:93.75, currentPrice:115.40, color:"#0071c5" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:220.78, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:678.67, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:265.82, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:407.77, color:"#3b82f6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:707.24, color:"#8b5cf6" },
+  { symbol:"INTC", name:"Intel（投機部位）", shares:2, avgCost:93.75, currentPrice:120.61, color:"#0071c5" },
 ];
 
 const allTx = [
@@ -665,12 +665,12 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // 規則 v3 (2026-05-12 加入 Trailing Stop 動態警戒)
 // ATH 追蹤從進場日起算（用戶選項A）
 const athTracker = {
-  'NVDA': { ath: 222.29, ath_date: '2026-05-11', prev_close: 221.98, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 268.99, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 424.60, ath_date: '2026-05-04', prev_close: 412.66, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'VOO':  { ath: 680.75, ath_date: '2026-05-12', prev_close: 679.52, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'QQQ':  { ath: 714.22, ath_date: '2026-05-12', prev_close: 713.29, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 129.44, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
+  'NVDA': { ath: 222.29, ath_date: '2026-05-11', prev_close: 220.78, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 265.82, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 424.60, ath_date: '2026-05-04', prev_close: 407.77, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'VOO':  { ath: 680.75, ath_date: '2026-05-12', prev_close: 678.67, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'QQQ':  { ath: 714.22, ath_date: '2026-05-12', prev_close: 707.24, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 120.61, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
 };
 // Trailing 觀察天數計數（連續收在警戒線下天數）
 const trailingObserveDays = {
