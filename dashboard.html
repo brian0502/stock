@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 台股分析（🚀 加權 41,898 + 0.26%｜00878 飆 \$28.13 +17.6%！5/19 除息倒數 7 天｜聯電漲停 +10% Intel代工題材｜009816 \$14.16 待進場｜009816 / 廣達 / 鴻海 三大候選）</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-12 ⭐ 00878 全清執行！3 張 @ \$27.7 認列 +NT\$11,186 (+15.59%)｜台股現金 NT\$294K→NT\$377K｜台股已實現損益首次轉正 +NT\$3,458｜全部台股 ETF 出清等新標的進場</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -356,9 +356,8 @@ const USDTWD = 31.90;
 const usCash = 1326.95; // 5/12 INTC v3.1急殺保護賣1股@$115.405釋出$115.41 ($1211.54+$115.41)
 
 const twPortfolio = [
-  { symbol:"00878", name:"國泰永續高股息", shares:3000, avgCost:23.92, currentPrice:28.13, category:"高股息ETF", color:"#fb923c" },
 ];
-const twCash = 294772; // 2026-05-12 清倉 00919 9張@$23.85 釋出 NT$214,252 ($80,520+$214,252)
+const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
 
 const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:218.50, color:"#10b981" },
@@ -649,7 +648,7 @@ const twStockMarket = twData.reduce((s,p)=>s+p.market,0);
 const twTotal = twStockMarket + twCash;
 const twTotalCost = twData.reduce((s,p)=>s+p.cost,0);
 const twPnl = twStockMarket - twTotalCost;
-const twRealizedPnl = -7728  // 緯創(-2500) + 00679B(-3210) + 00919(-2018, 9張@$23.85 vs 均價$24.03); // 緯創(-2500) + 00679B(-3210)
+const twRealizedPnl = 3458; // 緯創(-2500) + 00679B(-3210) + 00919(-2018) + 00878(+11186, 3張@$27.7 vs 均價$23.92); // 緯創(-2500) + 00679B(-3210)
 
 const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
