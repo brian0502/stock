@@ -680,16 +680,19 @@ const trailingObserveDays = {
 const disciplineRules = {
   'NVDA': {
     profits: [
-      { tier:1, pct:30, price:240, shares:7, basis:'共識$270的89%｜v4留終局升級' },
-      { tier:2, pct:50, price:277, shares:8, basis:'接近共識$270' },
-      { tier:3, pct:75, price:323, shares:6, basis:'Bull case PE重評｜留9股長期' }
+      { tier:1, pct:30, price:240, shares:3, basis:'v5 雙保險: 保險限價 +30% 賣 3 股｜川習會 + 5/20 財報 + Goldman 升評' },
+      { tier:'1u', pct:40, price:258, shares:4, basis:'v5 升級限價 +40% 賣 4 股｜動態升級反映新利多' },
+      { tier:2, pct:50, price:277, shares:4, basis:'v5 雙保險: 保險限價 +50% 賣 4 股' },
+      { tier:'2u', pct:60, price:295, shares:4, basis:'v5 升級限價 +60% 賣 4 股' },
+      { tier:3, pct:75, price:323, shares:6, basis:'+75% 第三停利｜不升級紀律守門｜留 9 股長期' }
     ],
     stops: [
       { tier:'warn', pct:-10, price:166, basis:'bull flag失守' },
       { tier:'observe', pct:-22, price:144, basis:'PE急降' },
       { tier:'exit', pct:-35, price:120, basis:'接近52w low $110' }
     ],
-    isSpec:false
+    isSpec:false,
+    v5_dynamic: { active: true, conditions_met: ['A','B','C','D'], next_review: '2026-05-20 NVDA 財報後' }
   },
   'AMZN': {
     profits: [
