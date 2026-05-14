@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-14 ⭐ 動態停利紀律 v5 上線！(NVDA 雙保險：\$240賣3股+\$258賣4股 GTC｜v5 適用所有個股｜ETF 不適用｜4 條件滿足任 2 條才升級｜符合紀律一致性 + 反映新利多)</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-14 ⭐ NVDA 重大利多但維持 v5！(川普 5/14 確認 H200 出口中國 +\$37.5億/年｜但僅佔 1.5% 營收已 priced in｜v5 +10% 升級上限保留紀律｜決策：等 5/20 財報後再評估｜當前 NVDA \$227.80 距 \$240 +5.36%)</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -692,7 +692,7 @@ const disciplineRules = {
       { tier:'exit', pct:-35, price:120, basis:'接近52w low $110' }
     ],
     isSpec:false,
-    v5_dynamic: { active: true, conditions_met: ['A','B','C','D'], next_review: '2026-05-20 NVDA 財報後' }
+    v5_dynamic: { active: true, conditions_met: ['A','B','C','D'], next_review: '2026-05-20 NVDA 財報後', latest_catalyst: '5/14 川普確認 H200 出口中國 (NVDA +$37.5億/年, 佔1.5%營收), 已 priced in 部分, 維持現有 v5 不再升級, 5/20 財報後再評估是否加 Tier 4' }
   },
   'AMZN': {
     profits: [
