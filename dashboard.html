@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-15 ⭐ 用戶選 A：台股不動 等下週機會！(台股 5/14 收 41,751 +0.91%｜5/15 早盤台積電 \$2,250 已過進場價 \$2,200｜大盤距 ATH 只剩 -0.72% 過熱｜EP660 警告中｜保留 NT\$377,718 等 5/20 NVDA 財報後再評估)</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-15 ⭐ NVDA 設定方案 C：升級保險 \$245 賣 3 股 + 升級 \$258 賣 4 股 GTC｜距觸發 +3.93%/+9.44%｜期望值 +\$224｜雙保險完整反映 H200 利多｜AMZN \$284.27 / INTC \$140.62 同設</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -681,8 +681,8 @@ const trailingObserveDays = {
 const disciplineRules = {
   'NVDA': {
     profits: [
-      { tier:1, pct:30, price:240, shares:3, basis:'v5 雙保險: 保險限價 +30% 賣 3 股｜川習會 + 5/20 財報 + Goldman 升評' },
-      { tier:'1u', pct:40, price:258, shares:4, basis:'v5 升級限價 +40% 賣 4 股｜動態升級反映新利多' },
+      { tier:1, pct:33, price:245, shares:3, basis:'v5 升級保險 +33% 賣 3 股｜H200 出口中國利多反映｜原 \$240 升級到 \$245' },
+      { tier:'1u', pct:40, price:258, shares:4, basis:'v5 升級限價 +40% 賣 4 股｜雙保險完整' },
       { tier:2, pct:50, price:277, shares:4, basis:'v5 雙保險: 保險限價 +50% 賣 4 股' },
       { tier:'2u', pct:60, price:295, shares:4, basis:'v5 升級限價 +60% 賣 4 股' },
       { tier:3, pct:75, price:323, shares:6, basis:'+75% 第三停利｜不升級紀律守門｜留 9 股長期' }
