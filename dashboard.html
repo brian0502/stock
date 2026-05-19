@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-19 🚨🚨 台股暴跌 -716 點 (-1.75%) 收 40,175.56！跌破 10 日線 40,759 + 接近月線 40,000｜記憶體股慘淪提款機（三星前總裁警告供過於求）｜你的 NT\$377,718 現金完美避開虧損｜EP660 警告完整應驗！</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-19 🎯⭐ 方案C部分減倉執行完成！5 筆全成交｜INTC全清+AMZN 11+NVDA 12+QQQ全清+VOO 3｜釋出 \$8,358.80 鎖獲利 +\$1,019.42｜現金 \$1,326→\$9,685 (35.2%) ⭐｜部位: NVDA18/MSFT17/AMZN4/VOO8｜5/20 NVDA 財報前完美防守</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -353,22 +353,25 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 1434.87; // 5/15 INTC v3.1急殺#2賣1股@$107.92釋出$107.92 ($1326.95+$107.92)
+const usCash = 9685.74; // 5/19 部分減倉：賣 INTC 1+AMZN 11+NVDA 12+QQQ 1+VOO 3 = 釋出 $8,358.80
 
 const twPortfolio = [
 ];
 const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:222.32, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:678.91, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:264.86, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:423.54, color:"#3b82f6" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:705.88, color:"#8b5cf6" },
-  { symbol:"INTC", name:"Intel（投機部位）", shares:1, avgCost:93.75, currentPrice:108.17, color:"#0071c5" },
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:221.42, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:675.59, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:260.24, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:426.54, color:"#3b82f6" },
 ];
 
 const allTx = [
+  { date:"2026-05-19", market:"US", symbol:"VOO", action:"sell", shares:3, price:675.60, amount:2026.80, note:"📋 方案C部分減倉(35%現金)｜限價 \$675.50 成交 \$675.60｜鎖獲利 +\$124.89｜剩 8 股" },
+  { date:"2026-05-19", market:"US", symbol:"QQQ", action:"sell", shares:1, price:701.00, amount:701.00, note:"📋 方案C部分減倉｜QQQ 全清 1 股@\$701｜鎖獲利 +\$77.75" },
+  { date:"2026-05-19", market:"US", symbol:"NVDA", action:"sell", shares:12, price:222.00, amount:2664.00, note:"📋 方案C部分減倉｜NVDA 30→18 股 賣 12 股@\$222｜鎖獲利 +\$447.24" },
+  { date:"2026-05-19", market:"US", symbol:"AMZN", action:"sell", shares:11, price:260.00, amount:2860.00, note:"📋 方案C部分減倉｜AMZN 15→4 股 賣 11 股@\$260｜鎖獲利 +\$356.29｜留 4 股等 Tier 1 \$284.27" },
+  { date:"2026-05-19", market:"US", symbol:"INTC", action:"sell", shares:1, price:107.00, amount:107.00, note:"📋 方案C部分減倉｜INTC 全清 1 股@\$107｜鎖獲利 +\$13.25｜結構性下跌全出場" },
   { date:"2026-05-15", market:"US", symbol:"INTC", action:"sell", shares:1, price:107.92, amount:107.92, note:"🚨 v3.1 急殺保護第 2 次觸發！INTC 5/15 盤中 -6.52% 從 \$115.93→\$108.37｜成交 \$107.92 認列 +\$14.17 (+15.11%)｜剩 1 股｜累計 INTC 已實現 +\$82.70" },
   { date:"2026-05-12", market:"TW", symbol:"00878", action:"sell", shares:3000, price:27.70, amount:82946, note:"🎯 全清 3 張 @ $27.7｜實得 NT$82,946｜認列 +NT$11,186 (+15.59%)｜失去 5/19 配息 NT$1,980 但鎖獲利更多｜避稅原則一致" },
   { date:"2026-05-12", market:"US", symbol:"INTC", action:"sell", shares:1, price:115.405, amount:115.41, note:"🚨 v3.1 急殺保護觸發！單日 -10.85% 從 \$129.44 暴跌｜KeyBanc 降評+CPI 3.8%+美伊三重利空｜認列 +\$21.65 (+23.09%) 鎖獲利｜剩 2 股｜A+D 買回限價單 \$103.86 GTC" },
@@ -616,8 +619,6 @@ const twRealizedDetail = [
   ]},
 ];
 const usRealizedDetail = [
-  { symbol:"INTC", name:"Intel（投機-3階段已實現）", pnl:82.70, trades:[
-    { date:"2026-04-29", action:"buy", desc:"建倉 5股 @ $93.75（投機進場）", amount:468.80 },
     { date:"2026-05-08", action:"sell", desc:"🎯第一停利 2股 @ $117.19（+25.00%）｜剩3股", amount:234.37 },
     { date:"2026-05-12", action:"sell", desc:"🚨v3.1急殺保護#1 1股 @ $115.405（+23.25%）｜剩2股", amount:115.41 },
     { date:"2026-05-15", action:"sell", desc:"🚨v3.1急殺保護#2 1股 @ $107.92（+15.11%）｜剩1股", amount:107.92 },
@@ -660,7 +661,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = -888.86; // 加上 5/15 INTC v3.1#2 +$14.17
+const usRealizedPnl = 130.56; // 5/19 部分減倉鎖獲利 +$1,019.42
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
