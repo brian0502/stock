@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-17 🎯 MSFT 維持不動！Gates 基金會賣 770 萬股 \$32 億是流動性事件非看空｜Bill Ackman 賣 GOOGL 95% 換 MSFT 565 萬股 \$23 億 (Forward PE 21x 進場 = 你進場類似)｜你 17 股 MSFT +1.66% 距警戒 +10.93% 健康</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-19 美股 5/18 收盤評估｜整體穩定 (NVDA \$222.32 -0.93% / AMZN \$264.86 +0.85% / MSFT \$423.54 +0.92% / VOO \$678.91 +0.14% / QQQ \$705.88 -0.03% / INTC \$108.17 +1.21%)｜帳面 +\$2,460 + 已實現 +\$82.70 = 總 +\$2,543｜紀律全綠，5/20 NVDA 財報倒數 1 天</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -360,12 +360,12 @@ const twPortfolio = [
 const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:224.41, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:677.95, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:262.64, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:419.67, color:"#3b82f6" },
-  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:706.11, color:"#8b5cf6" },
-  { symbol:"INTC", name:"Intel（投機部位）", shares:1, avgCost:93.75, currentPrice:106.88, color:"#0071c5" },
+  { symbol:"NVDA", name:"NVIDIA", shares:30, avgCost:184.73, currentPrice:222.32, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:11, avgCost:633.97, currentPrice:678.91, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:15, avgCost:227.61, currentPrice:264.86, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:423.54, color:"#3b82f6" },
+  { symbol:"QQQ", name:"Invesco QQQ", shares:1, avgCost:623.25, currentPrice:705.88, color:"#8b5cf6" },
+  { symbol:"INTC", name:"Intel（投機部位）", shares:1, avgCost:93.75, currentPrice:108.17, color:"#0071c5" },
 ];
 
 const allTx = [
@@ -669,12 +669,12 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // 規則 v3 (2026-05-12 加入 Trailing Stop 動態警戒)
 // ATH 追蹤從進場日起算（用戶選項A）
 const athTracker = {
-  'NVDA': { ath: 235.74, ath_date: '2026-05-14', prev_close: 224.41, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 262.64, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 424.80, ath_date: '2026-05-15', prev_close: 419.67, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'VOO':  { ath: 687.73, ath_date: '2026-05-14', prev_close: 677.95, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'QQQ':  { ath: 719.79, ath_date: '2026-05-14', prev_close: 706.11, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 106.88, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
+  'NVDA': { ath: 235.74, ath_date: '2026-05-14', prev_close: 222.32, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 264.86, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 424.80, ath_date: '2026-05-15', prev_close: 423.54, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'VOO':  { ath: 687.73, ath_date: '2026-05-14', prev_close: 678.91, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'QQQ':  { ath: 719.79, ath_date: '2026-05-14', prev_close: 705.88, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
+  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 108.17, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
 };
 // Trailing 觀察天數計數（連續收在警戒線下天數）
 const trailingObserveDays = {
