@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-19 🎯⭐ 方案C部分減倉執行完成！5 筆全成交｜INTC全清+AMZN 11+NVDA 12+QQQ全清+VOO 3｜釋出 \$8,358.80 鎖獲利 +\$1,019.42｜現金 \$1,326→\$9,685 (35.2%) ⭐｜部位: NVDA18/MSFT17/AMZN4/VOO8｜5/20 NVDA 財報前完美防守</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-20 美股 5/19 收盤更新｜減倉後第 1 日｜MSFT 盤中 \$432.70 創新 ATH 後拉回收 \$417.42 (-1.44%)｜NVDA \$220.61 -0.77% / AMZN \$259.34 -2.08% / VOO \$674.59 -0.64%｜帳面 +\$1,176 + 已實現 +\$130.56 = 總 +\$1,306｜減倉避虧驗證 (vs 沒減估虧 -\$300)｜紀律緩衝 +5.97%~+8.78% 全綠｜5/20 NVDA 財報倒數 1 日</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -360,10 +360,10 @@ const twPortfolio = [
 const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:221.42, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:633.97, currentPrice:675.59, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:260.24, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:426.54, color:"#3b82f6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:220.61, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:633.97, currentPrice:674.59, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:259.34, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:417.42, color:"#3b82f6" },
 ];
 
 const allTx = [
@@ -676,7 +676,7 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 const athTracker = {
   'NVDA': { ath: 235.74, ath_date: '2026-05-14', prev_close: 222.32, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
   'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 264.86, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 424.80, ath_date: '2026-05-15', prev_close: 423.54, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 432.70, ath_date: '2026-05-19', prev_close: 417.42, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
   'VOO':  { ath: 687.73, ath_date: '2026-05-14', prev_close: 678.91, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
   'QQQ':  { ath: 719.79, ath_date: '2026-05-14', prev_close: 705.88, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
   'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 108.17, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
