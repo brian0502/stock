@@ -255,7 +255,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <body>
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-20 美股 5/19 收盤評估｜部位 NVDA 18+AMZN 4+MSFT 17(不動)+VOO 8｜帳面 +\$1,176+已實現 +\$130.56 = 總 +\$1,306｜MSFT 維持 17 股不動 (Bill Ackman 邏輯)｜紀律緩衝 +5.97%~+8.78% 全綠｜5/20 NVDA 財報倒數 1 日</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-21 ⭐ 匯款執行 + 美股 5/20 收盤｜方案 C 部分匯回 \$5,000→NT\$162,611 (匯率 32.52)｜美股現金 \$9,685→\$4,685｜台股現金 NT\$377,718→NT\$540,329｜美股 5/20 全 4 檔反彈：NVDA +1.30% \$223.47 / AMZN +2.19% \$265.01 / MSFT +0.87% \$421.06 / VOO +1.03% \$681.57｜帳面 +\$1,368+已實現 \$130.56=總 +\$1,498｜🚨 NVDA Q1 FY27 財報已公布 (台北 5/21 04:20) — 待評估</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -353,20 +353,21 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 9685.74; // 5/19 部分減倉：賣 INTC 1+AMZN 11+NVDA 12+QQQ 1+VOO 3 = 釋出 $8,358.80
+const usCash = 4685.74; // 5/20 匯款 $5,000 → NT$162,611 (匯率 32.52)
 
 const twPortfolio = [
 ];
-const twCash = 377718; // 2026-05-12 清倉 00878 3張@$27.7 釋出 NT$82,946 ($294,772+$82,946)
+const twCash = 540329; // 5/20 美元匯入 NT$162,611 + 原 NT$377,718
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:220.61, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:633.97, currentPrice:674.59, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:259.34, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:417.42, color:"#3b82f6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:223.47, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:633.97, currentPrice:681.57, color:"#6366f1" },
+  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:265.01, color:"#f59e0b" },
+  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:421.06, color:"#3b82f6" },
 ];
 
 const allTx = [
+  { date:"2026-05-20", market:"FX", symbol:"USD→TWD", action:"transfer", shares:5000, price:32.52, amount:162611, note:"💱 部分匯回方案執行！美股賣 USD $5,000 → 電匯 → 台幣 NT$162,611（實際匯率 32.52，比預估 31.9 更好 +1.94%）｜美股現金 $9,685.74→$4,685.74｜台股現金 NT$377,718→NT$540,329｜釋出台股彈藥準備配置台積電/信昌電/凱美" },
   { date:"2026-05-19", market:"US", symbol:"VOO", action:"sell", shares:3, price:675.60, amount:2026.80, note:"📋 方案C部分減倉(35%現金)｜限價 \$675.50 成交 \$675.60｜鎖獲利 +\$124.89｜剩 8 股" },
   { date:"2026-05-19", market:"US", symbol:"QQQ", action:"sell", shares:1, price:701.00, amount:701.00, note:"📋 方案C部分減倉｜QQQ 全清 1 股@\$701｜鎖獲利 +\$77.75" },
   { date:"2026-05-19", market:"US", symbol:"NVDA", action:"sell", shares:12, price:222.00, amount:2664.00, note:"📋 方案C部分減倉｜NVDA 30→18 股 賣 12 股@\$222｜鎖獲利 +\$447.24" },
@@ -468,6 +469,7 @@ const adjustmentLog = [
   { date:"2026-05-17", type:"review", title:"💎 MSFT 紀律確認：Gates 賣 vs Ackman 買對立訊號", detail:"5/15 13F 揭露 Gates 基金會清空 770 萬股 MSFT ($32 億) vs Bill Ackman 賣 GOOGL 95% 換 MSFT 565 萬股 ($23 億)。正確解讀：Gates 賣股是基金會流動性事件（2045 結束 + $2,000 億慈善），Gates 個人仍持 1.03 億股 MSFT。Ackman 進場 PE 21x 與用戶 ~22x 類似。用戶選 A 維持 17 股不動，跟隨 Ackman 邏輯" },
   { date:"2026-05-19", type:"review", title:"🚨 台股暴跌 -716 點 (-1.75%)！EP660 警告完整應驗", detail:"加權指數 40,175.56 跌破 10 日線 40,759 + 接近月線 40,000。盤中振幅 1,391 點。記憶體股慘淪提款機（三星前總裁警告供過於求）。用戶 NT$377,718 現金完美避開虧損。紀律 9 連勝執行" },
   { date:"2026-05-19", type:"trade", title:"📋⭐ 方案 C 部分減倉執行！5 筆全成交鎖 +$1,019.42", detail:"5/19 美股盤中執行方案 C（35% 現金）：①INTC 全清 1 股 @ $107 +$13.25；②AMZN 11 股 @ $260 +$356.29 (留 4 股等 Tier 1 $284.27)；③NVDA 12 股 @ $222 +$447.24 (30→18)；④QQQ 全清 1 股 @ $701 +$77.75；⑤VOO 3 股 @ $675.60 +$124.89 (限價 $675.50 多賺 $0.10)。總釋出 $8,358.80 鎖獲利 +$1,019.42。美股現金 $1,326.94→$9,685.74 (35.4%)。美股已實現 -$888.86→+$130.56 翻紅。新部位 NVDA18/MSFT17(不動)/AMZN4/VOO8" },
+  { date:"2026-05-20", type:"trade", title:"💱⭐ 部分匯回 $5,000 → NT$162,611 (匯率 32.52)", detail:"執行方案 C 部分匯回：賣 USD $5,000 → 電匯 → 台幣 NT$162,611（實際匯率 32.52，比預估 31.9 多 1.94% = 多賺 NT$3,110）。美股現金 $9,685.74→$4,685.74，台股現金 NT$377,718→NT$540,329。釋出台股彈藥準備配置（台積電 30 股 NT$65K + 信昌電 1 張 NT$80K + 凱美 1 張 NT$82K = NT$227K）。美股保留 $4,685 應對 NVDA 急殺。集中度從 99.9% (全匯) 降為 85% (部分匯)。匯率高點鎖定獲利 1.94%。" },
   { date:"2026-05-20", type:"review", title:"📊 美股 5/19 收盤評估：減倉後第 1 日驗證", detail:"美股 5/19 收盤：NVDA $220.61 -0.77% / AMZN $259.34 -2.08% / MSFT $417.42 -1.44% (盤中市場觸 $432.70 但用戶 17 股完全沒動) / VOO $674.59 -0.64%。帳面 +$1,176 + 已實現 +$130.56 = 總 +$1,306。減倉避虧驗證 ~$109。全 4 檔紀律緩衝 +5.97%~+8.78% 全綠。5/20 NVDA 財報倒數 1 日" },
 ];
 
@@ -689,7 +691,7 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 const athTracker = {
   'NVDA': { ath: 235.74, ath_date: '2026-05-14', prev_close: 222.32, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
   'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 264.86, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 432.70, ath_date: '2026-05-19', prev_close: 417.42, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
+  'MSFT': { ath: 432.70, ath_date: '2026-05-19', prev_close: 421.06, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
   'VOO':  { ath: 687.73, ath_date: '2026-05-14', prev_close: 678.91, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
   'QQQ':  { ath: 719.79, ath_date: '2026-05-14', prev_close: 705.88, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
   'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 108.17, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
