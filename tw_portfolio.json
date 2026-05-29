@@ -28,7 +28,7 @@
       "symbol": "2705",
       "name": "大魯閣",
       "shares": 1,
-      "avg_cost": 18.40,
+      "avg_cost": 18.4,
       "category": "個股",
       "note": "極少量部位，不影響整體策略"
     }
@@ -38,8 +38,8 @@
       "symbol": "3231",
       "name": "緯創",
       "shares": 1000,
-      "avg_cost": 130.50,
-      "sell_price": 128.00,
+      "avg_cost": 130.5,
+      "sell_price": 128.0,
       "sell_date": "2026-03-04",
       "realized_pnl": -2500,
       "reason": "美伊衝突升級，停損紀律出場"
@@ -49,5 +49,8 @@
   "total_invested": 357120,
   "total_realized_pnl_tw": -2500,
   "strategy": "100% 防禦型ETF，現金已全部部署。後續台股分析改為保留或調整評估，加碼需等新資金進入",
-  "last_updated": "2026-04-08"
+  "last_updated": "2026-04-08",
+  "_STALE": true,
+  "_STALE_WARNING": "此檔案凍結於 2026-04-08,4/27 起 00679B、5/12 起 00919/00878 清倉、5/25 009816 進場等交易未同步。請參閱 DATA_INTEGRITY_WARNING.md。",
+  "_AWAITING": "用戶券商截圖以重建真實基準"
 }

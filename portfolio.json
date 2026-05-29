@@ -1,12 +1,45 @@
 {
   "portfolio": [
-    { "symbol": "AMZN", "name": "Amazon", "shares": 15, "avg_cost": 227.42 },
-    { "symbol": "MSFT", "name": "Microsoft", "shares": 10, "avg_cost": 436.49 },
-    { "symbol": "NFLX", "name": "Netflix", "shares": 15, "avg_cost": 91.90 },
-    { "symbol": "NVDA", "name": "NVIDIA", "shares": 30, "avg_cost": 184.60 },
-    { "symbol": "QQQ", "name": "Invesco QQQ", "shares": 1, "avg_cost": 622.25 },
-    { "symbol": "VOO", "name": "Vanguard S&P 500", "shares": 11, "avg_cost": 631.81 }
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "shares": 15,
+      "avg_cost": 227.42
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "shares": 10,
+      "avg_cost": 436.49
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "shares": 15,
+      "avg_cost": 91.9
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "shares": 30,
+      "avg_cost": 184.6
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "shares": 1,
+      "avg_cost": 622.25
+    },
+    {
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500",
+      "shares": 11,
+      "avg_cost": 631.81
+    }
   ],
   "total_realized_pnl": -972.72,
-  "last_updated": "2026-03-01"
+  "last_updated": "2026-03-01",
+  "_STALE": true,
+  "_STALE_WARNING": "此檔案凍結於 2026-03-01,2026-03-24 後的交易未同步。請參閱 DATA_INTEGRITY_WARNING.md。實際持倉與此檔不符。",
+  "_AWAITING": "用戶券商截圖以重建真實基準"
 }

@@ -1,8 +1,24 @@
 # 🚀 Session Handover — 給新 Claude 的接手包
 
 > **如果你是新開 session 的 Claude,請完整讀完這份文件,你就能無縫接手。**
-> 最後更新:2026-05-29
+> 最後更新:2026-05-29(handover 補上「資料整合性警告」)
 > 用戶:潘銘賢(brian0502)
+
+---
+
+## 🚨 第一件事:讀 `DATA_INTEGRITY_WARNING.md`(優先於本文件)
+
+**在做任何分析、查價、推薦標的之前,先讀 repo 根目錄的 `DATA_INTEGRITY_WARNING.md`。**
+
+簡短說:這個 session 的舊 Claude 把交接文件養肥了,但**沒有同步真實帳本**(`transactions.json` 凍結在 3/24、`portfolio.json` 凍結在 3/01、`tw_portfolio.json` 凍結在 4/08)。本檔 handover 後面寫的「當前投資組合狀態」是從 dashboard 敘事**推估**的,不是審計後的真實值。
+
+**正確流程**:
+1. ❌ 不要把本檔下面的「當前投資組合狀態」當真實 → 它只是推估
+2. ✅ 跟用戶要美股 + 台股券商庫存截圖
+3. ✅ 用截圖當基準,按 DATA_INTEGRITY_WARNING.md 的流程重建 JSON
+4. ✅ 重建完成後才開始做新分析
+
+**為什麼這條規則放最前面**:這正是 `price-data-integrity` SKILL 的精神——不可信的基準資料,不能拿來做決策。新 session 的 Claude 第一時間抓到這個問題是對的,請延續這個謹慎。
 
 ---
 
@@ -46,9 +62,14 @@
 
 ---
 
-## 💼 當前投資組合狀態(2026-05-29)
+## 💼 當前投資組合狀態(2026-05-29)— ⚠️ **推估值,非真實值**
 
-### 🇺🇸 美股(USD)
+> 下面這些數字是從 dashboard.html 的 `allTx` 表 + `adjustmentLog` 敘事**反向推估**的。
+> JSON 真實來源檔(portfolio.json/tw_portfolio.json/transactions.json)凍結在 3-4 月,沒同步。
+> **下個 session 開始的第一件事:跟用戶要券商截圖,以截圖為準重建,別信下表。**
+> 詳見 `DATA_INTEGRITY_WARNING.md`。
+
+### 🇺🇸 美股(USD)— 推估
 
 | 標的 | 持股 | 均價 | 即時 | 損益 | 警戒 |
 |------|------|------|------|------|------|
@@ -61,7 +82,7 @@
 - 已實現:+$130.56
 - 淨值:~$22,400
 
-### 🇹🇼 台股(NT$)
+### 🇹🇼 台股(NT$)— 推估
 
 | 標的 | 持股 | 成本 | 狀態 |
 |------|------|------|------|
@@ -211,16 +232,29 @@ GitHub Token 在用戶歷史 prompt 中(ghp_FAf...),
 cd /home/claude && git clone https://github.com/brian0502/stock.git
 cd stock && git checkout claude/stock-analysis-skill-J09An
 
-# 2. 讀這個檔案 + 所有 SKILL
-cat session-handover.md
-ls skills/*/SKILL.md | xargs cat
+# 2. 讀關鍵檔案(順序很重要)
+cat DATA_INTEGRITY_WARNING.md   # ← 第一優先,持倉資料對不上
+cat session-handover.md         # ← 第二,整體 context
+ls skills/*/SKILL.md | xargs cat   # ← 第三,工作流程
 
 # 3. 然後對用戶說(類似這樣):
-"我已讀完 handover 和所有 SKILL,當前狀態:
-- 美股 4 檔紀律綠,NVDA 等突破 $220
-- 台股 009816 第 1 批已進,等回檔 $14.1/$13.7
-- 美股現金 $2,549,台股 NT$318,139
-請問今天要分析什麼?"
+"我已讀完 handover + 5 個 SKILL + DATA_INTEGRITY_WARNING。
+
+在我們開始今天的分析之前,我必須先處理一件事:
+舊 session 的 dashboard 敘事跟 JSON 真實帳本對不上
+(transactions.json 凍結在 3/24、portfolio.json 凍結在 3/01)。
+推估的當前持倉雖然有寫在 handover,但那不是審計過的真實值。
+
+請給我兩張券商庫存截圖:
+1. 美股(顯示股數、均價、現金)
+2. 台股(同上)
+
+收到後我會以截圖為基準重建 transactions.json、portfolio.json、
+tw_portfolio.json,並修正 dashboard 漏記的交易。
+這個動作完成前,我不會做新的進場推薦或損益計算。
+
+如果你今天只想討論技術觀點(如某檔股票的走勢、市場新聞)
+而不涉及自己部位的數字,那不用截圖也可以開始。"
 ```
 
 ---
