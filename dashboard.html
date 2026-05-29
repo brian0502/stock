@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<!-- ============================================================
+     ⚠️ 架構警告(2026-05-29):
+     dashboard 內所有 currentPrice 欄位是「最後手動更新快照」,
+     不是即時價。即時價請每次重新從 Yahoo Finance 抓
+     (NVDA: https://finance.yahoo.com/quote/NVDA/ 等)。
+     
+     正確分工:
+     - JSON / dashboard 存:持股、均價、現金、交易(慢變)
+     - 每次即時抓:股價、市值、損益(快變)
+     
+     不要再用 dashboard 寫死的 currentPrice 做決策。
+============================================================ -->
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -253,6 +266,19 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </style>
 </head>
 <body>
+
+<div style="background:#fff3cd;border:2px solid #ffc107;padding:12px;margin:10px;border-radius:6px;color:#856404;font-weight:bold;">
+  ⚠️ 此 dashboard 內的「現價/市值/損益」欄位為過時快照(最後更新 2026-05-29)。
+  即時價請從 Yahoo Finance 重新抓:
+  <a href="https://finance.yahoo.com/quote/NVDA/" target="_blank">NVDA</a> |
+  <a href="https://finance.yahoo.com/quote/AMZN/" target="_blank">AMZN</a> |
+  <a href="https://finance.yahoo.com/quote/MSFT/" target="_blank">MSFT</a> |
+  <a href="https://finance.yahoo.com/quote/VOO/" target="_blank">VOO</a> |
+  <a href="https://tw.stock.yahoo.com/quote/009816" target="_blank">009816</a>
+  <br>
+  另外:持倉數字為 5/29 重建版,需用券商截圖驗證(詳見 DATA_INTEGRITY_WARNING.md)
+</div>
+
 <header>
   <h1>📊 投資組合 Dashboard</h1>
   <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-28 ⭐ MSFT 加碼 5 股 @ \$427.29！突破動能加碼策略首次實戰｜MSFT 部位：17→22 股，均價 \$412.83→\$416.12｜美股現金 \$4,685→\$2,549 (剩 11.4%) 保留給 NVDA 警戒應變｜台股 5/28 史上第二大震盪 -620 點收 43,636，台積電盤中創高 2,360 收 2,295｜009816 第 1 批 15 張續抱，等回檔 \$14.1/\$13.7 加碼</span></div>

@@ -376,6 +376,159 @@
       "amount": 1890.45,
       "fee": 1.0,
       "note": "加碼，ZS資金部分轉入指數"
+    },
+    {
+      "id": "US032",
+      "date": "2026-04-08",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "action": "buy",
+      "shares": 7,
+      "price": 378.6,
+      "amount": 2650.2,
+      "fee": 1.0,
+      "note": "加碼,均價從 436.49 攤至 412.65"
+    },
+    {
+      "id": "US033",
+      "date": "2026-04-29",
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "action": "sell",
+      "shares": 15,
+      "price": 91.98,
+      "amount": 1379.66,
+      "fee": 1.0,
+      "realized_pnl": 1.16,
+      "note": "出場(NFLX 教訓)— 從 +4.5% 縮回到近 break-even,資金轉 INTC"
+    },
+    {
+      "id": "US034",
+      "date": "2026-04-29",
+      "symbol": "INTC",
+      "name": "Intel",
+      "action": "buy",
+      "shares": 5,
+      "price": 93.75,
+      "amount": 468.8,
+      "fee": 1.0,
+      "note": "投機部位,Intel 18A 良率題材"
+    },
+    {
+      "id": "US035",
+      "date": "2026-05-08",
+      "symbol": "INTC",
+      "name": "Intel",
+      "action": "sell",
+      "shares": 2,
+      "price": 117.19,
+      "amount": 234.37,
+      "fee": 1.0,
+      "realized_pnl": 46.87,
+      "note": "第一停利"
+    },
+    {
+      "id": "US036",
+      "date": "2026-05-12",
+      "symbol": "INTC",
+      "name": "Intel",
+      "action": "sell",
+      "shares": 1,
+      "price": 115.405,
+      "amount": 115.41,
+      "fee": 1.0,
+      "realized_pnl": 21.66,
+      "note": "v3.1 急殺停利 #1"
+    },
+    {
+      "id": "US037",
+      "date": "2026-05-15",
+      "symbol": "INTC",
+      "name": "Intel",
+      "action": "sell",
+      "shares": 1,
+      "price": 107.92,
+      "amount": 107.92,
+      "fee": 1.0,
+      "realized_pnl": 14.17,
+      "note": "v3.1 急殺停利 #2"
+    },
+    {
+      "id": "US038",
+      "date": "2026-05-19",
+      "symbol": "INTC",
+      "name": "Intel",
+      "action": "sell",
+      "shares": 1,
+      "price": 107.0,
+      "amount": 107.0,
+      "fee": 1.0,
+      "realized_pnl": 13.25,
+      "note": "INTC 全清,thesis 撤回"
+    },
+    {
+      "id": "US039",
+      "date": "2026-05-19",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "action": "sell",
+      "shares": 11,
+      "price": 260.0,
+      "amount": 2860.0,
+      "fee": 1.0,
+      "realized_pnl": 358.46,
+      "note": "方案 C 部分減倉鎖獲利"
+    },
+    {
+      "id": "US040",
+      "date": "2026-05-19",
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "action": "sell",
+      "shares": 12,
+      "price": 222.0,
+      "amount": 2664.0,
+      "fee": 1.0,
+      "realized_pnl": 448.86,
+      "note": "方案 C 部分減倉,財報前避險"
+    },
+    {
+      "id": "US041",
+      "date": "2026-05-19",
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "action": "sell",
+      "shares": 1,
+      "price": 701.0,
+      "amount": 701.0,
+      "fee": 1.0,
+      "realized_pnl": 78.75,
+      "note": "QQQ 全清,集中度調整"
+    },
+    {
+      "id": "US042",
+      "date": "2026-05-19",
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500",
+      "action": "sell",
+      "shares": 3,
+      "price": 675.6,
+      "amount": 2026.8,
+      "fee": 1.0,
+      "realized_pnl": 131.37,
+      "note": "方案 C 減倉"
+    },
+    {
+      "id": "US043",
+      "date": "2026-05-28",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "action": "buy",
+      "shares": 5,
+      "price": 427.29,
+      "amount": 2136.45,
+      "fee": 1.0,
+      "note": "突破動能加碼:五角大廈 \\$96.9 億大單 + 久盤 \\$41X-42X 突破"
     }
   ],
   "tw_transactions": [
@@ -426,6 +579,121 @@
       "amount": 130500,
       "fee": 0,
       "note": "建倉 - 參與AI成長"
+    },
+    {
+      "id": "TW005",
+      "date": "2026-02-24",
+      "symbol": "00919",
+      "name": "群益台灣精選高息",
+      "action": "buy",
+      "shares": 7000,
+      "price": 24.33,
+      "amount": 170310,
+      "note": "建倉(歷史紀錄)"
+    },
+    {
+      "id": "TW006",
+      "date": "2026-02-24",
+      "symbol": "00878",
+      "name": "國泰永續高股息",
+      "action": "buy",
+      "shares": 3000,
+      "price": 23.92,
+      "amount": 71760,
+      "note": "建倉"
+    },
+    {
+      "id": "TW007",
+      "date": "2026-02-24",
+      "symbol": "00679B",
+      "name": "元大美債20年",
+      "action": "buy",
+      "shares": 3000,
+      "price": 27.91,
+      "amount": 83730,
+      "note": "避險建倉"
+    },
+    {
+      "id": "TW008",
+      "date": "2026-02-24",
+      "symbol": "3231",
+      "name": "緯創",
+      "action": "buy",
+      "shares": 1000,
+      "price": 130.5,
+      "amount": 130500,
+      "note": "建倉"
+    },
+    {
+      "id": "TW009",
+      "date": "2026-03-04",
+      "symbol": "3231",
+      "name": "緯創",
+      "action": "sell",
+      "shares": 1000,
+      "price": 128.0,
+      "amount": 128000,
+      "fee": 0,
+      "realized_pnl": -2500,
+      "note": "美伊衝突停損"
+    },
+    {
+      "id": "TW010",
+      "date": "2026-04-08",
+      "symbol": "00919",
+      "name": "群益台灣精選高息",
+      "action": "buy",
+      "shares": 2000,
+      "price": 23.1,
+      "amount": 46200,
+      "note": "停火後加碼,均價攤至 24.03,共 9000 股"
+    },
+    {
+      "id": "TW011",
+      "date": "2026-04-27",
+      "symbol": "00679B",
+      "name": "元大美債20年",
+      "action": "sell",
+      "shares": 3000,
+      "price": 26.89,
+      "amount": 80520,
+      "realized_pnl": -3210,
+      "note": "thesis 失敗(油價突破 $100、降息延後)"
+    },
+    {
+      "id": "TW012",
+      "date": "2026-05-12",
+      "symbol": "00919",
+      "name": "群益台灣精選高息",
+      "action": "sell",
+      "shares": 9000,
+      "price": 23.85,
+      "amount": 214252,
+      "note": "全清"
+    },
+    {
+      "id": "TW013",
+      "date": "2026-05-12",
+      "symbol": "00878",
+      "name": "國泰永續高股息",
+      "action": "sell",
+      "shares": 3000,
+      "price": 27.7,
+      "amount": 82946,
+      "realized_pnl": 11186,
+      "note": "全清"
+    },
+    {
+      "id": "TW014",
+      "date": "2026-05-25",
+      "symbol": "009816",
+      "name": "凱基台灣TOP50",
+      "action": "buy",
+      "shares": 15000,
+      "price": 14.8,
+      "amount": 222000,
+      "fee": 190,
+      "note": "首次進場,多頭分批第 1 批(bull-market-entry SKILL 實戰)"
     }
   ],
   "closed_positions": [
@@ -592,11 +860,70 @@
       "type": "review",
       "description": "戰爭Day25：伊朗否認談判+油價重回$103+台股逆勢反彈",
       "details": "伊朗否認談判稱假新聞，油價從$99反彈至$103(+3.1%)。美股微跌0.26%。台股逆勢+0.34%，00919$23.71(含息轉正！)、00878$22.40(+1.54%)。BofA升評MSFT目標$500。MSFT$383距停損$370僅3.5%。NFLX$93.38(+1.6%)。巴基斯坦願主持美伊談判。總損益從-NT$98K改善至-NT$85K。結論：全部持有不動，3/28暫停期到期是最關鍵決策點"
+    },
+    {
+      "date": "2026-04-08",
+      "type": "trade",
+      "description": "MSFT 加碼 7 股",
+      "details": "10→17 股,均價 436.49→412.65"
+    },
+    {
+      "date": "2026-04-27",
+      "type": "trade",
+      "description": "00679B 全清",
+      "details": "thesis 失敗,虧 NT$3,210"
+    },
+    {
+      "date": "2026-04-29",
+      "type": "trade",
+      "description": "NFLX 出場 + INTC 進場",
+      "details": "NFLX 15 股 @ 91.98 → INTC 5 股 @ 93.75"
+    },
+    {
+      "date": "2026-05-08~5/19",
+      "type": "trade",
+      "description": "INTC 分批清倉",
+      "details": "5/8 賣 2 / 5/12 賣 1 / 5/15 賣 1 / 5/19 賣 1,合計獲利 +$95.95"
+    },
+    {
+      "date": "2026-05-12",
+      "type": "trade",
+      "description": "台股 00919/00878 全清",
+      "details": "00919 9000 @ 23.85、00878 3000 @ 27.70"
+    },
+    {
+      "date": "2026-05-19",
+      "type": "trade",
+      "description": "美股方案 C 部分減倉",
+      "details": "AMZN -11、NVDA -12、QQQ -1、VOO -3,鎖獲利合計 +$1,017"
+    },
+    {
+      "date": "2026-05-20",
+      "type": "transfer",
+      "description": "美金匯回 $5,000",
+      "details": "匯率 32.52,換得 NT$162,611,多賺匯差 NT$3,100"
+    },
+    {
+      "date": "2026-05-25",
+      "type": "trade",
+      "description": "台股首次進場 009816",
+      "details": "15 張 @ $14.8 = NT$222,000,bull-market-entry SKILL 首次實戰"
+    },
+    {
+      "date": "2026-05-28",
+      "type": "trade",
+      "description": "MSFT 突破動能加碼",
+      "details": "+5 股 @ $427.29,17→22 股,均價 412.65→416.07"
+    },
+    {
+      "date": "2026-05-29",
+      "type": "review",
+      "description": "資料整合性大修補",
+      "details": "新 session 抓出 JSON vs dashboard 不一致,重建 portfolio.json + tw_portfolio.json + transactions.json,所有數字標 _NEEDS_VERIFICATION,等用戶截圖確認"
     }
   ],
-  "last_updated": "2026-03-24",
-  "_STALE": true,
-  "_STALE_WARNING": "此檔最後一筆交易為 2026-02-27 ZS 清倉,adjustment_log 最後 2026-03-24。3/24 後的所有交易(4/29 NFLX 出場/4/29 INTC 進場/5/8-5/19 多筆減倉/5/25 009816 進場/5/28 MSFT 加碼等)未同步。請參閱 DATA_INTEGRITY_WARNING.md。",
-  "_AWAITING": "用戶券商截圖以從 3/24 起補完所有交易",
-  "_MISSING_TX_ESTIMATE": "約 12+ 筆美股交易、6+ 筆台股交易,詳見 dashboard.html allTx(但 dashboard 自己也漏了 009816 5/25 進場 + MSFT 5/28 加碼)"
+  "last_updated": "2026-05-29",
+  "_NEEDS_VERIFICATION": true,
+  "_VERIFY_AGAINST": "用戶券商截圖 + 對帳單",
+  "_RECONSTRUCTION_NOTE": "3/24-5/29 共補 12 筆美股 + 10 筆台股交易,從 dashboard allTx + user memories + 本 session 對話推算。需用戶截圖驗證。"
 }
