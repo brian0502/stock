@@ -1,51 +1,43 @@
 {
-  "_NOTE": "Reconstructed 2026-05-29 from transactions.json + this session's trades.",
-  "_NEEDS_VERIFICATION": true,
-  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
-  "portfolio": [
-    {
-      "symbol": "NVDA",
-      "name": "NVIDIA",
-      "shares": 18,
-      "avg_cost": 184.6,
-      "cost_basis": 3322.71,
-      "note": "30→18 (5/19 sold 12 @ 222)"
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon",
-      "shares": 4,
-      "avg_cost": 227.41,
-      "cost_basis": 909.65,
-      "note": "15→4 (5/19 sold 11 @ 260)"
-    },
-    {
-      "symbol": "MSFT",
-      "name": "Microsoft",
-      "shares": 22,
-      "avg_cost": 416.07,
-      "cost_basis": 9151.55,
-      "note": "10→17 (4/08 +7 @ 378.60) → 22 (5/28 +5 @ 427.29)"
-    },
-    {
-      "symbol": "VOO",
-      "name": "Vanguard S&P 500",
-      "shares": 8,
-      "avg_cost": 631.81,
-      "cost_basis": 5054.51,
-      "note": "11→8 (5/19 sold 3 @ 675.60)"
-    }
-  ],
-  "cash_usd": 2549.29,
-  "cash_source": "dashboard estimate - needs verification against brokerage",
-  "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
-  "total_realized_pnl_lifetime": 141.82,
-  "total_realized_pnl_breakdown": {
-    "to_2026-02-27": -972.72,
-    "NFLX_2026-04-29": 1.16,
-    "INTC_lifecycle": 95.95,
-    "May_19_partial_sells": 1017.43
+ "_NOTE": "2026-06-01: AMZN 4股停利出場(US044)。現價需用 browser MCP 抓 Yahoo,勿存。",
+ "_NEEDS_VERIFICATION": true,
+ "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
+ "portfolio": [
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA",
+   "shares": 18,
+   "avg_cost": 184.6,
+   "cost_basis": 3322.71,
+   "note": "30→18 (5/19 sold 12 @ 222)"
   },
-  "last_updated": "2026-05-29",
-  "previous_freeze_date": "2026-03-01"
+  {
+   "symbol": "MSFT",
+   "name": "Microsoft",
+   "shares": 22,
+   "avg_cost": 416.07,
+   "cost_basis": 9151.55,
+   "note": "10→17 (4/08 +7 @ 378.60) → 22 (5/28 +5 @ 427.29)"
+  },
+  {
+   "symbol": "VOO",
+   "name": "Vanguard S&P 500",
+   "shares": 10,
+   "avg_cost": 633.97,
+   "cost_basis": 6339.7,
+   "note": "8→10 (6/1 +2 @694.55, AMZN停利轉入)"
+  }
+ ],
+ "cash_usd": 2310.0,
+ "cash_source": "用戶券商即時顯示 2026-06-01 ($2.31K)",
+ "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
+ "total_realized_pnl_lifetime": 288.14,
+ "total_realized_pnl_breakdown": {
+  "to_2026-02-27": -972.72,
+  "NFLX_2026-04-29": 1.16,
+  "INTC_lifecycle": 95.95,
+  "May_19_partial_sells": 1017.43
+ },
+ "last_updated": "2026-06-01",
+ "previous_freeze_date": "2026-03-01"
 }
