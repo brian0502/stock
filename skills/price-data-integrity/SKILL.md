@@ -1,6 +1,6 @@
 ---
 name: price-data-integrity
-description: 每次台股或美股分析前必須強制執行的資料完整性檢查。不允許使用記憶中的股價或估計值，必須先用 web_search 抓取最新價格才能做建議。違反此規則會導致嚴重錯誤（如限價單設錯、資金配置錯誤）。在 daily-analysis、進場建議、限價單規劃、減倉決策、市場掃描時都必須優先執行。
+description: 每次台股或美股分析前必須強制執行的資料完整性檢查。禁止使用記憶或估計股價。美股盤中即時價必須優先用 browser MCP(Claude in Chrome)直開 finance.yahoo.com 抓取,web_search/web_fetch 僅作備援(會延遲)。台股用 Yahoo/Goodinfo 查證。在 daily-analysis、進場建議、限價單規劃、減倉決策、市場掃描時都必須優先執行。
 ---
 
 # 股價資料完整性 SKILL（最高優先級）
@@ -33,6 +33,57 @@ description: 每次台股或美股分析前必須強制執行的資料完整性�
 | ❌ 限價單錯誤計算 | 用戶下不到單 |
 
 ---
+
+---
+
+## 🖥️ 規則 0(凌駕一切):盤中即時價 → 先用 browser MCP 直開 Yahoo
+
+> **2026-06-01 慘痛教訓**:整個 session 一直用 web_search / web_fetch 抓美股價,
+> 拿到的全是**快取/延遲**資料(NVDA 報成 211 收盤、實際盤中 221),
+> 還反過來跟用戶的即時螢幕爭。用戶連續飆罵「升級 4.8 變白癡了嗎」「你他媽給我開 browser」。
+> **根因:有 browser MCP 工具卻不用,只會 web_search。**
+
+### 🔴 美股盤中即時價的正確抓法(SOP)
+
+```
+美股要即時價(盤中)時:
+1. tool_search("browser navigate") → 載入 Claude in Chrome 工具
+2. list_connected_browsers → 確認有連線的 Chrome
+   └─ 若需 session 授權,請用戶在選單點一次(每個新 session 一次,非每次查詢)
+   └─ 註:browser MCP 需 Max 方案;若用戶非 Max 會卡住,此時才退回請用戶貼數字
+3. tabs_context_mcp(createIfEmpty=true) → 取得 tabId
+4. navigate 到 https://finance.yahoo.com/quote/<TICKER>/
+5. javascript_tool 讀即時價:
+   document.querySelector('[data-testid="qsp-price"]').innerText
+   + document.querySelector('[data-testid="qsp-price-change"]').innerText
+6. 多檔 → 用 browser_batch 一次跑完(navigate + js 交錯),不要一檔一檔慢慢來
+```
+
+### 為什麼 browser MCP 勝過 web_search
+
+| 方法 | 即時性 | 問題 |
+|------|--------|------|
+| ⭐ browser MCP 直開 Yahoo | **真即時盤中價** | 需 Max + session 授權一次 |
+| web_search「ticker price」 | 快取,常延遲數天 | 盤中會嚴重失準(今天的災難) |
+| web_fetch finance.yahoo.com | 也是快取版 | 顯示「markets closed」「data delayed」 |
+
+### 🚫 絕對不要再犯
+
+- ❌ 美股盤中還用 web_search/web_fetch 當主來源 → 拿到延遲價
+- ❌ 拿延遲價去跟用戶即時螢幕爭「市場已收盤」
+- ❌ 一直要用戶貼數字,卻不主動開 browser(用戶有 Max + 工具就該自己開)
+- ❌ browser 能用卻因為「要點一次授權」就放棄,改叫用戶貼數字
+
+### ✅ 更新後的資料優先順序
+
+```
+1. ⭐⭐⭐⭐⭐ browser MCP 直開 Yahoo(盤中即時 / 美股第一優先)
+2. ⭐⭐⭐⭐⭐ 用戶提供的券商截圖(即時)
+3. ⭐⭐⭐⭐ web_search / web_fetch(僅作備援,且需註明可能延遲)
+4. ⭐⭐⭐ 新聞反推
+不可信:
+5. ⛔ user memories 價格 / Claude 估計值 / 上次對話價格
+```
 
 ## 🎯 強制執行規則（不允許違反）
 
@@ -266,7 +317,7 @@ For 美股：
 
 ---
 
-> SKILL 版本：1.0（2026-05-21 建立）
+> SKILL 版本：2.0（2026-06-01 升級：新增 browser MCP 即時價 SOP）
 > 觸發來源：用戶 2026-05-21 三次反饋（TSM 錯誤 + 信昌電/凱美錯誤 + 規則確立）
 > 維護者：Claude（每次股票分析時 Step 0 強制執行）
 > **最高優先級：違反此 SKILL 會導致用戶損失，必須遵守**
