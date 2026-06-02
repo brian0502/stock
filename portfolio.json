@@ -1,5 +1,5 @@
 {
- "_NOTE": "2026-06-01: AMZN 4股停利出場(US044)。現價需用 browser MCP 抓 Yahoo,勿存。",
+ "_NOTE": "2026-06-02 對齊：當日僅分析、無美股交易，持股自 6/1 未變(NVDA18/MSFT22/VOO10)。dashboard 已同步補記 5/25・5/28・6/1 交易。現價需用 browser MCP 抓 Yahoo，勿存。",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
  "portfolio": [
@@ -38,6 +38,6 @@
   "INTC_lifecycle": 95.95,
   "May_19_partial_sells": 1017.43
  },
- "last_updated": "2026-06-01",
+ "last_updated": "2026-06-02",
  "previous_freeze_date": "2026-03-01"
 }

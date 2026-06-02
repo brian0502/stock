@@ -965,9 +965,15 @@
    "date": "2026-06-01",
    "action": "VOO 加碼 2 股 @694.55",
    "note": "AMZN 停利($1056)轉入指數核心;VOO 8→10 股"
+  },
+  {
+   "date": "2026-06-02",
+   "type": "review",
+   "description": "全檔對齊 + 美股分析",
+   "details": "當日僅分析無交易。dashboard.html 補回 5/25(009816)、5/28(MSFT+5)、6/1(AMZN出場/VOO加碼)漏記交易並刷新即時價;current_strategy 升 v3.1(移除AMZN、停利點刷新);CLAUDE.md 新增固定流程規範。資料問題:2705 在 Yahoo 為六福、大魯閣應為 1432,待用戶確認。"
   }
  ],
- "last_updated": "2026-06-01",
+ "last_updated": "2026-06-02",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖 + 對帳單",
  "_RECONSTRUCTION_NOTE": "3/24-5/29 共補 12 筆美股 + 10 筆台股交易,從 dashboard allTx + user memories + 本 session 對話推算。需用戶截圖驗證。"

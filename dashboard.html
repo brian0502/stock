@@ -281,7 +281,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <header>
   <h1>📊 投資組合 Dashboard</h1>
-  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-05-28 ⭐ MSFT 加碼 5 股 @ \$427.29！突破動能加碼策略首次實戰｜MSFT 部位：17→22 股，均價 \$412.83→\$416.12｜美股現金 \$4,685→\$2,549 (剩 11.4%) 保留給 NVDA 警戒應變｜台股 5/28 史上第二大震盪 -620 點收 43,636，台積電盤中創高 2,360 收 2,295｜009816 第 1 批 15 張續抱，等回檔 \$14.1/\$13.7 加碼</span></div>
+  <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-06-02 ｜AMZN 6/1 全數停利出場 +$146（4→0），proceeds 轉 VOO（8→10 股）｜MSFT 22 股、NVDA 18 股續抱｜美股現金 $2,310｜移動停利點：NVDA $194.74（結構低）/ MSFT ≈$430（Chandelier）/ VOO 不設｜今晚 3 檔皆在停利點上方，不需調整｜⚠️ 數字待券商截圖驗證</span></div>
 </header>
 
 <!-- Discipline Alert Banner (停利停損監控) -->
@@ -379,20 +379,26 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 2549.29; // 5/28 加碼 MSFT 5 股 @ $427.29 = $2,136.45
+const usCash = 2310.00; // 6/1 券商即時：AMZN 停利出場 + VOO 加碼 2 股後
 
 const twPortfolio = [
+  { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.43, color:"#0ea5e9" },
+  { symbol:"2705", name:"六福?（記錄為大魯閣，但 2705=六福、大魯閣=1432，代號待確認）", shares:1, avgCost:18.4, currentPrice:15.40, color:"#a3a3a3" },
 ];
-const twCash = 540329; // 5/20 美元匯入 NT$162,611 + 原 NT$377,718
+const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截圖驗證）
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.73, currentPrice:214.28, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:8, avgCost:633.97, currentPrice:684.10, color:"#6366f1" },
-  { symbol:"AMZN", name:"Amazon", shares:4, avgCost:227.61, currentPrice:265.40, color:"#f59e0b" },
-  { symbol:"MSFT", name:"Microsoft", shares:17, avgCost:412.83, currentPrice:417.80, color:"#3b82f6" },
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.60, currentPrice:224.36, color:"#10b981" },
+  { symbol:"MSFT", name:"Microsoft", shares:22, avgCost:416.07, currentPrice:460.52, color:"#3b82f6" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:633.97, currentPrice:697.30, color:"#6366f1" },
+  // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。價格為 6/2 盤中(Yahoo)。
 ];
 
 const allTx = [
+  { date:"2026-06-01", market:"US", symbol:"VOO", action:"buy", shares:2, price:694.55, amount:1389.10, note:"AMZN 停利 proceeds 轉入指數核心｜VOO 8→10 股" },
+  { date:"2026-06-01", market:"US", symbol:"AMZN", action:"sell", shares:4, price:263.99, amount:1055.96, note:"全數停利出場｜AMZN 4→0｜認列 +$146.32｜觸發 Chandelier 移動停利，Core 一併了結轉 VOO" },
+  { date:"2026-05-28", market:"US", symbol:"MSFT", action:"buy", shares:5, price:427.29, amount:2136.45, note:"突破動能加碼｜MSFT 17→22 股｜均價 412.65→416.07｜久盤後突破 41X-42X 箱型" },
+  { date:"2026-05-25", market:"TW", symbol:"009816 凱基台灣TOP50", action:"buy", shares:15000, price:14.8, amount:222000, note:"台股首次進場 15 張 @ $14.8｜bull-market-entry SKILL 首次實戰｜分批第 1 批｜2/3 批限價 $14.1/$13.7 GTC" },
   { date:"2026-05-21", market:"TW", symbol:"凱美 2375", action:"pending_buy", shares:1000, price:90, amount:90000, note:"⏳ 早盤限價買單 GTC $90 / 1 張 = NT$90,000｜NVDA Base 劇本｜被動元件低基期補漲｜等拉回觸發 (現價估 ~$93)" },
   { date:"2026-05-21", market:"TW", symbol:"信昌電 6173", action:"pending_buy", shares:1000, price:83, amount:83000, note:"⏳ 早盤限價買單 GTC $83 / 1 張 = NT$83,000｜NVDA Base 劇本｜被動元件低基期補漲｜EP661 NV Rubin 排擠效應｜等拉回觸發 (現價估 ~$84)" },
   { date:"2026-05-21", market:"TW", symbol:"台積電 2330", action:"pending_buy", shares:30, price:2220, amount:66600, note:"⏳ 早盤限價買單 GTC $2,220 / 30 股 = NT$66,600｜NVDA Base 劇本｜EP662 「資金將湧入台積電」應驗｜等拉回 -0.9% 觸發 (現價 $2,240)" },
@@ -672,6 +678,11 @@ const twRealizedDetail = [
   ]},
 ];
 const usRealizedDetail = [
+  { symbol:"AMZN", name:"Amazon（6/1 全清）", pnl:146.32, trades:[
+    { date:"2026-01-27", action:"buy", desc:"建倉/加碼 10股 @ ~$238.6", amount:2386.05 },
+    { date:"2026-05-19", action:"sell", desc:"📋 方案C減倉 11股 @ $260（+$356.29）｜剩4股", amount:2860.00 },
+    { date:"2026-06-01", action:"sell", desc:"🎯 全數停利 4股 @ $263.99（+$146.32）｜歸零，proceeds 轉 VOO", amount:1055.96 },
+  ]},
   { symbol:"INTC", name:"Intel（投機-4階段已實現）", pnl:96.87, trades:[
     { date:"2026-04-29", action:"buy", desc:"建倉 5股 @ $93.75（投機進場）", amount:468.80 },
     { date:"2026-05-08", action:"sell", desc:"🎯第一停利 2股 @ $117.19（+25.00%）｜剩3股", amount:234.37 },
@@ -717,7 +728,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = 130.56; // 5/19 部分減倉鎖獲利 +$1,019.42
+const usRealizedPnl = 276.88; // 前 130.56 + AMZN 6/1 停利 +146.32｜⚠️ 明細與頭條尚未完全一致，全面已實現損益待券商對帳單重建
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
