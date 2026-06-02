@@ -454,7 +454,8 @@ const allTx = [
   { date:"2026-02-24", market:"TW", symbol:"3231", action:"buy", shares:1000, price:130.50, amount:130500, note:"建倉" },
   { date:"2026-04-08", market:"TW", symbol:"00919", action:"buy", shares:2000, price:23.10, amount:46200, note:"停火後加碼 2 張，均價攤低至 $24.03" },
   { date:"2026-04-08", market:"US", symbol:"MSFT", action:"buy", shares:7, price:378.60, amount:2650.20, note:"停火後加碼7股，均價從$436.49攤低至$412.65" },
-].reverse(); // newest first
+];
+allTx.sort((a,b)=> a.date < b.date ? 1 : (a.date > b.date ? -1 : 0)); // 一律依日期新→舊，不依賴陣列輸入順序
 
 const adjustmentLog = [
   { date:"2025-12-23", type:"setup", title:"美股建倉：NVDA、NFLX、UBER", detail:"首批買入 NVDA 10股、NFLX 20股、UBER 20股，總投入約 $5,339" },
@@ -513,10 +514,13 @@ const adjustmentLog = [
   { date:"2026-05-21", type:"trade", title:"📋⭐⭐ 台股早盤限價單策略 - 設 3 筆 NT$239,600 (NVDA 財報 Base 劇本)", detail:"台股 5/21 早盤大漲 +1,339 點 (+3.35%) 至 41,360，受 NVDA 全面 Beat 財報激勵。但 +3.35% 過熱不該追高市價，依策略設 3 筆限價買單：①台積電 2330 $2,220 GTC 30 股 NT$66,600 (拉回 -0.9%)；②信昌電 6173 $83 GTC 1 張 NT$83,000 (拉回 -1.2% from 早盤 $84)；③凱美 2375 $90 GTC 1 張 NT$90,000 (拉回 -3% from 早盤 $93)。總限價 NT$239,600（44% 台股部位）。觸發機率：早盤拉回 50% 觸發第一批，深拉回 15% 觸發更深。剩 NT$300,729 保留作第二批保險（$2,180 / $78 深跌限價）+ 應急金。執行邏輯：NVDA Q1 Beat-and-Slight-Drop = Base 偏多情境，不追高+不放棄=分批限價最佳。" },
   { date:"2026-05-20", type:"trade", title:"💱⭐ 部分匯回 $5,000 → NT$162,611 (匯率 32.52)", detail:"執行方案 C 部分匯回：賣 USD $5,000 → 電匯 → 台幣 NT$162,611（實際匯率 32.52，比預估 31.9 多 1.94% = 多賺 NT$3,110）。美股現金 $9,685.74→$4,685.74，台股現金 NT$377,718→NT$540,329。釋出台股彈藥準備配置（台積電 30 股 NT$65K + 信昌電 1 張 NT$80K + 凱美 1 張 NT$82K = NT$227K）。美股保留 $4,685 應對 NVDA 急殺。集中度從 99.9% (全匯) 降為 85% (部分匯)。匯率高點鎖定獲利 1.94%。" },
   { date:"2026-05-20", type:"review", title:"📊 美股 5/19 收盤評估：減倉後第 1 日驗證", detail:"美股 5/19 收盤：NVDA $220.61 -0.77% / AMZN $259.34 -2.08% / MSFT $417.42 -1.44% (盤中市場觸 $432.70 但用戶 17 股完全沒動) / VOO $674.59 -0.64%。帳面 +$1,176 + 已實現 +$130.56 = 總 +$1,306。減倉避虧驗證 ~$109。全 4 檔紀律緩衝 +5.97%~+8.78% 全綠。5/20 NVDA 財報倒數 1 日" },
+  { date:"2026-06-01", type:"trade", title:"🎯 AMZN 全數停利出場 + VOO 加碼", detail:"AMZN 4 股全數停利 @ $263.99 認列 +$146.32，持股歸零；proceeds 轉入 VOO 加碼 2 股 @ $694.55（VOO 8→10 股）。觸發 Chandelier 移動停利後 Core 一併了結轉入指數核心。美股現金校正 $2,310。" },
+  { date:"2026-06-02", type:"review", title:"📊 全檔對齊 + 美股分析（v3.1）", detail:"當日僅分析、無交易。股癌讀至 EP665-666（被動元件續強、孟恭自己慢慢減碼國巨；新題材 SpaceX IPO + 衛星 Neo Cloud，警告 6/12 IPO 日可能是衛星股大出貨）。五檔『剛突破+基本面強』候選：HPE/ANET/VRT/AVGO/NBIS。3 檔持股皆在移動停利上方不需調整（NVDA $194.74、MSFT $430、VOO 不設）。dashboard 紀律引擎重構為 v3.1（Core/Trim 分層+單一移動停利，移除高於現價的固定停利目標）。資料問題：2705 在 Yahoo 為六福、大魯閣應為 1432，待確認。" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
 const reports = [
+  { date:"2026-06-02", type:"📊 美股分析 v3.1", tb:"badge-us", title:"📊 6/2 美股分析｜AMZN 已出場、NVDA/MSFT/VOO 在移動停利上方不需調整｜股癌 EP665-666｜五檔候選 HPE/ANET/VRT/AVGO/NBIS｜dashboard 引擎重構 v3.1", summary:"**今晚不需調整**：NVDA $224.36（停利 $194.74，+13.2%）、MSFT $460.52（Chandelier $430，+6.6%）、VOO $697.30（核心不設），3 檔皆在移動停利之上，續抱、停利點往上墊。**股癌 EP665-666**：被動元件續強（國巨特規稼動率 90%/標準 80%，孟恭自己慢慢減碼國巨）；新題材 SpaceX IPO + 衛星 Neo Cloud（算力出租），但他警告 SpaceX IPO 日(傳 6/12)可能是衛星概念股大出貨日。**五檔『剛突破+基本面強』**：HPE($47，財報跳空創高，財測上調+29~33%)、ANET($170.68，AI 網路交換器)、VRT($323.39，資料中心電力，adj EPS 財測+51%)、AVGO($459.97，逼近 52 週高，本週財報別追)、NBIS($264.51，Neo Cloud，高風險勿追當日噴出)。大環境：美股創高但通膨快、市場預期 12 月升息一碼，高本益比 AI 基建股逆風。**v3.1 dashboard 重構**：移除高於現價的固定停利目標，改 Core/Trim 分層 + 單一移動停利線（跌破才賣 Trim）。**資料問題**：2705=六福、大魯閣=1432 待確認。", file:"reports/2026-06-02.md" },
   { date:"2026-05-21", type:"📋⭐ 台股早盤限價單策略", tb:"badge-tw", title:"📋⭐ 台股 5/21 早盤大漲 +3.35% 限價單策略執行｜不追高市價+分批限價=設 3 筆 NT$239,600｜台積電 $2,220 / 信昌電 $83 / 凱美 $90 等拉回觸發｜80% 機率買到部分", summary:"**🚨 台股 5/21 早盤實況**：①加權指數 **41,360.08 (+1,339.26, +3.35%)** 大漲！②開盤 40,263.18 跳空高開 +1.21%；③盤中高 **41,418.56**（已突破 5/15 ATH 後高點）；④盤中低 40,263.18（= 開盤，**早盤完全無回檔**）；⑤成交額 **4,755 億**（半天即達 5/20 全天的一半，量能爆出）；⑥電子指數 +4.0%；⑦上櫃 +3.5%。**📢 關鍵新聞**：①「輝達財報激勵 **台積漲 50 元至 \\$2,240**」；②「**聯發科猛虎出閘 開盤不到 10 分漲停**」；③「NVDA **首季毛利率 75% 財測更超乎預期**」；④EP662「資金將湧入台積電」應驗。**🎯 決策分析：追高 vs 等拉回**：⚠️ 追高風險：①單日 +3.35% 短線過熱；②盤中無回檔不健康；③台積電 \\$2,240 比預估進場 \\$2,200 高 1.8%；④5/19 才 -716 暴跌記憶猶新；⑤「priced in」NVDA 利多。✅ 進場價值：①NVDA 全面 Beat + Q2 指引狂超預期；②EP662 訊號驗證；③你資金 NT\\$540K 已就位；④大盤突破關鍵阻力。**📋 執行策略：分批限價，不追市價**：①🟢 第一批早盤拉回觸發（已設）：台積電 2330 \\$2,220 GTC 30 股 NT\\$66,600 (拉回 -0.9%) + 信昌電 6173 \\$83 GTC 1 張 NT\\$83,000 + 凱美 2375 \\$90 GTC 1 張 NT\\$90,000 = 共 **NT\\$239,600 (44% 台股)**；②🟡 第二批深拉回保險（11:30 後視情況）：台積電 \\$2,180 + 信昌電 \\$78 共 NT\\$121,600；③💰 保留 NT\\$179,129 (33%) 應急。**⏰ 觀察重點**：①現在 09:57 已設限價單；②10:30-11:30 最關鍵時段（早盤客可能獲利了結）；③11:30 後視情況設第二批；④13:00 取消未觸發或改 GTC。**🎯 觸發機率**：①50% 早盤拉回 → 進場 NT\\$240K；②30% 早盤無回檔 → 等明天；③15% 深跌 → 進場 NT\\$362K；④5% 急漲 → 錯過小漲。**80% 機率買到部分** ⭐。**🚫 強烈不建議**：①❌ 用市價單追 \\$2,240+ (追高風險)；②❌ all-in NT\\$540K 不留應急；③❌ 完全等到 13:00 才動作；④❌ 完全放棄今天 (錯過 NVDA 訊號)；⑤❌ 只進 1 檔重壓 (集中度過高)。**💎 一句話總結**：「台股 +3.35% 過熱不該追高 → 設 3 筆限價單 (\\$2,220/\\$83/\\$90) 等早盤拉回觸發 + 第二批保險限價 + 保留 33% 現金應急 = 80% 機率買到部分 + 紀律一致」", file:null },
   { date:"2026-05-21", type:"🚨⭐⭐⭐ NVDA Q1 FY27 財報結果", tb:"badge-us", title:"🚨⭐⭐⭐ NVDA Q1 FY27 財報公布！全面 Beat (營收/EPS/Q2 指引)+ \\$80B 回購 + 股息 25 倍！盤後微跌「Beat-and-Slight-Drop」｜典型 Base 情境（不是 Bull 也不是 Bear）｜判定：可執行 Base 劇本→部分匯款已完美執行 + 5/21 早盤台股+美股當晚加碼", summary:"**🎯 NVDA Q1 FY27 實際結果**：①營收 **\\$81.62B**（共識 \\$79.2B / 自家指引 \\$78B）→ **Beat +\\$2.4B (+3%)** ✅；②EPS **\\$1.87**（共識 \\$1.78）→ **Beat +\\$0.09 (+5%)** ✅；③**Q2 指引 \\$91B ± 2%**（共識 \\$87.36B）→ **Beat +\\$3.6B (+4.2%)** ⭐⭐⭐；④新增 **\\$80B 股票回購計畫**；⑤季度股息從 1 美分 → **25 美分**（25 倍！）；⑥Hopper 中國銷售：零（保守會計）；⑦Q2 指引也假設零中國收入（不依賴 H20 復出）。**📊 法人反應**：①Wedbush Dan Ives「Another robust eye popping quarter」⭐；②Sovereign AI 已突破 \\$30B / 14% 總營收；③Hyperscaler 2026 capex \\$725B（vs 2025 \\$410B 增 +77%）；④Vera Rubin 樣品已出貨客戶；⑤Blackwell 已佔 data center compute 70%。**🤔 股價反應**：盤後「微跌」(slips after hours) — 不是大漲也不是大跌。**🎯 情境判定：BASE（不是 Bull 也不是 Bear）**：①基本面數字超強 → 但已 priced in（4/5 次 Beat-and-Drop 歷史延續）；②Q2 \\$91B vs 共識 \\$87B → 是巨大 Beat 但股價已對應預期；③屬於「Beat-and-Slight-Drop」典型模式；④判定為 **Base 偏多情境**。**🇹🇼 台股 5/21 早盤對 NVDA 反應預測**：①NVDA 沒暴雷 → 台股應穩定甚至小漲；②但已 priced in → 不會大漲；③預估加權 +0.5%~+1.5%；④台積電 2330 估開盤 \\$2,220-2,250。**💱 你的匯款執行非常成功**：①實際匯率 32.52（預估 31.9）→ 多賺 NT\\$3,100；②匯款金額 NT\\$162,611（vs 預估 NT\\$159,500）；③美股現金 \\$9,685→\\$4,685；④台股現金 NT\\$377,718→NT\\$540,329 ⭐；⑤完美執行 Base 情境的部分匯款邏輯。**🎯 接下來 24 小時具體建議**：①🇹🇼 台股 5/21 早盤可進場（依 Base 劇本）：台積電 30 股 @ \\$2,200 = NT\\$66,000 + 信昌電 1 張 @ \\$80 = NT\\$80,000 + 凱美 1 張 @ \\$82 = NT\\$82,000 = 共 NT\\$228,000（保留 NT\\$312K）；②🇺🇸 美股 5/21 當晚（21:30 開盤後）：等 NVDA 盤中走勢確認後評估，若無大跌可進 XLE 10 股 @ \\$93 = \\$930 + VBR 5 股 @ \\$200 = \\$1,000 + SCHD 5 股 @ \\$87 = \\$435 共 \\$2,365（保留 \\$2,320 應急）；③美股現有 4 檔不動，等限價單運作。**💎 一句話總結**：「NVDA 全面 Beat（連 Q2 指引都狂 Beat）但股價盤後微跌是典型「Beat-and-Slight-Drop」— 你的 Base 劇本完美對應，部分匯款已執行成功（多賺 NT\\$3,100 匯差），5/21 早盤可依紀律配置台積電+被動元件補漲組合」", file:null },
   { date:"2026-05-20", type:"📻 股癌 EP661+662 補充", tb:"badge-tw", title:"📻 股癌 EP661 (5/13)+EP662 (5/16) 補充分析｜主委態度轉變：從 EP660 警告 → 逢低加碼｜但 5/19 -716 點暴跌驗證 EP660 警告完整應驗｜你紀律仍正確｜台股 5/20 跌破月線收 40,020 (-0.39%)", summary:"**📻 EP661 (2026-05-13)「追強勢股+被動元件接棒」**：①核心主題「AI 行情擴散+多頭格局未變」；②被動元件強勢推薦：國巨 2327 龍頭+受 NV Rubin 換代排擠效應+Murata/SEMCO 轉產高階；③DDR4/DDR5 短期漲價彈性更明顯（南亞科/華邦電/旺宏/創見/威剛）；④散熱轉弱（健策建議反彈賣出）；⑤心法「拋棄沉沒成本+汰弱留強」。**📻 EP662 (2026-05-16)「逢低加碼+台積電資金匯流」**：①核心主題「持股成本低不恐慌+逢低加碼」；②**「資金將湧入台積電」** ⭐⭐⭐（對你台股現金 NT\\$377,718 是訊號）；③看好 4 族群：被動元件+功率元件+**美股資安股**+台積電；④主委態度從 EP660 警告轉為加碼。**🚨 主委態度轉變 vs 你的紀律**：①EP660 (5/7)：「5 月漲勢不會持續+大殺出現減碼」⚠️；②EP661 (5/13)：「震盪正常+多頭未變」；③EP662 (5/16)：「逢低加碼+資金湧入台積電」；④**但 5/19 -716 點暴跌驗證 EP660 警告完整應驗** ⭐；⑤主委「逢低加碼」可能太早；⑥你維持現金紀律是對的。**💎 對你組合的關鍵啟示**：①❌ 不該因主委「逢低加碼」就改變紀律；②❌ 不該因「資金湧入台積電」立即進場（等止跌反彈確認）；③✅ 應該維持等 NVDA 財報的紀律；④✅ 5/19 部分減倉決策已驗證為對；⑤❌ 不該重新進場 CRWD/ZS 資安股（已清掉，紀律一致性）。**🇹🇼 台股 5/20 收盤實況**：①加權指數 **40,020.82 (-154.74, -0.39%)**；②開盤 40,204.16 → 盤中高 40,439.04 → **盤中低 39,967.08（跌破月線 40,000！）** → 收 40,020.82；③成交額 9,804.51 億；④電子指數 -0.44%、上櫃 -0.44%；⑤金融指數 -0.02%（防禦性持平）；⑥昨收 40,175.56。**📊 5/20 關鍵訊號**：①**盤中跌破月線 40,000 至 39,967.08**（最低）⚠️；②收盤勉強守住 40,020.82；③距月線 40,000 只 +0.05%（極危險）；④5/15 ATH 42,408 → 5/20 收 40,020 = 5 天 -5.63% (-2,388 點)；⑤台股已連續 5 個交易日下跌或震盪；⑥成交額萎縮 (1.09 兆→9,804 億 -10%) 量縮整理。**🎯 今日要聞**：①「台股跌破月線 被動元件逆風 20 檔漲停」（被動元件逆勢強勢 → EP661 驗證）；②「三星勞資談判破局 工會明起罷工」（記憶體股短線嗨翻）；③「00403A 連日破發」；④「金融公民併購」第一金急發聲明。**🎯 5/20 美股盤前 NVDA 財報後行動建議**：①✅ 美股 4 檔不動（紀律緩衝充足）；②✅ 4 筆買回限價單照常運作；③✅ NVDA $245+$258 限價單照常；④✅ AMZN $284.27 限價單照常；⑤❌ 不該因 podcast「資金湧入台積電」就買台積電；⑥❌ 不該因「美股資安股復甦」就買 CRWD/ZS；⑦⏳ 等 5/21 早上 NVDA 財報結果評估。**💎 一句話總結**：「股癌 EP661+662 主委態度從警告轉為逢低加碼，但 5/19 -716 點暴跌證明 EP660 警告才是對的——你維持等 NVDA 財報的紀律仍正確，不該因主委態度改變就破壞紀律」", file:null },
@@ -734,352 +738,96 @@ const usRealizedPnl = 276.88; // 前 130.56 + AMZN 6/1 停利 +146.32｜⚠️ �
 const grandMarket = twTotal + usTotal * USDTWD;
 const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 
-// ===== DISCIPLINE ALERTS (停利停損監控) =====
-// 規則 v3 (2026-05-12 加入 Trailing Stop 動態警戒)
-// ATH 追蹤從進場日起算（用戶選項A）
-const athTracker = {
-  'NVDA': { ath: 235.74, ath_date: '2026-05-14', prev_close: 222.32, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'AMZN': { ath: 275.00, ath_date: '2026-05-08', prev_close: 264.86, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'MSFT': { ath: 432.70, ath_date: '2026-05-19', prev_close: 417.80, mult_warn: 0.88, mult_observe: 0.85, mult_exit: 0.78 },
-  'VOO':  { ath: 687.73, ath_date: '2026-05-14', prev_close: 678.91, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'QQQ':  { ath: 719.79, ath_date: '2026-05-14', prev_close: 705.88, mult_warn: 0.90, mult_observe: 0.86, mult_exit: 0.82 },
-  'INTC': { ath: 129.44, ath_date: '2026-05-11', prev_close: 108.17, mult_warn: 0.92, mult_observe: 0.88, mult_exit: 0.85 }
-};
-// Trailing 觀察天數計數（連續收在警戒線下天數）
-const trailingObserveDays = {
-  // 5/15 INTC v3.1#2 急殺保護已執行，觀察期重置
-  // 5/12 INTC 創新高 $127.09，觀察期重置歸零
+// ===== DISCIPLINE (v3.1 移動停利 — Core/Trim 分層) =====
+// v3.1：Core 只看 thesis、不設價格停損/停利；Trim 用移動停利(Chandelier/結構低)，跌破才分批賣。
+// 停利點隨新高往上墊；不存在「高於現價的固定停利目標」。每次分析由 Claude 以即時價/ATR 重算。
+const v31Discipline = {
+  'NVDA': { core:10, trim:8, stop:194.74, stopLabel:'結構低',            note:'收盤跌破才減 Trim' },
+  'MSFT': { core:14, trim:8, stop:430,    stopLabel:'Chandelier ATR2.5×', note:'隨新高上墊' },
+  'VOO':  { core:10, trim:0, stop:null,   stopLabel:null,                note:'指數核心，不設停損' }
 };
 
-const disciplineRules = {
-  'NVDA': {
-    profits: [
-      { tier:1, pct:33, price:245, shares:3, basis:'v5 升級保險 +33% 賣 3 股｜H200 出口中國利多反映｜原 \$240 升級到 \$245' },
-      { tier:'1u', pct:40, price:258, shares:4, basis:'v5 升級限價 +40% 賣 4 股｜雙保險完整' },
-      { tier:2, pct:50, price:277, shares:4, basis:'v5 雙保險: 保險限價 +50% 賣 4 股' },
-      { tier:'2u', pct:60, price:295, shares:4, basis:'v5 升級限價 +60% 賣 4 股' },
-      { tier:3, pct:75, price:323, shares:6, basis:'+75% 第三停利｜不升級紀律守門｜留 9 股長期' }
-    ],
-    stops: [
-      { tier:'warn', pct:-10, price:166, basis:'bull flag失守' },
-      { tier:'observe', pct:-22, price:144, basis:'PE急降' },
-      { tier:'exit', pct:-35, price:120, basis:'接近52w low $110' }
-    ],
-    isSpec:false,
-    v5_dynamic: { active: true, conditions_met: ['A','B','C','D'], next_review: '2026-05-20 NVDA 財報後', latest_catalyst: '5/14 川普確認 H200 出口中國 (NVDA +$37.5億/年, 佔1.5%營收), 已 priced in 部分, 維持現有 v5 不再升級, 5/20 財報後再評估是否加 Tier 4' }
-  },
-  'AMZN': {
-    profits: [
-      { tier:1, pct:25, price:284.27, shares:4, basis:'共識$306的93%' },
-      { tier:2, pct:40, price:318.39, shares:4, basis:'略超共識$306｜v4留終局升級' },
-      { tier:3, pct:60, price:363.87, shares:3, basis:'接近最高$370｜留4股長期' }
-    ],
-    stops: [
-      { tier:'warn', pct:-15, price:193.31, basis:'4月ATH區' },
-      { tier:'observe', pct:-22, price:177.39, basis:'共識最低$175' },
-      { tier:'exit', pct:-30, price:159.19, basis:'低於共識最低' }
-    ],
-    isSpec:false
-  },
-  'MSFT': {
-    profits: [
-      { tier:1, pct:25, price:515.81, shares:4, basis:'DCF base case' },
-      { tier:2, pct:40, price:577.71, shares:5, basis:'接近共識$569' },
-      { tier:3, pct:65, price:680.87, shares:3, basis:'Bull case Goldman/UBS｜留5股長期' }
-    ],
-    stops: [
-      { tier:'warn', pct:-10, price:371, basis:'接近3月低$370' },
-      { tier:'observe', pct:-20, price:330, basis:'PE Floor 18×' },
-      { tier:'exit', pct:-30, price:289, basis:'保守停損' }
-    ],
-    isSpec:false
-  },
-  'VOO': {
-    profits: [
-      { tier:1, pct:30, price:821.35, shares:3, basis:'S&P 500中期' },
-      { tier:2, pct:50, price:947.71, shares:3, basis:'寬版' },
-      { tier:3, pct:80, price:1137, shares:2, basis:'寬版｜留3股長期'  }
-    ],
-    stops: [
-      { tier:'warn', pct:-15, price:537.04, basis:'ETF寬版' },
-      { tier:'observe', pct:-22, price:492.81, basis:'ETF寬版' },
-      { tier:'exit', pct:-30, price:442.27, basis:'ETF寬版' }
-    ],
-    isSpec:false
-  },
-  'QQQ': {
-    profits: [
-      { tier:1, pct:50, price:933.38, shares:1, basis:'單股整批+50%' }
-    ],
-    stops: [
-      { tier:'warn', pct:-15, price:528.91, basis:'ETF寬版' },
-      { tier:'observe', pct:-22, price:485.36, basis:'ETF寬版' },
-      { tier:'exit', pct:-30, price:435.57, basis:'ETF寬版' }
-    ],
-    isSpec:false
-  },
-  'INTC': {
-    profits: [
-      { tier:2, pct:50, price:140.62, shares:1, basis:'剩 1 股最後分批｜v3.1 急殺 5/12 + 5/15 連續執行' }
-    ],
-    stops: [
-      { tier:'warn', pct:-8, price:86.25, basis:'投機緊版警戒' },
-      { tier:'observe', pct:-12, price:82.50, basis:'接近突破點$80' },
-      { tier:'exit', pct:-15, price:79.69, basis:'突破點失守' }
-    ],
-    isSpec:true
-  }
-};
-
-
-
-// ===== DEFENSE PRICE TABLE (防守價格摘要表) =====
 function renderDefenseTable() {
+  const order = ['NVDA','MSFT','VOO'];
   const rows = [];
-  const symbolOrder = ['NVDA', 'AMZN', 'MSFT', 'VOO', 'QQQ', 'INTC'];
-  
-  symbolOrder.forEach(sym => {
+  order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);
-    const rule = disciplineRules[sym];
-    const ath = athTracker[sym];
-    if (!p || !rule || !ath) return;
-    
+    const d = v31Discipline[sym];
+    if (!p || !d) return;
     const cur = p.currentPrice;
-    const avg = p.avgCost;
-    const pnlPct = ((cur - avg) / avg * 100);
-    
-    // 計算 Trailing 三線
-    const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
-    const tObs = +(ath.ath * ath.mult_observe).toFixed(2);
-    const tExit = +(ath.ath * ath.mult_exit).toFixed(2);
-    
-    // 取靜態警戒
-    const sWarn = rule.stops.find(s => s.tier === 'warn').price;
-    const sObs = rule.stops.find(s => s.tier === 'observe').price;
-    const sExit = rule.stops.find(s => s.tier === 'exit').price;
-    
-    // 雙重保護：取較嚴格者（較高）
-    const useWarn = Math.max(tWarn, sWarn);
-    const useObs = Math.max(tObs, sObs);
-    const useExit = Math.max(tExit, sExit);
-    
-    const distWarn = ((cur - useWarn) / cur * 100);
-    
-    // 距警戒分級
-    let distClass = 'def-dist-healthy';
-    let distIcon = '✅';
-    if (distWarn < 0) { distClass = 'def-dist-urgent'; distIcon = '🔴'; }
-    else if (distWarn < 5) { distClass = 'def-dist-urgent'; distIcon = '⚠️'; }
-    else if (distWarn < 10) { distClass = 'def-dist-close'; distIcon = '🟡'; }
-    
-    // 標記是否採用 Trailing
-    const warnSrc = tWarn > sWarn ? 'T' : 'S';
-    const srcBadge = warnSrc === 'T' ? '<span class="def-symbol-badge">📈T</span>' : '<span class="def-symbol-badge">S</span>';
-    
-    // 找下一個停利點（最接近且尚未達到的）
-    let nextProfit = null;
-    rule.profits.forEach(pr => {
-      if (cur < pr.price && (nextProfit === null || pr.price < nextProfit.price)) {
-        nextProfit = pr;
-      }
-    });
-    
-    let profitCell = '<td style="color:#64748b;font-size:11px">已達頂</td>';
-    let profitDistCell = '<td style="color:#64748b">—</td>';
-    if (nextProfit) {
-      const distProfit = ((nextProfit.price - cur) / cur * 100);
-      let pColor = '#94a3b8';
-      let pIcon = '';
-      if (distProfit < 3) { pColor = '#10b981'; pIcon = '🎯'; }
-      else if (distProfit < 7) { pColor = '#fbbf24'; pIcon = '⚡'; }
-      profitCell = `<td style="color:#cbd5e1;font-size:12px">$${nextProfit.price}<span style="font-size:10px;color:#64748b;margin-left:4px">(${nextProfit.shares}股)</span></td>`;
-      profitDistCell = `<td style="color:${pColor};font-weight:600">${pIcon} +${distProfit.toFixed(2)}%</td>`;
-    }
-    
-    // 損益%顏色
+    const pnlPct = ((cur - p.avgCost) / p.avgCost * 100);
     const pnlColor = pnlPct >= 0 ? '#10b981' : '#ef4444';
     const pnlSign = pnlPct >= 0 ? '+' : '';
-    
-    rows.push(`<tr>
-      <td>${sym}${srcBadge}</td>
-      <td class="def-cur">$${cur.toFixed(2)}</td>
-      <td style="color:${pnlColor};font-weight:600">${pnlSign}${pnlPct.toFixed(2)}%</td>
-      ${profitCell}
-      ${profitDistCell}
-      <td class="def-warn">$${useWarn.toFixed(2)}</td>
-      <td class="def-obs">$${useObs.toFixed(2)}</td>
-      <td class="def-exit">$${useExit.toFixed(2)}</td>
-      <td class="${distClass}">${distIcon} ${distWarn >= 0 ? '+' : ''}${distWarn.toFixed(2)}%</td>
-    </tr>`);
+    const layer = 'Core ' + d.core + (d.trim ? ' / Trim ' + d.trim : '');
+    let stopCell, distCell, statusCell;
+    if (d.stop === null) {
+      stopCell = '<td style="color:#64748b">—</td>';
+      distCell = '<td style="color:#64748b">—</td>';
+      statusCell = '<td style="color:#93c5fd;font-weight:600">🔵 核心持有（thesis 出場）</td>';
+    } else {
+      const dist = ((cur - d.stop) / cur * 100);
+      let c = '#10b981', icon = '✅ 續抱';
+      if (dist < 0) { c = '#ef4444'; icon = '🔴 賣 Trim'; }
+      else if (dist < 3) { c = '#fbbf24'; icon = '⚠️ 接近'; }
+      stopCell = '<td class="def-warn">$' + d.stop.toFixed(2) + '<span style="font-size:10px;color:#64748b;margin-left:4px">' + d.stopLabel + '</span></td>';
+      distCell = '<td style="color:' + c + ';font-weight:600">' + (dist>=0?'+':'') + dist.toFixed(2) + '%</td>';
+      statusCell = '<td style="color:' + c + ';font-weight:600">' + icon + '</td>';
+    }
+    rows.push('<tr>'
+      + '<td>' + sym + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1">' + layer + '</td>'
+      + '<td class="def-cur">$' + cur.toFixed(2) + '</td>'
+      + '<td style="color:' + pnlColor + ';font-weight:600">' + pnlSign + pnlPct.toFixed(2) + '%</td>'
+      + stopCell + distCell + statusCell
+      + '</tr>');
   });
-  
-  const html = `<div class="def-card">
-    <div class="def-header">
-      <span class="pulse"></span>
-      🛡️ 紀律監控總表（v3 Trailing 動態警戒）
-      <span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">📈T=Trailing / S=靜態 v2</span>
-    </div>
-    <div style="overflow-x:auto">
-    <table class="def-table">
-      <thead>
-        <tr>
-          <th>標的</th>
-          <th>現價</th>
-          <th>損益</th>
-          <th>下一停利</th>
-          <th>距停利</th>
-          <th>警戒</th>
-          <th>觀察</th>
-          <th>出場</th>
-          <th>距警戒</th>
-        </tr>
-      </thead>
-      <tbody>${rows.join('')}</tbody>
-    </table>
-    </div>
-  </div>`;
-  
+  const html = '<div class="def-card">'
+    + '<div class="def-header"><span class="pulse"></span>🛡️ 移動停利監控（v3.1：Core 看 thesis／Trim 用移動停利）'
+    + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">無固定停利目標 · 停利點隨新高上墊</span></div>'
+    + '<div style="overflow-x:auto"><table class="def-table"><thead><tr>'
+    + '<th>標的</th><th>分層</th><th>現價</th><th>損益</th><th>移動停利點</th><th>距停利</th><th>狀態</th>'
+    + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
+    + '<div style="padding:8px 14px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15)">'
+    + '說明：Core 層只在「買進理由消失」時出場，不設價格停損/停利；Trim 層跌破移動停利點才分 2 批賣。'
+    + '停利點為 Claude 每次分析以即時價/ATR 重算的最新值（數據基準 6/2 盤中）。</div>'
+    + '</div>';
   document.getElementById('defenseTable').innerHTML = html;
 }
 renderDefenseTable();
 
-// ===== OBSERVE PERIOD ALERT v3.1 (觀察期警報 + 急殺破口) =====
 function renderObserveAlert() {
-  const alerts = [];
-  const symbolOrder = ['NVDA', 'AMZN', 'MSFT', 'VOO', 'QQQ', 'INTC'];
-  
-  symbolOrder.forEach(sym => {
+  const order = ['NVDA','MSFT','VOO'];
+  const breached = [], near = [];
+  order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);
-    const rule = disciplineRules[sym];
-    const ath = athTracker[sym];
-    if (!p || !rule || !ath) return;
-    
+    const d = v31Discipline[sym];
+    if (!p || !d || d.stop === null || !d.trim) return;
     const cur = p.currentPrice;
-    const days = trailingObserveDays[sym] || 0;
-    const prevClose = ath.prev_close || cur;
-    
-    // 計算採用警戒/觀察線
-    const tWarn = +(ath.ath * ath.mult_warn).toFixed(2);
-    const tObs = +(ath.ath * ath.mult_observe).toFixed(2);
-    const sWarn = rule.stops.find(s => s.tier === 'warn').price;
-    const sObs = rule.stops.find(s => s.tier === 'observe').price;
-    const useWarn = Math.max(tWarn, sWarn);
-    const useObs = Math.max(tObs, sObs);
-    
-    const distWarn = ((cur - useWarn) / cur * 100);
-    const distObs = ((cur - useObs) / cur * 100);
-    
-    // v3.1 急殺檢測
-    const dailyDrop = ((prevClose - cur) / prevClose * 100);
-    const isCrash = dailyDrop > 5;
-    const brokeObs = cur < useObs;
-    
-    const reduceShares = Math.max(1, Math.round(p.shares * 0.30));
-    
-    // 🚨 v3.1 緊急破口 1：急殺 >5%
-    if (isCrash && distWarn < 5) {
-      alerts.push({
-        priority: -1000,
-        html: `<div class="obs-alert obs-day5">
-          <div class="obs-header">
-            <span style="font-size:18px">🚨</span>
-            <span>${sym} 急殺保護觸發！</span>
-            <span class="obs-day-badge obs-day-5">v3.1 CRASH</span>
-          </div>
-          <div class="obs-detail">
-            單日跌幅 <strong style="color:#fca5a5">-${dailyDrop.toFixed(2)}%</strong>（從 $${prevClose.toFixed(2)} → $${cur.toFixed(2)}）
-          </div>
-          <div class="obs-action">🚨 <strong>立即執行：賣 ${reduceShares} 股（30%）！</strong> 急殺 >5%，不等 5 日紀律。</div>
-        </div>`
-      });
-      return;
-    }
-    
-    // 🚨 v3.1 緊急破口 2：跌破觀察線
-    if (brokeObs) {
-      alerts.push({
-        priority: -800,
-        html: `<div class="obs-alert obs-day5">
-          <div class="obs-header">
-            <span style="font-size:18px">🚨</span>
-            <span>${sym} 觀察線跌破！</span>
-            <span class="obs-day-badge obs-day-5">v3.1 OBS-BREAK</span>
-          </div>
-          <div class="obs-detail">
-            現價 <strong style="color:#fca5a5">$${cur.toFixed(2)}</strong> 跌破觀察線 <strong>$${useObs.toFixed(2)}</strong>（${Math.abs(distObs).toFixed(2)}% 下方）
-          </div>
-          <div class="obs-action">🚨 <strong>立即執行：賣 ${reduceShares} 股（30%）！</strong> 跌破第二層觀察線，趨勢確認，不等 5 日。</div>
-        </div>`
-      });
-      return;
-    }
-    
-    // 接近警戒（3-5%）= PRE-WARN
-    if (days === 0 && distWarn > 0 && distWarn <= 5) {
-      alerts.push({
-        priority: 100 - distWarn,
-        html: `<div class="obs-alert obs-day1">
-          <div class="obs-header">
-            <span style="font-size:18px">🟡</span>
-            <span>${sym} 接近 Trailing 警戒</span>
-            <span class="obs-day-badge obs-day-1">PRE-WARN</span>
-          </div>
-          <div class="obs-detail">
-            現價 <strong style="color:#fbbf24">$${cur.toFixed(2)}</strong> 距警戒 <strong>$${useWarn.toFixed(2)}</strong> 還 +${distWarn.toFixed(2)}%
-          </div>
-          <div class="obs-action">⚡ 持續觀察｜尚未觸發，無動作需要</div>
-        </div>`
-      });
-    }
-    
-    // 已觸發警戒：Day 1-5
-    if (days > 0) {
-      const isFinal = days >= 5;
-      const dayClass = isFinal ? 'obs-day5' : `obs-day${Math.min(days, 4)}`;
-      const badgeClass = `obs-day-${Math.min(days, 5)}`;
-      const icon = isFinal ? '🚨' : (days >= 3 ? '🔴' : (days >= 2 ? '🟠' : '⚠️'));
-      
-      let action = '';
-      if (isFinal) {
-        action = `🚨 <strong>今天執行：賣 ${reduceShares} 股（30%）！</strong> 連續 5 日收在警戒線下方。`;
-      } else if (days === 4) {
-        action = `🔴 <strong>Day 4 / 5 — 明天若仍收線下將執行減倉 ${reduceShares} 股</strong>`;
-      } else if (days === 3) {
-        action = `⚠️ Day 3 / 5 — 還需連續 2 日確認`;
-      } else if (days === 2) {
-        action = `📊 Day 2 / 5 — 觀察期持續中，反彈站回 $${useWarn.toFixed(2)} 即重置`;
-      } else {
-        action = `📊 Day 1 / 5 — 觀察期啟動，明天若反彈站回 $${useWarn.toFixed(2)} 即重置`;
-      }
-      
-      alerts.push({
-        priority: -days * 10,
-        html: `<div class="obs-alert ${dayClass}">
-          <div class="obs-header">
-            <span style="font-size:18px">${icon}</span>
-            <span>${sym} Trailing 警戒觀察期</span>
-            <span class="obs-day-badge ${badgeClass}">DAY ${days} / 5</span>
-          </div>
-          <div class="obs-detail">
-            現價 <strong style="color:#fca5a5">$${cur.toFixed(2)}</strong> 跌破警戒 <strong>$${useWarn.toFixed(2)}</strong>（${Math.abs(distWarn).toFixed(2)}% 下方）
-          </div>
-          <div class="obs-action">${action}</div>
-        </div>`
-      });
-    }
+    const dist = ((cur - d.stop) / cur * 100);
+    if (dist < 0) breached.push({ sym, cur, d, dist });
+    else if (dist < 3) near.push({ sym, cur, d, dist });
   });
-  
-  alerts.sort((a, b) => a.priority - b.priority);
-  
   let html = '';
-  if (alerts.length === 0) {
-    html = `<div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid #1e3a2e;border-radius:14px;padding:14px;text-align:center;color:#64748b;font-size:13px">
-      ✅ 所有標的健康｜v3.1 雙重保護啟用（5 日觀察 + 急殺 >5% 破口 + 觀察線跌破破口）
-    </div>`;
-  } else {
-    html = alerts.map(a => a.html).join('');
+  breached.forEach(b => {
+    const half = Math.max(1, Math.round(b.d.trim / 2));
+    html += '<div class="obs-alert obs-day5">'
+      + '<div class="obs-header"><span style="font-size:18px">🔴</span><span>' + b.sym + ' 跌破移動停利！</span></div>'
+      + '<div class="obs-detail">現價 <strong style="color:#fca5a5">$' + b.cur.toFixed(2) + '</strong> 已跌破停利點 <strong>$' + b.d.stop.toFixed(2) + '</strong>（' + Math.abs(b.dist).toFixed(2) + '% 下方）</div>'
+      + '<div class="obs-action">🚨 <strong>賣 Trim ' + b.d.trim + ' 股</strong>（分 2 批：第 1 批 ' + half + ' 股、第 2 批 ' + (b.d.trim - half) + ' 股；Core ' + b.d.core + ' 股不動）。</div>'
+      + '</div>';
+  });
+  near.forEach(n => {
+    html += '<div style="border-left:4px solid #fbbf24;background:rgba(251,191,36,.08);padding:12px;border-radius:8px;margin-bottom:8px">'
+      + '<div class="obs-header"><span style="font-size:16px">⚠️</span><span>' + n.sym + ' 接近移動停利</span></div>'
+      + '<div class="obs-detail">現價 <strong style="color:#fbbf24">$' + n.cur.toFixed(2) + '</strong> 距停利點 <strong>$' + n.d.stop.toFixed(2) + '</strong> 僅 +' + n.dist.toFixed(2) + '%，盯緊（明顯跌破才動手）。</div>'
+      + '</div>';
+  });
+  if (!breached.length && !near.length) {
+    html = '<div style="border-left:4px solid #10b981;background:rgba(16,185,129,.08);padding:12px;border-radius:8px">'
+      + '<div class="obs-header"><span style="font-size:16px">✅</span><span>Trim 層全部在移動停利之上，續抱</span></div>'
+      + '<div class="obs-detail">無任何 Trim 部位跌破移動停利點；停利點隨新高往上墊。Core 層只看 thesis，不在此監控價格。</div>'
+      + '</div>';
   }
-  
   document.getElementById('observeAlert').innerHTML = html;
 }
 renderObserveAlert();
