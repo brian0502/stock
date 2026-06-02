@@ -742,8 +742,8 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // v3.1：Core 只看 thesis、不設價格停損/停利；Trim 用移動停利(Chandelier/結構低)，跌破才分批賣。
 // 停利點隨新高往上墊；不存在「高於現價的固定停利目標」。每次分析由 Claude 以即時價/ATR 重算。
 const v31Discipline = {
-  'NVDA': { core:10, trim:8, stop:194.74, stopLabel:'結構低',            note:'收盤跌破才減 Trim' },
-  'MSFT': { core:14, trim:8, stop:430,    stopLabel:'Chandelier ATR2.5×', note:'隨新高上墊' },
+  'NVDA': { core:12, trim:6, stop:194.74, stopLabel:'結構低',            note:'收盤跌破才減 Trim（分2批3+3）' },
+  'MSFT': { core:14, trim:8, stop:430,    stopLabel:'Chandelier ATR2.5×', note:'隨新高上墊（分2批4+4）' },
   'VOO':  { core:10, trim:0, stop:null,   stopLabel:null,                note:'指數核心，不設停損' }
 };
 
