@@ -1,0 +1,1592 @@
+- generic [ref=e2]:
+  - link "Skip to navigation":
+    - /url: "#navigation-container"
+  - link "Skip to main content":
+    - /url: "#nimbus-app"
+  - link "Skip to right column":
+    - /url: "#right-rail"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - heading "Yahoo Finance" [level=1] [ref=e8]
+            - link "Yahoo Finance" [ref=e9] [cursor=pointer]:
+              - /url: /
+              - img [ref=e11]
+          - search [ref=e15]:
+            - searchbox "Search for news, tickers or companies" [ref=e16]
+            - button "Search" [ref=e17] [cursor=pointer]:
+              - img [ref=e18]
+          - navigation [ref=e20]:
+            - list [ref=e21]:
+              - listitem [ref=e22]:
+                - link "News" [ref=e23] [cursor=pointer]:
+                  - /url: https://www.yahoo.com/
+              - listitem [ref=e24]:
+                - link "Finance" [ref=e25] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/
+              - listitem [ref=e26]:
+                - link "Sports" [ref=e27] [cursor=pointer]:
+                  - /url: https://sports.yahoo.com/
+              - listitem [ref=e28]:
+                - button "More" [ref=e31] [cursor=pointer]:
+                  - text: More
+                  - img [ref=e33]
+          - toolbar [ref=e35]:
+            - button "Notifications" [ref=e37] [cursor=pointer]:
+              - img [ref=e38]
+            - link "Check your mail, link" [ref=e41] [cursor=pointer]:
+              - /url: https://mail.yahoo.com/
+              - img [ref=e42]
+            - link "Sign in" [ref=e45] [cursor=pointer]:
+              - /url: https://login.yahoo.com/?done=https%3A%2F%2Ffinance.yahoo.com%2Fquote%2FTSM%2F&intl=us&lang=en-US&activity=ybar-signin&pspid=95993639&src=finance
+      - navigation "Navigation" [ref=e46]:
+        - menubar "Navigation menubar" [ref=e47]:
+          - menuitem "My Portfolio" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]: My Portfolio
+          - menuitem "News" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]: News
+          - menuitem "Markets" [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]: Markets
+          - menuitem "Research" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]: Research
+          - menuitem "Community" [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: Community
+          - menuitem "Personal Finance" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: Personal Finance
+          - menuitem "Videos" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: Videos
+          - menuitem "Watch Now" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: Watch Now
+        - button "Network" [ref=e67] [cursor=pointer]:
+          - img [ref=e69]
+          - generic [ref=e71]:
+            - generic [ref=e72]: Network
+            - img [ref=e74]
+  - generic [ref=e76]:
+    - complementary [ref=e77]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - button "U.S. markets close in 2h 26m" [ref=e86]:
+            - img [ref=e88]
+          - menu [ref=e90]:
+            - button "US Markets" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - text: US Markets
+                - img [ref=e94]
+        - generic [ref=e96]:
+          - generic [ref=e100]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - link "S&P 500" [ref=e105] [cursor=pointer]:
+                  - /url: /quote/%5EGSPC/
+                  - generic [ref=e106]: S&P 500
+                - generic [ref=e107]:
+                  - generic [ref=e108]: 7,564.20
+                  - generic [ref=e109]:
+                    - generic [ref=e110]: "-45.58"
+                    - generic [ref=e111]: "-0.60%"
+              - img [ref=e114]
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - link "Dow 30" [ref=e122] [cursor=pointer]:
+                  - /url: /quote/%5EDJI/
+                  - generic [ref=e123]: Dow 30
+                - generic [ref=e124]:
+                  - generic [ref=e125]: 50,876.95
+                  - generic [ref=e126]:
+                    - generic [ref=e127]: "-430.84"
+                    - generic [ref=e128]: "-0.84%"
+              - img [ref=e131]
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - link "Nasdaq" [ref=e139] [cursor=pointer]:
+                  - /url: /quote/%5EIXIC/
+                  - generic [ref=e140]: Nasdaq
+                - generic [ref=e141]:
+                  - generic [ref=e142]: 26,837.13
+                  - generic [ref=e143]:
+                    - generic [ref=e144]: "-256.77"
+                    - generic [ref=e145]: "-0.95%"
+              - img [ref=e148]
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - link "Russell 2000" [ref=e156] [cursor=pointer]:
+                  - /url: /quote/%5ERUT/
+                  - generic [ref=e157]: Russell 2000
+                - generic [ref=e158]:
+                  - generic [ref=e159]: 2,890.69
+                  - generic [ref=e160]:
+                    - generic [ref=e161]: "-41.27"
+                    - generic [ref=e162]: "-1.41%"
+              - img [ref=e165]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - link "VIX" [ref=e173] [cursor=pointer]:
+                  - /url: /quote/%5EVIX/
+                  - generic [ref=e174]: VIX
+                - generic [ref=e175]:
+                  - generic [ref=e176]: "16.31"
+                  - generic [ref=e177]:
+                    - generic [ref=e178]: "+0.54"
+                    - generic [ref=e179]: +3.42%
+              - img [ref=e182]
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - link "Gold" [ref=e190] [cursor=pointer]:
+                  - /url: /quote/GC%3DF/
+                  - generic [ref=e191]: Gold
+                - generic [ref=e192]:
+                  - generic [ref=e193]: 4,470.00
+                  - generic [ref=e194]:
+                    - generic [ref=e195]: "-49.90"
+                    - generic [ref=e196]: "-1.10%"
+              - img [ref=e199]
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - link "Bitcoin USD" [ref=e207] [cursor=pointer]:
+                  - /url: /quote/BTC-USD/
+                  - generic [ref=e208]: Bitcoin USD
+                - generic [ref=e209]:
+                  - generic [ref=e210]: 66,019.79
+                  - generic [ref=e211]:
+                    - generic [ref=e212]: "-1,336.61"
+                    - generic [ref=e213]: "-1.98%"
+              - img [ref=e216]
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - link "Brent Crude Oil" [ref=e238] [cursor=pointer]:
+                  - /url: /quote/BZ%3DF/
+                  - generic [ref=e239]: Brent Crude Oil
+                - generic [ref=e240]:
+                  - generic [ref=e241]: "98.01"
+                  - generic [ref=e242]:
+                    - generic [ref=e243]: "+2.01"
+                    - generic [ref=e244]: +2.09%
+              - img [ref=e247]
+          - generic [ref=e253]:
+            - button "prev" [disabled]:
+              - generic:
+                - img
+            - button "next" [ref=e254] [cursor=pointer]:
+              - img [ref=e256]
+      - iframe [ref=e260]:
+        - generic [ref=f44e1]:
+          - generic [ref=f44e2]:
+            - generic:
+              - img [ref=f44e6] [cursor=pointer]
+              - button [ref=f44e8] [cursor=pointer]:
+                - img [ref=f44e9]
+          - iframe [ref=f44e18] [cursor=pointer]:
+            - iframe [ref=f48e3] [cursor=pointer]:
+              - generic [ref=f61e2] [cursor=pointer]:
+                - generic:
+                  - img [ref=f61e3]
+                  - img [ref=f61e4]
+                  - img [ref=f61e5]
+                  - generic [ref=f61e6]:
+                    - paragraph
+                  - paragraph [ref=f61e8]:
+                    - text: 在夏季沐浴
+                    - text: 冬日之旅
+                  - paragraph [ref=f61e10]: 奧克蘭
+                  - img [ref=f61e11]
+                  - img [ref=f61e12]
+                  - paragraph [ref=f61e14]: 親身探索地熱奇境
+                  - paragraph [ref=f61e16]: 布里斯本
+                  - img [ref=f61e17]
+                  - img [ref=f61e18]
+                  - paragraph [ref=f61e20]: 置身絕美自然風光
+                  - paragraph [ref=f61e22]: 悉尼
+                  - img [ref=f61e23]
+                  - img [ref=f61e24]
+                  - paragraph [ref=f61e26]: 漫遊優美迷人海灣
+                - generic [ref=f61e27]:
+                  - img [ref=f61e28]
+                  - img [ref=f61e29]
+                  - img [ref=f61e30]
+                  - img [ref=f61e31]
+                  - paragraph [ref=f61e33]: 受條款及細則約束
+                  - paragraph [ref=f61e35]:
+                    - text: 在夏季沐浴
+                    - text: 冬日之旅
+                  - paragraph [ref=f61e36]: 立即訂票
+    - main [ref=e261]:
+      - generic [ref=e263]:
+        - complementary "Left navigation" [ref=e264]:
+          - navigation "TSM navigation" [ref=e266]:
+            - menubar "TSM navigation menubar" [ref=e267]:
+              - menuitem "Summary" [ref=e268] [cursor=pointer]:
+                - generic [ref=e269]: Summary
+              - menuitem "News" [ref=e270] [cursor=pointer]:
+                - generic [ref=e271]: News
+              - menuitem "Chart" [ref=e272] [cursor=pointer]:
+                - generic [ref=e273]: Chart
+              - menuitem "Conversations" [ref=e274] [cursor=pointer]:
+                - generic [ref=e275]: Conversations
+              - menuitem "Statistics" [ref=e276] [cursor=pointer]:
+                - generic [ref=e277]: Statistics
+              - menuitem "Historical Data" [ref=e278] [cursor=pointer]:
+                - generic [ref=e279]: Historical Data
+              - menuitem "Profile" [ref=e280] [cursor=pointer]:
+                - generic [ref=e281]: Profile
+              - menuitem "Financials" [ref=e282] [cursor=pointer]:
+                - generic [ref=e283]: Financials
+              - menuitem "Analysis" [ref=e284] [cursor=pointer]:
+                - generic [ref=e285]: Analysis
+              - menuitem "Options" [ref=e286] [cursor=pointer]:
+                - generic [ref=e287]: Options
+              - menuitem "Holders" [ref=e288] [cursor=pointer]:
+                - generic [ref=e289]: Holders
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - generic [ref=e295]: NYSE - Nasdaq Real Time Price
+                  - generic [ref=e296]: •
+                  - generic [ref=e297]: USD
+                - generic [ref=e298]:
+                  - generic [ref=e299]:
+                    - heading "Taiwan Semiconductor Manufacturing Company Limited (TSM)" [level=1] [ref=e301]
+                    - button "Follow" [ref=e303] [cursor=pointer]:
+                      - img [ref=e305]
+                  - link "Is TSM a long-term buy?" [ref=e308] [cursor=pointer]:
+                    - /url: https://www.fool.com/vip/investor-alert/should-you-invest-in-taiwan-semiconductor-manufacturing-tsm?utm_source=yahoo_report&utm_medium=affiliate&utm_campaign=Foolcom_Yahoo_Reports&utm_content=Is%2BTSM%2Ba%2Blong-term%2Bbuy%253F&utm_term=TSM&source=isaedirep0000001?partner=yahoo&utm_source=yahoo
+                    - generic [ref=e309]:
+                      - img [ref=e310]
+                      - generic [ref=e319]: Is TSM a long-term buy?
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - generic [ref=e326]: "439.89"
+                  - generic [ref=e327]: "-6.80"
+                  - generic [ref=e328]: (-1.52%)
+                - generic [ref=e330]: As of 1:35:31 PM EDT. Market Open.
+            - generic [ref=e334]:
+              - img [ref=e338]
+              - generic [ref=e340]:
+                - generic [ref=e342]: Dividend
+                - generic [ref=e344]: TSM announced a cash dividend of $0.955 with an ex-date of Jun. 11, 2026
+            - generic [ref=e347]:
+              - tablist "Chart Range Bar" [ref=e348]:
+                - tab "1D" [selected] [ref=e349]
+                - tab "5D" [ref=e350] [cursor=pointer]:
+                  - generic [ref=e352]: 5D
+                - tab "1M" [ref=e353] [cursor=pointer]:
+                  - generic [ref=e355]: 1M
+                - tab "6M" [ref=e356] [cursor=pointer]:
+                  - generic [ref=e358]: 6M
+                - tab "YTD" [ref=e359] [cursor=pointer]:
+                  - generic [ref=e361]: YTD
+                - tab "1Y" [ref=e362] [cursor=pointer]:
+                  - generic [ref=e364]: 1Y
+                - tab "5Y" [ref=e365] [cursor=pointer]:
+                  - generic [ref=e367]: 5Y
+                - tab "All" [ref=e368] [cursor=pointer]:
+                  - generic [ref=e370]: All
+              - generic [ref=e372]:
+                - button "Chart Type" [ref=e376] [cursor=pointer]:
+                  - generic:
+                    - img
+                  - generic:
+                    - img
+                - generic [ref=e377]:
+                  - link "Advanced Chart" [ref=e378] [cursor=pointer]:
+                    - /url: /chart/TSM
+                    - img [ref=e380]
+                    - generic [ref=e382]: Advanced Chart
+                  - link "AlphaSpace Chart" [ref=e385] [cursor=pointer]:
+                    - /url: https://finance.yahoo.com/about/promos/gold/alphaspace/?.done=https%3A%2F%2Falphaspace.finance.yahoo.com%2F%3Fview%3Danalysis%26ticker%3DTSM%26ncid%3D100003536&ncid=100003536
+                    - generic [ref=e386]:
+                      - img [ref=e388]
+                      - text: AlphaSpace Chart
+                - button "Chart settings" [ref=e391] [cursor=pointer]:
+                  - img [ref=e393]
+              - generic [ref=e399]:
+                - table [ref=e403]:
+                  - rowgroup [ref=e404]:
+                    - row [ref=e405]:
+                      - cell [ref=e406]: "Date:"
+                      - cell [ref=e407]
+                    - row [ref=e408]:
+                      - cell [ref=e409]: "Close:"
+                      - cell [ref=e410]
+                    - row [ref=e411]:
+                      - cell [ref=e412]: "Open:"
+                      - cell [ref=e413]
+                    - row [ref=e414]:
+                      - cell [ref=e415]: "High:"
+                      - cell [ref=e416]
+                    - row [ref=e417]:
+                      - cell [ref=e418]: "Low:"
+                      - cell [ref=e419]
+                    - row [ref=e420]:
+                      - cell [ref=e421]: "Volume:"
+                      - cell [ref=e422]
+                - img "This 1 minute mountain chart displays price over time for symbol TSM between 2026/6/3 上午4:00:00 and 2026/6/4 上午4:26:00. The chart also displays Volume Underlay study." [ref=e425]
+            - generic [ref=e430]:
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - img [ref=e434]
+                  - heading "News headlines" [level=2] [ref=e438]
+                - button "Collapse" [expanded]
+              - region "Collapse" [ref=e439]:
+                - generic [ref=e442]:
+                  - paragraph [ref=e444]: Taiwan Semiconductor Manufacturing Company (TSMC) remains a key player in the AI supply chain despite Warren Buffett's rapid exit from its stock. Recent advancements in chip technology and strong financial performance have positioned TSMC for continued growth, with analysts maintaining bullish outlooks amid increasing demand for advanced semiconductors.
+                  - generic [ref=e445]:
+                    - generic [ref=e447]: Updated 15m ago · Powered by Yahoo Scout
+                    - button "View more" [ref=e449] [cursor=pointer]
+            - list [ref=e454]:
+              - listitem [ref=e455]:
+                - generic "Previous Close" [ref=e456]
+                - generic [ref=e457]: "446.69"
+              - listitem [ref=e458]:
+                - generic "Open" [ref=e459]
+                - generic [ref=e460]: "449.99"
+              - listitem [ref=e461]:
+                - generic "Bid" [ref=e462]
+                - generic [ref=e463]: 439.03 x 4000
+              - listitem [ref=e464]:
+                - generic "Ask" [ref=e465]
+                - generic [ref=e466]: 439.10 x 12000
+              - listitem [ref=e467]:
+                - generic "Day's Range" [ref=e468]
+                - generic [ref=e469]: 434.52 - 450.16
+              - listitem [ref=e470]:
+                - generic "52 Week Range" [ref=e471]
+                - generic [ref=e472]: 200.38 - 450.16
+              - listitem [ref=e473]:
+                - generic "Volume" [ref=e474]
+                - generic [ref=e475]: 6,765,841
+              - listitem [ref=e476]:
+                - generic "Avg. Volume" [ref=e477]
+                - generic [ref=e478]: 13,631,079
+              - listitem [ref=e479]:
+                - generic "Market Cap (intraday)" [ref=e480]
+                - generic [ref=e481]: 2.282T
+              - listitem [ref=e482]:
+                - generic "Beta (5Y Monthly)" [ref=e483]
+                - generic [ref=e484]: "1.26"
+              - listitem [ref=e485]:
+                - generic "PE Ratio (TTM)" [ref=e486]
+                - generic [ref=e487]: "37.61"
+              - listitem [ref=e488]:
+                - generic "EPS (TTM)" [ref=e489]
+                - generic [ref=e490]: "11.70"
+              - listitem [ref=e491]:
+                - generic "Earnings Date (est.)" [ref=e492]
+                - generic [ref=e493]: Jul 16, 2026
+              - listitem [ref=e494]:
+                - generic "Forward Dividend & Yield" [ref=e495]
+                - generic [ref=e496]: 3.80 (0.85%)
+              - listitem [ref=e497]:
+                - generic "Ex-Dividend Date" [ref=e498]
+                - generic [ref=e499]: Jun 11, 2026
+              - listitem [ref=e500]:
+                - generic "1y Target Est" [ref=e501]
+                - generic [ref=e502]: "467.84"
+            - generic [ref=e505]:
+              - button "Expand" [ref=e508] [cursor=pointer]:
+                - img [ref=e510]
+                - heading "Taiwan Semiconductor Manufacturing Company Limited Overview - Semiconductors / Technology" [level=2] [ref=e513]:
+                  - generic [ref=e514]: Taiwan Semiconductor Manufacturing Company Limited Overview
+                  - text: "- Semiconductors / Technology"
+              - region "Expand":
+                - generic:
+                  - generic [ref=e515]:
+                    - generic [ref=e516]:
+                      - paragraph [ref=e517]: Taiwan Semiconductor Manufacturing Company Limited, together with its subsidiaries, manufactures, packages, tests, and sells integrated circuits and other semiconductor devices in Taiwan, China, Europe, the Middle East, Africa, Japan, the United States, and internationally. It provides various wafer fabrication processes, such as processes to manufacture complementary metal- oxide-semiconductor (CMOS) logic, mixed-signal, radio frequency, embedded memory, bipolar CMOS mixed-signal, and others. The company also involved in providing customer and engineering support services; manufacturing of masks; investment in technology start-up companies; research, designing, developing, manufacturing, packaging, testing, and sale of color filters; and investment activities. Its products are used in high performance computing, smartphones, Internet of things, automotive, and digital consumer electronics. Taiwan Semiconductor Manufacturing Company Limited was incorporated in 1987 and is headquartered in Hsinchu City, Taiwan.
+                      - link "www.tsmc.com" [ref=e518] [cursor=pointer]:
+                        - /url: https://www.tsmc.com
+                    - generic [ref=e519]:
+                      - generic [ref=e520]:
+                        - paragraph [ref=e521]: 76,907
+                        - heading "Full Time Employees" [level=3] [ref=e522]
+                      - generic [ref=e523]:
+                        - paragraph [ref=e524]: December 31
+                        - heading "Fiscal Year Ends" [level=3] [ref=e525]
+                      - generic [ref=e526]:
+                        - paragraph [ref=e527]:
+                          - link "Technology" [ref=e528] [cursor=pointer]:
+                            - /url: /sectors/technology/
+                        - heading "Sector" [level=3] [ref=e529]
+                      - generic [ref=e530]:
+                        - paragraph [ref=e531]:
+                          - link "Semiconductors" [ref=e532] [cursor=pointer]:
+                            - /url: /sectors/technology/semiconductors/
+                        - heading "Industry" [level=3] [ref=e533]
+                  - link "More about Taiwan Semiconductor Manufacturing Company Limited" [ref=e535] [cursor=pointer]:
+                    - /url: /quote/TSM/profile/
+            - iframe [ref=e538]:
+              - generic [ref=f55e1]:
+                - link [ref=f55e2] [cursor=pointer]:
+                  - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsvSJwposohAtAxaMFq3gEmy-qf48zK1qO90I-Qbkrd3a9xqzk35ja7ohxmdjvqfS1CQJADK8ZVi96beVcB9jYQ78Au3hqq0dSJcNcgqYD3iqhNrfTV1A3iPCqh6ZuK2_g1FRNZJRWpFiL8Bz0juC0EnPHYmgUkSNxObzgEmTrxULUT94QSNqE1LkTXYiNBWWOcCRkqk32fBbHECaAn0r3aHkxpjXZfd47bmeNBopauwMM6dmWHZHGxTXY0HV6k6TXeCRyye2_4Q5F6N2XQQjDjWQm7qKmJr0oDEldli9n6LpPtuApie4SxVlGxKRqRySbZqAZI0FxPo1wstb3dApXnowxB7kKsqbi--kv68EMFuNeR0PARQ0nqtlA-yzCfMfzjaStMIVu6kygSfuIIwpo9DjJSXVHkkhVC_a1mXvj17sYRAjyolp5D7pZWNot2DS8x4GmhRRY1j7C4Rye8&sai=AMfl-YSMWivVVKTFcraEJL57ce7V7HfMvLpijF5Ghv0bEWXHJfI7bQBEZphcNhgXnxrODQpq2TmbBNfOawhkyS-S8w4_Fu9n2-y_WN0CgtuIhktrdvwxgS7HXicBesJwGpjmwa5elC81mP4Bjl2krZJz8tdFbb-GloP8vpu0-iq-7JXmoGEGHIIY29JN9knZ-ktIvhbBQlhM9WXC1SpiCbrOdAvOu8gsVVbI8D8Uim-tGcazT9YnC1kfb8J8Y7impL5Iiu6rNOd9T7ilQEsPQSxcnRGfJcRHNflIcw0njNEBB1aIli4_L_56xClwhlT2YXyaNXoEJi-ahEbikqDKHFGIlHPgqn3BugCRJ_VgTYa4aT3DpxJ5L0Bzg72Oc7FzNQCjDY61vBusZPmo7FO899a3IPnSvnOP5YELcPEO0nxTOCHKIhY&sig=Cg0ArKJSzPSLcJcPzN1L&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://tw.stock.yahoo.com/subscription%3FNCID%3Dyahooproperties_filleradsp_wt8kuj3wr3e%26utm_source%3DYahoo%26utm_medium%3DFillerAdsPC%26utm_campaign%3DTSMC2K
+                - img [ref=f55e6] [cursor=pointer]
+                - button [ref=f55e8] [cursor=pointer]:
+                  - img [ref=f55e9]
+            - generic [ref=e540]:
+              - generic [ref=e541]:
+                - heading "Recent News" [level=3] [ref=e542]
+                - link "View More" [ref=e543] [cursor=pointer]:
+                  - /url: /quote/TSM/news/
+                  - text: View More
+                  - img [ref=e545]
+              - generic [ref=e547]:
+                - tablist [ref=e548]:
+                  - tab "All" [selected] [ref=e549]
+                  - tab "News" [ref=e550] [cursor=pointer]
+                  - tab "Earnings Calls" [ref=e551] [cursor=pointer]
+                  - tab "Press Releases" [ref=e552] [cursor=pointer]
+                  - tab "SEC Filings" [ref=e553] [cursor=pointer]
+                - generic [ref=e557]:
+                  - article [ref=e559]:
+                    - generic [ref=e560]:
+                      - link "Warren Buffett Bought the World’s Most Dominant AI Company — Then Sold It Within 6 Months" [ref=e561] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/warren-buffett-bought-world-most-151821340.html
+                        - heading "Warren Buffett Bought the World’s Most Dominant AI Company — Then Sold It Within 6 Months" [level=3] [ref=e562]
+                      - generic [ref=e564]:
+                        - text: 24/7 Wall St.
+                        - generic [ref=e565]: •
+                        - text: 2h ago
+                  - article [ref=e567]:
+                    - generic [ref=e568]:
+                      - link "Taiwan Semiconductor Manufacturing (TSM) Sits at the Absolute Center of the AI Compute Supply Chain" [ref=e569] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-sits-145510383.html
+                        - heading "Taiwan Semiconductor Manufacturing (TSM) Sits at the Absolute Center of the AI Compute Supply Chain" [level=3] [ref=e570]
+                      - generic [ref=e572]:
+                        - text: Insider Monkey
+                        - generic [ref=e573]: •
+                        - text: 2h ago
+                  - article [ref=e575]:
+                    - generic [ref=e576]:
+                      - link "Taiwan Semiconductor Manufacturing (TSM) Surged on Long-Term Trends" [ref=e577] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-surged-134347480.html
+                        - heading "Taiwan Semiconductor Manufacturing (TSM) Surged on Long-Term Trends" [level=3] [ref=e578]
+                      - generic [ref=e580]:
+                        - text: Insider Monkey
+                        - generic [ref=e581]: •
+                        - text: 3h ago
+                  - article [ref=e583]:
+                    - generic [ref=e584]:
+                      - link "What Makes Taiwan Semiconductor Manufacturing Company Limited (TSM) Brown Advisory Global Leaders Strategy’s Leading Contributor" [ref=e585] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/shapes-taiwan-semiconductor-manufacturing-company-133811803.html
+                        - heading "What Makes Taiwan Semiconductor Manufacturing Company Limited (TSM) Brown Advisory Global Leaders Strategy’s Leading Contributor" [level=3] [ref=e586]
+                      - generic [ref=e588]:
+                        - text: Insider Monkey
+                        - generic [ref=e589]: •
+                        - text: 3h ago
+                  - article [ref=e591]:
+                    - generic [ref=e592]:
+                      - link "Fresh AI Buzz Powers Taiwan Stocks Even Higher" [ref=e593] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/m/5e89b8fa-7fad-3cdf-aa43-e85305f4829b/fresh-ai-buzz-powers-taiwan.html
+                        - heading "Fresh AI Buzz Powers Taiwan Stocks Even Higher" [level=3] [ref=e594]
+                      - generic [ref=e596]:
+                        - text: Barrons.com
+                        - generic [ref=e597]: •
+                        - text: 8h ago
+                  - article [ref=e599]:
+                    - generic [ref=e600]:
+                      - link "Nvidia CEO Pitches ‘Insane’ AI Returns to Billionaire Families" [ref=e601] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/sectors/technology/articles/nvidia-ceo-pitches-insane-ai-090523020.html
+                        - heading "Nvidia CEO Pitches ‘Insane’ AI Returns to Billionaire Families" [level=3] [ref=e602]
+                      - generic [ref=e604]:
+                        - text: Bloomberg
+                        - generic [ref=e605]: •
+                        - text: 8h ago
+                  - article [ref=e607]:
+                    - generic [ref=e608]:
+                      - link "Bernstein and BofA Remain Bullish on TSMC (TSM) Amid AI and Advanced Node Leadership" [ref=e609] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/bernstein-bofa-remain-bullish-tsmc-082002969.html
+                        - heading "Bernstein and BofA Remain Bullish on TSMC (TSM) Amid AI and Advanced Node Leadership" [level=3] [ref=e610]
+                      - generic [ref=e612]:
+                        - text: Insider Monkey
+                        - generic [ref=e613]: •
+                        - text: 9h ago
+                  - article [ref=e615]:
+                    - generic [ref=e616]:
+                      - 'link "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know" [ref=e617] [cursor=pointer]':
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-beats-stock-market-214502485.html
+                        - 'heading "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know" [level=3] [ref=e618]'
+                      - generic [ref=e620]:
+                        - text: Zacks
+                        - generic [ref=e621]: •
+                        - text: 19h ago
+                  - article [ref=e623]:
+                    - generic [ref=e624]:
+                      - link "Dow Jones AI Giant Caterpillar, Nvidia Chipmaker TSMC In Or Near Buy Zones" [ref=e625] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/m/18d891fe-aea9-39aa-9eb3-3a4370e8a5bb/dow-jones-ai-giant.html
+                        - heading "Dow Jones AI Giant Caterpillar, Nvidia Chipmaker TSMC In Or Near Buy Zones" [level=3] [ref=e626]
+                      - generic [ref=e628]:
+                        - text: Investor's Business Daily
+                        - generic [ref=e629]: •
+                        - text: 22h ago
+                  - article [ref=e631]:
+                    - generic [ref=e632]:
+                      - 'link "Texas Instruments Is Smashing NVIDIA in 2026: Rotational Fluke, or Paradigm Shift?" [ref=e633] [cursor=pointer]':
+                        - /url: https://finance.yahoo.com/markets/stocks/articles/texas-instruments-smashing-nvidia-2026-190301787.html
+                        - 'heading "Texas Instruments Is Smashing NVIDIA in 2026: Rotational Fluke, or Paradigm Shift?" [level=3] [ref=e634]'
+                      - generic [ref=e636]:
+                        - text: 24/7 Wall St.
+                        - generic [ref=e637]: •
+                        - text: 22h ago
+                  - article [ref=e639]:
+                    - generic [ref=e640]:
+                      - link "Can Silicon Motion's Latest SSD Controller for AI PCs Stoke Growth?" [ref=e641] [cursor=pointer]:
+                        - /url: https://finance.yahoo.com/sectors/technology/articles/silicon-motions-latest-ssd-controller-160400859.html
+                        - heading "Can Silicon Motion's Latest SSD Controller for AI PCs Stoke Growth?" [level=3] [ref=e642]
+                      - generic [ref=e644]:
+                        - text: Zacks
+                        - generic [ref=e645]: •
+                        - text: 1d ago
+                  - generic [ref=e653] [cursor=pointer]:
+                    - 'link "Buy The Dip: Best Stocks with Forward EPS Growth Above 40% Seeking Alpha in Taboola advertising section . Sponsored: learn about this recommendation (opens dialog)"':
+                      - /url: https://seekingalpha.com/article/4884189-buy-the-dip-best-stocks-with-forward-eps-growth-above-40-percent
+                      - generic [ref=e654]:
+                        - 'link "Buy The Dip: Best Stocks with Forward EPS Growth Above 40%" [ref=e655]'
+                        - generic [ref=e656]:
+                          - link "Seeking Alpha in Taboola advertising section" [ref=e657]: Seeking Alpha
+                          - generic [ref=e658]: .
+                          - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e660]':
+                            - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finances&utm_medium=referral&utm_content=stream-f-neo:taboola-stream-qsp-11:"
+                            - text: Ad
+                    - link "Image for Taboola Advertising Unit":
+                      - /url: https://seekingalpha.com/article/4884189-buy-the-dip-best-stocks-with-forward-eps-growth-above-40-percent
+                      - img "Image for Taboola Advertising Unit" [ref=e662]
+            - generic [ref=e666]:
+              - heading "Performance Overview" [level=3] [ref=e668]
+              - paragraph [ref=e669]:
+                - text: Trailing total returns as of 6/3/2026, which may include dividends or other distributions.
+                - generic [ref=e670]:
+                  - text: Benchmark is
+                  - link "TSEC CAPITALIZATION WEIGHTED ST (^TWII)" [ref=e671] [cursor=pointer]:
+                    - /url: /quote/%5ETWII/
+                  - text: .
+              - generic [ref=e672]:
+                - generic [ref=e673]:
+                  - heading "YTD Return" [level=3] [ref=e676]
+                  - generic [ref=e677]:
+                    - generic [ref=e678]:
+                      - generic [ref=e679]: TSM
+                      - generic [ref=e680]: + 47.28%
+                    - generic [ref=e681]:
+                      - generic [ref=e682]: TSEC CAPITALIZATION WEIGHTED ST (^TWII)
+                      - generic [ref=e683]: + 60.41%
+                - generic [ref=e684]:
+                  - heading "1-Year Return" [level=3] [ref=e687]
+                  - generic [ref=e688]:
+                    - generic [ref=e689]:
+                      - generic [ref=e690]: TSM
+                      - generic [ref=e691]: + 128.62%
+                    - generic [ref=e692]:
+                      - generic [ref=e693]: TSEC CAPITALIZATION WEIGHTED ST (^TWII)
+                      - generic [ref=e694]: + 119.90%
+                - generic [ref=e695]:
+                  - heading "3-Year Return" [level=3] [ref=e698]
+                  - generic [ref=e699]:
+                    - generic [ref=e700]:
+                      - generic [ref=e701]: TSM
+                      - generic [ref=e702]: + 364.85%
+                    - generic [ref=e703]:
+                      - generic [ref=e704]: TSEC CAPITALIZATION WEIGHTED ST (^TWII)
+                      - generic [ref=e705]: + 178.08%
+                - generic [ref=e706]:
+                  - heading "5-Year Return" [level=3] [ref=e709]
+                  - generic [ref=e710]:
+                    - generic [ref=e711]:
+                      - generic [ref=e712]: TSM
+                      - generic [ref=e713]: + 301.87%
+                    - generic [ref=e714]:
+                      - generic [ref=e715]: TSEC CAPITALIZATION WEIGHTED ST (^TWII)
+                      - generic [ref=e716]: + 169.39%
+            - generic [ref=e719]:
+              - generic [ref=e720]:
+                - heading "Earnings Trends" [level=3] [ref=e721]
+                - link "View More" [ref=e722] [cursor=pointer]:
+                  - /url: /quote/TSM/analysis/
+                  - text: View More
+                  - img [ref=e724]
+              - generic [ref=e726]:
+                - generic [ref=e727]:
+                  - generic [ref=e728]:
+                    - heading "Earnings Per Share" [level=3] [ref=e730]
+                    - group [ref=e734]:
+                      - generic [ref=e735]:
+                        - checkbox "gaap" [ref=e736] [cursor=pointer]
+                        - generic [ref=e737]: gaap
+                        - generic [ref=e738]: GAAP
+                      - generic [ref=e739]:
+                        - checkbox "nongaap" [checked] [ref=e740] [cursor=pointer]
+                        - generic [ref=e741]: nongaap
+                        - generic [ref=e742]: Normalized
+                  - figure [ref=e744]:
+                    - generic [ref=e745]:
+                      - generic [ref=e746]: Q1 FY26
+                      - generic [ref=e747]:
+                        - generic [ref=e749]: Estimate
+                        - generic [ref=e750]: "+3.33"
+                      - generic [ref=e751]:
+                        - generic [ref=e753]: Actual
+                        - generic [ref=e754]: "+3.49"
+                  - link "Earnings Per Share" [ref=e757] [cursor=pointer]:
+                    - /url: /quote/TSM/analysis/
+                - generic [ref=e758]:
+                  - generic [ref=e759]:
+                    - heading "Revenue vs. Earnings" [level=3] [ref=e761]
+                    - group [ref=e765]:
+                      - generic [ref=e766]:
+                        - checkbox "yearly" [ref=e767] [cursor=pointer]
+                        - generic [ref=e768]: yearly
+                        - generic [ref=e769]: Annual
+                      - generic [ref=e770]:
+                        - checkbox "quarterly" [checked] [ref=e771] [cursor=pointer]
+                        - generic [ref=e772]: quarterly
+                        - generic [ref=e773]: Quarterly
+                  - generic [ref=e774]:
+                    - generic [ref=e776]: Q1 FY26
+                    - generic [ref=e777]:
+                      - generic [ref=e779]: Revenue
+                      - generic [ref=e780]: 1.13T
+                    - generic [ref=e781]:
+                      - generic [ref=e783]: Earnings
+                      - generic [ref=e784]: 572.48B
+                  - generic [ref=e786]:
+                    - generic [ref=e787]:
+                      - generic [ref=e788]:
+                        - generic [ref=e790]:
+                          - paragraph [ref=e791]: Q2
+                          - paragraph [ref=e792]: FY25
+                        - generic [ref=e794]:
+                          - paragraph [ref=e795]: Q3
+                          - paragraph [ref=e796]: FY25
+                        - generic [ref=e798]:
+                          - paragraph [ref=e799]: Q4
+                          - paragraph [ref=e800]: FY25
+                        - generic [ref=e802]:
+                          - paragraph [ref=e803]: Q1
+                          - paragraph [ref=e804]: FY26
+                      - generic [ref=e805]:
+                        - generic [ref=e808]: "0"
+                        - generic [ref=e811]: 200B
+                        - generic [ref=e814]: 400B
+                        - generic [ref=e817]: 600B
+                        - generic [ref=e820]: 800B
+                        - generic [ref=e823]: 1T
+                    - img [ref=e824]:
+                      - generic [ref=e825]:
+                        - group [ref=e826]
+                        - group [ref=e831]
+                        - group [ref=e836]
+                        - group [ref=e841] [cursor=pointer]
+                    - iframe [ref=e846]:
+                      
+                  - link "Revenue vs. Earnings" [ref=e847] [cursor=pointer]:
+                    - /url: /quote/TSM/analysis/
+            - generic [ref=e849]:
+              - generic [ref=e850]:
+                - heading "Analyst Insights" [level=3] [ref=e851]
+                - link "View More" [ref=e852] [cursor=pointer]:
+                  - /url: /quote/TSM/analyst-insights/
+                  - text: View More
+                  - img [ref=e854]
+              - generic [ref=e856]:
+                - generic [ref=e858]:
+                  - heading "Top Analyst" [level=3] [ref=e861]:
+                    - text: Top Analyst
+                    - img [ref=e863]
+                  - generic [ref=e865]:
+                    - generic [ref=e866]:
+                      - generic [ref=e867]: Barclays
+                      - generic [ref=e870]: 83/100
+                    - generic [ref=e871]:
+                      - generic [ref=e872]: Latest Rating
+                      - generic [ref=e873]: Overweight
+                  - link "Top Analyst" [ref=e874] [cursor=pointer]:
+                    - /url: /quote/TSM/analyst-insights/?ratingsScoreType=fin_score#top-analyst
+                - generic [ref=e875]:
+                  - heading "Analyst Price Targets" [level=3] [ref=e878]
+                  - generic [ref=e880]:
+                    - generic [ref=e884]:
+                      - generic [ref=e885]: "354.00"
+                      - generic [ref=e886]: Low
+                    - generic [ref=e888]:
+                      - generic [ref=e889]: "467.84"
+                      - generic [ref=e890]: Average
+                    - generic [ref=e896]:
+                      - generic [ref=e897]: "439.99"
+                      - generic [ref=e898]: Current
+                    - generic [ref=e901]:
+                      - generic [ref=e902]: "600.00"
+                      - generic [ref=e903]: High
+                  - link "Analyst Price Targets" [ref=e904] [cursor=pointer]:
+                    - /url: /quote/TSM/analyst-insights/
+                - generic [ref=e905]:
+                  - heading "Analyst Recommendations" [level=3] [ref=e908]
+                  - figure "Strong Buy Buy Hold Underperform Sell" [ref=e909]:
+                    - list [ref=e914]:
+                      - listitem [ref=e915]:
+                        - generic [ref=e917]: Strong Buy
+                      - listitem [ref=e918]:
+                        - generic [ref=e920]: Buy
+                      - listitem [ref=e921]:
+                        - generic [ref=e923]: Hold
+                      - listitem [ref=e924]:
+                        - generic [ref=e926]: Underperform
+                      - listitem [ref=e927]:
+                        - generic [ref=e929]: Sell
+                  - link "Analyst Recommendations" [ref=e930] [cursor=pointer]:
+                    - /url: /quote/TSM/analyst-insights/
+                - generic [ref=e931]:
+                  - heading "Latest Rating" [level=3] [ref=e934]
+                  - generic [ref=e935]:
+                    - generic [ref=e936]:
+                      - generic [ref=e937]: Date
+                      - generic [ref=e938]: 4/22/2026
+                    - generic [ref=e939]:
+                      - generic [ref=e940]: Analyst
+                      - generic [ref=e941]: Barclays
+                    - generic [ref=e942]:
+                      - generic [ref=e943]: Rating Action
+                      - generic [ref=e944]: Maintains
+                    - generic [ref=e945]:
+                      - generic [ref=e946]: Rating
+                      - generic [ref=e947]: Overweight
+                    - generic [ref=e948]:
+                      - generic [ref=e949]: Price Action
+                      - generic [ref=e950]: Raises
+                    - generic [ref=e951]:
+                      - generic [ref=e952]: Price Target
+                      - generic [ref=e953]: 450 -> 470
+                  - link "Latest Rating" [ref=e954] [cursor=pointer]:
+                    - /url: /quote/TSM/analyst-insights/#upgrade-downgrade-table
+            - generic [ref=e956]:
+              - generic [ref=e957]:
+                - heading "Statistics" [level=3] [ref=e958]
+                - link "View More" [ref=e959] [cursor=pointer]:
+                  - /url: /quote/TSM/key-statistics/
+                  - text: View More
+                  - img [ref=e961]
+              - generic [ref=e963]:
+                - generic [ref=e964]:
+                  - heading "Valuation Measures" [level=3] [ref=e967]
+                  - generic [ref=e968]:
+                    - generic [ref=e969]: As of 6/1/2026
+                    - list [ref=e970]:
+                      - listitem [ref=e971]:
+                        - paragraph [ref=e972]: Market Cap
+                        - paragraph [ref=e973]: 1.94T
+                      - listitem [ref=e974]:
+                        - paragraph [ref=e975]: Enterprise Value
+                        - paragraph [ref=e976]: 1.87T
+                      - listitem [ref=e977]:
+                        - paragraph [ref=e978]: Trailing P/E
+                        - paragraph [ref=e979]: "37.23"
+                      - listitem [ref=e980]:
+                        - paragraph [ref=e981]: Forward P/E
+                        - paragraph [ref=e982]: "27.86"
+                      - listitem [ref=e983]:
+                        - paragraph [ref=e984]: PEG Ratio (5yr expected)
+                        - paragraph [ref=e985]: "1.35"
+                      - listitem [ref=e986]:
+                        - paragraph [ref=e987]: Price/Sales (ttm)
+                        - paragraph [ref=e988]: "17.32"
+                      - listitem [ref=e989]:
+                        - paragraph [ref=e990]: Price/Book (mrq)
+                        - paragraph [ref=e991]: "12.06"
+                      - listitem [ref=e992]:
+                        - paragraph [ref=e993]: Enterprise Value/Revenue
+                        - paragraph [ref=e994]: "14.31"
+                      - listitem [ref=e995]:
+                        - paragraph [ref=e996]: Enterprise Value/EBITDA
+                        - paragraph [ref=e997]: "19.64"
+                - generic [ref=e998]:
+                  - heading "Financial Highlights" [level=3] [ref=e1001]
+                  - generic [ref=e1002]:
+                    - heading "Profitability and Income Statement" [level=4] [ref=e1003]
+                    - list [ref=e1004]:
+                      - listitem [ref=e1005]:
+                        - paragraph [ref=e1006]: Profit Margin
+                        - paragraph [ref=e1007]: 46.51%
+                      - listitem [ref=e1008]:
+                        - paragraph [ref=e1009]: Return on Assets (ttm)
+                        - paragraph [ref=e1010]: 17.32%
+                      - listitem [ref=e1011]:
+                        - paragraph [ref=e1012]: Return on Equity (ttm)
+                        - paragraph [ref=e1013]: 36.21%
+                      - listitem [ref=e1014]:
+                        - paragraph [ref=e1015]: Revenue (ttm)
+                        - paragraph [ref=e1016]: 4.1T
+                      - listitem [ref=e1017]:
+                        - paragraph [ref=e1018]: Net Income Avi to Common (ttm)
+                        - paragraph [ref=e1019]: 1.91T
+                      - listitem [ref=e1020]:
+                        - paragraph [ref=e1021]: Diluted EPS (ttm)
+                        - paragraph [ref=e1022]: "11.70"
+                  - generic [ref=e1023]:
+                    - heading "Balance Sheet and Cash Flow" [level=4] [ref=e1024]
+                    - list [ref=e1025]:
+                      - listitem [ref=e1026]:
+                        - paragraph [ref=e1027]: Total Cash (mrq)
+                        - paragraph [ref=e1028]: 3.38T
+                      - listitem [ref=e1029]:
+                        - paragraph [ref=e1030]: Total Debt/Equity (mrq)
+                        - paragraph [ref=e1031]: 18.45%
+                      - listitem [ref=e1032]:
+                        - paragraph [ref=e1033]: Levered Free Cash Flow (ttm)
+                        - paragraph [ref=e1034]: 719.16B
+            - generic [ref=e1037]:
+              - generic [ref=e1038]:
+                - heading "Compare" [level=3] [ref=e1039]
+                - generic [ref=e1040]:
+                  - link "Compare" [ref=e1041] [cursor=pointer]:
+                    - /url: /compare/TSM
+                    - generic [ref=e1042]: Compare
+                  - generic [ref=e1044]:
+                    - button "prev" [disabled]:
+                      - generic:
+                        - img
+                    - button "next" [ref=e1045] [cursor=pointer]:
+                      - img [ref=e1047]
+              - paragraph [ref=e1049]: Select to analyze similar companies using key performance metrics; select up to 4 stocks.
+              - generic [ref=e1052]:
+                - generic [ref=e1054]:
+                  - generic [ref=e1055]:
+                    - link "TSM" [ref=e1056] [cursor=pointer]:
+                      - /url: /quote/TSM/
+                      - generic [ref=e1057]:
+                        - text: TSM
+                        - generic [ref=e1058]: Taiwan Semiconductor Manufacturing Company Limited
+                    - button "add-to-compare" [ref=e1060] [cursor=pointer]:
+                      - img [ref=e1062]
+                  - generic [ref=e1065]:
+                    - generic [ref=e1066]: "439.99"
+                    - generic [ref=e1068]: "-1.50%"
+                  - generic [ref=e1069]:
+                    - generic [ref=e1070]:
+                      - generic [ref=e1071]: Mkt Cap
+                      - generic [ref=e1072]: 2.282T
+                    - generic [ref=e1073]:
+                      - generic [ref=e1074]: Industry
+                      - generic [ref=e1075]: Semiconductors
+                - generic [ref=e1077]:
+                  - generic [ref=e1078]:
+                    - link "MU" [ref=e1079] [cursor=pointer]:
+                      - /url: /quote/MU/
+                      - generic [ref=e1080]:
+                        - text: MU
+                        - generic [ref=e1081]: Micron Technology, Inc.
+                    - button "add-to-compare" [ref=e1083] [cursor=pointer]:
+                      - img [ref=e1085]
+                  - generic [ref=e1088]:
+                    - generic [ref=e1089]: 1,066.21
+                    - generic [ref=e1091]: +0.20%
+                  - generic [ref=e1092]:
+                    - generic [ref=e1093]:
+                      - generic [ref=e1094]: Mkt Cap
+                      - generic [ref=e1095]: 1.202T
+                    - generic [ref=e1096]:
+                      - generic [ref=e1097]: Industry
+                      - generic [ref=e1098]: Semiconductors
+                - generic [ref=e1100]:
+                  - generic [ref=e1101]:
+                    - link "AVGO" [ref=e1102] [cursor=pointer]:
+                      - /url: /quote/AVGO/
+                      - generic [ref=e1103]:
+                        - text: AVGO
+                        - generic [ref=e1104]: Broadcom Inc.
+                    - button "add-to-compare" [ref=e1106] [cursor=pointer]:
+                      - img [ref=e1108]
+                  - generic [ref=e1111]:
+                    - generic [ref=e1112]: "484.44"
+                    - generic [ref=e1114]: +0.60%
+                  - generic [ref=e1115]:
+                    - generic [ref=e1116]:
+                      - generic [ref=e1117]: Mkt Cap
+                      - generic [ref=e1118]: 2.294T
+                    - generic [ref=e1119]:
+                      - generic [ref=e1120]: Industry
+                      - generic [ref=e1121]: Semiconductors
+                - generic [ref=e1123]:
+                  - generic [ref=e1124]:
+                    - link "NVDA" [ref=e1125] [cursor=pointer]:
+                      - /url: /quote/NVDA/
+                      - generic [ref=e1126]:
+                        - text: NVDA
+                        - generic [ref=e1127]: NVIDIA Corporation
+                    - button "add-to-compare" [ref=e1129] [cursor=pointer]:
+                      - img [ref=e1131]
+                  - generic [ref=e1134]:
+                    - generic [ref=e1135]: "215.76"
+                    - generic [ref=e1137]: "-3.17%"
+                  - generic [ref=e1138]:
+                    - generic [ref=e1139]:
+                      - generic [ref=e1140]: Mkt Cap
+                      - generic [ref=e1141]: 5.226T
+                    - generic [ref=e1142]:
+                      - generic [ref=e1143]: Industry
+                      - generic [ref=e1144]: Semiconductors
+                - generic [ref=e1146]:
+                  - generic [ref=e1147]:
+                    - link "AMD" [ref=e1148] [cursor=pointer]:
+                      - /url: /quote/AMD/
+                      - generic [ref=e1149]:
+                        - text: AMD
+                        - generic [ref=e1150]: Advanced Micro Devices, Inc.
+                    - button "add-to-compare" [ref=e1152] [cursor=pointer]:
+                      - img [ref=e1154]
+                  - generic [ref=e1157]:
+                    - generic [ref=e1158]: "536.03"
+                    - generic [ref=e1160]: +2.78%
+                  - generic [ref=e1161]:
+                    - generic [ref=e1162]:
+                      - generic [ref=e1163]: Mkt Cap
+                      - generic [ref=e1164]: 874.043B
+                    - generic [ref=e1165]:
+                      - generic [ref=e1166]: Industry
+                      - generic [ref=e1167]: Semiconductors
+                - generic [ref=e1169]:
+                  - generic [ref=e1170]:
+                    - link "INTC" [ref=e1171] [cursor=pointer]:
+                      - /url: /quote/INTC/
+                      - generic [ref=e1172]:
+                        - text: INTC
+                        - generic [ref=e1173]: Intel Corporation
+                    - button "add-to-compare" [ref=e1175] [cursor=pointer]:
+                      - img [ref=e1177]
+                  - generic [ref=e1180]:
+                    - generic [ref=e1181]: "111.78"
+                    - generic [ref=e1183]: +3.57%
+                  - generic [ref=e1184]:
+                    - generic [ref=e1185]:
+                      - generic [ref=e1186]: Mkt Cap
+                      - generic [ref=e1187]: 561.807B
+                    - generic [ref=e1188]:
+                      - generic [ref=e1189]: Industry
+                      - generic [ref=e1190]: Semiconductors
+                - generic [ref=e1192]:
+                  - generic [ref=e1193]:
+                    - link "UMC" [ref=e1194] [cursor=pointer]:
+                      - /url: /quote/UMC/
+                      - generic [ref=e1195]:
+                        - text: UMC
+                        - generic [ref=e1196]: United Microelectronics Corporation
+                    - button "add-to-compare" [ref=e1198] [cursor=pointer]:
+                      - img [ref=e1200]
+                  - generic [ref=e1203]:
+                    - generic [ref=e1204]: "21.08"
+                    - generic [ref=e1206]: "-6.17%"
+                  - generic [ref=e1207]:
+                    - generic [ref=e1208]:
+                      - generic [ref=e1209]: Mkt Cap
+                      - generic [ref=e1210]: 52.883B
+                    - generic [ref=e1211]:
+                      - generic [ref=e1212]: Industry
+                      - generic [ref=e1213]: Semiconductors
+                - generic [ref=e1215]:
+                  - generic [ref=e1216]:
+                    - link "QCOM" [ref=e1217] [cursor=pointer]:
+                      - /url: /quote/QCOM/
+                      - generic [ref=e1218]:
+                        - text: QCOM
+                        - generic [ref=e1219]: QUALCOMM Incorporated
+                    - button "add-to-compare" [ref=e1221] [cursor=pointer]:
+                      - img [ref=e1223]
+                  - generic [ref=e1226]:
+                    - generic [ref=e1227]: "249.40"
+                    - generic [ref=e1229]: +3.55%
+                  - generic [ref=e1230]:
+                    - generic [ref=e1231]:
+                      - generic [ref=e1232]: Mkt Cap
+                      - generic [ref=e1233]: 262.862B
+                    - generic [ref=e1234]:
+                      - generic [ref=e1235]: Industry
+                      - generic [ref=e1236]: Semiconductors
+                - generic [ref=e1238]:
+                  - generic [ref=e1239]:
+                    - link "2303.TW" [ref=e1240] [cursor=pointer]:
+                      - /url: /quote/2303.TW/
+                      - generic [ref=e1241]:
+                        - text: 2303.TW
+                        - generic [ref=e1242]: United Microelectronics Corporation
+                    - button "add-to-compare" [ref=e1244] [cursor=pointer]:
+                      - img [ref=e1246]
+                  - generic [ref=e1249]:
+                    - generic [ref=e1250]: "130.50"
+                    - generic [ref=e1252]: "-7.77%"
+                  - generic [ref=e1253]:
+                    - generic [ref=e1254]:
+                      - generic [ref=e1255]: Mkt Cap
+                      - generic [ref=e1256]: TWD 1.637T
+                    - generic [ref=e1257]:
+                      - generic [ref=e1258]: Industry
+                      - generic [ref=e1259]: Semiconductors
+                - generic [ref=e1261]:
+                  - generic [ref=e1262]:
+                    - link "2408.TW" [ref=e1263] [cursor=pointer]:
+                      - /url: /quote/2408.TW/
+                      - generic [ref=e1264]:
+                        - text: 2408.TW
+                        - generic [ref=e1265]: Nanya Technology Corporation
+                    - button "add-to-compare" [ref=e1267] [cursor=pointer]:
+                      - img [ref=e1269]
+                  - generic [ref=e1272]:
+                    - generic [ref=e1273]: "401.50"
+                    - generic [ref=e1275]: "-4.29%"
+                  - generic [ref=e1276]:
+                    - generic [ref=e1277]:
+                      - generic [ref=e1278]: Mkt Cap
+                      - generic [ref=e1279]: TWD 1.244T
+                    - generic [ref=e1280]:
+                      - generic [ref=e1281]: Industry
+                      - generic [ref=e1282]: Semiconductors
+                - generic [ref=e1284]:
+                  - generic [ref=e1285]:
+                    - link "2344.TW" [ref=e1286] [cursor=pointer]:
+                      - /url: /quote/2344.TW/
+                      - generic [ref=e1287]:
+                        - text: 2344.TW
+                        - generic [ref=e1288]: Winbond Electronics Corporation
+                    - button "add-to-compare" [ref=e1290] [cursor=pointer]:
+                      - img [ref=e1292]
+                  - generic [ref=e1295]:
+                    - generic [ref=e1296]: "177.50"
+                    - generic [ref=e1298]: "-3.79%"
+                  - generic [ref=e1299]:
+                    - generic [ref=e1300]:
+                      - generic [ref=e1301]: Mkt Cap
+                      - generic [ref=e1302]: TWD 798.75B
+                    - generic [ref=e1303]:
+                      - generic [ref=e1304]: Industry
+                      - generic [ref=e1305]: Semiconductors
+            - generic [ref=e1308]:
+              - heading "People Also Watch" [level=3] [ref=e1310]
+              - generic [ref=e1313]:
+                - generic [ref=e1314]:
+                  - generic [ref=e1315]:
+                    - generic [ref=e1318]:
+                      - generic [ref=e1319]: AVGO
+                      - generic "Broadcom Inc." [ref=e1320]
+                    - generic [ref=e1321]:
+                      - strong [ref=e1322]: "484.44"
+                      - generic [ref=e1323]: +0.60%
+                  - link "AVGO" [ref=e1324] [cursor=pointer]:
+                    - /url: /quote/AVGO/
+                - generic [ref=e1325]:
+                  - generic [ref=e1326]:
+                    - generic [ref=e1329]:
+                      - generic [ref=e1330]: MU
+                      - generic "Micron Technology, Inc." [ref=e1331]
+                    - generic [ref=e1332]:
+                      - strong [ref=e1333]: 1,066.21
+                      - generic [ref=e1334]: +0.20%
+                  - link "MU" [ref=e1335] [cursor=pointer]:
+                    - /url: /quote/MU/
+                - generic [ref=e1336]:
+                  - generic [ref=e1337]:
+                    - generic [ref=e1340]:
+                      - generic [ref=e1341]: ASML
+                      - generic "ASML Holding N.V." [ref=e1342]
+                    - generic [ref=e1343]:
+                      - strong [ref=e1344]: 1,724.98
+                      - generic [ref=e1345]: +1.15%
+                  - link "ASML" [ref=e1346] [cursor=pointer]:
+                    - /url: /quote/ASML/
+                - generic [ref=e1347]:
+                  - generic [ref=e1348]:
+                    - generic [ref=e1351]:
+                      - generic [ref=e1352]: AMD
+                      - generic "Advanced Micro Devices, Inc." [ref=e1353]
+                    - generic [ref=e1354]:
+                      - strong [ref=e1355]: "536.03"
+                      - generic [ref=e1356]: +2.78%
+                  - link "AMD" [ref=e1357] [cursor=pointer]:
+                    - /url: /quote/AMD/
+                - generic [ref=e1358]:
+                  - generic [ref=e1359]:
+                    - generic [ref=e1362]:
+                      - generic [ref=e1363]: PLTR
+                      - generic "Palantir Technologies Inc." [ref=e1364]
+                    - generic [ref=e1365]:
+                      - strong [ref=e1366]: "143.04"
+                      - generic [ref=e1367]: "-6.00%"
+                  - link "PLTR" [ref=e1368] [cursor=pointer]:
+                    - /url: /quote/PLTR/
+            - iframe [ref=e1371]:
+              - generic [ref=f52e1]:
+                - link [ref=f52e2] [cursor=pointer]:
+                  - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjssPHNjxTj3rz5uLQCvMQW-wUFmdLgT4L_UI2dMIS7uMVH5ZHCn7SYHi41h1agmPsuc78W2-zZdu4CPZ_2JyQui-9g5zPLmaQW7jWMvSpIgO5Qa5UaMQAX-r5faH0aDmuX0n0tsvhAlPNJep7_IoyIWGrC34s0VgLgBnvKLD-I9lrGHl8p3nYO2eXi3riAGNj3yyknS5ccsVjYzLvrnzDQM_hDbbQTgCP55ftUYdyahvSUHhT4x1PRFpxadeTxBilducrd0xT9DaY7pd4e1MAwdT6SaLAb45sMJMKt9qmJQ2FFgW0S9FvxsSXOwdMTUGDduKw9wUTuZ3XoiPKK_gbNxlXE08Y8WzX-h26xLouwJ-0OVWy5rW73iRatt89bwLS_To4nx47z9YwPVzfkpt0rQWD8-MacgtBloKnEFR1-AF7AVDvOA7OVoaupBho_IPe04AroICO7j8YdZyuSM&sai=AMfl-YQuSvxBIIezkXXkGLZgQOoZUsFFr8o2sEoWPPVYnoHoTr84JbhgFDEerLqHh4u6MgXNROS_E0IXCCZG7qvkP2kM9crY8JLELGMxKG69H5WjTagJjQTsdBXZ2LI2jNlHotNF3jg3rOEWFt0MzT8i_hfWJehIgDWyavay-Upy7djpitTk5JZw60tNZ_76D4t9SSBt9KHFwlHDVNMAElPGUyVW936Ht5iq1kWtqmzR7IW1AoqemBU85glKvkWzgBYJQk7eb_r4VBIWsOjq8BIDLYHH2VQCgl2odBUUj4KQuauFkV6Z60dMuE_nmHDnDV-2lQqrdTU1BytCB5CGxnk0w8eEXTWsP8zAgdVuxSkM9GgRgM8xSl44nIth-YxyPSkfcXprdJ-2-HAHQj5QF_RRlnAxgwvBxcFhEahVZ_-xA_PAydE&sig=Cg0ArKJSzJQpFuHAgcY4&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://tw.stock.yahoo.com/subscription%3FNCID%3Dyahooproperties_filleradsp_wt8kuj3wr3e%26utm_source%3DYahoo%26utm_medium%3DFillerAdsPC%26utm_campaign%3DTSMC2K
+                - img [ref=f52e6] [cursor=pointer]
+                - button [ref=f52e8] [cursor=pointer]:
+                  - img [ref=f52e9]
+          - generic [ref=e1374]:
+            - generic [ref=e1375]:
+              - link "Yahoo Finance" [ref=e1376] [cursor=pointer]:
+                - /url: /
+                - img [ref=e1378]
+              - generic [ref=e1382]: Copyright © 2026 Yahoo. All rights reserved.
+              - generic [ref=e1383]:
+                - link "Follow on Twitter" [ref=e1384] [cursor=pointer]:
+                  - /url: https://twitter.com/YahooFinance
+                  - img [ref=e1386]
+                - link "Follow on Facebook" [ref=e1389] [cursor=pointer]:
+                  - /url: https://facebook.com/yahoofinance
+                  - img [ref=e1391]
+                - link "Follow on LinkedIn" [ref=e1393] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/yahoo-finance
+                  - img [ref=e1395]
+            - generic [ref=e1397]:
+              - generic [ref=e1398]: Trending Topics
+              - link "Dow Jones" [ref=e1399] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/%5EDJI/
+              - link "S&P 500" [ref=e1400] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/SPY/
+              - link "DAX Index" [ref=e1401] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/%5EGDAXI/
+              - link "Nvidia" [ref=e1402] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/NVDA/
+              - link "Tesla" [ref=e1403] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/TSLA/
+              - link "DJT" [ref=e1404] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/DJT/
+              - link "Tariffs" [ref=e1405] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/topic/tariffs/
+            - generic [ref=e1406]:
+              - generic [ref=e1407]: Explore Further
+              - link "Mortgages" [ref=e1408] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/personal-finance/mortgages/
+              - link "Credit Cards" [ref=e1409] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/personal-finance/credit-cards/
+              - link "Sectors" [ref=e1410] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/sectors/
+              - link "Crypto Heatmap" [ref=e1411] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/crypto/heatmap/
+              - link "Financial News" [ref=e1412] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/news/
+            - generic [ref=e1413]:
+              - generic [ref=e1414]: About
+              - link "Data Disclaimer" [ref=e1415] [cursor=pointer]:
+                - /url: https://help.yahoo.com/kb/finance-for-web/SLN2310.html?locale=en_US
+              - link "Help" [ref=e1416] [cursor=pointer]:
+                - /url: https://help.yahoo.com/kb/finance-for-web
+              - link "Feedback" [ref=e1417] [cursor=pointer]:
+                - /url: https://yahoo.uservoice.com/forums/952723-finance-b3
+              - link "Sitemap" [ref=e1418] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/sitemap/
+              - link "Licensing" [ref=e1419] [cursor=pointer]:
+                - /url: https://info.wrightsmedia.com/yahoo-finance-licensing
+              - link "What's New" [ref=e1420] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/about/whatsnew/
+              - link "About Our Ads" [ref=e1421] [cursor=pointer]:
+                - /url: https://policies.oath.com/us/en/oath/privacy/adinfo/index.html
+              - generic [ref=e1422]:
+                - generic [ref=e1423]:
+                  - link "Terms" [ref=e1424] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/terms?locale=en-US
+                  - text: and
+                  - link "Privacy Policy" [ref=e1425] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/privacy-policy?locale=en-US
+                - link "Privacy Dashboard" [ref=e1427] [cursor=pointer]:
+                  - /url: https://guce.yahoo.com/privacy-dashboard?locale=en-US
+      - complementary "Dock" [ref=e1428]:
+        - dialog "Dock" [ref=e1429]:
+          - generic [ref=e1431]:
+            - search [ref=e1436]:
+              - img [ref=e1438]
+              - textbox "Quote Lookup" [ref=e1440]
+            - generic [ref=e1442]:
+              - list [ref=e1443]:
+                - listitem [ref=e1444]:
+                  - generic [ref=e1447]:
+                    - link "Trending tickers" [ref=e1451] [cursor=pointer]:
+                      - /url: /trending-tickers
+                      - generic [ref=e1452]: Trending tickers
+                    - list [ref=e1453]:
+                      - listitem [ref=e1454]:
+                        - generic [ref=e1455]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.42 +5.56 (+21.50%)" [ref=e1456] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1457]:
+                              - generic [ref=e1458]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1459]
+                              - generic [ref=e1460]: "31.42"
+                              - generic [ref=e1461]:
+                                - generic [ref=e1463]: "+5.56"
+                                - generic [ref=e1464]: (+21.50%)
+                          - button "Follow" [ref=e1465] [cursor=pointer]:
+                            - img [ref=e1467]
+                      - listitem [ref=e1469]:
+                        - generic [ref=e1470]:
+                          - link "XOS Xos, Inc. 6.10 +3.87 (+173.54%)" [ref=e1471] [cursor=pointer]:
+                            - /url: /quote/XOS/
+                            - generic [ref=e1472]:
+                              - generic [ref=e1473]: XOS
+                              - generic "Xos, Inc." [ref=e1474]
+                              - generic [ref=e1475]: "6.10"
+                              - generic [ref=e1476]:
+                                - generic [ref=e1477]: "+3.87"
+                                - generic [ref=e1478]: (+173.54%)
+                          - button "Follow" [ref=e1479] [cursor=pointer]:
+                            - img [ref=e1481]
+                      - listitem [ref=e1483]:
+                        - generic [ref=e1484]:
+                          - link "LASE Laser Photonics Corporation 3.3693 +0.9493 (+39.23%)" [ref=e1485] [cursor=pointer]:
+                            - /url: /quote/LASE/
+                            - generic [ref=e1486]:
+                              - generic [ref=e1487]: LASE
+                              - generic "Laser Photonics Corporation" [ref=e1488]
+                              - generic [ref=e1489]: "3.3693"
+                              - generic [ref=e1490]:
+                                - generic [ref=e1491]: "+0.9493"
+                                - generic [ref=e1492]: (+39.23%)
+                          - button "Follow" [ref=e1493] [cursor=pointer]:
+                            - img [ref=e1495]
+                      - listitem [ref=e1497]:
+                        - generic [ref=e1498]:
+                          - link "SDOT Sadot Group Inc. 6.07 +2.79 (+84.55%)" [ref=e1499] [cursor=pointer]:
+                            - /url: /quote/SDOT/
+                            - generic [ref=e1500]:
+                              - generic [ref=e1501]: SDOT
+                              - generic "Sadot Group Inc." [ref=e1502]
+                              - generic [ref=e1503]: "6.07"
+                              - generic [ref=e1504]:
+                                - generic [ref=e1506]: "+2.79"
+                                - generic [ref=e1507]: (+84.55%)
+                          - button "Follow" [ref=e1508] [cursor=pointer]:
+                            - img [ref=e1510]
+                      - listitem [ref=e1512]:
+                        - generic [ref=e1513]:
+                          - link "GME GameStop Corp. 22.32 +1.40 (+6.67%)" [ref=e1514] [cursor=pointer]:
+                            - /url: /quote/GME/
+                            - generic [ref=e1515]:
+                              - generic [ref=e1516]: GME
+                              - generic "GameStop Corp." [ref=e1517]
+                              - generic [ref=e1518]: "22.32"
+                              - generic [ref=e1519]:
+                                - generic [ref=e1521]: "+1.40"
+                                - generic [ref=e1522]: (+6.67%)
+                          - button "Follow" [ref=e1523] [cursor=pointer]:
+                            - img [ref=e1525]
+                - listitem [ref=e1527]:
+                  - iframe [ref=e1531]:
+                    - generic [ref=f51e1]:
+                      - link [ref=f51e2] [cursor=pointer]:
+                        - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjstMdOAxNCSQx7no5CO-UNpg2CZlzNT9tSQifWI5hApWPJ6z4VH8pd5SBsjbe7Oe8TuslAiomBdunOZJIaVJAoWfxinOnIfK6ueWkGZiYJvspGmlXEqlWlWiIQKPRM3Cxqy0js8j0XwYMz6TC_zypCmo7IxJ7b8Dm8gSicxfyajJOw3gg4UY3ZvK-wN3CaPvAYjSQnjz_xNrb30bXFtPyH-IN4gCoBCW85L7Bbsgkf95hnlPKHvcGrlSQzTfWdMkXQyXPKVyyR8rwXxvX1_vvMzT-bmnARw2XNzOzaXZDG9Vg8KJwJnwN8rGKwENCExKAZ4NCSFjZGxFtavX3wGMzftseiz7nP__eUfcsq6EwXa76VSOt3AXMWvsPQ5u_hNPl7FPq7KwaeSZwUhtLq43ivZxSxYaICjG5ZKQlv-_IrzJG1R5YMDRSND6FGakB-P4-toASttcqGuw_bQ0N52yD_0_&sai=AMfl-YQSmEzLvMKSlDZzK5km-ttZzpKEgR3h2H5_sbet0YNrowdWA1v5pUsVD46m87yG3qUjal6xaQSMXsHiTkz4pjfAawRI2B8pJuqpY8BaJ-aXNlJzTEhS1yWC-F80fBEZAp0MlTOb0BC9mox68oGYdg8xCW0v3Z8GeDZQ6td3fDYXEFgz61kmGrBawnw3aD0v8_Y63pENqkX8Tcx-AbvY7_KFXaB_nj-T3b7LncxuWHyV5VUphthVJTHEVTorpMmwehIRND0eoxG6sl6MHXKt8ZnXe3KsPCeOs0En72fORLSgAlBHkJATh2pwARxvvvdOpFjgA_JdI4JiBDUe7aQVEnro7YCY1hUH7y5gyUJoMKNkAqQlkdWoQ7wr6zElRIcrgA-mdyKfg8xKfYZf7QJeya2pZ-DneZfB1ldlciKlrHVW3UQ&sig=Cg0ArKJSzJHXkM6R-rP0&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://overview.mail.yahoo.com/myyahoo
+                      - img [ref=f51e6] [cursor=pointer]
+                      - button [ref=f51e8] [cursor=pointer]:
+                        - img [ref=f51e9]
+                - listitem [ref=e1532]:
+                  - generic [ref=e1536]:
+                    - link "Portfolio" [ref=e1540] [cursor=pointer]:
+                      - /url: /portfolios
+                      - generic [ref=e1541]: Portfolio
+                    - generic [ref=e1543]:
+                      - paragraph [ref=e1544]: Sign in to access your portfolio
+                      - link "Sign in" [ref=e1545] [cursor=pointer]:
+                        - /url: https://login.yahoo.com/config/login?done=https%3A%2F%2Ffinance.yahoo.com%2Fquote%2FTSM%2F&intl=us&lang=en-US&activity=dock-portfolio&pspid=95993639&src=finance
+                - listitem [ref=e1546]:
+                  - generic [ref=e1549]:
+                    - link "Recently viewed" [ref=e1553] [cursor=pointer]:
+                      - /url: /recent-quotes
+                      - generic [ref=e1554]: Recently viewed
+                    - img "Progress Spinner" [ref=e1556]
+                - listitem [ref=e1583]:
+                  - generic [ref=e1586]:
+                    - link "Top gainers" [ref=e1590] [cursor=pointer]:
+                      - /url: /gainers/
+                      - generic [ref=e1591]: Top gainers
+                    - list [ref=e1592]:
+                      - listitem [ref=e1593]:
+                        - generic [ref=e1594]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.35 +5.49 (+21.22%)" [ref=e1595] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1596]:
+                              - generic [ref=e1597]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1598]
+                              - generic [ref=e1599]: "31.35"
+                              - generic [ref=e1600]:
+                                - generic [ref=e1602]: "+5.49"
+                                - generic [ref=e1603]: (+21.22%)
+                          - button "Follow" [ref=e1604] [cursor=pointer]:
+                            - img [ref=e1606]
+                      - listitem [ref=e1608]:
+                        - generic [ref=e1609]:
+                          - link "ABVX ABIVAX Société Anonyme 86.87 +14.36 (+19.81%)" [ref=e1610] [cursor=pointer]:
+                            - /url: /quote/ABVX/
+                            - generic [ref=e1611]:
+                              - generic [ref=e1612]: ABVX
+                              - generic "ABIVAX Société Anonyme" [ref=e1613]
+                              - generic [ref=e1614]: "86.87"
+                              - generic [ref=e1615]:
+                                - generic [ref=e1617]: "+14.36"
+                                - generic [ref=e1618]: (+19.81%)
+                          - button "Follow" [ref=e1619] [cursor=pointer]:
+                            - img [ref=e1621]
+                      - listitem [ref=e1623]:
+                        - generic [ref=e1624]:
+                          - link "MMED MiniMed Group, Inc. 14.50 +2.20 (+17.89%)" [ref=e1625] [cursor=pointer]:
+                            - /url: /quote/MMED/
+                            - generic [ref=e1626]:
+                              - generic [ref=e1627]: MMED
+                              - generic "MiniMed Group, Inc." [ref=e1628]
+                              - generic [ref=e1629]: "14.50"
+                              - generic [ref=e1630]:
+                                - generic [ref=e1632]: "+2.20"
+                                - generic [ref=e1633]: (+17.89%)
+                          - button "Follow" [ref=e1634] [cursor=pointer]:
+                            - img [ref=e1636]
+                      - listitem [ref=e1638]:
+                        - generic [ref=e1639]:
+                          - link "TGTX TG Therapeutics, Inc. 41.17 +4.53 (+12.35%)" [ref=e1640] [cursor=pointer]:
+                            - /url: /quote/TGTX/
+                            - generic [ref=e1641]:
+                              - generic [ref=e1642]: TGTX
+                              - generic "TG Therapeutics, Inc." [ref=e1643]
+                              - generic [ref=e1644]: "41.17"
+                              - generic [ref=e1645]:
+                                - generic [ref=e1647]: "+4.53"
+                                - generic [ref=e1648]: (+12.35%)
+                          - button "Follow" [ref=e1649] [cursor=pointer]:
+                            - img [ref=e1651]
+                      - listitem [ref=e1653]:
+                        - generic [ref=e1654]:
+                          - link "STRL Sterling Infrastructure, Inc. 956.00 +80.48 (+9.19%)" [ref=e1655] [cursor=pointer]:
+                            - /url: /quote/STRL/
+                            - generic [ref=e1656]:
+                              - generic [ref=e1657]: STRL
+                              - generic "Sterling Infrastructure, Inc." [ref=e1658]
+                              - generic [ref=e1659]: "956.00"
+                              - generic [ref=e1660]:
+                                - generic [ref=e1662]: "+80.48"
+                                - generic [ref=e1663]: (+9.19%)
+                          - button "Follow" [ref=e1664] [cursor=pointer]:
+                            - img [ref=e1666]
+                - listitem [ref=e1668]:
+                  - generic [ref=e1671]:
+                    - link "Top losers" [ref=e1675] [cursor=pointer]:
+                      - /url: /losers/
+                      - generic [ref=e1676]: Top losers
+                    - list [ref=e1677]:
+                      - listitem [ref=e1678]:
+                        - generic [ref=e1679]:
+                          - link "LUNR Intuitive Machines, Inc. 33.70 -5.87 (-14.83%)" [ref=e1680] [cursor=pointer]:
+                            - /url: /quote/LUNR/
+                            - generic [ref=e1681]:
+                              - generic [ref=e1682]: LUNR
+                              - generic "Intuitive Machines, Inc." [ref=e1683]
+                              - generic [ref=e1684]: "33.70"
+                              - generic [ref=e1685]:
+                                - generic [ref=e1687]: "-5.87"
+                                - generic [ref=e1688]: (-14.83%)
+                          - button "Follow" [ref=e1689] [cursor=pointer]:
+                            - img [ref=e1691]
+                      - listitem [ref=e1693]:
+                        - generic [ref=e1694]:
+                          - link "ONDS Ondas Inc. 11.73 -1.85 (-13.62%)" [ref=e1695] [cursor=pointer]:
+                            - /url: /quote/ONDS/
+                            - generic [ref=e1696]:
+                              - generic [ref=e1697]: ONDS
+                              - generic "Ondas Inc." [ref=e1698]
+                              - generic [ref=e1699]: "11.73"
+                              - generic [ref=e1700]:
+                                - generic [ref=e1702]: "-1.85"
+                                - generic [ref=e1703]: (-13.62%)
+                          - button "Follow" [ref=e1704] [cursor=pointer]:
+                            - img [ref=e1706]
+                      - listitem [ref=e1708]:
+                        - generic [ref=e1709]:
+                          - link "MLYS Mineralys Therapeutics, Inc. 25.05 -3.80 (-13.20%)" [ref=e1710] [cursor=pointer]:
+                            - /url: /quote/MLYS/
+                            - generic [ref=e1711]:
+                              - generic [ref=e1712]: MLYS
+                              - generic "Mineralys Therapeutics, Inc." [ref=e1713]
+                              - generic [ref=e1714]: "25.05"
+                              - generic [ref=e1715]:
+                                - generic [ref=e1717]: "-3.80"
+                                - generic [ref=e1718]: (-13.20%)
+                          - button "Follow" [ref=e1719] [cursor=pointer]:
+                            - img [ref=e1721]
+                      - listitem [ref=e1723]:
+                        - generic [ref=e1724]:
+                          - link "XNDU Xanadu Quantum Technologies Limited 14.72 -2.22 (-13.08%)" [ref=e1725] [cursor=pointer]:
+                            - /url: /quote/XNDU/
+                            - generic [ref=e1726]:
+                              - generic [ref=e1727]: XNDU
+                              - generic "Xanadu Quantum Technologies Limited" [ref=e1728]
+                              - generic [ref=e1729]: "14.72"
+                              - generic [ref=e1730]:
+                                - generic [ref=e1732]: "-2.22"
+                                - generic [ref=e1733]: (-13.08%)
+                          - button "Follow" [ref=e1734] [cursor=pointer]:
+                            - img [ref=e1736]
+                      - listitem [ref=e1738]:
+                        - generic [ref=e1739]:
+                          - link "SMR NuScale Power Corporation 12.21 -1.74 (-12.50%)" [ref=e1740] [cursor=pointer]:
+                            - /url: /quote/SMR/
+                            - generic [ref=e1741]:
+                              - generic [ref=e1742]: SMR
+                              - generic "NuScale Power Corporation" [ref=e1743]
+                              - generic [ref=e1744]: "12.21"
+                              - generic [ref=e1745]:
+                                - generic [ref=e1747]: "-1.74"
+                                - generic [ref=e1748]: (-12.50%)
+                          - button "Follow" [ref=e1749] [cursor=pointer]:
+                            - img [ref=e1751]
+                - listitem [ref=e1753]:
+                  - generic [ref=e1756]:
+                    - link "Most active" [ref=e1760] [cursor=pointer]:
+                      - /url: /most-active/
+                      - generic [ref=e1761]: Most active
+                    - list [ref=e1762]:
+                      - listitem [ref=e1763]:
+                        - generic [ref=e1764]:
+                          - link "NOK Nokia Oyj 16.85 -0.01 (-0.03%)" [ref=e1765] [cursor=pointer]:
+                            - /url: /quote/NOK/
+                            - generic [ref=e1766]:
+                              - generic [ref=e1767]: NOK
+                              - generic "Nokia Oyj" [ref=e1768]
+                              - generic [ref=e1769]: "16.85"
+                              - generic [ref=e1770]:
+                                - generic [ref=e1772]: "-0.01"
+                                - generic [ref=e1773]: (-0.03%)
+                          - button "Follow" [ref=e1774] [cursor=pointer]:
+                            - img [ref=e1776]
+                      - listitem [ref=e1778]:
+                        - generic [ref=e1779]:
+                          - link "NVDA NVIDIA Corporation 215.67 -7.16 (-3.21%)" [ref=e1780] [cursor=pointer]:
+                            - /url: /quote/NVDA/
+                            - generic [ref=e1781]:
+                              - generic [ref=e1782]: NVDA
+                              - generic "NVIDIA Corporation" [ref=e1783]
+                              - generic [ref=e1784]: "215.67"
+                              - generic [ref=e1785]:
+                                - generic [ref=e1787]: "-7.16"
+                                - generic [ref=e1788]: (-3.21%)
+                          - button "Follow" [ref=e1789] [cursor=pointer]:
+                            - img [ref=e1791]
+                      - listitem [ref=e1793]:
+                        - generic [ref=e1794]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.35 +5.49 (+21.22%)" [ref=e1795] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1796]:
+                              - generic [ref=e1797]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1798]
+                              - generic [ref=e1799]: "31.35"
+                              - generic [ref=e1800]:
+                                - generic [ref=e1802]: "+5.49"
+                                - generic [ref=e1803]: (+21.22%)
+                          - button "Follow" [ref=e1804] [cursor=pointer]:
+                            - img [ref=e1806]
+                      - listitem [ref=e1808]:
+                        - generic [ref=e1809]:
+                          - link "INTC Intel Corporation 111.41 +3.48 (+3.22%)" [ref=e1810] [cursor=pointer]:
+                            - /url: /quote/INTC/
+                            - generic [ref=e1811]:
+                              - generic [ref=e1812]: INTC
+                              - generic "Intel Corporation" [ref=e1813]
+                              - generic [ref=e1814]: "111.41"
+                              - generic [ref=e1815]:
+                                - generic [ref=e1817]: "+3.48"
+                                - generic [ref=e1818]: (+3.22%)
+                          - button "Follow" [ref=e1819] [cursor=pointer]:
+                            - img [ref=e1821]
+                      - listitem [ref=e1823]:
+                        - generic [ref=e1824]:
+                          - link "MRVL Marvell Technology, Inc. 307.65 +16.86 (+5.80%)" [ref=e1825] [cursor=pointer]:
+                            - /url: /quote/MRVL/
+                            - generic [ref=e1826]:
+                              - generic [ref=e1827]: MRVL
+                              - generic "Marvell Technology, Inc." [ref=e1828]
+                              - generic [ref=e1829]: "307.65"
+                              - generic [ref=e1830]:
+                                - generic [ref=e1832]: "+16.86"
+                                - generic [ref=e1833]: (+5.80%)
+                          - button "Follow" [ref=e1834] [cursor=pointer]:
+                            - img [ref=e1836]
+                - listitem [ref=e1838]:
+                  - generic [ref=e1841]:
+                    - link "Top economic events" [ref=e1845] [cursor=pointer]:
+                      - /url: /calendar/economic
+                      - generic [ref=e1846]: Top economic events
+                    - img "Progress Spinner" [ref=e1848]
+                - listitem [ref=e1875]:
+                  - generic [ref=e1878]:
+                    - generic [ref=e1880]:
+                      - link "Earnings events" [ref=e1882] [cursor=pointer]:
+                        - /url: /calendar/earnings?day=2026-06-04
+                        - generic [ref=e1883]: Earnings events
+                      - group [ref=e1884]:
+                        - generic [ref=e1886]:
+                          - checkbox "My earnings events" [ref=e1887] [cursor=pointer]
+                          - generic [ref=e1888]: My earnings events
+                          - img [ref=e1890]
+                        - generic [ref=e1893]:
+                          - checkbox "Earnings events" [checked] [ref=e1894] [cursor=pointer]
+                          - generic [ref=e1895]: Earnings events
+                          - img [ref=e1897]
+                    - generic [ref=e1899]:
+                      - button "Upcoming" [ref=e1903] [cursor=pointer]:
+                        - generic:
+                          - img
+                        - generic [ref=e1904]: Upcoming
+                      - generic [ref=e1905]:
+                        - generic [ref=e1906]:
+                          - generic [ref=e1907]:
+                            - generic [ref=e1909]: JUN
+                            - generic [ref=e1911]: "04"
+                          - generic [ref=e1913]:
+                            - link "AVGO" [ref=e1915] [cursor=pointer]:
+                              - /url: /quote/AVGO/
+                            - generic [ref=e1916]: Broadcom Inc.
+                            - button "Add to calendar" [ref=e1918] [cursor=pointer]:
+                              - img [ref=e1920]
+                        - generic [ref=e1922]:
+                          - generic [ref=e1923]:
+                            - generic [ref=e1925]: JUN
+                            - generic [ref=e1927]: "05"
+                          - generic [ref=e1929]:
+                            - link "PL" [ref=e1931] [cursor=pointer]:
+                              - /url: /quote/PL/
+                            - generic [ref=e1932]: Planet Labs PBC
+                            - button "Add to calendar" [ref=e1934] [cursor=pointer]:
+                              - img [ref=e1936]
+                        - generic [ref=e1938]:
+                          - generic [ref=e1939]:
+                            - generic [ref=e1941]: JUN
+                            - generic [ref=e1943]: "09"
+                          - generic [ref=e1945]:
+                            - link "UEC" [ref=e1947] [cursor=pointer]:
+                              - /url: /quote/UEC/
+                            - generic [ref=e1948]: Uranium Energy Corp.
+                            - button "Add to calendar" [ref=e1950] [cursor=pointer]:
+                              - img [ref=e1952]
+                        - generic [ref=e1954]:
+                          - generic [ref=e1955]:
+                            - generic [ref=e1957]: JUN
+                            - generic [ref=e1959]: "11"
+                          - generic [ref=e1961]:
+                            - link "ORCL" [ref=e1963] [cursor=pointer]:
+                              - /url: /quote/ORCL/
+                            - generic [ref=e1964]: Oracle Corporation
+                            - button "Add to calendar" [ref=e1966] [cursor=pointer]:
+                              - img [ref=e1968]
+              - button "Edit your Dock" [ref=e1971] [cursor=pointer]:
+                - generic [ref=e1972]: Edit your Dock
+              - iframe [ref=e1977]:
+                - generic [ref=f56e1]:
+                  - link [ref=f56e2] [cursor=pointer]:
+                    - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjssfh31KI6zL7Gxd6dE5egCYyz8WNzIn6YrTnvVsbhkBIOmhdAMEo1q-e0NEmPokF716ZM3T09lK6ESVZFN5kbI1AY55mtieTdNG_e5GUE3zC997nymM6egeWXk6JFbie0cX0CwPwUuXxnamvUav0MclW-X35shgb8iQZSpbSojJBwT4DkzTg242YoD44_PVQOetSo3-wLZLeggGpOYS56D2nft0xof7wmJcXVdZdvhyIPwwWpUuuOmjJOe-978CMMIcppgT7510g1jxwEq9N5Hs_DLD8NqsVKyok_LPO7zWbn80Ie36C8kmAVmGpiGP-KMrCNjKuEWYKckEWfs0Q-xeppKok1R2_a5mMlN5ZgmnJMvfEls_2jbrYWkGDkjuduXkIjoEtiHpRP_kzd4mVG6373MgK0JrNdvdsJMaiikMCi2DYqMa3gQzKQntIKQBLPiAUcOC0_4JSlUxHvbn9bX_&sai=AMfl-YQsMXA7Oo80RGN2k2t5PM0F2RrhCYT6kylWRAiucUur8rJ_Tn93BmO10jyMkvHmDFim20kMPytG_LqSmUapMSWi7nKoW9YlkwWsap5mB4pTNKFES7kN7mmHI3GoTAC_Nph9-dOa4BimbkRc2zIBCDLFHkgB06w2a8FInmYghgvoHV0mfu_BDVImSGrcpaUZg16ehUN77_7WwplaGsvXlkJzlC8538voVDDedE_BjCM9hwSk_oxq54gV1LNVRkTJBypKKgR4nAwRRcHgNjbyFhJpidDK_MdfsQ9mxki3jiV43EPCLoiHqUJZbcClxdwuCT_8XsQCY6HXP-3N4zfX8_S-PCkqxdmXzPzL0nN4S5XMlEmq4WGRbINCejM0MPxx6IrIkzghWq_ZYyFOEuLKii0Uttvbwrv_YRj8TPmngmb8lg4&sig=Cg0ArKJSzEl1wmpitCba&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://overview.mail.yahoo.com/myyahoo
+                  - img [ref=f56e6] [cursor=pointer]
+                  - button [ref=f56e8] [cursor=pointer]:
+                    - img [ref=f56e9]
+              - generic [ref=e1979]:
+                - generic [ref=e1980]:
+                  - link "Terms" [ref=e1981] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/terms?locale=en-US
+                  - text: and
+                  - link "Privacy Policy" [ref=e1982] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/privacy-policy?locale=en-US
+                - link "Privacy Dashboard" [ref=e1984] [cursor=pointer]:
+                  - /url: https://guce.yahoo.com/privacy-dashboard?locale=en-US
+            - iframe [ref=e1985]:
+              
+      - complementary

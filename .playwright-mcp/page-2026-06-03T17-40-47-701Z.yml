@@ -1,0 +1,644 @@
+- generic [ref=e6]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - navigation "SITE_NAVIGATION" [ref=e12]:
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - link "首頁" [ref=e15] [cursor=pointer]:
+              - /url: https://tw.yahoo.com
+              - img [ref=e16]
+              - text: 首頁
+          - listitem [ref=e18]:
+            - link "新聞" [ref=e19] [cursor=pointer]:
+              - /url: https://tw.news.yahoo.com
+              - img [ref=e20]
+              - text: 新聞
+          - listitem [ref=e22]:
+            - link "股市" [ref=e23] [cursor=pointer]:
+              - /url: https://tw.stock.yahoo.com/
+              - img [ref=e24]
+              - text: 股市
+          - listitem [ref=e26]:
+            - link "運動" [ref=e27] [cursor=pointer]:
+              - /url: https://tw.sports.yahoo.com/
+              - img [ref=e28]
+              - text: 運動
+          - listitem [ref=e30]:
+            - link "TV" [ref=e31] [cursor=pointer]:
+              - /url: https://tw.tv.yahoo.com/
+          - listitem [ref=e32]:
+            - link "汽機車" [ref=e33] [cursor=pointer]:
+              - /url: https://autos.yahoo.com.tw/
+          - listitem [ref=e34]:
+            - link "購物中心" [ref=e35] [cursor=pointer]:
+              - /url: https://tw.buy.yahoo.com/
+          - listitem [ref=e36]:
+            - link "拍賣" [ref=e37] [cursor=pointer]:
+              - /url: https://tw.bid.yahoo.com/
+          - listitem [ref=e38]:
+            - link "氣象" [ref=e39] [cursor=pointer]:
+              - /url: https://weather.yahoo.com/zh-hant-tw/
+          - listitem [ref=e40]:
+            - link "App 下載" [ref=e41] [cursor=pointer]:
+              - /url: https://promo.campaign.yahoo.com.tw/yahoo-allapp/
+      - generic [ref=e43]:
+        - heading "Yahoo股市" [level=1] [ref=e44]
+        - link [ref=e45] [cursor=pointer]:
+          - /url: https://tw.stock.yahoo.com
+          - img [ref=e46]
+        - generic [ref=e50]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 搜尋
+            - combobox "搜尋" [ref=e54]
+            - button "清除" [ref=e55]:
+              - img [ref=e56]
+            - button "搜尋" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+          - generic [ref=e61]:
+            - link "登入" [ref=e62] [cursor=pointer]:
+              - /url: https://login.yahoo.com/?.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2449.TW&.src=finance&.intl=tw
+            - link [ref=e63] [cursor=pointer]:
+              - /url: https://mail.yahoo.com/?.intl=tw&.lang=zh-Hant-TW
+              - img [ref=e64]
+      - generic [ref=e66]:
+        - navigation "MAIN_NAVIGATION" [ref=e67]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "首頁" [ref=e72] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/
+                - generic [ref=e73]: 首頁
+            - listitem [ref=e74]:
+              - link "股市VIP" [ref=e75] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/subscription
+                - generic [ref=e76]: 股市VIP
+            - listitem [ref=e77]:
+              - link "自選股" [ref=e78] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/portfolios
+                - generic [ref=e79]: 自選股
+            - listitem [ref=e80]:
+              - link "台股行情" [ref=e81] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/class/
+                - generic [ref=e82]: 台股行情
+            - listitem [ref=e83]:
+              - link "智慧選股" [ref=e84] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/screener/
+                - generic [ref=e85]: 智慧選股
+            - listitem [ref=e86]:
+              - link "期權" [ref=e87] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/future/
+                - generic [ref=e88]: 期權
+            - listitem [ref=e89]:
+              - link "國際金融" [ref=e90] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/markets/
+                - generic [ref=e91]: 國際金融
+            - listitem [ref=e92]:
+              - link "新聞" [ref=e93] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/news/
+                - generic [ref=e94]: 新聞
+            - listitem [ref=e95]:
+              - link "房地產" [ref=e96] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/real-estate/
+                - generic [ref=e97]: 房地產
+            - listitem [ref=e98]:
+              - link "投資新手村" [ref=e99] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic/stock-newbie/
+                - generic [ref=e100]: 投資新手村
+            - listitem [ref=e101]:
+              - link "專輯" [ref=e102] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic
+                - generic [ref=e103]: 專輯
+            - listitem [ref=e104]:
+              - link "基金" [ref=e105] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/fund/
+                - generic [ref=e106]: 基金
+            - listitem [ref=e107]:
+              - link "銀行服務" [ref=e108] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/bank/
+                - generic [ref=e109]: 銀行服務
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e114]:
+              - img [ref=e115]
+              - textbox "搜尋台股美股代號/名稱" [ref=e118]
+            - link "台股類股查詢" [ref=e119] [cursor=pointer]:
+              - /url: /class/
+              - img [ref=e120]
+              - generic [ref=e122]: 台股類股查詢
+            - generic [ref=e123]:
+              - text: 距離美股收盤還有02小時19分鐘
+              - button "更新" [ref=e124] [cursor=pointer]
+          - generic [ref=e125]:
+            - img [ref=e127]
+            - link "升級VIP" [ref=e132] [cursor=pointer]:
+              - /url: /subscription
+  - generic [ref=e139]:
+    - generic [ref=e141]:
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "京元電子" [level=1] [ref=e145]
+          - generic [ref=e146]: "2449"
+          - link "半導體" [ref=e149] [cursor=pointer]:
+            - /url: /class-quote?sectorId=40&exchange=TAI
+          - button "比較" [ref=e150] [cursor=pointer]:
+            - img [ref=e151]
+            - text: 比較
+          - button "加入自選股" [ref=e154] [cursor=pointer]:
+            - img [ref=e156]
+            - generic [ref=e158]: 加入自選股
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: "322.5"
+              - generic [ref=e163]: "16.00"
+              - generic [ref=e165]: (5.22%)
+            - generic [ref=e166]: 收盤 | 2026/06/03 13:30 更新
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: 44,913
+              - generic [ref=e170]: 成交量
+            - generic [ref=e171]:
+              - generic [ref=e172]: 41.59 (69.66)
+              - generic [ref=e173]: 本益比 (同業平均)
+            - generic [ref=e174]:
+              - generic [ref=e176]:
+                - text: 連2跌→漲 (
+                - generic [ref=e177]: 5.22%
+                - text: )
+              - generic [ref=e179]: 連漲連跌
+      - navigation [ref=e181]:
+        - generic [ref=e183]:
+          - link "走勢圖" [ref=e185]:
+            - /url: /quote/2449.TW
+            - generic [ref=e188]: 走勢圖
+          - link "技術分析" [ref=e190] [cursor=pointer]:
+            - /url: /quote/2449.TW/technical-analysis
+            - generic [ref=e193]: 技術分析
+          - link "成交彙整" [ref=e195] [cursor=pointer]:
+            - /url: /quote/2449.TW/time-sales
+            - generic [ref=e198]: 成交彙整
+          - generic [ref=e201]:
+            - link "籌碼" [ref=e203] [cursor=pointer]:
+              - /url: /quote/2449.TW/institutional-trading
+              - generic [ref=e204]: 籌碼
+            - list:
+              - listitem:
+                - link "法人買賣":
+                  - /url: /quote/2449.TW/institutional-trading
+              - listitem:
+                - link "主力進出":
+                  - /url: /quote/2449.TW/broker-trading
+              - listitem:
+                - link "資券變化":
+                  - /url: /quote/2449.TW/margin
+              - listitem:
+                - link "大戶籌碼":
+                  - /url: /quote/2449.TW/major-holders
+              - listitem:
+                - link "申報轉讓":
+                  - /url: /quote/2449.TW/insider-transactions
+          - link "估價" [ref=e207] [cursor=pointer]:
+            - /url: /quote/2449.TW/price-valuations
+            - generic [ref=e209]:
+              - generic [ref=e210]: 估價
+              - img [ref=e213]
+          - link "多空" [ref=e219] [cursor=pointer]:
+            - /url: /quote/2449.TW/bullbear
+            - generic [ref=e222]: 多空
+          - generic [ref=e224]:
+            - link "河流圖" [ref=e226] [cursor=pointer]:
+              - /url: /quote/2449.TW/streamgraph
+              - generic [ref=e227]: 河流圖
+            - list:
+              - listitem:
+                - link "本益比河流圖":
+                  - /url: /quote/2449.TW/streamgraph
+              - listitem:
+                - link "股價淨值比河流圖":
+                  - /url: /quote/2449.TW/pbr-streamgraph
+          - link "股利" [ref=e229] [cursor=pointer]:
+            - /url: /quote/2449.TW/dividend
+            - generic [ref=e232]: 股利
+          - generic [ref=e235]:
+            - link "財務" [ref=e237] [cursor=pointer]:
+              - /url: /quote/2449.TW/revenue
+              - generic [ref=e238]: 財務
+            - list:
+              - listitem:
+                - link "營收表":
+                  - /url: /quote/2449.TW/revenue
+              - listitem:
+                - link "每股盈餘":
+                  - /url: /quote/2449.TW/eps
+              - listitem:
+                - link "損益表":
+                  - /url: /quote/2449.TW/income-statement
+              - listitem:
+                - link "資產負債表":
+                  - /url: /quote/2449.TW/balance-sheet
+              - listitem:
+                - link "現金流量表":
+                  - /url: /quote/2449.TW/cash-flow-statement
+          - link "健診" [ref=e241] [cursor=pointer]:
+            - /url: /quote/2449.TW/health-check
+            - generic [ref=e244]: 健診
+          - link "基本" [ref=e246] [cursor=pointer]:
+            - /url: /quote/2449.TW/profile
+            - generic [ref=e249]: 基本
+          - generic [ref=e253]:
+            - generic [ref=e256] [cursor=pointer]: 更多...
+            - list:
+              - listitem:
+                - link "同業比較":
+                  - /url: /quote/2449.TW/compare
+                  - text: 同業比較
+              - listitem:
+                - link "行事曆":
+                  - /url: /quote/2449.TW/calendar
+              - listitem:
+                - link "新聞":
+                  - /url: /quote/2449.TW/news
+                  - text: 新聞
+              - listitem:
+                - link "使用說明":
+                  - /url: https://tw.help.yahoo.com/kb/stock-tw-web?#topic=TOP_INSTRUCTSTOCK
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - heading "京元電子即時行情" [level=2] [ref=e261]
+            - time [ref=e263]:
+              - generic [ref=e264]: 資料時間：
+              - text: 2026/06/03 13:30
+          - generic [ref=e265]:
+            - paragraph [ref=e273]: 註：成交金額不含盤後定價、零股、鉅額、拍賣及標購
+            - generic [ref=e275]:
+              - list [ref=e276]:
+                - listitem [ref=e277]:
+                  - generic [ref=e278]: 成交
+                  - generic [ref=e279]: "322.5"
+                - listitem [ref=e280]:
+                  - generic [ref=e281]: 開盤
+                  - generic [ref=e282]: "309.5"
+                - listitem [ref=e283]:
+                  - generic [ref=e284]: 最高
+                  - generic [ref=e285]: "328.0"
+                - listitem [ref=e286]:
+                  - generic [ref=e287]: 最低
+                  - generic [ref=e288]: "309.0"
+                - listitem [ref=e289]:
+                  - generic [ref=e290]: 均價
+                  - generic [ref=e291]: "321.4"
+                - listitem [ref=e292]:
+                  - generic [ref=e293]: 成交金額(億)
+                  - generic [ref=e294]: "144.38"
+                - listitem [ref=e295]:
+                  - generic [ref=e296]: 昨收
+                  - generic [ref=e297]: "306.5"
+                - listitem [ref=e298]:
+                  - generic [ref=e299]: 漲跌幅
+                  - generic [ref=e300]: 5.22%
+                - listitem [ref=e302]:
+                  - generic [ref=e303]: 漲跌
+                  - generic [ref=e304]: "16.00"
+                - listitem [ref=e306]:
+                  - generic [ref=e307]: 總量
+                  - generic [ref=e308]: 44,913
+                - listitem [ref=e309]:
+                  - generic [ref=e310]: 昨量
+                  - generic [ref=e311]: 46,832
+                - listitem [ref=e312]:
+                  - generic [ref=e313]: 振幅
+                  - generic [ref=e314]: 6.20%
+              - generic [ref=e316]:
+                - generic [ref=e317]:
+                  - text: 內盤
+                  - generic [ref=e318]:
+                    - text: 17,711
+                    - generic [ref=e319]: (39.81%)
+                - generic [ref=e320]:
+                  - generic [ref=e321]:
+                    - text: 26,781
+                    - generic [ref=e322]: (60.19%)
+                  - text: 外盤
+              - generic [ref=e327]:
+                - generic [ref=e328]:
+                  - generic [ref=e329]:
+                    - generic [ref=e330]: 量
+                    - generic [ref=e331]: 委買價
+                  - generic [ref=e332]:
+                    - generic [ref=e333]:
+                      - generic [ref=e334]: "42"
+                      - generic [ref=e336]: "134"
+                      - generic [ref=e338]: "109"
+                      - generic [ref=e340]: "285"
+                      - generic [ref=e342]: "182"
+                    - generic [ref=e344]:
+                      - generic [ref=e346]: "322.0"
+                      - generic [ref=e348]: "321.5"
+                      - generic [ref=e350]: "321.0"
+                      - generic [ref=e352]: "320.5"
+                      - generic [ref=e354]: "320.0"
+                  - generic [ref=e355]:
+                    - text: "752"
+                    - generic [ref=e356]: 小計
+                - generic [ref=e357]:
+                  - generic [ref=e358]:
+                    - generic [ref=e359]: 委賣價
+                    - generic [ref=e360]: 量
+                  - generic [ref=e361]:
+                    - generic [ref=e362]:
+                      - generic [ref=e364]: "322.5"
+                      - generic [ref=e366]: "323.0"
+                      - generic [ref=e368]: "323.5"
+                      - generic [ref=e370]: "324.0"
+                      - generic [ref=e372]: "324.5"
+                    - generic [ref=e373]:
+                      - generic [ref=e374]: "135"
+                      - generic [ref=e376]: "156"
+                      - generic [ref=e378]: "192"
+                      - generic [ref=e380]: "406"
+                      - generic [ref=e382]: "320"
+                  - generic [ref=e384]:
+                    - generic [ref=e385]: 小計
+                    - text: 1,209
+        - generic [ref=e386]:
+          - generic [ref=e387]:
+            - heading "含有 京元電子 的 ETF" [level=2] [ref=e389]
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - generic [ref=e392]: 股名/號
+                - generic [ref=e393]: 持股比例
+              - generic [ref=e394]:
+                - generic [ref=e395]:
+                  - link "統一台灣高息動能" [ref=e396] [cursor=pointer]:
+                    - /url: /quote/00939.TW/holding
+                  - generic [ref=e397]: "00939"
+                - generic [ref=e398]: 6.81%
+              - generic [ref=e401]:
+                - generic [ref=e402]:
+                  - link "中信關鍵半導體" [ref=e403] [cursor=pointer]:
+                    - /url: /quote/00891.TW/holding
+                  - generic [ref=e404]: "00891"
+                - generic [ref=e405]: 2.39%
+            - link "看更多相關ETF" [ref=e410] [cursor=pointer]:
+              - /url: /quote/2449.TW/etf
+              - generic [ref=e411]: 看更多相關ETF
+              - img [ref=e413]
+          - generic [ref=e415]:
+            - heading "相關權證" [level=2] [ref=e417]
+            - generic [ref=e418]:
+              - link "京元電凱基5A售05" [ref=e419] [cursor=pointer]:
+                - /url: /quote/03095T.TW
+              - link "京元電中信58購01" [ref=e420] [cursor=pointer]:
+                - /url: /quote/032154.TW
+              - link "京元電台新5B售04" [ref=e421] [cursor=pointer]:
+                - /url: /quote/03219T.TW
+              - link "京元電凱基56購01" [ref=e422] [cursor=pointer]:
+                - /url: /quote/032394.TW
+              - link "京元電中信58購02" [ref=e423] [cursor=pointer]:
+                - /url: /quote/033601.TW
+              - link "京元電統一58購01" [ref=e424] [cursor=pointer]:
+                - /url: /quote/033647.TW
+              - link "京元電統一64購01" [ref=e425] [cursor=pointer]:
+                - /url: /quote/033648.TW
+              - link "京元電群益56購01" [ref=e426] [cursor=pointer]:
+                - /url: /quote/034044.TW
+              - link "京元電元大58購01" [ref=e427] [cursor=pointer]:
+                - /url: /quote/034241.TW
+              - link "京元電中信63售03" [ref=e428] [cursor=pointer]:
+                - /url: /quote/03424T.TW
+              - link "京元電凱基57購01" [ref=e429] [cursor=pointer]:
+                - /url: /quote/034685.TW
+              - link "京元電凱基57購02" [ref=e430] [cursor=pointer]:
+                - /url: /quote/034686.TW
+            - link "看更多相關權證" [ref=e433] [cursor=pointer]:
+              - /url: /quote/2449.TW/warrant
+              - generic [ref=e434]: 看更多相關權證
+              - img [ref=e436]
+        - generic [ref=e439]:
+          - paragraph [ref=e441]: 京元電子 個股留言板
+          - generic "個留言" [ref=e442]:
+            - generic [ref=e444]:
+              - button "檢視留言（1,280 個）" [ref=e447] [cursor=pointer]:
+                - img [ref=e448]
+                - text: 檢視留言（1,280 個）
+              - link "登入後即可張貼留言。" [ref=e450] [cursor=pointer]:
+                - /url: https://login.yahoo.com/?.intl=tw&.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2449.TW%3Fbcmt%3D1&.src=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2449.TW
+                - generic [ref=e451]: 登入後即可張貼留言。
+    - generic [ref=e455]:
+      - generic [ref=e462]:
+        - link "我的自選股" [ref=e464] [cursor=pointer]:
+          - /url: /portfolios
+          - generic [ref=e465]: 我的自選股
+        - generic [ref=e466]:
+          - generic [ref=e467]: 立即登入瀏覽你的投資組合。
+          - link "登入" [ref=e468] [cursor=pointer]:
+            - /url: /portfolios
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - generic [ref=e473]: 網友也在看
+          - button "加入自選" [ref=e474] [cursor=pointer]:
+            - img [ref=e476]
+            - generic [ref=e478]: 加入自選
+        - generic [ref=e479]:
+          - generic [ref=e481]:
+            - generic [ref=e482]: 股名/股號
+            - generic [ref=e483]: 股價
+            - generic [ref=e484]: 漲跌(%)
+            - generic [ref=e485]: 成交量(張)
+          - list [ref=e489]:
+            - listitem [ref=e490]:
+              - generic [ref=e491]:
+                - generic [ref=e493]:
+                  - link [ref=e494] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/3711.TW
+                  - generic [ref=e496]: 日月光投控
+                  - generic [ref=e498]: 3711.TW
+                - generic [ref=e500]: "618.00"
+                - generic [ref=e502]:
+                  - generic [ref=e503]: "28.00"
+                  - generic [ref=e505]: 4.75%
+                - generic [ref=e507]: 27,407
+            - listitem [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e511]:
+                  - link [ref=e512] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/6239.TW
+                  - generic [ref=e514]: 力成
+                  - generic [ref=e516]: 6239.TW
+                - generic [ref=e518]: "343.00"
+                - generic [ref=e520]:
+                  - generic [ref=e521]: "4.00"
+                  - generic [ref=e523]: 1.15%
+                - generic [ref=e525]: 14,917
+            - listitem [ref=e526]:
+              - generic [ref=e527]:
+                - generic [ref=e529]:
+                  - link [ref=e530] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2317.TW
+                  - generic [ref=e532]: 鴻海
+                  - generic [ref=e534]: 2317.TW
+                - generic [ref=e536]: "309.00"
+                - generic [ref=e538]:
+                  - generic [ref=e539]: "7.50"
+                  - generic [ref=e541]: 2.49%
+                - generic [ref=e543]: 146,108
+            - listitem [ref=e544]:
+              - generic [ref=e545]:
+                - generic [ref=e547]:
+                  - link [ref=e548] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2303.TW
+                  - generic [ref=e550]: 聯電
+                  - generic [ref=e552]: 2303.TW
+                - generic [ref=e554]: "130.50"
+                - generic [ref=e556]:
+                  - generic [ref=e557]: "11.00"
+                  - generic [ref=e559]: 7.77%
+                - generic [ref=e561]: 371,863
+            - listitem [ref=e562]:
+              - generic [ref=e563]:
+                - generic [ref=e565]:
+                  - link [ref=e566] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2301.TW
+                  - generic [ref=e568]: 光寶科
+                  - generic [ref=e570]: 2301.TW
+                - generic [ref=e571]: "250.00"
+                - generic [ref=e573]:
+                  - generic [ref=e574]: "22.50"
+                  - generic [ref=e576]: 9.89%
+                - generic [ref=e578]: 47,344
+      - generic [ref=e581]:
+        - generic [ref=e584]: 半導體產業漲跌排行
+        - generic [ref=e585]:
+          - generic [ref=e587]:
+            - generic [ref=e588]: 股名/股號
+            - generic [ref=e589]: 股價
+            - generic [ref=e590]: 漲跌(%)
+            - generic [ref=e591]: 成交量(張)
+          - list [ref=e595]:
+            - listitem [ref=e596]:
+              - generic [ref=e597]:
+                - link "茂矽 2342.TW" [ref=e599] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2342.TW
+                  - generic [ref=e600]: 茂矽
+                  - generic [ref=e601]: 2342.TW
+                - generic [ref=e602]: "44.65"
+                - generic [ref=e604]:
+                  - generic [ref=e605]: "4.05"
+                  - generic [ref=e607]: 9.98%
+                - generic [ref=e608]: 15,753
+            - listitem [ref=e609]:
+              - generic [ref=e610]:
+                - link "訊芯-KY 6451.TW" [ref=e612] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6451.TW
+                  - generic [ref=e613]: 訊芯-KY
+                  - generic [ref=e614]: 6451.TW
+                - generic [ref=e615]: "724.00"
+                - generic [ref=e617]:
+                  - generic [ref=e618]: "65.00"
+                  - generic [ref=e620]: 9.86%
+                - generic [ref=e621]: 3,342
+            - listitem [ref=e622]:
+              - generic [ref=e623]:
+                - link "強茂 2481.TW" [ref=e625] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2481.TW
+                  - generic [ref=e626]: 強茂
+                  - generic [ref=e627]: 2481.TW
+                - generic [ref=e629]: "159.00"
+                - generic [ref=e631]:
+                  - generic [ref=e632]: "13.00"
+                  - generic [ref=e634]: 8.90%
+                - generic [ref=e635]: 33,370
+            - listitem [ref=e636]:
+              - generic [ref=e637]:
+                - link "矽格 6257.TW" [ref=e639] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6257.TW
+                  - generic [ref=e640]: 矽格
+                  - generic [ref=e641]: 6257.TW
+                - generic [ref=e643]: "230.00"
+                - generic [ref=e645]:
+                  - generic [ref=e646]: "15.00"
+                  - generic [ref=e648]: 6.98%
+                - generic [ref=e649]: 14,785
+            - listitem [ref=e650]:
+              - generic [ref=e651]:
+                - link "京元電子 2449.TW" [ref=e653] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2449.TW
+                  - generic [ref=e654]: 京元電子
+                  - generic [ref=e655]: 2449.TW
+                - generic [ref=e657]: "322.50"
+                - generic [ref=e659]:
+                  - generic [ref=e660]: "16.00"
+                  - generic [ref=e662]: 5.22%
+                - generic [ref=e663]: 44,913
+      - generic [ref=e666]:
+        - generic [ref=e669]: 相關概念股
+        - generic [ref=e670]:
+          - generic [ref=e672]:
+            - generic [ref=e673]: 概念股
+            - generic [ref=e674]: 當日平均漲跌%
+            - generic [ref=e675]: 近1月平均漲跌%
+          - list [ref=e679]:
+            - listitem [ref=e680]:
+              - generic [ref=e681]:
+                - link "華為" [ref=e683] [cursor=pointer]:
+                  - /url: /class-quote?category=%E8%8F%AF%E7%82%BA&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e685]: 2.09%
+                - generic [ref=e688]: 19.02%
+            - listitem [ref=e690]:
+              - generic [ref=e691]:
+                - link "AI人工智慧" [ref=e693] [cursor=pointer]:
+                  - /url: /class-quote?category=AI%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e695]: 1.45%
+                - generic [ref=e698]: 17.18%
+            - listitem [ref=e700]:
+              - generic [ref=e701]:
+                - link "汽車電子" [ref=e703] [cursor=pointer]:
+                  - /url: /class-quote?category=%E6%B1%BD%E8%BB%8A%E9%9B%BB%E5%AD%90&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e705]: 1.02%
+                - generic [ref=e708]: 23.65%
+            - listitem [ref=e710]:
+              - generic [ref=e711]:
+                - link "聯發科" [ref=e713] [cursor=pointer]:
+                  - /url: /class-quote?category=%E8%81%AF%E7%99%BC%E7%A7%91&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e715]: 0.97%
+                - generic [ref=e718]: 16.35%
+            - listitem [ref=e720]:
+              - generic [ref=e721]:
+                - link "行動支付" [ref=e723] [cursor=pointer]:
+                  - /url: /class-quote?category=%E8%A1%8C%E5%8B%95%E6%94%AF%E4%BB%98&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e725]: 0.43%
+                - generic [ref=e728]: 12.44%
+      - generic [ref=e731]:
+        - generic [ref=e732]:
+          - text: Yahoo Finance
+          - generic [ref=e733]:
+            - link "服務條款" [ref=e734] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/terms?locale=zh-Hant-TW
+            - text: 和
+            - link "隱私權保護政策" [ref=e735] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/privacy-policy?locale=zh-Hant-TW
+          - link "隱私權儀表板" [ref=e736] [cursor=pointer]:
+            - /url: https://guce.yahoo.com/privacy-dashboard?locale=zh-Hant-TW
+        - generic [ref=e737]:
+          - generic [ref=e738]:
+            - text: 台股資料來源
+            - link "臺灣證券交易所" [ref=e739] [cursor=pointer]:
+              - /url: http://www.twse.com.tw/zh/
+            - text: 、
+            - link "臺灣期貨交易所" [ref=e740] [cursor=pointer]:
+              - /url: http://www.taifex.com.tw
+            - text: 及
+            - link "財團法人中華民國證券櫃檯買賣中心" [ref=e741] [cursor=pointer]:
+              - /url: http://www.tpex.org.tw/web/
+            - text: ，國際股市資料來源請參考
+            - link "Yahoo Finance" [ref=e742] [cursor=pointer]:
+              - /url: https://help.yahoo.com/kb/finance-for-desktop/SLN2310.html
+            - text: 。使用Yahoo股市服務前，請您詳閱相關
+            - link "使用規範與聲明" [ref=e743] [cursor=pointer]:
+              - /url: https://tw.help.yahoo.com/kb/stock-tw-web/SLN28774.html?impressions=true
+            - text: 。
+          - generic [ref=e744]:
+            - text: 台股行情、個股基本資料及財務資訊為
+            - link "精誠資訊" [ref=e745] [cursor=pointer]:
+              - /url: https://tw.systex.com/
+            - text: 提供。

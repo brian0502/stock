@@ -1,0 +1,1099 @@
+- generic [ref=e6]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - navigation "SITE_NAVIGATION" [ref=e12]:
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - link "首頁" [ref=e15] [cursor=pointer]:
+              - /url: https://tw.yahoo.com
+              - img [ref=e16]
+              - text: 首頁
+          - listitem [ref=e18]:
+            - link "新聞" [ref=e19] [cursor=pointer]:
+              - /url: https://tw.news.yahoo.com
+              - img [ref=e20]
+              - text: 新聞
+          - listitem [ref=e22]:
+            - link "股市" [ref=e23] [cursor=pointer]:
+              - /url: https://tw.stock.yahoo.com/
+              - img [ref=e24]
+              - text: 股市
+          - listitem [ref=e26]:
+            - link "運動" [ref=e27] [cursor=pointer]:
+              - /url: https://tw.sports.yahoo.com/
+              - img [ref=e28]
+              - text: 運動
+          - listitem [ref=e30]:
+            - link "TV" [ref=e31] [cursor=pointer]:
+              - /url: https://tw.tv.yahoo.com/
+          - listitem [ref=e32]:
+            - link "汽機車" [ref=e33] [cursor=pointer]:
+              - /url: https://autos.yahoo.com.tw/
+          - listitem [ref=e34]:
+            - link "購物中心" [ref=e35] [cursor=pointer]:
+              - /url: https://tw.buy.yahoo.com/
+          - listitem [ref=e36]:
+            - link "拍賣" [ref=e37] [cursor=pointer]:
+              - /url: https://tw.bid.yahoo.com/
+          - listitem [ref=e38]:
+            - link "氣象" [ref=e39] [cursor=pointer]:
+              - /url: https://weather.yahoo.com/zh-hant-tw/
+          - listitem [ref=e40]:
+            - link "App 下載" [ref=e41] [cursor=pointer]:
+              - /url: https://promo.campaign.yahoo.com.tw/yahoo-allapp/
+      - generic [ref=e43]:
+        - heading "Yahoo股市" [level=1] [ref=e44]
+        - link [ref=e45] [cursor=pointer]:
+          - /url: https://tw.stock.yahoo.com
+          - img [ref=e46]
+        - generic [ref=e50]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 搜尋
+            - combobox "搜尋" [ref=e54]
+            - button "清除" [ref=e55]:
+              - img [ref=e56]
+            - button "搜尋" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+          - generic [ref=e61]:
+            - link "登入" [ref=e62] [cursor=pointer]:
+              - /url: https://login.yahoo.com/?.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2454.TW&.src=finance&.intl=tw
+            - link [ref=e63] [cursor=pointer]:
+              - /url: https://mail.yahoo.com/?.intl=tw&.lang=zh-Hant-TW
+              - img [ref=e64]
+      - generic [ref=e66]:
+        - navigation "MAIN_NAVIGATION" [ref=e67]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "首頁" [ref=e72] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/
+                - generic [ref=e73]: 首頁
+            - listitem [ref=e74]:
+              - link "股市VIP" [ref=e75] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/subscription
+                - generic [ref=e76]: 股市VIP
+            - listitem [ref=e77]:
+              - link "自選股" [ref=e78] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/portfolios
+                - generic [ref=e79]: 自選股
+            - listitem [ref=e80]:
+              - link "台股行情" [ref=e81] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/class/
+                - generic [ref=e82]: 台股行情
+            - listitem [ref=e83]:
+              - link "智慧選股" [ref=e84] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/screener/
+                - generic [ref=e85]: 智慧選股
+            - listitem [ref=e86]:
+              - link "期權" [ref=e87] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/future/
+                - generic [ref=e88]: 期權
+            - listitem [ref=e89]:
+              - link "國際金融" [ref=e90] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/markets/
+                - generic [ref=e91]: 國際金融
+            - listitem [ref=e92]:
+              - link "新聞" [ref=e93] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/news/
+                - generic [ref=e94]: 新聞
+            - listitem [ref=e95]:
+              - link "房地產" [ref=e96] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/real-estate/
+                - generic [ref=e97]: 房地產
+            - listitem [ref=e98]:
+              - link "投資新手村" [ref=e99] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic/stock-newbie/
+                - generic [ref=e100]: 投資新手村
+            - listitem [ref=e101]:
+              - link "專輯" [ref=e102] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic
+                - generic [ref=e103]: 專輯
+            - listitem [ref=e104]:
+              - link "基金" [ref=e105] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/fund/
+                - generic [ref=e106]: 基金
+            - listitem [ref=e107]:
+              - link "銀行服務" [ref=e108] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/bank/
+                - generic [ref=e109]: 銀行服務
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e114]:
+              - img [ref=e115]
+              - textbox "搜尋台股美股代號/名稱" [ref=e118]
+            - link "台股類股查詢" [ref=e119] [cursor=pointer]:
+              - /url: /class/
+              - img [ref=e120]
+              - generic [ref=e122]: 台股類股查詢
+            - generic [ref=e123]:
+              - text: 距離美股收盤還有02小時19分鐘
+              - button "更新" [ref=e124] [cursor=pointer]
+          - generic [ref=e125]:
+            - img [ref=e127]
+            - link "升級VIP" [ref=e132] [cursor=pointer]:
+              - /url: /subscription
+  - generic [ref=e142]:
+    - generic [ref=e144]:
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - heading "聯發科" [level=1] [ref=e148]
+          - generic [ref=e149]: "2454"
+          - generic [ref=e151]:
+            - link "半導體" [ref=e152] [cursor=pointer]:
+              - /url: /class-quote?sectorId=40&exchange=TAI
+            - link "最多人瀏覽：第 11 名" [ref=e153] [cursor=pointer]:
+              - /url: /community/rank/active?category=TAI_TWO
+              - text: 最多人瀏覽：第
+              - generic [ref=e154]: "11"
+              - text: 名
+            - link "最多加自選：第 20 名" [ref=e155] [cursor=pointer]:
+              - /url: /community/rank/portfolio
+              - text: 最多加自選：第
+              - generic [ref=e156]: "20"
+              - text: 名
+            - link "熱門搜尋：第 9 名" [ref=e157] [cursor=pointer]:
+              - /url: /community/rank/search
+              - text: 熱門搜尋：第
+              - generic [ref=e158]: "9"
+              - text: 名
+          - button "比較" [ref=e159] [cursor=pointer]:
+            - img [ref=e160]
+            - text: 比較
+          - button "加入自選股" [ref=e163] [cursor=pointer]:
+            - img [ref=e165]
+            - generic [ref=e167]: 加入自選股
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic [ref=e171]: 4,545
+              - generic [ref=e172]: "20.00"
+              - generic [ref=e174]: (0.44%)
+            - generic [ref=e175]: 收盤 | 2026/06/03 13:30 更新
+          - generic [ref=e176]:
+            - generic [ref=e177]:
+              - generic [ref=e178]: 9,458
+              - generic [ref=e179]: 成交量
+            - generic [ref=e180]:
+              - generic [ref=e181]: 72.11 (69.66)
+              - generic [ref=e182]: 本益比 (同業平均)
+            - generic [ref=e183]:
+              - generic [ref=e185]:
+                - text: 跌→漲 (
+                - generic [ref=e186]: 0.44%
+                - text: )
+              - generic [ref=e188]: 連漲連跌
+      - navigation [ref=e190]:
+        - generic [ref=e192]:
+          - link "走勢圖" [ref=e194]:
+            - /url: /quote/2454.TW
+            - generic [ref=e197]: 走勢圖
+          - link "技術分析" [ref=e199] [cursor=pointer]:
+            - /url: /quote/2454.TW/technical-analysis
+            - generic [ref=e202]: 技術分析
+          - link "成交彙整" [ref=e204] [cursor=pointer]:
+            - /url: /quote/2454.TW/time-sales
+            - generic [ref=e207]: 成交彙整
+          - generic [ref=e210]:
+            - link "籌碼" [ref=e212] [cursor=pointer]:
+              - /url: /quote/2454.TW/institutional-trading
+              - generic [ref=e213]: 籌碼
+            - list:
+              - listitem:
+                - link "法人買賣":
+                  - /url: /quote/2454.TW/institutional-trading
+              - listitem:
+                - link "主力進出":
+                  - /url: /quote/2454.TW/broker-trading
+              - listitem:
+                - link "資券變化":
+                  - /url: /quote/2454.TW/margin
+              - listitem:
+                - link "大戶籌碼":
+                  - /url: /quote/2454.TW/major-holders
+              - listitem:
+                - link "申報轉讓":
+                  - /url: /quote/2454.TW/insider-transactions
+          - link "估價" [ref=e216] [cursor=pointer]:
+            - /url: /quote/2454.TW/price-valuations
+            - generic [ref=e218]:
+              - generic [ref=e219]: 估價
+              - img [ref=e222]
+          - link "多空" [ref=e228] [cursor=pointer]:
+            - /url: /quote/2454.TW/bullbear
+            - generic [ref=e231]: 多空
+          - generic [ref=e233]:
+            - link "河流圖" [ref=e235] [cursor=pointer]:
+              - /url: /quote/2454.TW/streamgraph
+              - generic [ref=e236]: 河流圖
+            - list:
+              - listitem:
+                - link "本益比河流圖":
+                  - /url: /quote/2454.TW/streamgraph
+              - listitem:
+                - link "股價淨值比河流圖":
+                  - /url: /quote/2454.TW/pbr-streamgraph
+          - link "股利" [ref=e238] [cursor=pointer]:
+            - /url: /quote/2454.TW/dividend
+            - generic [ref=e241]: 股利
+          - generic [ref=e244]:
+            - link "財務" [ref=e246] [cursor=pointer]:
+              - /url: /quote/2454.TW/revenue
+              - generic [ref=e247]: 財務
+            - list:
+              - listitem:
+                - link "營收表":
+                  - /url: /quote/2454.TW/revenue
+              - listitem:
+                - link "每股盈餘":
+                  - /url: /quote/2454.TW/eps
+              - listitem:
+                - link "損益表":
+                  - /url: /quote/2454.TW/income-statement
+              - listitem:
+                - link "資產負債表":
+                  - /url: /quote/2454.TW/balance-sheet
+              - listitem:
+                - link "現金流量表":
+                  - /url: /quote/2454.TW/cash-flow-statement
+          - link "健診" [ref=e250] [cursor=pointer]:
+            - /url: /quote/2454.TW/health-check
+            - generic [ref=e253]: 健診
+          - link "基本" [ref=e255] [cursor=pointer]:
+            - /url: /quote/2454.TW/profile
+            - generic [ref=e258]: 基本
+          - generic [ref=e262]:
+            - generic [ref=e265] [cursor=pointer]: 更多...
+            - list:
+              - listitem:
+                - link "同業比較":
+                  - /url: /quote/2454.TW/compare
+                  - text: 同業比較
+              - listitem:
+                - link "行事曆":
+                  - /url: /quote/2454.TW/calendar
+              - listitem:
+                - link "新聞":
+                  - /url: /quote/2454.TW/news
+                  - text: 新聞
+              - listitem:
+                - link "使用說明":
+                  - /url: https://tw.help.yahoo.com/kb/stock-tw-web?#topic=TOP_INSTRUCTSTOCK
+      - generic [ref=e267]:
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - heading "聯發科即時行情" [level=2] [ref=e270]
+            - time [ref=e272]:
+              - generic [ref=e273]: 資料時間：
+              - text: 2026/06/03 13:30
+          - generic [ref=e274]:
+            - paragraph [ref=e282]: 註：成交金額不含盤後定價、零股、鉅額、拍賣及標購
+            - generic [ref=e284]:
+              - list [ref=e285]:
+                - listitem [ref=e286]:
+                  - generic [ref=e287]: 成交
+                  - generic [ref=e288]: 4,545
+                - listitem [ref=e289]:
+                  - generic [ref=e290]: 開盤
+                  - generic [ref=e291]: 4,540
+                - listitem [ref=e292]:
+                  - generic [ref=e293]: 最高
+                  - generic [ref=e294]: 4,650
+                - listitem [ref=e295]:
+                  - generic [ref=e296]: 最低
+                  - generic [ref=e297]: 4,420
+                - listitem [ref=e298]:
+                  - generic [ref=e299]: 均價
+                  - generic [ref=e300]: 4,534
+                - listitem [ref=e301]:
+                  - generic [ref=e302]: 成交金額(億)
+                  - generic [ref=e303]: "428.89"
+                - listitem [ref=e304]:
+                  - generic [ref=e305]: 昨收
+                  - generic [ref=e306]: 4,525
+                - listitem [ref=e307]:
+                  - generic [ref=e308]: 漲跌幅
+                  - generic [ref=e309]: 0.44%
+                - listitem [ref=e311]:
+                  - generic [ref=e312]: 漲跌
+                  - generic [ref=e313]: "20.00"
+                - listitem [ref=e315]:
+                  - generic [ref=e316]: 總量
+                  - generic [ref=e317]: 9,458
+                - listitem [ref=e318]:
+                  - generic [ref=e319]: 昨量
+                  - generic [ref=e320]: 14,139
+                - listitem [ref=e321]:
+                  - generic [ref=e322]: 振幅
+                  - generic [ref=e323]: 5.08%
+              - generic [ref=e325]:
+                - generic [ref=e326]:
+                  - text: 內盤
+                  - generic [ref=e327]:
+                    - text: 4,807
+                    - generic [ref=e328]: (52.56%)
+                - generic [ref=e329]:
+                  - generic [ref=e330]:
+                    - text: 4,339
+                    - generic [ref=e331]: (47.44%)
+                  - text: 外盤
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - generic [ref=e338]:
+                    - generic [ref=e339]: 量
+                    - generic [ref=e340]: 委買價
+                  - generic [ref=e341]:
+                    - generic [ref=e342]:
+                      - generic [ref=e343]: "28"
+                      - generic [ref=e345]: "54"
+                      - generic [ref=e347]: "67"
+                      - generic [ref=e349]: "36"
+                      - generic [ref=e351]: "41"
+                    - generic [ref=e353]:
+                      - generic [ref=e355]: 4,545
+                      - generic [ref=e357]: 4,540
+                      - generic [ref=e359]: 4,535
+                      - generic [ref=e361]: 4,530
+                      - generic [ref=e363]: 4,525
+                  - generic [ref=e364]:
+                    - text: "226"
+                    - generic [ref=e365]: 小計
+                - generic [ref=e366]:
+                  - generic [ref=e367]:
+                    - generic [ref=e368]: 委賣價
+                    - generic [ref=e369]: 量
+                  - generic [ref=e370]:
+                    - generic [ref=e371]:
+                      - generic [ref=e373]: 4,550
+                      - generic [ref=e375]: 4,560
+                      - generic [ref=e377]: 4,565
+                      - generic [ref=e379]: 4,570
+                      - generic [ref=e381]: 4,575
+                    - generic [ref=e382]:
+                      - generic [ref=e383]: "1"
+                      - generic [ref=e385]: "8"
+                      - generic [ref=e387]: "9"
+                      - generic [ref=e389]: "16"
+                      - generic [ref=e391]: "16"
+                  - generic [ref=e393]:
+                    - generic [ref=e394]: 小計
+                    - text: "50"
+        - generic [ref=e395]:
+          - generic [ref=e396]:
+            - heading "含有 聯發科 的 ETF" [level=2] [ref=e398]
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - generic [ref=e401]: 股名/號
+                - generic [ref=e402]: 持股比例
+              - generic [ref=e403]:
+                - generic [ref=e404]:
+                  - link "富邦旗艦50" [ref=e405] [cursor=pointer]:
+                    - /url: /quote/009802.TW/holding
+                  - generic [ref=e406]: "009802"
+                - generic [ref=e407]: 19.98%
+              - generic [ref=e410]:
+                - generic [ref=e411]:
+                  - link "群益半導體收益" [ref=e412] [cursor=pointer]:
+                    - /url: /quote/00927.TW/holding
+                  - generic [ref=e413]: "00927"
+                - generic [ref=e414]: 14.40%
+              - generic [ref=e417]:
+                - generic [ref=e418]:
+                  - link "中信關鍵半導體" [ref=e419] [cursor=pointer]:
+                    - /url: /quote/00891.TW/holding
+                  - generic [ref=e420]: "00891"
+                - generic [ref=e421]: 12.06%
+              - generic [ref=e424]:
+                - generic [ref=e425]:
+                  - link "兆豐藍籌30" [ref=e426] [cursor=pointer]:
+                    - /url: /quote/00690.TW/holding
+                  - generic [ref=e427]: "00690"
+                - generic [ref=e428]: 11.85%
+              - generic [ref=e431]:
+                - generic [ref=e432]:
+                  - link "野村臺灣新科技50" [ref=e433] [cursor=pointer]:
+                    - /url: /quote/00935.TW/holding
+                  - generic [ref=e434]: "00935"
+                - generic [ref=e435]: 11.78%
+            - link "看更多相關ETF" [ref=e440] [cursor=pointer]:
+              - /url: /quote/2454.TW/etf
+              - generic [ref=e441]: 看更多相關ETF
+              - img [ref=e443]
+          - generic [ref=e445]:
+            - heading "相關權證" [level=2] [ref=e447]
+            - generic [ref=e448]:
+              - link "聯發科群益5A售09" [ref=e449] [cursor=pointer]:
+                - /url: /quote/03003T.TW
+              - link "聯發科凱基64售03" [ref=e450] [cursor=pointer]:
+                - /url: /quote/03009T.TW
+              - link "聯發科凱基63售01" [ref=e451] [cursor=pointer]:
+                - /url: /quote/03012T.TW
+              - link "聯發科永豐5A售06" [ref=e452] [cursor=pointer]:
+                - /url: /quote/03041T.TW
+              - link "聯發科群益5A售10" [ref=e453] [cursor=pointer]:
+                - /url: /quote/03071T.TW
+              - link "聯發科群益5A售11" [ref=e454] [cursor=pointer]:
+                - /url: /quote/03072T.TW
+              - link "聯發科群益5A售14" [ref=e455] [cursor=pointer]:
+                - /url: /quote/03082T.TW
+              - link "聯發科凱基5A售14" [ref=e456] [cursor=pointer]:
+                - /url: /quote/03083T.TW
+              - link "聯發科永豐5B售08" [ref=e457] [cursor=pointer]:
+                - /url: /quote/03101T.TW
+              - link "聯發科群益5A售16" [ref=e458] [cursor=pointer]:
+                - /url: /quote/03106T.TW
+              - link "聯發科國票5A售06" [ref=e459] [cursor=pointer]:
+                - /url: /quote/03109T.TW
+              - link "聯發科凱基5B售05" [ref=e460] [cursor=pointer]:
+                - /url: /quote/03122T.TW
+            - link "看更多相關權證" [ref=e463] [cursor=pointer]:
+              - /url: /quote/2454.TW/warrant
+              - generic [ref=e464]: 看更多相關權證
+              - img [ref=e466]
+        - generic [ref=e469]:
+          - paragraph [ref=e471]: 聯發科 個股留言板
+          - generic "個留言" [ref=e472]:
+            - generic [ref=e474]:
+              - button "檢視留言（944 個）" [ref=e477] [cursor=pointer]:
+                - img [ref=e478]
+                - text: 檢視留言（944 個）
+              - link "登入後即可張貼留言。" [ref=e480] [cursor=pointer]:
+                - /url: https://login.yahoo.com/?.intl=tw&.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2454.TW%3Fbcmt%3D1&.src=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2454.TW
+                - generic [ref=e481]: 登入後即可張貼留言。
+        - generic [ref=e485]:
+          - heading "聯發科 相關新聞" [level=2] [ref=e486]
+          - list [ref=e487]:
+            - listitem [ref=e488]:
+              - generic [ref=e490]:
+                - generic [ref=e493]:
+                  - generic [ref=e494]: 鉅亨網•3 小時前
+                  - heading "Computex 2026釋放三大信號：代理式AI崛起、AI PC 晶片大戰與供需仍偏緊" [level=3] [ref=e495]:
+                    - link "Computex 2026釋放三大信號：代理式AI崛起、AI PC 晶片大戰與供需仍偏緊" [ref=e496] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/computex-2026%E9%87%8B%E6%94%BE%E4%B8%89%E5%A4%A7%E4%BF%A1%E8%99%9F-%E4%BB%A3%E7%90%86%E5%BC%8Fai%E5%B4%9B%E8%B5%B7-ai-pc-144742933.html
+                      - text: Computex 2026釋放三大信號：代理式AI崛起、AI PC 晶片大戰與供需仍偏緊
+                  - paragraph [ref=e498]: 隨著 2026 年台北國際電腦展 (Computex 2026) 舉辦，摩根士丹利最新研報揭示了主導未來幾年科技投資邏輯的三大核心信號：代理式 AI(Agentic AI) 的崛起、台積電產能的確定性，以及聯發科與輝達聯手的 AI
+                - generic [ref=e499]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e500] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/computex-2026%E9%87%8B%E6%94%BE%E4%B8%89%E5%A4%A7%E4%BF%A1%E8%99%9F-%E4%BB%A3%E7%90%86%E5%BC%8Fai%E5%B4%9B%E8%B5%B7-ai-pc-144742933.html?bcmt=1
+                    - img [ref=e501]
+                  - button "Social media share article menu" [ref=e505]:
+                    - img [ref=e506] [cursor=pointer]
+            - listitem [ref=e508]:
+              - generic [ref=e517] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.mercedes-benz.com.tw/passengercars/models/suv/gle/overview.html
+                  - img "Image for Taboola Advertising Unit" [ref=e519]
+                - 'link "Mercedes-Benz in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 近期想換休旅車？GLE 關稅優惠方案實施中 入主勁智休旅最佳時機，盡享獨家禮遇！" [ref=e521]':
+                  - /url: https://www.mercedes-benz.com.tw/passengercars/models/suv/gle/overview.html
+                  - generic [ref=e522]:
+                    - generic [ref=e523]:
+                      - link "Mercedes-Benz in Taboola advertising section" [ref=e524]: Mercedes-Benz
+                      - generic [ref=e525]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e527]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-1:"
+                        - text: Ad
+                    - link "近期想換休旅車？GLE 關稅優惠方案實施中" [ref=e528]
+                    - generic [ref=e529]: 入主勁智休旅最佳時機，盡享獨家禮遇！
+            - listitem [ref=e530]:
+              - generic [ref=e532]:
+                - generic [ref=e535]:
+                  - generic [ref=e536]: EBC東森財經新聞•11 小時前
+                  - heading "台股大漲901點 站穩46000關卡 台塑四寶齊揚" [level=3] [ref=e537]:
+                    - link "台股大漲901點 站穩46000關卡 台塑四寶齊揚" [ref=e538] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%A7%E6%BC%B2901%E9%BB%9E-%E7%AB%99%E7%A9%A946000%E9%97%9C%E5%8D%A1-%E5%8F%B0%E5%A1%91%E5%9B%9B%E5%AF%B6%E9%BD%8A%E6%8F%9A-061900866.html
+                      - text: 台股大漲901點 站穩46000關卡 台塑四寶齊揚
+                  - paragraph [ref=e540]: 台股今（3）日開高走高，終場大漲901點，收46459.16點創新高，漲幅1.98%，成交量來到1.4兆元。
+                - generic [ref=e541]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e542] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%A7%E6%BC%B2901%E9%BB%9E-%E7%AB%99%E7%A9%A946000%E9%97%9C%E5%8D%A1-%E5%8F%B0%E5%A1%91%E5%9B%9B%E5%AF%B6%E9%BD%8A%E6%8F%9A-061900866.html?bcmt=1
+                    - img [ref=e543]
+                  - button "Social media share article menu" [ref=e547]:
+                    - img [ref=e548] [cursor=pointer]
+            - listitem [ref=e550]:
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - generic [ref=e554]: 中時財經即時•12 小時前
+                  - heading "2大金融股罕見漲停！台股收漲901點再寫新猷 台積電2425元" [level=3] [ref=e555]:
+                    - link "2大金融股罕見漲停！台股收漲901點再寫新猷 台積電2425元" [ref=e556] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/2%E5%A4%A7%E9%87%91%E8%9E%8D%E8%82%A1%E7%BD%95%E8%A6%8B%E6%BC%B2%E5%81%9C-%E5%8F%B0%E8%82%A1%E6%94%B6%E6%BC%B2901%E9%BB%9E%E5%86%8D%E5%AF%AB%E6%96%B0%E7%8C%B7-%E5%8F%B0%E7%A9%8D%E9%9B%BB2425%E5%85%83-054251273.html
+                      - text: 2大金融股罕見漲停！台股收漲901點再寫新猷 台積電2425元
+                  - paragraph [ref=e558]: 台股今（3日）多頭行情續燒，早盤即跳漲將近千點，突破46000點大關，終場收在46459.16點，勁揚901.85點，雙創盤中與收盤歷史新高。台積電盤中以2440元刷新天價，最終上漲45元收在2425元，聯發科漲20元0.44%，收在4545元，台達電同步漲95元4.03%，收在2455元。
+                - generic [ref=e559]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e560] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/2%E5%A4%A7%E9%87%91%E8%9E%8D%E8%82%A1%E7%BD%95%E8%A6%8B%E6%BC%B2%E5%81%9C-%E5%8F%B0%E8%82%A1%E6%94%B6%E6%BC%B2901%E9%BB%9E%E5%86%8D%E5%AF%AB%E6%96%B0%E7%8C%B7-%E5%8F%B0%E7%A9%8D%E9%9B%BB2425%E5%85%83-054251273.html?bcmt=1
+                    - img [ref=e561]
+                  - button "Social media share article menu" [ref=e565]:
+                    - img [ref=e566] [cursor=pointer]
+            - listitem [ref=e568]
+            - listitem [ref=e570]:
+              - generic [ref=e572]:
+                - generic [ref=e575]:
+                  - generic [ref=e576]: Moneydj理財網•14 小時前
+                  - heading "《COMPUTEX》N1X搶進AI PC，高通擴產品線守陣營" [level=3] [ref=e577]:
+                    - link "《COMPUTEX》N1X搶進AI PC，高通擴產品線守陣營" [ref=e578] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/computex-n1x%E6%90%B6%E9%80%B2ai-pc-%E9%AB%98%E9%80%9A%E6%93%B4%E7%94%A2%E5%93%81%E7%B7%9A%E5%AE%88%E9%99%A3%E7%87%9F-032500974.html
+                      - text: 《COMPUTEX》N1X搶進AI PC，高通擴產品線守陣營
+                  - paragraph [ref=e580]: MoneyDJ新聞 2026-06-03 11:25:10 黃立安 發佈今年COMPUTEX話題離不開AI PC，隨著輝達(NVIDIA)與聯發科(2454)共同開發的N1X處理器正式亮相，被市場視為直接挑戰高通(Qualcomm)在Windows on Arm陣營的地位。高通資深副總裁暨運算與遊戲部門總經理Kedar Kondap受訪時表示，樂見更多合作夥伴加入Windows on Arm生態系。同時高通也在COMPUTEX展前推出全新入門級平台Snapdragon C鎖定300美元以上筆電市場，在N1X搶攻高階AI PC之際，進一步向下擴大Arm PC版圖。 針對Windows on Arm市占率是否有機會持續擴大，以及N1X加入後帶來的競爭態勢，Kedar Kondap表示，高通歡迎更多合作夥伴加入，這對整個Windows on Arm生態系而言是正向發展。 除高階AI PC競爭升溫外，高通此次則選擇推出入門級處理器Snapdragon C。在記憶體價格上漲、供應鏈優先推動高階產品的環境下，為何高通仍選擇切入入門市場？Kedar Kondap回應，PC市場本來就存在不同價位帶需求
+                - generic [ref=e581]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e582] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/computex-n1x%E6%90%B6%E9%80%B2ai-pc-%E9%AB%98%E9%80%9A%E6%93%B4%E7%94%A2%E5%93%81%E7%B7%9A%E5%AE%88%E9%99%A3%E7%87%9F-032500974.html?bcmt=1
+                    - img [ref=e583]
+                  - button "Social media share article menu" [ref=e587]:
+                    - img [ref=e588] [cursor=pointer]
+            - listitem [ref=e590]:
+              - generic [ref=e599] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.lexus.com.tw/showroom/NX
+                  - img "Image for Taboola Advertising Unit" [ref=e601]
+                - 'link "Lexus in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) NX 全車系100萬40期零利率，即刻入主 Lexus NX 全進化休旅，以豪華與智慧融入日常，搭載智能輔助系統與多元動力，伴您邁向非凡未來。NX 全車系零利率尊享禮遇，敬邀鑑賞" [ref=e603]':
+                  - /url: https://www.lexus.com.tw/showroom/NX
+                  - generic [ref=e604]:
+                    - generic [ref=e605]:
+                      - link "Lexus in Taboola advertising section" [ref=e606]: Lexus
+                      - generic [ref=e607]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e609]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-6:"
+                        - text: Ad
+                    - link "NX 全車系100萬40期零利率，即刻入主" [ref=e610]
+                    - generic [ref=e611]: Lexus NX 全進化休旅，以豪華與智慧融入日常，搭載智能輔助系統與多元動力，伴您邁向非凡未來。NX 全車系零利率尊享禮遇，敬邀鑑賞
+            - listitem [ref=e612]:
+              - generic [ref=e614]:
+                - generic [ref=e617]:
+                  - generic [ref=e618]: EBC東森財經新聞•15 小時前
+                  - heading "台股才剛超車印度！ 專家驚見「1狀況」：快多買兩張" [level=3] [ref=e619]:
+                    - link "台股才剛超車印度！ 專家驚見「1狀況」：快多買兩張" [ref=e620] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E6%89%8D%E5%89%9B%E8%B6%85%E8%BB%8A%E5%8D%B0%E5%BA%A6-%E5%B0%88%E5%AE%B6%E9%A9%9A%E8%A6%8B-1%E7%8B%80%E6%B3%81-%E5%BF%AB%E5%A4%9A%E8%B2%B7%E5%85%A9%E5%BC%B5-022000224.html
+                      - text: 台股才剛超車印度！ 專家驚見「1狀況」：快多買兩張
+                  - paragraph [ref=e622]: 受惠於AI浪潮，台股自今年年初已大漲逾16000點，今（3）日更是創新高來到46552點，台股總市值也於5月25日衝上4.95兆美元，正式超越印度的4.92兆美元，站上全球第5大股票市場之位。
+                - generic [ref=e623]:
+                  - link "4 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e624] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E6%89%8D%E5%89%9B%E8%B6%85%E8%BB%8A%E5%8D%B0%E5%BA%A6-%E5%B0%88%E5%AE%B6%E9%A9%9A%E8%A6%8B-1%E7%8B%80%E6%B3%81-%E5%BF%AB%E5%A4%9A%E8%B2%B7%E5%85%A9%E5%BC%B5-022000224.html?bcmt=1
+                    - generic [ref=e625]: "4"
+                    - img [ref=e626]
+                  - button "Social media share article menu" [ref=e630]:
+                    - img [ref=e631] [cursor=pointer]
+            - listitem [ref=e633]:
+              - generic [ref=e635]:
+                - generic [ref=e638]:
+                  - generic [ref=e639]: Moneydj理財網•16 小時前
+                  - heading "京元電Q2營收續拚高 全年逐季揚可期" [level=3] [ref=e640]:
+                    - link "京元電Q2營收續拚高 全年逐季揚可期" [ref=e641] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%BA%AC%E5%85%83%E9%9B%BBq2%E7%87%9F%E6%94%B6%E7%BA%8C%E6%8B%9A%E9%AB%98-%E5%85%A8%E5%B9%B4%E9%80%90%E5%AD%A3%E6%8F%9A%E5%8F%AF%E6%9C%9F-020600263.html
+                      - text: 京元電Q2營收續拚高 全年逐季揚可期
+                  - paragraph [ref=e643]: MoneyDJ新聞 2026-06-03 10:06:28 王怡茹 發佈半導體測試大廠京元電子(2449)2026年4月營收37.43億元，月增4.03%、年增34.56%，連續兩個月創新高，法人估，其5~6月營收有望維持高檔水準，帶動第二季營收締新猷。法人表示，受惠AI相關測試訂單持續湧入、新產能開出，看好公司第二季營收改寫新高且逐季走揚可期，全年營收有望逼近500億大關。 AI需求持續暢旺，京元電持續掌握美GPU大客戶新世代產品測試訂單，而其他如AWS TR3、TPU、Meta等廠商的ASIC晶片測試也緊抓在手。尤其主力客戶之一的聯發科(2454)喊出今年ASIC營收目標貢獻20億美金，2027年會有幾十億美金的水準，可預期今年相關需求量能有機會進一步放大。 為因應客戶需求，京元電於4月上修今年資本支出，由原先393.72億元提高至500億元，調升幅度約27%，創歷史新高。市場估計，新增投資將主要用於建廠、無塵室設施，以及增加高功率預燒老化(Burn-in)測試機台，預估今年整體產能有望增加 30%至50%。 法人表示，受惠美系GPU大客戶需求續強及ASIC測試訂單湧入，預期京元電
+                - generic [ref=e644]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e645] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%BA%AC%E5%85%83%E9%9B%BBq2%E7%87%9F%E6%94%B6%E7%BA%8C%E6%8B%9A%E9%AB%98-%E5%85%A8%E5%B9%B4%E9%80%90%E5%AD%A3%E6%8F%9A%E5%8F%AF%E6%9C%9F-020600263.html?bcmt=1
+                    - img [ref=e646]
+                  - button "Social media share article menu" [ref=e650]:
+                    - img [ref=e651] [cursor=pointer]
+            - listitem [ref=e653]:
+              - generic [ref=e655]:
+                - generic [ref=e656]:
+                  - generic [ref=e657]: Moneydj理財網•16 小時前
+                  - heading "中環5/29~6/2取得聯發科85張、計約3.72億元" [level=3] [ref=e658]:
+                    - link "中環5/29~6/2取得聯發科85張、計約3.72億元" [ref=e659] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B05-29-6-2%E5%8F%96%E5%BE%97%E8%81%AF%E7%99%BC%E7%A7%9185%E5%BC%B5-%E8%A8%88%E7%B4%843-011000894.html
+                      - text: 中環5/29~6/2取得聯發科85張、計約3.72億元
+                  - paragraph [ref=e661]: "公開資訊觀測站重大訊息公告(2323)中環-公告本公司取得有價證券1.證券名稱:聯發科 普通股2.交易日期:115/5/29~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長核決民國115年06月02日5.交易數量、每單位價格及交易總金額:交易數量(仟股):85每單位價格(元):4,376.52交易總金額(元):372,004,2536.處分利益（或損失）（取得有價證券者不適用）:不適用7.與交易標的公司之關係:無8.迄目前為止，累積持有本交易證券（含本次交易）之數量、金額、持股比例及權利受限情形（如質押情形）:持有餘額:95,000股、金額:419,116,260元 持股比例:0.006%、權利受限情形: 無9.迄目前為止，依「公開發行公司取得或處分資產處理準則」第三條所列之有價證券投資（含本次交易）占公司最近期財務報表中總資產及歸屬於母公司業主之權益之比例暨最近期財務報表中營運資金數額:占總資產比例:79.21% 占歸屬於母公司業主之權益比例:113.76% 營運資金數額:8,285,327仟元10.取得或處分之具體目的:投資組合11.本次交易表示異議董"
+                - generic [ref=e662]:
+                  - link "1 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e663] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B05-29-6-2%E5%8F%96%E5%BE%97%E8%81%AF%E7%99%BC%E7%A7%9185%E5%BC%B5-%E8%A8%88%E7%B4%843-011000894.html?bcmt=1
+                    - generic [ref=e664]: "1"
+                    - img [ref=e665]
+                  - button "Social media share article menu" [ref=e669]:
+                    - img [ref=e670] [cursor=pointer]
+            - listitem [ref=e672]:
+              - generic [ref=e681] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.clubmed.com.tw/r/%E6%B3%B0%E5%9C%8B%E6%99%AE%E5%90%89%E5%B3%B6/y
+                  - img "Image for Taboola Advertising Unit" [ref=e683]
+                - 'link "Club Med Taiwan in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 親子旅行現在流行這樣玩：越來越多家庭開始放棄自由行，直接改訂普吉島全包式假期，5天4夜食宿全包只要$23,700起！ 不用排行程的親子旅行正在改寫旅遊模式！一價全包暢玩普吉島，爸媽終於不用一直想「下一站去哪」！Club Med普吉島度假村，房間全面翻新，還有全新家庭綠洲房型！開門直通戲水區，附設點心吧不怕孩子玩到肚子餓，還有泰拳體驗、浮潛、空中飛人、夜晚主題派對。全包式假期一次打包住宿、餐飲與活動，不用顧行程也不用顧小孩，讓爸媽終於可以暫時「下班」！10月底前不論你想帶全家出國度假，還是揪團朋友快閃，普吉島絕對會打破你對他的舊印象！" [ref=e685]':
+                  - /url: https://www.clubmed.com.tw/r/%E6%B3%B0%E5%9C%8B%E6%99%AE%E5%90%89%E5%B3%B6/y
+                  - generic [ref=e686]:
+                    - generic [ref=e687]:
+                      - link "Club Med Taiwan in Taboola advertising section" [ref=e688]: Club Med Taiwan
+                      - generic [ref=e689]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e691]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-10:"
+                        - text: Ad
+                    - link "親子旅行現在流行這樣玩：越來越多家庭開始放棄自由行，直接改訂普吉島全包式假期，5天4夜食宿全包只要$23,700起！" [ref=e692]
+                    - generic [ref=e693]: 不用排行程的親子旅行正在改寫旅遊模式！一價全包暢玩普吉島，爸媽終於不用一直想「下一站去哪」！Club Med普吉島度假村，房間全面翻新，還有全新家庭綠洲房型！開門直通戲水區，附設點心吧不怕孩子玩到肚子餓，還有泰拳體驗、浮潛、空中飛人、夜晚主題派對。全包式假期一次打包住宿、餐飲與活動，不用顧行程也不用顧小孩，讓爸媽終於可以暫時「下班」！10月底前不論你想帶全家出國度假，還是揪團朋友快閃，普吉島絕對會打破你對他的舊印象！
+            - listitem [ref=e694]:
+              - generic [ref=e696]:
+                - generic [ref=e699]:
+                  - generic [ref=e700]: 民視財經網•17 小時前
+                  - heading "衝上4萬6！台股早盤飆漲766點 台積電開2425元" [level=3] [ref=e701]:
+                    - link "衝上4萬6！台股早盤飆漲766點 台積電開2425元" [ref=e702] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E8%A1%9D%E4%B8%8A4%E8%90%AC6-%E5%8F%B0%E8%82%A1%E6%97%A9%E7%9B%A4%E9%A3%86%E6%BC%B2766%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E9%96%8B2425%E5%85%83-010932582.html
+                      - text: 衝上4萬6！台股早盤飆漲766點 台積電開2425元
+                  - paragraph [ref=e704]: 即時中心／綜合報導儘管中東緊張局勢持續升高，AI熱潮持續提供市場上揚動力，美股主要指數週二（2日）全面收紅。台股今（3）日早盤上漲766.32點、1.68%，指數來到46,323.63點，台積電（2330）開2,425元，上漲45元。
+                - generic [ref=e705]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e706] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E8%A1%9D%E4%B8%8A4%E8%90%AC6-%E5%8F%B0%E8%82%A1%E6%97%A9%E7%9B%A4%E9%A3%86%E6%BC%B2766%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E9%96%8B2425%E5%85%83-010932582.html?bcmt=1
+                    - img [ref=e707]
+                  - button "Social media share article menu" [ref=e711]:
+                    - img [ref=e712] [cursor=pointer]
+            - listitem [ref=e714]:
+              - generic [ref=e716]:
+                - generic [ref=e717]:
+                  - generic [ref=e718]: 中時財經即時•17 小時前
+                  - heading "台股盤中大漲近千點！台積電2440元雙創新猷 凱基金漲停" [level=3] [ref=e719]:
+                    - link "台股盤中大漲近千點！台積電2440元雙創新猷 凱基金漲停" [ref=e720] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E4%B8%AD%E5%A4%A7%E6%BC%B2%E8%BF%91%E5%8D%83%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB2440%E5%85%83%E9%9B%99%E5%89%B5%E6%96%B0%E7%8C%B7-%E5%87%B1%E5%9F%BA%E9%87%91%E6%BC%B2%E5%81%9C-010804084.html
+                      - text: 台股盤中大漲近千點！台積電2440元雙創新猷 凱基金漲停
+                  - paragraph [ref=e722]: 09:40更新：熱錢持續湧入台股市場，盤中大漲超過900點，續將歷史高點向上推進，站上46500點關卡，台積電最高價觸及2440元，大漲60元。仁寶緯創也翻紅上漲超過2%，凱基金第一季獲利遠超預期，且凱基人壽股票已實現獲利近200億元，股價飆上漲停。
+                - generic [ref=e723]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e724] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E4%B8%AD%E5%A4%A7%E6%BC%B2%E8%BF%91%E5%8D%83%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB2440%E5%85%83%E9%9B%99%E5%89%B5%E6%96%B0%E7%8C%B7-%E5%87%B1%E5%9F%BA%E9%87%91%E6%BC%B2%E5%81%9C-010804084.html?bcmt=1
+                    - img [ref=e725]
+                  - button "Social media share article menu" [ref=e729]:
+                    - img [ref=e730] [cursor=pointer]
+            - listitem [ref=e732]:
+              - generic [ref=e734]:
+                - generic [ref=e735]:
+                  - generic [ref=e736]: 財訊快報•17 小時前
+                  - heading "國泰永續高股息規模突破6000億，新增長榮等5檔成分股，刪除遠東新等4檔" [level=3] [ref=e737]:
+                    - link "國泰永續高股息規模突破6000億，新增長榮等5檔成分股，刪除遠東新等4檔" [ref=e738] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%9C%8B%E6%B3%B0%E6%B0%B8%E7%BA%8C%E9%AB%98%E8%82%A1%E6%81%AF%E8%A6%8F%E6%A8%A1%E7%AA%81%E7%A0%B46000%E5%84%84-%E6%96%B0%E5%A2%9E%E9%95%B7%E6%A6%AE%E7%AD%895%E6%AA%94%E6%88%90%E5%88%86%E8%82%A1-%E5%88%AA%E9%99%A4%E9%81%A0%E6%9D%B1%E6%96%B0%E7%AD%894%E6%AA%94-005520388.html
+                      - text: 國泰永續高股息規模突破6000億，新增長榮等5檔成分股，刪除遠東新等4檔
+                  - paragraph [ref=e740]: 【財訊快報／記者劉居全報導】國泰永續高股息(00878)基金規模自4月底以來大幅成長近24%，突破6000億元大關，淨值突破32元創下自身新高，繼續坐穩全台最大ESG基金地位。依據MSCI指數公司資訊，00878所追蹤的「MSCI臺灣ESG永續高股息精選30指數」，近期進行例行指數調整，已於6月1日生效，成分股新增5檔，分別為長榮(2603)、長榮航(2618)、華南金(2880)、台新新光金(2887)、統一超(2912)；刪除4檔為遠東新(1402)、仁寶(2324)、可成(2474)、京元電子(2449)；近期備受矚目的廣達(2382)、聯電(2303)、聯發科(2454)、華碩(2357)等輝達背板股仍在00878持股名單中。國泰永續高股息基金經理人江宇騰表示，00878追蹤指數「MSCI臺灣ESG永續高股息精選30指數」每半年會進行例行性調整持股，目的在於維持該指數向來具備產業相對分散與低周轉率的特性，本次新增的5檔標的係因股利分數達標而被納入；其中刪除股遠東新、仁寶、可成，則因被母指數「MSCI台灣指數」剔除，故本次同步刪除，此外京元電子則因股利分數未達標而剔除；MSCI臺
+                - generic [ref=e741]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e742] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%9C%8B%E6%B3%B0%E6%B0%B8%E7%BA%8C%E9%AB%98%E8%82%A1%E6%81%AF%E8%A6%8F%E6%A8%A1%E7%AA%81%E7%A0%B46000%E5%84%84-%E6%96%B0%E5%A2%9E%E9%95%B7%E6%A6%AE%E7%AD%895%E6%AA%94%E6%88%90%E5%88%86%E8%82%A1-%E5%88%AA%E9%99%A4%E9%81%A0%E6%9D%B1%E6%96%B0%E7%AD%894%E6%AA%94-005520388.html?bcmt=1
+                    - img [ref=e743]
+                  - button "Social media share article menu" [ref=e747]:
+                    - img [ref=e748] [cursor=pointer]
+            - listitem [ref=e750]:
+              - generic [ref=e759] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://cswater.com.tw/YXArw
+                  - img "Image for Taboola Advertising Unit" [ref=e761]
+                - 'link "千山淨水 in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 群組瘋傳！千山淨水早鳥超划算，最高省$18,810太香了 千山淨水『冰溫熱廚下淨飲系統』，抗暑早鳥全站8折起，最高現折$18,810，純淨好水一按即飲，點擊領取專屬優惠！" [ref=e763]':
+                  - /url: https://cswater.com.tw/YXArw
+                  - generic [ref=e764]:
+                    - generic [ref=e765]:
+                      - link "千山淨水 in Taboola advertising section" [ref=e766]: 千山淨水
+                      - generic [ref=e767]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e769]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-14:"
+                        - text: Ad
+                    - link "群組瘋傳！千山淨水早鳥超划算，最高省$18,810太香了" [ref=e770]
+                    - generic [ref=e771]: 千山淨水『冰溫熱廚下淨飲系統』，抗暑早鳥全站8折起，最高現折$18,810，純淨好水一按即飲，點擊領取專屬優惠！
+            - listitem [ref=e772]:
+              - generic [ref=e774]:
+                - generic [ref=e775]:
+                  - generic [ref=e776]: 中央社財經•17 小時前
+                  - heading "【統一證券晨訊】AI盛宴未歇 科技題材輪動接棒" [level=3] [ref=e777]:
+                    - link "【統一證券晨訊】AI盛宴未歇 科技題材輪動接棒" [ref=e778] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E7%B5%B1-%E8%AD%89%E5%88%B8%E6%99%A8%E8%A8%8A-ai%E7%9B%9B%E5%AE%B4%E6%9C%AA%E6%AD%87-%E7%A7%91%E6%8A%80%E9%A1%8C%E6%9D%90%E8%BC%AA%E5%8B%95%E6%8E%A5%E6%A3%92-004329953.html
+                      - text: 【統一證券晨訊】AI盛宴未歇 科技題材輪動接棒
+                  - paragraph [ref=e780]: 日期：2026年 6月 3日※盤勢分析AI盛宴未歇，科技題材輪動接棒，台股續攀新猷◎昨日盤勢Computex展周二登場，多位科技領袖來台參與高峰對談，科技盛宴帶領週二台股早盤再創新高，然盤中因乖離率大，高檔出現獲利了結賣壓，盤勢呈現劇烈波動，盤中一度翻黑，所幸午盤過後低接買盤拉抬，終場收紅上漲。盤面資金類股輪動，AI題材的AI PC、AI伺服器、記憶體等族群延續近期強勢，多檔個股亮燈漲停，另外受惠下週世足賽題材的面板及製鞋族群同樣受到資金青睞。權值股方面，台積電上漲1.06%，鴻海上漲2.73%，聯發科下跌0.66%，廣達上漲7.52%，台達電下跌2.48%。盤面強勢股，緯創、華碩、宏碁、華邦電、南亞科、威剛、友達、彩晶、可成、來億-KY、豐泰等86檔漲停；華新科、晶心科、日成-KY、建通、禾瑞亞、零壹、泰金寶-DR、台郡、志強-KY等漲幅8%以上；盤面弱勢股，邁科、IET-KY、南俊國際、台勝科及尚茂跌停；科嶠、大銀微系統、鈺邦、博磊、柏承等跌幅9%以上。終場台灣加權指數上漲 219.40點，以45557.31點作收，成交量1.61兆元。觀察盤面變化，三大類股全面上漲，電子上漲0.3
+                - generic [ref=e781]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e782] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E7%B5%B1-%E8%AD%89%E5%88%B8%E6%99%A8%E8%A8%8A-ai%E7%9B%9B%E5%AE%B4%E6%9C%AA%E6%AD%87-%E7%A7%91%E6%8A%80%E9%A1%8C%E6%9D%90%E8%BC%AA%E5%8B%95%E6%8E%A5%E6%A3%92-004329953.html?bcmt=1
+                    - img [ref=e783]
+                  - button "Social media share article menu" [ref=e787]:
+                    - img [ref=e788] [cursor=pointer]
+            - listitem [ref=e790]:
+              - generic [ref=e792]:
+                - generic [ref=e793]:
+                  - generic [ref=e794]: 財訊快報•17 小時前
+                  - heading "輝達再闖PC晶片，RTX Spark聯手聯發科挑戰英特爾霸權，週二小跌0.69%" [level=3] [ref=e795]:
+                    - link "輝達再闖PC晶片，RTX Spark聯手聯發科挑戰英特爾霸權，週二小跌0.69%" [ref=e796] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E8%BC%9D%E9%81%94%E5%86%8D%E9%97%96pc%E6%99%B6%E7%89%87-rtx-spark%E8%81%AF%E6%89%8B%E8%81%AF%E7%99%BC%E7%A7%91%E6%8C%91%E6%88%B0%E8%8B%B1%E7%89%B9%E7%88%BE%E9%9C%B8%E6%AC%8A-%E9%80%B1%E4%BA%8C%E5%B0%8F%E8%B7%8C0-69-002455015.html
+                      - text: 輝達再闖PC晶片，RTX Spark聯手聯發科挑戰英特爾霸權，週二小跌0.69%
+                  - paragraph [ref=e798]: 【財訊快報／陳孟朔】AI一哥輝達(NVIDIA，美股代碼NVDA)股價繼上日大漲13.22美元或6.26%後，週二翻空小跌1.54美元或0.69%至222.82美元，成交金額達426.55億美元，成交熱度仍高居美股第二，只輸給美光，今年來漲了19.47%，市值來到5兆2922億美元穩居全球市值一哥寶座。市場焦點落在輝達將推出新型個人電腦晶片，準備挑戰英特爾(Intel，美股代碼INTC)長期主導的PC處理器市場，並把AI時代的算力需求進一步推向筆電與桌機等終端裝置。輝達執行長黃仁勳(Jensen Huang)表示，自今年秋季起，全新RTX Spark超級晶片將率先導入戴爾(Dell Technologies，美股代碼DELL)、聯想(Lenovo，港股代碼0992)等主要PC品牌的筆電與桌機。該晶片結合微處理器與圖形處理能力，並由聯發科(2454)協助開發，將用於運行基於Arm架構的微軟(Microsoft，美股代碼MSFT)Windows系統，顯示輝達正從AI數據中心霸主，向AI PC核心平台供應商擴張。這是輝達相隔十多年後再度大舉進軍PC處理器市場。十多年前，輝達曾在PC處理器領域
+                - generic [ref=e799]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e800] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E8%BC%9D%E9%81%94%E5%86%8D%E9%97%96pc%E6%99%B6%E7%89%87-rtx-spark%E8%81%AF%E6%89%8B%E8%81%AF%E7%99%BC%E7%A7%91%E6%8C%91%E6%88%B0%E8%8B%B1%E7%89%B9%E7%88%BE%E9%9C%B8%E6%AC%8A-%E9%80%B1%E4%BA%8C%E5%B0%8F%E8%B7%8C0-69-002455015.html?bcmt=1
+                    - img [ref=e801]
+                  - button "Social media share article menu" [ref=e805]:
+                    - img [ref=e806] [cursor=pointer]
+            - listitem [ref=e808]:
+              - generic [ref=e810]:
+                - generic [ref=e813]:
+                  - generic [ref=e814]: 民視財經網•前天
+                  - heading "黃仁勳記者會300家媒體擠爆現場 蔡力行同台展示新晶片" [level=3] [ref=e815]:
+                    - link "黃仁勳記者會300家媒體擠爆現場 蔡力行同台展示新晶片" [ref=e816] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E9%BB%83%E4%BB%81%E5%8B%B3%E8%A8%98%E8%80%85%E6%9C%83300%E5%AE%B6%E5%AA%92%E9%AB%94%E6%93%A0%E7%88%86%E7%8F%BE%E5%A0%B4-%E8%94%A1%E5%8A%9B%E8%A1%8C%E5%90%8C%E5%8F%B0%E5%B1%95%E7%A4%BA%E6%96%B0%E6%99%B6%E7%89%87-105106087.html
+                      - text: 黃仁勳記者會300家媒體擠爆現場 蔡力行同台展示新晶片
+                  - paragraph [ref=e818]: 財經中心／楊思敏、黃彥誠 台北報導輝達執行長黃仁勳舉辦記者會，吸引300家國內外媒體參加，除了邀請聯發科執行長蔡力行同台，談雙方合作，也一一針對產品、投資台灣和地緣政治議題，回覆提問。
+                - generic [ref=e819]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e820] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E9%BB%83%E4%BB%81%E5%8B%B3%E8%A8%98%E8%80%85%E6%9C%83300%E5%AE%B6%E5%AA%92%E9%AB%94%E6%93%A0%E7%88%86%E7%8F%BE%E5%A0%B4-%E8%94%A1%E5%8A%9B%E8%A1%8C%E5%90%8C%E5%8F%B0%E5%B1%95%E7%A4%BA%E6%96%B0%E6%99%B6%E7%89%87-105106087.html?bcmt=1
+                    - img [ref=e821]
+                  - button "Social media share article menu" [ref=e825]:
+                    - img [ref=e826] [cursor=pointer]
+            - listitem [ref=e828]:
+              - generic [ref=e837] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.clubmed.com.tw/r/%E6%97%A5%E6%9C%AC%E7%9F%B3%E5%9E%A3%E5%B3%B6/y
+                  - img "Image for Taboola Advertising Unit" [ref=e839]
+                - 'link "Club Med Taiwan in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 這個海島成全家新寵！沖繩石垣島直飛短程又便利，暑假連假空位賣超快！ 家庭出遊最怕熬長途！直飛只要 55 分鐘，10月底前每週三、六各一班出發。立即卡位含機票全包式假期，4天3夜每人最低$34,900起! 清澈見底的祖母綠海洋、傳統的在地文化與數不清的水陸活動，全包式假期讓爸媽不必再查攻略、排行程！不只提供無限美食酒水與住宿，更照顧你的度假體驗，大人與小孩各自放風，享受一場真正的雙贏假期！不論你想在暑假旺季帶全家出國度假，還是揪團朋友快閃出遊，Club Med石垣島絕對是短程旅遊清單的 Top 1 選擇！" [ref=e841]':
+                  - /url: https://www.clubmed.com.tw/r/%E6%97%A5%E6%9C%AC%E7%9F%B3%E5%9E%A3%E5%B3%B6/y
+                  - generic [ref=e842]:
+                    - generic [ref=e843]:
+                      - link "Club Med Taiwan in Taboola advertising section" [ref=e844]: Club Med Taiwan
+                      - generic [ref=e845]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e847]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-18:"
+                        - text: Ad
+                    - link "這個海島成全家新寵！沖繩石垣島直飛短程又便利，暑假連假空位賣超快！" [ref=e848]
+                    - generic [ref=e849]: 家庭出遊最怕熬長途！直飛只要 55 分鐘，10月底前每週三、六各一班出發。立即卡位含機票全包式假期，4天3夜每人最低$34,900起! 清澈見底的祖母綠海洋、傳統的在地文化與數不清的水陸活動，全包式假期讓爸媽不必再查攻略、排行程！不只提供無限美食酒水與住宿，更照顧你的度假體驗，大人與小孩各自放風，享受一場真正的雙贏假期！不論你想在暑假旺季帶全家出國度假，還是揪團朋友快閃出遊，Club Med石垣島絕對是短程旅遊清單的 Top 1 選擇！
+            - listitem [ref=e850]:
+              - generic [ref=e852]:
+                - generic [ref=e853]:
+                  - generic [ref=e854]: Moneydj理財網•前天
+                  - heading "中環 公告本公司取得有價證券" [level=3] [ref=e855]:
+                    - link "中環 公告本公司取得有價證券" [ref=e856] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-104300287.html
+                      - text: 中環 公告本公司取得有價證券
+                  - paragraph [ref=e858]: "公開資訊觀測站重大訊息公告(2323)中環-公告本公司取得有價證券1.證券名稱:聯發科 普通股2.交易日期:115/5/29~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長核決民國115年06月02日5.交易數量、每單位價格及交易總金額:交易數量(仟股):85每單位價格(元):4,376.52交易總金額(元):372,004,2536.處分利益（或損失）（取得有價證券者不適用）:不適用7.與交易標的公司之關係:無8.迄目前為止，累積持有本交易證券（含本次交易）之數量、金額、持股比例及權利受限情形（如質押情形）:持有餘額:95,000股、金額:419,116,260元 持股比例:0.006%、權利受限情形: 無9.迄目前為止，依「公開發行公司取得或處分資產處理準則」第三條所列之有價證券投資（含本次交易）占公司最近期財務報表中總資產及歸屬於母公司業主之權益之比例暨最近期財務報表中營運資金數額:占總資產比例:79.21% 占歸屬於母公司業主之權益比例:113.76% 營運資金數額:8,285,327仟元10.取得或處分之具體目的:投資組合11.本次交易表示異議董"
+                - generic [ref=e859]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e860] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-104300287.html?bcmt=1
+                    - img [ref=e861]
+                  - button "Social media share article menu" [ref=e865]:
+                    - img [ref=e866] [cursor=pointer]
+            - listitem [ref=e868]:
+              - generic [ref=e870]:
+                - generic [ref=e873]:
+                  - generic [ref=e874]: 鉅亨網•前天
+                  - heading "〈COMPUTEX〉致伸攜手聯發科展示自研AMR 鎖定美日市場搶攻非紅供應鏈商機" [level=3] [ref=e875]:
+                    - link "〈COMPUTEX〉致伸攜手聯發科展示自研AMR 鎖定美日市場搶攻非紅供應鏈商機" [ref=e876] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/computex-%E8%87%B4%E4%BC%B8%E6%94%9C%E6%89%8B%E8%81%AF%E7%99%BC%E7%A7%91%E5%B1%95%E7%A4%BA%E8%87%AA%E7%A0%94amr-%E9%8E%96%E5%AE%9A%E7%BE%8E%E6%97%A5%E5%B8%82%E5%A0%B4%E6%90%B6%E6%94%BB%E9%9D%9E%E7%B4%85%E4%BE%9B%E6%87%89%E9%8F%88%E5%95%86%E6%A9%9F-102303432.html
+                      - text: 〈COMPUTEX〉致伸攜手聯發科展示自研AMR 鎖定美日市場搶攻非紅供應鏈商機
+                  - paragraph [ref=e878]: 致伸 (4915-TW) 與聯發科技深化邊緣 AI 戰略合作，並於 COMPUTEX 2026 展區共同展示雙方在智慧機器人領域的最新應用成果。致伸指出打破過往移動型機器人市場多採用傳統 x86 架構的局面，改採聯發科 (2454-TW
+                - generic [ref=e879]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e880] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/computex-%E8%87%B4%E4%BC%B8%E6%94%9C%E6%89%8B%E8%81%AF%E7%99%BC%E7%A7%91%E5%B1%95%E7%A4%BA%E8%87%AA%E7%A0%94amr-%E9%8E%96%E5%AE%9A%E7%BE%8E%E6%97%A5%E5%B8%82%E5%A0%B4%E6%90%B6%E6%94%BB%E9%9D%9E%E7%B4%85%E4%BE%9B%E6%87%89%E9%8F%88%E5%95%86%E6%A9%9F-102303432.html?bcmt=1
+                    - img [ref=e881]
+                  - button "Social media share article menu" [ref=e885]:
+                    - img [ref=e886] [cursor=pointer]
+            - listitem [ref=e888]:
+              - generic [ref=e890]:
+                - generic [ref=e893]:
+                  - generic [ref=e894]: 民視財經網•前天
+                  - heading "巴逆逆作客王嘉琳新節目！自曝「台積電」持股比" [level=3] [ref=e895]:
+                    - link "巴逆逆作客王嘉琳新節目！自曝「台積電」持股比" [ref=e896] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%B7%B4%E9%80%86%E9%80%86%E8%87%AA%E6%9B%9D%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%8C%81%E8%82%A1%E6%AF%94-%E7%B5%A6%E6%8A%95%E8%B3%87%E5%B0%8F%E7%99%BD-4%E5%80%8B%E5%AD%97-063151006.html
+                      - text: 巴逆逆作客王嘉琳新節目！自曝「台積電」持股比
+                  - paragraph [ref=e898]: 財經中心／李筱舲報導民視新聞台主播王嘉琳主持的全新節目《財富+個琳》於今（2）日首播。首集直播邀請到知名財經網紅、被封為「反指標女神」的巴逆逆擔任來賓。節目中，巴逆逆不僅大方透露自己目前持有的「台積電」股數，還無私分享個人的投資心法，並針對高風險槓桿操作者及投資小白給出中肯建議。
+                - generic [ref=e899]:
+                  - link "3 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e900] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%B7%B4%E9%80%86%E9%80%86%E8%87%AA%E6%9B%9D%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%8C%81%E8%82%A1%E6%AF%94-%E7%B5%A6%E6%8A%95%E8%B3%87%E5%B0%8F%E7%99%BD-4%E5%80%8B%E5%AD%97-063151006.html?bcmt=1
+                    - generic [ref=e901]: "3"
+                    - img [ref=e902]
+                  - button "Social media share article menu" [ref=e906]:
+                    - img [ref=e907] [cursor=pointer]
+            - listitem [ref=e909]:
+              - generic [ref=e918] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.icmarkets.com/global/tw
+                  - img "Image for Taboola Advertising Unit" [ref=e920]
+                - 'link "IC in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 五年來黃金投資最佳時機，就是現在！ 搶佔先機！助您以最高1:1000槓桿和極低點差即刻投入黃金市場！註冊快速，費用透明，讓你交易更安心。投資有風險，請謹慎評估。" [ref=e922]':
+                  - /url: https://www.icmarkets.com/global/tw
+                  - generic [ref=e923]:
+                    - generic [ref=e924]:
+                      - link "IC in Taboola advertising section" [ref=e925]: IC
+                      - generic [ref=e926]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e928]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-22:"
+                        - text: Ad
+                    - link "五年來黃金投資最佳時機，就是現在！" [ref=e929]
+                    - generic [ref=e930]: 搶佔先機！助您以最高1:1000槓桿和極低點差即刻投入黃金市場！註冊快速，費用透明，讓你交易更安心。投資有風險，請謹慎評估。
+            - listitem [ref=e931]:
+              - generic [ref=e933]:
+                - generic [ref=e936]:
+                  - generic [ref=e937]: Moneydj理財網•前天
+                  - heading "《台股盤後》震盪逾千點、收漲219點續創新高" [level=3] [ref=e938]:
+                    - link "《台股盤後》震盪逾千點、收漲219點續創新高" [ref=e939] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%9C%87%E7%9B%AA%E9%80%BE%E5%8D%83%E9%BB%9E-%E6%94%B6%E6%BC%B2219%E9%BB%9E%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98-074600150.html
+                      - text: 《台股盤後》震盪逾千點、收漲219點續創新高
+                  - paragraph [ref=e941]: MoneyDJ新聞 2026-06-02 15:46:18 新聞中心 發佈台股今(2)日在台積電挾ADR漲勢領漲、輝達搶進AI PC題材帶動華碩/宏碁漲停效應下，加權指數盤初一度逼近46000大關，惟聯發科/台達電/日月光弱勢表現、日經225指數早盤也明顯下跌下，引發獲利了結賣壓，幸賴南亞科/國巨/鴻海/廣達維持強勢、金控股/南亞/遠紡/長榮亦有助攻表現下，加權指數雖上下震盪約1046點、終場仍創高收在45557.31點、續守5日線，上漲219.40點或0.48%，成交量微增至1兆6075億元。 輝達搶進AI PC、激勵相關軟硬體類股全面飛漲，並減少美伊和談烏雲罩頂、推升油價的利空影響，美國四大指數周一全面寫新高。亞洲股市方面，因日經225指數昨日創下歷史收盤新高紀錄，引發獲利了結賣壓，AI、半導體相關股下挫，拖累日經指數今日一度重摔，不過午盤跌幅收斂，收盤下跌0.3%；韓國股市持續走揚，KOSPI終場上漲0.15%。 台積電ADR周一漲逾4%，激勵今日台股股價收在2380元、上漲1.06%，加上輝達搶進AI PC，持續激勵電腦及週邊設備族群表現，宏碁、華碩、仁寶、緯創等都亮燈漲停，華
+                - generic [ref=e942]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e943] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%9C%87%E7%9B%AA%E9%80%BE%E5%8D%83%E9%BB%9E-%E6%94%B6%E6%BC%B2219%E9%BB%9E%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98-074600150.html?bcmt=1
+                    - img [ref=e944]
+                  - button "Social media share article menu" [ref=e948]:
+                    - img [ref=e949] [cursor=pointer]
+            - listitem [ref=e951]:
+              - generic [ref=e953]:
+                - generic [ref=e956]:
+                  - generic [ref=e957]: Yahoo股市•前天
+                  - heading "國民ETF 00878成分股換血！5進4出刪仁寶京元電 納長榮統一超" [level=3] [ref=e958]:
+                    - link "國民ETF 00878成分股換血！5進4出刪仁寶京元電 納長榮統一超" [ref=e959] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%9C%8B%E6%B0%91etf-00878%E6%88%90%E5%88%86%E8%82%A1%E6%8F%9B%E8%A1%80%EF%BC%815%E9%80%B24%E5%87%BA%E5%88%AA%E4%BB%81%E5%AF%B6%E4%BA%AC%E5%85%83%E9%9B%BB-%E7%B4%8D%E9%95%B7%E6%A6%AE%E7%B5%B1%E4%B8%80%E8%B6%85-073808236.html
+                      - text: 國民ETF 00878成分股換血！5進4出刪仁寶京元電 納長榮統一超
+                  - paragraph [ref=e961]: 擁有逾158萬股東、國民ETF 00878（國泰永續高股息）00878所追蹤的「MSCI臺灣ESG永續高股息精選30指數」，近期進行例行指數調整，已於6月1日生效。其中，成分股新增5檔，分別為長榮(2603)、長榮航(2618)、華南金(2880)、台新新光金(2887)、統一超(2912)；刪除4檔為遠東新(1402)、仁寶(2324)、可成(2474)、京元電子(2449)。
+                - generic [ref=e962]:
+                  - link "1 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e963] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%9C%8B%E6%B0%91etf-00878%E6%88%90%E5%88%86%E8%82%A1%E6%8F%9B%E8%A1%80%EF%BC%815%E9%80%B24%E5%87%BA%E5%88%AA%E4%BB%81%E5%AF%B6%E4%BA%AC%E5%85%83%E9%9B%BB-%E7%B4%8D%E9%95%B7%E6%A6%AE%E7%B5%B1%E4%B8%80%E8%B6%85-073808236.html?bcmt=1
+                    - generic [ref=e964]: "1"
+                    - img [ref=e965]
+                  - button "Social media share article menu" [ref=e969]:
+                    - img [ref=e970] [cursor=pointer]
+            - listitem [ref=e972]:
+              - generic [ref=e974]:
+                - generic [ref=e975]:
+                  - generic [ref=e976]: 中央社財經•前天
+                  - heading "【盤後焦點】台積電、記憶體股領軍 台股震盪收漲219點再創新高" [level=3] [ref=e977]:
+                    - link "【盤後焦點】台積電、記憶體股領軍 台股震盪收漲219點再創新高" [ref=e978] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E7%9B%A4%E5%BE%8C%E7%84%A6%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E8%A8%98%E6%86%B6%E9%AB%94%E8%82%A1%E9%A0%98%E8%BB%8D-%E5%8F%B0%E8%82%A1%E9%9C%87%E7%9B%AA%E6%94%B6%E6%BC%B2219%E9%BB%9E%E5%86%8D%E5%89%B5%E6%96%B0%E9%AB%98-065513024.html
+                      - text: 【盤後焦點】台積電、記憶體股領軍 台股震盪收漲219點再創新高
+                  - paragraph [ref=e980]: （中央社記者何秀玲台北2026年6月2日電）美股主要指數續創新高，台股今天由台積電(2330)及記憶體族群領軍上攻，不過急漲後上檔獲利賣壓加重，盤中震盪拉回達1046點；隨著金融股及部分指標權值股承接買盤回籠，終場上漲219.4點，收45557.31點，續創收盤新高，成交值新台幣1兆6075.83億元。權王台積電終場上漲25元，以2380元再創收盤新高。其他權值股表現，鴻海(2317)上漲8元，收301.5元，重回300元關卡，並創2000年第3季以來新高價；聯發科(2454)今天下跌30元，為4525元；台達電(2308)下跌60元，為2360元。電子類股指數上漲0.37%、金融類股指數上漲2.2%，百貨、塑膠、紡織、橡膠股上漲逾2%；代表中小型股票的櫃買指數下跌1.21%。記憶體族群今天表現強勁，南亞科(2408)、威剛(3260)、華邦電(2344)皆攻上漲停；其餘個股包括晶豪科(3006)上漲7%、十銓(4967)上漲5.36%、旺宏(2337)上漲4.78%。因輝達（NVIDIA）執行長黃仁勳昨天演講中發表RTX Spark新平台，擴大個人電腦市場布局，並提到資訊安全重要性，
+                - generic [ref=e981]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e982] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E7%9B%A4%E5%BE%8C%E7%84%A6%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E8%A8%98%E6%86%B6%E9%AB%94%E8%82%A1%E9%A0%98%E8%BB%8D-%E5%8F%B0%E8%82%A1%E9%9C%87%E7%9B%AA%E6%94%B6%E6%BC%B2219%E9%BB%9E%E5%86%8D%E5%89%B5%E6%96%B0%E9%AB%98-065513024.html?bcmt=1
+                    - img [ref=e983]
+                  - button "Social media share article menu" [ref=e987]:
+                    - img [ref=e988] [cursor=pointer]
+            - listitem [ref=e990]:
+              - generic [ref=e999] [cursor=pointer]:
+                - link "Image for Taboola Advertising Unit":
+                  - /url: https://www.uniqlo.com/tw/zh_TW/c/all_women-tops-t-shirts.html
+                  - img "Image for Taboola Advertising Unit" [ref=e1001]
+                - 'link "UNIQLO in Taboola advertising section ・ Sponsored: learn about this recommendation (opens dialog) 為什麼夏天 大家都穿UNIQLO這件T恤？ 一穿就懂的舒適感，簡約百搭又高質感，設計＋舒適面料，從日常到通勤都適合，人氣T恤讓日常更舒適。UNIQLO一次搞定，立即入手！" [ref=e1003]':
+                  - /url: https://www.uniqlo.com/tw/zh_TW/c/all_women-tops-t-shirts.html
+                  - generic [ref=e1004]:
+                    - generic [ref=e1005]:
+                      - link "UNIQLO in Taboola advertising section" [ref=e1006]: UNIQLO
+                      - generic [ref=e1007]: ・
+                      - 'link "Sponsored: learn about this recommendation (opens dialog)" [ref=e1009]':
+                        - /url: "https://popup.taboola.com/en/?template=colorbox&utm_source=yahoo-finance-taiwan&utm_medium=referral&utm_content=stream-twhk-stock-a:taboola-stream-tab1-26:"
+                        - text: Ad
+                    - link "為什麼夏天 大家都穿UNIQLO這件T恤？" [ref=e1010]
+                    - generic [ref=e1011]: 一穿就懂的舒適感，簡約百搭又高質感，設計＋舒適面料，從日常到通勤都適合，人氣T恤讓日常更舒適。UNIQLO一次搞定，立即入手！
+            - listitem [ref=e1012]:
+              - generic [ref=e1014]:
+                - generic [ref=e1017]:
+                  - generic [ref=e1018]: EBC東森財經新聞•前天
+                  - heading "台股千點大震盪！收漲219點 黃仁勳背板股一票攻漲停" [level=3] [ref=e1019]:
+                    - link "台股千點大震盪！收漲219點 黃仁勳背板股一票攻漲停" [ref=e1020] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%8D%83%E9%BB%9E%E5%A4%A7%E9%9C%87%E7%9B%AA-%E6%94%B6%E6%BC%B2219%E9%BB%9E-%E9%BB%83%E4%BB%81%E5%8B%B3%E8%83%8C%E6%9D%BF%E8%82%A1-%E7%A5%A8%E6%94%BB%E6%BC%B2%E5%81%9C-061700092.html
+                      - text: 台股千點大震盪！收漲219點 黃仁勳背板股一票攻漲停
+                  - paragraph [ref=e1022]: 台股今（2）日開高震盪，盤中一度翻黑下殺450點，後續跌幅收斂至平盤附近震盪，終場上漲219點，收45557點，漲幅0.48%，成交量來到1.6兆。
+                - generic [ref=e1023]:
+                  - link "1 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e1024] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%8D%83%E9%BB%9E%E5%A4%A7%E9%9C%87%E7%9B%AA-%E6%94%B6%E6%BC%B2219%E9%BB%9E-%E9%BB%83%E4%BB%81%E5%8B%B3%E8%83%8C%E6%9D%BF%E8%82%A1-%E7%A5%A8%E6%94%BB%E6%BC%B2%E5%81%9C-061700092.html?bcmt=1
+                    - generic [ref=e1025]: "1"
+                    - img [ref=e1026]
+                  - button "Social media share article menu" [ref=e1030]:
+                    - img [ref=e1031] [cursor=pointer]
+    - generic [ref=e1036]:
+      - generic [ref=e1043]:
+        - link "我的自選股" [ref=e1045] [cursor=pointer]:
+          - /url: /portfolios
+          - generic [ref=e1046]: 我的自選股
+        - generic [ref=e1047]:
+          - generic [ref=e1048]: 立即登入瀏覽你的投資組合。
+          - link "登入" [ref=e1049] [cursor=pointer]:
+            - /url: /portfolios
+      - generic [ref=e1051]:
+        - generic [ref=e1052]:
+          - generic [ref=e1054]: 網友也在看
+          - button "加入自選" [ref=e1055] [cursor=pointer]:
+            - img [ref=e1057]
+            - generic [ref=e1059]: 加入自選
+        - generic [ref=e1060]:
+          - generic [ref=e1062]:
+            - generic [ref=e1063]: 股名/股號
+            - generic [ref=e1064]: 股價
+            - generic [ref=e1065]: 漲跌(%)
+            - generic [ref=e1066]: 成交量(張)
+          - list [ref=e1070]:
+            - listitem [ref=e1071]:
+              - generic [ref=e1072]:
+                - generic [ref=e1074]:
+                  - link [ref=e1075] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2308.TW
+                  - generic [ref=e1077]: 台達電
+                  - generic [ref=e1079]: 2308.TW
+                - generic [ref=e1081]: 2,455.00
+                - generic [ref=e1083]:
+                  - generic [ref=e1084]: "95.00"
+                  - generic [ref=e1086]: 4.03%
+                - generic [ref=e1088]: 9,558
+            - listitem [ref=e1089]:
+              - generic [ref=e1090]:
+                - generic [ref=e1092]:
+                  - link [ref=e1093] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2330.TW
+                  - generic [ref=e1095]: 台積電
+                  - generic [ref=e1097]: 2330.TW
+                - generic [ref=e1099]: 2,425.00
+                - generic [ref=e1101]:
+                  - generic [ref=e1102]: "45.00"
+                  - generic [ref=e1104]: 1.89%
+                - generic [ref=e1106]: 22,443
+            - listitem [ref=e1107]:
+              - generic [ref=e1108]:
+                - generic [ref=e1110]:
+                  - link [ref=e1111] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2383.TW
+                  - generic [ref=e1113]: 台光電
+                  - generic [ref=e1115]: 2383.TW
+                - generic [ref=e1117]: 4,830.00
+                - generic [ref=e1119]:
+                  - generic [ref=e1120]: "30.00"
+                  - generic [ref=e1122]: 0.62%
+                - generic [ref=e1124]: 1,990
+            - listitem [ref=e1125]:
+              - generic [ref=e1126]:
+                - generic [ref=e1128]:
+                  - link [ref=e1129] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2317.TW
+                  - generic [ref=e1131]: 鴻海
+                  - generic [ref=e1133]: 2317.TW
+                - generic [ref=e1135]: "309.00"
+                - generic [ref=e1137]:
+                  - generic [ref=e1138]: "7.50"
+                  - generic [ref=e1140]: 2.49%
+                - generic [ref=e1142]: 146,108
+            - listitem [ref=e1143]:
+              - generic [ref=e1144]:
+                - generic [ref=e1146]:
+                  - link [ref=e1147] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/5274.TWO
+                  - generic [ref=e1149]: 信驊
+                  - generic [ref=e1151]: 5274.TWO
+                - generic [ref=e1153]: 17,980.00
+                - generic [ref=e1155]:
+                  - generic [ref=e1156]: "115.00"
+                  - generic [ref=e1158]: 0.64%
+                - generic [ref=e1160]: "263"
+      - generic [ref=e1163]:
+        - generic [ref=e1166]: 半導體產業漲跌排行
+        - generic [ref=e1167]:
+          - generic [ref=e1169]:
+            - generic [ref=e1170]: 股名/股號
+            - generic [ref=e1171]: 股價
+            - generic [ref=e1172]: 漲跌(%)
+            - generic [ref=e1173]: 成交量(張)
+          - list [ref=e1177]:
+            - listitem [ref=e1178]:
+              - generic [ref=e1179]:
+                - link "茂矽 2342.TW" [ref=e1181] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2342.TW
+                  - generic [ref=e1182]: 茂矽
+                  - generic [ref=e1183]: 2342.TW
+                - generic [ref=e1184]: "44.65"
+                - generic [ref=e1186]:
+                  - generic [ref=e1187]: "4.05"
+                  - generic [ref=e1189]: 9.98%
+                - generic [ref=e1190]: 15,753
+            - listitem [ref=e1191]:
+              - generic [ref=e1192]:
+                - link "訊芯-KY 6451.TW" [ref=e1194] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6451.TW
+                  - generic [ref=e1195]: 訊芯-KY
+                  - generic [ref=e1196]: 6451.TW
+                - generic [ref=e1197]: "724.00"
+                - generic [ref=e1199]:
+                  - generic [ref=e1200]: "65.00"
+                  - generic [ref=e1202]: 9.86%
+                - generic [ref=e1203]: 3,342
+            - listitem [ref=e1204]:
+              - generic [ref=e1205]:
+                - link "強茂 2481.TW" [ref=e1207] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2481.TW
+                  - generic [ref=e1208]: 強茂
+                  - generic [ref=e1209]: 2481.TW
+                - generic [ref=e1211]: "159.00"
+                - generic [ref=e1213]:
+                  - generic [ref=e1214]: "13.00"
+                  - generic [ref=e1216]: 8.90%
+                - generic [ref=e1217]: 33,370
+            - listitem [ref=e1218]:
+              - generic [ref=e1219]:
+                - link "矽格 6257.TW" [ref=e1221] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6257.TW
+                  - generic [ref=e1222]: 矽格
+                  - generic [ref=e1223]: 6257.TW
+                - generic [ref=e1225]: "230.00"
+                - generic [ref=e1227]:
+                  - generic [ref=e1228]: "15.00"
+                  - generic [ref=e1230]: 6.98%
+                - generic [ref=e1231]: 14,785
+            - listitem [ref=e1232]:
+              - generic [ref=e1233]:
+                - link "京元電子 2449.TW" [ref=e1235] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2449.TW
+                  - generic [ref=e1236]: 京元電子
+                  - generic [ref=e1237]: 2449.TW
+                - generic [ref=e1239]: "322.50"
+                - generic [ref=e1241]:
+                  - generic [ref=e1242]: "16.00"
+                  - generic [ref=e1244]: 5.22%
+                - generic [ref=e1245]: 44,913
+      - generic [ref=e1248]:
+        - generic [ref=e1251]: 相關概念股
+        - generic [ref=e1252]:
+          - generic [ref=e1254]:
+            - generic [ref=e1255]: 概念股
+            - generic [ref=e1256]: 當日平均漲跌%
+            - generic [ref=e1257]: 近1月平均漲跌%
+          - list [ref=e1261]:
+            - listitem [ref=e1262]:
+              - generic [ref=e1263]:
+                - link "HomePod" [ref=e1265] [cursor=pointer]:
+                  - /url: /class-quote?category=HomePod&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1267]: 2.26%
+                - generic [ref=e1270]: 24.12%
+            - listitem [ref=e1272]:
+              - generic [ref=e1273]:
+                - link "華為" [ref=e1275] [cursor=pointer]:
+                  - /url: /class-quote?category=%E8%8F%AF%E7%82%BA&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1277]: 2.09%
+                - generic [ref=e1280]: 19.02%
+            - listitem [ref=e1282]:
+              - generic [ref=e1283]:
+                - link "無線充電" [ref=e1285] [cursor=pointer]:
+                  - /url: /class-quote?category=%E7%84%A1%E7%B7%9A%E5%85%85%E9%9B%BB&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1287]: 2.02%
+                - generic [ref=e1290]: 20.22%
+            - listitem [ref=e1292]:
+              - generic [ref=e1293]:
+                - link "5G" [ref=e1295] [cursor=pointer]:
+                  - /url: /class-quote?category=5G&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1297]: 1.94%
+                - generic [ref=e1300]: 17.45%
+            - listitem [ref=e1302]:
+              - generic [ref=e1303]:
+                - link "智慧音箱" [ref=e1305] [cursor=pointer]:
+                  - /url: /class-quote?category=%E6%99%BA%E6%85%A7%E9%9F%B3%E7%AE%B1&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1307]: 1.68%
+                - generic [ref=e1310]: 22.07%
+      - generic [ref=e1313]:
+        - generic [ref=e1314]:
+          - text: Yahoo Finance
+          - generic [ref=e1315]:
+            - link "服務條款" [ref=e1316] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/terms?locale=zh-Hant-TW
+            - text: 和
+            - link "隱私權保護政策" [ref=e1317] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/privacy-policy?locale=zh-Hant-TW
+          - link "隱私權儀表板" [ref=e1318] [cursor=pointer]:
+            - /url: https://guce.yahoo.com/privacy-dashboard?locale=zh-Hant-TW
+        - generic [ref=e1319]:
+          - generic [ref=e1320]:
+            - text: 台股資料來源
+            - link "臺灣證券交易所" [ref=e1321] [cursor=pointer]:
+              - /url: http://www.twse.com.tw/zh/
+            - text: 、
+            - link "臺灣期貨交易所" [ref=e1322] [cursor=pointer]:
+              - /url: http://www.taifex.com.tw
+            - text: 及
+            - link "財團法人中華民國證券櫃檯買賣中心" [ref=e1323] [cursor=pointer]:
+              - /url: http://www.tpex.org.tw/web/
+            - text: ，國際股市資料來源請參考
+            - link "Yahoo Finance" [ref=e1324] [cursor=pointer]:
+              - /url: https://help.yahoo.com/kb/finance-for-desktop/SLN2310.html
+            - text: 。使用Yahoo股市服務前，請您詳閱相關
+            - link "使用規範與聲明" [ref=e1325] [cursor=pointer]:
+              - /url: https://tw.help.yahoo.com/kb/stock-tw-web/SLN28774.html?impressions=true
+            - text: 。
+          - generic [ref=e1326]:
+            - text: 台股行情、個股基本資料及財務資訊為
+            - link "精誠資訊" [ref=e1327] [cursor=pointer]:
+              - /url: https://tw.systex.com/
+            - text: 提供。

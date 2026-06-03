@@ -1,0 +1,1104 @@
+- generic [ref=e2]:
+  - link "Skip to navigation":
+    - /url: "#navigation-container"
+  - link "Skip to main content":
+    - /url: "#nimbus-app"
+  - link "Skip to right column":
+    - /url: "#right-rail"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - heading "Yahoo Finance" [level=1] [ref=e8]
+            - link "Yahoo Finance" [ref=e9] [cursor=pointer]:
+              - /url: /
+              - img [ref=e11]
+          - search [ref=e15]:
+            - searchbox "Search for news, tickers or companies" [ref=e16]
+            - button "Search" [ref=e17] [cursor=pointer]:
+              - img [ref=e18]
+          - navigation [ref=e20]:
+            - list [ref=e21]:
+              - listitem [ref=e22]:
+                - link "News" [ref=e23] [cursor=pointer]:
+                  - /url: https://www.yahoo.com/
+              - listitem [ref=e24]:
+                - link "Finance" [ref=e25] [cursor=pointer]:
+                  - /url: https://finance.yahoo.com/
+              - listitem [ref=e26]:
+                - link "Sports" [ref=e27] [cursor=pointer]:
+                  - /url: https://sports.yahoo.com/
+              - listitem [ref=e28]:
+                - button "More" [ref=e31] [cursor=pointer]:
+                  - text: More
+                  - img [ref=e33]
+          - toolbar [ref=e35]:
+            - button "Notifications" [ref=e37] [cursor=pointer]:
+              - img [ref=e38]
+            - link "Check your mail, link" [ref=e41] [cursor=pointer]:
+              - /url: https://mail.yahoo.com/
+              - img [ref=e42]
+            - link "Sign in" [ref=e45] [cursor=pointer]:
+              - /url: https://login.yahoo.com/?done=https%3A%2F%2Ffinance.yahoo.com%2Fquote%2F%255EVIX%2F&intl=us&lang=en-US&activity=ybar-signin&pspid=95993639&src=finance
+      - navigation "Navigation" [ref=e46]:
+        - menubar "Navigation menubar" [ref=e47]:
+          - menuitem "My Portfolio" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]: My Portfolio
+          - menuitem "News" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]: News
+          - menuitem "Markets" [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]: Markets
+          - menuitem "Research" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]: Research
+          - menuitem "Community" [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: Community
+          - menuitem "Personal Finance" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: Personal Finance
+          - menuitem "Videos" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: Videos
+          - menuitem "Watch Now" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: Watch Now
+        - button "Network" [ref=e67] [cursor=pointer]:
+          - img [ref=e69]
+          - generic [ref=e71]:
+            - generic [ref=e72]: Network
+            - img [ref=e74]
+  - generic [ref=e76]:
+    - complementary [ref=e77]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - button "U.S. markets close in 2h 39m" [ref=e86]:
+            - img [ref=e88]
+          - menu [ref=e90]:
+            - button "US Markets" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - text: US Markets
+                - img [ref=e94]
+        - generic [ref=e96]:
+          - generic [ref=e100]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - link "S&P 500" [ref=e105] [cursor=pointer]:
+                  - /url: /quote/%5EGSPC/
+                  - generic [ref=e106]: S&P 500
+                - generic [ref=e107]:
+                  - generic [ref=e108]: 7,559.32
+                  - generic [ref=e109]:
+                    - generic [ref=e110]: "-50.46"
+                    - generic [ref=e111]: "-0.66%"
+              - img [ref=e114]
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - link "Dow 30" [ref=e122] [cursor=pointer]:
+                  - /url: /quote/%5EDJI/
+                  - generic [ref=e123]: Dow 30
+                - generic [ref=e124]:
+                  - generic [ref=e125]: 50,886.44
+                  - generic [ref=e126]:
+                    - generic [ref=e127]: "-421.35"
+                    - generic [ref=e128]: "-0.82%"
+              - img [ref=e131]
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - link "Nasdaq" [ref=e139] [cursor=pointer]:
+                  - /url: /quote/%5EIXIC/
+                  - generic [ref=e140]: Nasdaq
+                - generic [ref=e141]:
+                  - generic [ref=e142]: 26,806.44
+                  - generic [ref=e143]:
+                    - generic [ref=e144]: "-287.46"
+                    - generic [ref=e145]: "-1.06%"
+              - img [ref=e148]
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - link "Russell 2000" [ref=e156] [cursor=pointer]:
+                  - /url: /quote/%5ERUT/
+                  - generic [ref=e157]: Russell 2000
+                - generic [ref=e158]:
+                  - generic [ref=e159]: 2,889.65
+                  - generic [ref=e160]:
+                    - generic [ref=e161]: "-42.31"
+                    - generic [ref=e162]: "-1.44%"
+              - img [ref=e165]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - link "VIX" [ref=e173] [cursor=pointer]:
+                  - /url: /quote/%5EVIX/
+                  - generic [ref=e174]: VIX
+                - generic [ref=e175]:
+                  - generic [ref=e176]: "16.30"
+                  - generic [ref=e177]:
+                    - generic [ref=e178]: "+0.53"
+                    - generic [ref=e179]: +3.36%
+              - img [ref=e182]
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - link "Gold" [ref=e190] [cursor=pointer]:
+                  - /url: /quote/GC%3DF/
+                  - generic [ref=e191]: Gold
+                - generic [ref=e192]:
+                  - generic [ref=e193]: 4,473.80
+                  - generic [ref=e194]:
+                    - generic [ref=e195]: "-46.10"
+                    - generic [ref=e196]: "-1.02%"
+              - img [ref=e199]
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - link "Bitcoin USD" [ref=e207] [cursor=pointer]:
+                  - /url: /quote/BTC-USD/
+                  - generic [ref=e208]: Bitcoin USD
+                - generic [ref=e209]:
+                  - generic [ref=e210]: 65,755.58
+                  - generic [ref=e211]:
+                    - generic [ref=e212]: "-1,600.82"
+                    - generic [ref=e213]: "-2.38%"
+              - img [ref=e216]
+            - generic [ref=e226]:
+              - generic [ref=e227]:
+                - link "Brent Crude Oil" [ref=e228] [cursor=pointer]:
+                  - /url: /quote/BZ%3DF/
+                  - generic [ref=e229]: Brent Crude Oil
+                - generic [ref=e230]:
+                  - generic [ref=e231]: "97.65"
+                  - generic [ref=e232]:
+                    - generic [ref=e233]: "+1.65"
+                    - generic [ref=e234]: +1.72%
+              - img [ref=e237]
+          - generic [ref=e243]:
+            - button "prev" [disabled]:
+              - generic:
+                - img
+            - button "next" [ref=e244] [cursor=pointer]:
+              - img [ref=e246]
+      - generic [ref=e248]:
+        - generic:
+          - generic: ADVERTISEMENT
+    - main [ref=e249]:
+      - generic [ref=e251]:
+        - complementary "Left navigation" [ref=e252]:
+          - navigation "^VIX navigation" [ref=e254]:
+            - menubar "^VIX navigation menubar" [ref=e255]:
+              - menuitem "Summary" [ref=e256] [cursor=pointer]:
+                - generic [ref=e257]: Summary
+              - menuitem "News" [ref=e258] [cursor=pointer]:
+                - generic [ref=e259]: News
+              - menuitem "Chart" [ref=e260] [cursor=pointer]:
+                - generic [ref=e261]: Chart
+              - menuitem "Conversations" [ref=e262] [cursor=pointer]:
+                - generic [ref=e263]: Conversations
+              - menuitem "Historical Data" [ref=e264] [cursor=pointer]:
+                - generic [ref=e265]: Historical Data
+              - menuitem "Options" [ref=e266] [cursor=pointer]:
+                - generic [ref=e267]: Options
+              - menuitem "Components" [ref=e268] [cursor=pointer]:
+                - generic [ref=e269]: Components
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - generic [ref=e273]:
+                - generic [ref=e274]:
+                  - generic [ref=e275]: Cboe Indices
+                  - generic [ref=e276]: •
+                  - generic [ref=e277]: USD
+                - generic [ref=e279]:
+                  - heading "CBOE Volatility Index (^VIX)" [level=1] [ref=e281]
+                  - button "Follow" [ref=e283] [cursor=pointer]:
+                    - img [ref=e285]
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic [ref=e293]: "16.30"
+                  - generic [ref=e294]: "+0.53"
+                  - generic [ref=e295]: (+3.36%)
+                - generic [ref=e297]: As of 12:07:01 PM CDT. Market Open.
+            - generic [ref=e300]:
+              - tablist "Chart Range Bar" [ref=e301]:
+                - tab "1D" [selected] [ref=e302]
+                - tab "5D" [ref=e303] [cursor=pointer]:
+                  - generic [ref=e305]: 5D
+                - tab "1M" [ref=e306] [cursor=pointer]:
+                  - generic [ref=e308]: 1M
+                - tab "6M" [ref=e309] [cursor=pointer]:
+                  - generic [ref=e311]: 6M
+                - tab "YTD" [ref=e312] [cursor=pointer]:
+                  - generic [ref=e314]: YTD
+                - tab "1Y" [ref=e315] [cursor=pointer]:
+                  - generic [ref=e317]: 1Y
+                - tab "5Y" [ref=e318] [cursor=pointer]:
+                  - generic [ref=e320]: 5Y
+                - tab "All" [ref=e321] [cursor=pointer]:
+                  - generic [ref=e323]: All
+              - generic [ref=e325]:
+                - button "Chart Type" [ref=e329] [cursor=pointer]:
+                  - generic:
+                    - img
+                  - generic:
+                    - img
+                - generic [ref=e330]:
+                  - link "Advanced Chart" [ref=e331] [cursor=pointer]:
+                    - /url: /chart/%5EVIX
+                    - img [ref=e333]
+                    - generic [ref=e335]: Advanced Chart
+                  - link "AlphaSpace Chart" [ref=e338] [cursor=pointer]:
+                    - /url: https://finance.yahoo.com/about/promos/gold/alphaspace/?.done=https%3A%2F%2Falphaspace.finance.yahoo.com%2F%3Fview%3Danalysis%26ticker%3D%255EVIX%26ncid%3D100003536&ncid=100003536
+                    - generic [ref=e339]:
+                      - img [ref=e341]
+                      - text: AlphaSpace Chart
+                - button "Chart settings" [ref=e344] [cursor=pointer]:
+                  - img [ref=e346]
+              - generic [ref=e352]: Loading chart for ^VIX
+            - list [ref=e359]:
+              - listitem [ref=e360]:
+                - generic "Previous Close" [ref=e361]
+                - generic [ref=e362]: "15.77"
+              - listitem [ref=e363]:
+                - generic "Open" [ref=e364]
+                - generic [ref=e365]: "15.97"
+              - listitem [ref=e366]:
+                - generic "Volume" [ref=e367]
+                - generic [ref=e368]: "0"
+              - listitem [ref=e369]:
+                - generic "Day's Range" [ref=e370]
+                - generic [ref=e371]: 15.94 - 16.63
+              - listitem [ref=e372]:
+                - generic "52 Week Range" [ref=e373]
+                - generic [ref=e374]: 13.38 - 35.30
+              - listitem [ref=e375]:
+                - generic "Avg. Volume" [ref=e376]
+                - generic [ref=e377]: "0"
+            - generic [ref=e379]:
+              - heading "CBOE Volatility Index Heatmap" [level=3] [ref=e381]
+              - img "Progress Spinner" [ref=e387]
+              - generic [ref=e411]:
+                - paragraph [ref=e414]: <= -3
+                - paragraph [ref=e417]: "-2"
+                - paragraph [ref=e420]: "-1"
+                - paragraph [ref=e423]: "0"
+                - paragraph [ref=e426]: "1"
+                - paragraph [ref=e429]: "2"
+                - paragraph [ref=e432]: ">= 3"
+            - generic [ref=e435]:
+              - heading "People Also Watch" [level=3] [ref=e437]
+              - generic [ref=e440]:
+                - generic [ref=e441]:
+                  - generic [ref=e442]:
+                    - generic [ref=e445]:
+                      - generic [ref=e446]: ^TNX
+                      - generic "CBOE Interest Rate 10 Year T No" [ref=e447]
+                    - generic [ref=e448]:
+                      - strong [ref=e449]: "4.4930"
+                      - generic [ref=e450]: +0.85%
+                  - link "^TNX" [ref=e451] [cursor=pointer]:
+                    - /url: /quote/%5ETNX/
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - generic [ref=e456]:
+                      - generic [ref=e457]: SPY
+                      - generic "State Street SPDR S&P 500 ETF Trust" [ref=e458]
+                    - generic [ref=e459]:
+                      - strong [ref=e460]: "754.31"
+                      - generic [ref=e461]: "-0.69%"
+                  - link "SPY" [ref=e462] [cursor=pointer]:
+                    - /url: /quote/SPY/
+                - generic [ref=e463]:
+                  - generic [ref=e464]:
+                    - generic [ref=e467]:
+                      - generic [ref=e468]: QQQ
+                      - generic "Invesco QQQ Trust" [ref=e469]
+                    - generic [ref=e470]:
+                      - strong [ref=e471]: "741.99"
+                      - generic [ref=e472]: "-0.56%"
+                  - link "QQQ" [ref=e473] [cursor=pointer]:
+                    - /url: /quote/QQQ/
+                - generic [ref=e474]:
+                  - generic [ref=e475]:
+                    - generic [ref=e478]:
+                      - generic [ref=e479]: UVXY
+                      - generic "ProShares Ultra VIX Short-Term Futures ETF" [ref=e480]
+                    - generic [ref=e481]:
+                      - strong [ref=e482]: "29.43"
+                      - generic [ref=e483]: +0.96%
+                  - link "UVXY" [ref=e484] [cursor=pointer]:
+                    - /url: /quote/UVXY/
+                - generic [ref=e485]:
+                  - generic [ref=e486]:
+                    - generic [ref=e489]:
+                      - generic [ref=e490]: GLD
+                      - generic "SPDR Gold Shares" [ref=e491]
+                    - generic [ref=e492]:
+                      - strong [ref=e493]: "407.70"
+                      - generic [ref=e494]: "-1.03%"
+                  - link "GLD" [ref=e495] [cursor=pointer]:
+                    - /url: /quote/GLD/
+            - generic [ref=e498]:
+              - heading "Recent News" [level=3] [ref=e499]
+              - link "View More" [ref=e500] [cursor=pointer]:
+                - /url: /quote/%5EVIX/news/
+                - text: View More
+                - img [ref=e502]
+            - generic [ref=e545]:
+              - heading "Trending Indices" [level=3] [ref=e547]
+              - generic [ref=e550]:
+                - generic [ref=e551]:
+                  - generic [ref=e552]:
+                    - generic [ref=e555]:
+                      - generic [ref=e556]: ^GSPC
+                      - generic "S&P 500" [ref=e557]
+                    - generic [ref=e558]:
+                      - strong [ref=e559]: 7,559.03
+                      - generic [ref=e560]: "-0.67%"
+                  - link "^GSPC" [ref=e561] [cursor=pointer]:
+                    - /url: /quote/%5EGSPC/
+                - generic [ref=e562]:
+                  - generic [ref=e563]:
+                    - generic [ref=e566]:
+                      - generic [ref=e567]: ^DJI
+                      - generic "Dow Jones Industrial Average" [ref=e568]
+                    - generic [ref=e569]:
+                      - strong [ref=e570]: 50,887.19
+                      - generic [ref=e571]: "-0.82%"
+                  - link "^DJI" [ref=e572] [cursor=pointer]:
+                    - /url: /quote/%5EDJI/
+                - generic [ref=e573]:
+                  - generic [ref=e574]:
+                    - generic [ref=e577]:
+                      - generic [ref=e578]: ^IXIC
+                      - generic "NASDAQ Composite" [ref=e579]
+                    - generic [ref=e580]:
+                      - strong [ref=e581]: 26,806.44
+                      - generic [ref=e582]: "-1.06%"
+                  - link "^IXIC" [ref=e583] [cursor=pointer]:
+                    - /url: /quote/%5EIXIC/
+                - generic [ref=e584]:
+                  - generic [ref=e585]:
+                    - generic [ref=e588]:
+                      - generic [ref=e589]: ^NYA
+                      - generic "NYSE Composite Index" [ref=e590]
+                    - generic [ref=e591]:
+                      - strong [ref=e592]: 23,362.55
+                      - generic [ref=e593]: "-0.50%"
+                  - link "^NYA" [ref=e594] [cursor=pointer]:
+                    - /url: /quote/%5ENYA/
+                - generic [ref=e595]:
+                  - generic [ref=e596]:
+                    - generic [ref=e599]:
+                      - generic [ref=e600]: ^XAX
+                      - generic "NYSE American Composite Index" [ref=e601]
+                    - generic [ref=e602]:
+                      - strong [ref=e603]: 8,792.83
+                      - generic [ref=e604]: +0.34%
+                  - link "^XAX" [ref=e605] [cursor=pointer]:
+                    - /url: /quote/%5EXAX/
+                - generic [ref=e606]:
+                  - generic [ref=e607]:
+                    - generic [ref=e610]:
+                      - generic [ref=e611]: ^BUK100P
+                      - generic "Cboe UK 100" [ref=e612]
+                    - generic [ref=e613]:
+                      - strong [ref=e614]: 1,027.82
+                      - generic [ref=e615]: "-0.40%"
+                  - link "^BUK100P" [ref=e616] [cursor=pointer]:
+                    - /url: /quote/%5EBUK100P/
+                - generic [ref=e617]:
+                  - generic [ref=e618]:
+                    - generic [ref=e621]:
+                      - generic [ref=e622]: ^RUT
+                      - generic "Russell 2000 Index" [ref=e623]
+                    - generic [ref=e624]:
+                      - strong [ref=e625]: 2,889.65
+                      - generic [ref=e626]: "-1.44%"
+                  - link "^RUT" [ref=e627] [cursor=pointer]:
+                    - /url: /quote/%5ERUT/
+                - generic [ref=e628]:
+                  - generic [ref=e629]:
+                    - generic [ref=e632]:
+                      - generic [ref=e633]: ^FTSE
+                      - generic "FTSE 100" [ref=e634]
+                    - generic [ref=e635]:
+                      - strong [ref=e636]: 10,332.30
+                      - generic [ref=e637]: "-0.40%"
+                  - link "^FTSE" [ref=e638] [cursor=pointer]:
+                    - /url: /quote/%5EFTSE/
+                - generic [ref=e639]:
+                  - generic [ref=e640]:
+                    - generic [ref=e643]:
+                      - generic [ref=e644]: ^GDAXI
+                      - generic "DAX P" [ref=e645]
+                    - generic [ref=e646]:
+                      - strong [ref=e647]: 24,795.94
+                      - generic [ref=e648]: "-1.31%"
+                  - link "^GDAXI" [ref=e649] [cursor=pointer]:
+                    - /url: /quote/%5EGDAXI/
+                - generic [ref=e650]:
+                  - generic [ref=e651]:
+                    - generic [ref=e654]:
+                      - generic [ref=e655]: ^FCHI
+                      - generic "CAC 40" [ref=e656]
+                    - generic [ref=e657]:
+                      - strong [ref=e658]: 8,150.42
+                      - generic [ref=e659]: "-0.71%"
+                  - link "^FCHI" [ref=e660] [cursor=pointer]:
+                    - /url: /quote/%5EFCHI/
+                - generic [ref=e661]:
+                  - generic [ref=e662]:
+                    - generic [ref=e665]:
+                      - generic [ref=e666]: ^STOXX50E
+                      - generic "EURO STOXX 50 I" [ref=e667]
+                    - generic [ref=e668]:
+                      - strong [ref=e669]: 6,053.57
+                      - generic [ref=e670]: "-0.89%"
+                  - link "^STOXX50E" [ref=e671] [cursor=pointer]:
+                    - /url: /quote/%5ESTOXX50E/
+                - generic [ref=e672]:
+                  - generic [ref=e673]:
+                    - generic [ref=e676]:
+                      - generic [ref=e677]: ^N100
+                      - generic "Euronext 100 Index" [ref=e678]
+                    - generic [ref=e679]:
+                      - strong [ref=e680]: 1,854.41
+                      - generic [ref=e681]: "-0.46%"
+                  - link "^N100" [ref=e682] [cursor=pointer]:
+                    - /url: /quote/%5EN100/
+                - generic [ref=e683]:
+                  - generic [ref=e684]:
+                    - generic [ref=e687]:
+                      - generic [ref=e688]: ^BFX
+                      - generic "BEL 20" [ref=e689]
+                    - generic [ref=e690]:
+                      - strong [ref=e691]: 5,500.30
+                      - generic [ref=e692]: "-0.89%"
+                  - link "^BFX" [ref=e693] [cursor=pointer]:
+                    - /url: /quote/%5EBFX/
+                - generic [ref=e694]:
+                  - generic [ref=e695]:
+                    - generic [ref=e698]:
+                      - generic [ref=e699]: IMOEX.ME
+                      - generic "MOEX Russia Index" [ref=e700]
+                    - generic [ref=e701]:
+                      - strong [ref=e702]: 2,222.51
+                      - generic [ref=e703]: "-0.19%"
+                  - link "IMOEX.ME" [ref=e704] [cursor=pointer]:
+                    - /url: /quote/IMOEX.ME/
+                - generic [ref=e705]:
+                  - generic [ref=e706]:
+                    - generic [ref=e709]:
+                      - generic [ref=e710]: ^N225
+                      - generic "Nikkei 225" [ref=e711]
+                    - generic [ref=e712]:
+                      - strong [ref=e713]: 68,402.13
+                      - generic [ref=e714]: +2.50%
+                  - link "^N225" [ref=e715] [cursor=pointer]:
+                    - /url: /quote/%5EN225/
+                - generic [ref=e716]:
+                  - generic [ref=e717]:
+                    - generic [ref=e720]:
+                      - generic [ref=e721]: ^HSI
+                      - generic "HANG SENG INDEX" [ref=e722]
+                    - generic [ref=e723]:
+                      - strong [ref=e724]: 25,633.21
+                      - generic [ref=e725]: "-1.56%"
+                  - link "^HSI" [ref=e726] [cursor=pointer]:
+                    - /url: /quote/%5EHSI/
+                - generic [ref=e727]:
+                  - generic [ref=e728]:
+                    - generic [ref=e731]:
+                      - generic [ref=e732]: 000001.SS
+                      - generic "SSE Composite Index" [ref=e733]
+                    - generic [ref=e734]:
+                      - strong [ref=e735]: 4,083.97
+                      - generic [ref=e736]: +0.22%
+                  - link "000001.SS" [ref=e737] [cursor=pointer]:
+                    - /url: /quote/000001.SS/
+                - generic [ref=e738]:
+                  - generic [ref=e739]:
+                    - generic [ref=e742]:
+                      - generic [ref=e743]: 399001.SZ
+                      - generic "Shenzhen Index" [ref=e744]
+                    - generic [ref=e745]:
+                      - strong [ref=e746]: 15,704.71
+                      - generic [ref=e747]: +0.73%
+                  - link "399001.SZ" [ref=e748] [cursor=pointer]:
+                    - /url: /quote/399001.SZ/
+                - generic [ref=e749]:
+                  - generic [ref=e750]:
+                    - generic [ref=e753]:
+                      - generic [ref=e754]: ^STI
+                      - generic "STI Index" [ref=e755]
+                    - generic [ref=e756]:
+                      - strong [ref=e757]: 5,138.24
+                      - generic [ref=e758]: +0.80%
+                  - link "^STI" [ref=e759] [cursor=pointer]:
+                    - /url: /quote/%5ESTI/
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - generic [ref=e764]:
+                      - generic [ref=e765]: ^AXJO
+                      - generic "S&P/ASX 200" [ref=e766]
+                    - generic [ref=e767]:
+                      - strong [ref=e768]: 8,785.70
+                      - generic [ref=e769]: +0.70%
+                  - link "^AXJO" [ref=e770] [cursor=pointer]:
+                    - /url: /quote/%5EAXJO/
+                - generic [ref=e771]:
+                  - generic [ref=e772]:
+                    - generic [ref=e775]:
+                      - generic [ref=e776]: ^AORD
+                      - generic "ALL ORDINARIES" [ref=e777]
+                    - generic [ref=e778]:
+                      - strong [ref=e779]: 9,017.20
+                      - generic [ref=e780]: +0.57%
+                  - link "^AORD" [ref=e781] [cursor=pointer]:
+                    - /url: /quote/%5EAORD/
+                - generic [ref=e782]:
+                  - generic [ref=e783]:
+                    - generic [ref=e786]:
+                      - generic [ref=e787]: ^BSESN
+                      - generic "S&P BSE SENSEX" [ref=e788]
+                    - generic [ref=e789]:
+                      - strong [ref=e790]: 74,346.17
+                      - generic [ref=e791]: "-0.41%"
+                  - link "^BSESN" [ref=e792] [cursor=pointer]:
+                    - /url: /quote/%5EBSESN/
+                - generic [ref=e793]:
+                  - generic [ref=e794]:
+                    - generic [ref=e797]:
+                      - generic [ref=e798]: ^JKSE
+                      - generic "IDX COMPOSITE" [ref=e799]
+                    - generic [ref=e800]:
+                      - strong [ref=e801]: 5,941.07
+                      - generic [ref=e802]: "-4.11%"
+                  - link "^JKSE" [ref=e803] [cursor=pointer]:
+                    - /url: /quote/%5EJKSE/
+                - generic [ref=e804]:
+                  - generic [ref=e805]:
+                    - generic [ref=e808]:
+                      - generic [ref=e809]: ^KLSE
+                      - generic "FTSE Bursa Malaysia KLCI" [ref=e810]
+                    - generic [ref=e811]:
+                      - strong [ref=e812]: 1,672.74
+                      - generic [ref=e813]: "-0.61%"
+                  - link "^KLSE" [ref=e814] [cursor=pointer]:
+                    - /url: /quote/%5EKLSE/
+                - generic [ref=e815]:
+                  - generic [ref=e816]:
+                    - generic [ref=e819]:
+                      - generic [ref=e820]: ^NZ50
+                      - generic "S&P/NZX 50 INDEX GROSS ( GROSS" [ref=e821]
+                    - generic [ref=e822]:
+                      - strong [ref=e823]: 13,115.08
+                      - generic [ref=e824]: "-0.42%"
+                  - link "^NZ50" [ref=e825] [cursor=pointer]:
+                    - /url: /quote/%5ENZ50/
+                - generic [ref=e826]:
+                  - generic [ref=e827]:
+                    - generic [ref=e830]:
+                      - generic [ref=e831]: ^KS11
+                      - generic "KOSPI Composite Index" [ref=e832]
+                    - generic [ref=e833]:
+                      - strong [ref=e834]: 8,801.49
+                      - generic [ref=e835]: +0.15%
+                  - link "^KS11" [ref=e836] [cursor=pointer]:
+                    - /url: /quote/%5EKS11/
+                - generic [ref=e837]:
+                  - generic [ref=e838]:
+                    - generic [ref=e841]:
+                      - generic [ref=e842]: ^TWII
+                      - generic "TWSE Capitalization Weighted Stock Index" [ref=e843]
+                    - generic [ref=e844]:
+                      - strong [ref=e845]: 46,459.16
+                      - generic [ref=e846]: +1.98%
+                  - link "^TWII" [ref=e847] [cursor=pointer]:
+                    - /url: /quote/%5ETWII/
+                - generic [ref=e848]:
+                  - generic [ref=e849]:
+                    - generic [ref=e852]:
+                      - generic [ref=e853]: ^GSPTSE
+                      - generic "S&P/TSX Composite index" [ref=e854]
+                    - generic [ref=e855]:
+                      - strong [ref=e856]: 34,967.71
+                      - generic [ref=e857]: "-0.57%"
+                  - link "^GSPTSE" [ref=e858] [cursor=pointer]:
+                    - /url: /quote/%5EGSPTSE/
+                - generic [ref=e859]:
+                  - generic [ref=e860]:
+                    - generic [ref=e863]:
+                      - generic [ref=e864]: ^BVSP
+                      - generic "IBOVESPA" [ref=e865]
+                    - generic [ref=e866]:
+                      - strong [ref=e867]: 170,411.62
+                      - generic [ref=e868]: "-2.17%"
+                  - link "^BVSP" [ref=e869] [cursor=pointer]:
+                    - /url: /quote/%5EBVSP/
+                - generic [ref=e870]:
+                  - generic [ref=e871]:
+                    - generic [ref=e874]:
+                      - generic [ref=e875]: ^MXX
+                      - generic "IPC MEXICO" [ref=e876]
+                    - generic [ref=e877]:
+                      - strong [ref=e878]: 68,699.78
+                      - generic [ref=e879]: "-0.28%"
+                  - link "^MXX" [ref=e880] [cursor=pointer]:
+                    - /url: /quote/%5EMXX/
+                - generic [ref=e881]:
+                  - generic [ref=e882]:
+                    - generic [ref=e885]:
+                      - generic [ref=e886]: ^IPSA
+                      - generic "S&P IPSA" [ref=e887]
+                    - generic [ref=e888]:
+                      - strong [ref=e889]: 10,339.26
+                      - generic [ref=e890]: "-1.24%"
+                  - link "^IPSA" [ref=e891] [cursor=pointer]:
+                    - /url: /quote/%5EIPSA/
+                - generic [ref=e892]:
+                  - generic [ref=e893]:
+                    - generic [ref=e896]:
+                      - generic [ref=e897]: ^MERV
+                      - generic "MERVAL" [ref=e898]
+                    - generic [ref=e899]:
+                      - strong [ref=e900]: 3,180,782.80
+                      - generic [ref=e901]: "-1.35%"
+                  - link "^MERV" [ref=e902] [cursor=pointer]:
+                    - /url: /quote/%5EMERV/
+                - generic [ref=e903]:
+                  - generic [ref=e904]:
+                    - generic [ref=e907]:
+                      - generic [ref=e908]: ^TA125.TA
+                      - generic "TA-125" [ref=e909]
+                    - generic [ref=e910]:
+                      - strong [ref=e911]: 4,226.50
+                      - generic [ref=e912]: "-0.91%"
+                  - link "^TA125.TA" [ref=e913] [cursor=pointer]:
+                    - /url: /quote/%5ETA125.TA/
+                - generic [ref=e914]:
+                  - generic [ref=e915]:
+                    - generic [ref=e918]:
+                      - generic [ref=e919]: ^CASE30
+                      - generic "EGX 30 Price Return Index" [ref=e920]
+                    - generic [ref=e921]:
+                      - strong [ref=e922]: 52,564.40
+                      - generic [ref=e923]: "-0.69%"
+                  - link "^CASE30" [ref=e924] [cursor=pointer]:
+                    - /url: /quote/%5ECASE30/
+                - generic [ref=e925]:
+                  - generic [ref=e926]:
+                    - generic [ref=e929]:
+                      - generic [ref=e930]: ^JN0U.JO
+                      - generic "Top 40 USD Net TRI Index" [ref=e931]
+                    - generic [ref=e932]:
+                      - strong [ref=e933]: 6,947.40
+                      - generic [ref=e934]: "-1.30%"
+                  - link "^JN0U.JO" [ref=e935] [cursor=pointer]:
+                    - /url: /quote/%5EJN0U.JO/
+          - generic [ref=e939]:
+            - generic [ref=e940]:
+              - link "Yahoo Finance" [ref=e941] [cursor=pointer]:
+                - /url: /
+              - generic [ref=e944]: Copyright © 2026 Yahoo. All rights reserved.
+              - generic [ref=e945]:
+                - link "Follow on Twitter" [ref=e946] [cursor=pointer]:
+                  - /url: https://twitter.com/YahooFinance
+                  - img [ref=e948]
+                - link "Follow on Facebook" [ref=e951] [cursor=pointer]:
+                  - /url: https://facebook.com/yahoofinance
+                  - img [ref=e953]
+                - link "Follow on LinkedIn" [ref=e955] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/yahoo-finance
+                  - img [ref=e957]
+            - generic [ref=e959]:
+              - generic [ref=e960]: Trending Topics
+              - link "Dow Jones" [ref=e961] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/%5EDJI/
+              - link "S&P 500" [ref=e962] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/SPY/
+              - link "DAX Index" [ref=e963] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/%5EGDAXI/
+              - link "Nvidia" [ref=e964] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/NVDA/
+              - link "Tesla" [ref=e965] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/TSLA/
+              - link "DJT" [ref=e966] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/quote/DJT/
+              - link "Tariffs" [ref=e967] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/topic/tariffs/
+            - generic [ref=e968]:
+              - generic [ref=e969]: Explore Further
+              - link "Mortgages" [ref=e970] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/personal-finance/mortgages/
+              - link "Credit Cards" [ref=e971] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/personal-finance/credit-cards/
+              - link "Sectors" [ref=e972] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/sectors/
+              - link "Crypto Heatmap" [ref=e973] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/crypto/heatmap/
+              - link "Financial News" [ref=e974] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/news/
+            - generic [ref=e975]:
+              - generic [ref=e976]: About
+              - link "Data Disclaimer" [ref=e977] [cursor=pointer]:
+                - /url: https://help.yahoo.com/kb/finance-for-web/SLN2310.html?locale=en_US
+              - link "Help" [ref=e978] [cursor=pointer]:
+                - /url: https://help.yahoo.com/kb/finance-for-web
+              - link "Feedback" [ref=e979] [cursor=pointer]:
+                - /url: https://yahoo.uservoice.com/forums/952723-finance-b3
+              - link "Sitemap" [ref=e980] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/sitemap/
+              - link "Licensing" [ref=e981] [cursor=pointer]:
+                - /url: https://info.wrightsmedia.com/yahoo-finance-licensing
+              - link "What's New" [ref=e982] [cursor=pointer]:
+                - /url: https://finance.yahoo.com/about/whatsnew/
+              - link "About Our Ads" [ref=e983] [cursor=pointer]:
+                - /url: https://policies.oath.com/us/en/oath/privacy/adinfo/index.html
+              - generic [ref=e984]:
+                - generic [ref=e985]:
+                  - link "Terms" [ref=e986] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/terms?locale=en-US
+                  - text: and
+                  - link "Privacy Policy" [ref=e987] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/privacy-policy?locale=en-US
+                - link "Privacy Dashboard" [ref=e989] [cursor=pointer]:
+                  - /url: https://guce.yahoo.com/privacy-dashboard?locale=en-US
+      - complementary "Dock" [ref=e990]:
+        - dialog "Dock" [ref=e991]:
+          - generic [ref=e993]:
+            - search [ref=e998]:
+              - img [ref=e1000]
+              - textbox "Quote Lookup" [ref=e1002]
+            - generic [ref=e1004]:
+              - list [ref=e1005]:
+                - listitem [ref=e1006]:
+                  - generic [ref=e1009]:
+                    - link "Trending tickers" [ref=e1013] [cursor=pointer]:
+                      - /url: /trending-tickers
+                      - generic [ref=e1014]: Trending tickers
+                    - list [ref=e1015]:
+                      - listitem [ref=e1016]:
+                        - generic [ref=e1017]:
+                          - link "LASE Laser Photonics Corporation 3.4250 +1.0050 (+41.53%)" [ref=e1018] [cursor=pointer]:
+                            - /url: /quote/LASE/
+                            - generic [ref=e1019]:
+                              - generic [ref=e1020]: LASE
+                              - generic "Laser Photonics Corporation" [ref=e1021]
+                              - generic [ref=e1022]: "3.4250"
+                              - generic [ref=e1023]:
+                                - generic [ref=e1024]: "+1.0050"
+                                - generic [ref=e1025]: (+41.53%)
+                          - button "Follow" [ref=e1026] [cursor=pointer]:
+                            - img [ref=e1028]
+                      - listitem [ref=e1030]:
+                        - generic [ref=e1031]:
+                          - link "XOS Xos, Inc. 6.12 +3.89 (+174.44%)" [ref=e1032] [cursor=pointer]:
+                            - /url: /quote/XOS/
+                            - generic [ref=e1033]:
+                              - generic [ref=e1034]: XOS
+                              - generic "Xos, Inc." [ref=e1035]
+                              - generic [ref=e1036]: "6.12"
+                              - generic [ref=e1037]:
+                                - generic [ref=e1038]: "+3.89"
+                                - generic [ref=e1039]: (+174.44%)
+                          - button "Follow" [ref=e1040] [cursor=pointer]:
+                            - img [ref=e1042]
+                      - listitem [ref=e1044]:
+                        - generic [ref=e1045]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.90 +6.04 (+23.36%)" [ref=e1046] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1047]:
+                              - generic [ref=e1048]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1049]
+                              - generic [ref=e1050]: "31.90"
+                              - generic [ref=e1051]:
+                                - generic [ref=e1052]: "+6.04"
+                                - generic [ref=e1053]: (+23.36%)
+                          - button "Follow" [ref=e1054] [cursor=pointer]:
+                            - img [ref=e1056]
+                      - listitem [ref=e1058]:
+                        - generic [ref=e1059]:
+                          - link "GME GameStop Corp. 22.31 +1.39 (+6.64%)" [ref=e1060] [cursor=pointer]:
+                            - /url: /quote/GME/
+                            - generic [ref=e1061]:
+                              - generic [ref=e1062]: GME
+                              - generic "GameStop Corp." [ref=e1063]
+                              - generic [ref=e1064]: "22.31"
+                              - generic [ref=e1065]:
+                                - generic [ref=e1066]: "+1.39"
+                                - generic [ref=e1067]: (+6.64%)
+                          - button "Follow" [ref=e1068] [cursor=pointer]:
+                            - img [ref=e1070]
+                      - listitem [ref=e1072]:
+                        - generic [ref=e1073]:
+                          - link "SDOT Sadot Group Inc. 6.24 +2.96 (+90.20%)" [ref=e1074] [cursor=pointer]:
+                            - /url: /quote/SDOT/
+                            - generic [ref=e1075]:
+                              - generic [ref=e1076]: SDOT
+                              - generic "Sadot Group Inc." [ref=e1077]
+                              - generic [ref=e1078]: "6.24"
+                              - generic [ref=e1079]:
+                                - generic [ref=e1080]: "+2.96"
+                                - generic [ref=e1081]: (+90.20%)
+                          - button "Follow" [ref=e1082] [cursor=pointer]:
+                            - img [ref=e1084]
+                - listitem [ref=e1086]:
+                  - generic [ref=e1088]:
+                    - generic:
+                      - generic: ADVERTISEMENT
+                - listitem [ref=e1089]:
+                  - generic [ref=e1093]:
+                    - link "Portfolio" [ref=e1097] [cursor=pointer]:
+                      - /url: /portfolios
+                      - generic [ref=e1098]: Portfolio
+                    - generic [ref=e1100]:
+                      - paragraph [ref=e1101]: Sign in to access your portfolio
+                      - link "Sign in" [ref=e1102] [cursor=pointer]:
+                        - /url: https://login.yahoo.com/config/login?done=https%3A%2F%2Ffinance.yahoo.com%2Fquote%2F%255EVIX%2F&intl=us&lang=en-US&activity=dock-portfolio&pspid=95993639&src=finance
+                - listitem [ref=e1103]:
+                  - generic [ref=e1106]:
+                    - link "Recently viewed" [ref=e1110] [cursor=pointer]:
+                      - /url: /recent-quotes
+                      - generic [ref=e1111]: Recently viewed
+                    - img "Progress Spinner" [ref=e1113]
+                - listitem [ref=e1135]:
+                  - generic [ref=e1138]:
+                    - link "Top gainers" [ref=e1142] [cursor=pointer]:
+                      - /url: /gainers/
+                      - generic [ref=e1143]: Top gainers
+                    - list [ref=e1144]:
+                      - listitem [ref=e1145]:
+                        - generic [ref=e1146]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.82 +5.96 (+23.03%)" [ref=e1147] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1148]:
+                              - generic [ref=e1149]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1150]
+                              - generic [ref=e1151]: "31.82"
+                              - generic [ref=e1152]:
+                                - generic [ref=e1153]: "+5.96"
+                                - generic [ref=e1154]: (+23.03%)
+                          - button "Follow" [ref=e1155] [cursor=pointer]:
+                            - img [ref=e1157]
+                      - listitem [ref=e1159]:
+                        - generic [ref=e1160]:
+                          - link "ABVX ABIVAX Société Anonyme 88.90 +16.40 (+22.61%)" [ref=e1161] [cursor=pointer]:
+                            - /url: /quote/ABVX/
+                            - generic [ref=e1162]:
+                              - generic [ref=e1163]: ABVX
+                              - generic "ABIVAX Société Anonyme" [ref=e1164]
+                              - generic [ref=e1165]: "88.90"
+                              - generic [ref=e1166]:
+                                - generic [ref=e1167]: "+16.40"
+                                - generic [ref=e1168]: (+22.61%)
+                          - button "Follow" [ref=e1169] [cursor=pointer]:
+                            - img [ref=e1171]
+                      - listitem [ref=e1173]:
+                        - generic [ref=e1174]:
+                          - link "MMED MiniMed Group, Inc. 14.35 +2.05 (+16.63%)" [ref=e1175] [cursor=pointer]:
+                            - /url: /quote/MMED/
+                            - generic [ref=e1176]:
+                              - generic [ref=e1177]: MMED
+                              - generic "MiniMed Group, Inc." [ref=e1178]
+                              - generic [ref=e1179]: "14.35"
+                              - generic [ref=e1180]:
+                                - generic [ref=e1181]: "+2.05"
+                                - generic [ref=e1182]: (+16.63%)
+                          - button "Follow" [ref=e1183] [cursor=pointer]:
+                            - img [ref=e1185]
+                      - listitem [ref=e1187]:
+                        - generic [ref=e1188]:
+                          - link "TGTX TG Therapeutics, Inc. 41.06 +4.42 (+12.05%)" [ref=e1189] [cursor=pointer]:
+                            - /url: /quote/TGTX/
+                            - generic [ref=e1190]:
+                              - generic [ref=e1191]: TGTX
+                              - generic "TG Therapeutics, Inc." [ref=e1192]
+                              - generic [ref=e1193]: "41.06"
+                              - generic [ref=e1194]:
+                                - generic [ref=e1195]: "+4.42"
+                                - generic [ref=e1196]: (+12.05%)
+                          - button "Follow" [ref=e1197] [cursor=pointer]:
+                            - img [ref=e1199]
+                      - listitem [ref=e1201]:
+                        - generic [ref=e1202]:
+                          - link "STRL Sterling Infrastructure, Inc. 952.85 +77.33 (+8.83%)" [ref=e1203] [cursor=pointer]:
+                            - /url: /quote/STRL/
+                            - generic [ref=e1204]:
+                              - generic [ref=e1205]: STRL
+                              - generic "Sterling Infrastructure, Inc." [ref=e1206]
+                              - generic [ref=e1207]: "952.85"
+                              - generic [ref=e1208]:
+                                - generic [ref=e1209]: "+77.33"
+                                - generic [ref=e1210]: (+8.83%)
+                          - button "Follow" [ref=e1211] [cursor=pointer]:
+                            - img [ref=e1213]
+                - listitem [ref=e1215]:
+                  - generic [ref=e1218]:
+                    - link "Top losers" [ref=e1222] [cursor=pointer]:
+                      - /url: /losers/
+                      - generic [ref=e1223]: Top losers
+                    - list [ref=e1224]:
+                      - listitem [ref=e1225]:
+                        - generic [ref=e1226]:
+                          - link "LUNR Intuitive Machines, Inc. 33.46 -6.11 (-15.44%)" [ref=e1227] [cursor=pointer]:
+                            - /url: /quote/LUNR/
+                            - generic [ref=e1228]:
+                              - generic [ref=e1229]: LUNR
+                              - generic "Intuitive Machines, Inc." [ref=e1230]
+                              - generic [ref=e1231]: "33.46"
+                              - generic [ref=e1232]:
+                                - generic [ref=e1233]: "-6.11"
+                                - generic [ref=e1234]: (-15.44%)
+                          - button "Follow" [ref=e1235] [cursor=pointer]:
+                            - img [ref=e1237]
+                      - listitem [ref=e1239]:
+                        - generic [ref=e1240]:
+                          - link "ONDS Ondas Inc. 11.72 -1.86 (-13.68%)" [ref=e1241] [cursor=pointer]:
+                            - /url: /quote/ONDS/
+                            - generic [ref=e1242]:
+                              - generic [ref=e1243]: ONDS
+                              - generic "Ondas Inc." [ref=e1244]
+                              - generic [ref=e1245]: "11.72"
+                              - generic [ref=e1246]:
+                                - generic [ref=e1247]: "-1.86"
+                                - generic [ref=e1248]: (-13.68%)
+                          - button "Follow" [ref=e1249] [cursor=pointer]:
+                            - img [ref=e1251]
+                      - listitem [ref=e1253]:
+                        - generic [ref=e1254]:
+                          - link "MLYS Mineralys Therapeutics, Inc. 25.04 -3.81 (-13.21%)" [ref=e1255] [cursor=pointer]:
+                            - /url: /quote/MLYS/
+                            - generic [ref=e1256]:
+                              - generic [ref=e1257]: MLYS
+                              - generic "Mineralys Therapeutics, Inc." [ref=e1258]
+                              - generic [ref=e1259]: "25.04"
+                              - generic [ref=e1260]:
+                                - generic [ref=e1261]: "-3.81"
+                                - generic [ref=e1262]: (-13.21%)
+                          - button "Follow" [ref=e1263] [cursor=pointer]:
+                            - img [ref=e1265]
+                      - listitem [ref=e1267]:
+                        - generic [ref=e1268]:
+                          - link "XNDU Xanadu Quantum Technologies Limited 14.71 -2.22 (-13.11%)" [ref=e1269] [cursor=pointer]:
+                            - /url: /quote/XNDU/
+                            - generic [ref=e1270]:
+                              - generic [ref=e1271]: XNDU
+                              - generic "Xanadu Quantum Technologies Limited" [ref=e1272]
+                              - generic [ref=e1273]: "14.71"
+                              - generic [ref=e1274]:
+                                - generic [ref=e1275]: "-2.22"
+                                - generic [ref=e1276]: (-13.11%)
+                          - button "Follow" [ref=e1277] [cursor=pointer]:
+                            - img [ref=e1279]
+                      - listitem [ref=e1281]:
+                        - generic [ref=e1282]:
+                          - link "SMR NuScale Power Corporation 12.21 -1.74 (-12.51%)" [ref=e1283] [cursor=pointer]:
+                            - /url: /quote/SMR/
+                            - generic [ref=e1284]:
+                              - generic [ref=e1285]: SMR
+                              - generic "NuScale Power Corporation" [ref=e1286]
+                              - generic [ref=e1287]: "12.21"
+                              - generic [ref=e1288]:
+                                - generic [ref=e1289]: "-1.74"
+                                - generic [ref=e1290]: (-12.51%)
+                          - button "Follow" [ref=e1291] [cursor=pointer]:
+                            - img [ref=e1293]
+                - listitem [ref=e1295]:
+                  - generic [ref=e1298]:
+                    - link "Most active" [ref=e1302] [cursor=pointer]:
+                      - /url: /most-active/
+                      - generic [ref=e1303]: Most active
+                    - list [ref=e1304]:
+                      - listitem [ref=e1305]:
+                        - generic [ref=e1306]:
+                          - link "NOK Nokia Oyj 16.87 +0.02 (+0.12%)" [ref=e1307] [cursor=pointer]:
+                            - /url: /quote/NOK/
+                            - generic [ref=e1308]:
+                              - generic [ref=e1309]: NOK
+                              - generic "Nokia Oyj" [ref=e1310]
+                              - generic [ref=e1311]: "16.87"
+                              - generic [ref=e1312]:
+                                - generic [ref=e1313]: "+0.02"
+                                - generic [ref=e1314]: (+0.12%)
+                          - button "Follow" [ref=e1315] [cursor=pointer]:
+                            - img [ref=e1317]
+                      - listitem [ref=e1319]:
+                        - generic [ref=e1320]:
+                          - link "NVDA NVIDIA Corporation 215.41 -7.41 (-3.33%)" [ref=e1321] [cursor=pointer]:
+                            - /url: /quote/NVDA/
+                            - generic [ref=e1322]:
+                              - generic [ref=e1323]: NVDA
+                              - generic "NVIDIA Corporation" [ref=e1324]
+                              - generic [ref=e1325]: "215.41"
+                              - generic [ref=e1326]:
+                                - generic [ref=e1327]: "-7.41"
+                                - generic [ref=e1328]: (-3.33%)
+                          - button "Follow" [ref=e1329] [cursor=pointer]:
+                            - img [ref=e1331]
+                      - listitem [ref=e1333]:
+                        - generic [ref=e1334]:
+                          - link "NVTS Navitas Semiconductor Corporation 31.82 +5.96 (+23.03%)" [ref=e1335] [cursor=pointer]:
+                            - /url: /quote/NVTS/
+                            - generic [ref=e1336]:
+                              - generic [ref=e1337]: NVTS
+                              - generic "Navitas Semiconductor Corporation" [ref=e1338]
+                              - generic [ref=e1339]: "31.82"
+                              - generic [ref=e1340]:
+                                - generic [ref=e1341]: "+5.96"
+                                - generic [ref=e1342]: (+23.03%)
+                          - button "Follow" [ref=e1343] [cursor=pointer]:
+                            - img [ref=e1345]
+                      - listitem [ref=e1347]:
+                        - generic [ref=e1348]:
+                          - link "INTC Intel Corporation 111.42 +3.49 (+3.23%)" [ref=e1349] [cursor=pointer]:
+                            - /url: /quote/INTC/
+                            - generic [ref=e1350]:
+                              - generic [ref=e1351]: INTC
+                              - generic "Intel Corporation" [ref=e1352]
+                              - generic [ref=e1353]: "111.42"
+                              - generic [ref=e1354]:
+                                - generic [ref=e1355]: "+3.49"
+                                - generic [ref=e1356]: (+3.23%)
+                          - button "Follow" [ref=e1357] [cursor=pointer]:
+                            - img [ref=e1359]
+                      - listitem [ref=e1361]:
+                        - generic [ref=e1362]:
+                          - link "MRVL Marvell Technology, Inc. 307.45 +16.66 (+5.73%)" [ref=e1363] [cursor=pointer]:
+                            - /url: /quote/MRVL/
+                            - generic [ref=e1364]:
+                              - generic [ref=e1365]: MRVL
+                              - generic "Marvell Technology, Inc." [ref=e1366]
+                              - generic [ref=e1367]: "307.45"
+                              - generic [ref=e1368]:
+                                - generic [ref=e1369]: "+16.66"
+                                - generic [ref=e1370]: (+5.73%)
+                          - button "Follow" [ref=e1371] [cursor=pointer]:
+                            - img [ref=e1373]
+                - listitem [ref=e1375]:
+                  - generic [ref=e1378]:
+                    - link "Top economic events" [ref=e1382] [cursor=pointer]:
+                      - /url: /calendar/economic
+                      - generic [ref=e1383]: Top economic events
+                    - img "Progress Spinner" [ref=e1385]
+                - listitem [ref=e1407]:
+                  - generic [ref=e1410]:
+                    - generic [ref=e1412]:
+                      - link "Earnings events" [ref=e1414] [cursor=pointer]:
+                        - /url: /calendar/earnings?day=2026-06-03
+                        - generic [ref=e1415]: Earnings events
+                      - group [ref=e1416]:
+                        - generic [ref=e1418]:
+                          - checkbox "My earnings events" [ref=e1419] [cursor=pointer]
+                          - generic [ref=e1420]: My earnings events
+                          - img [ref=e1422]
+                        - generic [ref=e1425]:
+                          - checkbox "Earnings events" [checked] [ref=e1426] [cursor=pointer]
+                          - generic [ref=e1427]: Earnings events
+                          - img [ref=e1429]
+                    - img "Progress Spinner" [ref=e1433]
+              - button "Edit your Dock" [ref=e1456] [cursor=pointer]:
+                - generic [ref=e1457]: Edit your Dock
+              - generic [ref=e1459]:
+                - generic [ref=e1460]:
+                  - link "Terms" [ref=e1461] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/terms?locale=en-US
+                  - text: and
+                  - link "Privacy Policy" [ref=e1462] [cursor=pointer]:
+                    - /url: https://guce.yahoo.com/privacy-policy?locale=en-US
+                - link "Privacy Dashboard" [ref=e1464] [cursor=pointer]:
+                  - /url: https://guce.yahoo.com/privacy-dashboard?locale=en-US
+      - complementary

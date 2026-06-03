@@ -1,0 +1,961 @@
+- generic [ref=e6]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - navigation "SITE_NAVIGATION" [ref=e12]:
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - link "首頁" [ref=e15] [cursor=pointer]:
+              - /url: https://tw.yahoo.com
+              - img [ref=e16]
+              - text: 首頁
+          - listitem [ref=e18]:
+            - link "新聞" [ref=e19] [cursor=pointer]:
+              - /url: https://tw.news.yahoo.com
+              - img [ref=e20]
+              - text: 新聞
+          - listitem [ref=e22]:
+            - link "股市" [ref=e23] [cursor=pointer]:
+              - /url: https://tw.stock.yahoo.com/
+              - img [ref=e24]
+              - text: 股市
+          - listitem [ref=e26]:
+            - link "運動" [ref=e27] [cursor=pointer]:
+              - /url: https://tw.sports.yahoo.com/
+              - img [ref=e28]
+              - text: 運動
+          - listitem [ref=e30]:
+            - link "TV" [ref=e31] [cursor=pointer]:
+              - /url: https://tw.tv.yahoo.com/
+          - listitem [ref=e32]:
+            - link "汽機車" [ref=e33] [cursor=pointer]:
+              - /url: https://autos.yahoo.com.tw/
+          - listitem [ref=e34]:
+            - link "購物中心" [ref=e35] [cursor=pointer]:
+              - /url: https://tw.buy.yahoo.com/
+          - listitem [ref=e36]:
+            - link "拍賣" [ref=e37] [cursor=pointer]:
+              - /url: https://tw.bid.yahoo.com/
+          - listitem [ref=e38]:
+            - link "氣象" [ref=e39] [cursor=pointer]:
+              - /url: https://weather.yahoo.com/zh-hant-tw/
+          - listitem [ref=e40]:
+            - link "App 下載" [ref=e41] [cursor=pointer]:
+              - /url: https://promo.campaign.yahoo.com.tw/yahoo-allapp/
+      - generic [ref=e43]:
+        - heading "Yahoo股市" [level=1] [ref=e44]
+        - link [ref=e45] [cursor=pointer]:
+          - /url: https://tw.stock.yahoo.com
+          - img [ref=e46]
+        - generic [ref=e50]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 搜尋
+            - combobox "搜尋" [ref=e54]
+            - button "清除" [ref=e55]:
+              - img [ref=e56]
+            - button "搜尋" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+          - generic [ref=e61]:
+            - link "登入" [ref=e62] [cursor=pointer]:
+              - /url: https://login.yahoo.com/?.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2408.TW&.src=finance&.intl=tw
+            - link [ref=e63] [cursor=pointer]:
+              - /url: https://mail.yahoo.com/?.intl=tw&.lang=zh-Hant-TW
+              - img [ref=e64]
+      - generic [ref=e66]:
+        - navigation "MAIN_NAVIGATION" [ref=e67]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "首頁" [ref=e72] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/
+                - generic [ref=e73]: 首頁
+            - listitem [ref=e74]:
+              - link "股市VIP" [ref=e75] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/subscription
+                - generic [ref=e76]: 股市VIP
+            - listitem [ref=e77]:
+              - link "自選股" [ref=e78] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/portfolios
+                - generic [ref=e79]: 自選股
+            - listitem [ref=e80]:
+              - link "台股行情" [ref=e81] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/class/
+                - generic [ref=e82]: 台股行情
+            - listitem [ref=e83]:
+              - link "智慧選股" [ref=e84] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/screener/
+                - generic [ref=e85]: 智慧選股
+            - listitem [ref=e86]:
+              - link "期權" [ref=e87] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/future/
+                - generic [ref=e88]: 期權
+            - listitem [ref=e89]:
+              - link "國際金融" [ref=e90] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/markets/
+                - generic [ref=e91]: 國際金融
+            - listitem [ref=e92]:
+              - link "新聞" [ref=e93] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/news/
+                - generic [ref=e94]: 新聞
+            - listitem [ref=e95]:
+              - link "房地產" [ref=e96] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/real-estate/
+                - generic [ref=e97]: 房地產
+            - listitem [ref=e98]:
+              - link "投資新手村" [ref=e99] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic/stock-newbie/
+                - generic [ref=e100]: 投資新手村
+            - listitem [ref=e101]:
+              - link "專輯" [ref=e102] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/topic
+                - generic [ref=e103]: 專輯
+            - listitem [ref=e104]:
+              - link "基金" [ref=e105] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/fund/
+                - generic [ref=e106]: 基金
+            - listitem [ref=e107]:
+              - link "銀行服務" [ref=e108] [cursor=pointer]:
+                - /url: https://tw.stock.yahoo.com/bank/
+                - generic [ref=e109]: 銀行服務
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e114]:
+              - img [ref=e115]
+              - textbox "搜尋台股美股代號/名稱" [ref=e118]
+            - link "台股類股查詢" [ref=e119] [cursor=pointer]:
+              - /url: /class/
+              - img [ref=e120]
+              - generic [ref=e122]: 台股類股查詢
+            - generic [ref=e123]:
+              - text: 距離美股收盤還有02小時18分鐘
+              - button "更新" [ref=e124] [cursor=pointer]
+          - generic [ref=e125]:
+            - img [ref=e127]
+            - link "升級VIP" [ref=e132] [cursor=pointer]:
+              - /url: /subscription
+  - generic [ref=e139]:
+    - generic [ref=e141]:
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "南亞科" [level=1] [ref=e145]
+          - generic [ref=e146]: "2408"
+          - generic [ref=e148]:
+            - link "半導體" [ref=e149] [cursor=pointer]:
+              - /url: /class-quote?sectorId=40&exchange=TAI
+            - link "最多人瀏覽：第 8 名" [ref=e150] [cursor=pointer]:
+              - /url: /community/rank/active?category=TAI_TWO
+              - text: 最多人瀏覽：第
+              - generic [ref=e151]: "8"
+              - text: 名
+            - link "最多加自選：第 19 名" [ref=e152] [cursor=pointer]:
+              - /url: /community/rank/portfolio
+              - text: 最多加自選：第
+              - generic [ref=e153]: "19"
+              - text: 名
+            - link "熱門搜尋：第 17 名" [ref=e154] [cursor=pointer]:
+              - /url: /community/rank/search
+              - text: 熱門搜尋：第
+              - generic [ref=e155]: "17"
+              - text: 名
+          - button "比較" [ref=e156] [cursor=pointer]:
+            - img [ref=e157]
+            - text: 比較
+          - button "加入自選股" [ref=e160] [cursor=pointer]:
+            - img [ref=e162]
+            - generic [ref=e164]: 加入自選股
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - generic [ref=e168]: "401.5"
+              - generic [ref=e169]: "18.00"
+              - generic [ref=e171]: (4.29%)
+            - generic [ref=e172]: 收盤 | 2026/06/03 13:30 更新
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175]: 147,399
+              - generic [ref=e176]: 成交量
+            - generic [ref=e177]:
+              - generic [ref=e178]: 37.56 (69.66)
+              - generic [ref=e179]: 本益比 (同業平均)
+            - generic [ref=e180]:
+              - generic [ref=e182]:
+                - text: 連6漲→跌 (
+                - generic [ref=e183]: 4.29%
+                - text: )
+              - generic [ref=e185]: 連漲連跌
+      - navigation [ref=e187]:
+        - generic [ref=e189]:
+          - link "走勢圖" [ref=e191]:
+            - /url: /quote/2408.TW
+            - generic [ref=e194]: 走勢圖
+          - link "技術分析" [ref=e196] [cursor=pointer]:
+            - /url: /quote/2408.TW/technical-analysis
+            - generic [ref=e199]: 技術分析
+          - link "成交彙整" [ref=e201] [cursor=pointer]:
+            - /url: /quote/2408.TW/time-sales
+            - generic [ref=e204]: 成交彙整
+          - generic [ref=e207]:
+            - link "籌碼" [ref=e209] [cursor=pointer]:
+              - /url: /quote/2408.TW/institutional-trading
+              - generic [ref=e210]: 籌碼
+            - list:
+              - listitem:
+                - link "法人買賣":
+                  - /url: /quote/2408.TW/institutional-trading
+              - listitem:
+                - link "主力進出":
+                  - /url: /quote/2408.TW/broker-trading
+              - listitem:
+                - link "資券變化":
+                  - /url: /quote/2408.TW/margin
+              - listitem:
+                - link "大戶籌碼":
+                  - /url: /quote/2408.TW/major-holders
+              - listitem:
+                - link "申報轉讓":
+                  - /url: /quote/2408.TW/insider-transactions
+          - link "估價" [ref=e213] [cursor=pointer]:
+            - /url: /quote/2408.TW/price-valuations
+            - generic [ref=e215]:
+              - generic [ref=e216]: 估價
+              - img [ref=e219]
+          - link "多空" [ref=e225] [cursor=pointer]:
+            - /url: /quote/2408.TW/bullbear
+            - generic [ref=e228]: 多空
+          - generic [ref=e230]:
+            - link "河流圖" [ref=e232] [cursor=pointer]:
+              - /url: /quote/2408.TW/streamgraph
+              - generic [ref=e233]: 河流圖
+            - list:
+              - listitem:
+                - link "本益比河流圖":
+                  - /url: /quote/2408.TW/streamgraph
+              - listitem:
+                - link "股價淨值比河流圖":
+                  - /url: /quote/2408.TW/pbr-streamgraph
+          - link "股利" [ref=e235] [cursor=pointer]:
+            - /url: /quote/2408.TW/dividend
+            - generic [ref=e238]: 股利
+          - generic [ref=e241]:
+            - link "財務" [ref=e243] [cursor=pointer]:
+              - /url: /quote/2408.TW/revenue
+              - generic [ref=e244]: 財務
+            - list:
+              - listitem:
+                - link "營收表":
+                  - /url: /quote/2408.TW/revenue
+              - listitem:
+                - link "每股盈餘":
+                  - /url: /quote/2408.TW/eps
+              - listitem:
+                - link "損益表":
+                  - /url: /quote/2408.TW/income-statement
+              - listitem:
+                - link "資產負債表":
+                  - /url: /quote/2408.TW/balance-sheet
+              - listitem:
+                - link "現金流量表":
+                  - /url: /quote/2408.TW/cash-flow-statement
+          - link "健診" [ref=e247] [cursor=pointer]:
+            - /url: /quote/2408.TW/health-check
+            - generic [ref=e250]: 健診
+          - link "基本" [ref=e252] [cursor=pointer]:
+            - /url: /quote/2408.TW/profile
+            - generic [ref=e255]: 基本
+          - generic [ref=e259]:
+            - generic [ref=e262] [cursor=pointer]: 更多...
+            - list:
+              - listitem:
+                - link "同業比較":
+                  - /url: /quote/2408.TW/compare
+                  - text: 同業比較
+              - listitem:
+                - link "行事曆":
+                  - /url: /quote/2408.TW/calendar
+              - listitem:
+                - link "新聞":
+                  - /url: /quote/2408.TW/news
+                  - text: 新聞
+              - listitem:
+                - link "使用說明":
+                  - /url: https://tw.help.yahoo.com/kb/stock-tw-web?#topic=TOP_INSTRUCTSTOCK
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - heading "南亞科即時行情" [level=2] [ref=e267]
+            - time [ref=e269]:
+              - generic [ref=e270]: 資料時間：
+              - text: 2026/06/03 13:30
+          - generic [ref=e271]:
+            - paragraph [ref=e279]: 註：成交金額不含盤後定價、零股、鉅額、拍賣及標購
+            - generic [ref=e281]:
+              - list [ref=e282]:
+                - listitem [ref=e283]:
+                  - generic [ref=e284]: 成交
+                  - generic [ref=e285]: "401.5"
+                - listitem [ref=e286]:
+                  - generic [ref=e287]: 開盤
+                  - generic [ref=e288]: "430.0"
+                - listitem [ref=e289]:
+                  - generic [ref=e290]: 最高
+                  - generic [ref=e291]: "430.5"
+                - listitem [ref=e292]:
+                  - generic [ref=e293]: 最低
+                  - generic [ref=e294]: "400.0"
+                - listitem [ref=e295]:
+                  - generic [ref=e296]: 均價
+                  - generic [ref=e297]: "412.0"
+                - listitem [ref=e298]:
+                  - generic [ref=e299]: 成交金額(億)
+                  - generic [ref=e300]: "607.41"
+                - listitem [ref=e301]:
+                  - generic [ref=e302]: 昨收
+                  - generic [ref=e303]: "419.5"
+                - listitem [ref=e304]:
+                  - generic [ref=e305]: 漲跌幅
+                  - generic [ref=e306]: 4.29%
+                - listitem [ref=e308]:
+                  - generic [ref=e309]: 漲跌
+                  - generic [ref=e310]: "18.00"
+                - listitem [ref=e312]:
+                  - generic [ref=e313]: 總量
+                  - generic [ref=e314]: 147,399
+                - listitem [ref=e315]:
+                  - generic [ref=e316]: 昨量
+                  - generic [ref=e317]: 168,828
+                - listitem [ref=e318]:
+                  - generic [ref=e319]: 振幅
+                  - generic [ref=e320]: 7.27%
+              - generic [ref=e322]:
+                - generic [ref=e323]:
+                  - text: 內盤
+                  - generic [ref=e324]:
+                    - text: 81,375
+                    - generic [ref=e325]: (57.08%)
+                - generic [ref=e326]:
+                  - generic [ref=e327]:
+                    - text: 61,182
+                    - generic [ref=e328]: (42.92%)
+                  - text: 外盤
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]:
+                    - generic [ref=e336]: 量
+                    - generic [ref=e337]: 委買價
+                  - generic [ref=e338]:
+                    - generic [ref=e339]:
+                      - generic [ref=e340]: "45"
+                      - generic [ref=e342]: 1,389
+                      - generic [ref=e344]: "782"
+                      - generic [ref=e346]: 1,625
+                      - generic [ref=e348]: "266"
+                    - generic [ref=e350]:
+                      - generic [ref=e352]: "401.5"
+                      - generic [ref=e354]: "401.0"
+                      - generic [ref=e356]: "400.5"
+                      - generic [ref=e358]: "400.0"
+                      - generic [ref=e360]: "399.5"
+                  - generic [ref=e361]:
+                    - text: 4,107
+                    - generic [ref=e362]: 小計
+                - generic [ref=e363]:
+                  - generic [ref=e364]:
+                    - generic [ref=e365]: 委賣價
+                    - generic [ref=e366]: 量
+                  - generic [ref=e367]:
+                    - generic [ref=e368]:
+                      - generic [ref=e370]: "402.0"
+                      - generic [ref=e372]: "402.5"
+                      - generic [ref=e374]: "403.0"
+                      - generic [ref=e376]: "403.5"
+                      - generic [ref=e378]: "404.0"
+                    - generic [ref=e379]:
+                      - generic [ref=e380]: "40"
+                      - generic [ref=e382]: "21"
+                      - generic [ref=e384]: "155"
+                      - generic [ref=e386]: "57"
+                      - generic [ref=e388]: "26"
+                  - generic [ref=e390]:
+                    - generic [ref=e391]: 小計
+                    - text: "299"
+        - generic [ref=e392]:
+          - generic [ref=e393]:
+            - heading "含有 南亞科 的 ETF" [level=2] [ref=e395]
+            - generic [ref=e396]:
+              - generic [ref=e397]:
+                - generic [ref=e398]: 股名/號
+                - generic [ref=e399]: 持股比例
+              - generic [ref=e400]:
+                - generic [ref=e401]:
+                  - link "台新臺灣IC設計" [ref=e402] [cursor=pointer]:
+                    - /url: /quote/00947.TW/holding
+                  - generic [ref=e403]: "00947"
+                - generic [ref=e404]: 5.01%
+              - generic [ref=e407]:
+                - generic [ref=e408]:
+                  - link "永豐台灣ESG" [ref=e409] [cursor=pointer]:
+                    - /url: /quote/00888.TWO/holding
+                  - generic [ref=e410]: "00888"
+                - generic [ref=e411]: 3.50%
+              - generic [ref=e414]:
+                - generic [ref=e415]:
+                  - link "中信臺灣智慧50" [ref=e416] [cursor=pointer]:
+                    - /url: /quote/00912.TW/holding
+                  - generic [ref=e417]: "00912"
+                - generic [ref=e418]: 2.28%
+            - link "看更多相關ETF" [ref=e423] [cursor=pointer]:
+              - /url: /quote/2408.TW/etf
+              - generic [ref=e424]: 看更多相關ETF
+              - img [ref=e426]
+          - generic [ref=e428]:
+            - heading "相關權證" [level=2] [ref=e430]
+            - generic [ref=e431]:
+              - link "南亞科國票5B售02" [ref=e432] [cursor=pointer]:
+                - /url: /quote/03028T.TW
+              - link "南亞科凱基5A售03" [ref=e433] [cursor=pointer]:
+                - /url: /quote/03037T.TW
+              - link "南亞科統一58購02" [ref=e434] [cursor=pointer]:
+                - /url: /quote/030581.TW
+              - link "南亞科群益5B售01" [ref=e435] [cursor=pointer]:
+                - /url: /quote/03081T.TW
+              - link "南亞科台新5A售06" [ref=e436] [cursor=pointer]:
+                - /url: /quote/03099T.TW
+              - link "南亞科台新5A售08" [ref=e437] [cursor=pointer]:
+                - /url: /quote/03113T.TW
+              - link "南亞科中信5B售02" [ref=e438] [cursor=pointer]:
+                - /url: /quote/03119T.TW
+              - link "南亞科台新5B售01" [ref=e439] [cursor=pointer]:
+                - /url: /quote/03133T.TW
+              - link "南亞科台新62售03" [ref=e440] [cursor=pointer]:
+                - /url: /quote/03218T.TW
+              - link "南亞科台新5C售03" [ref=e441] [cursor=pointer]:
+                - /url: /quote/03237T.TW
+              - link "南亞科群益61售01" [ref=e442] [cursor=pointer]:
+                - /url: /quote/03269T.TW
+              - link "南亞科凱基5B售06" [ref=e443] [cursor=pointer]:
+                - /url: /quote/03280T.TW
+            - link "看更多相關權證" [ref=e446] [cursor=pointer]:
+              - /url: /quote/2408.TW/warrant
+              - generic [ref=e447]: 看更多相關權證
+              - img [ref=e449]
+        - generic [ref=e452]:
+          - paragraph [ref=e454]: 南亞科 個股留言板
+          - generic "個留言" [ref=e455]:
+            - generic [ref=e457]:
+              - button "檢視留言（2,902 個）" [ref=e460] [cursor=pointer]:
+                - img [ref=e461]
+                - text: 檢視留言（2,902 個）
+              - link "登入後即可張貼留言。" [ref=e463] [cursor=pointer]:
+                - /url: https://login.yahoo.com/?.intl=tw&.lang=zh-Hant-TW&.done=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2408.TW%3Fbcmt%3D1&.src=https%3A%2F%2Ftw.stock.yahoo.com%2Fquote%2F2408.TW
+                - generic [ref=e464]: 登入後即可張貼留言。
+        - generic [ref=e468]:
+          - heading "南亞科 相關新聞" [level=2] [ref=e469]
+          - list [ref=e470]:
+            - listitem [ref=e471]:
+              - generic [ref=e473]:
+                - generic [ref=e476]:
+                  - generic [ref=e477]: 鉅亨網•5 小時前
+                  - heading "南亞科5月營收277億元年增7倍續創高 前5月合計飆破千億元" [level=3] [ref=e478]:
+                    - link "南亞科5月營收277億元年增7倍續創高 前5月合計飆破千億元" [ref=e479] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6277%E5%84%84%E5%85%83%E5%B9%B4%E5%A2%9E7%E5%80%8D%E7%BA%8C%E5%89%B5%E9%AB%98-%E5%89%8D5%E6%9C%88%E5%90%88%E8%A8%88%E9%A3%86%E7%A0%B4%E5%8D%83%E5%84%84%E5%85%83-122441967.html
+                      - text: 南亞科5月營收277億元年增7倍續創高 前5月合計飆破千億元
+                  - paragraph [ref=e481]: DRAM 業者南亞科 (2408-TW) 今 (3) 日公布 5 月營收 276.7 億元，月增 8.55%，年增 730.14%，累計前 5 月營收高達 1,022.48 億元，年增 649.62%；受惠 DDR4、DDR5 價格一路狂飆，南亞科 5 月營收
+                - generic [ref=e482]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e483] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6277%E5%84%84%E5%85%83%E5%B9%B4%E5%A2%9E7%E5%80%8D%E7%BA%8C%E5%89%B5%E9%AB%98-%E5%89%8D5%E6%9C%88%E5%90%88%E8%A8%88%E9%A3%86%E7%A0%B4%E5%8D%83%E5%84%84%E5%85%83-122441967.html?bcmt=1
+                    - img [ref=e484]
+                  - button "Social media share article menu" [ref=e488]:
+                    - img [ref=e489] [cursor=pointer]
+            - listitem [ref=e491]
+            - listitem [ref=e495]:
+              - generic [ref=e497]:
+                - generic [ref=e498]:
+                  - generic [ref=e499]: 中時財經即時•7 小時前
+                  - heading "外資高檔逃命！記憶體3巨頭被跳車 「這檔」狙擊第1名、南亞科旺宏也遭殃" [level=3] [ref=e500]:
+                    - link "外資高檔逃命！記憶體3巨頭被跳車 「這檔」狙擊第1名、南亞科旺宏也遭殃" [ref=e501] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E9%AB%98%E6%AA%94%E9%80%83%E5%91%BD-%E8%A8%98%E6%86%B6%E9%AB%943%E5%B7%A8%E9%A0%AD%E8%A2%AB%E8%B7%B3%E8%BB%8A-%E9%80%99%E6%AA%94-%E7%8B%99%E6%93%8A%E7%AC%AC1%E5%90%8D-%E5%8D%97%E4%BA%9E%E7%A7%91%E6%97%BA%E5%AE%8F%E4%B9%9F%E9%81%AD%E6%AE%83-101910546.html
+                      - text: 外資高檔逃命！記憶體3巨頭被跳車 「這檔」狙擊第1名、南亞科旺宏也遭殃
+                  - paragraph [ref=e503]: 台股在台積電等權值股領軍下強勢攻高，今（3）日終場大漲901點，收在46459點歷史新高，成交值達1.45兆元。儘管外資持續加碼台股433億元，卻逆勢調節漲幅已大的記憶體，華邦電遭賣超近5萬張居冠，南亞科與旺宏也分別遭倒貨逾1.4萬張及6900張，拖累相關個股股價走弱。
+                - generic [ref=e504]:
+                  - link "2 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e505] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E9%AB%98%E6%AA%94%E9%80%83%E5%91%BD-%E8%A8%98%E6%86%B6%E9%AB%943%E5%B7%A8%E9%A0%AD%E8%A2%AB%E8%B7%B3%E8%BB%8A-%E9%80%99%E6%AA%94-%E7%8B%99%E6%93%8A%E7%AC%AC1%E5%90%8D-%E5%8D%97%E4%BA%9E%E7%A7%91%E6%97%BA%E5%AE%8F%E4%B9%9F%E9%81%AD%E6%AE%83-101910546.html?bcmt=1
+                    - generic [ref=e506]: "2"
+                    - img [ref=e507]
+                  - button "Social media share article menu" [ref=e511]:
+                    - img [ref=e512] [cursor=pointer]
+            - listitem [ref=e514]:
+              - generic [ref=e516]:
+                - generic [ref=e517]:
+                  - generic [ref=e518]: Moneydj理財網•7 小時前
+                  - heading "中環 本公司公告取得有價證券" [level=3] [ref=e519]:
+                    - link "中環 本公司公告取得有價證券" [ref=e520] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%85%AC%E5%91%8A%E5%8F%96%E5%BE%97%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-101700532.html
+                      - text: 中環 本公司公告取得有價證券
+                  - paragraph [ref=e522]: "公開資訊觀測站重大訊息公告(2323)中環-本公司公告取得有價證券1.證券名稱:南亞科 普通股2.交易日期:115/5/26~115/6/33.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長核決民國115年06月03日5.交易數量、每單位價格及交易總金額:交易數量(仟股):1,300每單位價格(元):391.94交易總金額(元):509,517,1446.處分利益（或損失）（取得有價證券者不適用）:不適用7.與交易標的公司之關係:無8.迄目前為止，累積持有本交易證券（含本次交易）之數量、金額、持股比例及權利受限情形（如質押情形）:持有餘額:1,135,000股、金額:424,621,185元 持股比例:0.03%、權利受限情形: 無9.迄目前為止，依「公開發行公司取得或處分資產處理準則」第三條所列之有價證券投資（含本次交易）占公司最近期財務報表中總資產及歸屬於母公司業主之權益之比例暨最近期財務報表中營運資金數額:占總資產比例:78.82% 占歸屬於母公司業主之權益比例:113.20% 營運資金數額:8,285,327仟元10.取得或處分之具體目的:投資組合11.本次交易表示"
+                - generic [ref=e523]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e524] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%85%AC%E5%91%8A%E5%8F%96%E5%BE%97%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-101700532.html?bcmt=1
+                    - img [ref=e525]
+                  - button "Social media share article menu" [ref=e529]:
+                    - img [ref=e530] [cursor=pointer]
+            - listitem [ref=e532]
+            - listitem [ref=e534]:
+              - generic [ref=e536]:
+                - generic [ref=e537]:
+                  - generic [ref=e538]: 中央社財經•7 小時前
+                  - heading "【公告】南亞科取得廠務設備" [level=3] [ref=e539]:
+                    - link "【公告】南亞科取得廠務設備" [ref=e540] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-101646197.html
+                      - text: 【公告】南亞科取得廠務設備
+                  - paragraph [ref=e542]: "日 期：2026年06月03日公司名稱：南亞科(2408)主 旨：南亞科取得廠務設備發言人：李培瑛說 明：1.標的物之名稱及性質（如坐落台中市北區ＸＸ段ＸＸ小段土地）:廠務設備2.事實發生日:114/9/1~115/6/33.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長民國115年6月3日5.交易單位數量（如ＸＸ平方公尺，折合ＸＸ坪）、每單位價格及交易總金額:交易數量：一批交易總金額：新台幣1,045,910,000元6.交易相對人及其與公司之關係（交易相對人如屬自然人，且非公司之關係人者，得免揭露其姓名）:景煌企業股份有限公司，與公司關係：無。7.交易相對人為關係人者，並應公告選定關係人為交易對象之原因及前次移轉之所有人、前次移轉之所有人與公司及交易相對人間相互之關係、前次移轉日期及移轉金額:不適用8.交易標的最近五年內所有權人曾為公司之關係人者，尚應公告關係人之取得及處分日期、價格及交易當時與公司之關係:不適用9.預計處分利益（或損失）（取得資產者不適用）（遞延者應列表說明認列情形）:不適用10.交付或付款條件（含付款期間及金額）、契約限制條款及其他重要約定事項:依訂"
+                - generic [ref=e543]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e544] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-101646197.html?bcmt=1
+                    - img [ref=e545]
+                  - button "Social media share article menu" [ref=e549]:
+                    - img [ref=e550] [cursor=pointer]
+            - listitem [ref=e552]
+            - listitem [ref=e556]:
+              - generic [ref=e558]:
+                - generic [ref=e559]:
+                  - generic [ref=e560]: Moneydj理財網•8 小時前
+                  - heading "南亞科 公告本公司取得廠務設備" [level=3] [ref=e561]:
+                    - link "南亞科 公告本公司取得廠務設備" [ref=e562] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-095700050.html
+                      - text: 南亞科 公告本公司取得廠務設備
+                  - paragraph [ref=e564]: "公開資訊觀測站重大訊息公告(2408)南亞科-公告本公司取得廠務設備1.標的物之名稱及性質（如坐落台中市北區ＸＸ段ＸＸ小段土地）:廠務設備2.事實發生日:114/9/1~115/6/33.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長民國115年6月3日5.交易單位數量（如ＸＸ平方公尺，折合ＸＸ坪）、每單位價格及交易總金額:交易數量：一批交易總金額：新台幣1,045,910,000元6.交易相對人及其與公司之關係（交易相對人如屬自然人，且非公司之關係人者，得免揭露其姓名）:景煌企業股份有限公司，與公司關係：無。7.交易相對人為關係人者，並應公告選定關係人為交易對象之原因及前次移轉之所有人、前次移轉之所有人與公司及交易相對人間相互之關係、前次移轉日期及移轉金額:不適用8.交易標的最近五年內所有權人曾為公司之關係人者，尚應公告關係人之取得及處分日期、價格及交易當時與公司之關係:不適用9.預計處分利益（或損失）（取得資產者不適用）（遞延者應列表說明認列情形）:不適用10.交付或付款條件（含付款期間及金額）、契約限制條款及其他重要約定事項:依訂單條件或合約約定辦理11.本次交易之決"
+                - generic [ref=e565]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e566] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-095700050.html?bcmt=1
+                    - img [ref=e567]
+                  - button "Social media share article menu" [ref=e571]:
+                    - img [ref=e572] [cursor=pointer]
+            - listitem [ref=e574]:
+              - generic [ref=e576]:
+                - generic [ref=e579]:
+                  - generic [ref=e580]: EBC東森財經新聞•8 小時前
+                  - heading "太狠了！ 南亞科5月營收曝 前5月累計已飆破千億" [level=3] [ref=e581]:
+                    - link "太狠了！ 南亞科5月營收曝 前5月累計已飆破千億" [ref=e582] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%A4%AA%E7%8B%A0%E4%BA%86-%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6%E6%9B%9D-%E5%89%8D5%E6%9C%88%E7%B4%AF%E8%A8%88%E5%B7%B2%E9%A3%86%E7%A0%B4%E5%8D%83%E5%84%84-092700095.html
+                      - text: 太狠了！ 南亞科5月營收曝 前5月累計已飆破千億
+                  - paragraph [ref=e584]: 南亞科（2408）今日公布5月份自結合併營收達新台幣276.7億元，不僅較上月穩健增長8.55%，更較去年同期驚人暴增730.14%，累計前5個月合併營收首度突破千億大關，以強勁的成長動能刷新市場目光。
+                - generic [ref=e585]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e586] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%A4%AA%E7%8B%A0%E4%BA%86-%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6%E6%9B%9D-%E5%89%8D5%E6%9C%88%E7%B4%AF%E8%A8%88%E5%B7%B2%E9%A3%86%E7%A0%B4%E5%8D%83%E5%84%84-092700095.html?bcmt=1
+                    - img [ref=e587]
+                  - button "Social media share article menu" [ref=e591]:
+                    - img [ref=e592] [cursor=pointer]
+            - listitem [ref=e594]:
+              - generic [ref=e596]:
+                - generic [ref=e599]:
+                  - generic [ref=e600]: Yahoo股市•9 小時前
+                  - heading "續創新高！南亞科今年前5月營收突破千億元 年增逾6倍" [level=3] [ref=e601]:
+                    - link "續創新高！南亞科今年前5月營收突破千億元 年增逾6倍" [ref=e602] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98%EF%BC%81%E5%8D%97%E4%BA%9E%E7%A7%91%E4%BB%8A%E5%B9%B4%E5%89%8D5%E6%9C%88%E7%87%9F%E6%94%B6%E7%AA%81%E7%A0%B4%E5%8D%83%E5%84%84%E5%85%83-%E5%B9%B4%E5%A2%9E%E9%80%BE6%E5%80%8D-085442177.html
+                      - text: 續創新高！南亞科今年前5月營收突破千億元 年增逾6倍
+                  - paragraph [ref=e604]: 記憶體大廠南亞科（2408）今（3）日公布5月營收276.7億元，月增8.55%、年增730.14%，續創歷史新高；累計前5月營收更首度突破千億元大關。
+                - generic [ref=e605]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e606] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98%EF%BC%81%E5%8D%97%E4%BA%9E%E7%A7%91%E4%BB%8A%E5%B9%B4%E5%89%8D5%E6%9C%88%E7%87%9F%E6%94%B6%E7%AA%81%E7%A0%B4%E5%8D%83%E5%84%84%E5%85%83-%E5%B9%B4%E5%A2%9E%E9%80%BE6%E5%80%8D-085442177.html?bcmt=1
+                    - img [ref=e607]
+                  - button "Social media share article menu" [ref=e611]:
+                    - img [ref=e612] [cursor=pointer]
+            - listitem [ref=e614]
+            - listitem [ref=e618]:
+              - generic [ref=e620]:
+                - generic [ref=e621]:
+                  - generic [ref=e622]: 中央社財經•9 小時前
+                  - heading "南亞科5月營收276億元創新高 年增730%" [level=3] [ref=e623]:
+                    - link "南亞科5月營收276億元創新高 年增730%" [ref=e624] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6276%E5%84%84%E5%85%83%E5%89%B5%E6%96%B0%E9%AB%98-%E5%B9%B4%E5%A2%9E730-085351682.html
+                      - text: 南亞科5月營收276億元創新高 年增730%
+                  - paragraph [ref=e626]: （中央社記者張建中台北2026年6月3日電）動態隨機存取記憶體（DRAM）廠南亞科(2408)5月營收持續攀高，達到新台幣276.7億元，年增730.14%，超越4月的254.91億元，再創歷史新高。南亞科自結5月營收276.7億元，月增8.55%，年增730.14%。4月和5月營收合計達531.61億元，已超越第1季營收490.87億元。南亞科累計前5月營收突破1000億元大關，達到1022.48億元，較去年同期增加649.62%，並已超越2024年和2025年兩年合計營收。南亞科表示，市場需求成長驅動營收創高。南亞科先前指出，DRAM市場供不應求，預期市場供需缺口可能延續到明年底。新廠預計明年開始裝機，明年底至後年將貢獻產出，估計會增加3萬多片，2到3年後南亞科產能將比目前增加80%至100%。
+                - generic [ref=e627]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e628] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%915%E6%9C%88%E7%87%9F%E6%94%B6276%E5%84%84%E5%85%83%E5%89%B5%E6%96%B0%E9%AB%98-%E5%B9%B4%E5%A2%9E730-085351682.html?bcmt=1
+                    - img [ref=e629]
+                  - button "Social media share article menu" [ref=e633]:
+                    - img [ref=e634] [cursor=pointer]
+            - listitem [ref=e636]:
+              - generic [ref=e638]:
+                - generic [ref=e639]:
+                  - generic [ref=e640]: 中央社財經•10 小時前
+                  - heading "【公告】南亞科 2026年5月合併營收276.7億元 年增730.14%" [level=3] [ref=e641]:
+                    - link "【公告】南亞科 2026年5月合併營收276.7億元 年增730.14%" [ref=e642] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91-2026%E5%B9%B45%E6%9C%88%E5%90%88%E4%BD%B5%E7%87%9F%E6%94%B6276-7%E5%84%84%E5%85%83-%E5%B9%B4%E5%A2%9E730-071209720.html
+                      - text: 【公告】南亞科 2026年5月合併營收276.7億元 年增730.14%
+                  - paragraph [ref=e644]: 日期： 2026 年 06 月 03日上市公司：南亞科(2408)單位：仟元 【公告】南亞科 2026年5月合併營收 (單位：仟元)項目合併營業收入淨額本月27,669,563去年同期3,333,121增減金額24,336,442增減百分比730.14本年累計102,247,696去年累計13,639,881增減金額88,607,815增減百分比649.62
+                - generic [ref=e645]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e646] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91-2026%E5%B9%B45%E6%9C%88%E5%90%88%E4%BD%B5%E7%87%9F%E6%94%B6276-7%E5%84%84%E5%85%83-%E5%B9%B4%E5%A2%9E730-071209720.html?bcmt=1
+                    - img [ref=e647]
+                  - button "Social media share article menu" [ref=e651]:
+                    - img [ref=e652] [cursor=pointer]
+            - listitem [ref=e654]:
+              - generic [ref=e656]:
+                - generic [ref=e657]:
+                  - generic [ref=e658]: Moneydj理財網•11 小時前
+                  - heading "南亞科 115年5月營收276.70億、年增730.14%" [level=3] [ref=e659]:
+                    - link "南亞科 115年5月營收276.70億、年增730.14%" [ref=e660] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-115%E5%B9%B45%E6%9C%88%E7%87%9F%E6%94%B6276-70%E5%84%84-%E5%B9%B4%E5%A2%9E730-14-070300792.html
+                      - text: 南亞科 115年5月營收276.70億、年增730.14%
+                  - paragraph [ref=e662]: 南亞科(2408)5月營收資料(單位千元) 當月本年累計 營收27,669,563102,247,696 去年同期3,333,12113,639,881 增減24,336,44288,607,815 增減百分比730.14%649.62% 備註:受市場需求成長影響。延伸閱讀：6/3證交所「盤中」零股交易成交股數前20名排行台股漲901點收46459.16點 盤中、收盤指數再創新高 資料來源-MoneyDJ理財網
+                - generic [ref=e663]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e664] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-115%E5%B9%B45%E6%9C%88%E7%87%9F%E6%94%B6276-70%E5%84%84-%E5%B9%B4%E5%A2%9E730-14-070300792.html?bcmt=1
+                    - img [ref=e665]
+                  - button "Social media share article menu" [ref=e669]:
+                    - img [ref=e670] [cursor=pointer]
+            - listitem [ref=e672]
+            - listitem [ref=e676]:
+              - generic [ref=e678]:
+                - generic [ref=e679]:
+                  - generic [ref=e680]: Moneydj理財網•17 小時前
+                  - heading "中環5/29~6/2處分南亞科880張，獲利約9772萬元" [level=3] [ref=e681]:
+                    - link "中環5/29~6/2處分南亞科880張，獲利約9772萬元" [ref=e682] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B05-29-6-2%E8%99%95%E5%88%86%E5%8D%97%E4%BA%9E%E7%A7%91880%E5%BC%B5-%E7%8D%B2%E5%88%A9%E7%B4%849772%E8%90%AC%E5%85%83-010500428.html
+                      - text: 中環5/29~6/2處分南亞科880張，獲利約9772萬元
+                  - paragraph [ref=e684]: "公開資訊觀測站重大訊息公告(2323)中環-本公司公告處分有價證券1.證券名稱:南亞科 普通股2.交易日期:115/5/29~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長核決民國115年06月02日5.交易數量、每單位價格及交易總金額:交易數量(仟股):880每單位價格(元):376.19交易總金額(元):331,049,5246.處分利益（或損失）（取得有價證券者不適用）:處分利益97,718,756元7.與交易標的公司之關係:無8.迄目前為止，累積持有本交易證券（含本次交易）之數量、金額、持股比例及權利受限情形（如質押情形）:持有餘額:280,000股、金額:74,241,602元 持股比例:0.008%、權利受限情形: 無9.迄目前為止，依「公開發行公司取得或處分資產處理準則」第三條所列之有價證券投資（含本次交易）占公司最近期財務報表中總資產及歸屬於母公司業主之權益之比例暨最近期財務報表中營運資金數額:占總資產比例:79.21% 占歸屬於母公司業主之權益比例:113.76% 營運資金數額:8,285,327仟元10.取得或處分之具體目的:投資組合1"
+                - generic [ref=e685]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e686] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B05-29-6-2%E8%99%95%E5%88%86%E5%8D%97%E4%BA%9E%E7%A7%91880%E5%BC%B5-%E7%8D%B2%E5%88%A9%E7%B4%849772%E8%90%AC%E5%85%83-010500428.html?bcmt=1
+                    - img [ref=e687]
+                  - button "Social media share article menu" [ref=e691]:
+                    - img [ref=e692] [cursor=pointer]
+            - listitem [ref=e694]:
+              - generic [ref=e696]:
+                - generic [ref=e697]:
+                  - generic [ref=e698]: Moneydj理財網•18 小時前
+                  - heading "6/2上市外資買超排行前20名" [level=3] [ref=e699]:
+                    - link "6/2上市外資買超排行前20名" [ref=e700] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/6-2%E4%B8%8A%E5%B8%82%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%85%E6%8E%92%E8%A1%8C%E5%89%8D20%E5%90%8D-233100283.html
+                      - text: 6/2上市外資買超排行前20名
+                  - paragraph [ref=e702]: 名次 股票名稱 買賣超張數 收盤價 漲跌 1 3231緯創 91,903 191.00 17.00 2 2303聯電 63,634 141.50 -4.50 3 2353宏碁 51,535 42.55 3.85 4 2409友達 47,815 26.15 2.35 5 2337旺宏 27,577 175.50 8.00 6 2317鴻海 25,503 301.50 8.00 7 2890永豐金 23,191 31.00 0.55 8 0056元大高股息 20,172 52.80 0.90 9 2609陽明 19,359 53.60 -1.30 10 1326台化 19,073 54.40 0.60 11 2408南亞科 18,322 419.50 38.00 12 1402遠東新 17,883 26.25 1.20 13 00878國泰永續高股息 17,421 32.49 0.50 14 1303南亞 16,576 112.50 5.00 15 1605華新 16,226 40.45 0.75 16 2324仁寶 15,081 44.35 4.00 17 6116彩晶 13,971 2
+                - generic [ref=e703]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e704] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/6-2%E4%B8%8A%E5%B8%82%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%85%E6%8E%92%E8%A1%8C%E5%89%8D20%E5%90%8D-233100283.html?bcmt=1
+                    - img [ref=e705]
+                  - button "Social media share article menu" [ref=e709]:
+                    - img [ref=e710] [cursor=pointer]
+            - listitem [ref=e712]:
+              - generic [ref=e714]:
+                - generic [ref=e715]:
+                  - generic [ref=e716]: Moneydj理財網•前天
+                  - heading "南亞科取得廠務設備一批，計12.94億元" [level=3] [ref=e717]:
+                    - link "南亞科取得廠務設備一批，計12.94億元" [ref=e718] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-%E6%89%B9-%E8%A8%8812-94%E5%84%84%E5%85%83-134500793.html
+                      - text: 南亞科取得廠務設備一批，計12.94億元
+                  - paragraph [ref=e720]: "公開資訊觀測站重大訊息公告(2408)南亞科-公告本公司取得廠務設備1.標的物之名稱及性質（如坐落台中市北區ＸＸ段ＸＸ小段土地）:廠務設備2.事實發生日:115/6/2~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長民國115年6月2日5.交易單位數量（如ＸＸ平方公尺，折合ＸＸ坪）、每單位價格及交易總金額:交易數量：一批交易總金額：新台幣1,294,000,000元6.交易相對人及其與公司之關係（交易相對人如屬自然人，且非公司之關係人者，得免揭露其姓名）:良聯工業股份有限公司，與公司關係：無。7.交易相對人為關係人者，並應公告選定關係人為交易對象之原因及前次移轉之所有人、前次移轉之所有人與公司及交易相對人間相互之關係、前次移轉日期及移轉金額:不適用8.交易標的最近五年內所有權人曾為公司之關係人者，尚應公告關係人之取得及處分日期、價格及交易當時與公司之關係:不適用9.預計處分利益（或損失）（取得資產者不適用）（遞延者應列表說明認列情形）:不適用10.交付或付款條件（含付款期間及金額）、契約限制條款及其他重要約定事項:依訂單條件或合約約定辦理11.本次交易之決"
+                - generic [ref=e721]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e722] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-%E6%89%B9-%E8%A8%8812-94%E5%84%84%E5%85%83-134500793.html?bcmt=1
+                    - img [ref=e723]
+                  - button "Social media share article menu" [ref=e727]:
+                    - img [ref=e728] [cursor=pointer]
+            - listitem [ref=e730]
+            - listitem [ref=e734]:
+              - generic [ref=e736]:
+                - generic [ref=e739]:
+                  - generic [ref=e740]: 鉅亨網•前天
+                  - heading "外資買超102億元 追買黃仁勳背板股緯創、鴻海 反手大砍群創20萬張" [level=3] [ref=e741]:
+                    - link "外資買超102億元 追買黃仁勳背板股緯創、鴻海 反手大砍群創20萬張" [ref=e742] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%85102%E5%84%84%E5%85%83-%E8%BF%BD%E8%B2%B7%E9%BB%83%E4%BB%81%E5%8B%B3%E8%83%8C%E6%9D%BF%E8%82%A1%E7%B7%AF%E5%89%B5-%E9%B4%BB%E6%B5%B7-%E5%8F%8D%E6%89%8B%E5%A4%A7%E7%A0%8D%E7%BE%A4%E5%89%B520%E8%90%AC%E5%BC%B5-112948314.html
+                      - text: 外資買超102億元 追買黃仁勳背板股緯創、鴻海 反手大砍群創20萬張
+                  - paragraph [ref=e744]: 台股續創收盤高外資買超 102 億元 反手大砍群創 20 萬張
+                - generic [ref=e745]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e746] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%85102%E5%84%84%E5%85%83-%E8%BF%BD%E8%B2%B7%E9%BB%83%E4%BB%81%E5%8B%B3%E8%83%8C%E6%9D%BF%E8%82%A1%E7%B7%AF%E5%89%B5-%E9%B4%BB%E6%B5%B7-%E5%8F%8D%E6%89%8B%E5%A4%A7%E7%A0%8D%E7%BE%A4%E5%89%B520%E8%90%AC%E5%BC%B5-112948314.html?bcmt=1
+                    - img [ref=e747]
+                  - button "Social media share article menu" [ref=e751]:
+                    - img [ref=e752] [cursor=pointer]
+            - listitem [ref=e754]:
+              - generic [ref=e756]:
+                - generic [ref=e757]:
+                  - generic [ref=e758]: Moneydj理財網•前天
+                  - heading "中環 本公司公告處分有價證券" [level=3] [ref=e759]:
+                    - link "中環 本公司公告處分有價證券" [ref=e760] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%85%AC%E5%91%8A%E8%99%95%E5%88%86%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-104600168.html
+                      - text: 中環 本公司公告處分有價證券
+                  - paragraph [ref=e762]: "公開資訊觀測站重大訊息公告(2323)中環-本公司公告處分有價證券1.證券名稱:南亞科 普通股2.交易日期:115/5/29~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長核決民國115年06月02日5.交易數量、每單位價格及交易總金額:交易數量(仟股):880每單位價格(元):376.19交易總金額(元):331,049,5246.處分利益（或損失）（取得有價證券者不適用）:處分利益97,718,756元7.與交易標的公司之關係:無8.迄目前為止，累積持有本交易證券（含本次交易）之數量、金額、持股比例及權利受限情形（如質押情形）:持有餘額:280,000股、金額:74,241,602元 持股比例:0.008%、權利受限情形: 無9.迄目前為止，依「公開發行公司取得或處分資產處理準則」第三條所列之有價證券投資（含本次交易）占公司最近期財務報表中總資產及歸屬於母公司業主之權益之比例暨最近期財務報表中營運資金數額:占總資產比例:79.21% 占歸屬於母公司業主之權益比例:113.76% 營運資金數額:8,285,327仟元10.取得或處分之具體目的:投資組合1"
+                - generic [ref=e763]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e764] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E4%B8%AD%E7%92%B0-%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%85%AC%E5%91%8A%E8%99%95%E5%88%86%E6%9C%89%E5%83%B9%E8%AD%89%E5%88%B8-104600168.html?bcmt=1
+                    - img [ref=e765]
+                  - button "Social media share article menu" [ref=e769]:
+                    - img [ref=e770] [cursor=pointer]
+            - listitem [ref=e772]:
+              - generic [ref=e774]:
+                - generic [ref=e775]:
+                  - generic [ref=e776]: 中央社財經•前天
+                  - heading "【公告】南亞科取得廠務設備" [level=3] [ref=e777]:
+                    - link "【公告】南亞科取得廠務設備" [ref=e778] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-094555596.html
+                      - text: 【公告】南亞科取得廠務設備
+                  - paragraph [ref=e780]: "日 期：2026年06月02日公司名稱：南亞科(2408)主 旨：南亞科取得廠務設備發言人：李培瑛說 明：1.標的物之名稱及性質（如坐落台中市北區ＸＸ段ＸＸ小段土地）:廠務設備2.事實發生日:115/6/2~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長民國115年6月2日5.交易單位數量（如ＸＸ平方公尺，折合ＸＸ坪）、每單位價格及交易總金額:交易數量：一批交易總金額：新台幣1,294,000,000元6.交易相對人及其與公司之關係（交易相對人如屬自然人，且非公司之關係人者，得免揭露其姓名）:良聯工業股份有限公司，與公司關係：無。7.交易相對人為關係人者，並應公告選定關係人為交易對象之原因及前次移轉之所有人、前次移轉之所有人與公司及交易相對人間相互之關係、前次移轉日期及移轉金額:不適用8.交易標的最近五年內所有權人曾為公司之關係人者，尚應公告關係人之取得及處分日期、價格及交易當時與公司之關係:不適用9.預計處分利益（或損失）（取得資產者不適用）（遞延者應列表說明認列情形）:不適用10.交付或付款條件（含付款期間及金額）、契約限制條款及其他重要約定事項:依訂"
+                - generic [ref=e781]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e782] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%8D%97%E4%BA%9E%E7%A7%91%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-094555596.html?bcmt=1
+                    - img [ref=e783]
+                  - button "Social media share article menu" [ref=e787]:
+                    - img [ref=e788] [cursor=pointer]
+            - listitem [ref=e790]
+            - listitem [ref=e794]:
+              - generic [ref=e796]:
+                - generic [ref=e797]:
+                  - generic [ref=e798]: Moneydj理財網•前天
+                  - heading "南亞科 公告本公司取得廠務設備" [level=3] [ref=e799]:
+                    - link "南亞科 公告本公司取得廠務設備" [ref=e800] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-093700116.html
+                      - text: 南亞科 公告本公司取得廠務設備
+                  - paragraph [ref=e802]: "公開資訊觀測站重大訊息公告(2408)南亞科-公告本公司取得廠務設備1.標的物之名稱及性質（如坐落台中市北區ＸＸ段ＸＸ小段土地）:廠務設備2.事實發生日:115/6/2~115/6/23.董事會通過日期: 不適用4.其他核決日期:核決層級:董事長民國115年6月2日5.交易單位數量（如ＸＸ平方公尺，折合ＸＸ坪）、每單位價格及交易總金額:交易數量：一批交易總金額：新台幣1,294,000,000元6.交易相對人及其與公司之關係（交易相對人如屬自然人，且非公司之關係人者，得免揭露其姓名）:良聯工業股份有限公司，與公司關係：無。7.交易相對人為關係人者，並應公告選定關係人為交易對象之原因及前次移轉之所有人、前次移轉之所有人與公司及交易相對人間相互之關係、前次移轉日期及移轉金額:不適用8.交易標的最近五年內所有權人曾為公司之關係人者，尚應公告關係人之取得及處分日期、價格及交易當時與公司之關係:不適用9.預計處分利益（或損失）（取得資產者不適用）（遞延者應列表說明認列情形）:不適用10.交付或付款條件（含付款期間及金額）、契約限制條款及其他重要約定事項:依訂單條件或合約約定辦理11.本次交易之決"
+                - generic [ref=e803]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e804] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8D%97%E4%BA%9E%E7%A7%91-%E5%85%AC%E5%91%8A%E6%9C%AC%E5%85%AC%E5%8F%B8%E5%8F%96%E5%BE%97%E5%BB%A0%E5%8B%99%E8%A8%AD%E5%82%99-093700116.html?bcmt=1
+                    - img [ref=e805]
+                  - button "Social media share article menu" [ref=e809]:
+                    - img [ref=e810] [cursor=pointer]
+            - listitem [ref=e812]:
+              - generic [ref=e814]:
+                - generic [ref=e817]:
+                  - generic [ref=e818]: Yahoo財經編輯室•前天
+                  - heading "COMPUTEX一開台股就噴新高！記憶體暴走南亞科首闖400元大關｜Yahoo財經掃描" [level=3] [ref=e819]:
+                    - link "COMPUTEX一開台股就噴新高！記憶體暴走南亞科首闖400元大關｜Yahoo財經掃描" [ref=e820] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/computex%E4%B8%80%E9%96%8B%E5%8F%B0%E8%82%A1%E5%B0%B1%E5%99%B4%E6%96%B0%E9%AB%98%EF%BC%81%E8%A8%98%E6%86%B6%E9%AB%94%E6%9A%B4%E8%B5%B0%E5%8D%97%E4%BA%9E%E7%A7%91%E9%A6%96%E9%97%96400%E5%85%83%E5%A4%A7%E9%97%9C%EF%BD%9Cyahoo%E8%B2%A1%E7%B6%93%E6%8E%83%E6%8F%8F-092901561.html
+                      - text: COMPUTEX一開台股就噴新高！記憶體暴走南亞科首闖400元大關｜Yahoo財經掃描
+                  - paragraph [ref=e822]: 輝達搶進AI PC，帶動相關軟硬體類股全面強漲，抵銷美伊和談烏雲罩頂、推升油價的利空，美國四大指數全面刷新收盤新高。科技股表現方面，輝達發表AI PC新晶片、並與微軟合作重塑Windows PC體驗，帶動輝達股價大漲6.3%、微軟上漲2.3%，戴爾、惠普等AI PC概念股同步受惠，顯示資金仍圍繞AI運算、個人電腦升級與軟硬體生態系布局；台積電ADR則大漲4.11%。再創新天價。 亞股方面，日股下跌0.30%；韓股小漲0.15%，收8,801.49點並再創收盤新高；港股強漲2.52%，收26,038.32點；上證指數上漲約0.43%，收4,075.10點，亞股在美股創高激勵下仍以科技與資金行情為盤面焦點。 回到台股，台股今(2)日延續AI題材與權值股買盤，終場上漲219.40點、漲幅0.48%，收45,557.31點，再創收盤新高，盤中最高一度來到45,915.92點，也一度震盪翻黑，成交金額1兆6095.95億元；不過櫃買指數下跌5.38點，收440.64點，顯示中小型股相對轉弱、資金更集中大型權值股。權王台積電(2330)再度扛起大旗，終場上漲25元、收2380元，漲幅1.06%，穩居成交值焦點，也成為推升大盤續創高的重要力量。盤面表現方面，電子指數上漲11.11點，金融指數上漲59.47點，電子權值與金融股同步撐盤；AI PC、伺服器與COMPUTEX題材延燒，多檔AI供應鏈持續吸引資金關注，面板雙雄也因低價轉機與資金輪動題材買賣熱絡，記憶體族群也表現強勢，南亞科(2408)400元達陣，華邦電(2344)、威剛(3260)同步漲停，整體來看，台股雖再創高，後續仍須觀察AI題材續航力與成交量能是否維持高檔。
+                - generic [ref=e823]:
+                  - link "4 APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e824] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/computex%E4%B8%80%E9%96%8B%E5%8F%B0%E8%82%A1%E5%B0%B1%E5%99%B4%E6%96%B0%E9%AB%98%EF%BC%81%E8%A8%98%E6%86%B6%E9%AB%94%E6%9A%B4%E8%B5%B0%E5%8D%97%E4%BA%9E%E7%A7%91%E9%A6%96%E9%97%96400%E5%85%83%E5%A4%A7%E9%97%9C%EF%BD%9Cyahoo%E8%B2%A1%E7%B6%93%E6%8E%83%E6%8F%8F-092901561.html?bcmt=1
+                    - generic [ref=e825]: "4"
+                    - img [ref=e826]
+                  - button "Social media share article menu" [ref=e830]:
+                    - img [ref=e831] [cursor=pointer]
+            - listitem [ref=e833]:
+              - generic [ref=e835]:
+                - generic [ref=e838]:
+                  - generic [ref=e839]: Moneydj理財網•前天
+                  - heading "《台股盤後》震盪逾千點、收漲219點續創新高" [level=3] [ref=e840]:
+                    - link "《台股盤後》震盪逾千點、收漲219點續創新高" [ref=e841] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%9C%87%E7%9B%AA%E9%80%BE%E5%8D%83%E9%BB%9E-%E6%94%B6%E6%BC%B2219%E9%BB%9E%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98-074600150.html
+                      - text: 《台股盤後》震盪逾千點、收漲219點續創新高
+                  - paragraph [ref=e843]: MoneyDJ新聞 2026-06-02 15:46:18 新聞中心 發佈台股今(2)日在台積電挾ADR漲勢領漲、輝達搶進AI PC題材帶動華碩/宏碁漲停效應下，加權指數盤初一度逼近46000大關，惟聯發科/台達電/日月光弱勢表現、日經225指數早盤也明顯下跌下，引發獲利了結賣壓，幸賴南亞科/國巨/鴻海/廣達維持強勢、金控股/南亞/遠紡/長榮亦有助攻表現下，加權指數雖上下震盪約1046點、終場仍創高收在45557.31點、續守5日線，上漲219.40點或0.48%，成交量微增至1兆6075億元。 輝達搶進AI PC、激勵相關軟硬體類股全面飛漲，並減少美伊和談烏雲罩頂、推升油價的利空影響，美國四大指數周一全面寫新高。亞洲股市方面，因日經225指數昨日創下歷史收盤新高紀錄，引發獲利了結賣壓，AI、半導體相關股下挫，拖累日經指數今日一度重摔，不過午盤跌幅收斂，收盤下跌0.3%；韓國股市持續走揚，KOSPI終場上漲0.15%。 台積電ADR周一漲逾4%，激勵今日台股股價收在2380元、上漲1.06%，加上輝達搶進AI PC，持續激勵電腦及週邊設備族群表現，宏碁、華碩、仁寶、緯創等都亮燈漲停，華
+                - generic [ref=e844]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e845] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%9C%87%E7%9B%AA%E9%80%BE%E5%8D%83%E9%BB%9E-%E6%94%B6%E6%BC%B2219%E9%BB%9E%E7%BA%8C%E5%89%B5%E6%96%B0%E9%AB%98-074600150.html?bcmt=1
+                    - img [ref=e846]
+                  - button "Social media share article menu" [ref=e850]:
+                    - img [ref=e851] [cursor=pointer]
+            - listitem [ref=e853]
+            - listitem [ref=e857]:
+              - generic [ref=e859]:
+                - generic [ref=e862]:
+                  - generic [ref=e863]: 鉅亨網•前天
+                  - heading "〈台股盤後〉4萬6關前拉回 台積電、代工族群續強 漲219點收45557點新高" [level=3] [ref=e864]:
+                    - link "〈台股盤後〉4萬6關前拉回 台積電、代工族群續強 漲219點收45557點新高" [ref=e865] [cursor=pointer]:
+                      - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-4%E8%90%AC6%E9%97%9C%E5%89%8D%E6%8B%89%E5%9B%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E4%BB%A3%E5%B7%A5%E6%97%8F%E7%BE%A4%E7%BA%8C%E5%BC%B7-%E6%BC%B2219%E9%BB%9E%E6%94%B645557%E9%BB%9E%E6%96%B0%E9%AB%98-062550979.html
+                      - text: 〈台股盤後〉4萬6關前拉回 台積電、代工族群續強 漲219點收45557點新高
+                  - paragraph [ref=e867]: 〈台股盤後〉4 萬 6 關前拉回 台積電、代工族群續強 漲 219 點收 45557 點新高
+                - generic [ref=e868]:
+                  - link "APPLET_COMMENT_ARIA_VIEW_COMMENTS" [ref=e869] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-4%E8%90%AC6%E9%97%9C%E5%89%8D%E6%8B%89%E5%9B%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E4%BB%A3%E5%B7%A5%E6%97%8F%E7%BE%A4%E7%BA%8C%E5%BC%B7-%E6%BC%B2219%E9%BB%9E%E6%94%B645557%E9%BB%9E%E6%96%B0%E9%AB%98-062550979.html?bcmt=1
+                    - img [ref=e870]
+                  - button "Social media share article menu" [ref=e874]:
+                    - img [ref=e875] [cursor=pointer]
+    - generic [ref=e880]:
+      - generic [ref=e887]:
+        - link "我的自選股" [ref=e889] [cursor=pointer]:
+          - /url: /portfolios
+          - generic [ref=e890]: 我的自選股
+        - generic [ref=e891]:
+          - generic [ref=e892]: 立即登入瀏覽你的投資組合。
+          - link "登入" [ref=e893] [cursor=pointer]:
+            - /url: /portfolios
+      - generic [ref=e895]:
+        - generic [ref=e896]:
+          - generic [ref=e898]: 網友也在看
+          - button "加入自選" [ref=e899] [cursor=pointer]:
+            - img [ref=e901]
+            - generic [ref=e903]: 加入自選
+        - generic [ref=e904]:
+          - generic [ref=e906]:
+            - generic [ref=e907]: 股名/股號
+            - generic [ref=e908]: 股價
+            - generic [ref=e909]: 漲跌(%)
+            - generic [ref=e910]: 成交量(張)
+          - list [ref=e914]:
+            - listitem [ref=e915]:
+              - generic [ref=e916]:
+                - generic [ref=e918]:
+                  - link [ref=e919] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2344.TW
+                  - generic [ref=e921]: 華邦電
+                  - generic [ref=e923]: 2344.TW
+                - generic [ref=e925]: "177.50"
+                - generic [ref=e927]:
+                  - generic [ref=e928]: "7.00"
+                  - generic [ref=e930]: 3.79%
+                - generic [ref=e932]: 326,340
+            - listitem [ref=e933]:
+              - generic [ref=e934]:
+                - generic [ref=e936]:
+                  - link [ref=e937] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/2337.TW
+                  - generic [ref=e939]: 旺宏
+                  - generic [ref=e941]: 2337.TW
+                - generic [ref=e943]: "162.00"
+                - generic [ref=e945]:
+                  - generic [ref=e946]: "13.50"
+                  - generic [ref=e948]: 7.69%
+                - generic [ref=e950]: 55,402
+            - listitem [ref=e951]:
+              - generic [ref=e952]:
+                - generic [ref=e954]:
+                  - link [ref=e955] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/3260.TWO
+                  - generic [ref=e957]: 威剛
+                  - generic [ref=e959]: 3260.TWO
+                - generic [ref=e961]: "462.00"
+                - generic [ref=e963]:
+                  - generic [ref=e964]: "7.50"
+                  - generic [ref=e966]: 1.60%
+                - generic [ref=e968]: 35,884
+            - listitem [ref=e969]:
+              - generic [ref=e970]:
+                - generic [ref=e972]:
+                  - link [ref=e973] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/8299.TWO
+                  - generic [ref=e975]: 群聯
+                  - generic [ref=e977]: 8299.TWO
+                - generic [ref=e979]: 2,685.00
+                - generic [ref=e981]:
+                  - generic [ref=e982]: "135.00"
+                  - generic [ref=e984]: 4.79%
+                - generic [ref=e986]: 10,238
+            - listitem [ref=e987]:
+              - generic [ref=e988]:
+                - generic [ref=e990]:
+                  - link [ref=e991] [cursor=pointer]:
+                    - /url: https://tw.stock.yahoo.com/quote/1303.TW
+                  - generic [ref=e993]: 南亞
+                  - generic [ref=e995]: 1303.TW
+                - generic [ref=e997]: "113.00"
+                - generic [ref=e999]:
+                  - generic [ref=e1000]: "0.50"
+                  - generic [ref=e1002]: 0.44%
+                - generic [ref=e1004]: 76,956
+      - generic [ref=e1007]:
+        - generic [ref=e1010]: 半導體產業漲跌排行
+        - generic [ref=e1011]:
+          - generic [ref=e1013]:
+            - generic [ref=e1014]: 股名/股號
+            - generic [ref=e1015]: 股價
+            - generic [ref=e1016]: 漲跌(%)
+            - generic [ref=e1017]: 成交量(張)
+          - list [ref=e1021]:
+            - listitem [ref=e1022]:
+              - generic [ref=e1023]:
+                - link "茂矽 2342.TW" [ref=e1025] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2342.TW
+                  - generic [ref=e1026]: 茂矽
+                  - generic [ref=e1027]: 2342.TW
+                - generic [ref=e1028]: "44.65"
+                - generic [ref=e1030]:
+                  - generic [ref=e1031]: "4.05"
+                  - generic [ref=e1033]: 9.98%
+                - generic [ref=e1034]: 15,753
+            - listitem [ref=e1035]:
+              - generic [ref=e1036]:
+                - link "訊芯-KY 6451.TW" [ref=e1038] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6451.TW
+                  - generic [ref=e1039]: 訊芯-KY
+                  - generic [ref=e1040]: 6451.TW
+                - generic [ref=e1041]: "724.00"
+                - generic [ref=e1043]:
+                  - generic [ref=e1044]: "65.00"
+                  - generic [ref=e1046]: 9.86%
+                - generic [ref=e1047]: 3,342
+            - listitem [ref=e1048]:
+              - generic [ref=e1049]:
+                - link "強茂 2481.TW" [ref=e1051] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2481.TW
+                  - generic [ref=e1052]: 強茂
+                  - generic [ref=e1053]: 2481.TW
+                - generic [ref=e1055]: "159.00"
+                - generic [ref=e1057]:
+                  - generic [ref=e1058]: "13.00"
+                  - generic [ref=e1060]: 8.90%
+                - generic [ref=e1061]: 33,370
+            - listitem [ref=e1062]:
+              - generic [ref=e1063]:
+                - link "矽格 6257.TW" [ref=e1065] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/6257.TW
+                  - generic [ref=e1066]: 矽格
+                  - generic [ref=e1067]: 6257.TW
+                - generic [ref=e1069]: "230.00"
+                - generic [ref=e1071]:
+                  - generic [ref=e1072]: "15.00"
+                  - generic [ref=e1074]: 6.98%
+                - generic [ref=e1075]: 14,785
+            - listitem [ref=e1076]:
+              - generic [ref=e1077]:
+                - link "京元電子 2449.TW" [ref=e1079] [cursor=pointer]:
+                  - /url: https://tw.stock.yahoo.com/quote/2449.TW
+                  - generic [ref=e1080]: 京元電子
+                  - generic [ref=e1081]: 2449.TW
+                - generic [ref=e1083]: "322.50"
+                - generic [ref=e1085]:
+                  - generic [ref=e1086]: "16.00"
+                  - generic [ref=e1088]: 5.22%
+                - generic [ref=e1089]: 44,913
+      - generic [ref=e1092]:
+        - generic [ref=e1095]: 相關概念股
+        - generic [ref=e1096]:
+          - generic [ref=e1098]:
+            - generic [ref=e1099]: 概念股
+            - generic [ref=e1100]: 當日平均漲跌%
+            - generic [ref=e1101]: 近1月平均漲跌%
+          - list [ref=e1105]:
+            - listitem [ref=e1106]:
+              - generic [ref=e1107]:
+                - link "iPhone" [ref=e1109] [cursor=pointer]:
+                  - /url: /class-quote?category=iPhone&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1111]: 2.33%
+                - generic [ref=e1114]: 26.99%
+            - listitem [ref=e1116]:
+              - generic [ref=e1117]:
+                - link "比特幣挖礦" [ref=e1119] [cursor=pointer]:
+                  - /url: /class-quote?category=%E6%AF%94%E7%89%B9%E5%B9%A3%E6%8C%96%E7%A4%A6&categoryLabel=%E6%A6%82%E5%BF%B5%E8%82%A1
+                - generic [ref=e1121]: 0.11%
+                - generic [ref=e1124]: 15.66%
+      - generic [ref=e1127]:
+        - generic [ref=e1128]:
+          - text: Yahoo Finance
+          - generic [ref=e1129]:
+            - link "服務條款" [ref=e1130] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/terms?locale=zh-Hant-TW
+            - text: 和
+            - link "隱私權保護政策" [ref=e1131] [cursor=pointer]:
+              - /url: https://guce.yahoo.com/privacy-policy?locale=zh-Hant-TW
+          - link "隱私權儀表板" [ref=e1132] [cursor=pointer]:
+            - /url: https://guce.yahoo.com/privacy-dashboard?locale=zh-Hant-TW
+        - generic [ref=e1133]:
+          - generic [ref=e1134]:
+            - text: 台股資料來源
+            - link "臺灣證券交易所" [ref=e1135] [cursor=pointer]:
+              - /url: http://www.twse.com.tw/zh/
+            - text: 、
+            - link "臺灣期貨交易所" [ref=e1136] [cursor=pointer]:
+              - /url: http://www.taifex.com.tw
+            - text: 及
+            - link "財團法人中華民國證券櫃檯買賣中心" [ref=e1137] [cursor=pointer]:
+              - /url: http://www.tpex.org.tw/web/
+            - text: ，國際股市資料來源請參考
+            - link "Yahoo Finance" [ref=e1138] [cursor=pointer]:
+              - /url: https://help.yahoo.com/kb/finance-for-desktop/SLN2310.html
+            - text: 。使用Yahoo股市服務前，請您詳閱相關
+            - link "使用規範與聲明" [ref=e1139] [cursor=pointer]:
+              - /url: https://tw.help.yahoo.com/kb/stock-tw-web/SLN28774.html?impressions=true
+            - text: 。
+          - generic [ref=e1140]:
+            - text: 台股行情、個股基本資料及財務資訊為
+            - link "精誠資訊" [ref=e1141] [cursor=pointer]:
+              - /url: https://tw.systex.com/
+            - text: 提供。
