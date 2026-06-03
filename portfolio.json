@@ -1,5 +1,5 @@
 {
- "_NOTE": "2026-06-02：新增 HPE 40@55.39(Core 長抱、不設停損)。持股 NVDA18/MSFT22/VOO10/HPE40。dashboard 已同步補記 5/25・5/28・6/1 交易 + 6/2 HPE。現價需用 browser MCP 抓 Yahoo，勿存。",
+ "_NOTE": "2026-06-02：策略 v4（停利優先・全部位保護）。新增 HPE 40@55.39、停損 $48。持股 NVDA18/MSFT22/VOO10/HPE40。每檔個股全部位掛停損（VOO 例外靠 Layer 2）。dashboard 已同步補記 5/25・5/28・6/1・6/2 交易。現價需用 browser MCP 抓 Yahoo，勿存。",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
  "portfolio": [
@@ -33,7 +33,7 @@
    "shares": 40,
    "avg_cost": 55.39,
    "cost_basis": 2215.60,
-   "note": "6/2 財報後進場 40 @ 55.39｜Core 長抱(價值+AI)｜不設價格停損"
+   "note": "6/2 進場 40 @ 55.39｜價值+AI｜v4 全部位停損 $48"
   }
  ],
  "cash_usd": 96.43,
