@@ -379,7 +379,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 96.43; // 6/2 買 HPE 40@55.39 (-$2,215.60) 後；券商購買力基準 $2,312.03
+const usCash = 9552.69; // 6/3 MSFT 停損出場 22@429.83 (+$9,456.26) 後
 
 const twPortfolio = [
   { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.43, color:"#0ea5e9" },
@@ -389,13 +389,13 @@ const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截�
 
 const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.60, currentPrice:224.36, color:"#10b981" },
-  { symbol:"MSFT", name:"Microsoft", shares:22, avgCost:416.07, currentPrice:460.52, color:"#3b82f6" },
   { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:633.97, currentPrice:697.30, color:"#6366f1" },
   { symbol:"HPE", name:"Hewlett Packard Enterprise", shares:40, avgCost:55.39, currentPrice:55.00, color:"#f59e0b" },
   // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39（v4 全部位停損 $48）。價格為 6/2 盤中(Yahoo)。
 ];
 
 const allTx = [
+  { date:"2026-06-03", market:"US", symbol:"MSFT", action:"sell", shares:22, price:429.83, amount:9456.26, note:"觸及 $430 移動停損、全部位出場｜認列 +$302.72 (+3.3%)｜v4 Layer 1 自動執行" },
   { date:"2026-06-02", market:"US", symbol:"HPE", action:"buy", shares:40, price:55.39, amount:2215.60, note:"財報炸裂後進場 40@55.39｜EPS +108%、財測 +40%｜價值+AI｜v4 全部位停損 $48" },
   { date:"2026-06-01", market:"US", symbol:"VOO", action:"buy", shares:2, price:694.55, amount:1389.10, note:"AMZN 停利 proceeds 轉入指數核心｜VOO 8→10 股" },
   { date:"2026-06-01", market:"US", symbol:"AMZN", action:"sell", shares:4, price:263.99, amount:1055.96, note:"全數停利出場｜AMZN 4→0｜認列 +$146.32｜觸發 Chandelier 移動停利，Core 一併了結轉 VOO" },
@@ -519,6 +519,8 @@ const adjustmentLog = [
   { date:"2026-06-01", type:"trade", title:"🎯 AMZN 全數停利出場 + VOO 加碼", detail:"AMZN 4 股全數停利 @ $263.99 認列 +$146.32，持股歸零；proceeds 轉入 VOO 加碼 2 股 @ $694.55（VOO 8→10 股）。觸發移動停利後全數了結轉入指數核心。美股現金校正 $2,310。" },
   { date:"2026-06-02", type:"review", title:"📊 全檔對齊 + 美股分析（v4 全部位停損）", detail:"當日僅分析、無交易。股癌讀至 EP665-666（被動元件續強、孟恭自己慢慢減碼國巨；新題材 SpaceX IPO + 衛星 Neo Cloud，警告 6/12 IPO 日可能是衛星股大出貨）。五檔『剛突破+基本面強』候選：HPE/ANET/VRT/AVGO/NBIS。3 檔持股皆在移動停利上方不需調整（NVDA $194.74、MSFT $430、VOO 不設）。dashboard 紀律引擎當日稍後升級為 v4（每檔個股全部位掛停損、跌破即全出）。資料問題：2705 在 Yahoo 為六福、大魯閣應為 1432，待確認。" },
   { date:"2026-06-02", type:"trade", title:"🆕 新進場 HPE 40 股 @ $55.39", detail:"HPE Q2 FY26 財報炸裂後進場：營收 +40%、EPS +108%、財測上調逾 40%（EPS $3.35-3.45）、AI backlog $5.9B、Juniper 綜效超前。以 forward PE ~16 倍進場當『價值+AI』部位；v4 全部位停損 $48。花費 $2,215.60，美股現金降至 ~$96。" },
+  { date:"2026-06-03", type:"trade", title:"🔴 MSFT 觸停損全出 22 股 @ $429.83", detail:"久盤後跌破 $430 移動停損，v4 Layer 1 全部位自動出場，成交 $429.83，認列 +$302.72(+3.3%)。proceeds $9,456 轉現金（美股現金升至 ~$9,553）。持股剩 NVDA 18 / HPE 40 / VOO 10。" },
+  { date:"2026-06-03", type:"discipline", title:"⬆️ NVDA 停損上移 $194.74 → $210", detail:"NVDA 漲至 ~$216（+17%），移動停損由結構低 $194.74 上墊至 50 日均上方 $210（鎖利 +13.7%、回吐空間縮至 −3%）。創新高再續墊。" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -685,6 +687,14 @@ const twRealizedDetail = [
   ]},
 ];
 const usRealizedDetail = [
+  { symbol:"MSFT", name:"Microsoft（6/3 停損全清）", pnl:302.72, trades:[
+    { date:"2026-01-13", action:"buy", desc:"建倉 5股 @ $474.50", amount:2372.50 },
+    { date:"2026-02-13", action:"buy", desc:"逢低 1股 @ $402.84", amount:402.84 },
+    { date:"2026-02-18", action:"buy", desc:"加碼 4股 @ $397.39", amount:1589.56 },
+    { date:"2026-04-08", action:"buy", desc:"停火後加碼 7股 @ $378.60", amount:2650.20 },
+    { date:"2026-05-28", action:"buy", desc:"突破加碼 5股 @ $427.29｜均價 $416.07", amount:2136.45 },
+    { date:"2026-06-03", action:"sell", desc:"🔴 觸 $430 移動停損全清 22股 @ $429.83（+$302.72/+3.3%）", amount:9456.26 },
+  ]},
   { symbol:"AMZN", name:"Amazon（6/1 全清）", pnl:146.32, trades:[
     { date:"2026-01-27", action:"buy", desc:"建倉/加碼 10股 @ ~$238.6", amount:2386.05 },
     { date:"2026-05-19", action:"sell", desc:"📋 方案C減倉 11股 @ $260（+$356.29）｜剩4股", amount:2860.00 },
@@ -735,7 +745,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = 276.88; // 前 130.56 + AMZN 6/1 停利 +146.32｜⚠️ 明細與頭條尚未完全一致，全面已實現損益待券商對帳單重建
+const usRealizedPnl = 579.60; // 276.88 + MSFT 6/3 停損出場 +302.72｜⚠️ 明細與頭條尚未完全一致，全面已實現損益待券商對帳單重建
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
@@ -745,14 +755,13 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // v4：每檔個股「全部位」掛 GTC 停損；無 Core/Trim、無不設停損的長抱。VOO 例外(指數錨)，靠 Layer 2。
 // 停損隨新高手動上移；Claude 每次分析以即時價/ATR 重算。
 const v4Discipline = {
-  'NVDA': { stop:194.74, stopLabel:'結構低' },
-  'MSFT': { stop:430,    stopLabel:'Chandelier 2.5×ATR' },
+  'NVDA': { stop:210, stopLabel:'50日均(由$194.74上移)' },
   'HPE':  { stop:48,     stopLabel:'缺口下緣' },
   'VOO':  { stop:null,   stopLabel:'指數錨(Layer 2)' }
 };
 
 function renderDefenseTable() {
-  const order = ['NVDA','MSFT','HPE','VOO'];
+  const order = ['NVDA','HPE','VOO'];
   const rows = [];
   order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);
@@ -807,7 +816,7 @@ const layer2Triggers = [
 ];
 
 function renderObserveAlert() {
-  const order = ['NVDA','MSFT','HPE','VOO'];
+  const order = ['NVDA','HPE','VOO'];
   const breached = [], near = [];
   order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);

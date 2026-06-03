@@ -1,5 +1,5 @@
 {
- "_NOTE": "2026-06-02：策略 v4（停利優先・全部位保護）。新增 HPE 40@55.39、停損 $48。持股 NVDA18/MSFT22/VOO10/HPE40。每檔個股全部位掛停損（VOO 例外靠 Layer 2）。dashboard 已同步補記 5/25・5/28・6/1・6/2 交易。現價需用 browser MCP 抓 Yahoo，勿存。",
+ "_NOTE": "2026-06-03：策略 v4。MSFT 6/3 觸 $430 停損全清 22@429.83（+$302.72）→ 持股剩 NVDA18/VOO10/HPE40、現金升至 ~$9,553。NVDA 停損由 $194.74 上移至 $210；HPE $48；VOO 靠 Layer 2。現價需用 browser MCP 抓 Yahoo，勿存。",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
  "portfolio": [
@@ -10,14 +10,6 @@
    "avg_cost": 184.6,
    "cost_basis": 3322.71,
    "note": "30→18 (5/19 sold 12 @ 222)"
-  },
-  {
-   "symbol": "MSFT",
-   "name": "Microsoft",
-   "shares": 22,
-   "avg_cost": 416.07,
-   "cost_basis": 9151.55,
-   "note": "10→17 (4/08 +7 @ 378.60) → 22 (5/28 +5 @ 427.29)"
   },
   {
    "symbol": "VOO",
@@ -36,8 +28,8 @@
    "note": "6/2 進場 40 @ 55.39｜價值+AI｜v4 全部位停損 $48"
   }
  ],
- "cash_usd": 96.43,
- "cash_source": "6/2 買 HPE 40@55.39 後；券商購買力 $2,312.03 − $2,215.60 ≈ $96",
+ "cash_usd": 9552.69,
+ "cash_source": "6/3 MSFT 停損出場 22@429.83（+$9,456.26）後",
  "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
  "total_realized_pnl_lifetime": 288.14,
  "total_realized_pnl_breakdown": {
