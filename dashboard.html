@@ -379,7 +379,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <script>
 // ===== DATA =====
 const USDTWD = 31.90;
-const usCash = 2310.00; // 6/1 券商即時：AMZN 停利出場 + VOO 加碼 2 股後
+const usCash = 96.43; // 6/2 買 HPE 40@55.39 (-$2,215.60) 後；券商購買力基準 $2,312.03
 
 const twPortfolio = [
   { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.43, color:"#0ea5e9" },
@@ -391,10 +391,12 @@ const usPortfolio = [
   { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.60, currentPrice:224.36, color:"#10b981" },
   { symbol:"MSFT", name:"Microsoft", shares:22, avgCost:416.07, currentPrice:460.52, color:"#3b82f6" },
   { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:633.97, currentPrice:697.30, color:"#6366f1" },
-  // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。價格為 6/2 盤中(Yahoo)。
+  { symbol:"HPE", name:"Hewlett Packard Enterprise", shares:40, avgCost:55.39, currentPrice:55.00, color:"#f59e0b" },
+  // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39 當 Core 長抱。價格為 6/2 盤中(Yahoo)。
 ];
 
 const allTx = [
+  { date:"2026-06-02", market:"US", symbol:"HPE", action:"buy", shares:40, price:55.39, amount:2215.60, note:"財報炸裂後進場 40@55.39｜EPS +108%、財測 +40%｜當 Core 長抱(價值+AI)｜thesis 出場、不設價格停損" },
   { date:"2026-06-01", market:"US", symbol:"VOO", action:"buy", shares:2, price:694.55, amount:1389.10, note:"AMZN 停利 proceeds 轉入指數核心｜VOO 8→10 股" },
   { date:"2026-06-01", market:"US", symbol:"AMZN", action:"sell", shares:4, price:263.99, amount:1055.96, note:"全數停利出場｜AMZN 4→0｜認列 +$146.32｜觸發 Chandelier 移動停利，Core 一併了結轉 VOO" },
   { date:"2026-05-28", market:"US", symbol:"MSFT", action:"buy", shares:5, price:427.29, amount:2136.45, note:"突破動能加碼｜MSFT 17→22 股｜均價 412.65→416.07｜久盤後突破 41X-42X 箱型" },
@@ -516,6 +518,7 @@ const adjustmentLog = [
   { date:"2026-05-20", type:"review", title:"📊 美股 5/19 收盤評估：減倉後第 1 日驗證", detail:"美股 5/19 收盤：NVDA $220.61 -0.77% / AMZN $259.34 -2.08% / MSFT $417.42 -1.44% (盤中市場觸 $432.70 但用戶 17 股完全沒動) / VOO $674.59 -0.64%。帳面 +$1,176 + 已實現 +$130.56 = 總 +$1,306。減倉避虧驗證 ~$109。全 4 檔紀律緩衝 +5.97%~+8.78% 全綠。5/20 NVDA 財報倒數 1 日" },
   { date:"2026-06-01", type:"trade", title:"🎯 AMZN 全數停利出場 + VOO 加碼", detail:"AMZN 4 股全數停利 @ $263.99 認列 +$146.32，持股歸零；proceeds 轉入 VOO 加碼 2 股 @ $694.55（VOO 8→10 股）。觸發 Chandelier 移動停利後 Core 一併了結轉入指數核心。美股現金校正 $2,310。" },
   { date:"2026-06-02", type:"review", title:"📊 全檔對齊 + 美股分析（v3.1）", detail:"當日僅分析、無交易。股癌讀至 EP665-666（被動元件續強、孟恭自己慢慢減碼國巨；新題材 SpaceX IPO + 衛星 Neo Cloud，警告 6/12 IPO 日可能是衛星股大出貨）。五檔『剛突破+基本面強』候選：HPE/ANET/VRT/AVGO/NBIS。3 檔持股皆在移動停利上方不需調整（NVDA $194.74、MSFT $430、VOO 不設）。dashboard 紀律引擎重構為 v3.1（Core/Trim 分層+單一移動停利，移除高於現價的固定停利目標）。資料問題：2705 在 Yahoo 為六福、大魯閣應為 1432，待確認。" },
+  { date:"2026-06-02", type:"trade", title:"🆕 新進場 HPE 40 股 @ $55.39（Core）", detail:"HPE Q2 FY26 財報炸裂後進場：營收 +40%、EPS +108%、財測上調逾 40%（EPS $3.35-3.45）、AI backlog $5.9B、Juniper 綜效超前。以 forward PE ~16 倍當『價值+AI』Core 長抱，不設價格停損、thesis 出場。花費 $2,215.60，美股現金降至 ~$96。" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -744,11 +747,12 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 const v31Discipline = {
   'NVDA': { core:12, trim:6, stop:194.74, stopLabel:'結構低',            note:'收盤跌破才減 Trim（分2批3+3）' },
   'MSFT': { core:14, trim:8, stop:430,    stopLabel:'Chandelier ATR2.5×', note:'隨新高上墊（分2批4+4）' },
-  'VOO':  { core:10, trim:0, stop:null,   stopLabel:null,                note:'指數核心，不設停損' }
+  'VOO':  { core:10, trim:0, stop:null,   stopLabel:null,                note:'指數核心，不設停損' },
+  'HPE':  { core:40, trim:0, stop:null,   stopLabel:null,                note:'價值+AI，thesis 出場（不設價格停損）' }
 };
 
 function renderDefenseTable() {
-  const order = ['NVDA','MSFT','VOO'];
+  const order = ['NVDA','MSFT','VOO','HPE'];
   const rows = [];
   order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);
@@ -796,7 +800,7 @@ function renderDefenseTable() {
 renderDefenseTable();
 
 function renderObserveAlert() {
-  const order = ['NVDA','MSFT','VOO'];
+  const order = ['NVDA','MSFT','VOO','HPE'];
   const breached = [], near = [];
   order.forEach(sym => {
     const p = usPortfolio.find(x => x.symbol === sym);
