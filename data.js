@@ -4,7 +4,7 @@
 //    reports、calendarEvents、v4Discipline 停損。dashboard.html 等頁面只放版面，不放資料。
 const TODAY = '2026-06-04';   // 每次分析務必更新（影響行事曆過去/未來標記）
 const USDTWD = 31.46;
-const usCash = 9552.69; // 6/3 MSFT 停損出場 22@429.83 (+$9,456.26) 後
+const usCash = 9551.35; // IB 1Y 對帳單(6/3)期末 USD 餘額（原估 9552.69 微調）
 
 const twPortfolio = [
   { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.54, color:"#0ea5e9" },
@@ -13,8 +13,8 @@ const twPortfolio = [
 const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截圖驗證）
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.60, currentPrice:215.33, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:633.97, currentPrice:694.45, color:"#6366f1" },
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.61, currentPrice:215.33, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:645.31, currentPrice:694.45, color:"#6366f1" },
   { symbol:"HPE", name:"Hewlett Packard Enterprise", shares:40, avgCost:55.39, currentPrice:54.93, color:"#f59e0b" },
   // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39（v4 全部位停損 $48）。價格為 6/2 盤中(Yahoo)。
 ];
@@ -149,6 +149,7 @@ const adjustmentLog = [
   { date:"2026-06-04", type:"discipline", title:"📜 策略規則大補：攻守對稱 + 固定流程（美股台股一致）", detail:"本 session 把跨 session 不一致的問題根治，將四項規則成文寫進 current_strategy.md 並開頭加一頁總覽圖：①⚔️ VIX 逆向進場 playbook（VIX 真破 30 分批進、優先指數、仍掛停損，別接飛刀）；②📈 順勢加碼金字塔（突破前高/站穩10日均+量增+thesis未變才加，首批100%→60%→40%，加碼後立刻上移停損、只加贏家）；③📉 跌勢持股處理（買進即設初始停損−7~8%/結構低，thesis推翻立即認賠、未變守停損，絕不攤平、停損只升不降）；④🔁 每次 session 固定四步（推薦標的→組合分析→持股雙向評估→移動停利+Layer2），美股台股同一套。ETF 廢除下方天邊限價（多頭永不成交）。" },
   { date:"2026-06-04", type:"review", title:"📊 6/4 綜合分析（美股+台股，盤中即時價）", detail:"用新規則跑：美股 NVDA $215.33(-3.36%,距停損$210僅+2.5%最該盯)/HPE $54.93(-2.17%,距$48 +14.4%)/VOO $694.45(靠Layer2)；台股 009816 $15.74(+6.4%連4漲)。加碼/跌勢雙向評估今日全部 ❌ 不追高（科技回檔、隔夜TSM ADR -1.5%）。台股候選(剛突破+基本面強)：京元電2449 322.5(PE41,CoWoS封測Q1創高)⭐/奇鋐3017 2,855(液冷)/南亞科2408 401.5(DRAM漲價外資買超)，等回測進場。Layer 2 ✅ 無事件(VIX16.29/WTI$95.70)。伊朗炸核設施新聞查證為3/22舊聞、停火維持中。" },
   { date:"2026-06-04", type:"review", title:"🇹🇼 6/4 台股盤中買點檢核：無乾淨買點不進場", detail:"用戶問台股有無可買進標的。盤中即時(10:31 CST)：加權 45,899(-1.21%,-560)自史高46,459回檔，隔夜美晶片轉弱(NVDA-3.36%/TSM ADR-1.5%)全族群同步回檔。候選逐檔即時檢核：京元電2449 326.0(+1.09%)逆勢未回測305-310買價❌/奇鋐3017 2,710(-5.08%)單日飛刀未站穩❌/南亞科2408 399.0(-0.62%)連6漲轉跌量大73,795張❌→三檔皆不符突破+量增+非過熱,不硬湊。009816 $15.54(-1.27%,+5.0%)連4漲後回檔,加碼❌等回測站穩5日均,thesis未變續抱。Layer 2 ✅無事件。與今早預判一致無調整。" },
+  { date:"2026-06-04", type:"review", title:"✅ 美股已實現損益依 IB 1Y 對帳單重建（FIFO）", detail:"用戶提供 IB U18192136 一年交易紀錄 + 官方「已實現/未實現表現總結」截圖（最終真實來源）。據此重建 usRealizedDetail，採 IB 的 FIFO：AMZN +499.65｜NVDA +444.02（5/19減倉12股，仍持18）｜MSFT +299.49｜VOO +115.07（5/19減倉3股，仍持10）｜INTC +91.96｜QQQ +76.74｜UBER -160.18｜CRWD -81.79｜NFLX -236.14｜ZS -428.03。美股已實現合計 +$620.79（原暫估 +579.60，差因先前漏記 NVDA/QQQ/VOO 部分減倉、AMZN 只算到最後4股、CRWD/NFLX/ZS 數字有誤）。同時修正 VOO 持股均價 633.97→645.31（FIFO，先前漏更 6/1 加碼2股）、NVDA 184.60→184.61、美股現金 9552.69→9551.35（對帳單期末）。台股已實現仍待台股券商對帳單核對。" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -317,48 +318,64 @@ const twRealizedDetail = [
   ]},
 ];
 const usRealizedDetail = [
-  { symbol:"MSFT", name:"Microsoft（6/3 停損全清）", pnl:302.72, trades:[
-    { date:"2026-01-13", action:"buy", desc:"建倉 5股 @ $474.50", amount:2372.50 },
-    { date:"2026-02-13", action:"buy", desc:"逢低 1股 @ $402.84", amount:402.84 },
-    { date:"2026-02-18", action:"buy", desc:"加碼 4股 @ $397.39", amount:1589.56 },
-    { date:"2026-04-08", action:"buy", desc:"停火後加碼 7股 @ $378.60", amount:2650.20 },
-    { date:"2026-05-28", action:"buy", desc:"突破加碼 5股 @ $427.29｜均價 $416.07", amount:2136.45 },
-    { date:"2026-06-03", action:"sell", desc:"🔴 觸 $430 移動停損全清 22股 @ $429.83（+$302.72/+3.3%）", amount:9456.26 },
+  { symbol:"NVDA", name:"NVIDIA（5/19 部分減倉，仍持有 18 股）", pnl:444.02, trades:[
+    { date:"2025-12-22", action:"buy", desc:"建倉 10股 @ $183.54", amount:1836.35 },
+    { date:"2026-01-06", action:"buy", desc:"加碼 10股 @ $191.18", amount:1912.85 },
+    { date:"2026-02-04", action:"buy", desc:"加碼 5股 @ $177.54", amount:888.68 },
+    { date:"2026-02-06", action:"buy", desc:"加碼 5股 @ $180.60", amount:904.00 },
+    { date:"2026-05-19", action:"sell", desc:"方案C減倉 12股 @ $222.00（FIFO，實現 +$444.02）｜仍持 18 股", amount:2662.94 },
   ]},
-  { symbol:"AMZN", name:"Amazon（6/1 全清）", pnl:146.32, trades:[
-    { date:"2026-01-27", action:"buy", desc:"建倉/加碼 10股 @ ~$238.6", amount:2386.05 },
-    { date:"2026-05-19", action:"sell", desc:"📋 方案C減倉 11股 @ $260（+$356.29）｜剩4股", amount:2860.00 },
-    { date:"2026-06-01", action:"sell", desc:"🎯 全數停利 4股 @ $263.99（+$146.32）｜歸零，proceeds 轉 VOO", amount:1055.96 },
+  { symbol:"AMZN", name:"Amazon（6/1 全清）", pnl:499.65, trades:[
+    { date:"2026-01-27", action:"buy", desc:"建倉 10股 @ ~$238.6", amount:2388.05 },
+    { date:"2026-02-09", action:"buy", desc:"加碼 5股 @ $205.04", amount:1026.18 },
+    { date:"2026-05-19", action:"sell", desc:"方案C減倉 11股 @ $260.00", amount:2858.94 },
+    { date:"2026-06-01", action:"sell", desc:"全清 4股 @ $263.99（合計實現 +$499.65）", amount:1054.94 },
   ]},
-  { symbol:"INTC", name:"Intel（投機-4階段已實現）", pnl:96.87, trades:[
-    { date:"2026-04-29", action:"buy", desc:"建倉 5股 @ $93.75（投機進場）", amount:468.80 },
-    { date:"2026-05-08", action:"sell", desc:"🎯第一停利 2股 @ $117.19（+25.00%）｜剩3股", amount:234.37 },
-    { date:"2026-05-12", action:"sell", desc:"🚨v3.1急殺保護#1 1股 @ $115.405（+23.25%）｜剩2股", amount:115.41 },
-    { date:"2026-05-15", action:"sell", desc:"🚨v3.1急殺保護#2 1股 @ $107.92（+15.11%）｜剩1股", amount:107.92 },
-    { date:"2026-05-19", action:"sell", desc:"📋 方案C減倉全清 1股 @ $107.00（+14.13%）｜全清", amount:107.00 },
+  { symbol:"MSFT", name:"Microsoft（6/3 停損全清）", pnl:299.49, trades:[
+    { date:"2026-01-13", action:"buy", desc:"建倉 5股 @ $474.50", amount:2373.50 },
+    { date:"2026-02-13", action:"buy", desc:"逢低 1股 @ $402.84", amount:403.84 },
+    { date:"2026-02-17", action:"buy", desc:"加碼 4股 @ $397.39", amount:1590.56 },
+    { date:"2026-04-08", action:"buy", desc:"停火後加碼 7股 @ $378.46", amount:2650.22 },
+    { date:"2026-05-28", action:"buy", desc:"突破加碼 5股 @ $427.29", amount:2137.45 },
+    { date:"2026-06-03", action:"sell", desc:"🔴 觸$430移動停損全清 22股 @ $429.83（實現 +$299.49）", amount:9455.06 },
   ]},
-  { symbol:"UBER", name:"Uber", pnl:-160.18, trades:[
-    { date:"2025-12-23", action:"buy", desc:"建倉 20股 @ $81.50", amount:1630.00 },
-    { date:"2026-02-04", action:"sell", desc:"清倉 20股 @ $73.59", amount:1471.83 },
+  { symbol:"VOO", name:"Vanguard S&P500（5/19 部分減倉，仍持有 10 股）", pnl:115.07, trades:[
+    { date:"2026-01~02", action:"buy", desc:"分批建倉 11股（均價約 $634）", amount:6973.68 },
+    { date:"2026-05-19", action:"sell", desc:"方案C減倉 3股 @ $675.60（FIFO，實現 +$115.07）", amount:2025.76 },
+    { date:"2026-06-01", action:"buy", desc:"AMZN proceeds 轉入 2股 @ $694.55｜仍持 10 股", amount:1390.10 },
   ]},
-  { symbol:"CRWD", name:"CrowdStrike", pnl:-127.25, trades:[
-    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $417.38", amount:417.38 },
-    { date:"2026-02-06", action:"buy", desc:"加碼 4股 @ $393.93", amount:1575.72 },
-    { date:"2026-02-11", action:"sell", desc:"減倉 2股 @ $415.83", amount:831.66 },
-    { date:"2026-02-25", action:"sell", desc:"清倉 3股 @ $350.25", amount:1050.75 },
+  { symbol:"INTC", name:"Intel（投機，4 階段全清）", pnl:91.96, trades:[
+    { date:"2026-04-29", action:"buy", desc:"建倉 5股 @ $93.55", amount:468.74 },
+    { date:"2026-05-08", action:"sell", desc:"第一停利 2股 @ $117.19", amount:233.37 },
+    { date:"2026-05-12", action:"sell", desc:"急殺保護 1股 @ $115.40", amount:114.40 },
+    { date:"2026-05-15", action:"sell", desc:"急殺保護 1股 @ $107.92", amount:106.92 },
+    { date:"2026-05-19", action:"sell", desc:"方案C全清 1股 @ $107.00（合計 +$91.96）", amount:106.00 },
   ]},
-  { symbol:"NFLX", name:"Netflix", pnl:-260.08, trades:[
-    { date:"2025-12-23", action:"buy", desc:"建倉 10股 @ $93.62", amount:936.20 },
-    { date:"2025-12-23", action:"buy", desc:"加碼 10股 @ $93.73", amount:937.30 },
-    { date:"2026-01-16", action:"buy", desc:"逢低攤平 10股 @ $88.35", amount:883.50 },
-    { date:"2026-02-13", action:"sell", desc:"減倉 15股 @ $76.41（仍持有15股）", amount:1146.16 },
-    { date:"2026-04-29", action:"sell", desc:"全部出清 15股 @ $91.98（淨$1,379.66 認列+$1.16）", amount:1379.66 },
+  { symbol:"QQQ", name:"Invesco QQQ（5/19 全清）", pnl:76.74, trades:[
+    { date:"2026-01-06", action:"buy", desc:"建倉 1股 @ $622.25", amount:623.25 },
+    { date:"2026-05-19", action:"sell", desc:"方案C全清 1股 @ $701.00（實現 +$76.74）", amount:699.99 },
   ]},
-  { symbol:"ZS", name:"Zscaler", pnl:-424.05, trades:[
-    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $184.89", amount:184.89 },
-    { date:"2026-02-06", action:"buy", desc:"加碼 10股 @ $170.85", amount:1708.50 },
-    { date:"2026-02-11", action:"buy", desc:"加碼 4股 @ $174.09", amount:696.36 },
-    { date:"2026-02-27", action:"sell", desc:"清倉 15股 @ $144.38", amount:2165.70 },
+  { symbol:"UBER", name:"Uber（全清）", pnl:-160.18, trades:[
+    { date:"2025-12-22", action:"buy", desc:"建倉 20股 @ $81.50", amount:1631.00 },
+    { date:"2026-02-04", action:"sell", desc:"清倉 20股 @ $73.59（實現 -$160.18）", amount:1470.82 },
+  ]},
+  { symbol:"CRWD", name:"CrowdStrike（全清）", pnl:-81.79, trades:[
+    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $417.38", amount:418.38 },
+    { date:"2026-02-06", action:"buy", desc:"加碼 4股 @ ~$393.9", amount:1576.70 },
+    { date:"2026-02-10", action:"sell", desc:"減倉 2股 @ $415.83", amount:830.66 },
+    { date:"2026-02-25", action:"sell", desc:"清倉 3股 @ $361.21（實現 -$81.79）", amount:1082.63 },
+  ]},
+  { symbol:"NFLX", name:"Netflix（全清）", pnl:-236.14, trades:[
+    { date:"2025-12-22", action:"buy", desc:"建倉 20股 @ ~$93.7", amount:1875.55 },
+    { date:"2026-01-16", action:"buy", desc:"攤平 10股 @ $88.35", amount:884.50 },
+    { date:"2026-02-12", action:"sell", desc:"減倉 15股 @ $76.41", amount:1145.16 },
+    { date:"2026-04-29", action:"sell", desc:"全清 15股 @ $91.98（實現 -$236.14）", amount:1378.78 },
+  ]},
+  { symbol:"ZS", name:"Zscaler（全清）", pnl:-428.03, trades:[
+    { date:"2026-02-04", action:"buy", desc:"建倉 1股 @ $184.89", amount:185.89 },
+    { date:"2026-02-06", action:"buy", desc:"加碼 10股 @ $170.85", amount:1709.50 },
+    { date:"2026-02-10", action:"buy", desc:"加碼 4股 @ $174.08", amount:697.34 },
+    { date:"2026-02-27", action:"sell", desc:"清倉 15股 @ $144.38（實現 -$428.03）", amount:2164.70 },
   ]},
 ];
 
@@ -375,7 +392,7 @@ const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
 const usTotalCost = usData.reduce((s,p)=>s+p.cost,0);
 const usPnl = usStockMarket - usTotalCost;
-const usRealizedPnl = 579.60; // 276.88 + MSFT 6/3 停損出場 +302.72｜⚠️ 明細與頭條尚未完全一致，全面已實現損益待券商對帳單重建
+const usRealizedPnl = 620.79; // ✅ 依 IB 1Y 對帳單「已實現表現總結」(FIFO) 重建，與 usRealizedDetail 逐檔加總一致
 
 // grand total in TWD
 const grandMarket = twTotal + usTotal * USDTWD;
