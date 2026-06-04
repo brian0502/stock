@@ -9,32 +9,29 @@
 </head>
 <body data-page="dashboard">
 <nav id="topNav"></nav>
-<div style="background:#fff3cd;border:2px solid #ffc107;padding:12px;margin:10px;border-radius:6px;color:#856404;font-weight:bold;">
-  ⚠️ 此 dashboard 內的「現價/市值/損益」欄位為過時快照(最後更新 2026-05-29)。
-  即時價請從 Yahoo Finance 重新抓:
-  <a href="https://finance.yahoo.com/quote/NVDA/" target="_blank">NVDA</a> |
-  <a href="https://finance.yahoo.com/quote/AMZN/" target="_blank">AMZN</a> |
-  <a href="https://finance.yahoo.com/quote/MSFT/" target="_blank">MSFT</a> |
-  <a href="https://finance.yahoo.com/quote/VOO/" target="_blank">VOO</a> |
-  <a href="https://tw.stock.yahoo.com/quote/009816" target="_blank">009816</a>
-  <br>
-  另外:持倉數字為 5/29 重建版,需用券商截圖驗證(詳見 DATA_INTEGRITY_WARNING.md)
-</div>
+
 <header>
   <h1>📊 投資組合 Dashboard</h1>
   <div class="last-updated">最後更新：<span class="mono" id="lastUpdated">2026-06-04 台股盤中 ｜策略 v4（攻守對稱）｜🇹🇼 台股回檔日：加權 45,899（−1.21%，自史高 46,459 回）｜候選全 ❌ 無乾淨買點（京元電 326 逆勢未回測買價 / 奇鋐 2,710 −5.08% 是飛刀 / 南亞科 399 連6漲轉跌）｜009816 $15.54（−1.27%，+5.0%，連4漲後回檔，加碼 ❌ 等回測站穩5日均）｜🇺🇸 NVDA $215.33 距停損 $210 +2.5%（最該盯）/ HPE $54.93 距 $48 +14.4% / VOO 靠 Layer 2｜Layer 2：✅ 無重大事件（VIX 16.29、WTI $95.70 未破 $100）｜⚠️ 數字待券商截圖驗證</span></div>
 </header>
-<!-- 監控 -->
-<div id="defenseTable" style="margin:0 16px 16px"></div>
-<div id="observeAlert" style="margin:0 16px 16px"></div>
-<!-- 總損益概覽 -->
+
+<!-- 總損益（置頂） -->
 <div class="hero" id="heroSection"></div>
+
+<!-- 資料說明（精簡） -->
+<div class="data-caveat">⚠️ 現價／市值／損益為手動更新快照，非即時報價 —— 即時價一律以 Yahoo 為準（<a href="https://finance.yahoo.com/quote/NVDA/" target="_blank">NVDA</a> · <a href="https://finance.yahoo.com/quote/VOO/" target="_blank">VOO</a> · <a href="https://tw.stock.yahoo.com/quote/009816" target="_blank">009816</a>）。持倉數字為重建版，待券商截圖驗證（見 DATA_INTEGRITY_WARNING.md）。</div>
+
+<!-- 監控 -->
+<div id="defenseTable"></div>
+<div id="observeAlert"></div>
+
 <!-- 行事曆 -->
 <div class="cal-section">
   <div class="section-title" style="margin-bottom:12px">📅 重大行事曆</div>
   <div id="calTabs" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px"></div>
   <div class="cal-grid" id="calGrid"></div>
 </div>
+
 <div class="footer-note">⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。</div>
 <script src="data.js"></script>
 <script src="app.js"></script>

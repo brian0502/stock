@@ -250,3 +250,5 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .nav-link:hover{color:var(--text);background:var(--surface2)}
 .nav-link.active{color:var(--blue);background:var(--blue-bg);border-color:var(--blue)}
 .page-title{font-size:22px;font-weight:700;margin-bottom:18px}
+.data-caveat{background:var(--amber-bg);border:1px solid rgba(245,158,11,.3);border-left:3px solid var(--amber);color:#fcd34d;font-size:12px;padding:10px 14px;border-radius:8px;margin-bottom:22px;line-height:1.6}
+.data-caveat a{color:#fcd34d;font-weight:600}

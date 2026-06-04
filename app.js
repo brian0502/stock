@@ -19,6 +19,7 @@ function renderNav() {
   var pages = [
     { key: 'dashboard',    href: 'dashboard.html',    label: '📊 總覽' },
     { key: 'holdings',     href: 'holdings.html',     label: '💼 持股' },
+    { key: 'watchlist',    href: 'watchlist.html',    label: '🎯 觀察清單' },
     { key: 'transactions', href: 'transactions.html', label: '📋 交易' },
     { key: 'timeline',     href: 'timeline.html',     label: '🔄 時間軸' },
     { key: 'reports',      href: 'reports.html',      label: '📄 報告' }
