@@ -89,7 +89,7 @@ symbol,name,shares,avg_cost
 - **每次用戶報告交易（買入/賣出），必須：**
   1. 先寫入 `transactions.json`（含日期、標的、動作、股數、價格、金額、佣金、原因）
   2. 從交易紀錄重新計算並更新 `portfolio.json`（持股數量、均價）
-  3. 更新 `dashboard.html` 中的持股數據與交易紀錄
+  3. 更新 `data.js` 中的持股數據與交易紀錄（`twPortfolio`/`usPortfolio`/`allTx`/`adjustmentLog`/`reports`/現金）；`dashboard.html` 只改頁首 lastUpdated
   4. 如果是已清倉的部位，記錄到 `closed_positions`
   5. 更新 `adjustment_log` 時間軸
   6. Commit 並 push
@@ -102,7 +102,7 @@ symbol,name,shares,avg_cost
 ### 分析報告
 - 每次分析完成後，產生 markdown 報告存入 `reports/` 資料夾
 - 報告命名格式：`YYYY-MM-DD.md`（綜合）或 `tw-YYYY-MM-DD.md`（台股專項）
-- 更新 `dashboard.html` 的報告列表
+- 更新 `data.js` 的 `reports` 報告列表
 - 每份報告必須包含：國際情勢背景、個股分析、操作建議、風險提示
 
 ### Git 操作
@@ -163,9 +163,12 @@ portfolio.json        ← 美股當前持股（由交易紀錄計算）
 tw_portfolio.json     ← 台股當前持股
 transactions.json     ← 所有歷史交易紀錄（唯一真實來源）
 current_strategy.md   ← 當前生效的投資策略（每次 session 必讀、調整後必更新）
-dashboard.html        ← 投資組合儀表板
+data.js               ← ⭐ dashboard 所有資料（持股/交易/報告/行事曆/停損/匯率/現金/TODAY）。要更新數據改這檔
+app.js / styles.css   ← dashboard 共用 render 邏輯 + 樣式（很少動）
+dashboard.html        ← 總覽頁(監控/行事曆/總損益)；另有 holdings/transactions/timeline/reports.html 多頁
 reports/              ← 分析報告
 ```
+> **多頁改版（2026-06-04）**：dashboard 拆成多頁 + GitHub Pages 託管。**資料全在 `data.js`**，各 .html 只放版面。更新數據→改 `data.js`；頁首 lastUpdated→改 `dashboard.html`。
 
 ---
 

@@ -12,10 +12,22 @@ stock-analysis
 portfolio.json        ← 美股當前持股（由 transactions.json 計算而來）
 tw_portfolio.json     ← 台股當前持股
 transactions.json     ← 所有歷史交易紀錄（唯一真實來源 Single Source of Truth）
-dashboard.html        ← 投資組合儀表板（持股、損益、交易紀錄、報告連結）
 reports/              ← 分析報告（markdown）
 CLAUDE.md             ← 專案說明與工作流程
+
+── Dashboard（2026-06-04 改為多頁，GitHub Pages 託管）──
+data.js               ← ⭐ 所有 dashboard 資料 + 每次要更新的欄位都在這（見下）
+app.js                ← 共用 render 邏輯 + 頂部選單（很少要動）
+styles.css            ← 共用樣式（很少要動）
+dashboard.html        ← 總覽頁：監控 + 行事曆 + 總損益（含 lastUpdated 頁首文字）
+holdings.html         ← 持股明細 + 觀察清單 + 已實現損益彈窗
+transactions.html     ← 交易紀錄（搜尋/篩選/分頁）
+timeline.html         ← 組合調整時間軸
+reports.html          ← 分析報告列表
+index.html            ← 入口，導向 dashboard.html
 ```
+
+> **⚠️ 重要（多頁改版後）：所有「資料」都在 `data.js`，不在各 .html。** 各 .html 只放版面骨架（空 div）+ 載入 data.js/app.js。更新持股/交易/報告/行事曆/停損 → **改 `data.js`**；只有頁首 `lastUpdated` 文字在 `dashboard.html`。
 
 ## 核心原則
 
@@ -54,9 +66,9 @@ CLAUDE.md             ← 專案說明與工作流程
 - 已實現損益 = 賣出金額 - (賣出股數 × 均價)
 - 更新 `total_realized_pnl`
 
-#### Step 3: 更新 dashboard.html
-需要更新的位置（搜尋對應變數名稱）：
-- `usPortfolio` / `twPortfolio` 陣列 — 持股數據
+#### Step 3: 更新 data.js（dashboard 資料全在這，不在 .html）
+需要更新的變數（都在 `data.js`，搜尋變數名稱）：
+- `usPortfolio` / `twPortfolio` 陣列 — 持股數據（shares/avgCost/currentPrice）
 - `allTx` 陣列 — 交易紀錄（新交易加在陣列最前面，因為 reverse 後顯示）
 - `adjustmentLog` 陣列 — 時間軸事件
 - `usCash` — 美股剩餘現金（買入減少/賣出增加）
@@ -64,15 +76,16 @@ CLAUDE.md             ← 專案說明與工作流程
 - `usRealizedPnl` — 已實現損益總計
 - `USDTWD` — 匯率（需要時更新）
 - 如有新報告，更新 `reports` 陣列
+- `dashboard.html` 只改頁首 `lastUpdated` 文字
 
 #### Step 4: 更新 adjustment_log
-在 transactions.json 和 dashboard.html 的 adjustmentLog 都加入事件。
+在 transactions.json 和 `data.js` 的 adjustmentLog 都加入事件。
 
 #### Step 5: Git commit + push
 ```
-git add transactions.json portfolio.json dashboard.html
+git add transactions.json portfolio.json data.js dashboard.html
 git commit -m "交易紀錄：{動作} {標的} {股數}股 @ ${價格}"
-git push
+git push origin claude/stock-analysis-skill-J09An
 ```
 
 ### 場景二：用戶要求分析持股
@@ -96,28 +109,29 @@ git push
 - 存入 `reports/YYYY-MM-DD.md`（綜合）或 `reports/tw-YYYY-MM-DD.md`（台股）
 - 報告必須包含：國際情勢背景、個股逐一分析、操作建議、停利停損建議、風險提示
 
-#### Step 5: 更新 dashboard.html
-- 更新各持股的 `currentPrice`
-- 在 `reports` 陣列加入新報告
-- 如有價格變動，更新損益計算
+#### Step 5: 更新 data.js（+ dashboard.html 頁首）
+- 在 `data.js` 更新各持股的 `currentPrice`、`TODAY`、`USDTWD`
+- 在 `data.js` 的 `reports` 陣列加入新報告（最頂端）
+- 改 `dashboard.html` 頁首 `lastUpdated` 文字
+- 市值/損益是動態計算（shares × currentPrice），改 currentPrice 即自動更新
 
 #### Step 6: Git commit + push
 ```
-git add reports/ dashboard.html
+git add reports/ data.js dashboard.html
 git commit -m "新增分析報告 YYYY-MM-DD：{摘要}"
-git push
+git push origin claude/stock-analysis-skill-J09An
 ```
 
 ### 場景三：用戶要求更新 Dashboard
 
-- 查詢最新股價（WebSearch）
-- 更新 dashboard.html 中所有 `currentPrice`
-- 必要時更新 `USDTWD` 匯率
+- 查詢最新股價（WebSearch / Yahoo）
+- 更新 `data.js` 中所有 `currentPrice`
+- 必要時更新 `data.js` 的 `USDTWD` 匯率
 - Git commit + push
 
-## Dashboard 結構說明
+## Dashboard 結構說明（2026-06-04 改為多頁）
 
-dashboard.html 是一個獨立的 HTML 檔案，包含：
+dashboard 已拆成多頁（GitHub Pages 託管），資料集中於 `data.js`，render 於 `app.js`，樣式於 `styles.css`。各頁包含：
 
 | 區塊 | 說明 | 需更新的變數 |
 |------|------|-------------|
@@ -185,20 +199,22 @@ https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/report
 
 ## ⚠️ Dashboard 更新強制清單（每次分析完必查）
 
-**每次分析或交易後，必須逐項確認以下 6 項全部更新：**
+**每次分析或交易後，必須逐項確認全部更新。除了 `lastUpdated` 在 `dashboard.html`，其餘全部在 `data.js`：**
 
-| # | 變數/位置 | 說明 | 常見漏更錯誤 |
-|---|-----------|------|------------|
-| 1 | `currentPrice` | 每個持股的即時現價 | 用舊價計算市值 |
-| 2 | `TODAY = 'YYYY-MM-DD'` | 今天的日期（影響行事曆過去/未來標記）| 長期卡在舊日期，導致行事曆全錯 |
-| 3 | `USDTWD` | 即時 USD/TWD 匯率（查 xe.com 或 investing.com）| 匯率卡在舊值，總資產換算錯誤 |
-| 4 | `twCash` / `usCash` | 實際可動用現金（以券商截圖為準）| 現金沒有隨買賣更新 |
-| 5 | `reports` 陣列 | 新分析報告加入陣列**最頂端** | 忘記把新報告加入 dashboard |
-| 6 | `last-updated` 日期文字（頁頭）| 更新時間戳記 | 頁頭日期沒更新 |
+| # | 變數/位置 | 檔案 | 說明 | 常見漏更錯誤 |
+|---|-----------|------|------|------------|
+| 1 | `currentPrice` | **data.js** | 每個持股的即時現價 | 用舊價計算市值 |
+| 2 | `TODAY = 'YYYY-MM-DD'` | **data.js** | 今天的日期（影響行事曆過去/未來標記）| 長期卡在舊日期，導致行事曆全錯 |
+| 3 | `USDTWD` | **data.js** | 即時 USD/TWD 匯率（查 xe.com 或 investing.com）| 匯率卡在舊值，總資產換算錯誤 |
+| 4 | `twCash` / `usCash` | **data.js** | 實際可動用現金（以券商截圖為準）| 現金沒有隨買賣更新 |
+| 5 | `reports` 陣列 | **data.js** | 新分析報告加入陣列**最頂端** | 忘記把新報告加入 |
+| 6 | `v4Discipline` 停損 | **data.js** | 監控表的停損價（創高才上移）| 停損沒隨新高更新 |
+| 7 | `lastUpdated` 文字（頁頭）| **dashboard.html** | 更新時間戳記 | 頁頭日期沒更新 |
 
-**如有新交易（買入/賣出），額外更新：**
+**如有新交易（買入/賣出），額外更新（皆在 `data.js`）：**
 - `allTx` 陣列（新交易加在**最前面**）
-- `shares` 和 `avgCost`（持股數量和均價）
+- `adjustmentLog` 陣列（時間軸事件）
+- `twPortfolio`/`usPortfolio` 的 `shares` 和 `avgCost`（持股數量和均價）
 
 ---
 
@@ -206,16 +222,17 @@ https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/report
 
 分析完成後，**必須依序完成以下三步驟才算結束**：
 
-### Step 1：同時更新三個檔案
+### Step 1：同時更新檔案
 ```
 reports/YYYY-MM-DD.md    ← 新分析報告
-dashboard.html           ← 套用上方清單所有更新
+data.js                  ← 套用上方強制清單所有資料更新（currentPrice/TODAY/USDTWD/現金/reports/停損/交易）
+dashboard.html           ← 只改頁首 lastUpdated 文字
 current_strategy.md      ← 更新日期、現價快照、新策略變更紀錄
 ```
 
 ### Step 2：Push 到 Git
 ```bash
-git add reports/YYYY-MM-DD.md dashboard.html current_strategy.md
+git add reports/YYYY-MM-DD.md data.js dashboard.html current_strategy.md
 git commit -m "分析報告 YYYY-MM-DD：{摘要}"
 git push origin claude/stock-analysis-skill-J09An
 # token 常駐在 remote URL，不需 set-url 清除
