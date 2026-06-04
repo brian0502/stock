@@ -13,10 +13,10 @@ const twPortfolio = [
 const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截圖驗證）
 
 const usPortfolio = [
-  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.61, currentPrice:214.75, color:"#10b981" },
-  { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:645.31, currentPrice:693.36, color:"#6366f1" },
-  { symbol:"HPE", name:"Hewlett Packard Enterprise", shares:40, avgCost:55.39, currentPrice:55.15, color:"#f59e0b" },
-  // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39（v4 全部位停損 $48）。價格為 6/4 收盤/盤前(Yahoo)：NVDA 距停損 $210 僅 +2.2%。Layer 2 ✅ 無事件(VIX 16.55、WTI $93.78)。
+  { symbol:"NVDA", name:"NVIDIA", shares:18, avgCost:184.61, currentPrice:217.74, color:"#10b981" },
+  { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:645.31, currentPrice:695.54, color:"#6366f1" },
+  { symbol:"HPE", name:"Hewlett Packard Enterprise", shares:40, avgCost:55.39, currentPrice:53.38, color:"#f59e0b" },
+  // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39（v4 全部位停損 $48）。價格為 6/4 美東盤中(Yahoo)：NVDA 反彈守住、距停損 $210 +3.6%；HPE -3.22% 距 $48 +10.1%。Layer 2 ✅ 無事件(VIX 15.54、WTI $93.00 雙降)。
 ];
 
 const allTx = [
