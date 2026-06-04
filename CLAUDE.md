@@ -163,7 +163,8 @@ portfolio.json        ← 美股當前持股（由交易紀錄計算）
 tw_portfolio.json     ← 台股當前持股
 transactions.json     ← 所有歷史交易紀錄（唯一真實來源）
 current_strategy.md   ← 當前生效的投資策略（每次 session 必讀、調整後必更新）
-data.js               ← ⭐ dashboard 所有資料（持股/交易/報告/行事曆/停損/匯率/現金/TODAY）。要更新數據改這檔
+data.js               ← ⭐ dashboard 所有資料（持股/交易/報告/行事曆/停損/匯率/現金/TODAY/themeWatch 族群追蹤）。要更新數據改這檔
+themes.html           ← 🚀 指定系列族群追蹤清單（用戶額外關注的族群；每次分析查位階/價格/可否進場；資料在 data.js `themeWatch`；只有用戶說移除才移除）
 app.js / styles.css   ← dashboard 共用 render 邏輯 + 樣式（很少動）
 dashboard.html        ← 總覽頁(監控/行事曆/總損益)；另有 holdings/transactions/timeline/reports.html 多頁
 reports/              ← 分析報告

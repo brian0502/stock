@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>族群追蹤清單 ｜ Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="themes">
+<nav id="topNav"></nav>
+<div class="page-title">🚀 族群追蹤清單</div>
+<div style="color:var(--text-dim);font-size:13px;margin:-8px 0 16px">指定系列額外關注的族群（<b>與「主動推薦五檔」無關</b>）｜每次分析查 位階／價格／可否進場｜你說移除才移除，會從中找可買標的</div>
+
+<div class="table-container" style="margin-bottom:16px">
+  <div style="padding:10px 14px;font-size:12px;color:#34d399;background:rgba(52,211,153,0.08);border-left:3px solid #34d399;line-height:1.6;margin:8px 14px;border-radius:4px">
+    🔁 <b>每次分析必更新：</b>清單內每檔重抓即時價，更新「位階／可否進場」判定。<b>這是你指定要長期追蹤的族群，不做 keep/remove 汰除（只有你說移除才移除）</b>——與主動觀察清單(watchlist)的「汰除紀律」不同。
+  </div>
+  <div style="padding:10px 14px;font-size:12px;color:#fbbf24;background:rgba(251,191,36,0.08);border-left:3px solid #fbbf24;line-height:1.6;margin:8px 14px;border-radius:4px">
+    ⚠️ <b>SpaceX 系列特別注意：</b>SpaceX IPO（傳 6/12）前，純衛星小型股易被拉抬後出貨（股癌已警示「衛星概念股大出貨日」）。<b>過熱/漲停不追，等回測+量縮整理；想參與選投資級(NVDA/GOOGL)或指數。</b>台股價為休市待 6/5 開盤+投信買超漏斗驗證。
+  </div>
+  <table>
+    <thead><tr>
+      <th>標的</th><th style="text-align:right">即時價</th><th style="text-align:right">今日</th><th>位階</th><th>可否進場</th><th>族群／備註</th>
+    </tr></thead>
+    <tbody id="themeWatchBody"></tbody>
+  </table>
+</div>
+
+<div class="footer-note">⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為每次分析手動更新，非即時報價。</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

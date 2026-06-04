@@ -20,6 +20,7 @@ function renderNav() {
     { key: 'dashboard',    href: 'dashboard.html',    label: '📊 總覽' },
     { key: 'holdings',     href: 'holdings.html',     label: '💼 持股' },
     { key: 'watchlist',    href: 'watchlist.html',    label: '🎯 觀察清單' },
+    { key: 'themes',       href: 'themes.html',       label: '🚀 族群追蹤' },
     { key: 'transactions', href: 'transactions.html', label: '📋 交易' },
     { key: 'timeline',     href: 'timeline.html',     label: '🔄 時間軸' },
     { key: 'reports',      href: 'reports.html',      label: '📄 報告' }
@@ -134,6 +135,34 @@ function renderObserveAlert() {
   document.getElementById('observeAlert').innerHTML = html;
 }
 renderObserveAlert();
+
+// ===== 指定系列族群追蹤清單 (themeWatch) =====
+function renderThemeWatch(){
+  if (typeof themeWatch === 'undefined') return;
+  const bySeries = {};
+  themeWatch.forEach(t => { (bySeries[t.series] = bySeries[t.series] || []).push(t); });
+  let html = '';
+  Object.keys(bySeries).forEach(series => {
+    html += '<tr><td colspan="6" style="background:rgba(99,102,241,.12);color:#a5b4fc;font-weight:700;padding:8px 12px">' + series + '</td></tr>';
+    bySeries[series].forEach(t => {
+      const cs = t.market === 'TW' ? 'NT$' : '$';
+      const priceCell = (t.price == null) ? '<span style="color:#94a3b8">待查</span>' : cs + fmt(t.price, 2);
+      const chgCell = (t.chg == null) ? '<span style="color:#94a3b8">—</span>'
+        : '<span style="color:' + (t.chg >= 0 ? '#10b981' : '#ef4444') + '">' + (t.chg >= 0 ? '+' : '') + t.chg.toFixed(2) + '%</span>';
+      const flag = t.market === 'TW' ? '🇹🇼' : '🇺🇸';
+      html += '<tr>'
+        + '<td><strong>' + t.symbol + '</strong> <span style="font-size:11px;color:var(--text-dim)">' + t.name + '</span><br><span style="font-size:10px;color:var(--text-dim)">' + flag + ' ' + t.group + '</span></td>'
+        + '<td class="mono" style="text-align:right">' + priceCell + '</td>'
+        + '<td class="mono" style="text-align:right">' + chgCell + '</td>'
+        + '<td style="font-size:12px">' + t.level + '</td>'
+        + '<td style="font-size:12px;font-weight:600">' + t.entry + '</td>'
+        + '<td style="font-size:12px;color:var(--text-dim)">' + t.note + '</td>'
+        + '</tr>';
+    });
+  });
+  document.getElementById('themeWatchBody').innerHTML = html;
+}
+renderThemeWatch();
 
 // ===== HERO =====
 document.getElementById('heroSection').innerHTML = `

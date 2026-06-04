@@ -19,6 +19,26 @@ const usPortfolio = [
   // AMZN 已於 2026-06-01 全清(+$146)，proceeds 轉入 VOO。HPE 於 6/2 財報後進場 40@55.39（v4 全部位停損 $48）。價格為 6/4 美東盤中(Yahoo)：NVDA 反彈守住、距停損 $210 +3.6%；HPE -3.22% 距 $48 +10.1%。Layer 2 ✅ 無事件(VIX 15.54、WTI $93.00 雙降)。
 ];
 
+// ===== 指定系列族群追蹤清單 (themeWatch) =====
+// ⭐ 用戶指定額外關注的族群，與「主動推薦五檔(watchlist.html)」完全無關。
+// 規則：清單內每檔，每次分析都要更新 price/chg/level(位階)/entry(可否進場)；用戶說移除才移除。
+// price=null → 該次未取得即時價(如台股休市)，顯示「待查」。種子系列：SpaceX/太空算力/低軌衛星(2026-06-04 建立)。
+const themeWatch = [
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"NVDA", name:"NVIDIA", market:"US", price:217.74, chg:1.39, level:"高檔 (距52週高 −8%)", entry:"✅ 已持有·非加碼點", note:"太空算力底層晶片" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"GOOGL", name:"Alphabet", market:"US", price:371.45, chg:3.47, level:"中高檔 (距高 −9%)", entry:"🟡 優質·等回檔 $355–360", note:"Project Suncatcher 太空資料中心;投資級,組內唯一候選" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"PL", name:"Planet Labs", market:"US", price:44.09, chg:2.22, level:"過熱 (一年 +800%)", entry:"❌ 不追·IPO出貨警戒", note:"衛星影像;基本面弱" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"VOYG", name:"Voyager Tech", market:"US", price:47.43, chg:5.50, level:"高波動 (自高 −36%)", entry:"❌ 不追·投機", note:"新IPO太空基建/Starlab" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"BKSY", name:"BlackSky", market:"US", price:39.49, chg:5.36, level:"高波動 (自高 −25%)", entry:"❌ 不追·投機", note:"衛星即時情報" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"SPIR", name:"Spire Global", market:"US", price:20.74, chg:8.90, level:"微型投機", entry:"❌ 不追·IPO出貨警戒", note:"衛星數據" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3491", name:"昇達科", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查 (投信漏斗驗證)", note:"衛星RF濾波器,SpaceX夥伴,衛星營收~8成→血統最純" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"6271", name:"同欣電", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"衛星RF收發模組,高頻陶瓷封裝,高門檻" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3105", name:"穩懋", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"GaAs砷化鎵龍頭,衛星間鏈路+手機直連衛星" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"2314", name:"台揚", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"寬頻衛星通訊地面站(SpaceX/OneWeb/Kymeta)" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"6285", name:"啟碁", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"地面站天線+路由器,Starlink主力,切入Amazon Leo" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2313", name:"華通", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"全球衛星PCB龍頭,約80%市佔" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2345", name:"智邦", market:"TW", price:null, chg:null, level:"待 6/5 開盤抓", entry:"待查", note:"網通交換器,太空算力骨幹/AI server網路" },
+];
+
 const allTx = [
   { date:"2026-06-03", market:"US", symbol:"MSFT", action:"sell", shares:22, price:429.83, amount:9456.26, note:"觸及 $430 移動停損、全部位出場｜認列 +$302.72 (+3.3%)｜v4 Layer 1 自動執行" },
   { date:"2026-06-02", market:"US", symbol:"HPE", action:"buy", shares:40, price:55.39, amount:2215.60, note:"財報炸裂後進場 40@55.39｜EPS +108%、財測 +40%｜價值+AI｜v4 全部位停損 $48" },
