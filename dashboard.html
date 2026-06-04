@@ -825,54 +825,72 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // ===== DISCIPLINE (v4 全部位保護 + Layer 2 重大事件監看) =====
 // v4：每檔個股「全部位」掛 GTC 停損；無 Core/Trim、無不設停損的長抱。VOO 例外(指數錨)，靠 Layer 2。
 // 停損隨新高手動上移；Claude 每次分析以即時價/ATR 重算。
+// mkt 標示市場(US/TW)，決定幣別($/NT$)、查哪個 portfolio、單位(股/張)。
+// ETF 指數型(VOO/009816)為例外：不掛機械停損(分散+長期向上，不像個股會 round-trip 成永久虧損)，靠 Layer 2 + 站穩突破/定期定額。
 const v4Discipline = {
-  'NVDA': { stop:210, stopLabel:'50日均(由$194.74上移)' },
-  'HPE':  { stop:48,     stopLabel:'缺口下緣' },
-  'VOO':  { stop:null,   stopLabel:'指數錨(Layer 2)' }
+  'NVDA':   { stop:210,  stopLabel:'50日均(由$194.74上移)',          mkt:'US' },
+  'HPE':    { stop:48,   stopLabel:'缺口下緣',                        mkt:'US' },
+  'VOO':    { stop:null, stopLabel:'指數錨(Layer 2)',                 mkt:'US' },
+  '009816': { stop:null, stopLabel:'ETF指數錨(站穩突破/定期定額)',     mkt:'TW' },
+  '2705':   { stop:null, stopLabel:'紀念股·極少量',                   mkt:'TW' }
 };
+const defOrder = ['NVDA','HPE','VOO','009816','2705'];
+
+function defPos(sym, mkt) { return (mkt === 'TW' ? twPortfolio : usPortfolio).find(x => x.symbol === sym); }
+function defCcy(mkt) { return mkt === 'TW' ? 'NT$' : '$'; }
+function defFlag(mkt) { return mkt === 'TW' ? '🇹🇼' : '🇺🇸'; }
+function defUnit(p, mkt) {
+  if (mkt === 'TW' && p.shares >= 1000 && p.shares % 1000 === 0) return (p.shares/1000) + ' 張(全)';
+  return p.shares + ' 股(全)';
+}
 
 function renderDefenseTable() {
-  const order = ['NVDA','HPE','VOO'];
   const rows = [];
-  order.forEach(sym => {
-    const p = usPortfolio.find(x => x.symbol === sym);
+  defOrder.forEach(sym => {
     const d = v4Discipline[sym];
-    if (!p || !d) return;
+    if (!d) return;
+    const p = defPos(sym, d.mkt);
+    if (!p) return;
+    const cs = defCcy(d.mkt);
     const cur = p.currentPrice;
     const pnlPct = ((cur - p.avgCost) / p.avgCost * 100);
     const pnlColor = pnlPct >= 0 ? '#10b981' : '#ef4444';
     const pnlSign = pnlPct >= 0 ? '+' : '';
     let stopCell, distCell, statusCell;
     if (d.stop === null) {
-      stopCell = '<td style="color:#64748b">不掛</td>';
+      const isETF = (sym === 'VOO' || sym === '009816');
+      stopCell = '<td style="color:#64748b">不掛<span style="font-size:10px;color:#64748b;margin-left:4px">' + d.stopLabel + '</span></td>';
       distCell = '<td style="color:#64748b">—</td>';
-      statusCell = '<td style="color:#93c5fd;font-weight:600">🔵 指數錨（靠 Layer 2）</td>';
+      statusCell = isETF
+        ? '<td style="color:#93c5fd;font-weight:600">🔵 指數錨（靠 Layer 2）</td>'
+        : '<td style="color:#94a3b8;font-weight:600">⚪ 紀念股（不監控）</td>';
     } else {
       const dist = ((cur - d.stop) / cur * 100);
       let c = '#10b981', icon = '✅ 持有';
       if (dist < 0) { c = '#ef4444'; icon = '🔴 觸發·全出'; }
       else if (dist < 3) { c = '#fbbf24'; icon = '⚠️ 接近'; }
-      stopCell = '<td class="def-warn">$' + d.stop.toFixed(2) + '<span style="font-size:10px;color:#64748b;margin-left:4px">' + d.stopLabel + '</span></td>';
+      stopCell = '<td class="def-warn">' + cs + d.stop.toFixed(2) + '<span style="font-size:10px;color:#64748b;margin-left:4px">' + d.stopLabel + '</span></td>';
       distCell = '<td style="color:' + c + ';font-weight:600">' + (dist>=0?'+':'') + dist.toFixed(2) + '%</td>';
       statusCell = '<td style="color:' + c + ';font-weight:600">' + icon + '</td>';
     }
     rows.push('<tr>'
-      + '<td>' + sym + '</td>'
-      + '<td style="font-size:12px;color:#cbd5e1">' + p.shares + ' 股(全)</td>'
-      + '<td class="def-cur">$' + cur.toFixed(2) + '</td>'
+      + '<td>' + defFlag(d.mkt) + ' ' + sym + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1">' + defUnit(p, d.mkt) + '</td>'
+      + '<td class="def-cur">' + cs + cur.toFixed(2) + '</td>'
       + '<td style="color:' + pnlColor + ';font-weight:600">' + pnlSign + pnlPct.toFixed(2) + '%</td>'
       + stopCell + distCell + statusCell
       + '</tr>');
   });
   const html = '<div class="def-card">'
     + '<div class="def-header"><span class="pulse"></span>🛡️ 全部位停損監控（v4）'
-    + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">每檔個股全部位掛停損 · 跌破全出</span></div>'
+    + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">美股＋台股 · 每檔個股全部位掛停損 · 跌破全出</span></div>'
     + '<div style="overflow-x:auto"><table class="def-table"><thead><tr>'
     + '<th>標的</th><th>部位</th><th>現價</th><th>損益</th><th>停損</th><th>距停損</th><th>狀態</th>'
     + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
     + '<div style="padding:8px 14px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15)">'
-    + 'v4：每檔個股「全部位」掛 GTC 停損，跌破即全出（不分批、無 Core/Trim）。VOO 例外（指數錨，靠 Layer 2）。'
-    + '固定停損不自動上墊，創新高手動上移。停損為 6/2 盤中重算值。</div>'
+    + 'v4：每檔個股「全部位」掛 GTC 停損，跌破即全出（不分批、無 Core/Trim）。'
+    + 'ETF 指數型例外（VOO／009816 凱基台灣TOP50）：不掛機械停損，靠 Layer 2＋站穩突破/定期定額。'
+    + '台股券商無自動停損單→用價格警示手動執行。固定停損不自動上墊，創新高手動上移。</div>'
     + '</div>';
   document.getElementById('defenseTable').innerHTML = html;
 }
@@ -887,29 +905,30 @@ const layer2Triggers = [
 ];
 
 function renderObserveAlert() {
-  const order = ['NVDA','HPE','VOO'];
   const breached = [], near = [];
-  order.forEach(sym => {
-    const p = usPortfolio.find(x => x.symbol === sym);
+  defOrder.forEach(sym => {
     const d = v4Discipline[sym];
-    if (!p || !d || d.stop === null) return;
+    if (!d || d.stop === null) return;
+    const p = defPos(sym, d.mkt);
+    if (!p) return;
+    const cs = defCcy(d.mkt);
     const cur = p.currentPrice;
     const dist = ((cur - d.stop) / cur * 100);
-    if (dist < 0) breached.push({ sym, cur, p, d, dist });
-    else if (dist < 3) near.push({ sym, cur, p, d, dist });
+    if (dist < 0) breached.push({ sym, cur, p, d, dist, cs });
+    else if (dist < 3) near.push({ sym, cur, p, d, dist, cs });
   });
   let html = '';
   breached.forEach(b => {
     html += '<div class="obs-alert obs-day5">'
-      + '<div class="obs-header"><span style="font-size:18px">🔴</span><span>' + b.sym + ' 跌破停損！</span></div>'
-      + '<div class="obs-detail">現價 <strong style="color:#fca5a5">$' + b.cur.toFixed(2) + '</strong> 已跌破停損 <strong>$' + b.d.stop.toFixed(2) + '</strong>（' + Math.abs(b.dist).toFixed(2) + '% 下方）</div>'
-      + '<div class="obs-action">🚨 <strong>全部位賣出 ' + b.p.shares + ' 股</strong>（v4 跌破即全出）。</div>'
+      + '<div class="obs-header"><span style="font-size:18px">🔴</span><span>' + defFlag(b.d.mkt) + ' ' + b.sym + ' 跌破停損！</span></div>'
+      + '<div class="obs-detail">現價 <strong style="color:#fca5a5">' + b.cs + b.cur.toFixed(2) + '</strong> 已跌破停損 <strong>' + b.cs + b.d.stop.toFixed(2) + '</strong>（' + Math.abs(b.dist).toFixed(2) + '% 下方）</div>'
+      + '<div class="obs-action">🚨 <strong>全部位賣出 ' + defUnit(b.p, b.d.mkt) + '</strong>（v4 跌破即全出）。</div>'
       + '</div>';
   });
   near.forEach(n => {
     html += '<div style="border-left:4px solid #fbbf24;background:rgba(251,191,36,.08);padding:12px;border-radius:8px;margin-bottom:8px">'
-      + '<div class="obs-header"><span style="font-size:16px">⚠️</span><span>' + n.sym + ' 接近停損</span></div>'
-      + '<div class="obs-detail">現價 <strong style="color:#fbbf24">$' + n.cur.toFixed(2) + '</strong> 距停損 <strong>$' + n.d.stop.toFixed(2) + '</strong> 僅 +' + n.dist.toFixed(2) + '%，盯緊。</div>'
+      + '<div class="obs-header"><span style="font-size:16px">⚠️</span><span>' + defFlag(n.d.mkt) + ' ' + n.sym + ' 接近停損</span></div>'
+      + '<div class="obs-detail">現價 <strong style="color:#fbbf24">' + n.cs + n.cur.toFixed(2) + '</strong> 距停損 <strong>' + n.cs + n.d.stop.toFixed(2) + '</strong> 僅 +' + n.dist.toFixed(2) + '%，盯緊。</div>'
       + '</div>';
   });
   if (!breached.length && !near.length) {
