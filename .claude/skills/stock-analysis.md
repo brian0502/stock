@@ -228,8 +228,8 @@ https://brian0502.github.io/stock/dashboard.html
 （根網址 https://brian0502.github.io/stock/ 會自動導向 dashboard）
 ```
 Push 完成後 Pages 約 **1 分鐘**自動重建。收尾流程：
-1. push 後**等 Pages 上線**（輪詢該網址直到回 HTTP 200，或固定等約 60–90 秒）。
-2. 用 **browser MCP（`mcp__playwright__browser_navigate`）直接開啟上述網址**給用戶看，不需再複製檔案或 `present_files`。
+1. push 後**等 Pages 重建上線**（輪詢該網址、用 `grep` 確認**新內容**已出現，而非只看 HTTP 200——Pages 會快取舊版，約 30–90 秒）。
+2. 用 **browser MCP（`mcp__playwright__browser_navigate`）開啟上述網址給用戶看**，**網址後加 cache-buster query（如 `?fresh=1`）避免瀏覽器/CDN 給快取舊版**；不需再複製檔案或 `present_files`。
 3. 在回覆中也附上該網址純文字，方便用戶自己點。
 
 > **其他頁面需求**：Pages 由 **repo 根目錄**提供，任何放進 repo 的 HTML 自動可由 `https://brian0502.github.io/stock/<檔名>.html` 存取，無需額外設定；新頁面只要在 `index.html` 的連結清單加一行即可。
