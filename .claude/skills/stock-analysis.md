@@ -221,12 +221,18 @@ git push origin claude/stock-analysis-skill-J09An
 # token 常駐在 remote URL，不需 set-url 清除
 ```
 
-### Step 3：直接在對話中提供 dashboard.html（必做）
-Push 完成後，**立即複製並提供給用戶，讓用戶不需要去 git 下載**：
-```bash
-cp /home/claude/stock/dashboard.html /mnt/user-data/outputs/dashboard.html
+### Step 3：開瀏覽器到固定的 GitHub Pages 網址（必做）
+Dashboard 已託管於 **GitHub Pages（公開，repo 已公開）**，固定網址：
 ```
-然後呼叫 `present_files` 工具提供檔案。
+https://brian0502.github.io/stock/dashboard.html
+（根網址 https://brian0502.github.io/stock/ 會自動導向 dashboard）
+```
+Push 完成後 Pages 約 **1 分鐘**自動重建。收尾流程：
+1. push 後**等 Pages 上線**（輪詢該網址直到回 HTTP 200，或固定等約 60–90 秒）。
+2. 用 **browser MCP（`mcp__playwright__browser_navigate`）直接開啟上述網址**給用戶看，不需再複製檔案或 `present_files`。
+3. 在回覆中也附上該網址純文字，方便用戶自己點。
+
+> **其他頁面需求**：Pages 由 **repo 根目錄**提供，任何放進 repo 的 HTML 自動可由 `https://brian0502.github.io/stock/<檔名>.html` 存取，無需額外設定；新頁面只要在 `index.html` 的連結清單加一行即可。
 
 **這三步缺一不可，否則本次分析視為未完成。**
 
