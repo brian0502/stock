@@ -169,7 +169,7 @@ https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/report
 - 遠端分支：`claude/stock-analysis-skill-J09An`
 - 每次修改後自動 commit + push，不詢問用戶
 - Commit message 用中文，清楚說明變動
-- **重要**：push 完成後立即清除 remote URL 中的 token
+- **重要**：token 由用戶常駐設定在 remote URL（origin）中，push 後**不要清除、不要動 remote URL**（2026-06-04 用戶確認）。直接 `git push origin claude/stock-analysis-skill-J09An`，全程不需 `set-url`。
 
 ## 免責聲明
 每次分析結束時附上：
@@ -218,7 +218,7 @@ current_strategy.md      ← 更新日期、現價快照、新策略變更紀錄
 git add reports/YYYY-MM-DD.md dashboard.html current_strategy.md
 git commit -m "分析報告 YYYY-MM-DD：{摘要}"
 git push origin claude/stock-analysis-skill-J09An
-git remote set-url origin https://github.com/brian0502/stock.git  # 立即清除 token
+# token 常駐在 remote URL，不需 set-url 清除
 ```
 
 ### Step 3：直接在對話中提供 dashboard.html（必做）

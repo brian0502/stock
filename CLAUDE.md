@@ -110,7 +110,7 @@ symbol,name,shares,avg_cost
 - **每次操作前先 `git checkout claude/stock-analysis-skill-J09An && git pull origin claude/stock-analysis-skill-J09An`**
 - 每次對檔案進行新增或修改後，必須自動 commit 並 push 到 `claude/stock-analysis-skill-J09An`，不需要額外詢問使用者確認
 - Commit message 應清楚說明變動內容（交易紀錄 / 分析報告 / 持股更新）
-- push 完成後立即清除 remote URL 中的 token
+- **token 由用戶常駐設定在 remote URL（origin）中，push 後「不要」清除、不要動 remote URL**（2026-06-04 用戶確認）。直接 `git push origin claude/stock-analysis-skill-J09An` 即可，全程不需 set-url。
 
 ### 策略一致性（跨 Session 最重要的規則）
 
