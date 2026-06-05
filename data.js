@@ -7,7 +7,7 @@ const USDTWD = 31.46;
 const usCash = 9551.35; // IB 1Y 對帳單(6/3)期末 USD 餘額（原估 9552.69 微調）
 
 const twPortfolio = [
-  { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.02, color:"#0ea5e9" },
+  { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.27, color:"#0ea5e9" },
   { symbol:"2705", name:"六福?（記錄為大魯閣，但 2705=六福、大魯閣=1432，代號待確認）", shares:1, avgCost:18.4, currentPrice:15.40, color:"#a3a3a3" },
 ];
 const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截圖驗證）
