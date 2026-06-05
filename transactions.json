@@ -554,6 +554,32 @@
    "amount": 1389.1,
    "fee": 1.0,
    "note": "AMZN 停利資金轉入;加碼指數核心(人在台灣不盯盤,選可放著的寬基)"
+  },
+  {
+   "id": "US046",
+   "date": "2026-06-05",
+   "symbol": "NVDA",
+   "name": "NVIDIA",
+   "action": "sell",
+   "shares": 18,
+   "price": 210.02,
+   "amount": 3780.36,
+   "fee": 1.0,
+   "realized_pnl": 456.38,
+   "note": "Layer 1 移動停損 $210 觸發、全部位 18 股出場。6/5 美股 risk-off 科技回檔日(NVDA -4.26%、HPE -6.57%、NET -5.12%、ASML -4.01%)、NVDA 跌破 $210 GTC 市價 Stop 自動執行。鎖利 +13.7%。停利優先紀律生效:不讓 +18% 的獲利 round-trip。NVDA 18→0。"
+  },
+  {
+   "id": "US047",
+   "date": "2026-06-05",
+   "symbol": "HPE",
+   "name": "Hewlett Packard Enterprise",
+   "action": "sell",
+   "shares": 40,
+   "price": 50.02,
+   "amount": 2000.80,
+   "fee": 1.0,
+   "realized_pnl": -215.80,
+   "note": "用戶主動出場 40 股 @50.02。6/5 risk-off 科技回檔日 HPE -6.57%、距 $48 停損僅 +4.3%緩衝縮;用戶選在停損上方主動了結、鎖住小虧 -9.7% 避免續殺到 $48(-13%)。thesis(AI 基建+Juniper)未被事件推翻屬技術回檔,但用戶風控優先出場。HPE 40→0。出場後美股僅剩 VOO 10 股 + 現金 ~$15,331。"
   }
  ],
  "tw_transactions": [
@@ -766,6 +792,26 @@
    "exit_price": 263.99,
    "realized_pnl": 146.32,
    "reason": "移動停利出場"
+  },
+  {
+   "symbol": "NVDA",
+   "closed_date": "2026-06-05",
+   "shares": 18,
+   "avg_cost": 184.61,
+   "exit_price": 210.02,
+   "realized_pnl": 456.38,
+   "reason": "Layer 1 移動停損 $210 觸發全清（鎖利 +13.7%）。原 30 股,5/19 先停利 12@222(+$447),本次最後 18 股出場。NVDA 持股歸零。"
+  },
+  {
+   "symbol": "HPE",
+   "buy_date": "2026-06-02",
+   "closed_date": "2026-06-05",
+   "shares": 40,
+   "avg_cost": 55.39,
+   "exit_price": 50.02,
+   "realized_pnl": -215.80,
+   "holding_days": 3,
+   "reason": "6/2 財報後進場 40@55.39,6/5 risk-off 科技回檔日用戶主動於停損 $48 上方出場 @50.02、鎖住小虧 -9.7%(-$215.80)。thesis 未壞屬技術回檔,用戶風控優先。HPE 持股歸零。"
   }
  ],
  "adjustment_log": [
