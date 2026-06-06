@@ -140,6 +140,11 @@ function renderEtfClass() {
     + '<div style="padding:8px 14px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15)">'
     + 'ETF 不一律免停損：模式A（廣基/有息/結構回復）靠 Layer 2；模式B（集中/單一市場/無息/主題槓桿）掛趨勢或機械停損。'
     + '009816 因僅 85 日、自身季線失真 → 趨勢線錨定它追蹤的加權指數均線。</div>'
+    + '<div style="padding:8px 14px;font-size:11px;color:#fbbf24;border-top:1px solid rgba(148,163,184,.15);background:rgba(251,191,36,.06);line-height:1.6">'
+    + '🕳️ <b>跳空缺口處理（停損被跳過時）</b>：① 不在開盤前 1–2 分鐘市價殺、等 settle 15–30 分；'
+    + '② 技術殺盤(thesis 未壞/美股補跌)→ settle 後執行被跳過那道減碼(模式B 先減半)、不一次全砍；'
+    + '③ 鎖死跌停(賣不掉)→ 不追、別殺在停板、等解鎖；④ 若 VIX>30 或指數自高 −10% = 逆向進場區、核心不恐慌清、乾火藥才動；'
+    + '⑤ thesis 真被推翻/系統崩盤 → 才主動認賠(Layer 2)。</div>'
     + '</div>';
 }
 renderEtfClass();
