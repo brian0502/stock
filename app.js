@@ -47,12 +47,21 @@ function renderDefenseTable() {
     const pnlColor = pnlPct >= 0 ? '#10b981' : '#ef4444';
     const pnlSign = pnlPct >= 0 ? '+' : '';
     let stopCell, distCell, statusCell;
-    if (d.stop === null) {
-      const isETF = (sym === 'VOO' || sym === '009816');
+    if (d.stop === null && d.model === 'B') {
+      // 模式 B：趨勢停損（減半/清空兩道）
+      const dh = ((cur - d.trendHalf) / cur * 100);
+      let c = '#fbbf24', icon = '🟡 模式B·趨勢停損';
+      if (cur < d.trendClear) { c = '#ef4444'; icon = '🔴 跌破清空線'; }
+      else if (cur < d.trendHalf) { c = '#f97316'; icon = '🟠 跌破減半線'; }
+      stopCell = '<td class="def-warn">' + cs + d.trendHalf.toFixed(2) + ' / ' + cs + d.trendClear.toFixed(2) + '<span style="font-size:10px;color:#64748b;margin-left:4px">減半/清空</span></td>';
+      distCell = '<td style="color:' + c + ';font-weight:600">' + (dh>=0?'+':'') + dh.toFixed(2) + '%</td>';
+      statusCell = '<td style="color:' + c + ';font-weight:600">' + icon + '</td>';
+    } else if (d.stop === null) {
+      const isVOO = (sym === 'VOO');
       stopCell = '<td style="color:#64748b">不掛<span style="font-size:10px;color:#64748b;margin-left:4px">' + d.stopLabel + '</span></td>';
       distCell = '<td style="color:#64748b">—</td>';
-      statusCell = isETF
-        ? '<td style="color:#93c5fd;font-weight:600">🔵 指數錨（靠 Layer 2）</td>'
+      statusCell = isVOO
+        ? '<td style="color:#93c5fd;font-weight:600">🔵 模式A 指數錨（Layer 2）</td>'
         : '<td style="color:#94a3b8;font-weight:600">⚪ 紀念股（不監控）</td>';
     } else {
       const dist = ((cur - d.stop) / cur * 100);
@@ -79,12 +88,61 @@ function renderDefenseTable() {
     + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
     + '<div style="padding:8px 14px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15)">'
     + 'v4：每檔個股「全部位」掛 GTC 停損，跌破即全出（不分批、無 Core/Trim）。'
-    + 'ETF 指數型例外（VOO／009816 凱基台灣TOP50）：不掛機械停損，靠 Layer 2＋站穩突破/定期定額。'
+    + 'ETF 依本質分類（見下「🧬 ETF 本質分類」）：模式A 指數錨（VOO）不掛機械停損、靠 Layer 2；模式B 個股式（009816）掛趨勢停損（減半/清空兩道）。'
     + '台股券商無自動停損單→用價格警示手動執行。固定停損不自動上墊，創新高手動上移。</div>'
     + '</div>';
   document.getElementById('defenseTable').innerHTML = html;
 }
 renderDefenseTable();
+
+// ===== 🧬 ETF 本質分類卡 (2026-06-06) =====
+function renderEtfClass() {
+  const el = document.getElementById('etfClassCard');
+  if (!el || typeof etfClass === 'undefined') return;
+  const rows = etfClass.map(function (e) {
+    const badge = e.model === 'A'
+      ? '<span style="background:rgba(59,130,246,.15);color:#93c5fd;padding:2px 8px;border-radius:6px;font-weight:600;font-size:12px">模式 A · ' + e.modelName + '</span>'
+      : '<span style="background:rgba(251,191,36,.15);color:#fbbf24;padding:2px 8px;border-radius:6px;font-weight:600;font-size:12px">模式 B · ' + e.modelName + '</span>';
+    let stopBlock = '<span style="color:#64748b">不掛機械停損（靠 Layer 2）</span>';
+    if (e.stops) {
+      stopBlock = '<table style="width:100%;border-collapse:collapse;margin-top:6px;font-size:12px">'
+        + '<thead><tr style="color:#94a3b8">'
+        + '<th style="text-align:left;padding:3px 6px">動作</th>'
+        + '<th style="text-align:right;padding:3px 6px">009816 價</th>'
+        + '<th style="text-align:right;padding:3px 6px">GTC 實掛</th>'
+        + '<th style="text-align:left;padding:3px 6px">賣多少</th>'
+        + '<th style="text-align:right;padding:3px 6px">≈加權</th>'
+        + '<th style="text-align:left;padding:3px 6px">觸發</th></tr></thead><tbody>'
+        + e.stops.map(function (s) {
+            return '<tr style="border-top:1px solid rgba(148,163,184,.12)">'
+              + '<td style="padding:4px 6px;font-weight:600">' + s.tier + '</td>'
+              + '<td style="text-align:right;padding:4px 6px;color:#fbbf24;font-weight:700">跌破 ' + s.etf.toFixed(2) + '</td>'
+              + '<td style="text-align:right;padding:4px 6px;color:#cbd5e1">' + s.gtc.toFixed(2) + '</td>'
+              + '<td style="padding:4px 6px">' + s.sell + '</td>'
+              + '<td style="text-align:right;padding:4px 6px;color:#94a3b8">' + s.twii + '</td>'
+              + '<td style="padding:4px 6px;color:#94a3b8;font-size:11px">' + s.trig + '</td></tr>';
+          }).join('')
+        + '</tbody></table>'
+        + '<div style="font-size:11px;color:#94a3b8;margin-top:6px">🟢 接回：' + e.reentry
+        + '｜現價 ' + (e.cur ? e.cur.toFixed(2) : '') + ' 在減半線上方 → 趨勢仍多、不動。<b>均線每次分析重抓更新（停損只升不降）。</b></div>';
+    }
+    return '<div style="background:rgba(15,23,42,.4);border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:12px 14px;margin-bottom:10px">'
+      + '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">'
+      + '<span style="font-weight:700;font-size:15px">' + e.symbol + '</span>'
+      + '<span style="color:#94a3b8;font-size:12px">' + e.name + '</span>' + badge + '</div>'
+      + '<div style="font-size:12px;color:#cbd5e1;line-height:1.6"><b>本質：</b>' + e.why + '<br><b>管理：</b>' + e.manage + '</div>'
+      + stopBlock + '</div>';
+  }).join('');
+  el.innerHTML = '<div class="def-card">'
+    + '<div class="def-header">🧬 ETF 本質分類（決定下檔怎麼管）'
+    + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">每檔 ETF 先看本質 → 模式A 指數錨 or 模式B 個股式</span></div>'
+    + '<div style="padding:12px 14px">' + rows + '</div>'
+    + '<div style="padding:8px 14px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15)">'
+    + 'ETF 不一律免停損：模式A（廣基/有息/結構回復）靠 Layer 2；模式B（集中/單一市場/無息/主題槓桿）掛趨勢或機械停損。'
+    + '009816 因僅 85 日、自身季線失真 → 趨勢線錨定它追蹤的加權指數均線。</div>'
+    + '</div>';
+}
+renderEtfClass();
 
 // Layer 2 重大事件門檻（達標才警示全清；平時不喊）
 const layer2Triggers = [

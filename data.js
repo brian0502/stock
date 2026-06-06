@@ -431,11 +431,29 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 const v4Discipline = {
   'NVDA':   { stop:210,  stopLabel:'50日均(由$194.74上移)',          mkt:'US' },
   'HPE':    { stop:48,   stopLabel:'缺口下緣',                        mkt:'US' },
-  'VOO':    { stop:null, stopLabel:'指數錨(Layer 2)',                 mkt:'US' },
-  '009816': { stop:null, stopLabel:'ETF指數錨(站穩突破/定期定額)',     mkt:'TW' },
+  'VOO':    { stop:null, stopLabel:'模式A 指數錨(Layer 2)',           mkt:'US', model:'A' },
+  '009816': { stop:null, stopLabel:'模式B 趨勢停損',                  mkt:'TW', model:'B', trendHalf:14.5, trendClear:13.4 },
   '2705':   { stop:null, stopLabel:'紀念股·極少量',                   mkt:'TW' }
 };
 const defOrder = ['NVDA','HPE','VOO','009816','2705'];
+
+// ===== ETF 本質分類 (2026-06-06 用戶定案) =====
+// 每檔 ETF 先看本質分 VOO模式(A,指數錨) / 個股模式(B,主動管理)；模式B掛趨勢停損。
+const etfClass = [
+  { symbol:'VOO', name:'Vanguard S&P 500', model:'A', modelName:'指數錨',
+    why:'500 檔全球分散・有息(~1.2%)・結構回復可靠',
+    manage:'不掛機械停損・只靠 Layer 2・VIX>30 恐慌逆向加碼',
+    stops:null },
+  { symbol:'009816', name:'凱基台灣TOP50', model:'B', modelName:'個股式主動管理',
+    why:'台股 50 檔・台積電權重極高・單一市場・無息(純資本曝險)',
+    manage:'掛趨勢保護停損(錨定加權均線；009816 僅 85 日、自身季線/半年線失真)',
+    cur:15.19,
+    stops:[
+      { tier:'🟡 減半', etf:14.5, gtc:14.35, sell:'賣 7,500 股 (一半)', twii:'~43,000', trig:'跌破月線 MA20 / 自高 −8%' },
+      { tier:'🔴 清空', etf:13.4, gtc:13.25, sell:'賣剩 7,500 股 (全清)', twii:'~39,500', trig:'跌破季線 MA60 / 自高 −15%' }
+    ],
+    reentry:'站回月線 + 量 / VIX>30 用乾火藥分批接回' }
+];
 
 function defPos(sym, mkt) { return (mkt === 'TW' ? twPortfolio : usPortfolio).find(x => x.symbol === sym); }
 function defCcy(mkt) { return mkt === 'TW' ? 'NT$' : '$'; }
