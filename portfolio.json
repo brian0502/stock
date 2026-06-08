@@ -1,19 +1,10 @@
 {
- "_NOTE": "2026-06-05：策略 v4。同日兩筆出場：NVDA 觸 $210 移動停損全清 18@210.02（+$456.38, +13.7%）；HPE 用戶主動於停損上方出場 40@50.02（-$215.80, -9.7%）。→ 美股僅剩 VOO10、現金升至 ~$15,331（高度防禦/幾乎全現金）。VOO 靠 Layer 2。前次 MSFT 6/3 觸 $430 停損全清 22@429.83（+$302.72）。現價需用 browser MCP 抓 Yahoo，勿存。",
+ "_NOTE": "2026-06-08：VOO 10 股全清 @680.7014（+$362.40, +5.6%）→ 美股 100% 現金 ~$22,136.52、零部位、零裸倉。VOO 均價由交易紀錄重算為 $644.36（成本基礎 $6,443.61）；舊值 633.97 為誤、策略檔 645.31 近似但以交易為準。前次 6/5 同日 NVDA 觸 $210 停損 18@210.02（+$456.38）、HPE 主動出場 40@50.02（-$215.80）。現價需用 browser MCP 抓 Yahoo，勿存。",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
- "portfolio": [
-  {
-   "symbol": "VOO",
-   "name": "Vanguard S&P 500",
-   "shares": 10,
-   "avg_cost": 633.97,
-   "cost_basis": 6339.7,
-   "note": "8→10 (6/1 +2 @694.55, AMZN停利轉入)｜唯一剩餘美股部位｜靠 Layer 2"
-  }
- ],
- "cash_usd": 15330.51,
- "cash_source": "6/5 同日 NVDA 停損 18@210.02 + HPE 主動出場 40@50.02 後；美股僅剩 VOO 10 股",
+ "portfolio": [],
+ "cash_usd": 22136.52,
+ "cash_source": "6/8 VOO 10 股全清淨得 ~$6,806（6807.01 − $1 費用）加入前次現金 $15,330.51；美股 100% 現金、零部位",
  "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
  "total_realized_pnl_lifetime": 288.14,
  "total_realized_pnl_breakdown": {
@@ -24,8 +15,9 @@
   "MSFT_2026-06-03": 302.72,
   "NVDA_2026-06-05": 456.38,
   "HPE_2026-06-05": -215.80,
-  "_note": "lifetime 288.14 為 6/2 凍結值,未含 MSFT/NVDA/HPE 三筆,待券商對帳統一重算"
+  "VOO_2026-06-08": 362.40,
+  "_note": "lifetime 288.14 為 6/2 凍結值,未含 MSFT/NVDA/HPE/VOO 四筆,待券商對帳統一重算"
  },
- "last_updated": "2026-06-05",
+ "last_updated": "2026-06-08",
  "previous_freeze_date": "2026-03-01"
 }
