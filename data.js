@@ -7,10 +7,10 @@ const USDTWD = 31.46;
 const usCash = 15330.51; // 6/5 同日 NVDA 停損 18@210.02 + HPE 主動出場 40@50.02 後；美股僅剩 VOO 10 股
 
 const twPortfolio = [
-  { symbol:"009816", name:"凱基台灣TOP50", shares:15000, avgCost:14.8, currentPrice:15.19, color:"#0ea5e9" },
+  // 009816 已於 2026-06-08 全部出清 15 張 @14.52（認列約 -NT$4,604），proceeds 轉現金
   { symbol:"2705", name:"六福?（記錄為大魯閣，但 2705=六福、大魯閣=1432，代號待確認）", shares:1, avgCost:18.4, currentPrice:15.70, color:"#a3a3a3" },
 ];
-const twCash = 318139; // 5/25 買 009816 15 張 -NT$222,000 後（待券商截圖驗證）
+const twCash = 535535; // 318,139 + 009816 出清淨得 ~217,396（15,000@14.52 毛 217,800 − 費用 ~404）
 
 const usPortfolio = [
   { symbol:"VOO", name:"Vanguard S&P 500", shares:10, avgCost:645.31, currentPrice:678.00, color:"#6366f1" },
@@ -38,6 +38,7 @@ const themeWatch = [
 ];
 
 const allTx = [
+  { date:"2026-06-08", market:"TW", symbol:"009816", action:"sell", shares:15000, price:14.52, amount:217800, note:"全部出清 15 張 @14.52（毛 217,800、費用~404、淨得~217,396）｜認列約 -NT$4,604 (-2.07%)｜台股部位歸零、現金回 ~NT$535,535｜模式B 趨勢部位出場" },
   { date:"2026-06-05", market:"US", symbol:"HPE", action:"sell", shares:40, price:50.02, amount:2000.80, note:"用戶主動於停損 $48 上方出場 40@50.02｜認列 -$215.80 (-9.7%)｜6/5 risk-off 科技回檔日 HPE -6.57%、緩衝縮至 +4.3%、鎖小虧避免續殺到 $48｜thesis 未壞屬技術回檔但風控優先｜HPE 40→0｜美股僅剩 VOO" },
   { date:"2026-06-05", market:"US", symbol:"NVDA", action:"sell", shares:18, price:210.02, amount:3780.36, note:"觸及 $210 移動停損、全部位 18 股出場｜認列 +$456.38 (+13.7%)｜v4 Layer 1 自動執行｜6/5 美股 risk-off 科技回檔日(NVDA -4.26%)｜停利優先:不讓 +18% round-trip｜NVDA 18→0" },
   { date:"2026-06-03", market:"US", symbol:"MSFT", action:"sell", shares:22, price:429.83, amount:9456.26, note:"觸及 $430 移動停損、全部位出場｜認列 +$302.72 (+3.3%)｜v4 Layer 1 自動執行" },
@@ -172,6 +173,7 @@ const adjustmentLog = [
   { date:"2026-06-04", type:"review", title:"🇹🇼 6/4 台股盤中買點檢核：無乾淨買點不進場", detail:"用戶問台股有無可買進標的。盤中即時(10:31 CST)：加權 45,899(-1.21%,-560)自史高46,459回檔，隔夜美晶片轉弱(NVDA-3.36%/TSM ADR-1.5%)全族群同步回檔。候選逐檔即時檢核：京元電2449 326.0(+1.09%)逆勢未回測305-310買價❌/奇鋐3017 2,710(-5.08%)單日飛刀未站穩❌/南亞科2408 399.0(-0.62%)連6漲轉跌量大73,795張❌→三檔皆不符突破+量增+非過熱,不硬湊。009816 $15.54(-1.27%,+5.0%)連4漲後回檔,加碼❌等回測站穩5日均,thesis未變續抱。Layer 2 ✅無事件。與今早預判一致無調整。" },
   { date:"2026-06-04", type:"review", title:"✅ 美股已實現損益依 IB 1Y 對帳單重建（FIFO）", detail:"用戶提供 IB U18192136 一年交易紀錄 + 官方「已實現/未實現表現總結」截圖（最終真實來源）。據此重建 usRealizedDetail，採 IB 的 FIFO：AMZN +499.65｜NVDA +444.02（5/19減倉12股，仍持18）｜MSFT +299.49｜VOO +115.07（5/19減倉3股，仍持10）｜INTC +91.96｜QQQ +76.74｜UBER -160.18｜CRWD -81.79｜NFLX -236.14｜ZS -428.03。美股已實現合計 +$620.79（原暫估 +579.60，差因先前漏記 NVDA/QQQ/VOO 部分減倉、AMZN 只算到最後4股、CRWD/NFLX/ZS 數字有誤）。同時修正 VOO 持股均價 633.97→645.31（FIFO，先前漏更 6/1 加碼2股）、NVDA 184.60→184.61、美股現金 9552.69→9551.35（對帳單期末）。台股已實現仍待台股券商對帳單核對。" },
   { date:"2026-06-05", type:"review", title:"🇹🇼 6/5 台股第二天殺盤加速：候選全面落刀剔除、無買點", detail:"用戶『分析台股』。盤中 09:43 加權 44,511(−2.55%,−1,166)，自史高 46,459 兩日累跌 −4.2%。逐檔複查汰除：奇鋐3017 2,530(−6.64%)跌破停損2,550→剔除、南亞科2408 356(−9.87%)近跌停記憶體重災→剔除、京元電2449 302.5(−6.06%)殺到停損302→暫停；凱基金2883 27.25(−0.55%)金融最抗跌→KEEP但崩盤非進場點等企穩。009816 15.02(−2.97%,+1.5%)續抱不加碼，ETF不掛停損。衛星族群全回檔(台揚2314 −0.60%最抗跌)。Layer 2 ✅無事件但升級監看(2日−4.2%未達−10%/2週門檻41,813、VIX15.54<30)。今日無乾淨買點，等量縮止跌站回均線。" },
+  { date:"2026-06-08", type:"trade", title:"🔴 009816 全部出清 15 張 @14.52（台股部位歸零）", detail:"用戶主動全清 009816 凱基台灣 TOP50 15,000 股 @NT$14.52：毛額 NT$217,800、費用 ~404（手續費6折~186+證交稅0.1%~218）、淨得 ~NT$217,396；成本 15,000×14.8=NT$222,000 → 認列約 -NT$4,604 (-2.07%)。6/5 美股 Nasdaq -4.18% 拖累，6/8 台股開低（14.52 vs 6/5 收 15.19 約 -4.4%），觸及模式B『減半~14.5』趨勢線、用戶選擇直接全清。台股現金 318,139→~535,535；台股已實現 +3,458→-1,146。台股僅剩紀念股 2705 1 股。乾火藥大增（美股 ~$15,331 + 台股 ~NT$535,535），等 VIX 破 30 或乾淨突破再分批佈署。" },
 ];
 
 const REPO_BASE = "https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/";
@@ -341,6 +343,18 @@ const twRealizedDetail = [
     { date:"2026-02-24", action:"buy", desc:"建倉 3,000股 @ NT$27.91", amount:83730 },
     { date:"2026-04-27", action:"sell", desc:"論點消失出場 3,000股 @ NT$26.89（淨額NT$80,520，含手續費NT$69+證交稅NT$81）", amount:80520 },
   ]},
+  { symbol:"00919", name:"群益台灣精選高息", pnl:-2018, trades:[
+    { date:"2026 前", action:"buy", desc:"建倉 9,000股 @ NT$24.03", amount:216270 },
+    { date:"2026-05-12", action:"sell", desc:"全清 9,000股 @ NT$23.85（淨額NT$214,252）認虧避稅", amount:214252 },
+  ]},
+  { symbol:"00878", name:"國泰永續高股息", pnl:11186, trades:[
+    { date:"2026 前", action:"buy", desc:"建倉 3,000股 @ NT$23.92", amount:71760 },
+    { date:"2026-05-12", action:"sell", desc:"全清 3,000股 @ NT$27.70 鎖獲利", amount:82914 },
+  ]},
+  { symbol:"009816", name:"凱基台灣TOP50（6/8 全清）", pnl:-4604, trades:[
+    { date:"2026-05-25", action:"buy", desc:"建倉 15,000股 @ NT$14.80（成本 NT$222,000）", amount:222000 },
+    { date:"2026-06-08", action:"sell", desc:"全部出清 15,000股 @ NT$14.52（淨得 ~NT$217,396）認列約 -NT$4,604 (-2.07%)", amount:217396 },
+  ]},
 ];
 const usRealizedDetail = [
   { symbol:"NVDA", name:"NVIDIA（5/19 部分減倉，仍持有 18 股）", pnl:444.02, trades:[
@@ -411,7 +425,7 @@ const twStockMarket = twData.reduce((s,p)=>s+p.market,0);
 const twTotal = twStockMarket + twCash;
 const twTotalCost = twData.reduce((s,p)=>s+p.cost,0);
 const twPnl = twStockMarket - twTotalCost;
-const twRealizedPnl = 3458; // 緯創(-2500) + 00679B(-3210) + 00919(-2018) + 00878(+11186, 3張@$27.7 vs 均價$23.92); // 緯創(-2500) + 00679B(-3210)
+const twRealizedPnl = -1146; // 3,458 + 009816 出清 -4,604 = -1,146｜明細：緯創 -2,500 + 00679B -3,210 + 00919 -2,018 + 00878 +11,186 + 009816 -4,604（待台股對帳單核對）
 
 const usStockMarket = usData.reduce((s,p)=>s+p.market,0);
 const usTotal = usStockMarket + usCash;
@@ -432,10 +446,9 @@ const v4Discipline = {
   'NVDA':   { stop:210,  stopLabel:'50日均(由$194.74上移)',          mkt:'US' },
   'HPE':    { stop:48,   stopLabel:'缺口下緣',                        mkt:'US' },
   'VOO':    { stop:null, stopLabel:'模式A 指數錨(Layer 2)',           mkt:'US', model:'A' },
-  '009816': { stop:null, stopLabel:'模式B 趨勢停損',                  mkt:'TW', model:'B', trendHalf:14.5, trendClear:13.4 },
   '2705':   { stop:null, stopLabel:'紀念股·極少量',                   mkt:'TW' }
 };
-const defOrder = ['NVDA','HPE','VOO','009816','2705'];
+const defOrder = ['NVDA','HPE','VOO','009816','2705']; // 009816 已出清(6/8)、NVDA/HPE 已出場(6/5)，defPos 找不到部位自動略過
 
 // ===== ETF 本質分類 (2026-06-06 用戶定案) =====
 // 每檔 ETF 先看本質分 VOO模式(A,指數錨) / 個股模式(B,主動管理)；模式B掛趨勢停損。
@@ -444,15 +457,7 @@ const etfClass = [
     why:'500 檔全球分散・有息(~1.2%)・結構回復可靠',
     manage:'不掛機械停損・只靠 Layer 2・VIX>30 恐慌逆向加碼',
     stops:null },
-  { symbol:'009816', name:'凱基台灣TOP50', model:'B', modelName:'個股式主動管理',
-    why:'台股 50 檔・台積電權重極高・單一市場・無息(純資本曝險)',
-    manage:'掛趨勢保護停損(錨定加權均線；009816 僅 85 日、自身季線/半年線失真)',
-    cur:15.19,
-    stops:[
-      { tier:'🟡 減半', etf:14.5, gtc:14.35, sell:'賣 7,500 股 (一半)', twii:'~43,000', trig:'跌破月線 MA20 / 自高 −8%' },
-      { tier:'🔴 清空', etf:13.4, gtc:13.25, sell:'賣剩 7,500 股 (全清)', twii:'~39,500', trig:'跌破季線 MA60 / 自高 −15%' }
-    ],
-    reentry:'站回月線 + 量 / VIX>30 用乾火藥分批接回' }
+  // 009816（模式B）已於 2026-06-08 全部出清 @14.52，台股無 ETF 部位；之後重新進場再恢復本卡
 ];
 
 function defPos(sym, mkt) { return (mkt === 'TW' ? twPortfolio : usPortfolio).find(x => x.symbol === sym); }

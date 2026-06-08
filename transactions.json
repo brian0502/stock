@@ -1017,9 +1017,22 @@
    "type": "review",
    "description": "全檔對齊 + 美股分析",
    "details": "當日僅分析無交易。dashboard.html 補回 5/25(009816)、5/28(MSFT+5)、6/1(AMZN出場/VOO加碼)漏記交易並刷新即時價;current_strategy 升 v3.1(移除AMZN、停利點刷新);CLAUDE.md 新增固定流程規範。資料問題:2705 在 Yahoo 為六福、大魯閣應為 1432,待用戶確認。"
+  },
+  {
+   "date": "2026-06-08",
+   "market": "TW",
+   "symbol": "009816",
+   "action": "sell",
+   "shares": 15000,
+   "price": 14.52,
+   "amount": 217800,
+   "fee_and_tax": 404,
+   "net_proceeds": 217396,
+   "realized_pnl": -4604,
+   "note": "全部出清 15 張 @14.52(模式B 趨勢部位)|成本 222,000(15,000@14.8)|認列約 -NT$4,604 (-2.07%)|台股部位歸零、現金回 ~NT$535,535|6/8 開低觸模式B 減半線~14.5、用戶直接全清。數字待台股券商對帳單核對"
   }
  ],
- "last_updated": "2026-06-02",
+ "last_updated": "2026-06-08",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖 + 對帳單",
  "_RECONSTRUCTION_NOTE": "3/24-5/29 共補 12 筆美股 + 10 筆台股交易,從 dashboard allTx + user memories + 本 session 對話推算。需用戶截圖驗證。"
