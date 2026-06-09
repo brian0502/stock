@@ -29,13 +29,13 @@ const themeWatch = [
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"VOYG", name:"Voyager Tech", market:"US", price:41.55, chg:-12.9, level:"高波動殺 (自高 −44%)", entry:"❌ 不追·投機", note:"新IPO太空基建/Starlab" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"BKSY", name:"BlackSky", market:"US", price:34.76, chg:-12.4, level:"高波動殺 (自高 −34%)", entry:"❌ 不追·投機", note:"衛星即時情報" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"SPIR", name:"Spire Global", market:"US", price:17.16, chg:-14.4, level:"微型投機殺", entry:"❌ 不追·IPO出貨警戒", note:"衛星數據" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3491", name:"昇達科", market:"TW", price:1905, chg:6.72, level:"反彈領漲 (6/9盤中)", entry:"🟡 純度最高·殺盤日強勢收腳·量縮守1900觀察站穩再評", note:"衛星RF濾波器,SpaceX夥伴,衛星營收~8成→血統最純;6/5 全族群最強收腳" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"6271", name:"同欣電", market:"TW", price:230.0, chg:5.26, level:"反彈 (6/9盤中)", entry:"❌ 等企穩", note:"衛星RF收發模組,高頻陶瓷封裝,高門檻" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3491", name:"昇達科", market:"TW", price:1805, chg:1.12, level:"反彈後拉回收斂 (6/9 11:24)", entry:"🟡 純度最高·殺盤日強勢收腳·量縮守1900觀察站穩再評", note:"衛星RF濾波器,SpaceX夥伴,衛星營收~8成→血統最純;6/5 全族群最強收腳" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"6271", name:"同欣電", market:"TW", price:231.0, chg:5.72, level:"續強 (6/9 11:24)", entry:"❌ 等企穩", note:"衛星RF收發模組,高頻陶瓷封裝,高門檻" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3105", name:"穩懋", market:"TW", price:456.5, chg:1.11, level:"反彈 (6/9盤中)", entry:"🟡 殺盤日收腳·等量縮站穩再評(原弱勢轉觀察)", note:"GaAs砷化鎵龍頭,衛星間鏈路+手機直連衛星" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"2314", name:"台揚", market:"TW", price:15.9, chg:2.58, level:"反彈 (6/9盤中)", entry:"❌ 由抗跌轉補跌·等企穩", note:"寬頻衛星通訊地面站(SpaceX/OneWeb/Kymeta)" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"6285", name:"啟碁", market:"TW", price:284.0, chg:3.84, level:"反彈 (6/9盤中)", entry:"❌ 等企穩", note:"地面站天線+路由器,Starlink主力,切入Amazon Leo" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2313", name:"華通", market:"TW", price:265.0, chg:5.16, level:"⭐族群相對強度第一·已站回5日均(262.8)+20日均(264.95) (6/9盤中)", entry:"🟢 可分批：進取站上10日均269+量/標準回測262-265(5/20日均)/深回測254(60日均)·停損251｜⚠️今日+5%反彈中段勿追市價,等回測站穩", note:"全球衛星PCB龍頭~80%市佔(Starlink HDI板+Kuiper),LEO板2025>151億佔20%·2026估+30%;另AI伺服器板;2025 EPS5.51近20年次高｜MA5 262.8/MA10 269.2/MA20 264.95/MA60 253.76" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2345", name:"智邦", market:"TW", price:2395, chg:-1.03, level:"落後·未跟漲 (6/9盤中)", entry:"❌ 等企穩", note:"網通交換器,太空算力骨幹/AI server網路" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"2314", name:"台揚", market:"TW", price:15.7, chg:1.29, level:"反彈 (6/9 11:24)", entry:"❌ 由抗跌轉補跌·等企穩", note:"寬頻衛星通訊地面站(SpaceX/OneWeb/Kymeta)" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"6285", name:"啟碁", market:"TW", price:281.5, chg:2.93, level:"反彈 (6/9 11:24)", entry:"❌ 等企穩", note:"地面站天線+路由器,Starlink主力,切入Amazon Leo" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2313", name:"華通", market:"TW", price:270.5, chg:7.34, level:"⭐相對強度第一·盤中站上10日均(269)觸進取進場 (6/9 11:24)", entry:"🟢 可分批：進取站上10日均269+量/標準回測262-265(5/20日均)/深回測254(60日均)·停損251｜⚠️今日+5%反彈中段勿追市價,等回測站穩", note:"全球衛星PCB龍頭~80%市佔(Starlink HDI板+Kuiper),LEO板2025>151億佔20%·2026估+30%;另AI伺服器板;2025 EPS5.51近20年次高｜MA5 262.8/MA10 269.2/MA20 264.95/MA60 253.76" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2345", name:"智邦", market:"TW", price:2445, chg:1.03, level:"轉紅跟漲 (6/9 11:24)", entry:"❌ 等企穩", note:"網通交換器,太空算力骨幹/AI server網路" },
 ];
 
 const allTx = [
