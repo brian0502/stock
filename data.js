@@ -34,7 +34,7 @@ const themeWatch = [
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"3105", name:"穩懋", market:"TW", price:456.5, chg:1.11, level:"反彈 (6/9盤中)", entry:"🟡 殺盤日收腳·等量縮站穩再評(原弱勢轉觀察)", note:"GaAs砷化鎵龍頭,衛星間鏈路+手機直連衛星" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·衛星純度高", symbol:"2314", name:"台揚", market:"TW", price:15.9, chg:2.58, level:"反彈 (6/9盤中)", entry:"❌ 由抗跌轉補跌·等企穩", note:"寬頻衛星通訊地面站(SpaceX/OneWeb/Kymeta)" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"6285", name:"啟碁", market:"TW", price:284.0, chg:3.84, level:"反彈 (6/9盤中)", entry:"❌ 等企穩", note:"地面站天線+路由器,Starlink主力,切入Amazon Leo" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2313", name:"華通", market:"TW", price:265.0, chg:5.16, level:"連兩日相對強度第一·領漲 (6/9盤中)", entry:"🟡 抗跌但位階弱·守60日均251-253可小量試/停損248·等站回20日均轉強", note:"全球衛星PCB龍頭~80%市佔(Starlink HDI板+Kuiper),LEO板2025>151億佔20%·2026估+30%;另AI伺服器板;2025 EPS5.51近20年次高" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2313", name:"華通", market:"TW", price:265.0, chg:5.16, level:"⭐族群相對強度第一·已站回5日均(262.8)+20日均(264.95) (6/9盤中)", entry:"🟢 可分批：進取站上10日均269+量/標準回測262-265(5/20日均)/深回測254(60日均)·停損251｜⚠️今日+5%反彈中段勿追市價,等回測站穩", note:"全球衛星PCB龍頭~80%市佔(Starlink HDI板+Kuiper),LEO板2025>151億佔20%·2026估+30%;另AI伺服器板;2025 EPS5.51近20年次高｜MA5 262.8/MA10 269.2/MA20 264.95/MA60 253.76" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"台股·終端/PCB/網通", symbol:"2345", name:"智邦", market:"TW", price:2395, chg:-1.03, level:"落後·未跟漲 (6/9盤中)", entry:"❌ 等企穩", note:"網通交換器,太空算力骨幹/AI server網路" },
 ];
 
