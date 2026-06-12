@@ -15,7 +15,7 @@ const twCash = 535535; // 318,139 + 009816 出清淨得 ~217,396（15,000@14.52 
 const usPortfolio = [
   // 6/12 SPCX IPO 首日進場 50 股 @均價 $163.8668（溢價 +21.4% vs IPO $135=劇本A天花板內✅；部位 $8,193 佔乾火藥 37%=超出劇本上限 12-20 股 2.7-4 倍⚠️=框架外個人決定、v4 用戶拍板）。
   // currentPrice 暫填成交均價（首日盤中、待下次分析用 Yahoo 更新）。初始停損：−12% $144.20／−15% $139.29（與開盤區間低取近者）、$131 棄守線。FOMC 6/16-17 緊接。
-  { symbol:"SPCX", name:"SpaceX", shares:50, avgCost:163.8668, currentPrice:167.63, color:"#8b5cf6" }, // 6/12 首日盤中 12:21 ET：開150(+11.1%)→高168.75→回測低155.42→167.63(+24.2% vs IPO)；帳面+2.3%
+  { symbol:"SPCX", name:"SpaceX", shares:50, avgCost:163.8668, currentPrice:175.28, color:"#8b5cf6" }, // 6/12 首日盤中 13:07 ET：開150→回測155.42→突破首日前高168.75續攻→175.28(+29.8% vs IPO)·日高175.50；帳面+$571(+7.0%)；階梯第1級已觸發→停損上移154.90
 ];
 
 // ===== 指定系列族群追蹤清單 (themeWatch) =====
@@ -472,7 +472,7 @@ const grandPnl = (twPnl + twRealizedPnl) + (usPnl + usRealizedPnl) * USDTWD;
 // mkt 標示市場(US/TW)，決定幣別($/NT$)、查哪個 portfolio、單位(股/張)。
 // ETF 指數型(VOO/009816)為例外：不掛機械停損(分散+長期向上，不像個股會 round-trip 成永久虧損)，靠 Layer 2 + 站穩突破/定期定額。
 const v4Discipline = {
-  'SPCX':   { stop:149.50, stopLabel:'移動停利階梯：現=區間低$150下方→站穩168.75上→154.90→站上~180→163.90(成本=風險歸零)→10日均形成後trailing；只升不降·無固定停利天花板', mkt:'US' },
+  'SPCX':   { stop:154.90, stopLabel:'階梯第1級已觸發(13:07ET 175.28突破首日前高168.75 +3.9%)→停損149.50上移154.90(首日回測低155.42下方)；下一級=站上~180→163.90(成本=風險歸零)→10日均形成後trailing；只升不降', mkt:'US' },
   'NVDA':   { stop:210,  stopLabel:'50日均(由$194.74上移)',          mkt:'US' },
   'HPE':    { stop:48,   stopLabel:'缺口下緣',                        mkt:'US' },
   'VOO':    { stop:null, stopLabel:'模式A 指數錨(Layer 2)',           mkt:'US', model:'A' },
