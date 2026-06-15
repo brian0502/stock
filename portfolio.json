@@ -6,12 +6,12 @@
   {
    "symbol": "SPCX",
    "name": "SpaceX (Space Exploration Technologies)",
-   "shares": 50,
-   "avg_cost": 163.8668
+   "shares": 70,
+   "avg_cost": 167.522
   }
  ],
- "cash_usd": 13943.18,
- "cash_source": "6/8 全清後現金 $22,136.52 − 6/12 SPCX 50 股 ×$163.8668 = $8,193.34（佣金未計、待對帳單）",
+ "cash_usd": 10409.98,
+ "cash_source": "6/8 全清後 $22,136.52 − 6/12 SPCX 50@$163.8668 ($8,193.34) − 6/15 SPCX 加碼 20@$176.66 ($3,533.20) = $10,409.98（佣金未計、待對帳單）",
  "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
  "total_realized_pnl_lifetime": 288.14,
  "total_realized_pnl_breakdown": {
@@ -25,6 +25,6 @@
   "VOO_2026-06-08": 362.40,
   "_note": "lifetime 288.14 為 6/2 凍結值,未含 MSFT/NVDA/HPE/VOO 四筆,待券商對帳統一重算"
  },
- "last_updated": "2026-06-12",
+ "last_updated": "2026-06-15",
  "previous_freeze_date": "2026-03-01"
 }
