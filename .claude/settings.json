@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git pull origin claude/stock-analysis-skill-J09An",
+            "timeout": 30,
+            "statusMessage": "Pulling latest strategy from git…"
+          }
+        ]
+      }
+    ]
+  }
+}
