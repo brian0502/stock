@@ -2,16 +2,10 @@
  "_NOTE": "2026-06-12：SpaceX IPO 首日進場 SPCX 50 股 @均價 $163.8668（US049、佣金未報待對帳）→ 美股結束 6/8 以來零部位狀態。溢價 +21.4% vs IPO 價 $135=劇本A天花板(<22%)內；惟部位 $8,193.34 佔乾火藥 37%、超出劇本上限 ~$2,000-3,000 約 2.7-4 倍=框架外個人決定（v4 用戶拍板、Claude 已給傷害控管參數）。初始停損見 current_strategy.md／data.js v4Discipline。現價需用 browser MCP 抓 Yahoo，勿存。",
  "_NEEDS_VERIFICATION": true,
  "_VERIFY_AGAINST": "用戶券商截圖(美股庫存頁) - 收到後改為 _VERIFIED: true",
- "portfolio": [
-  {
-   "symbol": "SPCX",
-   "name": "SpaceX (Space Exploration Technologies)",
-   "shares": 80,
-   "avg_cost": 172.7155
-  }
- ],
- "cash_usd": 8319.28,
- "cash_source": "6/8 全清後 $22,136.52 − 6/12 SPCX 50@$163.8668 ($8,193.34) − 6/15 SPCX 加碼 20@$176.66 ($3,533.20) − 6/16 SPCX 加碼 5@$213.29 ($1,066.45) − 6/17 SPCX 加碼 5@$204.85 ($1,024.25) = $8,319.28（佣金未計、待對帳單）",
+ "portfolio": [],
+ "_portfolio_note": "美股零部位（SPCX 已於 2026-06-17 全部出清 80 股·實現 +$1,381.66）→ 100% 現金。",
+ "cash_usd": 23518.18,
+ "cash_source": "6/8 全清後 $22,136.52 − 6/12 SPCX 50@$163.8668 ($8,193.34) − 6/15 SPCX 加碼 20@$176.66 ($3,533.20) − 6/16 SPCX 加碼 5@$213.29 ($1,066.45) − 6/17 SPCX 加碼 5@$204.85 ($1,024.25) + 6/17 SPCX 全部出清 80 股 (60@$190.02 + 20@$189.885 = $15,198.90) = $23,518.18（佣金未計、待對帳單）",
  "total_market_value": "DO_NOT_STORE - fetch live from Yahoo Finance",
  "total_realized_pnl_lifetime": 288.14,
  "total_realized_pnl_breakdown": {
@@ -23,7 +17,8 @@
   "NVDA_2026-06-05": 456.38,
   "HPE_2026-06-05": -215.80,
   "VOO_2026-06-08": 362.40,
-  "_note": "lifetime 288.14 為 6/2 凍結值,未含 MSFT/NVDA/HPE/VOO 四筆,待券商對帳統一重算"
+  "SPCX_2026-06-17": 1381.66,
+  "_note": "lifetime 288.14 為 6/2 凍結值,未含 MSFT/NVDA/HPE/VOO/SPCX 數筆,待券商對帳統一重算；SPCX 6/17 全清實現 +$1,381.66（60@$190.02 + 20@$189.885）"
  },
  "last_updated": "2026-06-17",
  "previous_freeze_date": "2026-03-01"
