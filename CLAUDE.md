@@ -115,6 +115,7 @@ symbol,name,shares,avg_cost
 - **固定分支：`claude/stock-analysis-skill-J09An`** — 所有 session 統一使用此分支，**絕對不要另開新分支**
 - **每次操作前先 `git checkout claude/stock-analysis-skill-J09An && git pull origin claude/stock-analysis-skill-J09An`**
 - 每次對檔案進行新增或修改後，必須自動 commit 並 push 到 `claude/stock-analysis-skill-J09An`，不需要額外詢問使用者確認
+- **🔒 分析一律直接寫入＋cm&ps（2026-06-18 用戶定案）**：只要是分析（FOMC/盤勢/個股/族群/組合等），**一律直接寫進相關檔案（data.js／current_strategy.md／reports/／dashboard.html 等）並自動 commit & push，禁止再問「要不要我幫你寫進去並 push」這類確認句**。回覆只報「已寫入並 push」。
 - Commit message 應清楚說明變動內容（交易紀錄 / 分析報告 / 持股更新）
 - **token 由用戶常駐設定在 remote URL（origin）中，push 後「不要」清除、不要動 remote URL**（2026-06-04 用戶確認）。直接 `git push origin claude/stock-analysis-skill-J09An` 即可，全程不需 set-url。
 
