@@ -2,8 +2,8 @@
 // ⚠️ 每次分析/交易要更新的欄位都在本檔（data.js）：TODAY、USDTWD、現金、
 //    twPortfolio/usPortfolio(currentPrice/shares/avgCost)、allTx、adjustmentLog、
 //    reports、calendarEvents、v4Discipline 停損。dashboard.html 等頁面只放版面，不放資料。
-const TODAY = '2026-06-18';   // 每次分析務必更新｜美股6/18盤中(~10:20am ET)=FOMC鷹派隔天半導體V彈(Intel-Apple自製晶片題材·SOX+5.67%·MRVL+9.7%·AVGO破$400)；用戶旅遊8天→旅遊期美股維持100%現金=正確風控(無法盯盤不裸放高beta)、回來能管理再布署
-const USDTWD = 31.59; // 6/18 早盤（Yahoo TWD=X 31.594）
+const TODAY = '2026-06-18';   // 每次分析務必更新｜美股6/18下午盤(~1:59pm ET·台6/19凌晨)=半導體續強(SOX+6.4%·MRVL+12%·NVDA收復$210)但SPCX嚴重背離−6%($179.83·日低$172)；SPCX小量買進=❌否決(選擇權上市解除人為稀缺+Chanos喊空+解禁賣壓=結構de-rate·跌穿$180非止穩·接飛刀+旅遊8天不能管理)；維持100%現金過旅遊期
+const USDTWD = 31.57; // 6/18 下午（Yahoo TWD=X 31.573）
 const usCash = 23518.18; // 8,319.28 + 6/17 SPCX 全部出清 80 股(60@$190.02 $11,401.20 + 20@$189.885 $3,797.70 = $15,198.90) = $23,518.18（佣金未報待對帳）→ 美股 100% 現金、零部位
 
 const twPortfolio = [
@@ -24,9 +24,9 @@ const usPortfolio = [
 // price=null → 該次未取得即時價(如台股休市)，顯示「待查」。種子系列：SpaceX/太空算力/低軌衛星(2026-06-04 建立)。
 const themeWatch = [
   // 🚨 6/12 美股=「IPO日=出貨日」美股端完整應驗：SPCX 本尊上市吸金（開150→盤中167、+24% vs IPO），衛星概念股全滅 PL−10%/VOYG−14%/BKSY−12%/SPIR−10%/ASTS−14%（昨夜+11~21%全數回吐）；台股 6/12 收盤同步出貨（啟碁+8.6%→−1.1%/華通+6.0%→−4.2%/昇達科+6.8%→+0.3% 全長上影）；族群至少觀察一週、看誰回測均線不破
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"SPCX", name:"SpaceX 本尊", market:"US", price:183.15, chg:-4.52, level:"🔴6/18盤中$183.15(−4.52%·日低$176.6)·FOMC鷹派隔天大盤V彈但SPCX逆勢續弱·$190下方·自ATH$225.64回落~19%=仍在下跌段", entry:"🏁 已全部出清(6/17·實現+$1,381.66/+10.0%)·🔴下跌段+最高beta+旅遊8天不能管理=絕不接刀·再進等乾淨設定(收復守$200-205/帶量破$225.64/深回測$180止穩)且要能盯盤管理Swing再評", note:"⭐ 曾持股 IPO 進場 5 天波段·市值$2.3兆+·float僅~4%超高beta·首份財報9/2·12月鎖倉解禁·FOMC 6/17 已公布偏鷹(點陣圖示今年不降息·≥3位估升息·Warsh棄交自身點)→高beta短線偏弱·Swing移動停損鎖獲利=紀律生效·100%現金沒踩殺盤" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"NVDA", name:"NVIDIA", market:"US", price:208.95, chg:2.10, level:"6/18盤中$208.95(+2.10%)·半導體V彈逼近$210舊停損價·站$200上方", entry:"⚠️ 非持有·站穩$210+量增再評·停損~$194·旅遊8天不能管理=不在裸放期進", note:"太空算力底層晶片;不再持有,留族群追蹤;FOMC後相對其他高beta抗跌" },
-  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"GOOGL", name:"Alphabet", market:"US", price:362.83, chg:-0.26, level:"6/18盤中$362.83(−0.26%)·全場晶片噴它持平=唯一沒追高·仍在買價區$360-368內", entry:"🟡 候選(分散/低beta首選)·若旅遊期硬要放單一個股就選它:小量+掛寬災難停損$340(−6%夠撐8天)；正常進場等站回$370+量增/回測$360撐(回來能管理後)·停損$348(60日均)", note:"Project Suncatcher;AI舉債敘事(尋求$85B資本)仍壓制;FOMC偏鷹下分散首選但不急進、等乾淨設定" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"SPCX", name:"SpaceX 本尊", market:"US", price:179.83, chg:-6.25, level:"🔴6/18下午$179.83(−6.25%·日低$172.11)·全場唯一重挫·SOX+6.4%它−6%=極端背離·跌穿$180·自ATH$225.64回落~20%", entry:"🏁 已全部出清(6/17·實現+$1,381.66/+10.0%)·❌小量買進否決:6/17選擇權上市解除人為稀缺(IPO鎖倉+無券可空+無put)→結構de-rate·Chanos公開喊空>100x營收·Q2財報後內部人解禁20%賣壓·跌穿$180非「止穩」=觸發未成立·接飛刀+旅遊8天不能管理最高beta=雙重否決·要參與等真止穩(收復守$190-200/$172-180多日做底)且回來能盯盤", note:"⭐ 曾持股 IPO 進場 5 天波段·市值$2.3兆+·float僅~4%超高beta·首份財報9/2·12月鎖倉解禁·FOMC 6/17 已公布偏鷹(點陣圖示今年不降息·≥3位估升息·Warsh棄交自身點)→高beta短線偏弱·Swing移動停損鎖獲利=紀律生效·100%現金沒踩殺盤" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"NVDA", name:"NVIDIA", market:"US", price:209.98, chg:2.60, level:"6/18下午$209.98(+2.60%)·收復$210舊停損價(日高$211.2)·半導體連2強", entry:"⚠️ 非持有·站穩守$210量增再評·停損~$194·旅遊8天不能管理=不在裸放期進", note:"太空算力底層晶片;不再持有,留族群追蹤;FOMC後相對其他高beta抗跌" },
+  { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"GOOGL", name:"Alphabet", market:"US", price:368.28, chg:1.23, level:"6/18下午$368.28(+1.23%)·從$362衝到買價區頂$368=今早乾淨點已跑掉·跟漲", entry:"🟡 候選(分散/低beta首選)·別追$368·等回測$360撐再進(回來能管理後)·停損$348(60日均)；若旅遊期硬要放單一個股小量+掛寬停損$340", note:"Project Suncatcher;AI舉債敘事(尋求$85B資本)仍壓制;FOMC偏鷹下分散首選但不急進、等乾淨設定" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"PL", name:"Planet Labs", market:"US", price:30.69, chg:-10.18, level:"🔴 IPO日出貨應驗：昨+11.2%今−10.2%全回吐 (6/12盤中)", entry:"❌ 出貨確認·不接", note:"衛星影像;基本面弱;高beta" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"VOYG", name:"Voyager Tech", market:"US", price:41.00, chg:-14.35, level:"🔴 IPO日出貨最慘：昨+16.0%今−14.4% (6/12盤中)", entry:"❌ 出貨確認·EP665-666應驗本尊", note:"新IPO太空基建/Starlab;高beta;資金被SPCX本尊抽走" },
   { series:"🚀 SpaceX / 太空算力 / 低軌衛星", group:"美股", symbol:"BKSY", name:"BlackSky", market:"US", price:31.67, chg:-11.95, level:"🔴 IPO日出貨應驗：昨+13.2%今−12.0% (6/12盤中)", entry:"❌ 出貨確認·不接", note:"衛星即時情報;高beta" },
