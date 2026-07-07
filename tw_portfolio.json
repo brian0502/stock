@@ -1,18 +1,9 @@
 {
-  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25.",
+  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25 (cleared 6/8). 0050 entered 7/6, stopped out 7/7.",
   "_NEEDS_VERIFICATION": true,
   "_VERIFY_AGAINST": "用戶券商截圖(台股庫存頁)",
   "_DATA_ISSUE": "2026-06-02 查 Yahoo：代號 2705 = 六福(Leofoo)，非大魯閣(大魯閣為 1432)。下方紀念股名稱/代號不符，待用戶確認後修正。",
   "portfolio": [
-    {
-      "symbol": "0050",
-      "name": "元大台灣50",
-      "shares": 1000,
-      "avg_cost": 108.45,
-      "cost_basis_twd": 108450,
-      "category": "ETF",
-      "note": "7/6 第一批小量進場 1 張 @108.45（買價區 107.5-109 內）。模式B 個股式管理：停損錨定加權指數收盤破 5MA−1.5%（進場日 45,640 起機械上移）。第二批等三觸發。手續費待對帳。"
-    },
     {
       "symbol": "2705",
       "name": "六福?（記錄為大魯閣，代號待確認）",
@@ -57,11 +48,29 @@
       "sold_date": "2026-05-12",
       "sell_price": 27.7,
       "note": "全清"
+    },
+    {
+      "symbol": "009816",
+      "name": "凱基台灣TOP50",
+      "shares": 15000,
+      "sold_date": "2026-06-08",
+      "sell_price": 14.52,
+      "realized_pnl_twd": -4604,
+      "reason": "模式B 趨勢部位出場，全清"
+    },
+    {
+      "symbol": "0050",
+      "name": "元大台灣50",
+      "shares": 1000,
+      "sold_date": "2026-07-07",
+      "sell_price": 107.35,
+      "realized_pnl_twd": -1100,
+      "reason": "模式B 趨勢停損觸發（7/7 收 45,479 跌破停損線 45,945·史上第8大跌點）·用戶盤中 107.35 出＝優於收盤 106.20·持有 1 交易日 round-trip −1.01%"
     }
   ],
-  "cash_twd": 427085,
-  "cash_source": "535,535（009816 出清後）− 108,450（7/6 買 0050 1 張）＝427,085，手續費未計待對帳",
-  "total_realized_pnl_twd_lifetime": "TBD - 從 sold_in_2026 + 2026 ETF 已實現累積",
-  "last_updated": "2026-07-06",
+  "cash_twd": 534435,
+  "cash_source": "427,085 ＋ 107,350（7/7 賣 0050 1 張 @107.35）＝534,435，手續費/證交稅未計待對帳",
+  "total_realized_pnl_twd_lifetime": "TBD - 從 sold_in_2026 累積（緯創-2,500 + 00679B-3,210 + 00919-2,018 + 00878+11,186 + 009816-4,604 + 0050-1,100 = -2,246 待對帳單核對）",
+  "last_updated": "2026-07-07",
   "previous_freeze_date": "2026-04-08"
 }
