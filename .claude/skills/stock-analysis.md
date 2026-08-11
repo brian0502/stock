@@ -210,6 +210,7 @@ https://github.com/brian0502/stock/blob/claude/stock-analysis-skill-J09An/report
 | 5 | `reports` 陣列 | **data.js** | 新分析報告加入陣列**最頂端** | 忘記把新報告加入 |
 | 6 | `v4Discipline` 停損 | **data.js** | 監控表的停損價（創高才上移）| 停損沒隨新高更新 |
 | 7 | `lastUpdated` 文字（頁頭）| **dashboard.html** | 更新時間戳記 | 頁頭日期沒更新 |
+| 8 | 🎯 `actionBoard` 行動總表 | **data.js** | **每次分析必更新（2026-08-11 用戶定案）**：dashboard 置頂區塊＝每檔 動作(✅/⏳/❌)＋建議進場價＋股數/金額＋停損＋一句話條件＝回覆「行動總表」的網頁版 | 只更新回覆沒更新網頁＝用戶開頁面找不到建議價格（8/11 實際發生） |
 
 **如有新交易（買入/賣出），額外更新（皆在 `data.js`）：**
 - `allTx` 陣列（新交易加在**最前面**）
