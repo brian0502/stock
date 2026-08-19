@@ -175,6 +175,7 @@ themes.html           ← 🚀 指定系列族群追蹤清單（用戶額外關�
 app.js / styles.css   ← dashboard 共用 render 邏輯 + 樣式（很少動）
 dashboard.html        ← 總覽頁(監控/行事曆/總損益)；另有 holdings/transactions/timeline/reports.html 多頁
 reports/              ← 分析報告
+archive/              ← 🗄️ 歷史內容歸檔（2026-08-19 用戶指示「檔案太大切檔案」：data.js/current_strategy.md/dashboard.html 內較舊的「前次」敘事鏈、過期快照、reports 列表長描述定期切到這裡＝主檔留指標「已歸檔→archive/...」；完整逐字歷史 git log 都在。日後檔案又養大時照此模式再切）
 ```
 > **多頁改版（2026-06-04）**：dashboard 拆成多頁 + GitHub Pages 託管。**資料全在 `data.js`**，各 .html 只放版面。更新數據→改 `data.js`；頁首 lastUpdated→改 `dashboard.html`。
 
