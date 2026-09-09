@@ -263,3 +263,9 @@ Push 完成後 Pages 約 **1 分鐘**自動重建。收尾流程：
 3. **現金沒更新**：買賣後 twCash/usCash 要同步調整，並以券商截圖為最終依據
 4. **dashboard 沒提供給用戶**：分析完要呼叫 present_files，不能只 push git 就算了
 5. **市值**：市值是動態計算（shares × currentPrice），只要 currentPrice 正確市值就會正確，不需要硬寫
+
+---
+
+## 🧮 固定資料管線（2026-09-10・不要在 session 內重寫腳本）
+
+資料抓取一律跑 repo 內 tools/（見 CLAUDE.md「固定工具腳本」）：tools/twse.js（大盤/個股均線＋T86 法人榜）、tools/branch.js（富邦 DJ 分點・_2 近 5 日）、tools/yahoo.js（美股/油價/匯率）。研究只派 1 個子代理；報告與所有檔案更新用一支 node 腳本一次寫完；整次分析 ≤20 turns。
