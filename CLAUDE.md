@@ -241,3 +241,15 @@ archive/              ← 🗄️ 歷史內容歸檔（2026-08-19 用戶指示�
 - 分點（富邦 DJ・Big5）：node tools/branch.js 2330,2317,0050 → 當日買賣超前 8 家＋賣/買比；加第二參數 _2 → 近 5 日累積
 - 美股/油價/匯率：node tools/yahoo.js → 指數、VIX、10Y、CL=F/BZ=F、TWD=X、持股與 watchlist 最近 3 日 K
 - 更新檔案：node tools/apply.js changes.js（changes.js 只寫內容：rep/repRe/prependRow/prependStatus/replaceBlock 由 apply.js 提供，跑完自動 node --check）
+
+### 20 turns 預算表（2026-09-10 用戶指示・9/10 晚起每次照跑）
+| # | Turn | 動作 |
+|---|---|---|
+| 1 | 1 | git pull＋grep current_strategy 🧊 表／持股現況需要的列＋data.js actionBoard 目前 row 名稱（一次 Bash） |
+| 2 | 2-4 | node tools/twse.js（當日＋前日 T86、watchlist 股票）／node tools/branch.js（漏斗前 1-2 檔＋在途標的、必要時 _2）／node tools/yahoo.js（同一則訊息並行） |
+| 3 | 5 | 派 1 個子代理：油價/荷莫茲/Fed/CPI＋台股三大法人金額/營收新聞＋主動式 ETF 快照＋股癌新集（一題全包） |
+| 4 | 6-8 | 補抓（TPEx 個股、額外分點）最多 2 次；等子代理回報 |
+| 5 | 9-12 | 寫 reports/YYYY-MM-DD.md（一次 Write）＋寫 changes.js（一次 Write）＋node tools/apply.js（含 node --check） |
+| 6 | 13-15 | git commit/push＋curl 驗 Pages 新內容＋開瀏覽器（一次 Bash） |
+| 7 | 16 | 回覆：行動總表＋股癌＋五檔＋組合/Layer 2 |
+| 8 | 17-20 | 保留給錯誤重試；超過 20 turns 要在回覆說明原因 |
