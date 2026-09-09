@@ -240,4 +240,4 @@ archive/              ← 🗄️ 歷史內容歸檔（2026-08-19 用戶指示�
 - 台股官方數據：node tools/twse.js 20260909,20260910 2330,2317,0050,3231,2454,2303 → 大盤/個股 OHLC、MA5/10/20/60、明日季線門檻、T86 投信/外資買賣超榜（張）
 - 分點（富邦 DJ・Big5）：node tools/branch.js 2330,2317,0050 → 當日買賣超前 8 家＋賣/買比；加第二參數 _2 → 近 5 日累積
 - 美股/油價/匯率：node tools/yahoo.js → 指數、VIX、10Y、CL=F/BZ=F、TWD=X、持股與 watchlist 最近 3 日 K
-- 更新檔案：參考 archive/ 或上次 session 的 update.js 模式（replace 特定字串、node --check）
+- 更新檔案：node tools/apply.js changes.js（changes.js 只寫內容：rep/repRe/prependRow/prependStatus/replaceBlock 由 apply.js 提供，跑完自動 node --check）
