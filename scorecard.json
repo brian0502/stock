@@ -1,5 +1,5 @@
 {
-  "_doc": "v6 計分板（規則 §6）。kind=pick（入選建議）/excluded（被剔除前 5 的影子）/no_entry（不進場判定）。type=breakout/pullback。entry/stop=建議價；effective=生效交易日（台股連假後）；regime=當時檔位；source=產生層。由 tools/score.js 自動補 result。≥50 筆配對後才改參數。",
+  "_doc": "v6 計分板。kind：pick＝有給的買單／excluded＝有候選但沒掛（追蹤若買了會怎樣）／no_entry＝判定不進場。由 tools/score.js 自動補成交、T+5、T+20、R。≥50 筆後才改參數。",
   "picks": [
     {
       "id": "P001",
@@ -137,7 +137,7 @@
       "stop": 186.9,
       "regime": "防守(0)",
       "source": "scan_tw 紡織 #1",
-      "note": "影子：檔位防守未掛"
+      "note": "未掛單（市況防守）；追蹤若買了的結果"
     },
     {
       "id": "S002",
@@ -152,7 +152,7 @@
       "stop": 64,
       "regime": "防守(0)",
       "source": "scan_tw 塑膠 #1",
-      "note": "影子"
+      "note": "未掛單；追蹤若買了的結果"
     },
     {
       "id": "S003",
@@ -168,7 +168,7 @@
       "stop": 58.6,
       "regime": "防守(0)",
       "source": "scan_tw 油電 #1",
-      "note": "影子"
+      "note": "未掛單；追蹤若買了的結果"
     },
     {
       "id": "S004",
@@ -183,7 +183,7 @@
       "stop": 61.3,
       "regime": "防守(0)",
       "source": "scan_tw 塑膠 #2 降級",
-      "note": "影子：分點凌亂降級"
+      "note": "未掛單（分點凌亂降級）；追蹤若買了的結果"
     },
     {
       "id": "S005",
@@ -198,7 +198,7 @@
       "stop": 20,
       "regime": "防守(−1)",
       "source": "scan_us 能源",
-      "note": "影子"
+      "note": "未掛單；追蹤若買了的結果"
     },
     {
       "id": "S006",
@@ -213,7 +213,7 @@
       "stop": 55,
       "regime": "防守(−1)",
       "source": "scan_us 科技",
-      "note": "影子：停損 12% 超範圍"
+      "note": "未掛單（停損 12% 超過 8% 上限）"
     },
     {
       "id": "S007",
@@ -228,7 +228,7 @@
       "stop": 109.4,
       "regime": "防守(−1)",
       "source": "scan_us 科技",
-      "note": "影子：停損超範圍"
+      "note": "未掛單（停損超過 8% 上限）"
     }
   ],
   "summary": {

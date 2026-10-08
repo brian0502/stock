@@ -38,35 +38,26 @@ renderNav();
 function renderActionBoard() {
   if (typeof actionBoard === 'undefined' || !actionBoard.rows || !actionBoard.rows.length) return;
   const actColor = { '✅':'#10b981', '⏳':'#fbbf24', '❌':'#64748b', '🟠':'#fb923c', '📍':'#7dd3fc', '🧭':'#38bdf8' };
-  const flag = { US:'🇺🇸', TW:'🇹🇼' };
-  let lastGrp = '';
-  const rows = [];
-  actionBoard.rows.forEach(r => {
-    if (r.grp !== lastGrp) {
-      lastGrp = r.grp;
-      rows.push('<tr><td colspan="7" style="background:rgba(56,189,248,.08);font-weight:700;color:#7dd3fc;padding:6px 12px">'
-        + flag[r.grp] + ' ' + (r.grp === 'US' ? '美股（今晚 21:30 開盤・23:00 settle 後掛）' : '台股（10/12 開盤掛）') + '</td></tr>');
-    }
-    const c = actColor[r.act] || '#94a3b8';
-    rows.push('<tr>'
-      + '<td style="white-space:nowrap"><b>' + r.sym + '</b><span style="font-size:11px;color:#94a3b8;margin-left:6px">' + r.name + '</span></td>'
-      + '<td style="white-space:nowrap"><span style="color:' + c + ';font-weight:700">' + r.act + ' ' + r.actTxt + '</span></td>'
-      + '<td style="font-family:\'JetBrains Mono\',monospace;font-size:15px;font-weight:700;color:#38bdf8">' + r.entry + '</td>'
-      + '<td style="font-family:\'JetBrains Mono\',monospace;font-size:15px;font-weight:700;color:#f87171">' + r.stop + '</td>'
-      + '<td style="font-size:12px;color:#cbd5e1;white-space:nowrap">' + r.size + '</td>'
-      + '<td style="font-size:12px;color:#cbd5e1;white-space:nowrap">' + (r.amt || '') + '</td>'
-      + '<td style="font-size:11.5px;color:#94a3b8;min-width:260px;text-align:left">' + r.cond + '</td>'
-      + '</tr>');
-  });
-  const html = '<div class="def-card" style="border:1px solid rgba(56,189,248,.45);box-shadow:0 0 18px rgba(56,189,248,.12)">'
-    + '<div class="def-header" style="font-size:16px"><span class="pulse"></span>🎯 可掛買單'
-    + '<span style="margin-left:10px;font-size:12px;color:#38bdf8;font-weight:600">藍＝買價 · 紅＝防守價 · 你拍板</span>'
-    + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">更新 ' + actionBoard.updated + '</span></div>'
-    + '<div style="overflow-x:auto"><table class="def-table"><thead><tr>'
-    + '<th>標的</th><th>動作</th><th style="color:#38bdf8">買價</th><th style="color:#f87171">防守價</th><th>股數</th><th>金額</th><th style="text-align:left">為什麼是它</th>'
-    + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
-    + (actionBoard.note ? '<div style="padding:8px 14px;font-size:12px;color:#fbbf24;border-top:1px solid rgba(148,163,184,.15)">📌 ' + actionBoard.note + '</div>' : '')
-    + '</div>';
+  const mono = "font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;";
+  const table = (grp, title, color) => {
+    const rs = actionBoard.rows.filter(r => r.grp === grp);
+    if (!rs.length) return '<div class="def-card" style="border:1px solid ' + color + '55"><div class="def-header" style="font-size:15px">' + title + '</div><div style="color:#94a3b8;font-size:12px">本次無買單</div></div>';
+    const rows = rs.map(r => '<tr>'
+      + '<td style="white-space:nowrap"><b style="font-size:14px">' + r.sym + '</b><div style="font-size:11px;color:#94a3b8">' + r.name + '</div></td>'
+      + '<td style="white-space:nowrap;color:' + (actColor[r.act] || '#94a3b8') + ';font-weight:700">' + r.act + ' ' + r.actTxt + '</td>'
+      + '<td style="' + mono + 'color:#38bdf8">' + r.entry + '</td>'
+      + '<td style="' + mono + 'color:#f87171">' + r.stop + '</td>'
+      + '<td style="white-space:nowrap;color:#e2e8f0">' + r.size + '<div style="font-size:11px;color:#94a3b8">' + (r.amt || '') + '</div></td>'
+      + '<td style="font-size:12px;color:#cbd5e1;text-align:left;min-width:240px;line-height:1.5">' + r.cond + '</td>'
+      + '</tr>').join('');
+    return '<div class="def-card" style="border:1px solid ' + color + '66;box-shadow:0 0 14px ' + color + '22">'
+      + '<div class="def-header" style="font-size:15px">' + title + '<span style="margin-left:10px;font-size:11px;color:#38bdf8;font-weight:600;text-transform:none">藍＝買價 · 紅＝防守價 · 你拍板</span></div>'
+      + '<div style="overflow-x:auto"><table class="def-table"><thead><tr><th style="text-align:left">標的</th><th style="text-align:left">單別</th><th style="color:#38bdf8">買價</th><th style="color:#f87171">防守價</th><th>股數／金額</th><th style="text-align:left">為什麼是它</th></tr></thead><tbody>' + rows + '</tbody></table></div></div>';
+  };
+  const html = '<div style="font-size:11px;color:#94a3b8;margin-bottom:8px">' + actionBoard.updated + '</div>'
+    + table('TW', '🇹🇼 台股買單（10/12 開盤掛）', '#38bdf8')
+    + table('US', '🇺🇸 美股買單（今晚 21:30 開盤、23:00 settle 後掛）', '#a78bfa')
+    + (actionBoard.note ? '<div style="padding:8px 2px;font-size:12px;color:#fbbf24">📌 ' + actionBoard.note + '</div>' : '');
   document.getElementById('actionBoard').innerHTML = html;
 }
 renderActionBoard();
@@ -116,7 +107,7 @@ function renderScorecard() {
   fetch('scorecard.json?t=' + Date.now()).then(r => r.json()).then(sc => {
     const f = x => x == null ? '—' : x;
     const rows = sc.picks.slice().reverse().slice(0, 25).map(p => { const r = p.result || {}; const rc = r.R == null ? '#94a3b8' : r.R > 0 ? '#10b981' : '#f87171'; return '<tr><td style="white-space:nowrap">' + p.date + '</td><td>' + (p.kind || 'pick') + '</td><td>' + p.market + '</td><td style="text-align:left"><b>' + p.symbol + '</b> <span style="font-size:11px;color:#94a3b8">' + (p.name || '') + '</span></td><td>' + f(p.type) + '</td><td>' + f(p.entry) + '</td><td style="color:#f87171">' + f(p.stop) + '</td><td style="font-size:11px">' + f(p.regime) + '</td><td>' + (r.filled == null ? '—' : r.filled ? '✅' : '未') + '</td><td>' + f(r.t5) + '</td><td>' + f(r.t20) + '</td><td style="font-weight:700;color:' + rc + '">' + f(r.R) + '</td><td style="font-size:11px;color:#94a3b8;text-align:left">' + (p.note || p.source || '') + '</td></tr>'; }).join('');
-    el.innerHTML = '<div class="def-card"><div class="def-header">📊 計分板（scorecard.json）<span style="margin-left:auto;font-size:11px;color:#fbbf24;font-weight:400;text-transform:none">' + ((sc.summary && sc.summary.line) || '尚無摘要') + '</span></div><div style="overflow-x:auto"><table class="def-table" style="font-size:12px"><thead><tr><th>日期</th><th>類</th><th>市</th><th style="text-align:left">標的</th><th>型</th><th>進場</th><th>停損</th><th>市況</th><th>成交</th><th>T+5</th><th>T+20</th><th>R</th><th style="text-align:left">備註</th></tr></thead><tbody>' + rows + '</tbody></table></div><div style="margin-top:6px;font-size:11px;color:#94a3b8">kind：pick＝入選建議／excluded＝影子（未掛，追蹤假想 R）／no_entry＝不進場判定。≥50 筆配對後才改參數。</div></div>';
+    el.innerHTML = '<div class="def-card"><div class="def-header">📊 計分板（scorecard.json）<span style="margin-left:auto;font-size:11px;color:#fbbf24;font-weight:400;text-transform:none">' + ((sc.summary && sc.summary.line) || '尚無摘要') + '</span></div><div style="overflow-x:auto"><table class="def-table" style="font-size:12px"><thead><tr><th>日期</th><th>類</th><th>市</th><th style="text-align:left">標的</th><th>型</th><th>進場</th><th>停損</th><th>市況</th><th>成交</th><th>T+5</th><th>T+20</th><th>R</th><th style="text-align:left">備註</th></tr></thead><tbody>' + rows + '</tbody></table></div><div style="margin-top:6px;font-size:11px;color:#94a3b8">建議買單＝有給你的單；有候選沒掛＝腳本選到但沒掛，照樣追蹤若買了會怎樣；判定不進場＝當次市況判定。R＝(出場價−買價−成本)÷(買價−防守價)。累積 50 筆後才調參數。</div></div>';
   }).catch(() => { el.innerHTML = ''; });
 }
 renderScorecard();
