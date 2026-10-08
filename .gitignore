@@ -4,3 +4,4 @@
 
 # JetBrains IDE
 .idea/
+.env

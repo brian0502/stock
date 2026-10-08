@@ -252,7 +252,7 @@ archive/              ← 🗄️ 歷史內容歸檔（2026-08-19 用戶指示�
 - 分點（富邦 DJ・Big5）：node tools/branch.js 2330,2317,0050 → 當日買賣超前 8 家＋賣/買比；加第二參數 _2 → 近 5 日累積
 - 美股/油價/匯率：node tools/yahoo.js → 指數、VIX、10Y、CL=F/BZ=F、TWD=X、持股與 watchlist 最近 3 日 K
 - 更新檔案：node tools/apply.js changes.js（changes.js 只寫內容：rep/repRe/prependRow/prependStatus/replaceBlock 由 apply.js 提供，跑完自動 node --check）
-- 🧭 v6（2026-10-08 入庫）市況判定：node tools/regime.js [--night=夜盤%] [--fut=外資期貨淨口數] → 台美評分表＋檔位＋扣分項（美股用前一完整交易日）
+- 🧭 v6（2026-10-08 入庫）市況判定：node tools/regime.js [--night=夜盤%] [--fut=外資期貨淨口數] → 台美評分表＋檔位＋扣分項（美股用前一完整交易日）；信用項需 `.env` 的 `FRED_API_KEY`（gitignored，範本 `.env.example`；家裡電腦也要放一份），沒有時退回 HYG/LQD 備援並標註
 - 🧭 v6 美股候選：node tools/scan_us.js 3 12 → 族群熱度（3/6 月 RS）＋候選池＋主排序＋突破/回測/停損/ATR
 - 🧭 v6 台股候選：node tools/scan_tw.js 20261008 3 2 → 上市＋上櫃族群熱度（法人流量＋類指數動能）＋候選＋技術確認
 - 🧭 v6 計分板：node tools/score.js [--dry] → 更新 scorecard.json、印成交率/勝率/平均淨 R

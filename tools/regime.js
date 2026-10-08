@@ -43,7 +43,12 @@ function printTable(title, items, g) {
   const hyg = completeDays(await chart('HYG'), true), lqd = completeDays(await chart('LQD'), true); const spx = completeDays(await chart('^GSPC'), true), vix = completeDays(await chart('^VIX'), true), rsp = completeDays(await chart('RSP'), true), spy = completeDays(await chart('SPY'), true), brent = completeDays(await chart('BZ=F'), true), sox = completeDays(await chart('^SOX'), true), twii = await chart('^TWII');
   const sc = spx.map(r => r.c), vc = vix.map(r => r.c), tc = twii.map(r => r.c), soxc = sox ? sox.map(r => r.c) : null;
   // HY OAS（FRED CSV）
-  let oas = null; try { const r = await get('https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2'); if (r.s === 200 && /DATE|observation_date/i.test(r.t.slice(0, 40))) { oas = r.t.trim().split('\n').slice(1).map(l => l.split(',')).filter(x => x[1] !== '.').map(x => ({ d: x[0], v: parseFloat(x[1]) * 100 })); } } catch (e) {}
+  let oas = null;
+  // FRED API key：process.env.FRED_API_KEY 或 repo 根目錄 .env（gitignored；家裡電腦也放一份）
+  let KEY = process.env.FRED_API_KEY; if (!KEY) { try { const env = require('fs').readFileSync(require('path').resolve(__dirname, '..', '.env'), 'utf8'); const m = env.match(/^FRED_API_KEY=(.+)$/m); if (m) KEY = m[1].trim(); } catch (e) {} }
+  if (KEY) { try { const j = await json(`https://api.stlouisfed.org/fred/series/observations?series_id=BAMLH0A0HYM2&api_key=${KEY}&file_type=json&sort_order=asc&observation_start=2025-01-01`); if (j && j.observations) oas = j.observations.filter(x => x.value !== '.').map(x => ({ d: x.date, v: parseFloat(x.value) * 100 })); } catch (e) {} }
+  if (!oas) { try { const r = await get('https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2'); if (r.s === 200 && /DATE|observation_date/i.test(r.t.slice(0, 40))) { oas = r.t.trim().split('\n').slice(1).map(l => l.split(',')).filter(x => x[1] !== '.').map(x => ({ d: x[0], v: parseFloat(x[1]) * 100 })); } } catch (e) {} }
+  if (!oas) console.log(`(FRED OAS 未取得${KEY ? '' : '：無 FRED_API_KEY，見 .env.example'}＝信用項用 HYG/LQD 備援)`);
   const build = (off) => {
     const it = [];
     it.push(trendItem('S&P', sc, off));
