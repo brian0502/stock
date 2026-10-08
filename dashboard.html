@@ -15,6 +15,8 @@
 </header>
 
 <!-- 🎯 行動總表（2026-08-11 用戶要求置頂：建議進場價/停損價一眼可見；資料在 data.js actionBoard） -->
+<!-- 🧭 v6 市況判定（data.js regime） -->
+<div id="regimeCard" style="margin-bottom:16px"></div>
 <div id="actionBoard" style="margin-bottom:16px"></div>
 
 <!-- 總損益 -->
@@ -22,7 +24,7 @@
 
 <!-- 最後更新摘要（可收合，不擠壓總損益） -->
 <details class="last-updated-box">
-  <summary>📌 最後更新摘要 · 2026-07-14 深夜（✅ CPI 3.5% 大幅偏軟過關＝通膨🟠→🟡〔MoM −0.4% 為 2020/4 以來最大跌幅・7 月升息機率 42%→17%〕・🚨 地緣🔴 制度化惡化＝凍結延續：7/12 伊朗宣布關閉荷莫茲＋7/13 WTI 單日 +9.4%＝門檻本輪首次觸及＋川普重啟封鎖 20% 過路費＋7/14 美軍海上封鎖生效〔WTI $78.95 未達 $100〕｜🇺🇸 GOOGL 主案觸發失效（7/9 收 358.89<360 連 3 日）＝重置等收盤站回 $360・VOO 觸發持續有效（三日全守 $683）唯地緣擋・NVDA 守 $200 收盤 4 連守＝解凍後優先・AAPL 7/13 盤中 $323.45 創高未收上＝未確認・🛰️ SPCX 今日買進評估＝❌ 不買（7/13 帶量破底 $136.78 上市首次收破 $140・7/16 Starship Flight 13 二元事件・8 月財報後解禁 20%）｜🇹🇼 7/10 颱風休市・7/14 收 44,737.95（−1.42%）破 45,000＝止穩失敗觸發重置（盤中 −1,726 點史上第 6 大盤中跌點・低 43,654 尾盤回血千點）・外資連 8 賣 8 日 −4,037 億 vs 投信連 9 買・投信賣超 #2＝00981A −10,960（主動 ETF 負訊號）＋被動全面翻賣・英業達 63.7 跌穿觸發區＝剔除候選（外資 −20,737 集中倒）・台勝科除息秒填息漲停/南亞科 +5.9% 天量＝噴出不追・台積電 6 月營收 4,426.8 億連 2 月新高、7/16 法說（傳 capex 上修 $750-800 億美元）前不進｜EP678：Meta 算力出租＝本夢比透明化・光通訊輪動｜雙帳戶 100% 現金 NT$534,435＋$23,518.18〔GOOGL 限價單待回報〕）</summary>
+  <summary>📌 最後更新摘要（點開看本次與歷史摘要）</summary>
   <div class="mono" style="padding:10px 14px 0;color:#94a3b8;font-size:12px">（更早的更新摘要已歸檔→archive/history-trim-2026-08-19.md）</div>
   <div class="mono" id="lastUpdated">2026-10-08 週四・🧭 v6 首次完整跑（台股 10/8 收盤定稿・美股 10/7 收盤＋10/8 期貨・台灣 18:30）＝<b>市況判定：🇺🇸 防守 −1〔信用 HY OAS 20 日 +36bp −2・廣度 −1・趨勢 +2〕／🇹🇼 防守 0〔趨勢 +2・SOX +1・信用 −2・外資期貨淨空 −1〕＝台美本次不建議進場</b>；候選（產生器）聚陽 194.7／台化 69.5／台汽電突破 61.0、PBR 21.43＝檔位 ≥中性才掛；舊五檔移位階表；台股 10/9-10/11 休市；Brent 104.4／VIX 15.7；EP704 未上架；USDTWD 31.93</div>
 </details>
@@ -34,6 +36,8 @@
 <div id="defenseTable"></div>
 <div id="etfClassCard" style="margin-top:16px"></div>
 <div id="observeAlert" style="margin-top:16px"></div>
+<!-- 📊 v6 計分板（scorecard.json） -->
+<div id="scorecardCard" style="margin-top:16px"></div>
 
 <!-- 行事曆 -->
 <div class="cal-section">

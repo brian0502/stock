@@ -19,7 +19,7 @@ function renderNav() {
   var pages = [
     { key: 'dashboard',    href: 'dashboard.html',    label: '📊 總覽' },
     { key: 'holdings',     href: 'holdings.html',     label: '💼 持股' },
-    { key: 'watchlist',    href: 'watchlist.html',    label: '🎯 觀察清單' },
+    { key: 'watchlist',    href: 'watchlist.html',    label: '📍 位階表' },
     { key: 'themes',       href: 'themes.html',       label: '🚀 族群追蹤' },
     { key: 'transactions', href: 'transactions.html', label: '📋 交易' },
     { key: 'timeline',     href: 'timeline.html',     label: '🔄 時間軸' },
@@ -37,7 +37,7 @@ renderNav();
 // ===== 🎯 行動總表（2026-08-11 用戶要求：建議進場價/停損價置頂一眼可見） =====
 function renderActionBoard() {
   if (typeof actionBoard === 'undefined' || !actionBoard.rows || !actionBoard.rows.length) return;
-  const actColor = { '✅':'#10b981', '⏳':'#fbbf24', '❌':'#64748b' };
+  const actColor = { '✅':'#10b981', '⏳':'#fbbf24', '❌':'#64748b', '🟠':'#fb923c', '📍':'#7dd3fc', '🧭':'#38bdf8' };
   const flag = { US:'🇺🇸', TW:'🇹🇼' };
   let lastGrp = '';
   const rows = [];
@@ -45,7 +45,7 @@ function renderActionBoard() {
     if (r.grp !== lastGrp) {
       lastGrp = r.grp;
       rows.push('<tr><td colspan="6" style="background:rgba(56,189,248,.08);font-weight:700;color:#7dd3fc;padding:6px 12px">'
-        + flag[r.grp] + ' ' + (r.grp === 'US' ? '美股（今晚）' : '台股（明日開盤）') + '</td></tr>');
+        + flag[r.grp] + ' ' + (r.grp === 'US' ? '美股（今晚）' : '台股（下一交易日）') + '</td></tr>');
     }
     const c = actColor[r.act] || '#94a3b8';
     rows.push('<tr>'
@@ -69,6 +69,56 @@ function renderActionBoard() {
   document.getElementById('actionBoard').innerHTML = html;
 }
 renderActionBoard();
+
+// ===== 🧭 v6 市況判定卡片（data.js regime） =====
+function renderRegime() {
+  if (typeof regime === 'undefined') return;
+  const col = m => {
+    const g = regime[m]; if (!g) return '';
+    const flag = m === 'US' ? '🇺🇸 美股' : '🇹🇼 台股';
+    const gc = g.score >= 4 ? '#10b981' : g.score >= 1 ? '#fbbf24' : '#fb923c';
+    const rows = g.items.map(it => '<tr><td style="text-align:left;font-weight:500;color:#cbd5e1">' + it[0] + '</td><td style="text-align:left;color:#94a3b8;font-size:11.5px">' + it[1] + '</td><td style="font-weight:700;color:' + (it[2] > 0 ? '#10b981' : it[2] < 0 ? '#f87171' : '#64748b') + '">' + (it[2] > 0 ? '+' : '') + it[2] + '</td></tr>').join('');
+    return '<div style="flex:1;min-width:300px"><div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px"><b style="font-size:14px">' + flag + '</b><span style="font-size:20px;font-weight:800;color:' + gc + '">' + g.grade + '</span><span style="font-family:JetBrains Mono,monospace;color:' + gc + '">' + (g.score > 0 ? '+' : '') + g.score + ' 分</span><span style="font-size:11px;color:#94a3b8">' + g.confirmed + '</span></div>'
+      + '<table class="def-table" style="font-size:12px"><thead><tr><th style="text-align:left">項目</th><th style="text-align:left">數據</th><th>分</th></tr></thead><tbody>' + rows + '</tbody></table>'
+      + '<div style="margin-top:6px;font-size:11.5px;color:#fbbf24">🔓 解除門檻：' + g.release + '</div></div>';
+  };
+  document.getElementById('regimeCard').innerHTML = '<div class="def-card" style="border:1px solid rgba(251,146,60,.4)"><div class="def-header" style="font-size:15px">🧭 第 0 層 市況判定（v6）<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400;text-transform:none">' + regime.asof + '</span></div>'
+    + '<div style="display:flex;gap:18px;flex-wrap:wrap">' + col('US') + col('TW') + '</div>'
+    + '<div style="margin-top:10px;font-size:11px;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15);padding-top:8px">' + regime.rule + '</div></div>';
+}
+renderRegime();
+
+// ===== 📍 位階表（data.js levels） =====
+function renderLevels() {
+  if (typeof levels === 'undefined' || !levels.length) return;
+  const f = (x, d) => x == null ? '—' : Number(x).toLocaleString('en-US', { maximumFractionDigits: d == null ? 2 : d });
+  let last = ''; const rows = [];
+  levels.forEach(r => {
+    if (r.mkt !== last) { last = r.mkt; rows.push('<tr><td colspan="10" style="background:rgba(56,189,248,.08);font-weight:700;color:#7dd3fc;padding:6px 12px">' + (r.mkt === 'US' ? '🇺🇸 美股' : '🇹🇼 台股') + '</td></tr>'); }
+    const pc = r.pos.indexOf('空頭') >= 0 || r.pos.indexOf('破') >= 0 ? '#f87171' : r.pos.indexOf('噴') >= 0 ? '#fbbf24' : '#10b981';
+    rows.push('<tr><td style="white-space:nowrap"><b>' + r.sym + '</b><span style="font-size:11px;color:#94a3b8;margin-left:6px">' + r.name + '</span></td>'
+      + '<td>' + f(r.px) + '<span style="font-size:10px;color:#64748b"> ' + r.d + '</span></td>'
+      + '<td style="font-size:11.5px">' + f(r.ma5, 1) + ' / ' + f(r.ma20, 1) + ' / ' + f(r.ma60, 1) + '</td>'
+      + '<td>' + f(r.atr, 1) + '<span style="font-size:10px;color:#64748b"> (' + f(r.atrN, 1) + 'x)</span></td>'
+      + '<td style="color:#38bdf8;font-weight:700">' + f(r.brk) + '</td><td style="color:#38bdf8;font-weight:700">' + f(r.pull) + '</td>'
+      + '<td style="color:#f87171;font-weight:700">' + f(r.stop) + (r.stopPct == null ? '' : '<span style="font-size:10px"> (' + f(r.stopPct, 1) + '%)</span>') + '</td>'
+      + '<td>' + (r.r5 > 0 ? '+' : '') + f(r.r5, 1) + '%</td><td style="color:' + pc + ';font-weight:600;white-space:nowrap">' + r.pos + '</td>'
+      + '<td style="font-size:11px;color:#94a3b8;text-align:left;min-width:160px">' + r.note + '</td></tr>');
+  });
+  document.getElementById('levelsTable').innerHTML = '<div class="def-card"><div class="def-header">📍 位階表（權值股／舊 watchlist／候選・不佔候選席次）<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400;text-transform:none">藍＝突破單 / 回測單・紅＝停損（max(10 日低, −2 ATR)）</span></div><div style="overflow-x:auto"><table class="def-table"><thead><tr><th>標的</th><th>收</th><th>MA5/20/60</th><th>ATR(距MA20)</th><th>突破單</th><th>回測單</th><th>停損</th><th>5日</th><th>位階</th><th style="text-align:left">備註</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div></div>';
+}
+renderLevels();
+
+// ===== 📊 計分板（scorecard.json・fetch） =====
+function renderScorecard() {
+  const el = document.getElementById('scorecardCard'); if (!el || el === undefined) return;
+  fetch('scorecard.json?t=' + Date.now()).then(r => r.json()).then(sc => {
+    const f = x => x == null ? '—' : x;
+    const rows = sc.picks.slice().reverse().slice(0, 25).map(p => { const r = p.result || {}; const rc = r.R == null ? '#94a3b8' : r.R > 0 ? '#10b981' : '#f87171'; return '<tr><td style="white-space:nowrap">' + p.date + '</td><td>' + (p.kind || 'pick') + '</td><td>' + p.market + '</td><td style="text-align:left"><b>' + p.symbol + '</b> <span style="font-size:11px;color:#94a3b8">' + (p.name || '') + '</span></td><td>' + f(p.type) + '</td><td>' + f(p.entry) + '</td><td style="color:#f87171">' + f(p.stop) + '</td><td style="font-size:11px">' + f(p.regime) + '</td><td>' + (r.filled == null ? '—' : r.filled ? '✅' : '未') + '</td><td>' + f(r.t5) + '</td><td>' + f(r.t20) + '</td><td style="font-weight:700;color:' + rc + '">' + f(r.R) + '</td><td style="font-size:11px;color:#94a3b8;text-align:left">' + (p.note || p.source || '') + '</td></tr>'; }).join('');
+    el.innerHTML = '<div class="def-card"><div class="def-header">📊 計分板（scorecard.json）<span style="margin-left:auto;font-size:11px;color:#fbbf24;font-weight:400;text-transform:none">' + ((sc.summary && sc.summary.line) || '尚無摘要') + '</span></div><div style="overflow-x:auto"><table class="def-table" style="font-size:12px"><thead><tr><th>日期</th><th>類</th><th>市</th><th style="text-align:left">標的</th><th>型</th><th>進場</th><th>停損</th><th>市況</th><th>成交</th><th>T+5</th><th>T+20</th><th>R</th><th style="text-align:left">備註</th></tr></thead><tbody>' + rows + '</tbody></table></div><div style="margin-top:6px;font-size:11px;color:#94a3b8">kind：pick＝入選建議／excluded＝影子（未掛，追蹤假想 R）／no_entry＝不進場判定。≥50 筆配對後才改參數。</div></div>';
+  }).catch(() => { el.innerHTML = ''; });
+}
+renderScorecard();
 
 function renderDefenseTable() {
   const rows = [];
