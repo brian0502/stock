@@ -44,25 +44,26 @@ function renderActionBoard() {
   actionBoard.rows.forEach(r => {
     if (r.grp !== lastGrp) {
       lastGrp = r.grp;
-      rows.push('<tr><td colspan="6" style="background:rgba(56,189,248,.08);font-weight:700;color:#7dd3fc;padding:6px 12px">'
-        + flag[r.grp] + ' ' + (r.grp === 'US' ? '美股（今晚）' : '台股（下一交易日）') + '</td></tr>');
+      rows.push('<tr><td colspan="7" style="background:rgba(56,189,248,.08);font-weight:700;color:#7dd3fc;padding:6px 12px">'
+        + flag[r.grp] + ' ' + (r.grp === 'US' ? '美股（今晚 21:30 開盤・23:00 settle 後掛）' : '台股（10/12 開盤掛）') + '</td></tr>');
     }
     const c = actColor[r.act] || '#94a3b8';
     rows.push('<tr>'
       + '<td style="white-space:nowrap"><b>' + r.sym + '</b><span style="font-size:11px;color:#94a3b8;margin-left:6px">' + r.name + '</span></td>'
       + '<td style="white-space:nowrap"><span style="color:' + c + ';font-weight:700">' + r.act + ' ' + r.actTxt + '</span></td>'
       + '<td style="font-family:\'JetBrains Mono\',monospace;font-size:15px;font-weight:700;color:#38bdf8">' + r.entry + '</td>'
-      + '<td style="font-size:12px;color:#cbd5e1;white-space:nowrap">' + r.size + '</td>'
       + '<td style="font-family:\'JetBrains Mono\',monospace;font-size:15px;font-weight:700;color:#f87171">' + r.stop + '</td>'
-      + '<td style="font-size:11.5px;color:#94a3b8;min-width:220px">' + r.cond + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1;white-space:nowrap">' + r.size + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1;white-space:nowrap">' + (r.amt || '') + '</td>'
+      + '<td style="font-size:11.5px;color:#94a3b8;min-width:260px;text-align:left">' + r.cond + '</td>'
       + '</tr>');
   });
   const html = '<div class="def-card" style="border:1px solid rgba(56,189,248,.45);box-shadow:0 0 18px rgba(56,189,248,.12)">'
-    + '<div class="def-header" style="font-size:16px"><span class="pulse"></span>🎯 行動總表'
-    + '<span style="margin-left:10px;font-size:12px;color:#38bdf8;font-weight:600">藍字＝建議進場價 · 紅字＝停損價</span>'
+    + '<div class="def-header" style="font-size:16px"><span class="pulse"></span>🎯 可掛買單'
+    + '<span style="margin-left:10px;font-size:12px;color:#38bdf8;font-weight:600">藍＝買價 · 紅＝防守價 · 你拍板</span>'
     + '<span style="margin-left:auto;font-size:11px;color:#94a3b8;font-weight:400">更新 ' + actionBoard.updated + '</span></div>'
     + '<div style="overflow-x:auto"><table class="def-table"><thead><tr>'
-    + '<th>標的</th><th>動作</th><th style="color:#38bdf8">進場價</th><th>股數/金額</th><th style="color:#f87171">停損</th><th>一句話條件</th>'
+    + '<th>標的</th><th>動作</th><th style="color:#38bdf8">買價</th><th style="color:#f87171">防守價</th><th>股數</th><th>金額</th><th style="text-align:left">為什麼是它</th>'
     + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'
     + (actionBoard.note ? '<div style="padding:8px 14px;font-size:12px;color:#fbbf24;border-top:1px solid rgba(148,163,184,.15)">📌 ' + actionBoard.note + '</div>' : '')
     + '</div>';
