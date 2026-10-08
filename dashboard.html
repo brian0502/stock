@@ -12,38 +12,68 @@
 
 <header>
   <h1>📊 投資組合 Dashboard</h1>
+  <div style="font-size:12px;color:var(--text-dim)">v6・資料為手動快照，即時價以 Yahoo 為準</div>
 </header>
 
-<!-- 🎯 行動總表（2026-08-11 用戶要求置頂：建議進場價/停損價一眼可見；資料在 data.js actionBoard） -->
-<!-- 🧭 v6 市況判定（data.js regime） -->
-<div id="regimeCard" style="margin-bottom:16px"></div>
-<div id="actionBoard" style="margin-bottom:16px"></div>
-
-<!-- 總損益 -->
+<!-- ① 總金額（最上方） -->
 <div class="hero" id="heroSection"></div>
 
-<!-- 最後更新摘要（可收合，不擠壓總損益） -->
-<details class="last-updated-box">
-  <summary>📌 最後更新摘要（點開看本次與歷史摘要）</summary>
-  <div class="mono" style="padding:10px 14px 0;color:#94a3b8;font-size:12px">（更早的更新摘要已歸檔→archive/history-trim-2026-08-19.md）</div>
-  <div class="mono" id="lastUpdated">2026-10-08 週四・🧭 v6 首次完整跑（台股 10/8 收盤定稿・美股 10/7 收盤＋10/8 期貨・台灣 18:30）＝<b>市況判定：🇺🇸 防守 −1〔信用 HY OAS 20 日 +36bp −2・廣度 −1・趨勢 +2〕／🇹🇼 防守 0〔趨勢 +2・SOX +1・信用 −2・外資期貨淨空 −1〕＝台美本次不建議進場</b>；候選（產生器）聚陽 194.7／台化 69.5／台汽電突破 61.0、PBR 21.43＝檔位 ≥中性才掛；舊五檔移位階表；台股 10/9-10/11 休市；Brent 104.4／VIX 15.7；EP704 未上架；USDTWD 31.93</div>
-</details>
+<div class="dash-layout">
+  <main class="dash-main">
 
-<!-- 資料說明（精簡） -->
-<div class="data-caveat">⚠️ 現價／市值／損益為手動更新快照，非即時報價 —— 即時價一律以 Yahoo 為準（<a href="https://finance.yahoo.com/quote/NVDA/" target="_blank">NVDA</a> · <a href="https://finance.yahoo.com/quote/VOO/" target="_blank">VOO</a> · <a href="https://tw.stock.yahoo.com/quote/009816" target="_blank">009816</a>）。持倉數字為重建版，待券商截圖驗證（見 DATA_INTEGRITY_WARNING.md）。</div>
+    <!-- ② 此次建議 -->
+    <div class="dash-section-title">📌 此次建議</div>
+    <div id="actionBoard" style="margin-bottom:12px"></div>
+    <details class="dash-fold" open>
+      <summary>🧭 市況判定（決定我推不推、不決定給不給清單）</summary>
+      <div id="regimeCard" style="margin-top:10px"></div>
+    </details>
 
-<!-- 監控 -->
-<div id="defenseTable"></div>
-<div id="etfClassCard" style="margin-top:16px"></div>
-<div id="observeAlert" style="margin-top:16px"></div>
-<!-- 📊 v6 計分板（scorecard.json） -->
-<div id="scorecardCard" style="margin-top:16px"></div>
+    <!-- ③ 當前庫存 -->
+    <div class="dash-section-title" style="margin-top:22px">💼 當前庫存</div>
+    <div class="market-section" style="margin-bottom:14px">
+      <div class="market-header"><h2>🇹🇼 台股</h2><span class="mh-badge mh-tw">TWSE</span></div>
+      <div class="summary-grid" id="twSummary"></div>
+      <div class="table-container">
+        <table><thead><tr><th>標的</th><th>持股</th><th style="text-align:right">均價</th><th style="text-align:right">現價</th><th style="text-align:right">市值</th><th style="text-align:right">損益</th><th>佔比</th></tr></thead>
+        <tbody id="twTableBody"></tbody></table>
+      </div>
+    </div>
+    <div class="market-section" style="margin-bottom:14px">
+      <div class="market-header"><h2>🇺🇸 美股</h2><span class="mh-badge mh-us">US</span></div>
+      <div class="summary-grid" id="usSummary"></div>
+      <div class="table-container">
+        <table><thead><tr><th>標的</th><th>持股</th><th style="text-align:right">均價</th><th style="text-align:right">現價</th><th style="text-align:right">市值</th><th style="text-align:right">損益</th><th>佔比</th></tr></thead>
+        <tbody id="usTableBody"></tbody></table>
+      </div>
+    </div>
+    <details class="dash-fold">
+      <summary>🛡️ 停損監控／ETF 分類／觀察警示（有部位時展開）</summary>
+      <div id="defenseTable" style="margin-top:10px"></div>
+      <div id="etfClassCard" style="margin-top:12px"></div>
+      <div id="observeAlert" style="margin-top:12px"></div>
+    </details>
 
-<!-- 行事曆 -->
-<div class="cal-section">
-  <div class="section-title" style="margin-bottom:12px">📅 重大行事曆</div>
-  <div id="calTabs" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px"></div>
-  <div class="cal-grid" id="calGrid"></div>
+    <!-- ④ 計分板 -->
+    <div class="dash-section-title" style="margin-top:22px">📊 計分板</div>
+    <div id="scorecardCard"></div>
+
+    <!-- ⑤ 更新摘要 -->
+    <details class="last-updated-box" style="margin-top:22px">
+      <summary>📌 最後更新摘要（點開看本次與歷史摘要）</summary>
+      <div class="mono" style="padding:10px 14px 0;color:#94a3b8;font-size:12px">（更早的更新摘要已歸檔→archive/history-trim-2026-08-19.md）</div>
+      <div class="mono" id="lastUpdated">2026-10-08 週四・🧭 v6 首次完整跑（台股 10/8 收盤定稿・美股 10/7 收盤＋10/8 期貨・台灣 18:30）＝<b>市況判定：🇺🇸 防守 −1〔信用 HY OAS 20 日 +36bp −2・廣度 −1・趨勢 +2〕／🇹🇼 防守 0〔趨勢 +2・SOX +1・信用 −2・外資期貨淨空 −1〕＝台美本次不建議進場</b>；候選（產生器）聚陽 194.7／台化 69.5／台汽電突破 61.0、PBR 21.43＝檔位 ≥中性才掛；舊五檔移位階表；台股 10/9-10/11 休市；Brent 104.4／VIX 15.7；EP704 未上架；USDTWD 31.93</div>
+    </details>
+  </main>
+
+  <!-- 右側：行事曆（可收合） -->
+  <aside class="dash-aside">
+    <details class="dash-fold cal-fold" open>
+      <summary>📅 重大行事曆（點擊收合）</summary>
+      <div id="calTabs" style="display:flex;flex-wrap:wrap;gap:6px;margin:10px 0"></div>
+      <div class="cal-grid" id="calGrid"></div>
+    </details>
+  </aside>
 </div>
 
 <div class="footer-note">⚠️ 本頁面僅供個人投資追蹤，不構成投資建議。現價為手動更新，非即時報價。</div>
