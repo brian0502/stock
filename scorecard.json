@@ -1,0 +1,13 @@
+{
+  "_doc": "v6 計分板（規則 §6）。kind=pick（入選建議）/excluded（被剔除前 5 的影子）/no_entry（不進場判定）。type=breakout/pullback。entry/stop=建議價；effective=生效交易日（台股連假後）；regime=當時檔位；source=產生層。由 tools/score.js 自動補 result。≥50 筆配對後才改參數。",
+  "picks": [
+    { "id": "P001", "date": "2026-10-08", "effective": "2026-10-12", "kind": "pick", "market": "TW", "symbol": "3661", "name": "世芯-KY", "type": "pullback", "entry": 4200, "stop": 3990, "regime": "v5舊框架", "source": "投信連3+分點", "note": "v6 前最後一批舊框架建議，作為基準對照" },
+    { "id": "P002", "date": "2026-10-08", "effective": "2026-10-12", "kind": "pick", "market": "TW", "symbol": "2383", "name": "台光電", "type": "pullback", "entry": 5850, "stop": 5450, "regime": "v5舊框架", "source": "回測條件成立" },
+    { "id": "P003", "date": "2026-10-08", "effective": "2026-10-12", "kind": "pick", "market": "TW", "symbol": "2308", "name": "台達電", "type": "pullback", "entry": 1950, "stop": 1895, "regime": "v5舊框架", "source": "投信連3" },
+    { "id": "P004", "date": "2026-10-08", "effective": "2026-10-12", "kind": "pick", "market": "TW", "symbol": "2330", "name": "台積電", "type": "pullback", "entry": 2530, "stop": 2460, "regime": "v5舊框架", "source": "權值必列" },
+    { "id": "P005", "date": "2026-10-08", "effective": "2026-10-12", "kind": "pick", "market": "TW", "symbol": "0050", "name": "元大台灣50", "type": "pullback", "entry": 114.2, "stop": 111.2, "regime": "v5舊框架", "source": "模式B" },
+    { "id": "P006", "date": "2026-10-08", "effective": "2026-10-08", "kind": "pick", "market": "US", "symbol": "NVDA", "name": "NVIDIA", "type": "pullback", "entry": 234, "stop": 224, "regime": "v5舊框架", "source": "舊watchlist" },
+    { "id": "P007", "date": "2026-10-08", "effective": "2026-10-08", "kind": "pick", "market": "US", "symbol": "VOO", "name": "VOO", "type": "pullback", "entry": 708, "stop": 680, "regime": "v5舊框架", "source": "模式A（停損僅供計分，不實掛）" }
+  ],
+  "summary": {}
+}
