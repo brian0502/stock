@@ -276,7 +276,7 @@ Push 完成後 Pages 約 **1 分鐘**自動重建。收尾流程：
 1. **市況**：`node tools/regime.js`（台指期夜盤／外資期貨口數手動 --night/--fut 帶入）。檔位決定一切：進攻 0–5 檔可 ✅／中性 0–3 檔／防守·空手＝不進場＋列扣分項與解除門檻。換檔連 2 收盤確認。
 2. **族群熱度**：`node tools/scan_us.js 3 12`、`node tools/scan_tw.js YYYYMMDD 3 2`。候選 ≥3 檔必須來自腳本；每族群 ≤2 檔；舊 watchlist 與權值股放「位階表」。
 3. **敘事**：研究子代理一題全包（宏觀＋5 個小作文＋階段＋股癌）。不加分；「已急轉」只准回測單。
-4. **候選**：每檔 1 突破價＋1 回測價＋1 停損＋股數；前 2 檔跑 `tools/branch.js`。
+4. **候選（v6.1 三軌）**：`node tools/revenue_tw.js`（月營收存檔）＋`node tools/fund_us.js <美股候選>`＋`node tools/tracks.js --tw-short=… --tw-mid=… --tw-long=… --us-short=… --us-mid=… --us-long=… --acct-tw=… --acct-us=… --grade-tw=… --grade-us=…` → 只列 ✅；短線候選來自 scan_*，中長線候選來自 revenue_tw／fund_us 篩選 × 趨勢（>MA60 向上）× 族群 RS；前 2 檔跑 `tools/branch.js`。
 5. **反調**（有 ✅ 單才派）：`codex exec -m gpt-6.1-sol -c model_reasoning_effort="high" -s read-only -C <repo> "<只給數據與行動表的固定清單 prompt>"` ＋ Claude 子代理同 prompt；回應兩邊的硬門檻判定。
 6. **寫檔**：行動總表（actionBoard）＋ reports/ ＋ current_strategy 持股現況 ＋ `scorecard.json` 新增本次建議（含不進場判定）→ `node tools/score.js` → commit/push。
 7. 回覆格式不變（行動總表最前）；尾端加一行計分板。條文全文＝`reports/rules-v6-final-2026-10-08.md`。

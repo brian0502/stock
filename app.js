@@ -36,29 +36,33 @@ renderNav();
 
 // ===== 🎯 行動總表（2026-08-11 用戶要求：建議進場價/停損價置頂一眼可見） =====
 function renderActionBoard() {
-  if (typeof actionBoard === 'undefined' || !actionBoard.rows || !actionBoard.rows.length) return;
-  const actColor = { '✅':'#10b981', '⏳':'#fbbf24', '❌':'#64748b', '🟠':'#fb923c', '📍':'#7dd3fc', '🧭':'#38bdf8' };
+  if (typeof actionBoard === 'undefined') return;
   const mono = "font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;";
-  const table = (grp, title, color) => {
-    const rs = actionBoard.rows.filter(r => r.grp === grp);
-    if (!rs.length) return '<div class="def-card" style="border:1px solid ' + color + '55"><div class="def-header" style="font-size:15px">' + title + '</div><div style="color:#94a3b8;font-size:12px">本次無買單</div></div>';
-    const rows = rs.map(r => '<tr>'
-      + '<td style="white-space:nowrap"><b style="font-size:14px">' + r.sym + '</b><div style="font-size:11px;color:#94a3b8">' + r.name + '</div></td>'
-      + '<td style="white-space:nowrap;color:' + (actColor[r.act] || '#94a3b8') + ';font-weight:700">' + r.act + ' ' + r.actTxt + '</td>'
-      + '<td style="' + mono + 'color:#38bdf8">' + r.entry + '</td>'
-      + '<td style="' + mono + 'color:#f87171">' + r.stop + '</td>'
-      + '<td style="white-space:nowrap;color:#e2e8f0">' + r.size + '<div style="font-size:11px;color:#94a3b8">' + (r.amt || '') + '</div></td>'
-      + '<td style="font-size:12px;color:#cbd5e1;text-align:left;min-width:240px;line-height:1.5">' + r.cond + '</td>'
-      + '</tr>').join('');
-    return '<div class="def-card" style="border:1px solid ' + color + '66;box-shadow:0 0 14px ' + color + '22">'
-      + '<div class="def-header" style="font-size:15px">' + title + '<span style="margin-left:10px;font-size:11px;color:#38bdf8;font-weight:600;text-transform:none">藍＝買價 · 紅＝防守價 · 你拍板</span></div>'
-      + '<div style="overflow-x:auto"><table class="def-table"><thead><tr><th style="text-align:left">標的</th><th style="text-align:left">單別</th><th style="color:#38bdf8">買價</th><th style="color:#f87171">防守價</th><th>股數／金額</th><th style="text-align:left">為什麼是它</th></tr></thead><tbody>' + rows + '</tbody></table></div></div>';
+  const TN = { short: '短線（1–3 週）', mid: '中線（1–3 月）', long: '長線（6 月以上）' };
+  const TC = { short: '#fbbf24', mid: '#38bdf8', long: '#a78bfa' };
+  const card = (grp, title, color) => {
+    const rs = (actionBoard.rows || []).filter(r => r.grp === grp);
+    const empty = (actionBoard.empty || {})[grp];
+    let body = '';
+    if (!rs.length) body = '<div style="padding:10px 4px;color:#fbbf24;font-size:13px;line-height:1.7">' + (empty || '本次無建議') + '</div>';
+    else {
+      ['short', 'mid', 'long'].forEach(t => {
+        const tr = rs.filter(r => r.track === t); if (!tr.length) return;
+        body += '<div style="margin:10px 0 4px;font-weight:700;color:' + TC[t] + '">' + TN[t] + '</div>'
+          + '<div style="overflow-x:auto"><table class="def-table"><thead><tr><th style="text-align:left">標的</th><th style="color:#38bdf8">買價（限價）</th><th style="color:#f87171">防守價</th><th>股數／金額</th><th style="text-align:left;min-width:280px">推薦原因</th><th style="text-align:left">風險／持有／財報</th></tr></thead><tbody>'
+          + tr.map(r => '<tr><td style="white-space:nowrap"><b style="font-size:14px">' + r.sym + '</b><div style="font-size:11px;color:#94a3b8">' + r.name + '</div></td>'
+            + '<td style="' + mono + 'color:#38bdf8">' + r.entry + '</td><td style="' + mono + 'color:#f87171">' + r.stop + '</td>'
+            + '<td style="white-space:nowrap;color:#e2e8f0">' + r.size + '<div style="font-size:11px;color:#94a3b8">' + (r.amt || '') + '</div></td>'
+            + '<td style="font-size:12px;color:#cbd5e1;text-align:left;line-height:1.5">' + r.cond + '</td>'
+            + '<td style="font-size:11.5px;color:#94a3b8;text-align:left;line-height:1.5">' + (r.risk || '') + '</td></tr>').join('')
+          + '</tbody></table></div>';
+      });
+    }
+    return '<div class="def-card" style="border:1px solid ' + color + '66"><div class="def-header" style="font-size:15px">' + title + '<span style="margin-left:10px;font-size:11px;color:#94a3b8;font-weight:400;text-transform:none">只列現在就能買的；藍＝買價 · 紅＝防守價</span></div>' + body + '</div>';
   };
-  const html = '<div style="font-size:11px;color:#94a3b8;margin-bottom:8px">' + actionBoard.updated + '</div>'
-    + table('TW', '🇹🇼 台股買單（10/12 開盤掛）', '#38bdf8')
-    + table('US', '🇺🇸 美股買單（今晚 21:30 開盤、23:00 settle 後掛）', '#a78bfa')
+  document.getElementById('actionBoard').innerHTML = '<div style="font-size:11px;color:#94a3b8;margin-bottom:8px">' + (actionBoard.updated || '') + '</div>'
+    + card('TW', '🇹🇼 台股建議', '#38bdf8') + card('US', '🇺🇸 美股建議', '#a78bfa')
     + (actionBoard.note ? '<div style="padding:8px 2px;font-size:12px;color:#fbbf24">📌 ' + actionBoard.note + '</div>' : '');
-  document.getElementById('actionBoard').innerHTML = html;
 }
 renderActionBoard();
 

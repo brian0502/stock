@@ -84,7 +84,22 @@
       "entry": 234,
       "stop": 224,
       "regime": "v5舊框架",
-      "source": "舊watchlist"
+      "source": "舊watchlist",
+      "result": {
+        "checked": "2026-10-08",
+        "filled": true,
+        "fillDate": "2026-10-08",
+        "fill": 234,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 230.47999572753906,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.38,
+        "retPct": -1.5,
+        "final": false
+      }
     },
     {
       "id": "P007",
@@ -98,7 +113,14 @@
       "entry": 708,
       "stop": 680,
       "regime": "v5舊框架",
-      "source": "模式A（停損僅供計分，不實掛）"
+      "source": "模式A（停損僅供計分，不實掛）",
+      "result": {
+        "checked": "2026-10-08",
+        "filled": false,
+        "fillDate": null,
+        "fill": null,
+        "daysSince": 1
+      }
     },
     {
       "id": "N001",
@@ -198,7 +220,14 @@
       "stop": 20,
       "regime": "防守(−1)",
       "source": "scan_us 能源",
-      "note": "未掛單；追蹤若買了的結果"
+      "note": "未掛單；追蹤若買了的結果",
+      "result": {
+        "checked": "2026-10-08",
+        "filled": false,
+        "fillDate": null,
+        "fill": null,
+        "daysSince": 1
+      }
     },
     {
       "id": "S006",
@@ -213,7 +242,14 @@
       "stop": 55,
       "regime": "防守(−1)",
       "source": "scan_us 科技",
-      "note": "未掛單（停損 12% 超過 8% 上限）"
+      "note": "未掛單（停損 12% 超過 8% 上限）",
+      "result": {
+        "checked": "2026-10-08",
+        "filled": false,
+        "fillDate": null,
+        "fill": null,
+        "daysSince": 1
+      }
     },
     {
       "id": "S007",
@@ -228,12 +264,85 @@
       "stop": 109.4,
       "regime": "防守(−1)",
       "source": "scan_us 科技",
-      "note": "未掛單（停損超過 8% 上限）"
+      "note": "未掛單（停損超過 8% 上限）",
+      "result": {
+        "checked": "2026-10-08",
+        "filled": false,
+        "fillDate": null,
+        "fill": null,
+        "daysSince": 1
+      }
+    },
+    {
+      "id": "T001",
+      "date": "2026-10-09",
+      "effective": "2026-10-12",
+      "kind": "pick",
+      "track": "short",
+      "market": "TW",
+      "symbol": "1326",
+      "name": "台化",
+      "type": "market",
+      "entry": 78.4,
+      "stop": 72.3,
+      "regime": "中性(+1)",
+      "source": "scan_tw 塑膠 #1",
+      "note": "限價 ≤78.4；短線 15 日"
+    },
+    {
+      "id": "T002",
+      "date": "2026-10-09",
+      "effective": "2026-10-12",
+      "kind": "pick",
+      "track": "mid",
+      "market": "TW",
+      "symbol": "2408",
+      "name": "南亞科",
+      "type": "market",
+      "entry": 537.3,
+      "stop": 472.8,
+      "regime": "中性(+1)",
+      "source": "revenue_tw 記憶體",
+      "note": "限價 ≤537.3；破 MA60 連 2 日出"
+    },
+    {
+      "id": "T003",
+      "date": "2026-10-09",
+      "effective": "2026-10-12",
+      "kind": "pick",
+      "track": "long",
+      "market": "TW",
+      "symbol": "2330",
+      "name": "台積電",
+      "type": "market",
+      "entry": 2575.5,
+      "stop": 2060,
+      "regime": "中性(+1)",
+      "source": "revenue_tw 長線",
+      "note": "第 1 批 40%；災難線 −20%"
+    },
+    {
+      "id": "N003",
+      "date": "2026-10-09",
+      "kind": "no_entry",
+      "market": "US",
+      "symbol": "-",
+      "name": "美股不進場",
+      "type": "-",
+      "regime": "防守(−1)",
+      "source": "regime",
+      "note": "OAS 20 日 +38bp −2；RSP/SPY −2.7% −1；趨勢 +2"
     }
   ],
   "summary": {
-    "updated": "2026-10-08",
-    "line": "近 7 筆建議：成交 0／未成交 0、勝率 NA、平均淨 R NA（≥50 筆才改參數）",
-    "groups": {}
+    "updated": "2026-10-09",
+    "line": "近 10 筆建議：成交 1／未成交 0、勝率 0%、平均淨 R -0.38（≥50 筆才改參數）",
+    "groups": {
+      "pick/US/pullback": {
+        "n": 1,
+        "w": 0,
+        "R": -0.38
+      }
+    }
   }
 }
