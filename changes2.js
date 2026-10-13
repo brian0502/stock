@@ -1,39 +1,39 @@
-// 2026-10-12 補跑：changes.js 在 dashboard 正則處中斷（lastUpdated 內含 <b>），data.js／current_strategy 已寫入；本檔只做 dashboard／scorecard／episodes 三步
+// 2026-10-13 補正：10/9 三筆＝未掛（用戶確認）；清掉所有「若已成交／待回報」分支；寫入「隔天沒回報＝沒買」鐵律
 module.exports = function (api) {
-  const { rd, wr, repRe } = api;
+  const { rd, wr, rep } = api;
   const insertAfter = (s, marker, text) => { const a = s.indexOf(marker); if (a < 0) throw new Error('marker not found: ' + marker); return s.slice(0, a + marker.length) + text + s.slice(a + marker.length); };
 
-  // ===== dashboard.html =====
+  let d = rd('data.js');
+  d = rep(d, '＝台美建議清單皆空；10/9 三筆成交與否待回報"', '＝台美建議清單皆空；10/9 三筆未掛（用戶 10/13 確認）＝影子 S008–S010"');
+  d = rep(d, "10/9 三筆成交與否仍待回報（記零部位）：若已成交＝台化 77.8（+1.2%）守 72.3／南亞科 488（−7.2%）守 472.8＋10/14 收 <484.55 為破 MA60 Day 1、連 2 日出／台積電 2,490（−0.8%）災難 2,060、法說 10/15 前不加碼。", "10/9 三筆（台化／南亞科／台積電）10/12 判防守＝未掛（用戶 10/13 確認；隔天沒回報＝沒買）＝僅影子追蹤 S008–S010：台化 77.8（+1.2%）／南亞科 488（−7.2%）／台積電 2,490（−0.8%）。");
+  d = rep(d, '長線影子 S009（≤2,565／2,052×7）若成交 −0.8%', '長線影子 S009（≤2,565／2,052×7）未掛、影子 −0.8%');
+  d = rep(d, '若 10/12 成交 ≈−7.5%：守 472.8、10/14 收 <484.55＝破 MA60 Day 1 連 2 日出；', '影子 S008 未掛（≈−7.5%）；10/14 收 <484.55＝破 MA60 Day 1；');
+  d = rep(d, '若成交 +1.2% 守 72.3；', '影子 S010 未掛（+1.2%）；');
+  wr('data.js', d);
+
+  let c = rd('current_strategy.md');
+  c = rep(c, '零部位（10/9 三筆成交與否待回報）；Brent 105.1', '零部位（10/9 三筆未掛＝用戶 10/13 確認；隔天沒回報＝沒買）；Brent 105.1');
+  c = rep(c, '**0 股（防守＝不掛；若 10/9 長線單已成交＝災難 2,060）**', '**0 股（防守＝不掛；10/9 長線單未掛）**');
+  c = rep(c, '法說 10/15 14:00 前不開不加碼；影子 S009 若成交 −0.8%', '法說 10/15 14:00 前不開；影子 S009 未掛（−0.8%）');
+  c = rep(c, '**NT$534,435（全額・零部位；10/9 三筆成交與否待回報）**', '**NT$534,435（全額・零部位；10/9 三筆未掛）**');
+  c = rep(c, '10/9 三筆若成交＝台化 77.8 守 72.3／南亞科 488 守 472.8＋收 <484.55 連 2 日出／台積電 2,490 災難 2,060；', '10/9 三筆未掛（用戶 10/13 確認）＝影子 S008–S010：台化 77.8／南亞科 488／台積電 2,490；');
+  c = insertAfter(c, '回覆只報「已寫入並 push」。\n', '> **🧾 回報鐵律（2026-10-13 用戶定案）**：建議掛單後，**用戶隔天沒回報＝沒買＝記零部位**；禁止寫「若已成交／成交者…」雙分支、禁止「請回報」催報、禁止重複問。前次判防守＝不掛的單，本次直接當未掛。\n');
+  wr('current_strategy.md', c);
+
   let h = rd('dashboard.html');
-  h = repRe(h, /(<div class="mono" id="lastUpdated">)[\s\S]*?(<\/div>)/, (m, a, b) => a + '2026-10-12 週一・🧭 v6.1 第 2 次（台股 10/12 收盤・美股 10/9 收盤）＝<b>🇹🇼 防守 0</b>（官方外資期貨淨空 −82,806 口補入）／<b>🇺🇸 防守 −1</b>＝建議清單皆空；10/9 三筆若成交＝守 72.3／472.8／2,060' + b);
+  h = rep(h, '10/9 三筆若成交＝守 72.3／472.8／2,060（南亞科收 <484.55 連 2 日出）；', '10/9 三筆未掛＝影子追蹤；');
   wr('dashboard.html', h);
 
-  // ===== scorecard.json =====
-  const sc = JSON.parse(rd('scorecard.json'));
-  if (sc.picks.some(p => p.id === 'N004')) throw new Error('scorecard 已含 N004，勿重複');
-  for (const p of sc.picks) { if (['T001', 'T002', 'T003'].includes(p.id)) p.note = (p.note || '') + '｜10/12 官方外資期貨 −82,806 口補入＝台股 0 防守＝10/9 中性未經連 2 確認；若未掛＝視同影子'; }
-  const add = (o) => sc.picks.push(o);
-  add({ id: 'N004', date: '2026-10-12', kind: 'no_entry', market: 'TW', symbol: '-', name: '台股不進場', type: '-', regime: '防守(0)', source: 'regime', note: '外資 TX 淨空 −82,806 口 −1；OAS +45bp −2；趨勢 +2；SOX +1；廣度 48.5%' });
-  add({ id: 'N005', date: '2026-10-12', kind: 'no_entry', market: 'US', symbol: '-', name: '美股不進場', type: '-', regime: '防守(−1)', source: 'regime', note: 'OAS 3.15% +45bp −2；RSP/SPY −2.7% −1；趨勢 +2（10/8、10/9 連 2 日）' });
-  add({ id: 'S008', date: '2026-10-12', effective: '2026-10-13', kind: 'excluded', track: 'mid', market: 'TW', symbol: '2408', name: '南亞科', type: 'market', entry: 532.27, stop: 472.61, regime: '防守(0)', source: 'tracks 中線 ✅', note: '檔位 0 未掛；法說毛利 85.7% 利多不漲' });
-  add({ id: 'S009', date: '2026-10-12', effective: '2026-10-13', kind: 'excluded', track: 'long', market: 'TW', symbol: '2330', name: '台積電', type: 'market', entry: 2565.4, stop: 2052.32, regime: '防守(0)', source: 'tracks 長線 ✅', note: '檔位 0 未掛；法說 10/15' });
-  add({ id: 'S010', date: '2026-10-12', effective: '2026-10-13', kind: 'excluded', track: 'short', market: 'TW', symbol: '1326', name: '台化', type: 'market', entry: 77.57, stop: 71.58, regime: '防守(0)', source: 'tracks 短線 ✅', note: '檔位 0 未掛；分點外資淨賣 −5,555、塑膠族群熱度第 5' });
-  add({ id: 'S011', date: '2026-10-12', effective: '2026-10-12', kind: 'excluded', track: 'short', market: 'US', symbol: 'TEAM', name: 'Atlassian', type: 'market', entry: 208.86, stop: 191.56, regime: '防守(−1)', source: 'scan_us 軟體 #2', note: '檔位 −1 未掛' });
-  add({ id: 'S012', date: '2026-10-12', effective: '2026-10-12', kind: 'excluded', track: 'short', market: 'US', symbol: 'DDOG', name: 'Datadog', type: 'market', entry: 296.19, stop: 273.08, regime: '防守(−1)', source: 'scan_us 軟體', note: '檔位 −1 未掛；乖離 2.9 ATR 減半' });
-  add({ id: 'S013', date: '2026-10-12', effective: '2026-10-12', kind: 'excluded', track: 'mid', market: 'US', symbol: 'HPE', name: 'HPE', type: 'market', entry: 74.19, stop: 65.29, regime: '防守(−1)', source: 'fund_us 中線 ✅', note: '檔位 −1 未掛' });
-  add({ id: 'S014', date: '2026-10-12', effective: '2026-10-12', kind: 'excluded', track: 'mid', market: 'US', symbol: 'DELL', name: 'Dell', type: 'market', entry: 591.92, stop: 520.89, regime: '防守(−1)', source: 'fund_us 中線 ✅', note: '檔位 −1 未掛' });
-  add({ id: 'S015', date: '2026-10-12', effective: '2026-10-12', kind: 'excluded', track: 'long', market: 'US', symbol: 'NVDA', name: 'NVIDIA', type: 'market', entry: 231.57, stop: 185.26, regime: '防守(−1)', source: 'fund_us 長線 ✅', note: '檔位 −1 未掛' });
-  wr('scorecard.json', JSON.stringify(sc, null, 2) + '\n');
+  let r = rd('reports/2026-10-13.md');
+  r = rep(r, '零部位（10/9 三筆成交與否仍待回報＝記零部位）', '零部位（10/9 三筆未掛＝用戶 10/13 確認）');
+  r = rep(r, '| （若 10/9 長線單已成交：災難 2,060） |', '| — |');
+  r = rep(r, '| （若已成交：472.8；10/14 收 <484.55＝破 MA60 Day 1、連 2 日出） |', '| — |');
+  r = rep(r, '| （若已成交：72.3） |', '| — |');
+  r = rep(r, '1. 10/9 三筆（台化／南亞科／台積電）若有成交請回報；成交者確認 GTC 市價停損 72.3／472.8／2,060 已掛。南亞科 10/14 收盤 <484.55 為破 MA60 第 1 日，連 2 日即出。', '1. 10/9 三筆（台化／南亞科／台積電）10/12 判防守＝未掛＝零部位，僅影子追蹤 S008–S010。');
+  r = rep(r, '10/9 三筆若已成交請回報，依上表停損管理、不因降檔減碼。', '10/9 三筆未掛（用戶 10/13 確認），影子追蹤 S008–S010。');
+  wr('reports/2026-10-13.md', r);
 
-  // ===== 股癌 episodes-read.md =====
-  let e = rd('skills/podcast-tracker/episodes-read.md');
-  e = repRe(e, /^\*\*最新已分析集數\*\*：.*$/m, () => '**最新已分析集數**：**EP704（10/10 上架・50 分「紐西蘭夫妻要幸福唷」）10/12 研究子代理單源初讀 ✅（pathfindernote substack／vocus 癌粉筆記；待補源）**；EP703～EP696 單源初讀（待三源定稿）');
-  e = repRe(e, /^\*\*下一個搜尋目標\*\*：.*$/m, () => '**下一個搜尋目標**：**EP705（預估 10/14 上架）**；EP696-704 補源三源定稿');
-  e = repRe(e, /^\*\*最後更新時間\*\*：/m, () => '**最後更新時間**：2026-10-12 晚（EP704 初讀；對照＝零部位、SpaceX 回檔續抱與 v5 夢想股 Core 同向但 v6 防守檔位不開新倉；光通訊 3.2T 警示＝台光電/華星光高潮期）／');
-  e = insertAfter(e, '## 📑 已分析集數摘要\n', `
-### EP704（2026-10-10）— OpenAI ARR 700→500 億＝媒體口徑非需求出事、不因雜訊砍長倉；Marvell 投資人日 FY31 $70–90B 互連佔近 5 成＝光通全面做多但已反映部分；「1.6T 未普及先炒 3.2T/TFLN＝大多頭特徵」押對也可能先跌 50–60%；SpaceX IPO 買＋加碼、回檔續抱、佔資產 8–10% ⭐⭐⭐（🟡 10/12 單源初讀）
-- **對照持股**：零部位；SPCX 10/9 收 162.57 解禁落地守 MA20＝主委續抱 vs v6 美股防守不開新倉（檔位解除後再議層 1 160-164）；台光電/華星光＝光互連高潮期只准回測；信驊因 Marvell BMC 消息下跌＝TAM 擴大非搶市；聯電布局 TFLN。
-- **未提**：Fed、油價、台積電法說、記憶體。
-`);
-  wr('skills/podcast-tracker/episodes-read.md', e);
+  let m = rd('CLAUDE.md');
+  m = rep(m, '  6. Commit 並 push\n', '  6. Commit 並 push\n- **🧾 隔天沒回報＝沒買（2026-10-13 用戶定案・最高優先）**：建議掛單後用戶隔天沒回報成交＝一律視為未掛／未成交＝記零部位；**禁止**寫「若已成交／成交者…」雙分支、**禁止**「請回報」催報、**禁止**重複問。前次判防守＝不掛的單，本次直接當未掛。\n');
+  wr('CLAUDE.md', m);
 };
