@@ -70,7 +70,22 @@
       "entry": 114.2,
       "stop": 111.2,
       "regime": "v5舊框架",
-      "source": "模式B"
+      "source": "模式B",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 114.2,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 114.80000305175781,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.03,
+        "retPct": 0.53,
+        "final": false
+      }
     },
     {
       "id": "P006",
@@ -86,18 +101,18 @@
       "regime": "v5舊框架",
       "source": "舊watchlist",
       "result": {
-        "checked": "2026-10-09",
+        "checked": "2026-10-12",
         "filled": true,
         "fillDate": "2026-10-08",
         "fill": 234,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 229.27999877929688,
+        "last": 226.32000732421875,
         "stopped": false,
         "stopDate": null,
-        "R": -0.5,
-        "retPct": -2.02,
+        "R": -0.79,
+        "retPct": -3.28,
         "final": false
       }
     },
@@ -115,11 +130,11 @@
       "regime": "v5舊框架",
       "source": "模式A（停損僅供計分，不實掛）",
       "result": {
-        "checked": "2026-10-09",
+        "checked": "2026-10-12",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -222,11 +237,11 @@
       "source": "scan_us 能源",
       "note": "未掛單；追蹤若買了的結果",
       "result": {
-        "checked": "2026-10-09",
+        "checked": "2026-10-12",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -244,11 +259,11 @@
       "source": "scan_us 科技",
       "note": "未掛單（停損 12% 超過 8% 上限）",
       "result": {
-        "checked": "2026-10-09",
+        "checked": "2026-10-12",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -266,11 +281,11 @@
       "source": "scan_us 科技",
       "note": "未掛單（停損超過 8% 上限）",
       "result": {
-        "checked": "2026-10-09",
+        "checked": "2026-10-12",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -419,7 +434,22 @@
       "stop": 191.56,
       "regime": "防守(−1)",
       "source": "scan_us 軟體 #2",
-      "note": "檔位 −1 未掛"
+      "note": "檔位 −1 未掛",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 208.86,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 207.75,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.08,
+        "retPct": -0.53,
+        "final": false
+      }
     },
     {
       "id": "S012",
@@ -435,7 +465,22 @@
       "stop": 273.08,
       "regime": "防守(−1)",
       "source": "scan_us 軟體",
-      "note": "檔位 −1 未掛；乖離 2.9 ATR 減半"
+      "note": "檔位 −1 未掛；乖離 2.9 ATR 減半",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 296.19,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 287.2900085449219,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.4,
+        "retPct": -3,
+        "final": false
+      }
     },
     {
       "id": "S013",
@@ -451,7 +496,22 @@
       "stop": 65.29,
       "regime": "防守(−1)",
       "source": "fund_us 中線 ✅",
-      "note": "檔位 −1 未掛"
+      "note": "檔位 −1 未掛",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 72.8499984741211,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 70.33000183105469,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.34,
+        "retPct": -3.46,
+        "final": false
+      }
     },
     {
       "id": "S014",
@@ -467,7 +527,22 @@
       "stop": 520.89,
       "regime": "防守(−1)",
       "source": "fund_us 中線 ✅",
-      "note": "檔位 −1 未掛"
+      "note": "檔位 −1 未掛",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 581.72998046875,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 576.760009765625,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.09,
+        "retPct": -0.85,
+        "final": false
+      }
     },
     {
       "id": "S015",
@@ -483,17 +558,98 @@
       "stop": 185.26,
       "regime": "防守(−1)",
       "source": "fund_us 長線 ✅",
-      "note": "檔位 −1 未掛"
+      "note": "檔位 −1 未掛",
+      "result": {
+        "checked": "2026-10-12",
+        "filled": true,
+        "fillDate": "2026-10-12",
+        "fill": 228.72999572753906,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 226.32000732421875,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.06,
+        "retPct": -1.05,
+        "final": false
+      }
+    },
+    {
+      "id": "N006",
+      "date": "2026-10-13",
+      "kind": "no_entry",
+      "market": "TW",
+      "symbol": "-",
+      "name": "台股不進場",
+      "type": "-",
+      "regime": "防守(−2)",
+      "source": "regime",
+      "note": "外資 TX 淨空 −87,239 口 −1；SOX 12,237 < MA20 12,467 −1；OAS +45bp −2；趨勢 +2；廣度 46.6%；夜盤 +0.21%"
+    },
+    {
+      "id": "N007",
+      "date": "2026-10-13",
+      "kind": "no_entry",
+      "market": "US",
+      "symbol": "-",
+      "name": "美股不進場",
+      "type": "-",
+      "regime": "防守(−1)",
+      "source": "regime",
+      "note": "OAS 3.15% +45bp −2；RSP/SPY −3.0% −1；趨勢 +2（10/8–10/12 連 3 日）"
+    },
+    {
+      "id": "S016",
+      "date": "2026-10-13",
+      "effective": "2026-10-14",
+      "kind": "excluded",
+      "track": "short",
+      "market": "TW",
+      "symbol": "1216",
+      "name": "統一",
+      "type": "market",
+      "entry": 77.87,
+      "stop": 75.96,
+      "regime": "防守(−2)",
+      "source": "scan_tw 食品 #1",
+      "note": "防守距離 2.5% <6% 剔除；外資連 4 日 +22,324、分點真買；突破 20 日高量 1.9×"
+    },
+    {
+      "id": "S017",
+      "date": "2026-10-13",
+      "effective": "2026-10-14",
+      "kind": "excluded",
+      "track": "short",
+      "market": "TW",
+      "symbol": "2609",
+      "name": "陽明",
+      "type": "market",
+      "entry": 65.14,
+      "stop": 61.51,
+      "regime": "防守(−2)",
+      "source": "scan_tw 航運 #1",
+      "note": "防守距離 5.6% <6% 剔除；外資 5 日 +52,928 連 3、分點外資系真買；60 日新高"
     }
   ],
   "summary": {
-    "updated": "2026-10-12",
-    "line": "近 10 筆建議：成交 1／未成交 0、勝率 0%、平均淨 R -0.50（≥50 筆才改參數）",
+    "updated": "2026-10-13",
+    "line": "近 10 筆建議：成交 2／未成交 0、勝率 0%、平均淨 R -0.41（≥50 筆才改參數）",
     "groups": {
+      "pick/TW/pullback": {
+        "n": 1,
+        "w": 0,
+        "R": -0.03
+      },
       "pick/US/pullback": {
         "n": 1,
         "w": 0,
-        "R": -0.5
+        "R": -0.79
+      },
+      "excluded/US/market": {
+        "n": 5,
+        "w": 0,
+        "R": -0.97
       }
     }
   }
