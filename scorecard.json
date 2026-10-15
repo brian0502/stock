@@ -45,18 +45,18 @@
       "regime": "v5舊框架",
       "source": "回測條件成立",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 5850,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 5545,
+        "last": 5520,
         "stopped": false,
         "stopDate": null,
-        "R": -0.85,
-        "retPct": -5.21,
+        "R": -0.91,
+        "retPct": -5.64,
         "final": false
       }
     },
@@ -103,11 +103,11 @@
       "regime": "v5舊框架",
       "source": "權值必列",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 2530,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
         "last": 2490,
@@ -132,18 +132,18 @@
       "regime": "v5舊框架",
       "source": "模式B",
       "result": {
-        "checked": "2026-10-12",
+        "checked": "2026-10-13",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 114.2,
-        "daysSince": 1,
+        "daysSince": 2,
         "t5": null,
         "t20": null,
-        "last": 114.80000305175781,
+        "last": 112.4000015258789,
         "stopped": false,
         "stopDate": null,
-        "R": -0.03,
-        "retPct": 0.53,
+        "R": -0.83,
+        "retPct": -1.58,
         "final": false
       }
     },
@@ -190,11 +190,19 @@
       "regime": "v5舊框架",
       "source": "模式A（停損僅供計分，不實掛）",
       "result": {
-        "checked": "2026-10-13",
-        "filled": false,
-        "fillDate": null,
-        "fill": null,
-        "daysSince": 4
+        "checked": "2026-10-14",
+        "filled": true,
+        "fillDate": "2026-10-14",
+        "fill": 708,
+        "daysSince": 5,
+        "t5": null,
+        "t20": null,
+        "last": 707.4299926757812,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.05,
+        "retPct": -0.08,
+        "final": false
       }
     },
     {
@@ -236,11 +244,11 @@
       "source": "scan_tw 紡織 #1",
       "note": "未掛單（市況防守）；追蹤若買了的結果",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -258,11 +266,11 @@
       "source": "scan_tw 塑膠 #1",
       "note": "未掛單；追蹤若買了的結果",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -305,11 +313,11 @@
       "source": "scan_tw 塑膠 #2 降級",
       "note": "未掛單（分點凌亂降級）；追蹤若買了的結果",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 2
+        "daysSince": 3
       }
     },
     {
@@ -327,11 +335,13 @@
       "source": "scan_us 能源",
       "note": "未掛單；追蹤若買了的結果",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 4
+        "daysSince": 5,
+        "final": true,
+        "note": "5 日內未成交"
       }
     },
     {
@@ -349,11 +359,13 @@
       "source": "scan_us 科技",
       "note": "未掛單（停損 12% 超過 8% 上限）",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 4
+        "daysSince": 5,
+        "final": true,
+        "note": "5 日內未成交"
       }
     },
     {
@@ -371,11 +383,13 @@
       "source": "scan_us 科技",
       "note": "未掛單（停損超過 8% 上限）",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": false,
         "fillDate": null,
         "fill": null,
-        "daysSince": 4
+        "daysSince": 5,
+        "final": true,
+        "note": "5 日內未成交"
       }
     },
     {
@@ -394,18 +408,18 @@
       "source": "scan_tw 塑膠 #1",
       "note": "限價 ≤78.4；短線 15 日｜10/12 官方外資期貨 −82,806 口補入＝台股 0 防守＝10/9 中性未經連 2 確認；若未掛＝視同影子",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 76.9000015258789,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 77.80000305175781,
+        "last": 85.5,
         "stopped": false,
         "stopDate": null,
-        "R": 0.1,
-        "retPct": 1.17,
+        "R": 1.77,
+        "retPct": 11.18,
         "final": false
       }
     },
@@ -425,18 +439,18 @@
       "source": "revenue_tw 記憶體",
       "note": "限價 ≤537.3；破 MA60 連 2 日出｜10/12 官方外資期貨 −82,806 口補入＝台股 0 防守＝10/9 中性未經連 2 確認；若未掛＝視同影子",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 526,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 488,
+        "last": 480.5,
         "stopped": false,
         "stopDate": null,
-        "R": -0.77,
-        "retPct": -7.22,
+        "R": -0.91,
+        "retPct": -8.65,
         "final": false
       }
     },
@@ -456,11 +470,11 @@
       "source": "revenue_tw 長線",
       "note": "第 1 批 40%；災難線 −20%｜10/12 官方外資期貨 −82,806 口補入＝台股 0 防守＝10/9 中性未經連 2 確認；若未掛＝視同影子",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 2510,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
         "last": 2490,
@@ -523,18 +537,18 @@
       "source": "tracks 中線 ✅",
       "note": "檔位 0 未掛；法說毛利 85.7% 利多不漲",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-13",
         "fill": 509,
-        "daysSince": 1,
+        "daysSince": 2,
         "t5": null,
         "t20": null,
-        "last": 488,
+        "last": 480.5,
         "stopped": false,
         "stopDate": null,
-        "R": -0.66,
-        "retPct": -4.13,
+        "R": -0.87,
+        "retPct": -5.6,
         "final": false
       }
     },
@@ -554,11 +568,11 @@
       "source": "tracks 長線 ✅",
       "note": "檔位 0 未掛；法說 10/15",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-13",
         "fill": 2500,
-        "daysSince": 1,
+        "daysSince": 2,
         "t5": null,
         "t20": null,
         "last": 2490,
@@ -585,18 +599,18 @@
       "source": "tracks 短線 ✅",
       "note": "檔位 0 未掛；分點外資淨賣 −5,555、塑膠族群熱度第 5",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-13",
         "fill": 75,
-        "daysSince": 1,
+        "daysSince": 2,
         "t5": null,
         "t20": null,
-        "last": 77.80000305175781,
+        "last": 85.5,
         "stopped": false,
         "stopDate": null,
-        "R": 0.69,
-        "retPct": 3.73,
+        "R": 2.94,
+        "retPct": 14,
         "final": false
       }
     },
@@ -616,18 +630,18 @@
       "source": "scan_us 軟體 #2",
       "note": "檔位 −1 未掛",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 208.86,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 208.0399932861328,
+        "last": 204.66000366210938,
         "stopped": false,
         "stopDate": null,
-        "R": -0.06,
-        "retPct": -0.39,
+        "R": -0.25,
+        "retPct": -2.01,
         "final": false
       }
     },
@@ -647,19 +661,19 @@
       "source": "scan_us 軟體",
       "note": "檔位 −1 未掛；乖離 2.9 ATR 減半",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 296.19,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 283.3399963378906,
-        "stopped": false,
-        "stopDate": null,
-        "R": -0.57,
-        "retPct": -4.34,
-        "final": false
+        "last": 269.3299865722656,
+        "stopped": true,
+        "stopDate": "2026-10-14",
+        "R": -1.01,
+        "retPct": -7.8,
+        "final": true
       }
     },
     {
@@ -678,19 +692,19 @@
       "source": "fund_us 中線 ✅",
       "note": "檔位 −1 未掛",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 72.8499984741211,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 68.80999755859375,
-        "stopped": false,
-        "stopDate": null,
-        "R": -0.54,
-        "retPct": -5.55,
-        "final": false
+        "last": 63.11000061035156,
+        "stopped": true,
+        "stopDate": "2026-10-14",
+        "R": -1.01,
+        "retPct": -10.38,
+        "final": true
       }
     },
     {
@@ -709,19 +723,19 @@
       "source": "fund_us 中線 ✅",
       "note": "檔位 −1 未掛",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 581.72998046875,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 572.469970703125,
-        "stopped": false,
-        "stopDate": null,
-        "R": -0.16,
-        "retPct": -1.59,
-        "final": false
+        "last": 507.92999267578125,
+        "stopped": true,
+        "stopDate": "2026-10-14",
+        "R": -1.01,
+        "retPct": -10.46,
+        "final": true
       }
     },
     {
@@ -740,18 +754,18 @@
       "source": "fund_us 長線 ✅",
       "note": "檔位 −1 未掛",
       "result": {
-        "checked": "2026-10-13",
+        "checked": "2026-10-14",
         "filled": true,
         "fillDate": "2026-10-12",
         "fill": 228.72999572753906,
-        "daysSince": 2,
+        "daysSince": 3,
         "t5": null,
         "t20": null,
-        "last": 228.52000427246094,
+        "last": 221.3000030517578,
         "stopped": false,
         "stopDate": null,
-        "R": -0.01,
-        "retPct": -0.09,
+        "R": -0.18,
+        "retPct": -3.25,
         "final": false
       }
     },
@@ -793,7 +807,22 @@
       "stop": 75.96,
       "regime": "防守(−2)",
       "source": "scan_tw 食品 #1",
-      "note": "防守距離 2.5% <6% 剔除；外資連 4 日 +22,324、分點真買；突破 20 日高量 1.9×"
+      "note": "防守距離 2.5% <6% 剔除；外資連 4 日 +22,324、分點真買；突破 20 日高量 1.9×",
+      "result": {
+        "checked": "2026-10-14",
+        "filled": true,
+        "fillDate": "2026-10-14",
+        "fill": 77.0999984741211,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 78.19999694824219,
+        "stopped": false,
+        "stopDate": null,
+        "R": 0.56,
+        "retPct": 1.43,
+        "final": false
+      }
     },
     {
       "id": "S017",
@@ -809,7 +838,22 @@
       "stop": 61.51,
       "regime": "防守(−2)",
       "source": "scan_tw 航運 #1",
-      "note": "防守距離 5.6% <6% 剔除；外資 5 日 +52,928 連 3、分點外資系真買；60 日新高"
+      "note": "防守距離 5.6% <6% 剔除；外資 5 日 +52,928 連 3、分點外資系真買；60 日新高",
+      "result": {
+        "checked": "2026-10-14",
+        "filled": true,
+        "fillDate": "2026-10-14",
+        "fill": 64.80000305175781,
+        "daysSince": 1,
+        "t5": null,
+        "t20": null,
+        "last": 65,
+        "stopped": false,
+        "stopDate": null,
+        "R": -0.06,
+        "retPct": 0.31,
+        "final": false
+      }
     },
     {
       "id": "N008",
@@ -898,36 +942,108 @@
       "regime": "防守(−1)",
       "source": "scan_us 軟體 #2／tracks 短線 ✅",
       "note": "唯一生成器 ✅ 但美股防守 −1 連 4 日；突破單 213.67（限價 ≤215.76）；財報 11/5"
+    },
+    {
+      "id": "N010",
+      "date": "2026-10-15",
+      "kind": "no_entry",
+      "market": "TW",
+      "symbol": "-",
+      "name": "台股不進場",
+      "type": "-",
+      "regime": "防守(−2)",
+      "source": "regime",
+      "note": "外資 TX 淨空 −97,582 口新高 −1；SOX 11,684 < MA20 12,541 −1；OAS +40bp −2；趨勢 +2（46,970 vs MA60 46,008 +2.1%）；廣度 44.2%；夜盤 +0.2%（連 5 日 ≤0）；加權 −3.41% 史上第 6 大跌點、外資 −3,026 億史上最大"
+    },
+    {
+      "id": "N011",
+      "date": "2026-10-15",
+      "kind": "no_entry",
+      "market": "US",
+      "symbol": "-",
+      "name": "美股不進場",
+      "type": "-",
+      "regime": "防守(−1)",
+      "source": "regime",
+      "note": "OAS 3.16% +40bp −2；RSP/SPY −2.1% −1；趨勢 +2（7,719 vs MA60 7,668 +0.7%）（10/8–10/14 連 5 日）；AI 舉債信用恐慌、SOX 自 10/6 高 −15%"
+    },
+    {
+      "id": "S022",
+      "date": "2026-10-15",
+      "effective": "2026-10-16",
+      "kind": "excluded",
+      "track": "short",
+      "market": "TW",
+      "symbol": "1216",
+      "name": "統一",
+      "type": "market",
+      "entry": 80.3,
+      "stop": 77.37,
+      "regime": "防守(−2)",
+      "source": "scan_tw 食品 #1",
+      "note": "突破 20 日高 78.2 量 3.8× ✅ 但乖離 4.1 ATR 只等回測、停損 2.7% <6%；外資 +26,402 連 3、分點高盛/大摩/元大/摩根大通真買"
+    },
+    {
+      "id": "S023",
+      "date": "2026-10-15",
+      "effective": "2026-10-16",
+      "kind": "excluded",
+      "track": "short",
+      "market": "TW",
+      "symbol": "2618",
+      "name": "長榮航",
+      "type": "market",
+      "entry": 43.88,
+      "stop": 41.7,
+      "regime": "防守(−2)",
+      "source": "scan_tw 航運 #2",
+      "note": "貼 20 日高 43.4、量比 1.2× 未確認；停損 4.0% <6%；外資 +11,929 連 3、分點大摩 +6,472 真買；9 月營收 +32.9%"
+    },
+    {
+      "id": "S024",
+      "date": "2026-10-15",
+      "effective": "2026-10-16",
+      "kind": "excluded",
+      "track": "short",
+      "market": "US",
+      "symbol": "TEAM",
+      "name": "Atlassian",
+      "type": "market",
+      "entry": 206.71,
+      "stop": 187.79,
+      "regime": "防守(−1)",
+      "source": "scan_us 軟體 #2／tracks 短線 ✅",
+      "note": "唯一短線 ✅ 生成器但美防守 −1 連 5 日；突破單 215.61（限價 ≤217.72）；財報 11/5"
     }
   ],
   "summary": {
-    "updated": "2026-10-14",
-    "line": "近 10 筆建議：成交 9／未成交 0、勝率 11%、平均淨 R -0.64（≥50 筆才改參數）",
+    "updated": "2026-10-15",
+    "line": "近 10 筆建議：成交 10／未成交 0、勝率 10%、平均淨 R -0.52（≥50 筆才改參數）",
     "groups": {
       "pick/TW/pullback": {
         "n": 5,
         "w": 0,
-        "R": -4
+        "R": -4.86
       },
       "pick/US/pullback": {
-        "n": 1,
+        "n": 2,
         "w": 0,
-        "R": -1.02
+        "R": -1.07
       },
       "pick/TW/market": {
         "n": 3,
         "w": 1,
-        "R": -0.75
+        "R": 0.78
       },
       "excluded/TW/market": {
-        "n": 3,
-        "w": 1,
-        "R": -0.030000000000000027
+        "n": 5,
+        "w": 2,
+        "R": 2.51
       },
       "excluded/US/market": {
         "n": 5,
         "w": 0,
-        "R": -1.3399999999999999
+        "R": -3.4600000000000004
       }
     }
   }
