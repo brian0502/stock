@@ -1080,19 +1080,19 @@
       "source": "scan_tw 航運 #2",
       "note": "貼 20 日高 43.4、量比 1.2× 未確認；停損 4.0% <6%；外資 +11,929 連 3、分點大摩 +6,472 真買；9 月營收 +32.9%",
       "result": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-16",
         "filled": true,
         "fillDate": "2026-10-16",
         "fill": 43.5,
-        "daysSince": 20,
+        "daysSince": 21,
         "t5": 42.20000076293945,
-        "t20": null,
-        "last": 47.75,
+        "t20": 47.400001525878906,
+        "last": 47.400001525878906,
         "stopped": false,
         "stopDate": null,
-        "R": 2.22,
-        "retPct": 9.77,
-        "final": false
+        "R": 2.02,
+        "retPct": 8.97,
+        "final": true
       }
     },
     {
@@ -1376,19 +1376,19 @@
       "source": "scan_us 主排序唯一通過／tracks 短線",
       "note": "RS 前 20%、距 52W 高 −2.2%；10/19 盤中 159.2 過突破單 157.23 但乖離 2.5 ATR 只等回測 MA20 140.4；非熱族群（服飾零售 day_gainers）；財報 ~11/25；美防守不掛",
       "result": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-16",
         "filled": true,
         "fillDate": "2026-10-20",
         "fill": 154.79,
-        "daysSince": 19,
+        "daysSince": 20,
         "t5": 165.3800048828125,
         "t20": null,
-        "last": 148.8800048828125,
-        "stopped": false,
-        "stopDate": null,
-        "R": -0.6,
-        "retPct": -3.82,
-        "final": false
+        "last": 145.77000427246094,
+        "stopped": true,
+        "stopDate": "2026-11-16",
+        "R": -1.02,
+        "retPct": -6.55,
+        "final": true
       }
     },
     {
@@ -1431,18 +1431,18 @@
       "source": "scan_us 主排序 #1／tracks 中線",
       "note": "RS 前 20%（3m +89%）、距 52W 高 −4.2%；乖離 4.4 ATR 只等回測 MA20 15.3、5 日 +9.6%；短線停損 9.9% >8% ❌；中線 revenueGrowth 28.8%／FCF 0.1B／EPS 0.33／MA60 14.1↑ 生成器 ✅、檔位 ❌；服飾 day_gainers 非熱族群；財報 11/5；10/20 盤中 20.17",
       "result": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-16",
         "filled": true,
         "fillDate": "2026-10-21",
         "fill": 19.64,
-        "daysSince": 18,
+        "daysSince": 19,
         "t5": 20.65999984741211,
         "t20": null,
-        "last": 22.049999237060547,
+        "last": 21.34000015258789,
         "stopped": false,
         "stopDate": null,
-        "R": 1.02,
-        "retPct": 12.27,
+        "R": 0.72,
+        "retPct": 8.66,
         "final": false
       }
     },
@@ -1506,18 +1506,18 @@
       "source": "scan_us 主排序 #4／tracks 中線生成器 ✅",
       "note": "突破單 59.64（限價 ≤60.06）需 10/21 收 ≥59.64 且量 ≥1.5×；營收 YoY 38.7%／毛利 16.4%／EPS TTM −1.63；3m +42%、距 52W 高 −3.5%；Discount Stores 非熱族群；財報 11/2 盤後（7 交易日）；反調否決＝影子；10/21 盤中 59.47",
       "result": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-16",
         "filled": true,
         "fillDate": "2026-10-22",
         "fill": 58.060001373291016,
-        "daysSince": 17,
+        "daysSince": 18,
         "t5": 56.61000061035156,
         "t20": null,
-        "last": 70.0199966430664,
+        "last": 68.9000015258789,
         "stopped": false,
         "stopDate": null,
-        "R": 2.26,
-        "retPct": 20.6,
+        "R": 2.05,
+        "retPct": 18.67,
         "final": false
       }
     },
@@ -1701,18 +1701,18 @@
       "source": "scan_us 10/28 #1／tracks 中線 ✅／10/28 劇本（財報後 ≤536.6 未跳空 >5%）",
       "note": "FQ1 營收 $92.3B（預期 90.6）／EPS 4.89（4.71）／Azure +48%（指引 +49%）／capex $45.2B <預期 $51B／FCF $18.6B；revenueGrowth 17.7%／PE 29.8 vs 2g 35.4；MA20 529.9／MA60 508.4↑；盤前 +4%（548）→ 21:40 533.4（H541 L525.3）＝回測 MA20；S&P 21:40 7,702.8 貼 MA60；反調（Claude）：開盤倒灌＝分配訊號、S&P 貼 MA60＝改 10/30 收盤確認（S&P >7,706 且 MSFT ≥526）後 ≤524×2 停 497.6；本機無 Codex；成交以用戶隔日回報為準（未回報＝未掛）",
       "result": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-16",
         "filled": true,
         "fillDate": "2026-10-29",
         "fill": 536,
-        "daysSince": 12,
+        "daysSince": 13,
         "t5": 535.9299926757812,
         "t20": null,
-        "last": 523.8800048828125,
+        "last": 517.989990234375,
         "stopped": false,
         "stopDate": null,
-        "R": -0.33,
-        "retPct": -2.26,
+        "R": -0.48,
+        "retPct": -3.36,
         "final": false
       }
     },
@@ -1907,11 +1907,35 @@
       "regime": "防守(−1 Day 11)",
       "source": "regime／scan_us 3 12",
       "note": "11/13 收 7,561.67 −0.40% 低於 MA60 7,670.46 −1.4%、MA20 斜率 −1.5%（−2）、廣度 +4.5%（+1）、HY OAS −5bp（0）＝−1 防守 Day 11、新倉 0；scan_us ELF 停損 9.0%、U／CROX／WWW／STE／COLD 3.4–3.6 ATR、FLYW 2.4 ATR 只等回測；COKE 框架外不計分（≤216.5×5 停 198.66）"
+    },
+    {
+      "id": "N043",
+      "date": "2026-11-17",
+      "kind": "no_entry",
+      "market": "TW",
+      "symbol": "-",
+      "name": "台股不進場",
+      "type": "-",
+      "regime": "防守(−4)",
+      "source": "regime --fut=-97896 --night=-0.30／scan_tw 20261117 3 2",
+      "note": "11/17 收 40,092.11 −947.97（−2.31%・量 10,128.7 億）季線 46,047.96 下 −12.9%（−2）、SOX 低於 MA20（−1）、淨空 −97,896（−1）＝−4 ≤0 連 27 日＋硬性線；scan_tw 統一／聯華／潤弘／華固／中信金／富邦金 皆因硬性線不買；統一 框架外不計分（≤80.0×400 停 75.1）；止跌表 0/6"
+    },
+    {
+      "id": "N044",
+      "date": "2026-11-17",
+      "kind": "no_entry",
+      "market": "US",
+      "symbol": "-",
+      "name": "美股不進場",
+      "type": "-",
+      "regime": "防守(−1 Day 12)",
+      "source": "regime／scan_us 3 12",
+      "note": "11/16 收 7,416.59 −1.92% 低於 MA60 7,666.17 −3.3%、MA20 斜率 −1.5%（−2）、廣度 +6.3%（+1）、HY OAS −8bp（0）＝−1 防守 Day 12、新倉 0；scan_us AAPL／DIS（財報 11/17）／HST；AAPL 框架外不計分（≤356.3×3 停 336.0）"
     }
   ],
   "summary": {
-    "updated": "2026-11-16",
-    "line": "近 13 筆建議：成交 13／未成交 0、勝率 0%、平均淨 R -1.04（≥50 筆才改參數）",
+    "updated": "2026-11-17",
+    "line": "近 13 筆建議：成交 13／未成交 0、勝率 0%、平均淨 R -1.05（≥50 筆才改參數）",
     "groups": {
       "pick/TW/pullback": {
         "n": 5,
@@ -1921,7 +1945,7 @@
       "pick/US/pullback": {
         "n": 4,
         "w": 0,
-        "R": -3.3899999999999997
+        "R": -3.5399999999999996
       },
       "pick/TW/market": {
         "n": 3,
@@ -1931,12 +1955,12 @@
       "excluded/TW/market": {
         "n": 14,
         "w": 1,
-        "R": -13.249999999999998
+        "R": -13.45
       },
       "excluded/US/market": {
         "n": 12,
         "w": 2,
-        "R": -6.4399999999999995
+        "R": -7.369999999999998
       },
       "pick/US/market": {
         "n": 1,
