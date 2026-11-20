@@ -407,8 +407,30 @@ document.getElementById('usSummary').innerHTML = `
   <div class="summary-card ${usRealizedPnl>=0?'c-green':'c-red'} realized-card" onclick="openModal('us')"><div class="label">已實現損益</div><div class="value ${pc(usRealizedPnl)}">$${fmt(usRealizedPnl,2)}</div><div class="realized-hint"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 6h6M5 8.5h4"/></svg>${usRealizedDetail.length} 檔 · 點擊查看明細</div></div>`;
 
 // ===== PORTFOLIO TABLES =====
+// 持股建議列下方：多角度檢視＋法說／重要日期（資料在 data.js 各持股的 angles / events）
+function advExtra(p){
+  const vt={good:'好',bad:'壞',neutral:'中性'};
+  let h='';
+  if(p.angles&&p.angles.length){
+    h+='<div class="adv-sec"><div class="adv-sec-title">🔍 多角度檢視</div><table class="adv-tbl"><thead><tr><th>角度</th><th>有利</th><th>不利</th></tr></thead><tbody>'
+      +p.angles.map(x=>'<tr><td class="adv-k">'+x.k+'</td><td>'+x.bull+'</td><td>'+x.bear+'</td></tr>').join('')+'</tbody></table></div>';
+  }
+  if(p.events&&p.events.length){
+    h+='<div class="adv-sec"><div class="adv-sec-title">📅 法說／重要日期</div>'+p.events.map(e=>{
+      const done=e.date<=TODAY&&!e.approx;
+      const days=Math.round((new Date(e.date)-new Date(TODAY))/864e5);
+      const when=e.approx?e.approx:(done?'已結束':'還有 '+days+' 天');
+      let s='<div class="adv-ev"><div class="adv-ev-head"><span class="adv-ev-date mono">'+(e.approx?'':e.date.slice(5).replace('-','/'))+'</span><b>'+e.title+'</b><span class="adv-ev-when '+(done?'done':'up')+'">'+when+'</span>'+(e.verdict?'<span class="adv-v adv-v-'+e.verdict+'">整體：'+e.verdictLabel+'</span>':'')+'</div>';
+      if(e.summary) s+='<div class="adv-ev-sum">'+e.summary+'</div>';
+      if(e.points&&e.points.length) s+='<table class="adv-tbl"><thead><tr><th>重點</th><th>白話</th><th>好壞</th></tr></thead><tbody>'+e.points.map(q=>'<tr><td>'+q.t+'</td><td>'+q.plain+'</td><td><span class="adv-v adv-v-'+q.v+'">'+vt[q.v]+'</span></td></tr>').join('')+'</tbody></table>';
+      if(e.src) s+='<div class="adv-asof"><a href="'+e.src+'" target="_blank" rel="noopener" style="color:var(--blue)">來源</a></div>';
+      return s+'</div>';
+    }).join('')+'</div>';
+  }
+  return h;
+}
 function renderTable(data,tbody,cur,total){
-  tbody.innerHTML = data.map(p=>{const pct=p.market/total*100;return `<tr>
+  tbody.innerHTML = data.map(p=>{const pct=p.market/total*100;const adv=p.advice;return `<tr${adv?' class="has-adv"':''}>
     <td><div class="symbol-cell"><div class="symbol-icon" style="background:${p.color}">${p.symbol.slice(0,2)}</div><div><div class="symbol-name">${p.name}</div><div class="symbol-code">${p.symbol}</div></div></div></td>
     <td class="mono">${fmt(p.shares)}</td>
     <td class="mono" style="text-align:right">${cur}${fmt(p.avgCost,2)}</td>
@@ -416,7 +438,7 @@ function renderTable(data,tbody,cur,total){
     <td class="mono" style="text-align:right">${cur}${fmt(p.market)}</td>
     <td style="text-align:right"><span class="pnl-badge ${pc(p.pnl)}">${fmtPct(p.pnlPct)}</span><div style="font-size:10px;color:var(--text-dim);margin-top:1px" class="mono">${p.pnl>=0?'+':''}${cur}${fmt(p.pnl)}</div></td>
     <td><div style="font-size:11px;margin-bottom:3px" class="mono">${pct.toFixed(1)}%</div><div class="bar-container"><div class="bar-fill" style="width:${pct}%;background:${p.color}"></div></div></td>
-  </tr>`;}).join('');
+  </tr>${adv?`<tr class="adv-row adv-${adv.action}"><td colspan="7"><div class="adv-wrap"><span class="adv-badge adv-${adv.action}">${adv.label}</span><div class="adv-body"><div class="adv-exit">${adv.todo?`<b>要做：</b>${adv.todo}　`:''}<b>出場線：</b>${adv.exit}</div><div class="adv-reason">${adv.reason}</div><div class="adv-asof">${adv.asof}</div></div></div>${advExtra(p)}</td></tr>`:''}`;}).join('');
 }
 renderTable(twData,document.getElementById('twTableBody'),'NT$',twTotal);
 renderTable(usData,document.getElementById('usTableBody'),'$',usTotal);
