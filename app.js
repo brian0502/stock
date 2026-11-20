@@ -411,6 +411,9 @@ document.getElementById('usSummary').innerHTML = `
 function advExtra(p){
   const vt={good:'好',bad:'壞',neutral:'中性'};
   let h='';
+  if(p.outlook&&p.outlook.length){
+    h+='<div class="adv-sec"><div class="adv-sec-title">⏱ 短中長期評估</div><table class="adv-tbl"><tbody>'+p.outlook.map(x=>'<tr><td class="adv-k">'+x.k+'</td><td class="adv-k">'+x.v+'</td><td>'+x.t+'</td></tr>').join('')+'</tbody></table></div>';
+  }
   if(p.angles&&p.angles.length){
     h+='<div class="adv-sec"><div class="adv-sec-title">🔍 多角度檢視</div><table class="adv-tbl"><thead><tr><th>角度</th><th>有利</th><th>不利</th></tr></thead><tbody>'
       +p.angles.map(x=>'<tr><td class="adv-k">'+x.k+'</td><td>'+x.bull+'</td><td>'+x.bear+'</td></tr>').join('')+'</tbody></table></div>';
