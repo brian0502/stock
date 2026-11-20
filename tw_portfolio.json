@@ -1,9 +1,27 @@
 {
-  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25 (cleared 6/8). 0050 entered 7/6, stopped out 7/7.",
+  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25 (cleared 6/8). 0050 entered 7/6, stopped out 7/7. 2026-11-20 再進場：0050 1 張 @84.2、威聯通 7805 1 張 @317（成交回報截圖）。",
   "_NEEDS_VERIFICATION": true,
   "_VERIFY_AGAINST": "用戶券商截圖(台股庫存頁)",
   "_DATA_ISSUE": "2026-06-02 查 Yahoo：代號 2705 = 六福(Leofoo)，非大魯閣(大魯閣為 1432)。下方紀念股名稱/代號不符，待用戶確認後修正。",
   "portfolio": [
+    {
+      "symbol": "7805",
+      "name": "威聯通",
+      "shares": 1000,
+      "avg_cost": 317,
+      "cost_basis_twd": 317000,
+      "category": "個股（無夢股）",
+      "note": "11/20 買 @317；11/23 先賣 500 股、餘 500 股收盤 ≤290.5 全出"
+    },
+    {
+      "symbol": "0050",
+      "name": "元大台灣50",
+      "shares": 1000,
+      "avg_cost": 84.2,
+      "cost_basis_twd": 84200,
+      "category": "ETF（模式 B）",
+      "note": "11/20 買 @84.2；收盤 ≤79.6 全出"
+    },
     {
       "symbol": "2705",
       "name": "六福?（記錄為大魯閣，代號待確認）",
@@ -20,7 +38,7 @@
       "name": "緯創",
       "shares": 1000,
       "sold_date": "2026-03-04",
-      "sell_price": 128.0,
+      "sell_price": 128,
       "realized_pnl_twd": -2500,
       "reason": "美伊衝突升級停損"
     },
