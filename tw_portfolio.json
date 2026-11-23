@@ -1,27 +1,9 @@
 {
-  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25 (cleared 6/8). 0050 entered 7/6, stopped out 7/7. 2026-11-20 再進場：0050 1 張 @84.2、威聯通 7805 1 張 @317（成交回報截圖）。",
+  "_NOTE": "Reconstructed 2026-05-29. Previous holdings (00919/00878/00679B) all cleared before this session. 009816 newly entered 5/25 (cleared 6/8). 0050 entered 7/6, stopped out 7/7. 2026-11-20 再進場：0050 1 張 @84.2、威聯通 7805 1 張 @317（成交回報截圖）。 2026-11-23 兩檔全數出場：0050 @85.3、威聯通 @314（券商已實現 −4,065）。",
   "_NEEDS_VERIFICATION": true,
   "_VERIFY_AGAINST": "用戶券商截圖(台股庫存頁)",
   "_DATA_ISSUE": "2026-06-02 查 Yahoo：代號 2705 = 六福(Leofoo)，非大魯閣(大魯閣為 1432)。下方紀念股名稱/代號不符，待用戶確認後修正。",
   "portfolio": [
-    {
-      "symbol": "7805",
-      "name": "威聯通",
-      "shares": 1000,
-      "avg_cost": 317,
-      "cost_basis_twd": 317000,
-      "category": "個股（無夢股）",
-      "note": "11/20 買 @317；領息長抱、345 賣單取消；收盤 ≤253.6 且加權 >31,700 或收盤 ≤222 隔天整張賣；現金股利 <20 元等基本面條件出場（11/22 雙審）"
-    },
-    {
-      "symbol": "0050",
-      "name": "元大台灣50",
-      "shares": 1000,
-      "avg_cost": 84.2,
-      "cost_basis_twd": 84200,
-      "category": "ETF（模式 B）",
-      "note": "11/20 買 @84.2；長放；災難線收盤 ≤68.2 隔天整張賣（11/22 雙審）"
-    },
     {
       "symbol": "2705",
       "name": "六福?（記錄為大魯閣，代號待確認）",
@@ -84,11 +66,29 @@
       "sell_price": 107.35,
       "realized_pnl_twd": -1100,
       "reason": "模式B 趨勢停損觸發（7/7 收 45,479 跌破停損線 45,945·史上第8大跌點）·用戶盤中 107.35 出＝優於收盤 106.20·持有 1 交易日 round-trip −1.01%"
+    },
+    {
+      "symbol": "0050",
+      "name": "元大台灣50",
+      "shares": 1000,
+      "sold_date": "2026-11-23",
+      "sell_price": 85.3,
+      "realized_pnl_twd": 775,
+      "reason": "用戶自行出場（11/20 買 @84.2）；淨額為費稅推算"
+    },
+    {
+      "symbol": "7805",
+      "name": "威聯通",
+      "shares": 1000,
+      "sold_date": "2026-11-23",
+      "sell_price": 314,
+      "realized_pnl_twd": -4840,
+      "reason": "用戶自行出場（11/20 買 @317）；淨額為費稅推算；兩筆合計券商已實現 −4,065"
     }
   ],
-  "cash_twd": 534435,
-  "cash_source": "427,085 ＋ 107,350（7/7 賣 0050 1 張 @107.35）＝534,435，手續費/證交稅未計待對帳",
-  "total_realized_pnl_twd_lifetime": "TBD - 從 sold_in_2026 累積（緯創-2,500 + 00679B-3,210 + 00919-2,018 + 00878+11,186 + 009816-4,604 + 0050-1,100 = -2,246 待對帳單核對）",
-  "last_updated": "2026-07-07",
+  "cash_twd": 530370,
+  "cash_source": "534,435（11/20 進場前）− 4,065（11/20–11/23 兩檔來回的券商已實現損益，含手續費／證交稅）＝530,370",
+  "total_realized_pnl_twd_lifetime": "−2,246（至 7/7）− 4,065（11/23 0050＋威聯通）＝ −6,311，待對帳單核對",
+  "last_updated": "2026-11-23",
   "previous_freeze_date": "2026-04-08"
 }
