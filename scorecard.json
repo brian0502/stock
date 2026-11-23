@@ -1955,10 +1955,34 @@
       "regime": "防守(−2 Day 13)",
       "source": "regime／scan_us 3 12",
       "note": "11/17 收 7,340.53 −1.03% 低於 MA60 7,660.96 −4.2%、MA20 斜率 −1.6%（−2）、VIX 25.46（−1）、廣度 +4.9%（+1）、HY OAS +5bp（0）＝−2 防守 Day 13、新倉 0；scan_us AAPL／KO／GFF／DIS／BILL／RYTM；AAPL 框架外不計分（≤355.4×3 停 338.3）"
+    },
+    {
+      "id": "N047",
+      "date": "2026-11-23",
+      "kind": "no_entry",
+      "market": "TW",
+      "symbol": "-",
+      "name": "台股不進場",
+      "type": "-",
+      "regime": "防守(−7)",
+      "source": "regime／scan_tw 20261123 3 2",
+      "note": "11/23 收 36,811.89 +2.16% 低於 MA60 45,578 −19.2%（−2）、廣度 28.7%（−2）、VIX 35.89（−1）、SOX（−1）、外資期貨淨空 103,432（−1）＝−7；scan_tw 智通／上詮／昇達科皆不符；雙審＝12/10 後 0050 連 2 天站上月線才買"
+    },
+    {
+      "id": "N048",
+      "date": "2026-11-23",
+      "kind": "no_entry",
+      "market": "US",
+      "symbol": "-",
+      "name": "美股不進場",
+      "type": "-",
+      "regime": "防守(−2 Day 16)",
+      "source": "regime／scan_us 3 12",
+      "note": "11/20 收 6,910.39 −3.7% 低於 MA60 7,633 −9.5%（−2）、VIX 35.89（−1）、廣度 +5.5%（+1）＝−2；scan_us PLMR／IPAR／BIP／KO 只等回測；雙審＝12/10 後 VIX <30 且評分 ≥1 才買 VOO"
     }
   ],
   "summary": {
-    "updated": "2026-11-21",
+    "updated": "2026-11-23",
     "line": "近 13 筆建議：成交 13／未成交 0、勝率 0%、平均淨 R -1.09（≥50 筆才改參數）",
     "groups": {
       "pick/TW/pullback": {
